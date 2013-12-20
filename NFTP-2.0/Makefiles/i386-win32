@@ -1,0 +1,50 @@
+#
+#   WinNT 4.0/Win95/Win98, mingw32
+#
+
+ARCHIVER = zip
+ARCHIVER_FLAGS = -q -r -9
+COMPRESSOR = echo
+TARGETS = nftp_win32cons.exe nftp_win32gui.exe
+
+strip: force
+	strip nftp_win32cons.exe
+	strip nftp_win32gui.exe
+#	pestack -s8192 -c2048 nftp_win32cons.exe
+
+distcopy2:
+	mv nftp-$(VERSION)/nftp_win32cons.exe nftp-$(VERSION)/nftpc.exe
+	mv nftp-$(VERSION)/nftp_win32gui.exe nftp-$(VERSION)/nftp.exe
+	
+	mv nftp-$(VERSION)/nftp.i tmpfile1
+	convert/crlf tmpfile1 tmpfile
+	mv -f tmpfile nftp-$(VERSION)/nftp.i
+	rm tmpfile1
+	
+	mv nftp-$(VERSION)/nftp.bm tmpfile1
+	convert/crlf tmpfile1 tmpfile
+	mv -f tmpfile nftp-$(VERSION)/nftp.bm
+	rm tmpfile1
+	
+	mv nftp-$(VERSION)/readme.1st tmpfile1
+	convert/crlf tmpfile1 tmpfile
+	mv -f tmpfile nftp-$(VERSION)/readme.1st
+	rm tmpfile1
+	
+	mv nftp-$(VERSION)/LICENSE tmpfile1
+	convert/crlf tmpfile1 tmpfile
+	mv -f tmpfile nftp-$(VERSION)/LICENSE
+	rm tmpfile1
+	
+	mv nftp-$(VERSION)/regform.txt tmpfile1
+	convert/crlf tmpfile1 tmpfile
+	mv -f tmpfile nftp-$(VERSION)/regform.txt
+	rm tmpfile1
+
+nlsconv: nlsconv-windows
+
+nftpwc.o: nftpwc.rc
+	windres -I rc -i $^ -o $@
+
+nftpwg.o: nftpwg.rc
+	windres -I rc -i $^ -o $@

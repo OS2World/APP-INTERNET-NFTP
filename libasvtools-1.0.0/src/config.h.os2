@@ -1,0 +1,12 @@
+
+#define HAVE_FLOCK 1
+#define HAVE_SNPRINTF 1
+#define HAVE_MMAP 0
+#define HAVE_ASSERT 1
+#define HAVE_ASSERT_H 1
+#define HAVE_LIMITS_H 1
+#define HAVE_STRCASESTR 0
+#define HAVE_STRLWR 1
+#define HAVE_STRUPR 1
+#define HAVE_GETPGID 0
+

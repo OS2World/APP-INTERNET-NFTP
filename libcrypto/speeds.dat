@@ -1,0 +1,26 @@
+# 1 DEC Alpha 266MHz, load=3
+# 2 Intel Celeron 400MHz cacheless
+# 3 Intel 386SX 33MHz cacheless
+# 4 Intel Pentium 180MHz, 512KB L2 cache
+# 5 DEC Alpha EV56, Linux (600MHz?)
+# 6 Sun SPARCstation 5
+# 7 RS/6000
+# 8 AMD Duron 950MHz
+
+#       1         2           3         4        5           6          7         8
+
+ 256  0.00533   0.00520      0.49263   0.01679  0.00117     0.11220    0.00692   0.00180
+ 512  0.03237   0.03571      3.16498   0.11653  0.00657     0.70196    0.04682   0.01286
+ 768  0.10156   0.11000      9.84032   0.37473  0.01998     2.69640    0.14906   0.04000
+1024  0.22168   0.25000     22.16161   0.81609  0.04404     5.09746    0.32631   0.10000
+2048  4.38281   1.94000    159.60095   8.62026  0.30670    38.65351    2.35163   0.68000
+4096 32.19531  13.44000   1159.85338  44.61394  2.24578   291.55488   17.65326   5.04000
+
+#   0.30670   DEC Alpha EV56, Linux (600MHz?)
+#   0.68000   AMD Duron 950MHz
+#   1.94000   Intel Celeron 400MHz cacheless
+#   2.35163   RS/6000
+#   4.38281   DEC Alpha 266MHz, load=3
+#   8.62026   Intel Pentium 180MHz, 512KB L2 cache
+#  38.65351   Sun SPARCstation 5
+# 159.60095   Intel 386SX 33MHz cacheless

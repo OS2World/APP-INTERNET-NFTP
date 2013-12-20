@@ -1,0 +1,148 @@
+#
+# see syntax explanations in english.mnu if interested
+#
+
+main
+{
+    {SUBMENU, "&Sites",        Sites}
+    {SUBMENU, "&Bestanden",    Files}
+    {SUBMENU, "Beel&d",        View}
+    {SUBMENU, "&Overdracht",   Transfer}
+    {SUBMENU, "O&pties",       Options}
+    {SUBMENU, "&Help",         Help}
+}
+Sites
+{
+    {ACTION, "&Bladwijzers...",             10}  login from bookmarks
+    {ACTION, "&Historie...",                17}  history
+    {ACTION, "Bladwijzer &opslaan...",      35}  save host/dir as bookmark
+    {SUBMENU, "FTP &Search", FTPSearch} -- perhaps leave as-is FTP Search trademark?
+    {SUBMENU, "&Wachtwoorden", Passwords}
+    {SEP}
+    {ACTION, "&URL openen...",              18}  open URL
+    {ACTION, "Aa&nmelden...",               11}  login
+    {ACTION, "A&fmelden...",                13}  log off
+    {ACTION, "Verbinding &controleren",     22}  send NOOP
+    {ACTION, "Opdracht &versturen...",      24}  quote command
+    {SEP}
+    {ACTION, "Suspend (alleen Unix)",      112}  suspend
+#   {ACTION, "Crash",                        9}  crash and burn
+    {ACTION, "&Afsluiten...",               14}  exit NFTP
+}
+Passwords
+{
+    {ACTION, "&Wachtwoord wijzigen...",   28} edit passwords
+    {ACTION, "&Sleutel wijzigen...",      29} change keyphrase for password encryption
+}
+Files
+{
+    {ACTION, "Directory &maken...",               53}  create directory
+    {ACTION, "&Naam wijzigen...",                 54}  rename file/directory
+    {ACTION, "&Verwijderen...",                   52}  delete file/dir
+    {ACTION, "Toegangsrechten wijzigen",          79}  change access rights
+    {SEP}
+#   {ACTION, "&Naar directory",                   71}  change into dir under cursor
+    {ACTION, "&Andere directory...",              74}  input dir and change to it
+    {ACTION, "H&oofddirectory",                   72}  change to root dir
+    {ACTION, "Directory ve&rnieuwen",             70}  re-read directory
+    {ACTION, "Bestands&lijst opslaan...",         45}  save directory listing
+    {ACTION, "Ander lokaal stat&ion...",          75}  change local drive
+    {ACTION, "Grootte directory &bepalen",        57}  traverse directory and compute its size
+}
+View
+{
+    {ACTION, "Andere &directorymodus",             32}  switch between raw/parsed modes
+    {ACTION, "Verbinding &controleren",            30}  switch between CC and dir
+    {ACTION, "Se&rver/Lokaal",                     31}  switch between local/remote
+    {SWITCH, "Venster s&plitsen",                  37}  make screen look like NC
+    {SWITCH, "Datum/tijd bestand tonen",           38}  show/hide file timestamps in panels
+    {SWITCH, "&Ministatus",                        39}  show/hide mini-status field
+    {SEP}
+    {ACTION, "&Bestand bekijken",                  50}  view w/int viewer
+    {ACTION, "Bekijken in &ext viewer",            51}  view w/ext viewer
+    {ACTION, "Beschrijving &laden...",             76}  load 00index.txt file
+    {SUBMENU, "&Sorteren",     Sort}
+    {SEP}
+    {ACTION, "&Venster vernieuwen",                36}  repaint screen
+}
+Sort
+{
+    {ACTION, "Sorteren op &naam",        60}  sort by name
+    {ACTION, "Sorteren op e&xtensie",    61}  sort by extension
+    {ACTION, "Sorteren op &grootte",     63}  sort by size
+    {ACTION, "Sorteren op &tijd",        62}  sort by date
+    {ACTION, "Sorteren &ongedaan maken", 64}  make unsorted
+    {ACTION, "Sortering om&keren",       65}  reverse sort order
+}
+Transfer
+{
+    {ACTION, "&Copy...",                   77}  copy between remote/local
+#   {ACTION, "&Ophalen...",               40}  download
+#   {ACTION, "Alles op&halen...",         42}  d/l from all dirs
+    {ACTION, "Ophalen op &naam...",       44}  d/l by name
+    {ACTION, "Ophalen met &WGET...",      46}  launch wget to retrieve files
+#   {ACTION, "&Versturen...",             41}  upload
+#   {ACTION, "Alles verst&uren...",       43}  u/l from all dirs
+    {SEP}
+    {SUBMENU, "&Selecteren", Select}
+    {SUBMENU, "S&piegelen", Mirror}
+    {SWITCH, "&Binair",              21}  switch ASCII/BINARY
+    {ACTION, "Info &tonen",                15}  get current status
+    {SEP}
+#   {SWITCH, "Doorvoer beperken",          98}  limit throughput
+    {ACTION, "Bestand overslaan",          47}  skip file during transfer
+    {ACTION, "Overdracht stoppen",         48}  stop transfer
+    {ACTION, "Overdracht hervatten",       49}  abort and restart transfer
+    {SWITCH, "Overdracht onderbreken",     58}  pause transfer
+}
+Select
+{
+    {ACTION, "&Selecteren/Deselecteren",   82}  select file under cursor
+    {ACTION, "Selecteren met &filter...",  83}  select by mask
+    {ACTION, "Deselecteren met f&ilter...", 84}  deselect by mask
+    {ACTION, "&Alles selecteren",          80}  select all files
+    {ACTION, "A&lles deselecteren",        81}  deselect all files
+    {ACTION, "Deselecteren in alle di&rs", 87}  deselect all files
+    {ACTION, "Selectie om&keren",          85}  invert selection
+    {ACTION, "Gemarkeerde exporteren...",   19}  export list of marked files
+    {ACTION, "Review list of marked...",   12}  review list of marked files/dirs
+}
+Mirror
+{
+    {ACTION, "&Ophalen...",                   66} synchronize local with remote (download)
+    {ACTION, "&Versturen...",                 67} synchronize remote with local (upload)
+    {SWITCH, "Niet overeenkomend wissen",     68} switch: delete/keep unmatched files
+    {SWITCH, "Inclusief &subdirectories",     69} switch: synchronize subdirs?
+}
+Help
+{
+    {ACTION, "&Help",             1}  Help
+    {ACTION, "&Algemene Help",    2}  general help
+    {ACTION, "&Korte Help",       3}  short help
+    {ACTION, "&Menu's",           7}  using menus
+    {SEP}
+    {ACTION, "Nieuwe versie NFTP",       90}  connect to NFTP site
+    {ACTION, "&NFTP - info...",   6}  displays time of build
+}
+
+FTPSearch
+{
+    {ACTION, "&Zoeken met FTPSearch...", 120} find with FTPSearch
+    {ACTION, "&Laatste zoekresultaat...", 122}, display results of last search
+    {ACTION, "&Servers...", 121} define FTPSearch servers
+}
+
+Options
+{
+    {SWITCH, "Proxy gebruiken",        25}  enable/disable proxy
+    {SWITCH, "Opties &gebruiken",      23}  use/disable NLST with flags
+    {SWITCH, "Beschrijvingen tonen",   34}  show/hide descriptions
+    {SWITCH, "Passieve modus",         26} switch passive mode on/off
+    {SWITCH, "Symlinks analyseren",    27}  switch symlink resolving on/off
+    {SEP}
+    {ACTION, "Ins&tellingen",          16}  invoke editor on nftp.ini
+# I suggest next line should be left in English :-}
+    {ACTION, "Taa&l (Language)",       91}  select language
+    {ACTION, "L&ettertype...",         93} select font for NFTP window
+    {ACTION, "Registratiecode...",     92}  enter registration information
+}

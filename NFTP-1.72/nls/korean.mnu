@@ -1,0 +1,158 @@
+#
+# see syntax explanations in english.mnu if interested
+#
+
+main
+{
+    {SUBMENU, "&S 사이트",   Sites}
+    {SUBMENU, "&F 파일",     Files}
+    {SUBMENU, "&V 보기",     View}
+    {SUBMENU, "&T 전송",     Transfer}
+    {SUBMENU, "&O 옵션",     Options}
+    {SUBMENU, "&H 도움말",   Help}
+}
+
+Sites
+{
+    {ACTION, "&B 북마크...",            10}  login from bookmarks
+    {ACTION, "&H 히스토리...",              17}  history
+    {ACTION, "&S 북마크 저장...",        35}  save host/dir as bookmark
+    {SUBMENU, "&F FTP 검색", FTPSearch} -- perhaps leave as-is FTP Search trademark?
+    {SUBMENU, "&Passwords", Passwords}
+    {SEP}
+    {ACTION, "&U URL열기...",             18}  open URL
+    {ACTION, "&L 로긴...",                11}  login
+    {ACTION, "접속 종료...",               13}  log off
+    {ACTION, "&C 연결확인",        22}  send NOOP
+    {ACTION, "&e 명령 보냄...",         24}  quote command
+    {SEP}
+    {ACTION, "일시중지 (유닉스에서만)",     112}  suspend
+#   {ACTION, "강제종료",                     9}  crash and burn
+    {ACTION, "&x 마침...",                 14}  exit NFTP
+}
+
+Passwords
+{
+    {ACTION, "&Edit passwords...",   28} edit passwords
+    {ACTION, "Change &keyphrase...", 29} change keyphrase for password encryption
+}
+
+Files
+{
+    {ACTION, "&M 디렉토리 만듦...",                53}  create directory
+    {ACTION, "&e 이름바꿈...",                        54}  rename file/directory
+    {ACTION, "&D 지움...",                        52}  delete file/dir
+    {ACTION, "&a Change access rights",             79}  change access rights
+    {SEP}
+#   {ACTION, "&n 디렉토리에 들어감",                  71}  change into dir under cursor
+    {ACTION, "&C 디렉토리 바꿈...",              74}  input dir and change to it
+    {ACTION, "&o 루트디렉토리로 감",         72}  change to root dir
+    {ACTION, "&R 디렉토리 다시 읽음",                70}  re-read directory
+    {ACTION, "&l 디렉토리목록 저장...",                  45}  save directory listing
+    {ACTION, "&i 로컬드라이브 변경...",            75}  change local drive
+    {ACTION, "&s 디렉토리 크기알아보기",            57}  traverse directory and compute its size
+}
+
+View
+{
+    {ACTION, "&d 디렉토리모드 변경",             32}  switch between raw/parsed modes
+    {ACTION, "&C 콘트롤/디렉토리 화면 변경",                30}  switch between CC and dir
+    {ACTION, "&r 원격/로컬 화면 변경",               31}  switch between local/remote
+    {SWITCH, "S&plit screen",                      37}  make screen look like NC
+    {SWITCH, "Display file date/&time",            38}  show/hide file timestamps in panels
+    {SWITCH, "&Mini status",                       39}  show/hide mini-status field
+    {SEP}
+    {ACTION, "&V 파일 보기",                         50}  view w/int viewer
+    {ACTION, "&w 외부프로그램으로 파일보기",                51}  view w/ext viewer
+    {ACTION, "&L 설명 불러오기...",              76}  load 00index.txt file
+    {SUBMENU, "  정렬",      Sort}
+    {SEP}
+    {ACTION, "&s 화면 다시그리기",                    36}  repaint screen
+}
+
+Sort
+{
+    {ACTION, "&n 이름순 정렬",        60}  sort by name
+    {ACTION, "&x 확장자순 정렬",   61}  sort by extension
+    {ACTION, "&s 크기순 정렬",        63}  sort by size
+    {ACTION, "&t 시간순 정렬",        62}  sort by date
+    {ACTION, "&U 정렬하지 않음",            64}  make unsorted
+    {ACTION, "&R 역순 정렬",  65}  reverse sort order
+}
+
+Transfer
+{
+    {ACTION, "&Copy...",                   77}  copy between remote/local
+#   {ACTION, "&D 받기...",               40}  download
+#   {ACTION, "&e 모두 받기...",    42}  d/l from all dirs
+    {ACTION, "&n 이름지정해서 받기...",       44}  d/l by name
+    {ACTION, "&W WGET으로 받기...",     46}  launch wget to retrieve files
+#   {ACTION, "&U 올리기...",                 41}  upload
+#   {ACTION, "&v 모두 올리기...",      43}  u/l from all dirs
+    {SEP}
+    {SUBMENU, "&Select", Select}
+    {SUBMENU, "&Mirror", Mirror}
+    {SWITCH, "&B BINARY 모드변경",         21}  switch ASCII/BINARY
+    {ACTION, "&o 정보보기",                 15}  get current status
+    {SEP}
+#   {SWITCH, "Limit throughput",           98}  limit throughput
+    {ACTION, "Skip file",                  47}  skip file during transfer
+    {ACTION, "Stop transfer",              48}  stop transfer
+    {ACTION, "Restart transfer",           49}  abort and restart transfer
+    {SWITCH, "Pause transfer",             58}  pause transfer
+}
+
+Select
+{
+    {ACTION, "&S 선택/선택취소",           82}  select file under cursor
+    {ACTION, "&m mask로 선택...",         83}  select by mask
+    {ACTION, "&k mask로 선택취소...",       84}  deselect by mask
+    {ACTION, "&a 모두 선택",                80}  select all files
+    {ACTION, "&l 모두 선택취소",              81}  deselect all files
+    {ACTION, "&r 모든 디렉토리의 파일 선택취소",      87}  deselect all files
+    {ACTION, "&I 선택 반전",          85}  invert selection
+    {ACTION, "Export list of marked...",   19}  export list of marked files
+    {ACTION, "Review list of marked...",   12}  review list of marked files/dirs
+}
+
+Mirror
+{
+    {ACTION, "&Downloading...",               66} synchronize local with remote (download)
+    {ACTION, "&Uploading...",                 67} synchronize remote with local (upload)
+    {SWITCH, "Delete unmatched files",        68} switch: delete/keep unmatched files
+    {SWITCH, "Include &subdirectories",       69} switch: synchronize subdirs?
+}
+
+Help
+{
+    {ACTION, "&H 도움말",             1}  Help
+    {ACTION, "&M 기본 도움말",        2}  general help
+    {ACTION, "&C 간단한 도움말",     3}  short help
+    {ACTION, "&U 메뉴 사용법",      7}  using menus
+    {SEP}
+    {ACTION, "NFTP 업데이트",       90}  connect to NFTP site
+    {ACTION, "&A NFTP란...",    6}  displays time of build
+}
+
+FTPSearch
+{
+    {ACTION, "&F FTP검색으로 찾기...", 120} find with FTPSearch
+    {ACTION, "&L 최근 검색 결과...", 122}, display results of last search
+    {ACTION, "&S 서버...", 121} define FTPSearch servers
+}
+
+Options
+{
+    {SWITCH, "  Use proxy",        25}  enable/disable proxy
+    {SWITCH, "  플랙사용",               23}  use/disable NLST with flags
+    {SWITCH, "  Show descriptions",                 34}  show/hide descriptions
+    {SWITCH, "  Passive mode",      26} switch passive mode on/off
+    {SWITCH, "  Resolve symlinks",  27}  switch symlink resolving on/off
+    {SEP}
+    {ACTION, "&t 설정변경",           16}  invoke editor on nftp.ini
+# I suggest next line should be left in English :-}
+    {ACTION, "&Language",        91}  select language
+    {ACTION, "&F 폰트...", 93} select font for NFTP window
+    {ACTION, "등록 코드...",   92}  enter registration information
+}
+

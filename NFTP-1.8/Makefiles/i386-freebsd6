@@ -1,0 +1,10 @@
+ARCHIVER = tar
+ARCHIVER_FLAGS = cf
+COMPRESSOR = gzip
+LIBTERMCAP = -ltermcap
+INTL_LIBS = -lintl -liconv
+TARGETS = nftp_unix_term nftp_unix_x11
+
+strip:
+	strip $(TARGETS)
+

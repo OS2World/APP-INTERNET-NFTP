@@ -1,0 +1,157 @@
+#
+# see syntax explanations in english.mnu if interested
+#
+
+main
+{
+    {SUBMENU, "&Palvelin",  Sites}
+    {SUBMENU, "&Tiedosto",  Files}
+    {SUBMENU, "&N„yt„",     View}
+    {SUBMENU, "&Siirto",    Transfer}
+    {SUBMENU, "&Asetukset", Options}
+    {SUBMENU, "&Ohje",      Help}
+}
+
+Sites
+{
+    {ACTION, "Kirjan&merkit...",         10}  login from bookmarks
+    {ACTION, "&Historia...",             17}  history
+    {ACTION, "&Tallenna kirjanmerkki...",35}  save host/dir as bookmark
+    {SUBMENU, "&FTP Search",      FTPSearch}  -- FTP Search is a trademark? --
+    {SUBMENU, "S&alasanat",       Passwords}
+    {SEP}
+    {ACTION, "Avaa &URL...",             18}  open URL
+    {ACTION, "&Sis„„nkirjaus...",        11}  login
+    {ACTION, "&Katkaise yhteys...",      13}  log off
+    {ACTION, "Tarkista &yhteys",         22}  send NOOP
+    {ACTION, "L„het„ k&omento...",       24}  quote command
+    {SEP}
+    {ACTION, "Keskeyt„ (vain Unix)",    112}  suspend
+#   {ACTION, "Kaadu!",                    9}  crash and burn
+    {ACTION, "&Lopeta...",               14}  exit NFTP
+}
+
+Passwords
+{
+    {ACTION, "&Muuta salasana...",   28} edit passwords
+    {ACTION, "Muuta &avainlause...", 29} change keyphrase for password encryption
+}
+
+Files
+{
+    {ACTION, "&Luo hakemisto...",                 53}  create directory
+    {ACTION, "&Nime„ uudelleen...",               54}  rename file/directory
+    {ACTION, "&Poista...",                        52}  delete file/dir
+    {ACTION, "Muuta k„ytt”oikeuksia",             79}  change access rights
+    {SEP}
+#   {ACTION, "Vaihda valittuun hakemistoon",      71}  change into dir under cursor
+    {ACTION, "&Vaihda hakemisto...",              74}  input dir and change to it
+    {ACTION, "Siirry &juurihakemistoon",          72}  change to root dir
+    {ACTION, "Lue hakemisto &uudelleen",          70}  re-read directory
+    {ACTION, "&Tallenna tiedosto lista...",       45}  save directory listing
+    {ACTION, "Vaihda paikallinen &asema...",      75}  change local drive
+    {ACTION, "Laske hakemiston &koko",            57}  traverse directory and compute its size
+}
+
+View
+{
+    {ACTION, "&K„sitelty/k„sittelem„t”n",          32}  switch between raw/parsed modes
+    {ACTION, "FTP &ohjaus yhteys/hakemisto",       30}  switch between CC and dir
+    {ACTION, "&Et„j„rjestelm„/paikallinen",        31}  switch between local/remote
+    {SWITCH, "&Jaettu n„ytt”",                     37}  make screen look like NC
+    {SWITCH, "Tiedoston &p„iv„ys",                 38}  show/hide file timestamps in panels
+    {SWITCH, "N„yt„ &mini-tila kentt„",            39}  show/hide mini-status field
+    {SEP}
+    {ACTION, "&N„yt„ tiedosto (sis.)",             50}  view w/int viewer
+    {ACTION, "N„yt„ tiedosto (&ulk.)",             51}  view w/ext viewer
+    {ACTION, "L&ataa kuvaukset...",                76}  load 00index.txt file
+    {SUBMENU, "&Lajittelu",                      Sort}
+    {SEP}
+    {ACTION, "N„yt”n &virkistys",                  36}  repaint screen
+}
+
+Sort
+{
+    {ACTION, "&Nimen mukaan",        60}  sort by name
+    {ACTION, "P&identeen mukaan",    61}  sort by extension
+    {ACTION, "&Koon mukaan",         63}  sort by size
+    {ACTION, "&P„iv„yksen mukaan",   62}  sort by date
+    {ACTION, "&Lajittelematon",      64}  make unsorted
+    {ACTION, "&Toisinp„in",          65}  reverse sort order
+}
+
+Transfer
+{
+    {ACTION, "&Copy...",                   77}  copy between remote/local
+#   {ACTION, "&Hae tiedosto...",           40}  download
+#   {ACTION, "Hae kaikki...",              42}  d/l from all dirs
+    {ACTION, "Hae &nimell„...",            44}  d/l by name
+    {ACTION, "Hae &WGET:n avulla...",      46}  launch wget to retrieve files
+#   {ACTION, "&L„het„...",                 41}  upload
+#   {ACTION, "L„het„ kaikki...",           43}  u/l from all dirs
+    {SEP}
+    {SUBMENU, "&Merkitse",             Select}
+    {SUBMENU, "P&eilaus",              Mirror}
+    {SWITCH,  "&Binary siirto",      21}  switch ASCII/BINARY
+    {ACTION,  "N„yt„ &tila",               15}  get current status
+    {SEP}
+#   {SWITCH, "Rajoita siirtonopeutta",     98}  limit throughput
+    {ACTION, "&Ohita tiedosto",            47}  skip file during transfer
+    {ACTION, "&Peruuta siirto",            48}  stop transfer
+    {ACTION, "&Aloita siirto uudelleen",   49}  abort and restart transfer
+    {SWITCH, "&Keskeyt„ siirto",           58}  pause transfer
+}
+
+Select
+{
+    {ACTION, "Lis„„/poista &merkint„",          82}  select file under cursor
+    {ACTION, "Merkitse peitteell„...",          83}  select by mask
+    {ACTION, "Poista merkint„ peitteell„...",   84}  deselect by mask
+    {ACTION, "Merkitse &kaikki",                80}  select all files
+    {ACTION, "Poista merkinn„t &hakemistosta",  81}  deselect all files
+    {ACTION, "Poista kaikki merkinn„t",         87}  deselect all files
+    {ACTION, "K„„nn„ merkinn„t &toisinp„in",    85}  invert selection
+    {ACTION, "Tallenna &lista merkityist„...",  19}  export list of marked files
+    {ACTION, "Review list of marked...",   12}  review list of marked files/dirs
+}
+
+Mirror
+{
+    {ACTION, "&Hae...",                       66} synchronize local with remote (download)
+    {ACTION, "&L„het„...",                    67} synchronize remote with local (upload)
+    {SWITCH, "&Poista poistetut tiedostot",   68} switch: delete/keep unmatched files
+    {SWITCH, "Sis„llyt„ &alihakemistot",      69} switch: synchronize subdirs?
+}
+
+Help
+{
+    {ACTION, "&Ohje",                 1}  Help
+    {ACTION, "&Yleinen ohje",         2}  general help
+    {ACTION, "&Lyhyt ohje",           3}  short help
+    {ACTION, "&Valikoiden k„ytt”ohje",7}  using menus
+    {SEP}
+    {ACTION, "&P„ivit„ NFTP",        90}  connect to NFTP site
+    {ACTION, "&Tietoja NFTP:st„...",  6}  displays time of build
+}
+
+FTPSearch
+{
+    {ACTION, "&Etsi tiedostoja...",      120} find with FTPSearch
+    {ACTION, "Edellisen haun &tulos...", 122} display results of last search
+    {ACTION, "&Palvelimet...",           121} define FTPSearch servers
+}
+
+Options
+{
+    {SWITCH, "K„yt„ &v„limuistipalvelinta (proxy)", 25} enable/disable proxy
+    {SWITCH, "K„yt„ NLST &optioita",                23} use/disable NLST with flags
+    {SWITCH, "&N„yt„ kuvaukset",                    34} show/hide descriptions
+    {SWITCH, "&Passiivinen data yhteys",            26} switch passive mode on/off
+    {SWITCH, "Seuraa viitteit„ (&symlink)",         27} switch symlink resolving on/off
+    {SEP}
+    {ACTION, "&Muuta asetuksia",                    16} invoke editor on nftp.ini
+# I suggest next line should be left in English :-}
+    {ACTION, "Kieli (&Language)",                   91} select language
+    {ACTION, "&Kirjasin...",                        93} select font for NFTP window
+    {ACTION, "&Rekister”inti...",                   92} enter registration information
+}

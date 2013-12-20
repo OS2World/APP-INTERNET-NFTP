@@ -1,0 +1,46 @@
+#
+#   OS/2, emx/gcc
+#
+
+ARCHIVER = zip
+ARCHIVER_FLAGS = -9 -q -r
+COMPRESSOR = echo
+LIBS1 = -lsocket
+INTL_LIBS = -lintl -liconv
+
+TARGETS = nftp_os2.exe nftp_pm.exe
+
+strip:
+	emxbind -s -q nftp_os2.exe 
+	emxbind -s -q nftp_pm.exe 
+
+distcopy2:
+	mv nftp-$(VERSION)/nftp_os2.exe nftp-$(VERSION)/nftp.exe
+	mv nftp-$(VERSION)/nftp_pm.exe nftp-$(VERSION)/nftppm.exe
+	cd ..\install\$(PLATFORM) & for %a in (*.cmd) do eautil %a /S
+	rm -rf ../install/$(PLATFORM)/EAS
+	icons.os2\addicon.cmd icons.os2\install.ico install\$(PLATFORM)\install.cmd
+	cp icons.os2\nftp.ico nftp-$(VERSION)
+	cp icons.os2\nftppm.ico nftp-$(VERSION)
+	
+x11: nftp_x.exe nftp_x11.exe
+	
+xdistrib: x11
+	rm -rf nftp-$(VERSION)
+	mkdir nftp-$(VERSION)
+	emxbind -s -q nftp_x.exe
+	emxbind -s -q nftp_x11.exe
+	mv nftp_x.exe nftp-$(VERSION)/nftpx.exe
+	mv nftp_x11.exe nftp-$(VERSION)/xnftp.exe
+	cp ../install/i386-os2x11/readme.xfree86 nftp-$(VERSION)/readme.xfree86
+	$(ARCHIVER) $(ARCHIVER_FLAGS) nftp-$(VERSION)-$(PLATFORM)x11.$(ARCHIVER) nftp-$(VERSION)
+	$(COMPRESSOR) nftp-$(VERSION)-$(PLATFORM)x11.$(ARCHIVER)
+	mv nftp-$(VERSION)-$(PLATFORM)x11.* ..
+	
+install: exe strip
+	cp -f nftp_os2.exe d:/apps/nftp/nftp.exe
+	cp -f nftp_pm.exe d:/apps/nftp/nftppm.exe
+
+nftppm.res: nftppm.rc icons.os2/nftppm.ico
+	rc -i d:\emx\include -i ..\libraries\include -r nftppm.rc
+

@@ -1,0 +1,167 @@
+Public release of NFTP source
+
+I am into other interesting things for quite some time. NFTP is no longer in active or inactive development, and the code to unlock shareware versions has been published 23 November 2008. The sources for NFTP are now (Jan 2011) released for everybody to compile, borrow parts and even possibly improve. I am releasing sources under MIT license: anybody can use, nobody can claim authorship or ownership. So NFTP source code and any part of it can be: 1) compiled, run and distributed in unmodified and modified form; 2) reused in other software projects, including closed source projects; 3) improved and further released under NFTP title. The full text of the license is included into NFTP source distribution and is also quoted here:
+
+Copyright (c) 1994-2011 Sergey Ayukov
+
+Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation 
+files (the "Software"), to deal in the Software without restriction, 
+including without limitation the rights to use, copy, modify, merge, 
+publish, distribute, sublicense, and/or sell copies of the Software, 
+and to permit persons to whom the Software is furnished to do so, 
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included 
+in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS 
+OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL 
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR 
+OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, 
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR 
+OTHER DEALINGS IN THE SOFTWARE.
+
+What is released and where
+
+Source code can be downloaded at ftp://ftp.ayukov.com/pub/src/. Use any FTP client you like, including NFTP or your web browser.
+
+Release consists of several components. First of all, there are THREE sets of NFTP sources. They are assigned version numbers 1.72, 1.8 and 2.0.
+
+Version 1.72 (nftp-1.72.zip)
+corresponds to last binary shareware release plus minor fixes; even licensing routines are there. It is most complete at this moment, so this is the version if you want to use and distribute NFTP.
+
+Version 1.8 (nftp-1.8.zip)
+An attempt to evolve 1.72: some minor improvements here and there, but: no built-in help; no internationalization. Homemade NLS system has been replaced with gettext, but no translations are provided. Some parts were omitted: FTPSearch, licensing, PKFA. This is probably the version to start with if you want to develop NFTP further.
+
+Version 2.0 (nftp-2.0.zip)
+Abandoned attempt to develop version which can connect to several sites at once and transfer files between them. Can also open two panels with local directories. Personally I am using it as some kind of file manager on X11. You shouldn't probably touch this version at all, as it is very outdated in many aspects, and code has significantly diverged from mainstream 1.72.
+
+Libraries
+
+Five libraries accompany NFTP sources. I use them for differerent projects, not just NFTP. One has to build and install them prior to building NFTP. Direct links below are for initial release; new versions of libraries can be released later. Libraries are:
+
+libasvtools (libasvtools-1.0.0.tar.gz)
+General routines, some kind of libc extension. Uses autoconf under Unixes and BeOS, custom Makefiles under OS/2 and Windows.
+
+libcrypto (libcrypto-1.0.tar.gz)
+Several routines from openssl, used for shareware code validation, secure authentication, password encryption. Shareware validation is no longer relevant, secure authentication (PKFA) isn't implemented in any FTP server software, so only password encryption is really useful. Uses homebrewn build system (Makefiles).
+
+libfly (libfly-1.0.tar.gz)
+Multiplatform user interface toolkit. That's how NFTP runs on that many OSes with different interfaces. Library supports: ANSI console on Unixes, BeOS, xterm for OS/2; X11 on Unixes, OS/2; text console and Presentation Manager on OS/2; text console, graphical interface on Windows (95, 98, NT, 2000, XP, Vista, Seven). Uses homebrewn build system (Makefiles).
+
+libftpsearch (libftpsearch-1.0.tar.gz)
+Library for accessing FTPSearch servers. libftpsearch is now useless as I am not aware of any public FTPSearch servers now. Uses homebrewn build system (Makefiles).
+
+libmanycode (libmanycode-1.0.0.tar.gz)
+Homemade codepage conversion. Should be replaced with libiconv except part which autodetects Cyrillic encodings. Uses autoconf under Unixes and BeOS, custom Makefiles under OS/2 and Windows.
+
+A side note. Actually I hate autoconf since times when I was using Intel 486 base notebook as my development machine. Right now I hate autoconf due to its complexity and lack of direct support of non-Unix systems. libasvtools and libmanycode were autoconf-ed when used in other software project. Despite all my feelings towards autoconf, I don't want to return back to homebrew build system for these libraries because poor standard is better than no standard.
+Installing NFTP and library sources
+
+NFTP was never intended as public project, so its build system is far from understandable and easy to set up. Besides I had to be able to build on Unixes without access to root privileges. Nevertheless I think NFTP can be built by person other than myself, and I am certainly willing to help.
+One of the requirements is the source tree structure. Select place where source will reside and be compiled. You only need about 20MB of space. This directory will be called Programs from now on. Usually I use D:\Programs on Windows, ~/Programs on Unixes. Create subdirectory 'libraries' in Programs. Unpack libraries into Programs/libraries. Unpack NFTP sources into Programs. You should get the following directory structure:
+
+Programs/
+         libraries/
+                   libasvtools-1.0.0/
+                   libcrypto/
+                   libfly/
+                   libftpsearch/
+                   libmanycode-1.0.0/
+         NFTP-1.72/          
+         NFTP-1.8/          
+         NFTP-2.0/          
+
+Of course you don't have to unpack all NFTP versions.
+Building on Unixes
+
+Depending on the kind of Unix, this can be very easy or very frustrating. You need GCC, GNU make and sometimes bash. On some Unixes you'll have to install libtermcap or some equivalent (ncurses). 64-bit variations should work, but were not adequately tested. I did build NFTP for the following systems: Linux on DEC Alpha (64-bit), OSF/1 on DEC Alpha (versions 3, 4), FreeBSD on i386 (versions 2-8), Linux on i386 (libc5, libc6), Solaris on i386 (versions 2.5, 7, 8, 10), AIX 4 on RS/6000, Solaris on SPARC (versions 2.5, 7), Linux on SPARC.
+System-specific notes
+FreeBSD 8.1
+Install bash, gettext, libiconv, gmake, unzip (for unpacking NFTP sources). I always install from packages and don't bother to compile.
+Debian 5
+Install GCC (!), GNU make, X11 development (libx11-dev), libncurses development (libncurses5-dev) through Synaptic.
+Solaris 10
+Install bash, gcc, libintl, GNU make (www.sunfreeware.com). Add /usr/local/bin, /usr/ccs/bin to PATH. I was using 32-bit GCC on 64-bit system and it seemed to work fine.
+
+If your system is not autodetected, you'll have to edit Makefiles/what-platform and then create new system-specific file in Makefiles. Use i386-freebsd8 as an example. For some systems you don't have to change anything, just copy this sample under new name.
+
+Start with building libraries. Change to Programs/libraries/libasvtools-1.0.0, run 'sh build-unix.sh'. Then change to Programs/libraries/libmanycode-1.0.0, again run 'sh build-unix.sh'. The rest can be built in arbitrary order; change to lib directory and run 'make all install'. If you are seeing messages like: "Makefile.inc", line 4: Missing dependency operator then you are running native make utility, not GNU make. Type 'gmake all install'.
+
+After libraries, change to NFTP source directory, e.g. Programs/NFTP-1.72 and run GNU make. You should get nftp_unix_term and nftp_unix_x11.
+Building on Windows
+
+I am using Windows XP; Vista, Seven and 2000 probably can be used too. I don't recommend 95, 98, ME. As a prerequisite, you need MinGW and some packages (nothing special, everything is free and readily available in compiled form). To speed up and simplify things, I have uploaded my MinGW directory (download, 80MB). Unzip it into C:\, you'll get C:\MINGW and rather complete set of MinGW development tools inside (except MSYS). Add line
+
+PATH=%PATH%;C:\MINGW\BIN
+
+to your C:\AUTOEXEC.BAT. Create new AUTOEXEC.BAT if it does not exist. Reboot. If you don't want to use my preassembled MinGW, use your own. Build errors will indicate what is missing. One of the widely distributed packages contains rm which gives error when rm -f is run against missing files! You'll need GNU Make, named 'gmake'.
+
+Start with compiling and installing libraries. libasvtools is first. Change to Programs/libraries/libasvtools, run build-win32.bat . Only warnings must be about difference in pointer signedness. Result is asvtools.h in Programs/libraries/include and libasvtools.a in Programs/libraries/lib.
+
+If you're seeing strange messages and errors, check your environment variables. Windows is detected in Makefiles by checking for environment variable 'windir' (in small case). Open command line prompt, type "set", press Enter and check output. You should see a line like:
+
+windir=C:\WINDOWS
+
+If not, please contact myself and provide information about your version of Windows.
+
+Next library is libmanycode, procedure is the same. You will get manycode.h in Programs/libraries/include, libmanycode.a in Programs/libraries/lib.
+
+libasvtools and libmanycode use specialized BAT files because these libraries are autoconf-based, and require handcrafted Makefiles under Windows and OS/2 (these Makefiles are named Makefile.os2). The rest of the libraries do not use autoconf. Building and installing them is simpler, just change to Programs/libraries/libfly for example and run 'gmake clean all install'. Again note that GNU make is required.
+
+When libraries are built and installed in Programs/libraries/include and Programs/libraries/lib, you can build NFTP itself.
+
+Change to Programs/NFTP-1.72 (for example), run "gmake clean all". In case of success, you'll get nftp_win32cons.exe (console version) and nftp_win32gui.exe (GUI version). GUI version may be somewhat unstable.
+Building on OS/2
+
+Let me remind that NFTP was born as OS/2-only software.
+
+Warning: as I have not built NFTP on OS/2 for quite some time, this information might be out of date.
+
+You'll need full emx package (not just runtime). It contains GCC and support libraries. Download emx at hobbes or at sourceforge. Install emx per its own instructions. Don't forget to modify PATH, so gcc and its tools can run from command line. Install GNU Make as gmake.exe.
+
+The rest of the building procedure is the same as for Win32 after installing MinGW.
+
+OS/2 is detected by presence of RUNWORKPLACE environment variable.
+Building on BeOS
+
+Warning: as I have not built NFTP on BeOS for quite some time, this information might be out of date. Unfortunately I don't have working BeOS installation anymore.
+
+As far as I recall, nothing special is needed; use the same procedure as on Unixes. BeOS is detected by presence of BE_HOST_CPU environment variable.
+
+I have tried to build on Haiku. 1.72 builds and attempts to run, but crashes in gethostbyname, probably due to memory corruption somewhere. 1.8 requires gettext which I haven't installed yet in Haiku. 2.0 builds but fails to resolve names. Therefore no working solution for Haiku exists at this moment. In any case building on Haiku is basically uncharted waters. My previous build for BeOS R4 runs but does not connect to any sites, like 2.0.
+Targets in Makefiles
+Makefiles in NFTP source directories have lots of targets. Not all of them are useful, and not all targets are defined for all NFTP versions. Below is the list of useful targets and what they do.
+all (all versions)
+build NFTP executables
+clean (all variables)
+delete executables, object files, intermediate and temporary files
+distrib (1.72)
+create archive for redistribution. Under OS/2 and Windows this creates simple archive, not installation packages
+sdistrib (1.72)
+under Unixes, this creates archive with statically linked executables
+xdistrib (1.72)
+create XFree86 binaries for OS/2
+Running NFTP
+
+NFTP searches its files in two directories, "System NFTP directory" (SysDir) and "User NFTP directory" (UserDir). On OS/2 and Windows, both are equal to installation directory (more correctly, the directory with NFTP executable). This creates problems on Vista and Seven; Windows does not want you to write to 'Program Files'. When NFTP is run from directory where it was compiled, UserDir and SysDir are set to this directory. On Unixes, UserDir is ~/.nftp (~/.nftp2 for version 2.0). SysDir is /usr/lib/nftp or /usr/local/lib/nftp. On BeOS, UserDir is also ~/.nftp; SysDir is either /boot/beos/etc/nftp or /boot/home/config/etc/nftp.
+
+After successful build one can attempt to run compiled software. NFTP needs some files and creates other files. Below is the short summary.
+File 	Usage 	Looked in
+nftp.i 	required 	UserDir, then SysDir
+nls files	required 	UserDir, then SysDir
+nftp.bmk 	bookmarks 	UserDir
+nftp.ini 	stores custom settings 	UserDir
+nftp.hst 	site history 	UserDir
+nftp.psw 	cached passwords 	UserDir
+nftp.cfg 	stores runtime settings 	UserDir
+
+All versions need file nftp.i . This file is seeked both in UserDir and SysDir. Versions 1.72, 2.0 require NLS files. These files come in pairs for each language, e.g. dutch.nls, dutch.mnu. Files must reside in the same directory as executable on Windows and OS/2, and in 'nls' subdirectory of UserDir/SysDir on Unixes. Version 1.8 needs english.mnu file, put it into UserDir or SysDir.
+return to main page
+
+Sergey Ayukov
+Created 4 Jan 2011, Last modified 10 Jan 2011.
+Contact: don't hesitate to write to asv -at- ayukov.com.
+Good luck! 

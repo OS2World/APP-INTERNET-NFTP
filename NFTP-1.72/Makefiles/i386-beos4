@@ -1,0 +1,16 @@
+ARCHIVER = zip
+ARCHIVER_FLAGS = -q -r
+LIBTERMCAP = -ltermcap
+COMPRESSOR = echo
+
+TARGETS = nftp_beos_term
+
+strip: force
+	strip $(TARGETS)
+
+distcopy2:
+	mv nftp-$(VERSION)/nftp_beos_term nftp-$(VERSION)/nftp
+	chmod +x nftp-$(VERSION)/*.sh nftp-$(VERSION)/NFTP
+
+nlsconv: nlsconv-beos
+

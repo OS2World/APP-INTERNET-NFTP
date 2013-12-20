@@ -1,0 +1,157 @@
+#
+# see syntax explanations in english.mnu if interested
+#
+
+main
+{
+    {SUBMENU, "&Steder",     Sites}
+    {SUBMENU, "&Filer",     Files}
+    {SUBMENU, "&Vis",      View}
+    {SUBMENU, "&Overfõr",  Transfer}
+    {SUBMENU, "O&ptions",        Options}
+    {SUBMENU, "&Hjëlp",      Help}
+}
+
+Sites
+{
+    {ACTION, "&Bogmërker...",            10}  login from bookmarks
+    {ACTION, "&Historie...",              17}  history
+    {ACTION, "&Gem bogmërke...",        35}  save host/dir as bookmark
+    {SUBMENU, "&FTP Search", FTPSearch} -- perhaps leave as-is FTP Search trademark?
+    {SUBMENU, "&Passwords", Passwords}
+    {SEP}
+    {ACTION, "èben &URL...",             18}  Üben URL
+    {ACTION, "&Login...",                11}  login
+    {ACTION, "L&ogoff...",               13}  log off
+    {ACTION, "&Check forbindelse",        22}  send NOOP
+    {ACTION, "S&end kommando...",         24}  quote command
+    {SEP}
+    {ACTION, "Suspender (kun Unix)",    112}  suspend
+#   {ACTION, "Crash",                     9}  crash and burn
+    {ACTION, "&Afslut...",                 14}  exit NFTP
+}
+
+Passwords
+{
+    {ACTION, "&Edit passwords...",   28} edit passwords
+    {ACTION, "Change &keyphrase...", 29} change keyphrase for password encryption
+}
+
+Files
+{
+    {ACTION, "&Opret katalog...",                53}  create directory
+    {ACTION, "O&mdõb...",                        54}  rename file/directory
+    {ACTION, "S&let...",                         52}  delete file/dir
+    {ACTION, "ZmÏnit p¯Ìstupov· pr·va",          79}  change access rights
+    {SEP}
+#   {ACTION, "&Skift katalog",                   71}  change into dir under cursor
+    {ACTION, "S&kift katalog til...",            74}  input dir and change to it
+    {ACTION, "Skift til &rodkatalog",            72}  change to root dir
+    {ACTION, "&Genindlës katalog",               70}  re-read directory
+    {ACTION, "Gem l&istning...",                 45}  save directory listing
+    {ACTION, "Skift lokalt &drev...",            75}  change local drive
+    {ACTION, "Beregn katalog&stõrrelse",         57}  traverse directory and compute its size
+}
+
+View
+{
+    {ACTION, "&Skift katalogmodus",             32}  switch between raw/parsed modes
+    {ACTION, "&Kontroller forbindelse",                30}  switch between CC and dir
+    {ACTION, "Skift fjern/lokal",               31}  switch between local/remote
+    {SWITCH, "S&plit screen",                      37}  make screen look like NC
+    {SWITCH, "Display file date/&time",            38}  show/hide file timestamps in panels
+    {SWITCH, "Mini status",                       39}  show/hide mini-status field
+    {SEP}
+    {ACTION, "&Vis fil",                         50}  view w/int viewer
+    {ACTION, "Vis &med eksternt program",                51}  view w/ext viewer
+    {ACTION, "&Hent beskrivelser...",              76}  load 00index.txt file
+    {SUBMENU, "So&rter",      Sort}
+    {SEP}
+    {ACTION, "Gentegn skërm",                    36}  repaint screen
+}
+
+Sort
+{
+    {ACTION, "Sorter efter &navn",        60}  sort by name
+    {ACTION, "Sorter efter &endelse",   61}  sort by extension
+    {ACTION, "Sorter efter &stõrrelse",        63}  sort by size
+    {ACTION, "Sorter efter &tid",        62}  sort by date
+    {ACTION, "&Usorteret",            64}  make unsorted
+    {ACTION, "&Omvendt sortering",  65}  reverse sort order
+}
+
+Transfer
+{
+    {ACTION, "&Copy...",                   77}  copy between remote/local
+#   {ACTION, "&Hent...",               40}  download
+#   {ACTION, "Hent al&t...",    42}  d/l from all dirs
+    {ACTION, "Hent med &navn...",       44}  d/l by name
+    {ACTION, "Hent med &WGET...",     46}  start wget for at hente filer
+#   {ACTION, "An&bring...",                 41}  upload
+#   {ACTION, "Anb&ring alt...",      43}  u/l from all dirs
+    {SEP}
+    {SUBMENU, "&Select", Select}
+    {SUBMENU, "&Mirror", Mirror}
+    {SWITCH, "Binër",         21}  switch ASCII/BINARY
+    {ACTION, "Vis inf&ormation",                 15}  get current status
+    {SEP}
+#   {SWITCH, "Limit throughput",           98}  limit throughput
+    {ACTION, "Skip file",                  47}  skip file during transfer
+    {ACTION, "Stop transfer",              48}  stop transfer
+    {ACTION, "Restart transfer",           49}  abort and restart transfer
+    {SWITCH, "Pause transfer",             58}  pause transfer
+}
+
+Select
+{
+    {ACTION, "&Vëlg/fravëlg",           82}  select file under cursor
+    {ACTION, "Vëlg med &maske...",         83}  select by mask
+    {ACTION, "Fravëlg med mas&ke...",       84}  deselect by mask
+    {ACTION, "Vëlg &alle",                80}  select all files
+    {ACTION, "Fravëlg a&lle",              81}  deselect all files
+    {ACTION, "F&ravëlg i alle kataloger",      87}  deselect all files
+    {ACTION, "&Inverter valg",          85}  invert selection
+    {ACTION, "Export list of marked...",   19}  export list of marked files
+    {ACTION, "Review list of marked...",   12}  review list of marked files/dirs
+}
+
+Mirror
+{
+    {ACTION, "&Downloading...",               66} synchronize local with remote (download)
+    {ACTION, "&Uploading...",                 67} synchronize remote with local (upload)
+    {SWITCH, "Delete unmatched files",        68} switch: delete/keep unmatched files
+    {SWITCH, "Include &subdirectories",       69} switch: synchronize subdirs?
+}
+
+Help
+{
+    {ACTION, "&Hjëlp",             1}  Help
+    {ACTION, "&Generel hjëlp",        2}  general help
+    {ACTION, "&Kort hjëlp",     3}  short help
+    {ACTION, "&Brugen af menuer",      7}  using menus
+    {SEP}
+    {ACTION, "Opdater NFTP",       90}  optag forbindelse til NFTP sted
+    {ACTION, "&Om NFTP...",    6}  displays time of build
+}
+
+FTPSearch
+{
+    {ACTION, "&Find med FTPSearch...", 120} find with FTPSearch
+    {ACTION, "Sidste sõgeresu&ltater...", 122}, display results of last search
+    {ACTION, "&Servere...", 121} define FTPSearch servers
+}
+
+Options
+{
+    {SWITCH, "Brug proxy",        25}  aktiver/deaktiver proxy
+    {SWITCH, "Brug flag",               23}  use/disable NLST with flags
+    {SWITCH, "Vis beskrivelser",                 34}  vis/skjul beskrivelser
+    {SWITCH, "Passive mode",      26} switch passive mode on/off
+    {SWITCH, "Resolve symlinks",  27}  switch symlink resolving on/off
+    {SEP}
+    {ACTION, "Ret inds&tillinger",           16}  invoke editor on nftp.ini
+# I suggest next line should be left in English :-}
+    {ACTION, "&Language",        91}  select language
+    {ACTION, "&Skrifttype...", 93} select font for NFTP window
+    {ACTION, "Registreringskode...",   92}  enter registration information
+}

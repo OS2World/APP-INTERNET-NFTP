@@ -1,0 +1,1759 @@
+#
+#     Language-specific file for NFTP 1.10+
+#
+#     Swedish
+
+{ M_JAN "Jan" }
+{ M_FEB "Feb" }
+{ M_MAR "Mar" }
+{ M_APR "Apr" }
+{ M_MAY "Maj" }
+{ M_JUN "Jun" }
+{ M_JUL "Jul" }
+{ M_AUG "Aug" }
+{ M_SEP "Sep" }
+{ M_OCT "Okt" }
+{ M_NOV "Nov" }
+{ M_DEC "Dec" }
+
+{ M_HBAR              "ƒ" } { M_VBAR              "≥" }
+{ M_CROSS             "≈" }
+{ M_FILL1             "∞" } { M_FILL2             "±" }
+{ M_FILL3             "≤" } { M_FILL4             "€" }
+{ M_LU                "⁄" } { M_RU                "ø" }
+{ M_LD                "¿" } { M_RD                "Ÿ" }
+{ M_LT                "√" } { M_RT                "¥" }
+{ M_UT                "¬" } { M_DT                "¡" }
+{ M_PLACEHOLDER       "˙" } { M_MARKSIGN          "*" }
+
+#  Bookmarks ----------------------------------------------------------
+
+{ M_CANTOPENBOOKMARKS1
+"kan inte skriva till bokmÑrkesfilen [%s]" }
+
+{ M_CANTOPENBOOKMARKS2
+"kan inte lÑsa bokmÑrkesfilen [%s]" }
+
+{ M_CANTOPENBOOKMARKS3
+"kan inte skriva îver bokmÑrkesfilen [%s]" }
+
+{ M_NO_BOOKMARKS
+"  Hittar inga bokmÑrken " }
+
+{ M_EMPTY_BOOKMARKSLIST
+"  BokmÑrkeslistan Ñr tom " }
+
+{ M_DELETE_BOOKMARK
+"  Radera bokmÑrket" "  %s ?  " }
+
+{ M_INSERT_BOOKMARK1
+" Ange ditt loginid (blankt fîr anonym): " }
+
+{ M_INSERT_BOOKMARK2
+" Ange vÑrddatorns namn eller IP adress: " }
+
+{ M_INSERT_BOOKMARK3
+" Ange katalog: " }
+
+{ M_CURRENT_BOOKMARKS
+" Aktuella bokmÑrken " }
+
+{ M_BOOKMARKS_CHANGED
+" BokmÑrkesinformation har Ñndrats.  "
+"  Spara den nya listan?  " }
+
+#  Prompts ------------------------------------------------------------
+
+{ M_USETAB
+" AnvÑnd Tab/Shift-Tab fîr att flytta mellan fÑlten " }
+
+{ M_CHOOSEDRIVE
+" Ange enhet " }
+
+{ M_SELECT_DIRECTORY
+" VÑlj startkatalog (tryck ENTER fîr att fortsÑtta) : " }
+
+{ M_ENTER_VERBATIM_COMMAND
+" Ange kommando att skickas ordagrannt : " }
+
+{ M_MKDIR_ENTER_NAME
+" Ange namnet pÜ den nya katalogen : " }
+
+{ M_ENTER_FIREWALL_USERID
+" Ange ditt FIREWALL anvÑndarid: " }
+
+{ M_ENTER_FIREWALL_PASSWORD
+" Ange ditt FIREWALL lîsenord: " }
+
+{ M_ENTER_USERID
+" Ange ditt anvÑndarid : " }
+
+{ M_ENTER_PASSWORD
+" Ange ditt lîsenord : " }
+
+{ M_ENTER_HOSTNAME
+" Ange vÑrddator[[:port]sîkvÑg] att logga in hos : " }
+
+{ M_ENTER_DIRECTORY
+" Byt katalog pÜ vÑrddatorn till : " }
+
+{ M_ENTER_SELECT_FILTER
+" Ange filter : " }
+
+{ M_RENAME_LOCAL_FILE
+" Var god byt namn pÜ befintlig fil : " }
+
+#  Pseudo-responses ------------------------------------------------------
+
+{ M_RESP_CANNOT_RESOLVE
+"Finner inte '%s'" }
+
+{ M_RESP_LOOKING_UP
+"Sîker efter '%s'" }
+
+{ M_RESP_TRYING_IP
+"Finner inte '%s', fîrsîker med IP nummer" }
+
+{ M_RESP_FOUND
+"Hittade '%s'" }
+
+{ M_RESP_NO_SOCKET
+"Kan inte fÜ kontakt, avbryter" }
+
+{ M_RESP_FAILED_TO_CONNECT
+"Kunde inte fÜ kontakt med port %u" }
+
+{ M_RESP_CONNECTED
+"Kontakt med %u" }
+
+{ M_RESP_CLOSING
+"StÑnger fîrbindelsekontroll" }
+
+{ M_RESP_LOGIN
+"Loggade in som '%s@%s'" }
+
+{ M_RESP_TRANSFER_DONE
+"ôverfîring klar; medelhastighet %u bytes/sek" }
+
+{ M_RESP_INIT_DONE
+"initiering() klar......" }
+
+#  Questions -------------------------------------------------------------
+
+{ M_TOO_BIG_FOR_INTVIEWER
+" Filen '%s' Ñr stor -- %ld bytes. "
+" Vill du fortfarande titta pÜ den med den interna filvisaren? " }
+
+{ M_REALLY_OVERWRITE
+" **** SKRIVER ôVER ****"
+""
+" Filen '%s' finns redan."
+" Den har samma storlek som vÑrddatorns fil. "
+" (Befintlig fil: %d bytes, vÑrddatorns fil: %d bytes) "
+" Vill du skriva îver den befintliga filen?" }
+
+{ M_OVERWRITE_RENAME_CANCEL
+" Filen '%s' finns redan!"
+" Den har samma storlek som vÑrddatorns fil. "
+" (Befintliga fil: %d bytes, vÑrddatorns fil: %d bytes) "
+" Esc - avbryt îverfîring " }
+
+{ M_OVERWRITE_RENAME_CANCEL2
+" Filen '%s' finns redan!"
+" Den Ñr STôRRE Ñn vÑrddatorns fil. "
+" (Befintliga fil: %d bytes, vÑrddatorns fil: %d bytes) "
+" Esc - avbryt îverfîring " }
+
+{ M_OVERWRITE_RENAME_CANCEL3
+" Skriv îver fil " " Byt namn pÜ fil " }
+
+{ M_REALLY_REGET
+" **** èTERUPPTAR ôVERFôRINGEN ****"
+""
+" Filen '%s' finns redan. "
+" Den Ñr MINDRE Ñn vÑrddatorns fil. "
+" (Befintlig fil: %d bytes, vÑrddatorns fil: %d bytes) " }
+
+{ M_REGET_RENAME_CANCEL
+" Filen '%s' finns redan! "
+" Den Ñr MINDRE Ñn vÑrddatorns fil. "
+" (Befintlig fil: %d bytes, vÑrddatorns fil: %d bytes) "
+" VÑlj 'FortsÑtt' fîr att Üteruppta îverfîringen "
+" Esc - avbryter îverfîringen " }
+
+{ M_REGET_RENAME_CANCEL2
+" FortsÑtt "
+" ErsÑtt fil "
+" Byt namn pÜ fil " }
+
+{ M_REALLY_TRANSFER_FROM
+"    ôverfîra fil(er) FRèN vÑrddator?    " }
+
+{ M_REALLY_TRANSFER_TO
+"    ôverfîra fil(er) TILL vÑrddator ?    " }
+
+{ M_REALLY_DELETE
+"    Radera fil(er) ?    " }
+
+{ M_REALLY_SAVE_BOOKMARK
+"  Spara katalog                       "
+"  %s %s : %s  "
+"  som bokmÑrke?  " }
+
+{ M_REALLY_EXIT
+"     Avsluta NFTP ?      " }
+
+{ M_REALLY_LOGOFF
+"  Logga av  %s ?  " }
+
+#  Miscellaneous text strings --------------------------------------------
+
+{ M_WELCOME
+" NFTP%s Tryck Shift-H fîr allmÑn information" }
+
+{ M_DISCONNECTING
+"   Bryter kontakten med %s   " }
+
+{ M_EOF_MARK
+""
+" ============  FILSLUT  ============ " }
+
+{ M_WRONG_REGCODE
+" Felaktig registreringskod angiven i nftp.ini. "
+" Kontrollera ditt namn och kod igen. Avsluta nu?" }
+
+{ M_RUNNING_UNREGISTERED
+"        Denna kopia av NFTP Ñr inte registrerad "
+""
+" Du kommer inte att kunna îverfîra filer stîrre Ñn %dKB. "
+""
+"    LÑs i dokumentationen om hur du registrerar NFTP."
+""
+"    StÑng av detta meddelandet, sÑtt 'message' till 0"
+"    under sektionen 'registration' i nftp.ini" }
+
+{ M_CCLINES
+" Kontroll av fîrbindelse : %u rader" }
+
+{ M_BINARY
+"BINéRT" }
+
+{ M_ASCII
+"ASCII " }
+
+{ M_TRANSFER_COMPLETED
+"ôverfîring klar; tryck pÜ en tangent fîr att fortsÑtta  " }
+
+{ M_HELP_ESC_TO_EXIT
+"  HjÑlp - Esc fîr att avsluta  " }
+
+{ M_STATUS
+" Totalt %u fil(er), %lu KBytes [%3s]  Markerade %u fil(er), %lu KBytes" }
+
+{ M_STATUS_BIN
+"BIN" }
+
+{ M_STATUS_ASC
+"ASC" }
+
+#  Fatal errors --------------------------------------------------------
+
+{ M_UNKNOWN_OS
+" OkÑnt operativsystem hos vÑrddatorn: "
+"    '%s',"
+" loggar ut... " }
+
+{ M_UNREGISTERED_TRANSFER
+" Du kan inte îverfîra filer stîrre Ñn %dKB "
+"        med den oregistrerade versionen. " }
+
+{ M_INI_BUILD_FAILED
+"Kunde inte lÑsa/konvertera nftp.ini."
+"kontrollera sîkvÑgen efter Ñldre versioner av NFTP.EXE och NFTP-OPT.EXE" }
+
+{ M_EMAIL_NOT_SET
+""
+"Du mÜste konfigurera nftp.ini fîre du startar NFTP. "
+"Du bîr Ütminstone ange din e-mail adress."
+"" }
+
+{ M_CONNECTION_LOST
+" Kontakten bruten." }
+
+{ M_NO_PASV_NOFIREWALLING
+" Denna vÑrd kan inte hantera PASV kommandon och "
+" kan dÑrfîr inte nÜs inifrÜn en firewall " }
+
+{ M_NO_PASV
+" Denna vÑrd kan inte hantera PASV kommandon. "
+" Var god Ñndra 'use-PASV-mode' instÑllningen till 0 " }
+
+{ M_CANT_CREATE_SEM
+" Allvarligt fel : kan inte skapa semaforer " }
+
+{ M_INI_UNREADABLE
+""
+"Finner inte nftp.ini; avslutar" }
+
+#  Transient messages --------------------------------------------------
+
+{ M_SENDING_VERBATIM_COMMAND
+"   SÑnder kommando till vÑrd...   " }
+
+{ M_PARSING_LISTING
+"   Tolkar katalog listning...   " }
+
+{ M_MKDIR_CREATING
+"   Skapar katalog hos vÑrddatorn...  " }
+
+{ M_GOING_ROOT
+"   Byter till rotkatalogen pÜ vÑrddatorn... " }
+
+{ M_GOING_UP
+"   GÜr upp en katalog pÜ vÑrddatorn... " }
+
+{ M_CHANGING_DIR
+"   Byter katalog pÜ vÑrddatorn...   " }
+
+{ M_SENDING_NOOP
+"   Skickar NO OPERATION kommando...   " }
+
+{ M_QUERYING_DIR
+"   HÑmtar kataloginformation frÜn vÑrdatorn... " }
+
+{ M_RETRIEVING_FILELIST
+"   HÑmtar fillista... " }
+
+#  nftp-opt  defines -------------------------------------------------
+
+{ M_FATAL_LOADING_NFTP_INI
+"\allvarligt fel nÑr nftp.ini skulle laddas; avslutar" }
+
+{ M_WRONG_KEYNAME
+"felaktigt tangentnamn: [%s]"
+"" }
+
+{ M_KEYDEF_ERRORS
+"%d fel upptÑckta nÑr tangentdefinitionerna bearbetades."
+"Tryck pÜ en tangent..." }
+
+#  keynames defines ----------------------------------------------------
+
+{ M_KEYNAMES_WELCOME
+"Tryck Esc fîr att avsluta, andra tangenter fîr att se ASCII-kod resp namn."
+"Om inget visas beror det pÜ att"
+"1) inget tecken genereras med tangentkombinationen;"
+"2) operativsystemet tar hand om tecknet."
+""
+"Kod :         :"
+"" }
+
+{ M_HLP_MAIN
+""
+" NFTP"
+""
+" ôversÑttning till svenska av Lennart Carlson (beetle@swipnet.se)."
+" Var god lÑs HTML-dokumentationen; den Ñr mer komplett."
+""
+" ALLMéNNA TANGENTKOMMANDON"
+""
+" Shift-H  - denna information. Notera, hjÑlpen Ñr inte hypertextbaserad"
+" F1       - tar fram hjÑlp fîr aktivt fînster"
+" F10      - logga av och avsluta NFTP"
+" Ctrl-K   - logga av vÑrd"
+" Ctrl-B   - îppnar lista med bokmÑrken att vÑlja vÑrd frÜn"
+" F2       - îppna historiefînstret och vÑlj plats"
+" Ctrl-L   - logga in anonymt hos ny vÑrd"
+" Ctrl-N   - logga in med anvÑndarid/lîsenord hos ny vÑrd"
+" Ctrl-W   - visa versionsinformation"
+" Ctrl-T   - byt mellan ASCII/BINéR îverfîring"
+" Ctrl-J   - rita om fînstret (lÑs inte in vÑrdens fillista igen)"
+" Shift-I  - kontrollera hur mÜnga filer och kataloger som markerats"
+" Shift-A  - skicka NO OPERATION kommando (verifiera kontakt med vÑrd)"
+" Shift-F  - anvÑnd/stoppa NLST med parametrar (standard Ñr pÜ). Vissa"
+"            vÑrdar tycker inte om NLST -lLa. Prova om du fÜr konstiga"
+"            meddelanden frÜn vÑrden nÑr katalog-/fillistan hÑmtas."
+"            INTE ATT REKOMMENDERA."
+""
+" Notera att dessa kommandon Ñr tillgÑngliga fîr det mesta. I vissa fall,"
+" beroende pÜ fînster kan de Ñndras, glîm inte att anvÑnda F1 fîr att se"
+" hjÑlpen fîr det aktiva fînster."
+"" }
+
+#  ------------------------------------------------------------------------
+
+{ M_HLP_LINEIN
+""
+" Tangenter tillgÑngliga fîr Ñndring av inmatningsfÑlt :"
+""
+" Esc/Enter                 - avbryt/bekrÑfta"
+" VÑnster, hîger, home, end - flyttar markîren"
+" Tab, Shift-Tab            - flytta till nÑsta/fîregÜende fÑlt (om nÜgot)"
+" Del, Backspace            - radera tecken"
+" Shift-Ins                 - klistra in frÜn klippbordet"
+" Ctrl-Ins                  - kopiera till klippbordet"
+""
+" Tryck Del direkt fîr att tîmma ett inmatningsfÑlt;"
+" Om du anger ett lîsenord, visas det inte i klartext."
+"" }
+
+#  ------------------------------------------------------------------------
+
+{ M_HLP_CC
+""
+" Tangenter tillgÑngliga i fîrbindelsekontrollens fînster :"
+""
+" piltangenter - blÑddra i fînstret "
+" Esc          - till slutet av fînstret (samma som End)"
+" Space        - byter till katalogfînster"
+" Shift-Q      - sÑnd tecken till vÑrd ordagrannt"
+" Shift-C      - byt till valfri katalog"
+""
+" Meddelanden frÜn vÑrddatorn Ñr grÜ; givna kommandon Ñr ljusgrîna och"
+" information frÜn nftp Ñr ljusrîda. Dessa fÑrger gÑller fîrutsatt att"
+" du inte har Ñndrat dem i 'nftp.ini'."
+""
+" Nftp Ñr antagligen den enda ftp klienten med inbyggd scrollback fîr"
+" fîrbindelsekontrollen. Om du vill se all kommunikation mellan klient"
+" och vÑrd, sÑtt 'auto-switch-to-control' parametern till 1. Prova,"
+" du kanske (kanske inte) tycker om det."
+"" }
+
+#  ------------------------------------------------------------------------
+
+{ M_HLP_DIR_RAW
+""
+" Detta Ñr vÑrdens katalog. Om du inte har kontakt, Ñr fînstret svart."
+" LÑs den AllmÑnna hjÑlpen (Shift-H) fîr information om hur du kontak-"
+" tar en vÑrd."
+""
+" F3         - se pÜ filen under markîren med den interna filvisaren"
+" Shift-V    - se pÜ filen under markîren med en extern filvisare"
+""
+" F5           - îverfîra markerad/markerade filer"
+" Ctrl-D       - îverfîra alla markerade filer i alla kataloger"
+" Shift-G      - hÑmta fil med namn (t ex vid olÑsbar katalog)"
+" F7           - skapa katalog (du mÜste ha behîrighet fîr detta hos vÑrden)"
+" F8           - radera markerad fil eller katalog"
+" Ctrl-R       - lÑs in katalogen igen (uppdatera fillista)"
+" Shift-O      - hÑmta filbeskrivningar frÜn filen under markîren"
+""
+" Ctrl-A       - markera alla filer i aktuell katalog"
+" Ctrl-X       - avmarkera alla filer i aktuell katalog"
+" Insert       - markera/avmarkera markerad fil. GÑller ej kataloger"
+" Plus/Minus   - markera/avmarkera filer med filter, ex '*.zip'"
+" *            - invertera markering "
+" Ctrl-Y       - avmarkera alla filer i alla kataloger"
+""
+" piltangenter - flytta markîren"
+" \            - byt till rotkatalog"
+" [            - gÜ upp en katalognivÜ ('cd ..')"
+" ]            - byt till katalogen under markîren"
+" Enter        - ------ ' ------"
+" Shift-C      - byt till valfri katalog"
+""
+" Shift-N      - sortera filer efter namn, kataloger fîrst"
+" Shift-X      - sortera filer efter filtyp, kataloger fîrst"
+" Shift-T      - sortera filer efter tid/datum, sedan namn, kataloger fîrst"
+" Shift-S      - sortera filer efter storlek, sedan namn, kataloger fîrst"
+" Shift-Y      - ta bort sortering, visa normalt"
+" Shift-E      - omvÑnd ordningsfîljd"
+""
+" F4           - spara som bokmÑrke"
+" Space        - byt till fîrbindelsekontroll"
+" Tab          - byt till lokal katalog"
+" Ctrl-O       - gîm/visa filbeskrivningar (om de finns)"
+""
+" ôvriga snabbkommandon beskrivs i den AllmÑnna hjÑlpen (Shift-H)."
+" Notera att du kan markera hela kataloger(alla filer i katalogerna"
+" markeras). Markeringar behÜlls nÑr du byter katalog. "
+"" }
+
+#  ------------------------------------------------------------------------
+
+{ M_HLP_VIEWER
+""
+" Tangenter i den inbyggda filvisaren : "
+""
+" piltangenter    - blÑddra (observera att du kan blÑddra i sidled ocksÜ)"
+" Ctrl-VÑ/Hî      - blÑddra 10 tecken i sidled"
+" Esc             - avsluta filvisaren"
+" Ctrl-F          - sîk efter strÑng"
+" Ctrl-G          - upprepa sîkning"
+" Ctrl-W          - spara innehÜll till fil"
+"" }
+
+#  ------------------------------------------------------------------------
+
+{ M_HLP_LOCAL_PARSED
+""
+" Detta Ñr den lokala katalogen."
+""
+" F3           - se pÜ filen under markîren med den interna filvisaren"
+" Shift-V      - se pÜ filen under markîren med en extern filvisare"
+""
+" F6           - îverfîra markerad/markerade filer"
+" F7           - skapa katalog"
+" F8           - radera markerad fil eller katalog"
+" Ctrl-R       - lÑs in katalogen igen (uppdatera fillista)"
+""
+" Ctrl-A       - markera alla filer i aktuell katalog"
+" Ctrl-X       - avmarkera alla filer i aktuell katalog"
+" Insert       - markera/avmarkera markerad fil. GÑller ej kataloger"
+" Plus/Minus   - markera/avmarkera filer med filter, ex '*.zip'"
+" *            - invertera markering"
+""
+" piltangenter - flytta markîren"
+" \            - byt till rotkatalog"
+" [            - gÜ upp en katalognivÜ ('cd ..')"
+" ]            - byt till katalogen under markîren"
+" Enter        - ------ ' ------"
+" Shift-C      - byt till valfri katalog"
+" Shift-Z      - vÑlj enhet"
+""
+" Shift-N      - sortera filer efter namn, kataloger fîrst"
+" Shift-X      - sortera filer efter filtyp, kataloger fîrst"
+" Shift-T      - sortera filer efter tid/datum, sedan namn, kataloger fîrst"
+" Shift-S      - sortera filer efter storlek, sedan namn, kataloger fîrst"
+" Shift-Y      - ta bort sortering, visa normalt"
+" Shift-E      - omvÑnd ordningsfîljd"
+""
+" Space        - byt till fîrbindelsekontroll"
+" Tab          - byt till vÑrddatorns katalog"
+""
+" Du kan skriva in bîrjan pÜ ett filnamn och NFTP kommer att"
+" sîka efter filen."
+""
+" Andra tillgÑngliga tangenter beskrivs i den AllmÑnna hjÑlpen (Shift-H)."
+" Observera, du kan inte markera kataloger. Lokala markeringar finns inte "
+" kvar nÑr du byter katalog. "
+"" }
+
+#  ------------------------------------------------------------------------
+
+{ M_HLP_UNDEFINED
+""
+" Det finns ingen hjÑlp pÜ svenska fîr denna skÑrm "
+"" }
+
+#  new in 0.71
+
+{ M_NO_TEXT
+" Finns ingen text fîr detta meddelande. "
+" Det Ñr antagligen inte îversatt till svenska, eller "
+" bortglîmt av NFTP's upphovsman. " }
+
+{ M_CANT_DELETE
+" Kan inte radera '%s' " }
+
+{ M_ENTER_LOCAL_DIRECTORY
+" Byt lokal katalog till: " }
+
+{ M_REALLY_TRANSFER_FROM_ALLDIRS
+" %d filer i %d kataloger Ñr markerade fîr îverfîring "
+" %s bytes total storlek. FortsÑtt? " }
+
+#  new in 0.80
+
+{ M_BYTES_RECEIVED
+"     %7d bytes mottagna      "
+"       tryck ESC fîr att avbryta " }
+
+{ M_BYTES_REMAIN
+"     %7d bytes mottagna"
+"     %7d bytes ÜterstÜr"
+"       tryck ESC fîr att avbryta " }
+
+{ M_YES
+"  Ja   " }
+
+{ M_NO
+"  Nej  " }
+
+{ M_OK
+"   OK   " }
+
+{ M_ENTER_SEARCHSTRING
+"         Ange sîkstrÑng: " }
+
+{ M_ENTER_FILENAME_SAVE
+" Ange filnamn att spara till: " }
+
+{ M_CANNOT_OPEN
+" Kan inte îppna %s   " }
+
+{ M_FILE_SAVED
+"        Filen sparades        " }
+
+{ M_LISTING_HEADER
+"VÑrd      : %s" "Katalog   : %s" }
+
+{ M_LISTING_FOOTER
+"%d filer, %ld bytes totalt" }
+
+{ M_LISTING_SAVED
+"  Listningen har sparats " }
+
+{ M_ENTER_RETRIEVE_AS
+"    HÑmta fil som: " }
+
+{ M_ENTER_LISTING_FILENAME
+"  Ange filnamn fîr listningen: " }
+
+{ M_ENTER_NEWNAME
+" éndra filnamn: " }
+
+{ M_ENTER_UPLOAD_AS
+" LÑmna fil som: " }
+
+{ M_RENAME_FAILED
+" Kan inte Ñndra '%s' till '%s' " }
+
+{ M_QUICK_SEARCH
+" snabbsîkning: %s " }
+
+{ M_RESP_RETRYING
+"VÑntar i %d sek... ESC fîr att avbryta, annan tangent fîr att fîrsîka igen" }
+
+{ M_RESP_RETRY_ABORTED
+"Avbruten." }
+
+#  new since 0.90
+
+{ M_CANT_ACCESS_DRIVE
+" Kan inte lÑsa disk %c: " }
+
+{ M_DIRECTORY_DOESNT_EXIST
+" Katalogen '%s' existerar inte " }
+
+{ M_BAD_BOOKMARK_ENTRY
+" BokmÑrket " " %s " " Ñr korrupt och kommer att ignoreras " }
+
+{ M_DEFAULT_BMK_FOLDER
+"Generella vÑrdar (skapas automatiskt)" }
+
+{ M_BOOKMARK_FORMAT
+"; bokmÑrkes formatet Ñr"
+"; ftp.sai.msu.su:21/pub/os2 : login/lîsenord/flaggor : beskrivning"
+";"
+"; redigera filen fîrsiktigt; fîljande gÑller:"
+"; - mellanslagen runt kolon éR viktiga;"
+"; - sîkvÑgarna mÜste vara absoluta, dvs bîrja med '/';"
+"; - du behîver inte ange 'port';"
+"; - skriv '*' fîr anonym 'login' och ange inget 'lîsenord':"
+";   crydee.sai.msu.su:/pub/comp/os/os2 : *//flaggor : SAI OS/2 archive"
+";   "
+";" }
+
+{ M_ENTER_DESC
+" Ange beskrivning : " }
+
+{ M_FOLDER_TITLE
+" Mapp : %s " }
+
+{ M_DELETE_BOOKMARK1
+"        Radera bokmÑrke ?        " }
+
+{ M_NAME_FOLDER
+" Ange namn pÜ den nya mappen " }
+
+{ M_DELETE_NONEMPTY_FOLDER
+" Radera mapp med innehÜll       " " '%s' ? " }
+
+{ M_ENTER_FOLDER_TITLE
+" Ange mappens titel : " }
+
+{ M_SELECT_FOLDER
+" VÑlj mapp att placera bokmÑrket i " }
+
+{ M_FILE_TO_DOWNLOAD
+" Fil att hÑmta: " }
+
+{ M_CANT_CREATE_DIRECTORY
+"Kan inte skapa katalogen '%s'" }
+
+{ M_REREAD_REMOTE_DIR
+" LÑsa in vÑrddatorns katalog igen? " }
+
+{ M_LOGOFF_MARKED
+" Du har markerat %d fil(er) i %d kataloger. "
+" Total storlek %s bytes. "
+" ér du sÑker pÜ att du vill logga av? " }
+
+{ M_CANT_LOGIN
+" Kan inte logga in pÜ %s " }
+
+{ M_FILE_NOT_FOUND
+" Filen '%s' ej hittad pÜ vÑrddator " }
+
+{ M_TRANSFER_FAILED
+" ôverfîringen av '%s' misslyckades " }
+
+{ M_PROXY_ISNT_SPECIFIED
+"  Firewall proxy vÑrd Ñr inte specifierad i NFTP.INI  " }
+
+{ M_NOT_CONNECTED
+"Ej ansluten" }
+
+{ M_INCORRECT_FIREWALL
+" Inkorrekt firewalltyp specifierad : %d " }
+
+{ M_UNKNOWN_SERVER_OS
+" Varning: okÑnt operativsystem hos vÑrddatorn: "
+" '%s'; "
+" NFTP kan misslyckas med att tolka katalog listning " }
+
+{ M_CONNECTING
+"Ansluter till %s..." }
+
+{ M_CANNOT_RENAME
+" Kan inte byta namn pÜ filen '%s' till '%s' " }
+
+{ M_RESP_REGET_ISNT_SUPPORTED
+"Reget stîds inte; îverfîr hela filen" }
+
+{ M_DOWNLOADING
+"%s - hÑmtar..." }
+
+{ M_CANT_OPEN_FOR_WRITING
+" Kan inte îppna filen '%s' fîr skrivning " }
+
+{ M_CHANGING_DIRECTORY
+"   Byter katalog till :   "
+"   '%s'   " }
+
+{ M_RESP_TRANSFER_CANCELLED
+"ôverfîringen avbruten (%s)" }
+
+{ M_RESP_TRANSFER_ERROR
+"Fel under îverfîring '%s'" }
+
+{ M_CANT_OPEN_FOR_READING
+" Kan inte îppna filen '%s' fîr lÑsning " }
+
+{ M_CANT_WRITE_LOGFILE
+" Varning: kan inte skriva till loggfilen '%s' " }
+
+{ M_CANT_GUESS_CURDIR
+" Kan inte faststÑlla aktuell katalog hos vÑrden " }
+
+{ M_CANT_READ_FILE
+" Kan inte lÑsa filen '%s' " }
+
+{ M_UPLOADING
+"%s - lÑmnar..." }
+
+{ M_HLP_SHORT
+" NFTP tangentbordskommandon                   [F1 - mer  info]"
+"                                      [Shift-H - allmÑn hjÑlp]"
+" Login/logout"
+""
+" Ctrl-B - bokmÑrkeslista          Ctrl-L - anslut anonymt"
+" F4     - spara bokmÑrke          Ctrl-N - anslut med anvÑndarid/lîsenord"
+" F10    - logga av och avsluta    F2     - historia"
+""
+" Visning"
+""
+" Tab     - lokal/vÑrd katalog    Space   - katalog/fîrbindelse  "
+" Shift-Z - byta lokal enhet      Shift-C - skriv in sîkvÑg   "
+" Ctrl-F? - sortering av katalog (F3 namn/F4 ext/F5 tid/F6 storlek)"
+" alphanumeriska tangenter - gÜ till filnamn som bîrjar pÜ det"
+""
+" ôverfîringar"
+""
+" F5     - hÑmta fil               F6 - lÑmna fil "
+" F3     - visa textfil            Ctrl-D  - hÑmta alla markerade filer"
+" Ins    - markera/avmarkera fil/  Ctrl-A - markera alla filer"
+"          katalog"
+}
+
+{ M_HLP_BOOKMARK1
+""
+" BokmÑrkesmappar "
+""
+" Varje mapp kan innehÜlla flera bokmÑrken. Tryck Enter eller "
+" hîgerpil fîr att îppna en mapp, Esc eller vÑnsterpil fîr att "
+" stÑnga den. Du kan navigera genom hela bokmÑrkessystemet med "
+" piltangenterna"
+""
+" AnvÑnd Ins fîr att skapa ny mapp, Del fîr att ta bort mapp."
+" Byt namn pÜ mappen med Ctrl-E."
+""
+" Detta visas ocksÜ nÑr du skapar nya bookmÑrken. VÑlj mapp eller "
+" tryck pÜ Ins fîr att skapa en ny. Observera att om bokmÑrket du "
+" sparar krÑver lîsenord, sÜ kommer inte lîsenordet att sparas."
+" Du kan skriva in lîsenordet manuellt i bokmÑrkesfilen (*.bmk), "
+" men det rekommenderas inte eftersom vem som helst kan lÑsa det."
+""
+
+" NÑr du modifierar listan, fÜr du en frÜga om Ñndringarna skall sparas"
+" nÑr du lÑmnar listan, du kan vÑlja att spara eller ignorera dem. Om "
+" du har flera NFTP-sessioner aktiva och de anvÑnder samma *.bmk, bîr "
+" du inte gîra Ñndringar i listan."
+"" }
+
+{ M_HLP_BOOKMARK2
+""
+" BokmÑrken i mapparna "
+""
+" Tryck Enter fîr att vÑlja vÑrd att logga pÜ, Esc eller vÑnsterpil"
+" fîr att stÑnga mappen. Du kan navigera genom hela bokmÑrkessystemet"
+" med hjÑlp av piltangenterna "
+""
+" Tryck Del fîr att radera bokmÑrken. Shift-U flyttar bokmÑrket"
+" uppÜt, Shift-D flyttar det nedÜt. Med Shift-< kan du flytta bokmÑrket "
+" till en annan mapp och med Ctrl-E kan du redigera bokmÑrket"
+""
+" NÑr du modifierar listan, fÜr du en frÜga om Ñndringarna skall sparas"
+" nÑr du lÑmnar listan, du kan vÑlja att spara eller ignorera dem. Om "
+" du har flera NFTP-sessioner aktiva och de anvÑnder samma *.bmk, bîr "
+" du inte gîra Ñndringar i listan."
+"" }
+
+#  ---------------------------------------------------------- new in 1.02
+
+{ M_ALREADY_BOOKMARKED
+" VÑrden '%s' finns redan som bokmÑrke "
+" (katalog '%s'). LÑgg till iaf? " }
+
+{ M_EDIT1
+"VÑrddator[:port]katalog" }
+
+{ M_EDIT2
+"Login/lîsenord/flaggor" }
+
+{ M_EDIT3
+"VÑrd beskrivning" }
+
+{ M_CONNECTION_OK
+"      Fîrbindelsen is OK       " }
+
+{ M_MARKED_STATISTICS
+"    %d filer i %d kataloger; %s bytes totalt   " }
+
+#  ---------------------------------------------------------- new in 1.10
+
+{ M_STARTING_TRANSFER
+"   Startar îverfîring.   " }
+
+{ M_KEEP_TREE_INTACT
+" Du har markerat %d filer i %d kataloger. "
+" Total storlek %s bytes. "
+""
+" BehÜlla katalogstruktur vid îverfîring? " }
+
+{ M_KEEP_TREE2
+" BehÜll katalogerna  "
+" BehÜll inte katalogerna" }
+
+{ M_OVERWRITE_RENAME_CANCEL4
+" Skriv îver fil "
+" Byt namn pÜ fil "
+" Hoppa îver fil " }
+
+{ M_REGET_RENAME_CANCEL5
+" FortsÑtt "
+" Skriv îver fil"
+" Byt namn pÜ fil "
+" Hoppa îver fil " }
+
+{ M_RESP_BIND_FAILED
+"NÑtverksfel (bind() misslyckades)" }
+
+{ M_RESP_LISTEN_FAILED
+"NÑtverksfel (listen() misslyckades)" }
+
+{ M_RESP_GETSOCKNAME_FAILED
+"NÑtverksfel (getsockname() misslyckades)" }
+
+{ M_RESP_CANNOT_CONNECT
+"Kan inte ansluta fîr dataîverfîring" }
+
+{ M_RESP_CONNECTION_NOT_ESTABLISHED
+"VÑrddatorn etablerade ingen datafîrbindelse" }
+
+{ M_RESP_TRANSFER_SKIPPED
+"Hoppade îver filen `%s'" }
+
+{ M_WALK_TREE
+" GÜ genom katalogstruktur frÜn "
+" '%s' ? " }
+
+{ M_NO_MARKED_FILES
+" Det finns inga markerade filer i katalogerna " }
+
+{ M_HAVENT_BEEN_CONNECTED
+"har inte anslutit Ñn" }
+
+{ M_DIRECTORY_LISTING
+"Katalog listing" }
+
+{ M_LARGE_INDEX_FILE
+"  Varning: filen '%s' som innehÜller filbeskrivningar "
+"  Ñr %s bytes stor. Vill du fortfarande hÑmta den??  " }
+
+{ M_LOAD_DESCRIPTIONS
+" HÑmta beskrivningar frÜn '%s' ? " }
+
+{ M_CANT_USE_DIR_AS_INDEX_FILE
+" Kan inte hÑmta beskrivningar frÜn katalogen '%s'. "
+" SÑtt markîren pÜ den vanliga filen. " }
+
+{ M_RESP_CONNECTING
+"Ansluter till %s..." }
+
+{ M_DOWNLOADING1
+"%s - DL %lu%% med %.2f KB/s" }
+
+{ M_UPLOADING1
+"%s - UL %lu%% med %.2f KB/s" }
+
+{ M_DESC_DOWNLOAD_OPTIONS
+"  Ja   "
+"  Nej  "
+" Aldrig" }
+
+
+# ----------------------------------------- new in 1.21 -------------
+
+{ M_RESP_CANT_OPEN
+"Kan inte îppna filen %s" }
+
+{ M_NO_EMAIL_ADDRESS
+""
+"Varning: e-mail adress ej specifierad i %s filen."
+"" }
+
+{ M_GUESSED_EMAIL
+"AnvÑnder %s som lîsenord fîr anonym log."
+"Tryck ENTER fîr att fortsÑtta..."
+"" }
+
+{ M_CANT_GUESS_EMAIL
+"Kunde inte hitta din vÑrd eller anvÑndarnamn;"
+"var god redigera %s och skriv en giltig e-mail adress dÑr."
+"Den kommer att anvÑndas fîr anonyma FTP inloggningar."
+"" }
+
+{ M_INI_CONFIG_VERSION
+""
+"Din aktuella konfigurationsfil, %s, Ñr version %s."
+"NFTPs programfil har versionsnummer %s."
+"" }
+
+{ M_INI_CANT_FIND_NFTP_I
+"Kan inte hitta nftp.i fîr uppdatering av nftp.ini"
+"varken i `%s' eller i `%s' !"
+"" }
+
+{ M_INI_UPDATE
+"Kommer att uppdatera `%s'"
+"frÜn              `%s'."
+"FortsÑtta? [Ynq]" }
+
+{ M_INI_UPDATING
+""
+"Uppdaterar %s med %s..."
+"" }
+
+{ M_INI_CANT_OPEN_READ
+"Kan inte îppna %s fîr lÑsning"
+"" }
+
+{ M_INI_CANT_OPEN_WRITE
+"Kan inte îppna %s fîr skrivning"
+"" }
+
+{ M_INI_WRONG_ENTRY
+"Fel -- inmatning of sektion:"
+"%s" }
+
+{ M_INI_CANT_RENAME
+"Kan inte byta namn pÜ `%s' till `%s'"
+"" }
+
+{ M_INI_BACKUP
+""
+"Backup versionen av din %s"
+"sparades som           %s"
+"" }
+
+{ M_INI_UPDATING_ENTRY
+"uppdaterar: %s"
+"" }
+
+{ M_INI_FINISHED
+""
+"Uppdatering avslutad; tryck ENTER fîr att fortsÑtta..." }
+
+# ----------------------------------------- new in 1.22 -------------
+
+{ M_RESP_CANT_CREATE_DIRECTORY
+"Kan inte skapa katalogen '%s'" }
+
+{ M_INFORMATION1
+" %d filer i %d kataloger; %s bytes totalt "
+""
+" URL fîr aktuell fil: "
+" %s "}
+
+{ M_INFORMATION2
+" %d filer i %d kataloger; %s bytes totalt "
+""
+" Kopiera aktuell URL till urklipp? "
+" %s "}
+
+{ M_HLP_HISTORY
+" Historia îver besîkta vÑrdar och kataloger"
+""
+" Den senast besîkta platsen Ñr fîrst i listan. Historiefilen fungerar "
+" ocksÜ som DNS cache(hittade IP nummer sparas hÑr). Asterisken vid "
+" anvÑndarnamnet indikerar att posten har lîsenord sparat i filen. "
+" AnvÑndar namn visas inte fîr anonyma vÑrdar. Flaggor kan fîlja efter"
+" anvÑndar namnet(se FAQ om flags)"
+""
+" Beteendet fîr undersystemet i historiefilen kontrolleras av instÑllning-"
+" ar i nftp.ini filen. Du kan sÑtta begrÑnsningar av antalet platser och"
+" antalet kataloger per vÑrd som sparas i filen. Existerande och duplikat"
+" av poster visas inte nÑr du îppnar historiefînstret. NFTP kan ocksÜ "
+" spara vÑrdens lîsenord (de sparas krypterade men inte i sÑker form). "
+" Som standard sparas inloggningar, îverfîringar och avloggningar."
+" NFTP kan stÑllas in pÜ att spara alla besîkta kataloger i historiefilen."
+""
+" Du navigerar likadant som i bokmÑrkesfînstret. Enter vÑljer vÑrddator "
+" eller aktiverar post; Esc stÑnger fînster eller lÑmnar kataloglistan;"
+" hîger/vÑnster piltangent kan anvÑndas istÑllet fîr Enter/Esc fîr"
+" navigation. Du kan radera kataloger och hela poster frÜn historie-"
+" filen med Del."
+}
+
+{ M_PROCESSING_HISTORY1
+" Bearbetar historia; etapp %u..." }
+
+{ M_PROCESSING_HISTORY2
+" Bearbetar historia; etapp %u:  %u poster klara" }
+
+{ M_READING_HISTORY_FILE
+" LÑser historiefil;  %u rader klara" }
+
+{ M_WRITING_HISTORY_FILE
+" Skriver historiefil;  %u rader klara" }
+
+{ M_ERROR_READING_HISTORY
+" Fel vid lÑsning av historiefil %s " }
+
+{ M_EMPTY_HISTORY
+" Historiefilen %s Ñr tom " }
+
+{ M_SAVE_HISTORY
+" Spara Ñndringar i historiefiler? " }
+
+{ M_HIST_HEADER1
+" Historia: %u platser, %u poster totalt " }
+
+{ M_HIST_HEADER2
+" Historia: %s, %u kataloger " }
+
+{ M_HIST_DELETE_DIR
+" %s:%s "
+" Radera katalogpost? " }
+
+{ M_HIST_DELETE_SITE
+" %s "
+" Radera plats innehÜllande %u katalogposter? " }
+
+# ------------------------------------------------------ new/updated in 1.23
+
+{ M_HLP_USING_MENU
+"  "
+" Meny"
+""
+" Menyn fungerar som en strukturerad karta îver NFTP-funktioner."
+""
+" Fîr att îppna menyn, tryck F9 eller Ctrl-F(kan omdefinieras i "
+" nftp.ini)."
+""
+" AnvÑnd piltangentera fîr att navigera i menyn. Esc hoppar till "
+" nÑrmast fîregÜende meny. "
+""
+" Om du fîredrar att anvÑnda snabbtangenterna, Ñr det lÑmpligt att"
+" att Ñndra instÑllningen 'menu-open-submenu' i nftp.ini till -1"
+" F9 kommer dÜ bara att visa menyraden."
+""
+" Med hjÑlp av denna in stÑllning kan du ocksÜ Ñndra vilken meny "
+" som skall visas som standard."
+" "
+" Snabbtangenterna i menyn kan omdefinieras genom att redigera "
+" 'swedish.mnu'som finns i NLS-katalogen. Instruktioner finns i filen."
+"" }
+
+{ M_RESP_F9_FOR_MENU
+"Tryck F9 eller Ctrl-F fîr menyn" }
+
+{ M_BOOKMARK_NICKNAME
+" Namnet '%s' "
+" hittades inte bland bokmÑrkena " }
+
+{ M_SELECT_BOOKMARK
+" VÑlj bokmÑrke " }
+
+{ M_HISTORY_NICKNAME
+" Namnet '%s' "
+" hittades inte i historiefilen" }
+
+{ M_SELECT_HISTORY
+" VÑlj post i historiefilen"}
+
+{ M_USAGE0
+"Valfria parametrar : "}
+
+{ M_USAGE1
+"anslut till URL" }
+
+{ M_USAGE2
+"hÑmta (G,g) eller lÑmna (P,p} fil-URL" }
+
+{ M_USAGE3
+"genomfîra îverfîringarna i cmdfile.txt" }
+
+{ M_USAGE4
+"sîk efter `ord' i bokmÑrken(b) eller historia(h)" }
+
+{ M_USAGE5
+"URL skall skrivas pÜ fîljande sÑtt"
+"[ftp://][anvÑndarid[:lîsenord]@]vÑrdnamn[:port]katalog/fil,"
+"e.g. ftp://asv:password@crydee.sai.msu.ru:21/home/asv/file.txt"
+"or   crydee.sai.msu.su/pub/comp/software/asv/nftp/nftp-LATEST-os2.zip" }
+
+# ----------------------------------------------------------------- new in 1.40
+
+{ M_SITE_EDIT1
+"VÑrdnamn" }
+
+{ M_SITE_EDIT2
+"Logga in (anvÑndarnamn)" }
+
+{ M_SITE_EDIT3
+"Lîsenord" }
+
+{ M_SITE_EDIT4
+"Port" }
+
+{ M_SITE_EDIT5
+"Katalog" }
+
+{ M_SITE_EDIT6
+"Flaggor (se FAQ)" }
+
+{ M_PASSWORDED_WGET
+" Du fîrsîker att hÑmta med WGET frÜn en icke-anonym vÑrdanslutning"
+" Som standard Ñr dessa hÑmtningar inaktiverade av sÑkerhetsskÑl;"
+" du kan aktivera dem i nftp.ini" }
+
+{ M_WGET_DOWNLOAD_ONE
+" HÑmta fil %s med externt program? " }
+
+{ M_WGET_DOWNLOAD_MANY
+" HÑmta %d filer i %d kataloger; "
+" %s bytes totalt med externt program? " }
+
+{ M_CONFIRM_COMMAND
+" Externt kommando att utfîra: " }
+
+{ M_USETAB2
+" AnvÑnd Tab/Shift-Tab eller Upp/Ner pilarna fîr att flytta mellan fÑlten " }
+
+# ------------------------------------------------- new since 1.50
+
+
+
+{ M_CANCEL
+
+" Avbryt " }
+
+
+
+{ M_FTPS_RECEIVING
+
+"  %s: tar emot data...   "
+
+"  Tryck ESC fîr att avbryta "
+
+"  %s poster funna (totalt) " }
+
+
+
+{ M_FTPS_NO_HITS
+
+"  Inga trÑffar pÜ '%s'...   " }
+
+
+
+{ M_FTPS_SERVERS
+
+" FTP Search vÑrdar " }
+
+
+
+{ M_FTPS_ADD_SERVER
+
+" Ange namn pÜ FTP Search vÑrd att lÑgga till " }
+
+
+
+{ M_FTPS_DELETE
+
+" Radera `%s' ? " }
+
+
+
+{ M_QUERYING
+
+"frÜgar %s..." }
+
+
+
+{ M_FTPS_SENDING_REQUEST
+
+"  SÑnder fîrfrÜgan till %s...   " }
+
+
+
+{ M_FTPS_SEARCHRES
+
+" Sîkresultat (%u trÑffar) " }
+
+
+
+{ M_DIR_SIGN
+
+"<KAT>" }
+
+
+
+{ M_LINK_SIGN
+
+"<LNK>" }
+
+
+
+{ M_SEARCH_FORWARD
+
+" Sîk framÜt " }
+
+
+
+{ M_SEARCH_BACKWARDS
+
+" Sîk bakÜt " }
+
+
+
+{ M_CANT_FIND
+
+"  Finner inte `%s'   " }
+
+
+
+{ M_SELECT_LANGUAGE
+
+" Select user interface language " }
+
+
+
+{ M_REGISTRATION_NAME
+
+"Registreringsnamn" }
+
+
+
+{ M_REGISTRATION_CODE
+
+"Registreringskod" }
+
+
+
+{ M_THANKS
+
+" Tack fîr att du registrerar NFTP! " }
+
+
+
+{ M_FTPS_NEED_ARGS
+
+" Du mÜste specifiera sîkbegrepp att anvÑnd "
+
+" 'exakt', 'textstrÑng', 'wildcard'(joker) or 'regex'(reguljÑrt uttryck)" }
+
+
+
+{ M_FTPS_SEARCH1
+
+"Exakt sîkning" }
+
+
+
+{ M_FTPS_SEARCH2
+
+"Sîkning pÜ textstrÑng" }
+
+
+
+{ M_FTPS_SEARCH3
+
+"Sîkning med jokertecken" }
+
+
+
+{ M_FTPS_SEARCH4
+
+"Sîkning med reguljÑrt uttryck" }
+
+
+
+{ M_FTPS_SEARCH5
+
+"Skilj pÜ versaler/gemener?" }
+
+
+
+{ M_FTPS_SEARCH6
+
+"Undanta filer/kataloger" }
+
+
+
+{ M_FTPS_SEARCH7
+
+"BegrÑnsa till domÑner" }
+
+
+
+{ M_FTPS_SEARCH8
+
+"Undanta domÑner" }
+
+
+
+{ M_FTPS_SEARCH9
+
+"Dîlj Slackware/RedHat/FreeBSD/etc." }
+
+
+
+{ M_FTPS_SEARCH10
+
+"Max. antal trÑffar" }
+
+
+
+{ M_HLP_SITE_EDIT
+
+"VÑrdparametrar"
+
+""
+
+"Fîr anonyma inloggningar, lÑmna 'namn' och 'lîsenord' tomma. Om du "
+
+"inte specifierar katalog, kommer du att hamna i den katalog som vÑrden"
+
+"vÑljer att sÑtta dig i, vanligen i rotkatalogen vid anonym inloggning"
+
+"och i hemkatalogen vid privata inloggningar. VÑrdbeskrivningarna Ñr"
+
+"endast till fîr information, de sparas i bokmÑrkesfilen."
+
+""
+
+"TillgÑngliga parametrar:"
+
+"p - anvÑnd 'passive mode' fîr denna vÑrd. Kan ofta hjÑlp till vid lÜng-"
+
+"    samma fîrbindelser."
+
+"r - fîrsîk oavbrutet. Vid inloggningsfel kommer NFTP fîrsîka igen oavsett"
+
+"    felmeddelande, om det Ñr en anonym anslutning eller inte."
+
+"f - innanfîr firewall. NÑr firewallsupport Ñr specifierad i nftp.ini,"
+
+"    kommer denna vÑrd att fîrsîka nÜs direkt."
+
+}
+
+
+
+{ M_HLP_FTPSEARCH
+
+"FTP Search interface"
+
+""
+
+"'Exakt sîkning' sîker bara efter specifierat fil- eller katalognamn;"
+
+"t ex: nftp141o.zip"
+
+""                                                                     
+
+"'TextstrÑngssîkning' sîker efter textstrÑngar i fil- och katalognamn;"
+
+"t ex: nftp14"
+
+""
+
+"'Wildcard (joker)sîkning' anvÑnder '*' och '?' tecken pÜ samma sÑtt som "
+
+" de anvÑnds pÜ kommandoraden (dvs. * matchar okÑnt antal tecken,"
+
+" ? matchar exakt ett tecken); exempel: nftp*.zip eller nftp1??o.zip"
+
+""                                                                     
+
+"'Sîkning pÜ reguljÑrt uttryck' Ñr mest kraftfullt men krÑver viss kunskap"
+
+" t ex: nftp1\.[4-9][0-9]o\.zip finner alla 1.xx versioner av NFTP fîr OS/2,"
+
+" med start frÜn 1.40. Du kan finna fîrklaringar till 'reguljÑra uttryck'"
+
+" pÜ flera stÑllen, exempelvis GNU rx bibliotek."
+
+""
+
+"'Skilj pÜ versaer/gemener' gÑller bara vid 'Sîkning pÜ textstrÑng'."
+
+""
+
+"Du kan ocksÜ sÑtta extra kriterier: undanta kataloger frÜn sîkning, be-"
+
+"grÑnsa sîkning till vissa domÑner eller undanta vissa domÑner, och undanta"
+
+"freeware Unix distributioner vilka har en tendens att ge ett stort antal"
+
+"oînskade trÑffar. Multipla kriterier mÜste separeras med mellanslag."
+
+""                                                                     
+
+"Det Ñr inte rekommenderat att sÑtta 'Max antal trÑffar' till hîga tal"
+
+"(5000 trÑffar Ñr meningslîst; fîrsîk undanta nÜgot du inte behîver.)"
+
+"Vanligen rÑcker det att bara skicka fîrfrÜgan till en huvudvÑrd fîr "
+
+"FTP Search, ftpsearch.ntnu.no eftersom den indexerar 90% av vÑrlden."
+
+"Andra vÑrdar Ñr mestadels till fîr att begrÑnsa sîkningarna till "
+
+"geografiskt nÑrmare platser"
+
+
+"" }
+
+
+
+{ M_FTPS_DOWNLOAD
+
+"  HÑmta "
+
+"  %s  "
+
+"  frÜn %s?  " }
+
+
+
+{ M_HIST_CONT_SEARCH
+
+"  Kan inte finna pÜ %s. Sîka hos andra vÑrdar?  " }
+
+
+
+{ M_TOO_LARGE
+
+"%s/%s: fîr stor fîr den oregistrerade versionen" }
+
+
+
+{ M_DISCONNECT
+
+"  Bryta anslutningen med vÑrden %s?  " }
+
+
+
+{ M_UPLOAD_EDITED
+
+"  LÑmna Ñndrad fil till vÑrden?  " }
+
+
+
+{ M_FONT_DESC
+
+"bredd %3d, hîjd %3d (%s)" }
+
+
+
+{ M_UNSUPPORTED
+
+"  Funktionen stîds inte hos %s  " }
+
+
+
+{ M_SELECT_FONT
+
+" VÑlj teckensnitt " }
+
+
+
+{ M_HLP_FTPSEARCH2
+
+"Tangenter i reslutatfînster"
+
+""
+
+"Ctrl-P      visar/dîljer sîkvÑgar"
+
+"Ctrl-T      visar/dîljer senaste Ñndringsdatum"
+
+"Ctrl-F      sîk framÜt"
+
+"Ctrl-H      sîk bakÜt"
+
+"Shift-D/F5  lÑmna fil"
+
+""
+
+"Shift-H     sortera efter vÑrdnamn"
+
+"Shift-N     sortera efter filnamn(standard)"
+
+"Shift-S     sortera efter filstorlek"
+
+"Shift-T     sortera efter filens datum/tid"
+
+"" }
+
+
+
+{ M_STALLED
+"avstannad" }
+
+
+# ------------------------------------------------- new since 1.51
+
+{ M_WAIT
+""
+""
+" Var god drîj %d sekunder... " }
+
+{ M_UNREGISTERED
+" Denna version Ñr oregistrerad "
+""
+" Fîr att slippa det hÑr meddelandet mÜste du registrera NFTP"
+" Det kostar $%d och gÑller fîr alla framtida uppgraderingar"
+" fîr alla operativsystem som stîds. Mer information finns"
+" att fÜ pÜ http://www.ayukov.com/nftp/buy.html %s" }
+
+{ M_PRESS_ENTER
+" Tryck ENTER fîr att fortsÑtta " }
+
+{ M_HTTP_PROXY
+"  Stîds inte via HTTP proxy  " }
+
+{ M_ENUMERATING_FONTS
+" Skapar fontfîrteckning... " }
+
+# ------------------------------------------------- new since 1.60
+
+{ M_SCRIPT_BADCOMMAND
+"Felaktigt kommando: %s" }
+
+{ M_SCRIPT_BADARGS
+"Detta kommando krÑver %d parametrar (fann %d istÑllet)" }
+
+{ M_SCRIPT_ERROR
+"Fel; scriptexekveringen har stoppats" }
+
+{ M_SCRIPT_CANT_OPEN
+"Kan inte îppna scriptfilen `%s'" }
+
+{ M_SCRIPT_RUNNING
+"SCRIPT: %s %s" }
+
+{ M_SCRIPT_INVALID_VAR
+"Felaktig parameter: %s" }
+
+{ M_SCRIPT_CANT_OPEN_LOG
+"Kan inte îppna loggfilen `%s'" }
+
+{ M_RESP_CONNECTING2
+"Ansluter till %s: Esc - avbryt, Space - fîrsîk igen..." }
+
+{ M_RESP_ACCEPTING
+"VÑntar pÜ anslutning till port %d: Esc - avbryt, Space - fîrsîk igen..."}
+
+{ M_RESP_ACCEPTED
+"Accepterade anslutning frÜn %s" }
+
+{ M_PAUSED
+"Pausad; tryck P fîr att fortsÑtta" }
+
+{ M_SQRP
+"S/Q/R/P - Hoppa îver/Avsluta/Starta om/Pausa" }
+
+{ M_TOTAL        "Totalt" }
+{ M_TRANSFERRED  "ôverfîrda" }
+{ M_SKIPPED      "ôverhoppade" }
+{ M_LEFT         "Kvar" }
+{ M_INACT        "sekunder sedan senaste paketet"}
+
+{ M_NO_FIREWALLING
+"Ingen brandvÑgg/proxy har konfigurerats i nftp.ini" }
+
+{ M_HLP_PASSWORDS
+"Tangenter i lîsenordsfînstret"
+""
+"Insert - skapa ny lîsenordslista"
+"Delete - radera lîsenordslista"
+"Ctrl-E - redigera lista"
+"Ctrl-P - visa/gîm lîsenord"
+""
+"Enter  - logga in hos vÑrd"
+"" }
+
+{ M_DEL_UNMATCHED
+"   Raderar omatchade filer...   " }
+
+{ M_ENTER_LISTNAME
+"Ange filnamn att skriva listan till:" }
+
+{ M_SYNC1
+"Synkronisera lokalt katalogtrÑd med vÑrd?"
+""
+"vÑrd     %s ->"
+"lokalt   %s"
+"" 
+"NFTP kommer att hÑmta filer" }
+
+{ M_SYNC2
+"Synkronisera vÑrd med lokalt katalogtrÑd?"
+""
+"lokalt   %s ->"
+"vÑrd     %s"
+""
+"NFTP kommer att lÑmna filer" }
+
+{ M_SYNC3
+"Katalogernar verkar vara identiska" }
+
+{ M_PASS_UNSUPPORTED
+"Versionen av lîsenordsfilen (%d) stîds inte" }
+
+{ M_PASS_ENTER_KEYPHRASE1
+"Ange nyckel fîr att dekryptera lîsenordsfil" }
+
+{ M_PASS_INVALID
+"%s"
+"Lîsenordsfilen har ogiltigt innehÜll" }
+
+{ M_PASS_ENTER_KEYPHRASE2
+"Ange nyckel att anvÑndas vid kryptering av lîsenordsfil" }
+
+{ M_PASSWORDS
+"Lîsenord" }
+
+{ M_PASS_SAVE
+"Spara Ñndringar till lîsenordsfil?" }
+
+{ M_PASS_DELETE
+"%s @ %s"
+"Radera lîsenordspost?" }
+
+{ M_DISK_FULL
+" %s "
+" Fel vid skrivning till fil (hÜrddisken full?) " }
+
+{ M_REGISTERED
+"Registrerad av %s" }
+
+{ M_UNREGISTERED2
+"Oregistrerad (%d dagar sen fîrsta anvÑndningen)" }
+
+{ M_FTPS_RECEIVING2
+"Tar emot data frÜn %s...   "
+"Fann totalt:          %s"
+"Fann pÜ denna vÑrd: %s"
+"Tryck ESC fîr att avbryta sîkning" }
+
+{ M_FTPS_NO_HITS2
+"Sîkningen gav inget resultat" }
+
+{ M_FTPS_NORES
+"Ingen sîkning har skett Ñn" }
+
+{ M_ENABLE_PASSWORDS
+"Var vÑnlig aktivera lîsenordsbuffert nftp.ini" }
+
+{ M_NEEDBF
+"Detta anvÑnds bara med metoden/erna %s (se nftp.ini)" }
+
+{ M_PASS_INCORRECT
+"Nyckeln Ñr felaktig"}
+
+{ M_BYTESSEC "bytes/sek" }
+
+{ M_DOWNLOAD "hÑmtning" }
+
+{ M_UPLOAD "lÑmning" }
+
+{ M_COMMUNICATING
+"Kommunicerar med vÑrd..." }
+
+# will look like: " 23% done (download, binary)"
+{ M_PERCENTAGE1 "%9u%% klart (%s, %s)" }
+
+# will look like: " 23% done (download, binary) (3 of 15 files)"
+{ M_PERCENTAGE2 "%9u%% klart (%s, %s) (%d av %d filer)" }
+
+# ------------------------------------------------- new since 1.61
+
+{ M_TR_OVERWRITE  "Skriv îver" }
+{ M_TR_RESUME     "èteruppta" }
+{ M_TR_SKIP       "Hoppa îver" }
+{ M_TR_CANCEL     "Avbryt" }
+
+{ M_TR_QUESTION
+"MÜlfilen existerar redan!"
+"Fîreslagen ÜtgÑrd: %s"
+""
+"VÑrd: %s in %s"
+"Lokal:  %s in %s"
+""
+"KÑlla: %s bytes, %2d %s %4d  %02d:%02d:%02d"
+"MÜl:   %s bytes, %2d %s %4d  %02d:%02d:%02d" }
+
+# ------------------------------------------------- new since 1.62
+
+{ M_DELETE_FILES
+"Du har valt %d fil(er)."
+"     Vill du verkligen radera dem?" }
+
+{ M_NOT_EMPTY
+"Katalogen `%s' Ñr inte tom."
+"Radera hela katalogtrÑdet?" }
+
+{ M_ALL "All" }
+
+{ M_DELETING
+"  Raderar %s...  " }
+
+{ M_NO_CHMOD
+"Denna FTP-vÑrd stîder inte SITE CHMOD kommandot" }
+
+{ M_ACCESSRIGHTS1
+"ètkomstrÑttigheter fîr %d filer" }
+
+{ M_ACCESSRIGHTS2
+"ètkomstrÑttigheter fîr %s" }
+
+{ M_WRONG_RIGHTS
+"OtillÜtet format:  [%s]"
+"Korrekt format: [rwxrwxrwx]" }
+

@@ -1,0 +1,395 @@
+.\" Process this file with groff -man -Tascii nftp.1
+.\"
+.TH NFTP 1 "December 1999" "Copyright (C) Sergey Ayukov" "NFTP Manual"
+.SH NAME
+nftp \- Interactive FTP client for Unix, OS/2, Win32, BeOS
+.SH SYNOPSIS
+.TP
+.BI "[x]nftp [-{G|g|P|p}]" URL
+or
+.TP
+.BI "nftp -{b|h} " [nickname]
+or
+.TP
+.BI "nftp -@" command-file
+.PP
+where URL is
+.br
+.RI "[" userid "[:" password "]@]" hostname "[:" port "][" pathname "]"
+.SH DESCRIPTION
+.B nftp
+is an FTP client, i.e. software for transferring files to and from remote
+network computers by means of FTP protocol. Its main distinctive features are
+remote directory contents caching, batch progress indicator,
+marking files in different directories, showing file descriptions from
+00index.txt etc. files, reconnect-on-demand, user interface in 19
+languages: Brazilian Portuguese, Bulgarian, Chinese#,
+Danish, Dutch, English, Finnish, French, German, Hungarian, Italian, 
+Japanese#, Korean, Norwegian, Polish, Russian, Spanish, Swedish, Ukrainian
+(# -- not available yet under Unix).
+.PP
+.SH OPTIONS
+When started with one command-line
+argument not starting with dash "-", nftp will assume it's ftp site
+name and will connect to it. Options are: 
+.TP
+.RI "-G " file-URL
+get
+.I file-URL
+and exit,
+.TP
+.RI "-g " file-URL
+get
+.I file-URL
+and stay connected;
+.TP
+.RI "-P " file-URL
+put
+.I file-URL
+and exit,
+.TP
+.RI "-p " file-URL
+put
+.I file-URL
+and stay connected;
+.TP
+.RI "-b " [nickname]
+look for
+.I nickname
+in the bookmarks;
+.TP
+.RI "-h " [nickname]
+look for
+.I nickname
+in the history;
+.TP
+.RI "-@ " command-file
+process transfers programmed in the
+.IR command-file .
+See http://www.ayukov.com/nftp/scripting.html for more information
+about using this feature
+.TP
+.RI "-{m|c}"
+run in mono (-m) or colour (-c) mode; overrides settings in nftp.ini
+.TP
+.RI "-s"
+assume slow link, i.e. do additional screen optimizations and skip some
+not very useful output like chat with server during login sequence.
+.TP
+.RI "-e"
+run in English
+.TP
+.RI "-l " language
+use
+.I language
+for user interface. Allowed values are: 
+.B brazilian, bulgarian, chinese,
+.B danish, dutch, english, finnish, french, german, hungarian, 
+.B italian, japanese, korean,
+.B norwegian, polish, russian, spanish, swedish, ukrainian
+.PP
+X11 version recognizes two additional options:
+.TP
+.RI "-display " display-name
+specify display to connect to
+.TP
+.RI "-fn " font-name
+specify font to use
+.SH "KEYBOARD COMMANDS"
+.TP
+.I F9, Ctrl-F
+enter menu
+.SS "GETTING HELP"
+.TP
+.I Shift-K
+concise keyboard reference
+.TP
+.I Shift-H
+program information and general keyboard commands
+.TP
+.I F1, Shift-?
+context sensitive help
+.SS "LOG IN/LOG OUT"	
+.TP
+.I Ctrl-L
+login as anonymous into new site
+.TP
+.I Ctrl-N
+login with userid/password into new site
+.TP
+.I Ctrl-B
+open bookmark list
+.TP
+.I F2, Ctrl-E
+open history
+.TP
+.I Ctrl-K
+logoff from site
+.TP
+.I Shift-F
+do FTP Search query
+.TP
+.I F10
+exit NFTP
+.TP
+.I Shift-A
+send NO OPERATION command (verify connection aliveness)
+.SS "CONTROL CONNECTION WINDOW"
+.TP
+.I arrow keys, Esc
+scroll window contents
+.TP
+.I Space
+switch to directory view 
+.TP
+.I Shift-Q
+send any command to server verbatim ("quote")
+.SS "FILE LISTING VIEW (REMOTE OR LOCAL)"
+.SS "Navigating"
+.TP
+.I Space
+switch to control connection 
+.TP
+.I Tab
+switch between remote/local files
+.TP
+.I Ctrl-P
+switch remote directory view between raw/parsed views   
+.TP
+.I Shift-<, Shift->, Ctrl-Left, Ctrl-Right
+horizontal scrolling by 10 symbols 
+.TP
+.I "\, Ctrl-\"
+change to root directory 
+.TP
+.I [
+goto the directory level higher ("cd ..") 
+.TP
+.I Enter, ]
+go to the directory under cursor 
+.TP
+.I Shift-C
+change to arbitrary directory 
+.TP
+.I Shift-Z
+select drive letter -- local view only
+.TP
+.I Ctrl-W
+split screen into two panels
+.TP
+.I Ctrl-R
+re-read directory (refresh file list) 
+.TP
+.I Shift-O
+use file under cursor as 00index file containing descriptions 
+.TP
+.I Ctrl-O
+enable/disable automatic descriptions loading (remote files only)
+.SS "Sorting file listing"
+.TP
+.I Shift-N
+sort directory by name, dirs first 
+.TP
+.I Shift-X
+sort directory by extension, dirs first 
+.TP
+.I Shift-T
+sort directory by time, then name, dirs first 
+.TP
+.I Shift-S
+sort directory by size, then name, dirs first 
+.TP
+.I Shift-Y
+remove sorting, return to original state 
+.TP
+.I Shift-E
+reverse current sort order 
+.SS "Marking/unmarking"
+.TP
+.I Ctrl-A
+mark all files in the current directory
+.TP
+.I Ctrl-X
+unmark all files in the current directory
+.TP
+.I Ctrl-Y
+unmark all files in all directories
+.TP
+.I Insert, Shift-M
+mark/unmark file/directory under cursor
+.TP
+.I +
+mark files by wildcard mask
+.TP
+.I -
+unmark files by wildcard mask
+.TP
+.I *
+invert selection 
+.TP
+.I Shift-I
+show information about marked files in the subdirectories
+.SS "Transferring files"
+.TP
+.I Ctrl-T
+toggle ASCII/BINARY mode
+.TP
+.I F5, Shift-D
+download file under cursor or marked files (if any) -- remote view only
+.TP
+.I F6, Shift-U
+upload file under cursor or marked files (if any) -- local view only
+.TP
+.I Ctrl-D
+download all marked files from all subdirectories -- remote view only
+.TP
+.I Ctrl-U
+upload all marked files from all subdirectories -- local view only (not implemented)
+.TP
+.I Shift-G
+download file by name (e.g. when directory is unreadable -- remote view only
+.SS "Viewing files"
+.TP
+.I F3, Ctrl-V
+view file under cursor, use fast internal viewer 
+.TP
+.I Shift-V
+view file under cursor, use external viewer 
+.SS "Creating/deleting/renaming files/directories"
+.TP
+.I Shift-R
+rename file/directory 
+.TP
+.I F7, Ctrl-G
+make directory (you have to have permissions on remote) 
+.TP
+.I F8, Delete
+delete file or directory under cursor 
+.SS "Miscellaneous"
+.TP
+.I F4, Shift-B
+save current site/directory as a bookmark
+.TP
+.I a-z, 0-9, ".", "-", "_"
+quick search for files starting with these symbols. Use lowercase letters only; search is not case sensitive
+.TP
+.I Shift-L
+save listing of current directory into file -- remote view only
+.SS "BOOKMARK LIST"
+.TP
+.I Ctrl-B
+open bookmark list
+.TP
+.I Insert
+create bookmark or foler
+.TP
+.I Del
+delete bookmark or folder 
+.TP
+.I Ctrl-E
+edit bookmark/folder title 
+.TP
+.I right/left
+enter/leave folder 
+.TP
+.I Shift-D, Shift-U, Ctrl-Up, Ctrl-Down
+move bookmark entry 
+.TP
+.I Shift-<
+move bookmark entry into another folder
+.SS "BUILT-IN FILE VIEWER"
+.TP
+.I arrow keys
+scroll (note that you can scroll horizontally also) 
+.TP
+.I Shift-<, Shift->, Ctrl-Left, Ctrl-Right
+scroll by 10 symbols horizontally 
+.TP
+.I Ctrl-F, F7
+search for text string 
+.TP
+.I Ctrl-G, Shift-F7
+repeat search for text string 
+.TP
+.I F2, Ctrl-W
+save contents to file 
+.SH FILES
+.IR /usr/lib/nftp/nls/*.{nls,mnu} " or"
+.br
+.IR /usr/local/lib/nftp/nls/*.{nls,mnu} " or"
+.br
+.I ~/.nftp/nls/*.{nls,mnu}
+.RS
+User interface strings and messages, translated to different languages.
+At least one *.nls file and one *.mnu file are required.
+You should probably always keep english.nls and english.mnu just in case.
+.RE
+.I ~/.nftp/nftp.ini
+.RS
+Personal configuration file. It contains comments explaining its contents.
+Most parameters have reasonable defaults except your e-mail address which
+you should set explicitly.
+.RE
+.I ~/.nftp/nftp.cfg
+.RS
+Another configuration file. It is not user-editable and is not only read but
+also written by NFTP. Keeps some settings like language, registration info, 
+last FTP Search query, etc.
+.RE
+.I ~/.nftp/nftp.bmk
+.RS
+Personal bookmark file. You store there list of sites which are frequently
+visited. You should not edit it directly; use "Edit bookmark"
+command inside NFTP instead.
+.RE
+.I ~/.nftp/nftp.hst
+.RS
+History file. All places you visit are recorded there and can be quickly
+recalled with F2/Ctrl-E.
+.RE
+.I ~/.nftp/nftp.fls
+.RS
+Log file; NFTP records all transfers there: what file from/to what site,
+when and with what speed was transferred. Useful when you can't recall
+where you fetched that particular file several years ago.
+.RE
+.SH ENVIRONMENT
+.TP 
+.B NFTP_LANG
+is now obsolete. See menu entry 
+.I Option/Language 
+in NFTP.
+.SH DIAGNOSTICS
+.SH BUGS
+There's a well-known problem with Esc key:
+it cannot be detected
+immediately because it may be just an opening of key sequence and
+therefore some delay happens between the moment you hit Esc and the
+moment NFTP reacts to it. I have accepted the following solution: you
+can use ` key (upper-left on typical keyboard) inside NFTP instead of
+Esc and get immediate responce. Of course, you are then unable to enter
+` itself. You can enter tilde though (it is shift-`).
+.SH AUTHOR
+Sergey Ayukov <asv@ayukov.com>
+.SH "COPYRIGHT AND LICENSING TERMS"
+NFTP was developed by Sergey Ayukov,
+research fellow at Sternberg Astronomical Institute of
+Moscow State University, Russia. The development is continuing.
+.PP
+NFTP is
+.IR shareware ,
+i.e. you have to pay licensing fee to use it. After 60 days of user,
+unregistered version will
+produce registration reminder every time you log into site.
+Registration fee is currently $25 and includes all versions on all platforms
+(i.e. OS/2, Win32, BeOS and all Unixes).
+.SH AVAILABILITY
+Version 1.61 is available for AIX (RS/6000), BeOS (R4 Intel), Digital 
+Unix (Alpha), FreeBSD (Intel), Linux (Intel, Alpha and SPARC), OS/2, 
+Solaris (SPARC and Intel), Windows 95/98/NT (Intel).
+NFTP home page is
+.BR http://www.ayukov.com/nftp .
+.SH "SEE ALSO"
+.BR ftp (1),
+.BR ncftp (1)
+

@@ -1,0 +1,72 @@
+
+NFTP homepage is http://www.ayukov.com/nftp
+
+Version 1.72 beta 4 (12 Sep 2003)
+
+Fixes:
+
+- fixed crash in unregistered mode after clean install;
+
+Version 1.72 beta 3 (8 Sep 2003)
+
+Fixes:
+
+- fixed crashes and spurious directory creation while mirroring;
+- mirror.include-subdirs now works correctly when uploading;
+- downloading to root directory of the drive works now;
+- history loading is faster now;
+
+Version 1.72 beta 2 (11 Mar 2003):
+
+New features:
+
+- directories (with subdirectories) can be uploaded;
+- new transfer routines are now switched on by default;
+- F5 now acts as 'Copy' key (handles both download and upload);
+  changed Transfer submenu according this: removed Download, 
+  Download everything, Upload, added Copy;
+- new menu item: review list of files selected on remote site;
+- added a parameter to nftp.ini to switch on/off use of MDTM;
+
+Most important fixes since 1.72.b1:
+
+- file selector now jumps less on its own;
+- MDTM is only issued once per file;
+- wrong directory was refreshed when restarting while uploading;
+- criteria for mirroring/transferring are now identical therefore
+  mirroring does not select files for transfer which will be later
+  skipped anyway;
+- when uploading changed remote directories are discarded from NFTP 
+  local cache;
+- message "Changing directory" no longer appears during transfer;
+
+Version 1.72 beta 1 (11 Feb 2003):
+
+New features:
+
+- imported new transfer routines from unfinished v2.0. 
+  they are not finished yet and are switched off by default and 
+  can be activated in nftp.ini;
+- recursive deleting of directories on remote;
+- when doing mirroring in interactive mode (not from script)
+  a warning dialog is issued, list of files to delete is presented 
+  for review and a confirmation is requested for deletion. When 
+  mirroring in noninteractive mode deletion does not happen and 
+  log message is produced when percentage of the files/directories 
+  that would be deleted is greater than 10% (configurable);
+- NFTP now uses MDTM to get exact file modification times before
+  downloading;
+
+Most important fixes since 1.71:
+
+- empty directories are properly handled by mirroring 
+  in both directions (created/deleted when necessary);
+- fixed transfer restart;
+- setproctitle() is now used under FreeBSD and Linux;
+- fixed 'large file backup' feature; it will now only backup 
+  files before overwriting when a) they are large than 100MB 
+  and b) backups are on (default).
+- fixed file handle leak when files are skipped during transfer;
+
+Sergey Ayukov <asv@ayukov.com>
+

@@ -1,0 +1,157 @@
+#
+# see syntax explanations in english.mnu if interested
+#
+
+main
+{
+    {SUBMENU, "Сайтове",     Sites}
+    {SUBMENU, "Файлове",     Files}
+    {SUBMENU, "Изглед",      View}
+    {SUBMENU, "Трансфер",  Transfer}
+    {SUBMENU, "Опции",        Options}
+    {SUBMENU, "Помощ",     Help}
+}
+
+Sites
+{
+    {ACTION, "Отметки...",            10}  login from bookmarks
+    {ACTION, "История...",            17}  history
+    {ACTION, "Запиши отметка...",     35}  save host/dir as bookmark
+    {SUBMENU, "FTP Search", FTPSearch}
+    {SUBMENU, "Пароли", Passwords}
+    {SEP}
+    {ACTION, "Отвори URL...",             18}  Отваря URL
+    {ACTION, "Включи...",              11}            login
+    {ACTION, "Изключи...",            13}  log off
+    {ACTION, "Провери връзката",      22}  send NOOP
+    {ACTION, "Изпрати команда...",    24}  quote command
+    {SEP}
+    {ACTION, "Замрази (само Unix)",   112}  suspend
+#   {ACTION, "Гръмни",                 9}  crash and burn
+    {ACTION, "Излез...",              14}  exit NFTP
+}
+
+Passwords
+{
+    {ACTION, "&Редактирай...",   28} редактира паролите
+    {ACTION, "Промени &кл.дума...", 29} променя кл.дума за кодиране на паролите
+}
+
+Files
+{
+    {ACTION, "Създай директория...",          53}  create directory
+    {ACTION, "Преименувай...",                54}  rename file/directory
+    {ACTION, "Изтрий...",                     52}  delete file/dir
+    {ACTION, "Промени правата за достъп",     79}  Променя правата за достъп
+    {SEP}
+#   {ACTION, "Влез в директорията",           71}  change into dir under cursor
+    {ACTION, "Отиди в директория...",         74}  input dir and change to it
+    {ACTION, "Отиди в главната директория",   72}  change to root dir
+    {ACTION, "Препрочети директорията",       70}  re-read directory
+    {ACTION, "Запиши списъка...",             45}  save directory listing
+    {ACTION, "Смени локалното устройство...", 75}  change local drive
+    {ACTION, "Изчисли размер на директория",            57}  Претърсва директорията и изчислява размера й
+}
+
+View
+{
+    {ACTION, "Превключи изгледа на директориите",  32}  switch between raw/parsed modes
+    {ACTION, "Контролна връзка",                   30}  switch between CC and dir
+    {ACTION, "Превключи локален/отдалечен",        31}  switch between local/remote
+    {SWITCH, "Р&азделен екран",              37}  Norton Commander изглед
+    {SWITCH, "Покажи време/дата",            38}  показва/скрива времето и датата в панела
+    {SWITCH, "ЏЏИЏНЏИ-яяЏАяяя",       39}  show/hide mini-status field
+    {SEP}
+    {ACTION, "Разгледай файл",                     50}  view w/int viewer
+    {ACTION, "Разгледай с външна програма",        51}  view w/ext viewer
+    {ACTION, "Зареди описанията...",               76}  load 00index.txt file
+    {SUBMENU, "Сортиране",   Sort}
+    {SEP}
+    {ACTION, "Прерисувай екрана",                  36}  repaint screen
+}
+
+Sort
+{
+    {ACTION, "Сортирай по име",          60}  sort by name
+    {ACTION, "Сортирай по разширение",   61}  sort by extension
+    {ACTION, "Сортирай по размер",       63}  sort by size
+    {ACTION, "Сортирай по време",        62}  sort by date
+    {ACTION, "Несортирано",              64}  make unsorted
+    {ACTION, "Обърни реда",              65}  reverse sort order
+}
+
+Transfer
+{
+    {ACTION, "&Copy...",                   77}  copy between remote/local
+#   {ACTION, "Вземи...",               40}  download
+#   {ACTION, "Вземи всичко...",        42}  d/l from all dirs
+    {ACTION, "Вземи по име...",        44}  d/l by name
+    {ACTION, "Download with WGET...",     46}  launch wget to retrieve files
+#   {ACTION, "Изпрати...",             41}  upload
+#   {ACTION, "Изпрати всичко...",      43}  u/l from all dirs
+    {SEP}
+    {SUBMENU, "&Избери", Select}
+    {SUBMENU, "&Mirror", Mirror}
+    {SWITCH, "Bin",                     21}  switch ASCII/BINARY
+    {ACTION, "Информация",             15}  get current status
+    {SEP}
+#   {SWITCH, "Limit throughput",           98}  limit throughput
+    {ACTION, "Пропусни файла",                  47}  пропуска файла по време на трансфера
+    {ACTION, "Спри трансфера",              48}  прекратява трансфера
+    {ACTION, "Рестартирай трансфера",           49}  прекратява и рестартира трансфера
+    {SWITCH, "Паузирай трансфера",             58}  прави пауза на трансфера
+}
+
+Select
+{
+    {ACTION, "Маркирай/Размаркирай",   82}  select file under cursor
+    {ACTION, "Маркирай по маска...",   83}  select by mask
+    {ACTION, "Размаркирай по маска...",84}  deselect by mask
+    {ACTION, "Маркирай всичко",        80}  select all files
+    {ACTION, "Размаркирай всичко",     81}  deselect all files
+    {ACTION, "Размаркирай във всички дир.",      87}  deselect all files
+    {ACTION, "Инвертирай маркираното",           85}  invert selection
+    {ACTION, "Експортирай списък с отбелязаните...",   19}  експортира списък с отбелязаните файлове
+    {ACTION, "Review list of marked...",   12}  review list of marked files/dirs
+}
+
+Mirror
+{
+    {ACTION, "&Сваляне...",               66} синхронизира локалния с отдалечения (download)
+    {ACTION, "&Качване...",                 67} синхронизира отдалечения с локалния (upload)
+    {SWITCH, "Изтрий несъотв. файлове",        68} превключва режима на изтриване/запазване на несъответстващите файлове
+    {SWITCH, "Включи &поддиректории",       69} превключва синхронизирането на поддиректориите
+}
+
+Help
+{
+    {ACTION, "Помощ",               1}  Help
+    {ACTION, "Главна помощ",        2}  general help
+    {ACTION, "Кратка помощ",        3}  short help
+    {ACTION, "Използване на менютата",      7}  using menus
+    {SEP}
+    {ACTION, "Обнови NFTP",       90}  Свързва се с NFTP сайта
+    {ACTION, "За NFTP...",          6}  displays time of build
+}
+
+FTPSearch
+{
+    {ACTION, "Намери с FTPSearch...", 120} Намира с FTPSearch
+    {ACTION, "Резултати от последното търсене...", 122}, Показва резултатите от последното търсене
+    {ACTION, "Сървъри...", 121} Задава FTPSearch сървърите
+}
+
+Options
+{
+    {SWITCH, "Използвай прокси",        25}  enable/disable proxy
+    {SWITCH, "Използвай флагове",     23}  use/disable NLST with flags
+    {SWITCH, "Покажи описанията",                 34}  show/hide descriptions
+    {SWITCH, "Пасивен режим",      26} превключва пасивния режим
+    {SWITCH, "Следене на симв.връзки",  27}  превключва следенето на символните връзки
+    {SEP}
+    {ACTION, "Настройки",             16}  invoke editor on nftp.ini
+# I suggest next line should be left in English :-}
+    {ACTION, "Language",        91}  select language
+    {ACTION, "Шрифт...", 93} Избира шрифт за NFTP прозореца
+    {ACTION, "Регистрационен код...",   92}  Въвеждане на регистрация
+}

@@ -1,0 +1,29 @@
+  {ACTION, "Zmìnit pøístupová práva",             79}  change access rights
+
+# ------------------------------------------------- new since 1.62
+
+{ M_DELETE_FILES
+"Oznaèil jsi %d soubor(ù)."
+"     Chce¹ je opravdu smazat?" }
+
+{ M_NOT_EMPTY
+"Adresáø `%s' není prázdný!"
+"Odstranit celou adresáøovou strukturu?" }
+
+{ M_ALL "All" }
+
+{ M_DELETING
+"  Ma¾u %s...  " }
+
+{ M_NO_CHMOD
+"Tento FTP server nepodporuje pøíkaz SITE CHMOD" }
+
+{ M_ACCESSRIGHTS1
+"Pøístupová práva pro %d soubor(y/ù)" }
+
+{ M_ACCESSRIGHTS2
+"Pøístupová práva pro %s" }
+
+{ M_WRONG_RIGHTS
+"Chybné zadání:  [%s]"
+"Správný formát: [rwxrwxrwx]" }

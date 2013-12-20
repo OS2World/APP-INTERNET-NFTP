@@ -1,0 +1,134 @@
+AC_INIT([libasvtools],[1.0.0],[asv@ayukov.com])
+AC_CONFIG_AUX_DIR(scripts)
+
+AC_CONFIG_MACRO_DIR([m4])
+AM_INIT_AUTOMAKE([foreign])
+AM_MAINTAINER_MODE
+
+AC_CANONICAL_HOST
+CFLAGS="$CFLAGS -Wall -ansi"
+AC_SUBST(binmode)
+case $host_os in
+  linux*)
+	system=linux
+	binmode=0
+	CFLAGS=`echo $CFLAGS | sed 's#-ansi##'`
+  ;;
+  freebsd*)
+	system=freebsd
+	binmode=0
+	CPPFLAGS="$CPPFLAGS -I/usr/local/include"
+	LDFLAGS="$LDFLAGS -L/usr/local/lib"
+  ;;
+  win32*)
+	binmode=O_BINARY
+  ;;
+  os2*)
+	binmode=O_BINARY
+  ;;
+  *)
+	binmode=0
+  ;;
+esac
+AM_CONDITIONAL(LINUX, test "x$system" = "xlinux")
+AM_CONDITIONAL(FREEBSD, test "x$system" = "xfreebsd")
+#AC_DEFINE_UNQUOTED(BINMODE_FLAGS, $binmode, [Binary mode])
+
+
+AC_PROG_CC
+AC_PROG_CPP
+AC_PROG_INSTALL
+AC_PROG_LIBTOOL
+
+AC_CONFIG_HEADERS([src/config.h])
+
+AC_ARG_ENABLE(debug,
+  AS_HELP_STRING(--enable-debug,compile with debug info (default=no)),
+  [export USE_DEBUG=yes CFLAGS="$CFLAGS -g"],
+  [export USE_DEBUG=no CFLAGS="$CFLAGS -O2"]
+)
+AM_CONDITIONAL(USE_DEBUG, test "x$USE_DEBUG" = "xyes")
+
+AC_ARG_ENABLE(dmalloc,
+  AS_HELP_STRING(--enable-dmalloc,compile and link with dmalloc (default=no)),
+  [export USE_DMALLOC=yes CFLAGS="$CFLAGS -DDMALLOC" LIBS="$LIBS -ldmalloc"],
+  [export USE_DMALLOC=no]
+)
+AM_CONDITIONAL(USE_DMALLOC, test "x$USE_DMALLOC" = "xyes")
+
+AC_ARG_ENABLE(profile,
+  AS_HELP_STRING(--enable-profile,compile with profiling info (default=no)),
+  [ profile=yes CFLAGS="$CFLAGS -pg" LDFLAGS="$LDFLAGS -pg" ],
+  [ profile=no ],
+)
+AM_CONDITIONAL(USE_PROFILE, test "x$profile" = "xyes")
+
+dnl Check required headers
+AC_CHECK_HEADERS(stdio.h time.h stdarg.h string.h ctype.h assert.h limits.h)
+AC_CHECK_HEADERS(sys/types.h fcntl.h stdint.h)
+AC_CHECK_FUNCS(flock vsnprintf mmap strcasestr strlwr strupr getpgid)
+
+dnl Check regex library
+AC_CHECK_HEADER(regex.h,
+ AC_RUN_IFELSE([AC_LANG_SOURCE([[#include <sys/types.h>
+             #include <regex.h>
+             #include <locale.h>
+             int main (void)
+             {
+                 regex_t rx;
+                 int     rc;
+                 regmatch_t pm;
+
+                 setlocale (LC_ALL, "ru_RU.KOI8-R");
+
+                 rc = regcomp (&rx, "t[[·-Ò]]t", REG_EXTENDED|REG_ICASE);
+                 if (rc != 0) return -1;
+
+                 rc = regexec (&rx, "test∆test", 1, &pm, 0);
+                 if (rc != 0) return -2;
+
+                 if (pm.rm_so != 3 || pm.rm_eo != 6) return -3;
+                 return 0;
+             }
+            ]])],[our_regex=0],[our_regex=1
+ ],[]),
+ our_regex=1
+)
+AC_DEFINE_UNQUOTED(USE_OUR_REGEX_LIBRARY, ${our_regex}, [Use our regex library])
+
+dnl Check large file support
+AC_SYS_LARGEFILE
+
+AC_TYPE_INT8_T
+AC_TYPE_INT16_T
+AC_TYPE_INT32_T
+AC_TYPE_INT64_T
+AC_TYPE_UINT8_T
+AC_TYPE_UINT16_T
+AC_TYPE_UINT32_T
+AC_TYPE_UINT64_T
+
+AC_CHECK_TYPE(u_int8_t,  have_u_int8_t=1,  have_u_int8_t=0)
+AC_CHECK_TYPE(u_int16_t, have_u_int16_t=1, have_u_int16_t=0)
+AC_CHECK_TYPE(u_int32_t, have_u_int32_t=1, have_u_int32_t=0)
+AC_CHECK_TYPE(u_int64_t, have_u_int64_t=1, have_u_int64_t=0)
+
+AC_SUBST(have_u_int8_t)
+AC_SUBST(have_u_int16_t)
+AC_SUBST(have_u_int32_t)
+AC_SUBST(have_u_int64_t)
+
+AC_CHECK_FUNC(strlwr, have_strlwr=1, have_strlwr=0)
+AC_CHECK_FUNC(strupr, have_strupr=1, have_strupr=0)
+
+AC_SUBST(have_strlwr)
+AC_SUBST(have_strupr)
+
+AC_CHECK_HEADER(stdint.h, have_stdint_h=1, have_stdint_h=0)
+AC_CHECK_HEADER(fcntl.h, have_fcntl_h=1, have_fcntl_h=0)
+
+AC_SUBST(have_stdint_h)
+AC_SUBST(have_fcntl_h)
+
+AC_CONFIG_FILES([Makefile src/Makefile src/asvtools.h tests/Makefile])
+AC_OUTPUT

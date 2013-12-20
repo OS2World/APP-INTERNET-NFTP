@@ -1,0 +1,1584 @@
+#
+#     Language-specific file for NFTP 1.10+
+#
+#     Italian
+
+{ M_JAN "Gen" }
+{ M_FEB "Feb" }
+{ M_MAR "Mar" }
+{ M_APR "Apr" }
+{ M_MAY "Mag" }
+{ M_JUN "Giu" }
+{ M_JUL "Lug" }
+{ M_AUG "Ago" }
+{ M_SEP "Set" }
+{ M_OCT "Ott" }
+{ M_NOV "Nov" }
+{ M_DEC "Dic" }
+
+{ M_HBAR              "Ä" } { M_VBAR              "³" }
+{ M_CROSS             "Å" }
+{ M_FILL1             "°" } { M_FILL2             "±" }
+{ M_FILL3             "²" } { M_FILL4             "Û" }
+{ M_LU                "Ú" } { M_RU                "¿" }
+{ M_LD                "À" } { M_RD                "Ù" }
+{ M_LT                "Ã" } { M_RT                "´" }
+{ M_UT                "Â" } { M_DT                "Á" }
+{ M_PLACEHOLDER       "ú" } { M_MARKSIGN          "*" }
+
+#  Bookmarks ----------------------------------------------------------
+
+{ M_CANTOPENBOOKMARKS1
+"impossibile aprire il file [%s] in modalita` aggiunta" }
+
+{ M_CANTOPENBOOKMARKS2
+"impossibile aprire il file [%s] in lettura " }
+
+{ M_CANTOPENBOOKMARKS3
+"impossibile aprire il file [%s] in sovrascrittura" }
+
+{ M_NO_BOOKMARKS
+"  Nessun segnalibro trovato" }
+
+{ M_EMPTY_BOOKMARKSLIST
+"  La lista dei segnalibro e` vuota" }
+
+{ M_DELETE_BOOKMARK
+"  Cancello il segnalibro  " "  %s ?  " }
+
+{ M_INSERT_BOOKMARK1
+" Inserisci lo userid (lascia in bianco per anonimo): " }
+
+{ M_INSERT_BOOKMARK2
+" Inserisci il nome del server ftp o l'indirizzo IP: " }
+
+{ M_INSERT_BOOKMARK3
+" Inserisci la directory: " }
+
+{ M_CURRENT_BOOKMARKS
+" Segnalibro correnti " }
+
+{ M_BOOKMARKS_CHANGED
+" Le informazioni sui segnalibro sono cambiate.  " "  Salvo la nuova lista?  " }
+
+#  Prompts ------------------------------------------------------------
+
+{ M_USETAB
+" Usa Tab/Shift-Tab per muoverti tra i campi " }
+
+{ M_CHOOSEDRIVE
+" Scegli il drive" }
+
+{ M_SELECT_DIRECTORY
+" Seleziona la directory di partenza (premi ENTER per accettare): " }
+
+{ M_ENTER_VERBATIM_COMMAND
+" Inserisci il comando da inviare al calcolatore remoto: " }
+
+{ M_MKDIR_ENTER_NAME
+" Inserisci il nome della directory da creare: " }
+
+{ M_ENTER_FIREWALL_USERID
+" Inserisci lo userid per il FIREWALL: " }
+
+{ M_ENTER_FIREWALL_PASSWORD
+" Inserisci la password per il FIREWALL: " }
+
+{ M_ENTER_USERID
+" Inserisci lo userid: " }
+
+{ M_ENTER_PASSWORD
+" Inserisci la password: " }
+
+{ M_ENTER_HOSTNAME
+" Inserisci l'hostname[[:port]path] a cui collegarti: " }
+
+{ M_ENTER_DIRECTORY
+" Cambia la directory remota a: " }
+
+{ M_ENTER_SELECT_FILTER
+" Inserisci il filtro: " }
+
+{ M_RENAME_LOCAL_FILE
+" Prego rinomina il file locale: " }
+
+#  Pseudo-responses ------------------------------------------------------
+
+{ M_RESP_CANNOT_RESOLVE
+"Impossibile risolvere '%s'" }
+
+{ M_RESP_LOOKING_UP
+"Sto cercando '%s'" }
+
+{ M_RESP_TRYING_IP
+"Impossibile risolvere '%s', sto provando con l'indirizzo IP" }
+
+{ M_RESP_FOUND
+"Trovato '%s'" }
+
+{ M_RESP_NO_SOCKET
+"Impossibile ottenere una socket, abbandono" }
+
+{ M_RESP_FAILED_TO_CONNECT
+"Connessione alla porta %u fallita" }
+
+{ M_RESP_CONNECTED
+"Connesso alla porta %u" }
+
+{ M_RESP_CLOSING
+"Chiudo la connessione di controllo" }
+
+{ M_RESP_LOGIN
+"Entrato con successo come '%s@%s'" }
+
+{ M_RESP_TRANSFER_DONE
+"Trasferimento effettuato; velocita` media di %u byte/sec" }
+
+{ M_RESP_INIT_DONE
+"init() effettuato......" }
+
+#  Questions -------------------------------------------------------------
+
+{ M_TOO_BIG_FOR_INTVIEWER
+" Il file '%s' e` grande -- %ld bytes. "
+" Vuoi ancora vederlo con il viewer interno? " }
+
+{ M_REALLY_OVERWRITE
+" **** SOVRASCRITTURA ****"
+""
+" Il file '%s' esiste gia`."
+" Ha le stesse dimensioni del file remoto. "
+" (File locale: %d byte, file remoto: %d byte) "
+" Vuoi sovrascrivere il file locale?" }
+
+{ M_OVERWRITE_RENAME_CANCEL
+""
+" Il file '%s' esiste gia`!"
+" Ha le stesse dimensioni del file remoto. "
+" (File locale: %d byte, file remoto: %d byte) "
+" Premi Esc per cancellare il trasferimento " }
+
+{ M_OVERWRITE_RENAME_CANCEL2
+""
+" Il file '%s' esiste gia`!"
+" E` PIU` GRANDE del file remoto. "
+" (File locale: %d byte, file remoto: %d byte) "
+" Premi Esc per cancellare il trasferimento " }
+
+{ M_OVERWRITE_RENAME_CANCEL3
+" Sovrascrivo il file locale " " Rinomino il file locale " }
+
+{ M_REALLY_REGET
+" **** RITRASMISSIONE ****"
+""
+" Il file '%s' esiste gia`. "
+" E` PIU` PICCOLO del file remoto. "
+" (File locale: %d byte, file remoto: %d byte) " }
+
+{ M_REGET_RENAME_CANCEL
+""
+" Il file '%s' esiste gia`! "
+" E` PIU` PICCOLO del file remoto. "
+" (File locale: %d byte, file remoto: %d byte) "
+" Seleziona 'Continuare' per continuare il download interrotto "
+" Premi Esc per cancellare il trasferimento " }
+
+{ M_REGET_RENAME_CANCEL2
+" Continuo "
+" Sovrascrivo il file locale "
+" Rinomino il file locale " }
+
+{ M_REALLY_TRANSFER_FROM
+"    Trasferisco i(l) file DAL calcolatore remoto ?    " }
+
+{ M_REALLY_TRANSFER_TO
+"    Trasferisco i(l) file AL calcolatore remoto ?    " }
+
+{ M_REALLY_DELETE
+"    Cancello i(l) file ?    " }
+
+{ M_REALLY_SAVE_BOOKMARK
+"  Salvo la directory                       "
+"  %s %s : %s  "
+"  come segnalibro?  " }
+
+{ M_REALLY_EXIT
+"       Esco da NFTP ?      " }
+
+{ M_REALLY_LOGOFF
+"  Esco da %s ?  " }
+
+#  Miscellaneous text strings --------------------------------------------
+
+{ M_WELCOME
+" NFTP%s Premi Shift-H per informazioni generali" }
+
+{ M_DISCONNECTING
+"   Disconnessione da %s   " }
+
+{ M_EOF_MARK
+""
+" =========== FINE DEL FILE =========== " }
+
+{ M_WRONG_REGCODE
+" Codice di registrazione non corretto inserito in nftp.ini. "
+" Controlla di nuovo nome e codice. Esco ora?" }
+
+{ M_RUNNING_UNREGISTERED
+"          Questa copia di NFTP non e` registrata "
+""
+"    Non puoi trasferire file piu` grandi di %dKB. "
+""
+"    Leggi la documentazione per registrare NFTP."
+""
+"    Per disabilitare questo messaggio, metti 'message' a 0"
+"    nella sezione 'registration' di nftp.ini" }
+
+{ M_CCLINES
+" Connessione di Controllo : %u linee" }
+
+{ M_BINARY
+"BINARY" }
+
+{ M_ASCII
+"ASCII " }
+
+{ M_TRANSFER_COMPLETED
+"Trasferimento completo; premi un tasto per continuare " }
+
+{ M_HELP_ESC_TO_EXIT
+"  Aiuto - Esc per uscire  " }
+
+{ M_STATUS
+" Totale %u file, %s Byte  [%3s]  Selezionati %u file, %s Byte" }
+
+{ M_STATUS_BIN
+"BIN" }
+
+{ M_STATUS_ASC
+"ASC" }
+
+#  Fatal errors --------------------------------------------------------
+
+{ M_UNKNOWN_OS
+" Sistema operativo sconosciuto sul server: "
+"    '%s',"
+" esco... " }
+
+{ M_UNREGISTERED_TRANSFER
+" Non puoi trasferire file piu` grandi di %dKB "
+" con la versione non registrata. " }
+
+{ M_INI_BUILD_FAILED
+"Impossibile leggere/convertire nftp.ini."
+"controlla il PATH per vecchie versioni di NFTP.EXE e NFTP-OPT.EXE" }
+
+{ M_EMAIL_NOT_SET
+""
+"Devi personalizzare nftp.ini prima di eseguire NFTP. "
+"Come minimo, dovresti inserire il tuo indirizzo di posta elettronica."
+"" }
+
+{ M_CONNECTION_LOST
+" Connessione perduta. " }
+
+{ M_NO_PASV_NOFIREWALLING
+" Questo server FTP non supporta il comando PASV e "
+" quindi non puo` essere raggiunto da dietro un firewall " }
+
+{ M_NO_PASV
+" Questo server FTP non supporta il comando PASV. "
+" Metti il parametro 'use-PASV-mode' a 0 " }
+
+{ M_CANT_CREATE_SEM
+" Errore fatale: impossibile creare semafori " }
+
+{ M_INI_UNREADABLE
+""
+"Impossibile trovare nftp.ini; esco" }
+
+#  Transient messages --------------------------------------------------
+
+{ M_SENDING_VERBATIM_COMMAND
+"   Invio il comando al calcolatore remoto...   " }
+
+{ M_PARSING_LISTING
+"   Analizzo il listato di una directory...   " }
+
+{ M_MKDIR_CREATING
+"   Creo la directory sul calcolatore remoto...   " }
+
+{ M_GOING_ROOT
+"   Mi sposto nella directory root sul calcolatore remoto...   " }
+
+{ M_GOING_UP
+"   Mi sposto nella directory padre sul calcolatore remoto...   " }
+
+{ M_CHANGING_DIR
+"   Cambio directory sul calcolatore remoto...   " }
+
+{ M_SENDING_NOOP
+"   Invio il comando NO OPERATION...   " }
+
+{ M_QUERYING_DIR
+"   Chiedo il listato della directory corrente sul calcolatore remoto...   " }
+
+{ M_RETRIEVING_FILELIST
+"   Ricevo il listato della directory...   " }
+
+#  nftp-opt  defines -------------------------------------------------
+
+{ M_FATAL_LOADING_NFTP_INI
+"errore fatale nel caricamento del file nftp.ini; esco" }
+
+{ M_WRONG_KEYNAME
+"nome tasto sbagliato: [%s]"
+"" }
+
+{ M_KEYDEF_ERRORS
+"%d errori rilevati durante l'analisi delle definizioni dei tasti."
+"Premi un tasto qualunque..." }
+
+#  keynames defines ----------------------------------------------------
+
+{ M_KEYNAMES_WELCOME
+"Premi Esc per uscire, altri tasti per vedere i loro nomi."
+"Se non compare nulla, questa combinazione di tasti"
+"1) non e` stata definita affatto;"
+"2) e` stata intercettata del sistema operativo."
+""
+"Codice:         :"
+"" }
+
+{ M_HLP_MAIN
+""
+" NFTP"
+""
+" Si consiglia di leggere la documentazione HTML; e` piu` completa."
+""
+" COMANDI GENERALI DA TASTIERA"
+""
+" Shift-H  - queste informazioni. Questo sistema di aiuto non e`"
+"            ipertestuale"
+" F1       - richiama l'aiuto relativo al contesto"
+" F10      - esci dal sito e chiudi NFTP"
+" Ctrl-K   - esci dal sito"
+" Ctrl-B   - apri la lista dei segnalibro e connettiti ad un sito da li`"
+" F2       - apri la finestra dello storico e collegati ad un sito da li`"
+" Ctrl-L   - connettiti come anonimo ad un nuovo sito"
+" Ctrl-N   - connettiti con userid/password ad un nuovo sito"
+" Ctrl-W   - mostra informazioni sulla versione"
+" Ctrl-T   - cambia il modo ASCII/BINARY"
+" Ctrl-J   - ridisegna la schermata (non rileggendo la dir remota)"
+" Shift-I  - controlla quanti file in quante directory sono marcati"
+" Shift-A  - invia un comando NO OPERATION (verifica la connessione)"
+" Shift-F  - usa/inibisci NLST con i flag (default e` on). Alcuni server"
+"            non gradiscono NLST -lLa. Provalo se ricevi messaggi strani"
+"            dal server quando chiedi una directory. SCONSIGLIATO."
+""
+" Nota che questi comandi sono disponibili quasi sempre. Comunque, in"
+" molte modalita` altri tasti sono in gioco, quindi non dimenticare di"
+" premere F1 per vedere l'aiuto relativo al contesto."
+"" }
+
+#  ------------------------------------------------------------------------
+
+{ M_HLP_LINEIN
+""
+" Tasti disponibili durante l'editing dei campi :"
+""
+" Esc/Enter               - abbandona/conferma"
+" Left, Right, Home, End  - muovi il cursore"
+" Tab, Shift-Tab          - muoviti al campo seguente/precedente (se"
+"                           esiste)"
+" Del, Backspace          - cancella caratteri"
+" Shift-Ins               - incolla dalla system clipboard"
+" Ctrl-Ins                - copia nella system clipboard"
+""
+" Premi Del appena dopo la comparsa di un campo per svuotarlo;"
+" Se stai inserendo una password, questa verra` mascherata."
+"" }
+
+#  ------------------------------------------------------------------------
+
+{ M_HLP_CC
+""
+" Comandi disponibili nella finestra della Connessione di Controllo:"
+""
+" frecce      - muovi il punto di vista"
+" Esc         - riportati alla fine della storia (come End)"
+" Space       - passa a vedere la directory attiva"
+" Shift-Q     - invia una stringa al server cosi` com'e` (quotala)"
+" Shift-C     - passa ad una directory arbitraria"
+""
+" Le risposte del server sono in grigio; i comandi inviati sono in verde"
+" e i messaggi informativi da nftp sono rosso brillante. Naturalmente,"
+" questi colori sono validi solo se non li hai cambiati in 'nftp.ini'."
+""
+" NFTP e` probabilmente l'unico ftp client con incorporata la storia"
+" delle connessioni di controllo. Se vuoi vedere client e server"
+" negoziare tutto il tempo, metti il parametro 'auto-switch-to-control'"
+" ad 1. Provalo, ti potrebbe piacere (o magari no)."
+"" }
+
+#  ------------------------------------------------------------------------
+
+{ M_HLP_DIR_RAW
+""
+" Questa e` la directory remota. Se non sei connesso, vedi solo un campo"
+" nero. Richiama l'aiuto (Shift-H) per sapere come connetterti ad un sito."
+""
+" F3         - mostra il file sotto il cursore, usando il viewer interno"
+" Shift-V    - mostra il file sotto il cursore, usando un viewer esterno"
+""
+" Ctrl-D     - trasferisci tutti i file marcati in tutte le directory"
+" Shift-G    - trasferisci il file per nome (p.e. la directory e` illegibile)"
+" F5         - trasferisci il file sotto il cursore o quelli selezionati"
+" F7         - crea una directory (dovete averne i diritti sul remoto)"
+" F8         - cancella il file o directory sotto il cursore"
+" Ctrl-R     - rileggi la directory (rinfresca la lista dei file)"
+" Shift-O    - carica le descrizioni dei file dal file sotto il cursore"
+""
+" Ctrl-A     - seleziona tutti i file nella directory corrente"
+" Ctrl-X     - deseleziona tutti i file nella directory corrente"
+" Insert     - seleziona/deseleziona il file sotto il cursore. Non si"
+"              puo` selezionare una directory"
+" Piu`/Meno  - seleziona/deseleziona file con un filtro, ad es. '*.zip'"
+""
+" frecce     - muovi il cursore"
+" \          - vai alla root directory"
+" [          - sali alla directory padre ('cd ..')"
+" ]          - vai alla directory sotto il cursore"
+" Enter      - ------ ' ------"
+" Shift-C    - vai in una directory arbitraria"
+""
+" Shift-N    - ordina la directory per nome, prima le directory"
+" Shift-X    - ordina la directory per estensione, prima le directory"
+" Shift-T    - ordina la directory per data e nome, prima le directory"
+" Shift-S    - ordina la directory per dimensione e nome, prima le"
+"              directory"
+" Shift-Y    - rimuovi l'ordinamento, ritorna allo stato originale"
+" Shift-E    - capovolgi l'ordinamento attuale"
+""
+" F4         - crea un segnalibro che punta qui"
+" Space      - passa alla connessione di controllo"
+" Tab        - passa a vedere la directory locale"
+" Ctrl-O     - nascondi/mostra le descrizioni dei file (se esistono)"
+""
+" Altri comandi disponibili sono descritti nell'aiuto generale (Shift-H)."
+" Nota che e` possibile selezionare intere directory (tutti i file"
+" nelle sotto-directory vengono selezionati automaticamente). Le"
+" selezioni vengono conservate quando si cambia directory. "
+"" }
+
+#  ------------------------------------------------------------------------
+
+{ M_HLP_VIEWER
+""
+" Comandi disponibili nel viewer di testo incorporato: "
+""
+" frecce          - scorri (nota che puoi scorrere anche orizzontalmente)"
+" Shift-< Shift-> - scorri di 10 caratteri orizzontalmente"
+" Esc             - esci dal viewer"
+" Ctrl-F          - cerca un testo"
+" Ctrl-G          - ripeti la ricerca"
+" Ctrl-W          - salva il contenuto in un file"
+""
+" Dato che il viewer carica i file in memoria, cerca di non leggere"
+" file molto grandi."
+
+"" }
+
+
+#  ------------------------------------------------------------------------
+
+{ M_HLP_LOCAL_PARSED
+""
+" Questa e` la directory locale."
+""
+" F3         - mostra il file sotto il cursore, usando il viewer interno"
+" Shift-V    - mostra il file sotto il cursore, usando un viewer esterno"
+""
+" F6         - trasferisci il file sotto il cursore o quelli selezionati"
+" F7         - crea una directory (dovete averne i diritti sul remoto)"
+" F8         - cancella il file o directory sotto il cursore"
+" Ctrl-R     - rileggi la directory (rinfresca la lista dei file)"
+""
+" Ctrl-A     - seleziona tutti i file nella directory corrente"
+" Ctrl-X     - deseleziona tutti i file nella directory corrente"
+" Insert     - seleziona/deseleziona il file sotto il cursore. Non si"
+"              puo` selezionare una directory"
+" Piu`/Meno  - seleziona/deseleziona file con un filtro, ad es. '*.zip'"
+""
+" frecce     - muovi il cursore"
+" \          - vai alla root directory"
+" [          - sali alla directory padre ('cd ..')"
+" ]          - vai alla directory sotto il cursore"
+" Enter      - ------ ' ------"
+" Shift-C    - vai in una directory arbitraria"
+" Shift-Z    - seleziona la lettera del drive"
+""
+" Shift-N    - ordina la directory per nome, prima le directory"
+" Shift-X    - ordina la directory per estensione, prima le directory"
+" Shift-T    - ordina la directory per data e nome, prima le directory"
+" Shift-S    - ordina la directory per dimensione e nome, prima le"
+"              directory"
+" Shift-Y    - rimuovi l'ordinamento, ritorna allo stato originale"
+" Shift-E    - capovolgi l'ordinamento attuale"
+""
+" Space      - passa alla connessione di controllo"
+" Tab        - passa a vedere la directory remota"
+""
+" Altri comandi disponibili sono descritti nell'aiuto generale (Shift-H)."
+" Nota che non puoi selezionare directory. Le selezioni locali non"
+" vengono mantenute quando si cambia directory. "
+"" }
+
+#  ------------------------------------------------------------------------
+
+{ M_HLP_UNDEFINED
+""
+" Non c'e` aiuto in questa lingua per questa schermata "
+"" }
+
+#  new in 0.71
+
+{ M_NO_TEXT
+" Non c'e` testo per questo messaggio. "
+" Probabilmente non e` stato tradotto in questa lingua o "
+" e` stato dimenticato dall'autore di NFTP. " }
+
+{ M_CANT_DELETE
+" Non posso cancellare '%s' " }
+
+{ M_ENTER_LOCAL_DIRECTORY
+" Cambio il drive/directory locale in : " }
+
+{ M_REALLY_TRANSFER_FROM_ALLDIRS
+" %d file in %d directory stanno per essere scaricati. "
+" %s byte e` la dimensione totale. Continuo? " }
+
+#  new in 0.80
+
+{ M_BYTES_RECEIVED
+"     %7d byte ricevuti       "
+"             premi ESC per interrompere" }
+
+{ M_BYTES_REMAIN
+"     %7d byte ricevuti       "
+"     %7d byte rimanenti      "
+"             premi ESC per interrompere" }
+
+{ M_YES
+"  Si   " }
+
+{ M_NO
+"  No   " }
+
+{ M_OK
+"  OK   " }
+
+{ M_ENTER_SEARCHSTRING
+" Inserisci la stringa da cercare: " }
+
+{ M_ENTER_FILENAME_SAVE
+" Inserisci il nome del file in cui salvare: " }
+
+{ M_CANNOT_OPEN
+" Non posso aprire il file %s " }
+
+{ M_FILE_SAVED
+"        Il file e` stato salvato        " }
+
+{ M_LISTING_HEADER
+"Server    : %s" "Directory : %s" }
+
+{ M_LISTING_FOOTER
+""
+"%d file, %s byte totali" }
+
+{ M_LISTING_SAVED
+"    Il listato e` stato salvato    " }
+
+{ M_ENTER_RETRIEVE_AS
+" Ricevi il file come: " }
+
+{ M_ENTER_LISTING_FILENAME
+" Inserisci il nome del file per un listato: " }
+
+{ M_ENTER_NEWNAME
+" Rinomina il file: " }
+
+{ M_ENTER_UPLOAD_AS
+" Invia il file come: " }
+
+{ M_RENAME_FAILED
+" Non posso rinominare '%s' in '%s' " }
+
+{ M_QUICK_SEARCH
+" ricerca veloce: %s " }
+
+{ M_RESP_RETRYING
+"In pausa per %d secondi... ESC per interrompere, un altro tasto per riprovare" }
+
+{ M_RESP_RETRY_ABORTED
+"Interrotto." }
+
+#  new since 0.90
+
+{ M_CANT_ACCESS_DRIVE
+" Impossibile accedere al drive %c: " }
+
+{ M_DIRECTORY_DOESNT_EXIST
+" La directory '%s' non esiste " }
+
+{ M_BAD_BOOKMARK_ENTRY
+" Il segnalibro " " %s " " e` corrotto e verra` ignorato " }
+
+{ M_DEFAULT_BMK_FOLDER
+"Siti di interesse generale (creato automaticamente)" }
+
+{ M_BOOKMARK_FORMAT
+"; il formato dei segnalibro e`"
+"; ftp.sai.msu.su:21/pub/os2 : login/password/flags : descrizione"
+";"
+"; edita questo file con attenzione; applica le regole seguenti:"
+"; - gli spazi intorno ai due punti SONO importanti;"
+"; - i pathname devono essere assoluti, cioe` cominciare con '/';"
+"; - ometti 'port' se vuoi;"
+"; - sostituisci '*' per il 'login' anonimo e ometti 'password':"
+";   crydee.sai.msu.su:/pub/comp/os/os2 : *//flags : SAI OS/2 archive"
+";   "
+";" }
+
+{ M_ENTER_DESC
+" Inserisci la descrizione : " }
+
+{ M_FOLDER_TITLE
+" Cartella : %s " }
+
+{ M_DELETE_BOOKMARK1
+"        Cancello il segnalibro ?        " }
+
+{ M_NAME_FOLDER
+" Inserisci il nome della nuova cartella " }
+
+{ M_DELETE_NONEMPTY_FOLDER
+" Cancello la cartella non vuota  " " '%s' ? " }
+
+{ M_ENTER_FOLDER_TITLE
+" Inserisci il nome della cartella : " }
+
+{ M_SELECT_FOLDER
+" Seleziona la cartella in cui mettere il segnalibro " }
+
+{ M_FILE_TO_DOWNLOAD
+" File da ricevere: " }
+
+{ M_CANT_CREATE_DIRECTORY
+"Impossibile creare la directory '%s'" }
+
+{ M_REREAD_REMOTE_DIR
+" Rileggo il contenuto della directory remota? " }
+
+{ M_LOGOFF_MARKED
+" Hai selezionato %d file in %d directory. "
+" La dimensione totale e` di %s bytes. "
+" Sei ancora sicuro di voler abbattere il collegamento? " }
+
+{ M_CANT_LOGIN
+" Impossibile collegarsi a %s " }
+
+{ M_FILE_NOT_FOUND
+" Il file '%s' non e` stato trovato sul server " }
+
+{ M_TRANSFER_FAILED
+" Il trasferimento di '%s' e` fallito " }
+
+{ M_PROXY_ISNT_SPECIFIED
+"  Il proxy host del firewall non e` specificato in NFTP.INI  " }
+
+{ M_NOT_CONNECTED
+"Non connesso" }
+
+{ M_INCORRECT_FIREWALL
+" Il tipo di firewall specificato non e` corretto: %d " }
+
+{ M_UNKNOWN_SERVER_OS
+" Attenzione: sistema operativo sconosciuto sul server ftp: "
+" '%s'; "
+" NFTP potrebbe sbagliare ad interpretare il listato " }
+
+{ M_CONNECTING
+"Connessione a %s..." }
+
+{ M_CANNOT_RENAME
+" Impossibile rinominare il file '%s' in '%s' " }
+
+{ M_RESP_REGET_ISNT_SUPPORTED
+"Il reget non e` supportato; trasferisco l'intero file" }
+
+{ M_DOWNLOADING
+"%s - sto ricevendo..." }
+
+{ M_CANT_OPEN_FOR_WRITING
+" Non posso aprire il file '%s' in scrittura " }
+
+{ M_CHANGING_DIRECTORY
+"   Cambio directory in :   "
+"   '%s'   " }
+
+{ M_RESP_TRANSFER_CANCELLED
+"Trasferimento cancellato (%s)" }
+
+{ M_RESP_TRANSFER_ERROR
+"Errore durante il trasferimento di '%s'" }
+
+{ M_CANT_OPEN_FOR_READING
+" Impossibile aprire il file '%s' in lettura " }
+
+{ M_CANT_WRITE_LOGFILE
+" Attenzione: impossibile scrivere il log file '%s' " }
+
+{ M_CANT_GUESS_CURDIR
+" Impossibile determinare la directory corrente sul sistema remoto " }
+
+{ M_CANT_READ_FILE
+" Impossibile leggere il file '%s' " }
+
+{ M_UPLOADING
+"%s - sto inviando..." }
+
+{ M_HLP_SHORT
+" Scorciatoie da tastiera per NFTP            [F1 - altre info]"
+"                                    [Shift-H - aiuto generale]"
+" Login/logout"
+""
+" Ctrl-B - lista dei segnalibro      Ctrl-L - connessione anonima"
+" F4     - salva il segnalibro       Ctrl-N - conn. con login/password"
+" F10    - esci e chiudi             F2     - storico"
+""
+" Guarda"
+""
+" Tab     - dir locale/remota        Spazio - directory/connessione"
+" Shift-Z - cambia il drive locale   Shift-C- inserisci il path"
+" Shift-N/X/T/S - ordina secondo criteri differenti (nome/est/data/dim)"
+" tasti alfanumerici - cerca i file che cominciano cosi`"
+""
+" Trasferimenti"
+""
+" F5     - ricevi un file            F6 - invia un file"
+" F3     - leggi un file di testo    Ctrl-D - ricevi tutti i file selez."
+" Ins    - (de)seleziona un file     Ctrl-A - seleziona tutti i file"
+"" }
+
+{ M_HLP_BOOKMARK1
+""
+" Cartelle di segnalibro "
+""
+" Ogni cartella puo` contenere diversi segnalibro. Premi Enter o"
+" freccia a destra per entrare in una cartella, Esc o freccia a"
+" sinistra per uscirne. Usando solo i tasti freccia ci si puo`"
+" muovere per l'intero sistema di segnalibro."
+""
+" Per creare una nuova cartella, premi Ins. Per cancellare, premi Del."
+" Per rinominare una cartella, premi Ctrl-E."
+""
+" Questa schermata viene presentata anche quando vuoi creare un"
+" nuovo segnalibro. In questo casoa basta selezionare la cartella"
+" desiderata o premere Ins per crearne una nuova. Nota che se vuoi"
+" salvare un segnalibro con password (cioe` non di un server ftp"
+" anonimo), la tua password non verra` registrata. Puoi inserirla"
+" manualmente nel file .bmk, ma assicurati di sapere cosa fai, dato che"
+" e` una falla nella sicurezza (chiunque abbia accesso al tuo calcolatore"
+" puo` leggere la password)"
+""
+" Quando modifichi la lista, i cambiamenti verranno registrati (o"
+" abbandonati) quando lascerai questa schermata. Ti verra` chiesto se"
+" vuoi salvare le modifiche o meno. Se stai eseguendo piu` copie di NFTP"
+" simultaneamente, evita di modificare le liste di segnalibri."
+"" }
+
+{ M_HLP_BOOKMARK2
+""
+" Segnalibro all'interno di una cartella "
+""
+" Premi Enter per selezionare un sito (cioe` connetterti), Esc o freccia"
+" a sinistra per uscire dalla cartella. Usando solo i tasti freccia ci si"
+" puo` muovere per l'intero sistema di segnalibro."
+""
+" Premi Del per cancellare un segnalibro. Puoi cambiare l'ordine dei"
+" segnalibro facilemnte: usa Shift-U per muovere il segnalibro in su, "
+" Shift-D per muoverlo in giu`, Shift-< per muoverlo in un'altra"
+" cartella. Premi Ctrl-E per editare la descrizione del segnalibro."
+""
+" Quando modifichi la lista, i cambiamenti verranno registrati (o"
+" abbandonati) quando lascerai questa schermata. Ti verra` chiesto se"
+" vuoi salvare le modifiche o meno. Se stai eseguendo piu` copie di NFTP"
+" simultaneamente, evita di modificare le liste di segnalibri."
+"" }
+
+#  ---------------------------------------------------------- new in 1.02
+
+{ M_ALREADY_BOOKMARKED
+" Il segnalibro del sito '%s' esiste gia` "
+" (directory '%s'). Aggiungerlo comunque? " }
+
+{ M_EDIT1
+"Hostname[:port]directory" }
+
+{ M_EDIT2
+"Login/password/flag" }
+
+{ M_EDIT3
+"Descrizione del sito" }
+
+{ M_CONNECTION_OK
+"       La connessione e` OK        " }
+
+{ M_MARKED_STATISTICS
+"    %d file in %d directory; %s byte totali   " }
+
+#  ---------------------------------------------------------- new in 1.10
+
+{ M_STARTING_TRANSFER
+"   Comincio il trasferimento...   " }
+
+{ M_KEEP_TREE_INTACT
+" Hai selezionato %d file in %d sotto-directory. "
+" La dimensione totale e` di %s byte. "
+""
+" Conserva la struttura della directory durante il trasferimento? " }
+
+{ M_KEEP_TREE2
+" Conserva le sotto-directory "
+"    Ammucchia i file    " }
+
+{ M_OVERWRITE_RENAME_CANCEL4
+" Sovrascrivi il file locale "
+" Rinomina il file locale "
+" Salta questo file " }
+
+{ M_REGET_RENAME_CANCEL5
+" Continua "
+" Sovrascrivi il file locale "
+" Rinomina il file locale "
+" Salta questo file " }
+
+{ M_RESP_BIND_FAILED
+"Network error (bind() fallito)" }
+
+{ M_RESP_LISTEN_FAILED
+"Network error (listen() fallito)" }
+
+{ M_RESP_GETSOCKNAME_FAILED
+"Network error (getsockname() fallito)" }
+
+{ M_RESP_CANNOT_CONNECT
+"Impossibile connettersi per trasferire i dati" }
+
+{ M_RESP_CONNECTION_NOT_ESTABLISHED
+"Il server non ha stabilito la connessione dati" }
+
+{ M_RESP_TRANSFER_SKIPPED
+"Saltato il file `%s'" }
+
+{ M_WALK_TREE
+" Percorro l'intero albero a partire"
+" da '%s' ? " }
+
+{ M_NO_MARKED_FILES
+" Non ci sono file selezionati nelle sotto-directory " }
+
+{ M_HAVENT_BEEN_CONNECTED
+"non c'e` stata ancora connessione" }
+
+{ M_DIRECTORY_LISTING
+"Listato della directory" }
+
+{ M_LARGE_INDEX_FILE
+"  Attenzione: il file '%s' contenente le descrizioni dei file  "
+"  e` lungo %s byte. Vuoi ancora scaricarlo?  " }
+
+{ M_LOAD_DESCRIPTIONS
+" Carico le descrizioni da '%s' ? " }
+
+{ M_CANT_USE_DIR_AS_INDEX_FILE
+" Impossibile caricare le descrizioni dalla directory '%s'. "
+" Punta il cursore su un file normale. " }
+
+{ M_RESP_CONNECTING
+"Mi sto connettendo a %s..." }
+
+{ M_DOWNLOADING1
+"%s - DL %lu%% a %.2f KB/s" }
+
+{ M_UPLOADING1
+"%s - UL %lu%% a %.2f KB/s" }
+
+{ M_DESC_DOWNLOAD_OPTIONS
+"  Si   "
+"  No   "
+"  Mai  " }
+
+# ----------------------------------------- new in 1.21 -------------
+
+{ M_RESP_CANT_OPEN
+"Impossibile aprire il file %s" }
+
+{ M_NO_EMAIL_ADDRESS
+""
+"Attenzione: l'indirizzo e-mail non e` specificato nel file %s."
+"" }
+
+{ M_GUESSED_EMAIL
+"Uso %s come password per i login anonimi."
+"Premi ENTER per continuare..."
+"" }
+
+{ M_CANT_GUESS_EMAIL
+"Non sono riuscito a trovare il tuo nome di host o di login;"
+"per favore edita %s ed inserisci un indirizzo e-mail valido."
+"Verra` utilizzato per i login FTP anonimi."
+"" }
+
+{ M_INI_CONFIG_VERSION
+""
+"Il tuo file di configurazione corrente, %s, e` alla versione %s."
+"L'eseguibile di NFTP e` alla versione %s."
+"" }
+
+{ M_INI_CANT_FIND_NFTP_I
+"Impossibile trovare nftp.i per aggiornare nftp.ini"
+"ne` in `%s' ne` in `%s' !"
+"" }
+
+{ M_INI_UPDATE
+"Sto per aggiornare   `%s'"
+"usando               `%s'."
+"Procedo? [Ynq]" }
+
+{ M_INI_UPDATING
+""
+"Aggiorno %s con %s..."
+"" }
+
+{ M_INI_CANT_OPEN_READ
+"Impossibile aprire %s in lettura"
+"" }
+
+{ M_INI_CANT_OPEN_WRITE
+"Impossibile aprire %s in scrittura"
+"" }
+
+{ M_INI_WRONG_ENTRY
+"Errore -- entry al di fuori della sezione:"
+"%s" }
+
+{ M_INI_CANT_RENAME
+"Impossibile rinominare `%s' in `%s'"
+"" }
+
+{ M_INI_BACKUP
+""
+"La versione di backup del tuo %s"
+"e` stata salvata come         %s"
+"" }
+
+{ M_INI_UPDATING_ENTRY
+"aggiorno: %s"
+"" }
+
+{ M_INI_FINISHED
+""
+"Aggiornamento terminato; premere ENTER per continuare..." }
+
+# ----------------------------------------- new in 1.22 -------------
+
+{ M_RESP_CANT_CREATE_DIRECTORY
+"Impossibile creare la directory '%s'" }
+
+{ M_INFORMATION1
+" %d file in %d directory; %s byte totali "
+""
+" URL per il file corrente: "
+" %s "}
+
+{ M_INFORMATION2
+" %d file in %d directory; %s byte totali "
+""
+" Copio la URL corrente nella clipboard? "
+" %s "}
+
+{ M_HLP_HISTORY
+""
+" Storico dei siti e delle directory visitate"
+""
+" Il sito visitato piu` di recente e` primo nella lista. Lo storico"
+" serve anche come cache per il DNS (gli indirizzi IP risolti vengono"
+" conservati qui). L'asterisco vicino al codice di login indica che questa"
+" voce ha una password registrata nel file. Il codice di login non e`"
+" mostrato per i siti anonimi. Indicatori possono seguire il codice di"
+" login (consultate la FAQ a questo proposito)."
+""
+" Il comportamento del sottosistema dello storico e` controllato"
+" da settaggi nel file nftp.ini. Si possono stabilire limiti al numero di siti"
+" e directory per sito mantenuti nel file. I record estranei e duplicati"
+" vengono cancellati quando si apre la finestra dello storico. NFTP"
+" puo`anche ricordarsi le password dei siti (che vengono conservate"
+" in forma criptate ma non sicura). Per default, vengono registrati"
+" login, scaricamenti di file e logoff. NFTP puo` essere settato in"
+" modo da registrare ogni directory visitata nello storico."
+""
+" La navigazione e` simile a quella nella finestra dei segnalibro."
+" Enter seleziona il server o attiva la registrazione; Esc chiude la"
+" finestra o abbandona il listato della directory; le frecce destra/"
+" sinistra possono venire usate invece di Enter/Esc nella navigazione."
+" E` possibile cancellare directory ed interi siti dallo storico con Del."
+"" }
+
+{ M_PROCESSING_HISTORY1
+" Processo lo storico; stadio %u..." }
+
+{ M_PROCESSING_HISTORY2
+" Processo lo storico; stadio %u:  %u voci" }
+
+{ M_READING_HISTORY_FILE
+" Leggo lo storico;  %u linee" }
+
+{ M_WRITING_HISTORY_FILE
+" Scrivo lo storico;  %u linee" }
+
+{ M_ERROR_READING_HISTORY
+" Errore leggendo lo storico %s " }
+
+{ M_EMPTY_HISTORY
+" Lo storico %s e` vuoto " }
+
+{ M_SAVE_HISTORY
+" Salvo i cambiamenti negli storici? " }
+
+{ M_HIST_HEADER1
+" Storico: %u siti, %u voci totali " }
+
+{ M_HIST_HEADER2
+" Storico: %s, %u directory " }
+
+{ M_HIST_DELETE_DIR
+" %s:%s "
+" Cancello la directory? " }
+
+{ M_HIST_DELETE_SITE
+" %s "
+" Cancello il sito contenente %u directory? " }
+
+# ------------------------------------------------------ new/updated in 1.23
+
+{ M_HLP_USING_MENU
+"  "
+" Menu"
+""
+" Il menu serve come una veloce mappa strutturata delle funzioni di NFTP."
+" Per entrare nel menu, premi F9 o Ctrl-F (questi tasti possone essere"
+" ridefiniti in nftp.ini)."
+" Usa i tasti freccia per navigare nella struttura; Esc ti riportera` al"
+" menu principale. Se preferisci accedere alle funzioni del menu"
+" velocemente con delle hotkey, e` bene settare `menu-open-submenu' in"
+" nftp.ini a -1; come conseguenza F9 aprira` solo il menu principale. Con"
+" questo parametro, puoi anche decidere quale sottomenu aprire"
+" automaticamente invece di 'Siti'."
+" "
+" Puoi personalizzare la disposizione dei menu secondo le tue preferenze."
+" E` sufficiente editare il file `italian.mnu' o qualunque sia la lingua"
+" che tu usi. Le istruzioni sono all'interno del file."
+"" }
+
+{ M_RESP_F9_FOR_MENU
+"Premi F9 o Ctrl-F per il menu" }
+
+{ M_BOOKMARK_NICKNAME
+" Il nickname '%s' "
+" non e` stato trovato tra i segnalibro " }
+
+{ M_SELECT_BOOKMARK
+" Seleziona un segnalibro " }
+
+{ M_HISTORY_NICKNAME
+" Il nickname '%s' "
+" non e` stato trovato nello storico " }
+
+{ M_SELECT_HISTORY
+" Seleziona una voce dello storico " }
+
+{ M_USAGE0
+"Parametri opzionali : "}
+
+{ M_USAGE1
+"connesso alla URL" }
+
+{ M_USAGE2
+"scarico (G,g) o carico (P,p} file-URL" }
+
+{ M_USAGE3
+"processo i trasferimenti programmati in cmdfile.txt" }
+
+{ M_USAGE4
+"cerco `parola' nei segnalibro(b) o nello storico(h)" }
+
+{ M_USAGE5
+"Le URL dovrebbero essere nella forma "
+"[ftp://][username[:password]@]hostname[:port]directory/file,"
+"p.e. ftp://asv:password@crydee.sai.msu.ru:21/home/asv/file.txt"
+"o    crydee.sai.msu.su/pub/comp/software/asv/nftp/nftp-LATEST-os2.zip" }
+
+# ----------------------------------------------------------------- new in 1.40
+
+{ M_SITE_EDIT1
+"Host name" }
+
+{ M_SITE_EDIT2
+"Login (nome utente)" }
+
+{ M_SITE_EDIT3
+"Password" }
+
+{ M_SITE_EDIT4
+"Porta" }
+
+{ M_SITE_EDIT5
+"Directory" }
+
+{ M_SITE_EDIT6
+"Flag (vedi FAQ)" }
+
+{ M_PASSWORDED_WGET
+" Stai cercando di scaricare con WGET da un sito non anonimo. "
+" Per difetto, tali download sono disabilitati per motivi di  "
+" sicurezza; possono essere abilitati in nftp.ini" }
+
+{ M_WGET_DOWNLOAD_ONE
+" Scarico il file %s con un programma esterno? " }
+
+{ M_WGET_DOWNLOAD_MANY
+" Scarico %d file in %d directory; "
+" %s byte totali con un programma esterno? " }
+
+{ M_CONFIRM_COMMAND
+" Comando esterno da eseguire: " }
+
+{ M_USETAB2
+" Usa Tab/Shift-Tab o freccia Su/Giu per muoverti tra i campi " }
+
+# ------------------------------------------------- new since 1.50
+
+{ M_CANCEL
+" Cancella " }
+
+{ M_FTPS_RECEIVING
+"  %s: ricevo dati...   "
+"  Premi ESC per interrompere  "
+"  %s record trovati (totali) " }
+
+{ M_FTPS_NO_HITS
+"  Nessun riscontro per `%s'...   " }
+
+{ M_FTPS_SERVERS
+" Server FTP Search " }
+
+{ M_FTPS_ADD_SERVER
+" Inserisci il nome del server FTP Search da aggiungere " }
+
+{ M_FTPS_DELETE
+" Cancello `%s' ? " }
+
+{ M_QUERYING
+"cerco %s..." }
+
+{ M_FTPS_SENDING_REQUEST
+"  Invio richiesta a %s...   " }
+
+{ M_FTPS_SEARCHRES
+" Risultati ricerca (%u riscontri) " }
+
+{ M_DIR_SIGN
+"<DIR>" }
+
+{ M_LINK_SIGN
+"<LNK>" }
+
+{ M_SEARCH_FORWARD
+" Cerca in avanti " }
+
+{ M_SEARCH_BACKWARDS
+" Cerca all'indietro " }
+
+{ M_CANT_FIND
+"  `%s' non trovato  " }
+
+{ M_SELECT_LANGUAGE
+" Seleziona la lingua per l'interfaccia utente " }
+
+{ M_REGISTRATION_NAME
+"Nome per registrazione" }
+
+{ M_REGISTRATION_CODE
+"Codice di registrazione" }
+
+{ M_THANKS
+" Grazie per aver registrato NFTP! " }
+
+{ M_FTPS_NEED_ARGS
+" Devi specificare uno (ed uno solo) dei seguenti: "
+" 'exact', 'substring', 'wildcard' o 'regex' " }
+
+{ M_FTPS_SEARCH1
+"Ricerca 'Exact'" }
+
+{ M_FTPS_SEARCH2
+"Ricerca 'Substring'" }
+
+{ M_FTPS_SEARCH3
+"Ricerca 'Wildcard'" }
+
+{ M_FTPS_SEARCH4
+"Ricerca 'Regular expression'" }
+
+{ M_FTPS_SEARCH5
+"Maiuscole/minuscole?" }
+
+{ M_FTPS_SEARCH6
+"Escludi file/directory" }
+
+{ M_FTPS_SEARCH7
+"Limita ai domini" }
+
+{ M_FTPS_SEARCH8
+"Escludi domini" }
+
+{ M_FTPS_SEARCH9
+"Nascondi Slackware/RedHat/FreeBSD/ecc." }
+
+{ M_FTPS_SEARCH10
+"Max. numero di riscontri" }
+
+{ M_HLP_SITE_EDIT
+"Parametri del sito"
+""
+"Per siti anonimi, lascia vuoti i campi 'name' e 'password'. Se non"
+"specifichi una directory, ti troverai dove il server FTP scegliera`"
+"di metterti, di solito nella root per i login anonimi e nelle home"
+"directory per login privati. La descrizione del server e` solo a"
+"scopo di informazione; e` conservata nel file dei segnalibro."
+""
+"Flag disponibili:"
+"p - usa il modo passivo per quel sito. A volte e` utile con connessioni"
+"    lente o problematiche."
+"r - riprova all'infinito. Se c'e` un errore al login, NFTP riprovera`"
+"    indipendentemente dal codice di errore o se e` un sito anonimo o meno."
+"f - dentro il firewall. Quando il supporto di firewall e` specificato in"
+"    nftp.ini, questo sito verra` ancora raggiunto direttamente."
+}
+
+{ M_HLP_FTPSEARCH
+"Interfaccia per FTP Search"
+""
+"La ricerca 'Exact' cerchera` solo il file o directory specificato;"
+"esempio: nftp141o.zip"
+""
+"La ricerca 'Substring' cerchera` sottostringhe nei nomi di file o directory;"
+"esempio: nftp14"
+""
+"La ricerca 'Wildcard' usa i caratteri '*' e '?' nello stesso modo in cui"
+"sono usati sulla line di comando (p.e. * corrisponde a qualsiasi numero di"
+"caratteri, ? corrisponde esattamente ad un carattere qualsiasi);"
+"esempi: nftp*.zip o nftp1??o.zip"
+""
+"La ricerca 'Regular expression' e` la piu` potente, ma richiede un po' di"
+"esperienza; esempio: nftp1\.[4-9][0-9]o\.zip trovera` tutte le versioni"
+"1.xx di NFTP per OS/2, a partire dalla 1.40. Puoi trovare spiegazioni sulle"
+"'regular expressions' in una serie di posti, inclusa la libreria GNU rx."
+""
+"'Maiuscole/minuscole' si applica solo alla ricerca 'Substring'."
+""
+"Puoi anche applicare criteri addizionali: escludere directory dalla"
+"ricerca, limitare la ricerca a certi domini o escludere certi domini, ed"
+"escludere le distribuzioni freeware di Unix, che tendono a dare un gran"
+"numero di riscontri indesiderati. Argomenti multipli devono essere"
+"separati con spazi."
+""
+"Non e` consigliato mettere 'Max. numero di risontri' a valori alti"
+"(5000 riscontri sono inutili; prova ad escludere qualcosa di cui non hai"
+"bisogno.) Di solito ha senso inviare richieste al solo server principale"
+"di FTP Search, ftpsearch.ntnu.no, dal momento che indicizza piu` del 90%"
+"del mondo. Gli altri servono per lo piu` a fornire un mezzo per limitare"
+"la ricerca a luoghi geograficamente piu` vicini."
+"" }
+
+{ M_FTPS_DOWNLOAD
+"  Scarica "
+"  %s  "
+"  da %s?  " }
+
+{ M_HIST_CONT_SEARCH
+"  Non trovato a %s. Cerco in altri siti?  " }
+
+{ M_TOO_LARGE
+"%s/%s: troppo grande per la versione non registata" }
+
+{ M_DISCONNECT
+"  Interrompo la connessione col server %s?  " }
+
+{ M_UPLOAD_EDITED
+"  Carico il file modificato sul server?  " }
+
+{ M_FONT_DESC
+"larghezza %3d, altezza %3d (%s)" }
+
+{ M_UNSUPPORTED
+"  La funzione non e` supportata su %s  " }
+
+{ M_SELECT_FONT
+" Seleziona il font " }
+
+{ M_HLP_FTPSEARCH2
+"Combinazioni di tasti nella finstra dei risultati"
+""
+"Ctrl-P      mostra/nascondi path"
+"Ctrl-T      mostra/nascondi l'ora di ultima modifica"
+"Ctrl-F      cerca in avanti"
+"Ctrl-H      cerca all'indietro"
+"Shift-D/F5  scarica file"
+""
+"Shift-H     ordina per nome del server"
+"Shift-N     ordina per nome file (default)"
+"Shift-S     ordina per dimensione del file"
+"Shift-T     oridina per data/ora del file"
+"" }
+
+{ M_STALLED
+"bloccato" }
+
+# ------------------------------------------------- new since 1.51
+
+{ M_WAIT
+""
+""
+" Per favore attendi %d secondi... " }
+
+{ M_UNREGISTERED
+" Questa versione non e` registrata "
+""
+" Per eliminare questo messaggio devi registrare NFTP. "
+" Costa $%d e vale per tutte le versioni future per tutti"
+" i sistemi operativi supportati. Ulteriori informazioni "
+" presso http://www.ayukov.com/nftp/buy.html %s" }
+
+{ M_PRESS_ENTER
+" Premi ENTER per continuare " }
+
+{ M_HTTP_PROXY
+"  Non supportato via proxy HTTP " }
+
+{ M_ENUMERATING_FONTS
+" Conto i font... " }
+
+# ------------------------------------------------- new since 1.60
+
+{ M_SCRIPT_BADCOMMAND
+"Comando sconosciuto: %s" }
+
+{ M_SCRIPT_BADARGS
+"Questo comando richiede %d argomenti (trovati %d invece)" }
+
+{ M_SCRIPT_ERROR
+"Errore; esecuzione script interrotta" }
+
+{ M_SCRIPT_CANT_OPEN
+"Impossibile aprire il file di script `%s'" }
+
+{ M_SCRIPT_RUNNING
+"SCRIPT: %s %s" }
+
+{ M_SCRIPT_INVALID_VAR
+"Variabile non valida: %s" }
+
+{ M_SCRIPT_CANT_OPEN_LOG
+"Impossibile aprire il logfile `%s'" }
+
+{ M_RESP_CONNECTING2
+"Mi sto connettendo a %s: Esc - interrompi, Spazio - riprova..." }
+
+{ M_RESP_ACCEPTING
+"Aspetto la connessione sulla porta %d: Esc - interrompi, Spazio - riprova..."}
+
+{ M_RESP_ACCEPTED
+"Accettata connessiont da %s" }
+
+{ M_PAUSED
+"Sospeso; premi P per continuare" }
+
+{ M_SQRP
+"S/Q/R/P - Salta/Quit(Cancella)/Ricomincia/Pausa" }
+
+{ M_TOTAL        "Totale" }
+{ M_TRANSFERRED  "Trasferito" }
+{ M_SKIPPED      "Saltato" }
+{ M_LEFT         "Rimasto" }
+{ M_INACT        "secondi dall'ultimo pacchetto dati" }
+
+{ M_NO_FIREWALLING
+"Nessun firewall/proxy e` stato configurato in nftp.ini" }
+
+{ M_HLP_PASSWORDS
+"Chiavi nella finestra delle password"
+""
+"Insert - crea nuova password"
+"Delete - cancella password"
+"Ctrl-E - edita record"
+"Ctrl-P - mostra/nascondi password"
+""
+"Enter  - login nel sito"
+"" }
+
+{ M_DEL_UNMATCHED
+"   Cancello i file spaiati...   " }
+
+{ M_ENTER_LISTNAME
+"Inserisci il nome dove scrivere la lista:" }
+
+{ M_SYNC1
+"Sincronizzo il tree locale col sito remoto?"
+""
+"remoto   %s ->"
+"locale   %s"
+""
+"NFTP scarichera` i file" }
+
+{ M_SYNC2
+"Sincronizzo il sito remoto col tree locale?"
+""
+"locale   %s ->"
+"remoto   %s"
+""
+"NFTP carichera` i file" }
+
+{ M_SYNC3
+"Le directory sembrano essere identiche" }
+
+{ M_PASS_UNSUPPORTED
+"La versione del file di password (%d) non e` supportata" }
+
+{ M_PASS_ENTER_KEYPHRASE1
+"Inserisci la keyphrase per decrittare il tuo file di password" }
+
+{ M_PASS_INVALID
+"%s"
+"Il contenuto del file di password non e` valido" }
+
+{ M_PASS_ENTER_KEYPHRASE2
+"Inserisci la keyphrase da usare per crittare il tuo file di password" }
+
+{ M_PASSWORDS
+"Password" }
+
+{ M_PASS_SAVE
+"Salvo modifiche al file di password?" }
+
+{ M_PASS_DELETE
+"%s @ %s"
+"Cancello la password?" }
+
+{ M_DISK_FULL
+" %s "
+" Errore scrivendo su disco (disco pieno?) " }
+
+{ M_REGISTERED
+"Registrato per %s" }
+
+{ M_UNREGISTERED2
+"Non registrato (%d giorni dalla prima esecuzione)" }
+
+{ M_FTPS_RECEIVING2
+"Ricevo dati da %s...   "
+"Trovati in totale:  %s"
+"Trovati sul server: %s"
+"Premi ESC per interrompere la ricerca" }
+
+{ M_FTPS_NO_HITS2
+"La ricerca non ha dato risultati" }
+
+{ M_FTPS_NORES
+"Nessuna ricerca e` stata ancora effettuata" }
+
+{ M_ENABLE_PASSWORDS
+"Abilitare il caching delle password in nftp.ini, prego" }
+
+{ M_NEEDBF
+"Questo e` usato solo con il metodo %s (guarda nftp.ini)" }
+
+{ M_PASS_INCORRECT
+"La keyphrase e` sbagliata"}
+
+{ M_BYTESSEC
+"byte/sec" }
+
+{ M_DOWNLOAD 
+"scaricamento" }
+
+{ M_UPLOAD 
+"caricamento" }
+
+{ M_COMMUNICATING
+"Comunico col server..." }
+
+# will look like: " 23% done (download, binary)"
+{ M_PERCENTAGE1 "%9u%% effettuato (%s, %s)" }
+
+# will look like: " 23% done (download, binary) (3 of 15 files)"
+{ M_PERCENTAGE2 "%9u%% effettuato (%s, %s) (%d di %d file)" }
+
+# ------------------------------------------------- new since 1.61
+
+{ M_TR_OVERWRITE  "Overwrite (Sovrascrivi)" }
+{ M_TR_RESUME     "Riprendi" }
+{ M_TR_SKIP       "Salta" }
+{ M_TR_CANCEL     "Cancella" }
+
+{ M_TR_QUESTION
+"Il file destinazione esiste gia`!"
+"Azione suggerita: %s"
+""
+"Remoto: %s in %s"
+"Locale:  %s in %s"
+""
+"Sorgente: %s byte, %2d %s %4d  %02d:%02d:%02d"
+"Destinazione: %s byte, %2d %s %4d  %02d:%02d:%02d" }
+
+# ------------------------------------------------- new since 1.62
+
+{ M_DELETE_FILES
+"Hai selezionayo %d file."
+"     Sicuro di volerli cancellare?" }
+
+{ M_NOT_EMPTY
+"La directory `%s' non e` vuota."
+"Cancellare l'intero albero?" }
+
+{ M_ALL "Tutti" }
+
+{ M_DELETING
+"  Sto cancellando %s...  " }
+
+{ M_NO_CHMOD
+"Questo server FTP non supporta il comando SITE CHMOD" }
+
+{ M_ACCESSRIGHTS1
+"Diritti di accesso per %d file" }
+
+{ M_ACCESSRIGHTS2
+"Diritti di accesso per %s" }
+
+{ M_WRONG_RIGHTS
+"Input non valido:  [%s]"
+"Formato corretto: [rwxrwxrwx]" }
+

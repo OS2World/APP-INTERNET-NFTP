@@ -1,0 +1,28 @@
+ifdef RUNWORKPLACE
+CFLAGS1 = -Zbin-files
+LIBS1 = -lbsd -lsocket
+endif
+
+CC = gcc
+CFLAGS = -Wall -g -O -I../src $(CFLAGS1)
+
+TESTS = uniq subtree base64 pathdcmp finddesc parse_date \
+  str_parseline load_textfile is_textfile longprint \
+  str_words fsort merge pretty psort xlf unixentry html_parse \
+  connect html_entity str_replace regex_test wordparse http_parse \
+  binchars mime fprint_bits highlight html_highlight load_stdin vby \
+  accumulate bracket check_list fnmatch1 clock1 http_getdate linebuf \
+  math_routines pretty_date ranges snprintf1 sortfile
+
+all: tests
+
+tests: $(foreach a, $(TESTS), $(a).exe)
+
+%.exe: %.o
+	$(CC) $(CFLAGS) -L../src -o $@ $^ -lasvtools $(LIBS1)
+        
+clean:
+	rm -f *.o *.exe core random.* $(TESTS)
+	rm -rf .deps .libs
+
+

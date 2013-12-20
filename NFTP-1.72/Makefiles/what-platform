@@ -1,0 +1,138 @@
+#/bin/sh
+
+UNAME1=`uname`
+UNAME2=`uname -a`
+ARCH=unknown
+VERSION=unknown
+LIBC=0
+
+#Linux
+#Linux exodus 2.2.5 #7 Thu Apr 8 19:23:34 KST 1999 alpha unknown
+#Linux crydee 2.0.35 #5 Sun Mar 14 10:33:46 MSK 1999 i586 unknown
+#Linux universe.sai.msu.ru 2.0.36 #1 Tue Oct 13 22:17:11 EDT 1998 i586 unknown
+#Linux lnfm1 2.0.36 #4 Wed Feb 17 19:42:19 MSK 1999 i686 unknown
+
+if [ $UNAME1 = "Linux" ] 
+then
+   #echo Linux detected
+   echo "main (){}" >/tmp/probe.c
+   cc /tmp/probe.c -o /tmp/probe.exe
+   if [ `ldd /tmp/probe.exe | fgrep libc.so.4 | wc -l` -eq 1 ]; then LIBC=4; fi
+   if [ `ldd /tmp/probe.exe | fgrep libc.so.5 | wc -l` -eq 1 ]; then LIBC=5; fi
+   if [ `ldd /tmp/probe.exe | fgrep libc.so.6 | wc -l` -eq 1 ]; then LIBC=6; fi
+   rm -f /tmp/probe.c /tmp/probe.exe
+   if [ `echo $UNAME2 | grep i[3-7]86 | wc -l` -eq 1 ]; then ARCH=i386; fi
+   if [ `echo $UNAME2 | fgrep " alpha " | wc -l` -eq 1 ]; then ARCH=alpha; fi
+   if [ `echo $UNAME2 | fgrep " sparc " | wc -l` -eq 1 ]; then ARCH=sparc; fi
+   echo $ARCH-linuxlibc$LIBC
+   exit
+fi
+
+#FreeBSD
+#FreeBSD aedde.pair.com 2.2.7-STABLE FreeBSD 2.2.7-STABLE #0: Tue Dec 22 13:35:28 EST 1998     sigma@oore.pair.com:/usr/src/sys/compile/PAIRh  i386
+#FreeBSD universe.sai.msu.ru 2.2.8-RELEASE FreeBSD 2.2.8-RELEASE #0: Mon Nov 30 06:34:08 GMT 1998     jkh@time.cdrom.com:/usr/src/sys/compile/GENERIC  i386
+#FreeBSD universe.sai.msu.ru 3.1-RELEASE FreeBSD 3.1-RELEASE #0: Mon Feb 15 11:08:08 GMT 1999     jkh@usw3.freebsd.org:/usr/src/sys/compile/GENERIC  i386
+
+if [ $UNAME1 = "FreeBSD" ] 
+then
+   #echo FreeBSD detected
+   if [ `echo $UNAME2 | grep i[3-7]86 | wc -l` -eq 1 ]; then ARCH=i386; fi
+   if [ `echo $UNAME2 | grep amd64 | wc -l` -eq 1 ]; then ARCH=amd64; fi
+   if [ `echo $UNAME2 | fgrep "FreeBSD 2." | wc -l` -eq 1 ]; then VERSION=2; fi
+   if [ `echo $UNAME2 | fgrep "FreeBSD 3." | wc -l` -eq 1 ]; then VERSION=3; fi
+   if [ `echo $UNAME2 | fgrep "FreeBSD 4." | wc -l` -eq 1 ]; then VERSION=4; fi
+   if [ `echo $UNAME2 | fgrep "FreeBSD 5." | wc -l` -eq 1 ]; then VERSION=5; fi
+   if [ `echo $UNAME2 | fgrep "FreeBSD 6." | wc -l` -eq 1 ]; then VERSION=6; fi
+   if [ `echo $UNAME2 | fgrep "FreeBSD 7." | wc -l` -eq 1 ]; then VERSION=7; fi
+   if [ `echo $UNAME2 | fgrep "FreeBSD 8." | wc -l` -eq 1 ]; then VERSION=8; fi
+   echo $ARCH-freebsd$VERSION
+   exit
+fi
+
+#SunOS
+#SunOS neptun 5.5.1 Generic_103640-08 sun4m
+#SunOS silden 5.7 Generic i86pc i386 i86pc
+
+if [ $UNAME1 = "SunOS" ]
+then
+   #echo SunOS detected
+   if [ `echo $UNAME2 | grep i[3-7]86 | wc -l` -eq 1 ]; then ARCH=i386; fi
+   if [ `echo $UNAME2 | fgrep sun4 | wc -l` -eq 1 ]; then ARCH=sparc; fi
+   if [ `echo $UNAME2 | fgrep " 4." | wc -l` -eq 1 ]; then VERSION=sunos4; fi
+   if [ `echo $UNAME2 | fgrep " 5.5" | wc -l` -eq 1 ]; then VERSION=solaris2.5; fi
+   if [ `echo $UNAME2 | fgrep " 5.7 " | wc -l` -eq 1 ]; then VERSION=solaris7; fi
+   if [ `echo $UNAME2 | fgrep " 5.8 " | wc -l` -eq 1 ]; then VERSION=solaris8; fi
+   if [ `echo $UNAME2 | fgrep " 5.9 " | wc -l` -eq 1 ]; then VERSION=solaris9; fi
+   if [ `echo $UNAME2 | fgrep " 5.10 " | wc -l` -eq 1 ]; then VERSION=solaris10; fi
+   if [ `echo $UNAME2 | fgrep " 5.11 " | wc -l` -eq 1 ]; then VERSION=solaris11; fi
+   echo $ARCH-$VERSION
+   exit
+fi
+
+#OSF1
+#OSF1 dec2.npi.msu.su V4.0 564 alpha
+
+if [ $UNAME1 = "OSF1" ]
+then
+   #echo OSF/1 detected
+   if [ `echo $UNAME2 | fgrep " V3." | wc -l` -eq 1 ]; then VERSION=3; fi
+   if [ `echo $UNAME2 | fgrep " V4." | wc -l` -eq 1 ]; then VERSION=4; fi
+   echo alpha-osf$VERSION
+   exit
+fi
+
+#BeOS
+#BeOS rillanon 4.0 1000009 BePC
+
+if [ $UNAME1 = "BeOS" ]
+then
+   #echo BeOS detected
+   ARCH=unknown
+   if [ `echo $UNAME2 | fgrep BePC | wc -l` -eq 1 ]; then ARCH=i386; fi
+   if [ `echo $UNAME2 | fgrep BePPC | wc -l` -eq 1 ]; then ARCH=powerpc; fi
+   if [ `echo $UNAME2 | fgrep " 3." | wc -l` -eq 1 ]; then VERSION=3; fi
+   if [ `echo $UNAME2 | fgrep " 4." | wc -l` -eq 1 ]; then VERSION=4; fi
+   if [ `echo $UNAME2 | fgrep " 5." | wc -l` -eq 1 ]; then VERSION=5; fi
+   echo $ARCH-beos$VERSION
+   exit
+fi
+
+#Haiku
+#Haiku shredder l r36769 May 8 2010 20:58:31 BePC Haiku
+
+if [ $UNAME1 = "Haiku" ]
+then
+   #echo BeOS detected
+   ARCH=unknown
+   if [ `echo $UNAME2 | fgrep BePC | wc -l` -eq 1 ]; then ARCH=i386; fi
+   if [ `echo $UNAME2 | fgrep BePPC | wc -l` -eq 1 ]; then ARCH=powerpc; fi
+   VERSION=1
+   echo $ARCH-haiku$VERSION
+   exit
+fi
+
+#AIX
+#
+
+if [ $UNAME1 = "AIX" ]
+then
+   #echo AIX detected
+   ARCH=unknown
+   VERSION=unknown
+   if [ `echo $MACHTYPE | grep powerpc | wc -l` -eq 1 ]; then ARCH=rs6000; fi
+   if [ `echo $UNAME2 | fgrep " 4 " | wc -l` -eq 1 ]; then VERSION=4; fi
+   echo $ARCH-aix$VERSION
+   exit
+fi
+
+if [ $UNAME1 = "BSD/OS" ]
+   ARCH=i386
+   VERSION=unknown
+   if [ `echo $UNAME2 | fgrep "BSDI BSD/OS 4." | wc -l` -eq 1 ]; then VERSION=4; fi
+   echo $ARCH-bsdi$VERSION
+   exit
+then
+
+fi
+
+echo generic

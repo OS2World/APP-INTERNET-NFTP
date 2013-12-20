@@ -1,0 +1,21 @@
+#
+#   WinNT 4.0/Win95/Win98, mingw32
+#
+
+ARCHIVER = zip
+ARCHIVER_FLAGS = -q -r -9
+COMPRESSOR = echo
+TARGETS = nftp_win32cons.exe nftp_win32gui.exe
+INTL_LIBS = -lintl -liconv
+LIBS1 = 
+
+strip: force
+	strip nftp_win32cons.exe
+	strip nftp_win32gui.exe
+#	pestack -s8192 -c2048 nftp_win32cons.exe
+
+nftpwc.o: nftpwc.rc
+	windres -I rc -i $^ -o $@
+
+nftpwg.o: nftpwg.rc
+	windres -I rc -i $^ -o $@

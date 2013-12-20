@@ -1,0 +1,7 @@
+#include <fly/fly.h>
+
+ICON FLY_APP_FRAMEWND icons.os2\nftppm.ico
+
+MENU FLY_APP_FRAMEWND
+BEGIN
+END

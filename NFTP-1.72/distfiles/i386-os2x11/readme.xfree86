@@ -1,0 +1,27 @@
+
+The executable nftpx.exe runs under XFree86/OS2, in xterm window.
+The executable xnftp.exe runs under XFree86/OS2, as native X11 application.
+They were built under XFree86 3.3.6, but will also work under XFree86 4.0.
+
+Install regular version first, then put nftpx.exe and xnftp.exe 
+into NFTP directory.
+
+See 
+     http://set.gmd.de/~veit/os2/xf86os2.html 
+for more information about XFree86/OS2.
+
+Notes:
+
+-- do not resize xterm, before starting NFTPX or while it is running.
+This is XFree86/OS2 limitation. Use -geom switch to start xterm with
+specific size: "xterm -geom 80x50" will give you 80x50 window. XNFTP
+does not have this problem;
+
+-- xedit is set as default editor and viewer. Edit nftp.ini and set
+new values for "text-viewer" and "text-editor" if you don't have
+xedit or don't like it;
+
+-- Shift-Insert, Ctrl-Insert operate with OS/2 clipboard, not XFree86/OS2
+clipboard in nftpx.
+
+Questions? Send them to Sergey Ayukov <asv@ayukov.com>

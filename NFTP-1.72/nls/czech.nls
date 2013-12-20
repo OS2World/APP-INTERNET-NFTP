@@ -1,0 +1,1580 @@
+#
+#   Language-specific file for NFTP 1.10+
+#
+#   Czech (by Milan Ulej)
+#
+#   (20 IV 2000)
+#
+#   About file format:
+#   ------------------
+#
+#   1) Lines starting with # are comments. There's no way to imbed comment
+#      into the line in the middle. Empty lines are ignored.
+#   2) Format of the string defition is:
+#        { string-name string-value1 [string-value2 ...] }
+#      Space between string-name and first string-value is important.
+#      String-values must be enclosed into double quotes (").
+#   3) Special characters inside string-value:
+#      - single quote, {, }, \ -- put as is, no special formatting is needed;
+#      - double quote -- currently, you cannot use it inside string-value;
+#   4) When several string-values are specified, resulting screen output
+#      will look as if separate string-values are placed on separate lines.
+#
+#   You can run "nftp -test" to check your translation for formatting
+#   errors; with this option, nftp just loads everything and exits.
+#
+
+# ------------------------------------- Months --------------------------
+
+{ M_JAN "Led" }  { M_FEB "éno" }  { M_MAR "Býe" }  { M_APR "Dub" }
+{ M_MAY "KvØ" }  { M_JUN "¬rv" }  { M_JUL "¬rc" }  { M_AUG "Srp" }
+{ M_SEP "Z ý" }  { M_OCT "ü¡j" }  { M_NOV "Lis" }  { M_DEC "Pro" }
+
+{ M_HBAR              "Ä" } { M_VBAR              "³" }
+{ M_CROSS             "Å" }
+{ M_FILL1             "°" } { M_FILL2             "±" }
+{ M_FILL3             "²" } { M_FILL4             "Û" }
+{ M_LU                "Ú" } { M_RU                "¿" }
+{ M_LD                "À" } { M_RD                "Ù" }
+{ M_LT                "Ã" } { M_RT                "´" }
+{ M_UT                "Â" } { M_DT                "Á" }
+{ M_PLACEHOLDER       "ú" } { M_MARKSIGN          "*" }
+
+#  --------------------- Help screens --------------------------------------
+
+{ M_HLP_MAIN
+""
+" NFTP                     Copyright (C) Sergey Ayukov 1994-1998"
+""
+" Pýeklad do Ÿeçtiny: Milan Ulej (milan.ulej@npsumava.cz)."
+" PýeŸtØte si HTML dokumentaci, je podrobnØjç¡ ne§ tato zkr cen  n povØda."
+""
+" Z kladn¡ kl vesov‚ zkratky"
+""
+" Shift-H  - tyto informace. Help nen¡ hypertextovì - jen informativn¡"
+" F1       - kontextov  n povØda k t‚matu"
+" F10      - odlogov n¡ od serveru a ukonŸen¡ NFTP"
+" Ctrl-K   - odlogovat od serveru"
+" Ctrl-B   - otevýi seznam z lo§ek a pýihlaç se z nØj"
+" F2       - otevýi okno histrorie a pýihlaç se z nØj"
+" Ctrl-L   - pýihlaç se jako anonym na novì server"
+" Ctrl-N   - pýihlaç se svìm £Ÿtem: userid/password"
+" Ctrl-W   - zobraz verzi programu NFTP"
+" Ctrl-T   - pýepni ASCII/BINARY m¢d (bin rn¡/textovì)"
+" Ctrl-J   - pýekreslit obrazovku (bez naŸ¡t n¡ vzd len‚ho adres ýe)"
+" Shift-I  - zobraz poŸet oznaŸenìch soubor… a adres ý…"
+" Shift-A  - poçli pý¡kaz NO OPERATION (kontrola nav z n¡ spojen¡)"
+" Shift-F  - povolit/zak zat NLST s atributy (standartnØ povoleno)."
+"            NØkter‚ servery maj¡ probl‚my s pý¡kazem NLST -lLa."
+"            Pou§ij pokud se zobraz¡ chybov  hl çen¡ pýi naŸ¡t n¡"
+"            obsahu adres ýe. Jinak se nedoporuŸuje zakazovat!"
+""
+" Tyto pý¡kazy jsou dostupn‚ t‚mØý vçude. Mnoho kl vesovìch zkratek je"
+" nav¡c dostupnìch v mnoha r…znìch re§imech programu, vyvolej si tedy"
+" kontextovou n povØdu stisknut¡m F1/?."
+"" }
+
+{ M_HLP_LINEIN
+""
+" Kl vesy dostupn‚ v editaŸn¡m poli:"
+""
+" Esc/Enter               - zruçit/potvrdit"
+
+" Left, Right, Home, End  - pýesunout kurzor"
+" Tab, Shift-Tab          - pýepnout se do dalç¡ho/pýedchoz¡ho pole"
+" Del, Backspace          - smazat znaky"
+" Shift-Ins               - vlo§it ze syst‚mov‚ schr nky"
+" Ctrl-Ins                - vlo§it do syst‚mov‚ schr nky"
+""
+" Stiskni Del ihned po zobrazen¡ vstupn¡ho pole na jeho vymaz n¡"
+" Pýi vkl d n¡ hesla je heslo maskovan‚!"
+"" }
+
+{ M_HLP_CC
+""
+" Kl vesy dostupn‚ v oknØ ý¡zen¡ pýipojen¡:"
+""
+" çipky       - rolov n¡ obsahu okna"
+" Esc         - pýejdi na konec historie (stejn‚ jako End)"
+" Space       - pýepni se do adres ýov‚ho zobrazen¡"
+" Shift-Q     - poçli zadanì ýetØzec na server (pý¡kaz quote)"
+" Shift-C     - pýepnout do adres ýe"
+""
+" OdpovØdi serveru jsou zobrazen‚ çedØ; odeslan‚ pý¡kazy jsou jasnØ zelen‚"
+" a informaŸn¡ hl çen¡ od NFTP jsou jasnØ Ÿerven‚. SamozýejmØ tyto barvy"
+" plat¡ jen pokud nebyly zmØnØn‚ v konfiguraŸn¡m souboru 'nftp.ini'."
+""
+" NFTP m  vestavØnou historii pou§itìch spojen¡. Chceç-li vidØt celou"
+" komunikaci client-server nastav parametr 'auto-switch-to-control' na 1 "
+" Vyzkouçej to, toto nastaven¡ m…§e bìt pro tebe velmi u§iteŸn‚."
+"" }
+
+{ M_HLP_DIR_RAW
+""
+" Toto je vzd lenì adres ý. Pokud nejsi pýipojen, uvid¡ç jen pr zdn‚ pole"
+" PýeŸti si Hlavn¡ n povØdu (Shift-H) pro informaci jak se pýipojit"
+""
+" F3         - zobraz obsah souboru pod kurzorem intern¡m prohl¡§eŸem"
+" Shift-V    - zobraz soubor pod kurzorem, s pou§it¡m extern¡ho prohl¡§eŸe"
+""
+" F5         - st hnout soubor pod kurzorem nebo oznaŸen‚ soubory"
+" Ctrl-D     - st hnout vçechny oznaŸen‚ soubory ve vçech adres ý¡ch"
+" Shift-G    - st hnout soubory zad n¡m jm‚na (napý. je-li adres ý"
+"              nenaŸitatelnì z d…vodu omezen¡ pý¡stupovìch pr v)"
+" Shift-R    - pýejmenuj soubor/adres ý"
+" F7         - vytvoý adres ý (pokud m ç opr vnØn¡ na vzd len‚m serveru)"
+" F8         - sma§ soubor (nebo oznaŸen‚ soubory jsou-li) pod kurzorem."
+"              M…§eç mazat tak‚ adres ýe."
+" Ctrl-R     - Znovu naŸti obsah adres ýe (obnovit vìpis)"
+" Shift-O    - naŸti soubor popisu ze souboru pod kurzorem"
+""
+" Ctrl-A     - oznaŸ vçechny soubory v aktu ln¡m adres ýi"
+" Ctrl-X     - zruçit oznaŸen¡ vçech soubor… v aktu ln¡m adres ýi"
+" Insert     - oznaŸ/odznaŸ soubor pod kurzorem"
+" Plus/Minus - oznaŸ/odznaŸ soubory podle masky napý. '*.zip'"
+" *          - obr tit oznaŸen¡"
+" Ctrl-Y     - zruçit oznaŸen¡ ve vçech adres ý¡ch"
+""
+" çipky      - pýesunout kurzor (pou§ij Ctrl-Left/Ctrl-Right na"
+"              horizont ln¡ posuv)"
+" \          - pýejdi do koýenov‚ho adres ýe"
+" [          - pýejdi do rodiŸovsk‚ho adres ýe ('cd ..')"
+" ]          - pýejdi do adres ýe pod kurzorem"
+" Enter      - ------ ' ------"
+" Shift-C    - pýejdi do libovoln‚ho adres ýe"
+""
+" Shift-N    - tý¡dit obsah adres ýe podle jm‚na, adres ýe nejdý¡ve"
+" Shift-X    - tý¡dit obsah adres ýe podle pý¡pony, adres ýe nejdý¡ve"
+" Shift-T    - tý¡dit obsah adres ýe podle Ÿasu, adres ýe nejdý¡ve"
+" Shift-S    - tý¡dit obsah adres ýe podle velikosti, jm‚na, adres ýe"
+" Shift-Y    - zruçit tý¡dØn¡, zobrazit nesetý¡dØnì obsah"
+" Shift-E    - obr cen‚ tý¡dØn¡"
+""
+" F4         - ulo§it mezi z lo§ky"
+" Space      - pýepnout do ý¡d¡c¡ konzole"
+" Tab        - pýepnout na obsah lok ln¡ho adres ýe"
+" Ctrl-O     - skrìt/zobrazit popisky soubor…"
+""
+" ZaŸneç-li ps t n zev souboru, NFTP ho zaŸne hledat v aktu ln¡m adres ýi"
+""
+" Dalç¡ kl vesy jsou popsan‚ v Hlavn¡ n povØdØ (Shift-H)."
+" Upozoråuji, §e m…§eç oznaŸit i adres ýe (soubory v podadres ý¡ch jsou"
+" pak tak‚ oznaŸen‚). OznaŸen¡ z…stane zachov no i pýi zmØnØ adres ýe."
+"" }
+
+{ M_HLP_VIEWER
+""
+" Kl vesov‚ zkratky dostupn‚ ve vestavØn‚m prohl¡§eŸi: "
+""
+" çipky           - rolov n¡ (m…§eç tak‚ rolovat horizont lnØ)"
+" Ctrl-Left/Right - rolovat po 10 symbolech horizont lnØ"
+" Esc             - ukonŸit prohl¡§eŸ"
+" Ctrl-F          - hledat textovì ýetØzec"
+" Ctrl-G          - opakuj posledn¡ hled n¡"
+" Ctrl-W          - ulo§it obsah do souboru"
+""
+" Upozoråuji, §e prohl¡§eŸ naŸ¡t  soubor do pamØti - opatrnØ pýi"
+" zobrazov n¡ velmi velkìch soubor…."
+"" }
+
+{ M_HLP_LOCAL_PARSED
+""
+" Toto je lok ln¡ adres ý."
+""
+" F3         - zobraz obsah souboru pod kurzorem intern¡m prohl¡§eŸem"
+" Shift-V    - zobraz soubor pod kurzorem, s pou§it¡m extern¡ho prohl¡§eŸe"
+""
+" F6         - odeslat soubor pod kurzorem nebo jsou-li oznaŸen‚ soubory"
+" Shift-R    - pýejmenuj soubor/adres ý"
+" F7         - vytvoý adres ý (pokud m ç opr vnØn¡ na vzd len‚m serveru)"
+" F8         - sma§ soubor (nebo oznaŸen‚ soubory jsou-li) pod kurzorem."
+"              M…§eç mazat tak‚ adres ýe."
+" Ctrl-R     - Znovu naŸti obsah adres ýe (obnovit vìpis)"
+""
+" Ctrl-A     - oznaŸ vçechny soubory v aktu ln¡m adres ýi"
+" Ctrl-X     - zruçit oznaŸen¡ vçech soubor… v aktu ln¡m adres ýi"
+" Insert     - oznaŸ/odznaŸ soubor pod kurzorem. Adres ýe nelze oznaŸit."
+" Plus/Minus - oznaŸ/odznaŸ soubory podle masky napý. '*.zip'"
+" *          - obr tit oznaŸen¡"
+""
+" çipky      - pýesunout kurzor"
+" \          - pýejdi do koýenov‚ho adres ýe"
+" [          - pýejdi do rodiŸovsk‚ho adres ýe ('cd ..')"
+" ]          - pýejdi do adres ýe pod kurzorem"
+" Enter      - ------ ' ------"
+" Shift-C    - pýejdi do libovoln‚ho adres ýe"
+" Shift-Z    - vybrat p¡smeno disku"
+""
+" Shift-N    - tý¡dit obsah adres ýe podle jm‚na, adres ýe nejdý¡ve"
+" Shift-X    - tý¡dit obsah adres ýe podle pý¡pony, adres ýe nejdý¡ve"
+" Shift-T    - tý¡dit obsah adres ýe podle Ÿasu, adres ýe nejdý¡ve"
+" Shift-S    - tý¡dit obsah adres ýe podle velikosti, jm‚na, adres ýe"
+" Shift-Y    - zruçit tý¡dØn¡, zobrazit nesetý¡dØnì obsah"
+" Shift-E    - obr cen‚ tý¡dØn¡"
+""
+" Space      - pýepnout do ý¡d¡c¡ konzole"
+" Tab        - pýepnout na obsah lok ln¡ho adres ýe"
+""
+" ZaŸneç-li ps t n zev souboru, NFTP ho zaŸne hledat v aktu ln¡m adres ýi"
+""
+" Dalç¡ kl vesy jsou popsan‚ v Hlavn¡ n povØdØ (Shift-H)."
+" Upozoråuji, §e nelze oznaŸit adres ýe. OznaŸen¡ nen¡ zachov no"
+" pýi zmØnØ adres ýe."
+"" }
+
+{ M_HLP_SHORT
+" NFTP kl vesov‚ zkratky            [F1 - podrobnØjç¡ informace]"
+"                                   [Shift-H - hlavn¡ n povØda]"
+" Pýihl çen¡/odhl çen¡"
+""
+" Ctrl-B - z lo§ky                   Ctrl-L - pýipojit jako anonymous"
+" F4     - ulo§it z lo§ky            Ctrl-N - pýipojit pýes login/passw"
+" F10    - odhl sit a ukonŸit        F2     - historie pýipojen¡"
+""
+" Prohl¡§eŸ"
+""
+" Tab     - lok ln¡/vzd lenì adres ý       Space   - adres ý/pýipojen¡"
+" Shift-Z - zmØnit lok ln¡ disk            Shift-C - vlo§en¡ cesty"
+" Shift-N/X/T/S - tý¡dit podle jm‚na/pý¡pony/Ÿasu/velikosti"
+" mal‚ alfanumerick‚ kl vesy - najdi soubory, kter‚ jimi zaŸ¡naj¡"
+""
+" Pýenos"
+""
+" F5     - st hnout soubor             F6      - pýen‚st soubor"
+" F3     - zobrazit textovì soubor     Ctrl-D  - st hnout vç. ozn. soub."
+" Ins    - oznaŸ/odznaŸ soubor (adr.)  Ctrl-A  - oznaŸit vçechny soubory"
+"" }
+
+{ M_HLP_BOOKMARK1
+""
+" Slo§ky z lo§ek "
+""
+" Ka§d  slo§ka m…§e obsahovat nØkolik z lo§ek. Do slo§ek se pýech z¡"
+" kl vesou Enter nebo çipkou vpravo, zpØt ze slo§ky pak kl vesou Esc"
+" n. çipkou vlevo. Pro pohyb slo§kami z lo§ek staŸ¡ pou§¡vat pouze çipky."
+""
+" Novou slo§ku vytvoý¡ç, kl vesou Ins. Slo§ku zruç¡ç stiskem kl vesy Del."
+" Slo§ku pýejmenujeç stiskem Ctrl-E."
+""
+" Vìpis z lo§ek se zobraz¡ tak‚ v§dy pýi vytv ýen¡ novìch z lo§ek."
+" Pýi tom staŸ¡ si pouze vybrat c¡lovou slo§ku, nebo stisknout Ins na"
+" zalo§en¡ nov‚. Nezapomeå, §e pokud budeç ukl dat z lo§ku s heslem"
+" (napý. neanonymn¡ ftp server), tv‚ heslo nebude v z lo§ce ulo§eno!"
+" M…§eç ho vçak manu lnØ zaeditovat do souboru z lo§ek .bmk, ale nezapomeå"
+" §e to je potenci ln¡ bezpeŸnostn¡ d¡ra (ka§dì, kdo m  pý¡stup k tv‚mu"
+" poŸ¡taŸi si m…§e toto heslo zjistit.)"
+""
+" Pokud modifikujeç z lo§ky, zmØny budou ulo§en‚ (nebo zruçen‚) v§dy"
+" pýi opuçtØn¡ tohoto okna. Budeç dot z n(a) zda si pýejeç ulo§it zmØny"
+" nebo je zruçit. pokud m ç spuçtØno nØkolik simult n¡ch relac¡ programu"
+" NFTP souŸasnØ, nemodifikuj obsah z lo§ek v r…znìch relac¡ch soubØ§nØ."
+"" }
+
+{ M_HLP_BOOKMARK2
+""
+" Okno z lo§ek ve slo§ce "
+""
+" Stiskni Enter pro vìbØr odkazu (napý. pýi pýihl çen¡), nebo kl vesu"
+" Esc. nebo çipku vlevo pro opuçtØn¡ slo§ky. Pro pohyb slo§kami z lo§ek"
+" staŸ¡ pou§¡vat pouze çipky."
+""
+" OdstranØn¡ z lo§ky provedeç kl vesou Del. Poýad¡ z lo§ek lze mØnit"
+" snadno: Shift-U pýesouv  z lo§ku nahoru, Shift-D ji pýesouv  dolu,"
+" Shift-< ji pýesouv  do jin‚ slo§ky. Ctrl-E otev¡r  okno editace z lo§ky."
+""
+" Pokud modifikujeç z lo§ky, zmØny budou ulo§en‚ (nebo zruçen‚) v§dy"
+" pýi opuçtØn¡ tohoto okna. Budeç dot z n(a) zda si pýejeç ulo§it zmØny"
+" nebo je zruçit. pokud m ç spuçtØno nØkolik simult n¡ch relac¡ programu"
+" NFTP souŸasnØ, nemodifikuj obsah z lo§ek v r…znìch relac¡ch soubØ§nØ."
+"" }
+
+{ M_HLP_UNDEFINED
+""
+" Nem  n povØdu v tomto jazyku pro tuto obrazovku. "
+"" }
+
+{ M_BOOKMARK_FORMAT
+"; form t z lo§ky je takto"
+"; ftp.sai.msu.su:21/pub/os2 : u§ivatel/heslo/pýep¡naŸe : popis"
+";"
+"; edituj tento soubor opatrnØ; dodr§uj tato pravidla:"
+"; - mezery kolem uvozovek JSOU DÞLE¦IT;"
+"; - cesty musej¡ bìt definov ny absolutnØ, tj. zaŸ¡naj¡ znakem '/';"
+"; - m…§eç vynechat 'port' ;"
+"; - nahraÔ '*' pro anonymn¡ pý¡stup v poli 'login' a 'password':"
+";   crydee.sai.msu.su:/pub/comp/os/os2 : */*/flags : SAI OS/2 archiv"
+";"
+";" }
+
+#  Bookmarks ----------------------------------------------------------
+
+{ M_CANTOPENBOOKMARKS1
+"Nelze otevý¡t soubor z lo§ek [%s] pro pýid n¡" }
+
+{ M_CANTOPENBOOKMARKS2
+"Nelze otevý¡t soubor z lo§ek [%s] pro Ÿten¡" }
+
+{ M_CANTOPENBOOKMARKS3
+"nelze otevý¡t soubor z lo§ek [%s] pro pýeps n¡" }
+
+{ M_NO_BOOKMARKS
+"  ¦ dn  z lo§ka nebyla nalezena " }
+
+{ M_EMPTY_BOOKMARKSLIST
+"  Seznam z lo§ek je pr zdnì  " }
+
+{ M_DELETE_BOOKMARK
+"  Smazat z lo§ku  "
+"  %s ?  " }
+
+{ M_INSERT_BOOKMARK1
+" Zadej jm‚no u§ivatele (nevyplåuj jako anonymous): " }
+
+{ M_INSERT_BOOKMARK2
+" Zadej adresu ftp serveru nebo IP adresu: " }
+
+{ M_INSERT_BOOKMARK3
+" Zadej adres ý: " }
+
+{ M_CURRENT_BOOKMARKS
+" Aktu ln¡ z lo§ka " }
+
+{ M_BOOKMARKS_CHANGED
+"  Obsah z lo§ky byl zmØnØn.  "
+"  Chceç z lo§ky ulo§it?  " }
+
+#  Prompts ------------------------------------------------------------
+
+{ M_USETAB
+" Mezi poli se pohybuj kl vesami Tab/Shift-Tab " }
+
+{ M_CHOOSEDRIVE
+"Vyber si disk" }
+
+{ M_SELECT_DIRECTORY
+" Zadej poŸ teŸn¡ adres ý (potvrÔ kl vesou ENTER) : " }
+
+{ M_ENTER_VERBATIM_COMMAND
+" Zadej pý¡kaz k odesl n¡ na server : " }
+
+{ M_MKDIR_ENTER_NAME
+" Zadej jm‚no vytv ýen‚ho adres ýe : " }
+
+{ M_ENTER_FIREWALL_USERID
+" Zadej u§ivatele pro FIREWALL: " }
+
+{ M_ENTER_FIREWALL_PASSWORD
+" Zadej heslo pro FIREWALL: " }
+
+{ M_ENTER_USERID
+" Jm‚no u§ivatele : " }
+
+{ M_ENTER_PASSWORD
+" U§ivatelsk‚ heslo : " }
+
+{ M_ENTER_HOSTNAME
+" Zadej server[[:port]path] pro pýihl çen¡ : " }
+
+{ M_ENTER_DIRECTORY
+" Zadej adres ý na serveru : " }
+
+{ M_ENTER_SELECT_FILTER
+" Zadej masku : " }
+
+{ M_RENAME_LOCAL_FILE
+" Pýejmenuj lok ln¡ soubor : " }
+
+#  Pseudo-responses ---------------------------------------------------
+
+{ M_RESP_CANNOT_RESOLVE
+"Nelze nal‚zt '%s'" }
+
+{ M_RESP_LOOKING_UP
+"Vyhled v m '%s'" }
+
+{ M_RESP_TRYING_IP
+"Nemohu nal‚zt '%s', zkouç¡m to podle IP adresy" }
+
+{ M_RESP_FOUND
+"Nalezen '%s'" }
+
+{ M_RESP_NO_SOCKET
+"Nebyl pýidØlen socket, rezignuji" }
+
+{ M_RESP_FAILED_TO_CONNECT
+"Nezdaýilo se pýipojen¡ k portu %u" }
+
+{ M_RESP_CONNECTED
+"Pýipojen k portu %u" }
+
+{ M_RESP_CLOSING
+"Uzav¡r m spojen¡" }
+
+{ M_RESP_LOGIN
+"éspØçnØ pýihl çen jako '%s@%s'" }
+
+{ M_RESP_TRANSFER_DONE
+"Pýenos ukonŸen; pr…mØrn  rychlost: %u byt…/sec" }
+
+{ M_RESP_INIT_DONE
+"inicializace ukonŸena......" }
+
+{ M_RESP_RETRYING
+"¬ek m %d sekund... Stiskni ESC pro zruçen¡ operace, cokoli pro opakov n¡" }
+
+{ M_RESP_RETRY_ABORTED
+"Zruçeno." }
+
+{ M_RESP_REGET_ISNT_SUPPORTED
+"Pý¡kaz REGET nen¡ podporov n; stahuji celì soubor znovu" }
+
+{ M_RESP_TRANSFER_CANCELLED
+"Pýenos zruçen (%s)" }
+
+{ M_RESP_TRANSFER_ERROR
+"Chyba pýi pýenosu '%s'" }
+
+#  Questions ----------------------------------------------------------
+
+{ M_TOO_BIG_FOR_INTVIEWER
+" Soubor '%s' je pý¡liç velkì -- %s byt…. "
+" Pýejeç si ho pýesto zobrazit intern¡m prohl¡§eŸem? " }
+
+{ M_REALLY_OVERWRITE
+" **** PüEPISUJI ****"
+""
+" Soubor '%s' u§ existuje."
+" M  stejnou velikost jako vzd lenì soubor. "
+" (Lok ln¡ soubor: %d byt…, vzd lenì soubor: %d byt…) "
+" Pýejeç si pýesto pýepsat lok ln¡ soubor?" }
+
+{ M_OVERWRITE_RENAME_CANCEL
+""
+" Soubor '%s' u§ existuje!"
+" M  stejnou velikost jako vzd lenì soubor. "
+" (Lok ln¡ soubor: %d byt…, vzd lenì soubor: %d byt…) "
+" Esc - zruçit pýenos " }
+
+{ M_OVERWRITE_RENAME_CANCEL2
+""
+" Soubor '%s' u§ existuje!"
+" Jeho velikost je vØtç¡ ne§ vzd len‚ho souboru. "
+" (Lok ln¡ soubor: %d byt…, vzd lenì soubor: %d byt…) "
+" Esc - zruçit pýenos " }
+
+{ M_OVERWRITE_RENAME_CANCEL3
+" Pýepisuji lok ln¡ soubor "
+" Pýejmenuj lok ln¡ soubor " }
+
+{ M_REALLY_REGET
+" **** REGET ****"
+""
+" Soubor '%s' u§ existuje. "
+" Je menç¡ ne§ vzd lenì soubor. "
+" (Lok ln¡ soubor: %d byt…, vzd lenì soubor: %d byt…) " }
+
+{ M_REGET_RENAME_CANCEL
+""
+" Soubor '%s' u§ existuje. "
+" Je menç¡ ne§ vzd lenì soubor. "
+" (Lok ln¡ soubor: %d byt…, vzd lenì soubor: %d byt…) "
+" Vyber 'PokraŸovat' pro pokraŸov n¡ pýeruçen‚ho pýenosu "
+" Esc - zruçit pýenos " }
+
+{ M_REGET_RENAME_CANCEL2
+" PokraŸovat "
+" Pýepsat lok ln¡ soubor "
+" Pýejmenovat lok ln¡ soubor" }
+
+{ M_REALLY_TRANSFER_FROM
+"    St hnout soubor(y) ze serveru ?    " }
+
+{ M_REALLY_TRANSFER_TO
+"    Pýen‚st soubor(y) na server ?    " }
+
+{ M_REALLY_DELETE
+"    Smazat soubor(y) ?    " }
+
+{ M_REALLY_SAVE_BOOKMARK
+"  Ulo§it adres ý                       "
+"  %s %s : %s  "
+"  jako z lo§ku?  " }
+
+{ M_REALLY_EXIT
+"      UkonŸit NFTP ?      " }
+
+{ M_REALLY_LOGOFF
+"  Odhl sit se z %s ?  " }
+
+#  Miscellaneous text strings -----------------------------------------
+
+{ M_WELCOME
+" NFTP%s Stiskem Shift-H vyvol ç hlavn¡ n povØdu" }
+
+{ M_DISCONNECTING
+"   Odpojit se od %s   " }
+
+{ M_EOF_MARK
+""
+" =========== END OF FILE =========== " }
+
+{ M_WRONG_REGCODE
+" Nespr vnì registraŸn¡ k¢d v souboru nftp.ini. "
+" Pros¡m vlo§ znovu registraŸn¡ jm‚no a heslo. UkonŸit?" }
+
+{ M_RUNNING_UNREGISTERED
+"          Tento program NFTP nen¡ zaregistrov n "
+""
+" Nelze pýen çet soubory vØtç¡ ne§ %dKB. "
+""
+"    PýeŸti si v dokumentaci jak zaregistrovat NFTP."
+""
+"    Toto hl çen¡ lze vypnout nastaven¡m parametru"
+"    'message' na 0 v sekci 'registration' souboru nftp.ini" }
+
+{ M_CCLINES
+" ü¡d¡c¡ konzole : %u ý dek" }
+
+{ M_BINARY
+"bin rnØ" }
+
+{ M_ASCII
+"ASCII" }
+
+{ M_TRANSFER_COMPLETED
+"Pýenos ukonŸen; stiskni libovolnou kl vesu " }
+
+{ M_HELP_ESC_TO_EXIT
+"  N povØda - ukonŸit kl vesou Esc  " }
+
+{ M_STATUS
+" Celkem %u soubor(…), %s Byt…   [%3s]   Vybranìch %u soubor…, %s Byt…" }
+
+{ M_STATUS_BIN
+"BIN" }
+
+{ M_STATUS_ASC
+"ASC" }
+
+#  --------------------------------------------------------------------
+#  Fatal errors -------------------------------------------------------
+
+{ M_UNKNOWN_OS
+""
+" Nezn mì operaŸn¡ syst‚m na serveru "
+" '%s',"
+" odhlaçuji se... " }
+
+{ M_UNREGISTERED_TRANSFER
+" Nelze pýen‚st soubory vØtç¡ ne§ 1024KB "
+"        nezaregistrovanou verz¡ NFTP. " }
+
+{ M_INI_BUILD_FAILED
+"Nezdaýilo se pýeŸ¡st/pýekonvertovat nftp.ini."
+"zkontroluj cestu ke starç¡ verzi NFTP.EXE a NFTP-OPT.EXE" }
+
+{ M_EMAIL_NOT_SET
+"MØl bys doplnit nftp.ini pýed spuçtØn¡m programu NFTP. "
+"Minim lnØ je týeba doplnit e-mailovou adresu." }
+
+{ M_CONNECTION_LOST
+"     Connection lost     " }
+
+{ M_NO_PASV_NOFIREWALLING
+" Tento FTP server nepodporuje pý¡kaz PASV a proto nem…§e"
+" bìt zpý¡stupnØn za firewallem " }
+
+{ M_NO_PASV
+" Tento FTP server nepodporuje pý¡kaz PASV. "
+" Nastav pros¡m parametr 'use-PASV-mode' na 0 " }
+
+{ M_CANT_CREATE_SEM
+" Fataln¡ chyba : nelze nastavit semafory " }
+
+{ M_INI_UNREADABLE
+""
+"Nelze nal‚zt nftp.ini; ukonŸuji Ÿinnost" }
+
+#  Transient messages -------------------------------------------------
+
+{ M_SENDING_VERBATIM_COMMAND
+"   Pos¡l m pý¡kaz na server...   " }
+
+{ M_PARSING_LISTING
+"   Sestavuji vìpis obsahu adres ýe...   " }
+
+{ M_MKDIR_CREATING
+"   Zakl d m adres ý na serveru...   " }
+
+{ M_GOING_ROOT
+"   Pýech z¡m do z kladn¡ho adres ýe serveru...   " }
+
+{ M_GOING_UP
+"   Pýech z¡m do vyçç¡ho adres ýe...   " }
+
+{ M_CHANGING_DIR
+"   MØn¡m adres ý na serveru...   " }
+
+{ M_SENDING_NOOP
+"   Pos¡l m pý¡kaz NO OPERATION...   " }
+
+{ M_QUERYING_DIR
+"   Zjiçœuji aktu ln¡ adres ý na serveru...   " }
+
+{ M_RETRIEVING_FILELIST
+"   Z¡sk v m vìpis obsahu adres ýe...   " }
+
+#  nftp-opt  defines -------------------------------------------------
+
+{ M_FATAL_LOADING_NFTP_INI
+""
+"Fat ln¡ chyba pýi naŸ¡t n¡ konfiguraŸn¡ho souboru nftp.ini; ukonŸuji Ÿinnost" }
+
+{ M_WRONG_KEYNAME
+"chybnì kl¡Ÿ: [%s]"
+"" }
+
+{ M_KEYDEF_ERRORS
+"%d chyb(a) pýi analìze definiŸn¡ch kl ves."
+"Stiskni cokoli..." }
+
+{ M_KEYNAMES_WELCOME
+"Stiskni kl vesu Esc pro ukonŸen¡, ostatn¡ kl vesy zobraz¡ jejich"
+"n zev. Pokud se nic nezobraz¡, potom tato kombinace kl ves buÔ"
+"nen¡ pou§it  nebo nen¡ akceptov na v dan‚m operaŸn¡m syst‚mu."
+""
+"K¢d :         :"
+"" }
+
+{ M_NO_TEXT
+" Pro toto hl çen¡ nen¡ definov n § dnì text. "
+" PravdØpodobnØ nebylo pýelo§eno do tohoto jazyku "
+" nebo bylo opomenuto autorem programu NFTP. " }
+
+{ M_CANT_DELETE
+" Nemohu smazat '%s' " }
+
+{ M_ENTER_LOCAL_DIRECTORY
+" ZmØnit lok ln¡ disk/adres ý na : " }
+
+{ M_REALLY_TRANSFER_FROM_ALLDIRS
+" %d soubor… v %d adres ý¡ch bylo oznaŸeno pro sta§en¡. "
+" %s byt… je jejich celkov  velikost. Chceç pokraŸovat? " }
+
+{ M_BYTES_RECEIVED
+"     %7d byt… pýijato"
+"             zastavit kl vesou ESC    " }
+
+{ M_BYTES_REMAIN
+""
+"     %7d byt… pýijato"
+"     %7d byt… zbìv "
+"             zastavit kl vesou ESC    " }
+
+{ M_YES
+"  Ano  " }
+
+{ M_NO
+"  Ne   " }
+
+{ M_OK
+"   OK   " }
+
+{ M_ENTER_SEARCHSTRING
+" Zadej ýetØzec pro hled n¡: " }
+
+{ M_ENTER_FILENAME_SAVE
+" Zadej jm‚no souboru do kter‚ho budeç ukl dat: " }
+
+{ M_CANNOT_OPEN
+" Nemohu otevý¡t soubor %s " }
+
+{ M_FILE_SAVED
+"        Soubor byl ulo§en        " }
+
+{ M_LISTING_HEADER
+"Server    : %s"
+"Adres ý   : %s"
+"" }
+
+{ M_LISTING_FOOTER
+""
+"%d soubor(…) %s byt… celkem" }
+
+{ M_LISTING_SAVED
+"    Vìpis byl ulo§en    " }
+
+{ M_ENTER_RETRIEVE_AS
+" St hni soubor jako: " }
+
+{ M_ENTER_LISTING_FILENAME
+" Vlo§ jm‚no souboru pro ulo§en¡ vìpisu: " }
+
+{ M_ENTER_NEWNAME
+" Pýejmenuj soubor: " }
+
+{ M_ENTER_UPLOAD_AS
+" Odeslat soubor jako: " }
+
+{ M_RENAME_FAILED
+" Nemohu pýejmenovat '%s' na '%s' " }
+
+{ M_QUICK_SEARCH
+" rychl‚ prohled v n¡ %s " }
+
+{ M_CANT_ACCESS_DRIVE
+" nemohu z¡skat pý¡stup na %c: " }
+
+{ M_DIRECTORY_DOESNT_EXIST
+" Adres ý '%s' neexistuje " }
+
+{ M_BAD_BOOKMARK_ENTRY
+" Z lo§ka "
+" %s "
+" je poçkozen  a bude ignorov na " }
+
+{ M_DEFAULT_BMK_FOLDER
+"Z kladn¡ odkazy (created by default)" }
+
+{ M_ENTER_DESC
+" zadej popis : " }
+
+{ M_FOLDER_TITLE
+" slo§ka : %s " }
+
+{ M_DELETE_BOOKMARK1
+"        Smazat z lo§ku ?        " }
+
+{ M_NAME_FOLDER
+" Zadej jm‚no nov‚ slo§ky " }
+
+{ M_DELETE_NONEMPTY_FOLDER
+" '%s' "
+" Smazat nepr zdnou slo§ku? " }
+
+{ M_ENTER_FOLDER_TITLE
+" Zadej nadpis slo§ky: " }
+
+{ M_SELECT_FOLDER
+" Zadej slo§ku pro ulo§en¡ z lo§ky " }
+
+{ M_FILE_TO_DOWNLOAD
+" Soubor ke sta§en¡ : " }
+
+{ M_CANT_CREATE_DIRECTORY
+"Nemohu vytvoýit adres ý '%s'" }
+
+{ M_REREAD_REMOTE_DIR
+" Obnovit obsah vzd len‚ho adres ýe? " }
+
+{ M_LOGOFF_MARKED
+" OznaŸil jsi %d soubor(…) v %d adres ý¡ch. "
+" Celkov  velikost je %s byt…. "
+" Chceç se odhl sit? " }
+
+{ M_CANT_LOGIN
+" Nelze se pýihl sit na %s " }
+
+{ M_FILE_NOT_FOUND
+" Soubor '%s' nebyl nalezen na serveru " }
+
+{ M_TRANSFER_FAILED
+" Pýenos '%s' se nezdaýil " }
+
+{ M_PROXY_ISNT_SPECIFIED
+"Firewall proxy host nen¡ specifikov n v NFTP.INI" }
+
+{ M_NOT_CONNECTED
+"Nepýipojen" }
+
+{ M_INCORRECT_FIREWALL
+" Nebyl specifikov n spr vnì typ firewallu : %d " }
+
+{ M_UNKNOWN_SERVER_OS
+" UpozornØn¡: nezn mì operaŸn¡ syst‚m na ftp serveru: "
+" '%s'; "
+" NFTP se nemus¡ podaýit sestavit obsah adres ýe " }
+
+{ M_CONNECTING
+"Pýipojuji se k %s... " }
+
+{ M_CANNOT_RENAME
+" Nelze pýejmenovat soubor '%s' na '%s' " }
+
+{ M_DOWNLOADING
+"%s - stahov n¡..." }
+
+{ M_CANT_OPEN_FOR_WRITING
+" Nelze otevý¡t soubor '%s' pro z pis " }
+
+{ M_CHANGING_DIRECTORY
+"   ZmØna adres ýe na :   "
+"   '%s'   " }
+
+{ M_CANT_OPEN_FOR_READING
+" Nelze otevý¡t soubor '%s' pro Ÿten¡ " }
+
+{ M_CANT_WRITE_LOGFILE
+" UpozornØn¡: Nelze zapisovat do logu '%s' " }
+
+{ M_CANT_GUESS_CURDIR
+" Nelze urŸit aktu ln¡ adres ý na serveru " }
+
+{ M_CANT_READ_FILE
+" nelze Ÿ¡st soubor '%s' " }
+
+{ M_UPLOADING
+"%s - odes¡l n¡..." }
+
+{ M_ALREADY_BOOKMARKED
+" Server '%s' u§ je ulo§en v z lo§k ch "
+" (directory '%s'). Chceç ho pýesto pýidat? " }
+
+{ M_EDIT1
+"Server[:port]adres ý" }
+
+{ M_EDIT2
+"U§ivatel/heslo/pýep¡naŸe" }
+
+{ M_EDIT3
+"Popis serveru" }
+
+{ M_CONNECTION_OK
+"       Pýipojen¡ je OK        " }
+
+{ M_MARKED_STATISTICS
+"    %d soubor… v %d adres ý¡ch; %s byt… celkem    " }
+
+#  ---------------------------------------------------------- new in 1.10
+
+{ M_STARTING_TRANSFER
+"   ZaŸ tek pýenosu...   " }
+
+{ M_KEEP_TREE_INTACT
+" Je oznaŸeno %d soubor… v %d podadres ý¡ch. "
+" Celkov  velikost je %s byt…. "
+""
+" Zachovat adres ýovou strukturu pýi pýenosu? " }
+
+{ M_KEEP_TREE2
+" Ulo§it vŸetnØ podadres ý… "
+"    Ulo§it vçe do stejn‚ho adres ýe    " }
+
+{ M_OVERWRITE_RENAME_CANCEL4
+" Pýepsat lok ln¡ soubor "
+" Pýejmenovat lok ln¡ soubor "
+" PýeskoŸit soubor " }
+
+{ M_REGET_RENAME_CANCEL5
+" PokraŸovat "
+" Pýepsat lok ln¡ soubor "
+" Pýejmenovat lok ln¡ soubor "
+" PýeskoŸit soubor " }
+
+{ M_RESP_BIND_FAILED
+"S¡œov  chyba (nezdaýenì pý¡kaz bind())" }
+
+{ M_RESP_LISTEN_FAILED
+"S¡œov  chyba (nezdaýenì pý¡kaz listen())" }
+
+{ M_RESP_GETSOCKNAME_FAILED
+"S¡œov  chyba (nezdaýenì pý¡kaz getsockname())" }
+
+{ M_RESP_CANNOT_CONNECT
+"Pýenos dat se nepodaýil" }
+
+{ M_RESP_CONNECTION_NOT_ESTABLISHED
+"Server nenav zal datov‚ spojen¡" }
+
+{ M_RESP_TRANSFER_SKIPPED
+"Pýeskakuji soubor `%s'" }
+
+{ M_WALK_TREE
+" Proch zet celì adres ýovì strom poŸ¡naj¡c "
+" '%s' ? " }
+
+{ M_NO_MARKED_FILES
+" ¦ dn‚ soubory nejsou oznaŸen‚ v podadres ý¡ch " }
+
+{ M_HAVENT_BEEN_CONNECTED
+"Nejsem zat¡m pýipojen" }
+
+{ M_DIRECTORY_LISTING
+"Vìpis obsahu adres ýe" }
+
+{ M_LARGE_INDEX_FILE
+"  Pozor: soubor '%s' obsahuj¡c¡ popis soubor…  "
+"  je velkì %s byt…. Pýejeç si ho st hnout?  " }
+
+{ M_LOAD_DESCRIPTIONS
+" NaŸ¡t m popisy z '%s' ? " }
+
+{ M_CANT_USE_DIR_AS_INDEX_FILE
+" Nelze naŸ¡st popisy z adres ýe '%s'. "
+" Um¡sti kursor na spr vnì soubor. " }
+
+{ M_RESP_CONNECTING
+"Pýipojuji se k %s..." }
+
+{ M_DOWNLOADING1
+"%s - DL %lu%% z %.2f KB/s" }
+
+{ M_UPLOADING1
+"%s - UL %lu%% z %.2f KB/s" }
+
+{ M_DESC_DOWNLOAD_OPTIONS
+"  Ano  "
+"  Ne   "
+" Nikdy " }
+
+# ----------------------------------------- new in 1.21 -------------
+
+{ M_RESP_CANT_OPEN
+"Nelze otevý¡t soubor %s" }
+
+{ M_NO_EMAIL_ADDRESS
+""
+"UpozornØn¡: e-mailov  adresa nen¡ specifikov na v souboru %s."
+"" }
+
+{ M_GUESSED_EMAIL
+"Pou§¡v m %s jako heslo pro anonymn¡ pýihl çen¡."
+"PokraŸov n¡ kl vesou ENTER..."
+"" }
+
+{ M_CANT_GUESS_EMAIL
+"Nepodaýilo se ovØýit pýihlaçovac¡ £Ÿet na serveru;"
+"pros¡m edituj %s a zapiç tam spr vnou e-mailovou adresu."
+"Bude pou§ita jako heslo pro anonymn¡ pýihl çen¡ FTP."
+"" }
+
+{ M_INI_CONFIG_VERSION
+""
+"Tv…j aktu ln¡ konfiguraŸn¡ soubor, %s, je verze %s."
+"NFTP m  aktu ln¡ verzi %s."
+"" }
+
+{ M_INI_CANT_FIND_NFTP_I
+"Nelze nal‚zt soubor nftp.i k aktualizaci nftp.ini"
+"ani v adres ýi `%s' ani v `%s' !"
+"" }
+
+{ M_INI_UPDATE
+"Budu aktualizovat `%s'"
+"z                 `%s'."
+"PokraŸovat? [Ynq]" }
+
+{ M_INI_UPDATING
+""
+"Aktualizuju %s z %s..."
+"" }
+
+{ M_INI_CANT_OPEN_READ
+"nelze otevý¡t %s pro Ÿten¡"
+"" }
+
+{ M_INI_CANT_OPEN_WRITE
+"Nelze otevý¡t %s pro z pis"
+"" }
+
+{ M_INI_WRONG_ENTRY
+"Chyba -- vstup mimo sekci:"
+"%s" }
+
+{ M_INI_CANT_RENAME
+"Nelze pýejmenovat `%s' z `%s'"
+"" }
+
+{ M_INI_BACKUP
+""
+"Z loha konfigurace verze %s"
+"byla ulo§ena jako        %s"
+"" }
+
+{ M_INI_UPDATING_ENTRY
+"aktualizuju: %s"
+"" }
+
+{ M_INI_FINISHED
+""
+"Aktualizace dokonŸena; pokraŸov n¡ - stiskni ENTER..." }
+
+# ----------------------------------------- new in 1.22 -------------
+
+{ M_RESP_CANT_CREATE_DIRECTORY
+"Nelze vytvoýit adres ý '%s'" }
+
+{ M_INFORMATION1
+" %d soubor(…) v %d adres ýi(¡ch); %s byt… celkem "
+""
+" URL aktu ln¡ho souboru: "
+" %s "}
+
+{ M_INFORMATION2
+" %d soubor(…) v %d adres ýi(¡ch); %s byt… celkem "
+""
+" Kop¡rovat aktu ln¡ URL do schr nky? "
+" %s "}
+
+{ M_HLP_HISTORY
+""
+" Historie navçt¡venìch server… a adres ý…"
+""
+" NejposlednØjç¡ navçt¡ven  m¡sta jsou vyps na jako prvn¡. Soubor"
+" s histori¡ funguje tak‚ jako DNS cache (jsou sem ulo§en‚ IP adresy)."
+" HvØzdiŸka v n zvu £Ÿtu u§ivatele znamen , §e tento £Ÿet m  heslo"
+" zapsan‚ v souboru. Pýihlaçovac¡ jm‚no se pro anonymn¡ pýipojen¡"
+" nezobrazuje. Pýep¡naŸe mohou n sledovat pýihlaçovac¡ jm‚no"
+" (podrobnosti o atributech nalezneç v FAQ)."
+""
+" Z znam a vyu§it¡ souboru histori¡ m…§e bìt ý¡zeno parametry"
+" konfiguraŸn¡ho souboru nftp.ini. M…§eç omezit poŸet server… a max."
+" poŸet adres ý… na server uchov vanì v souboru. NadbyteŸn‚"
+" a duplik tn¡ z znamy jsou redukov ny pýi otevýen¡ okna historie."
+" NFTP m…§e tak‚ zaznamenat hesla £Ÿt… na serverech (jsou ulo§en‚"
+" v çifrovan‚ ale ne zcela zabezpeŸen‚ formØ). V z kladn¡m nastaven¡"
+" jsou tak‚ ukl d ny Ÿasy pýihl çen¡, stahov n¡ a odhl çen¡. NFTP m…§e"
+" tak‚, je-li to nastaveno, ukl dat z znam vçech navçt¡venìch adres ý…"
+" v souboru histori¡."
+""
+" Pohyb je obdobnì jako v oknØ z lo§ek. Kl vesou Enter vyb¡r ç server"
+" nebo z znam; Esc uzav¡r  okno nebo zruç¡ vìpis adres ýe a çipky"
+" vlevo/vpravo lze pou§¡t pro pohyb nam¡sto kl ves Enter/Esc."
+" Stisknut¡m Del m…§eç smazat server se vçemi adres ýi z historie."
+"" }
+
+{ M_PROCESSING_HISTORY1
+" Analizuju z znam historie; obdob¡ %u..." }
+
+{ M_PROCESSING_HISTORY2
+" Analizuju z znam historie; obdob¡ %u:  %u ý dk… hotovo" }
+
+{ M_READING_HISTORY_FILE
+" NaŸ¡t m z znam historie;  %u ý dk… hotovo" }
+
+{ M_WRITING_HISTORY_FILE
+" Zapisuji soubor historie;  %u ý dk… hotovo" }
+
+{ M_ERROR_READING_HISTORY
+" Chyba pýi Ÿten¡ souboru historie %s " }
+
+{ M_EMPTY_HISTORY
+" Soubor historie %s je pr zdnì " }
+
+{ M_SAVE_HISTORY
+" Ulo§it zmØny do souboru histori¡? " }
+
+{ M_HIST_HEADER1
+" Historie: %u server(y/…) %u z znam(y/…) celkem " }
+
+{ M_HIST_HEADER2
+" Historie: %s, %u adres ý(e/…) " }
+
+{ M_HIST_DELETE_DIR
+" %s:%s "
+" Smazat adres ýovou polo§ku? " }
+
+{ M_HIST_DELETE_SITE
+" %s "
+" Smazat server obsahuj¡c¡ %u adres ýovìch polo§ek? " }
+
+# ------------------------------------------------------ new/updated in 1.23
+
+{ M_HLP_USING_MENU
+"  "
+" Menu"
+""
+" Menu slou§¡ jako pýehlednì strukturovanì seznam funkc¡ programu NFTP."
+" Do menu se dostaneç kl vesami F9 nebo Ctrl-F (lze je pýedefinovat v"
+" konfiguraŸn¡m souboru nftp.ini). æipkama se pak pohybuje ve struktuýe"
+" menu; kl vesou Esc pýejdeç do vyçç¡ £rovnØ menu. Pokud chceç jednotliv‚"
+" funkce menu zpý¡stupnit rychle pomoc¡ kl vesovìch zkratek pak nastav v"
+" konfiguraŸn¡m souboru nftp.ini parametr `menu-open-submenu' na hodnotu"
+" -1; potom kl vesa F9 otevýe pouze z kladn¡ £roveå menu. Pomoc¡ tohoto "
+" parametru tak‚ m…§eç nastavit otev¡r n¡ jinìch submenu ne§ 'Odkazy'"
+" kter‚ je z kladn¡."
+" "
+" M…§eç si tak‚ vylepçit nastaven¡ svìch vlastn¡ch preferenc¡ editac¡"
+" souboru `czech.mnu'. Instrukce najdeç uvnitý souboru."
+"" }
+
+{ M_RESP_F9_FOR_MENU
+"Stisknut¡m kl ves F9 nebo Ctrl-F vyvol ç menu" }
+
+{ M_BOOKMARK_NICKNAME
+" Alias '%s' "
+" nebyl nalezen mezi z lo§kama " }
+
+{ M_SELECT_BOOKMARK
+" Vyber si z lo§ku " }
+
+{ M_HISTORY_NICKNAME
+" Alias '%s' "
+" nebyl nalezen v seznamu historie " }
+
+{ M_SELECT_HISTORY
+" Vyber si polo§ku Historie " }
+
+{ M_USAGE0
+"Voliteln‚ parametry : "}
+
+{ M_USAGE1
+"pýipojit se na adresu URL" }
+
+{ M_USAGE2
+"stahovat (G,g) nebo odeslat (P,p) soubor-URL" }
+
+{ M_USAGE3
+"proces pýenosu naprogramov n v souboru cmdfile.txt" }
+
+{ M_USAGE4
+"hledej slova `word' v z lo§k ch(z) nebo v historii(h)" }
+
+{ M_USAGE5
+"adresa URL ba mØla bìt ve form tu "
+"[ftp://][u§ivatel[:heslo]@]server[:port]adres ý/soubor,"
+"napý. ftp://asv:password@crydee.sai.msu.ru:21/home/asv/file.txt"
+"nebo  crydee.sai.msu.su/pub/comp/software/asv/nftp/nftp-LATEST-os2.zip" }
+
+# ----------------------------------------------------------------- new in 1.40
+
+{ M_SITE_EDIT1
+"N zev serveru" }
+
+{ M_SITE_EDIT2
+"U§ivatel (Login ID)" }
+
+{ M_SITE_EDIT3
+"Heslo" }
+
+{ M_SITE_EDIT4
+"Port" }
+
+{ M_SITE_EDIT5
+"Adres ý" }
+
+{ M_SITE_EDIT6
+"Pýep¡naŸe (viz FAQ)" }
+
+{ M_PASSWORDED_WGET
+" Pokouç¡ç se stahovat pomoc¡ WGET z neanonymn¡ho £Ÿtu. "
+" Tato Ÿinnost je z bezpeŸnostn¡ch d…vod… zak z na v konfiguraci, "
+" ale m…§eç ji povolit v souboru nftp.ini" }
+
+{ M_WGET_DOWNLOAD_ONE
+" Stahovat soubor %s extern¡m programem? " }
+
+{ M_WGET_DOWNLOAD_MANY
+" Stahovat %d soubor(y/…) v %d adres ý(i/¡ch); "
+" %s byt… celkem extern¡m programem? " }
+
+{ M_CONFIRM_COMMAND
+" Extern¡ pý¡kaz: " }
+
+{ M_USETAB2
+" Pro pohyb mezi poli pou§ij Tab/Shift-Tab n. çipky Nahoru/Dol…" }
+
+# ------------------------------------------------- new since 1.50
+
+{ M_CANCEL
+" Zruçit " }
+
+{ M_FTPS_RECEIVING
+"  %s: Pýij¡m m data...   "
+"  Zruçit kl vesou ESC  "
+"  %s z znam(y/…) celkem " }
+
+{ M_FTPS_NO_HITS
+"  Nenalezeno `%s'...   " }
+
+{ M_FTPS_SERVERS
+" Prohled vac¡ servery FTP Search " }
+
+{ M_FTPS_ADD_SERVER
+" Zadej adresu nov‚ho prohled vac¡ho serveu FTP Search " }
+
+{ M_FTPS_DELETE
+" Smazat `%s' ? " }
+
+{ M_QUERYING
+"dotazuji se %s..." }
+
+{ M_FTPS_SENDING_REQUEST
+"  Pos¡l m § dost na %s...   " }
+
+{ M_FTPS_SEARCHRES
+" Vìsledek hled n¡ (%u z znam(y/…) " }
+
+{ M_DIR_SIGN
+"<DIR>" }
+
+{ M_LINK_SIGN
+"<LINK>" }
+
+{ M_SEARCH_FORWARD
+" Dalç¡ hled n¡ " }
+
+{ M_SEARCH_BACKWARDS
+" Pýedchoz¡ hled n¡ " }
+
+{ M_CANT_FIND
+"  Nelze nal‚zt `%s'   " }
+
+{ M_SELECT_LANGUAGE
+" Vyber si jazyk " }
+
+{ M_REGISTRATION_NAME
+"RegistraŸn¡ jm‚no" }
+
+{ M_REGISTRATION_CODE
+"RegistraŸn¡ k¢d" }
+
+{ M_THANKS
+" dØkuji za zaregistrov n¡ NFTP! " }
+
+{ M_FTPS_NEED_ARGS
+" M…§eç si zvolit jen jeden zp…sob hled n¡ z "
+" 'pýesnØ', 'podýetØzec', 'maska' nebo 'vìraz' " }
+
+{ M_FTPS_SEARCH1
+"Pýesn‚ hled n¡" }
+
+{ M_FTPS_SEARCH2
+"Hled n¡ podýetØzce" }
+
+{ M_FTPS_SEARCH3
+"Hled n¡ podle masky" }
+
+{ M_FTPS_SEARCH4
+"Hledat logickì vìraz" }
+
+{ M_FTPS_SEARCH5
+"Rozezn vat velikost?" }
+
+{ M_FTPS_SEARCH6
+"S vìjimkou soubor…/adres ý…" }
+
+{ M_FTPS_SEARCH7
+"Pouze dom‚ny" }
+
+{ M_FTPS_SEARCH8
+"S vìjimkou dom‚n" }
+
+{ M_FTPS_SEARCH9
+"Skrìt Slackware/RedHat/FreeBSD/atd." }
+
+{ M_FTPS_SEARCH10
+"Max. poŸet vìsledk… hled n¡" }
+
+{ M_HLP_SITE_EDIT
+"Parametry server…"
+""
+"Pro anonymn¡ servery nevyplåuj pole 'u§ivatel' a 'heslo'. Jestli§e"
+"neuvedeç adres ý, FTP server ho zvol¡ za tebe - obvykle je to root"
+"pro anonymn¡ pýihl çen¡ nebo dom c¡ adres ý £Ÿtu dan‚ho u§ivatele."
+"Popis serveru je jen informativn¡, obvykle se pou§¡v  v z lo§k ch."
+""
+"Dostupn‚ pýep¡naŸe:"
+"p - pou§ij pasivn¡ m¢d pro tento server. NØkdy to pom h  na pomalìch"
+"    a problematickìch link ch."
+"r - neomezen‚ opakov n¡. Ne£spØçn‚ pýihl çen¡ se NFTP pokus¡ opakovat"
+"    bez ohledu na chybov‚ hl çen¡ nebo na to zda jde o anonymn¡ pý¡stup."
+"f - uvnitý firewallu. Pokud je v souboru nftp.ini definov n firewall,"
+"    na tento server se bude pýesto pýistupovat pý¡mo."
+}
+
+{ M_HLP_FTPSEARCH
+"Syst‚m prohled v n¡ - FTP Search"
+""
+"'Pýesn‚ hled n¡' bude hledat pouze odpov¡daj¡c¡ jm‚no souboru nebo;"
+"adres ýe napý.: nftp141o.zip"
+""
+"'Hled n¡ podýetØzce' bude vyhled vat odpov¡daj¡c¡ Ÿ st v n zvu souboru"
+"nebo adres ýe; napý.: nftp14"
+""
+"'Hled n¡ podle masky' pou§¡v  z stupn‚ znaky '*' a '?' stejnìm zp…sobem"
+"jako v pý¡kazov‚ ý dce (tj. '*' znamen  jakìkoli alfanumerickì ýetØzec,"
+"'?' maskuje jedinì alfanumerickì znak; napý.: nftp*.zip n. nftp1??o.zip"
+""
+"'Hled n¡ podle logick‚ho vìrazu' je nej£ŸinØjç¡, ale vy§aduje urŸit‚"
+"znalosti; napý.: nftp1\.[4-9][0-9]o\.zip bude hledat vçechny verze 1.xx"
+"NFTP pro OS/2, poŸ¡naj¡c 1.40. Popis mo§nost¡ 'regular expression' lze"
+"nal‚zt na mnoha m¡stech, vŸetnØ knihovny GNU rx."
+""
+"'Rozezn vat velikost' plat¡ pouze na 'Hled n¡ podýetØzce'."
+""
+"M…§eç tak‚ definovat dalç¡ krit‚ria: vyjmout adres ýe z hled n¡,"
+"omezit hled n¡ jen pro urŸen‚ dom‚ny a vyjmout z hled n¡ freewarov‚"
+"distribuce Unixu, kter‚ vytv ýej¡ obrovsk‚ mno§stv¡ nalezenìch"
+"polo§ek. VØtçina parametr… mus¡ bìt oddØlena mezerami."
+""
+"Nen¡ doporuŸeno omezovat 'Max. poŸet vìsledk…' na vyçç¡ hodnoty"
+"(5000 vìsledk… nem  smysl; zkus omezit nØco co nepotýebujeç.)"
+"Obvykle tak‚ m  smysl dotazovat pouze hlavn¡ FTP Search server,"
+"ftpsearch.ntnu.no proto§e jeho index pokrìv  90% svØta. Ostatn¡"
+"se vØtçinou pouze omezuj¡ na nØjakì geografickì are l."
+"" }
+
+{ M_FTPS_DOWNLOAD
+"  St hnout "
+"  %s  "
+"  z %s?  " }
+
+{ M_HIST_CONT_SEARCH
+"  Nelze nal‚zt %s. Prohled vat dalç¡ servery?  " }
+
+{ M_TOO_LARGE
+"%s/%s: pý¡liç mnoho pro neregistrovanou verzi" }
+
+{ M_DISCONNECT
+"  UkonŸit spojen¡ se serverem %s?  " }
+
+{ M_UPLOAD_EDITED
+"  Odeslat zmØnØnì soubor zpØt na server?  " }
+
+{ M_FONT_DESC
+"ç¡ýka %3d, vìçka %3d (%s)" }
+
+{ M_UNSUPPORTED
+"  Funkce nen¡ podporov na na %s  " }
+
+{ M_SELECT_FONT
+" Vybrat font " }
+
+{ M_HLP_FTPSEARCH2
+"Kl vesov‚ zkratky v oknØ vìsledk…"
+""
+"Ctrl-P      uka§/skryj cestu"
+"Ctrl-T      uka§/skryj Ÿas posledn¡ zmØny"
+"Ctrl-F      dopýedn‚ prohled v n¡"
+"Ctrl-H      zpØtn‚ prohled v n¡"
+"Shift-D/F5  st hnout soubor"
+""
+"Shift-H     tý¡dit podle serveru"
+"Shift-N     tý¡dit podle jm‚na souboru (default)"
+"Shift-S     tý¡dit podle velikosti"
+"Shift-T     tý¡dit podle data/Ÿasu"
+"" }
+
+{ M_STALLED "stalled" }
+
+# ------------------------------------------------- new since 1.51
+
+{ M_WAIT
+""
+""
+" Pros¡m Ÿekej %d sekund... " }
+
+{ M_UNREGISTERED
+" Tato verze nen¡ registrov na "
+""
+" Chceç-li se zbavit tohoto hl çen¡ je týeba zakoupit licenci "
+" programu NFTP. Stoj¡ $%d a pokrìv  i vçechny budouc¡ verze "
+" pro vçechny podporovan‚ operaŸn¡ syst‚my. Dalç¡ informace lze "
+" nal‚zt na adrese http://www.ayukov.com/nftp/buy.html %s" }
+
+{ M_PRESS_ENTER
+" PokraŸov n¡ stiskni ENTER " }
+
+{ M_HTTP_PROXY
+"  Nen¡ podporov no pýes HTTP proxy  " }
+
+{ M_ENUMERATING_FONTS
+" PoŸ¡t m fonty... " }
+
+# ------------------------------------------------- new since 1.60
+
+{ M_SCRIPT_BADCOMMAND
+"Nezn mì pý¡kaz: %s" }
+
+{ M_SCRIPT_BADARGS
+"Tento pý¡kaz vy§aduje %d parametr… (je jich jen %d" }
+
+{ M_SCRIPT_ERROR
+"Chyba; vykon v n¡ skriptu bylo zastaveno" }
+
+{ M_SCRIPT_CANT_OPEN
+"Nelze otevý¡t soubor skriptu `%s'" }
+
+{ M_SCRIPT_RUNNING
+"SKRIPT: %s %s" }
+
+{ M_SCRIPT_INVALID_VAR
+"Chybn  promØn : %s" }
+
+{ M_SCRIPT_CANT_OPEN_LOG
+"Nelze otevý¡t log `%s'" }
+
+{ M_RESP_CONNECTING2
+"Pýipojuji se k %s: Esc - zruçit, Mezera - opakovat..." }
+
+{ M_RESP_ACCEPTING
+"¬ek m na pýipojen¡ pýes port %d: Esc - zruçit, Mezera - opakovat..."}
+
+{ M_RESP_ACCEPTED
+"Spojen¡ s %s bylo nav z no" }
+
+{ M_PAUSED
+"Pýest vka; pokraŸov n¡ kl vesou P " }
+
+{ M_SQRP
+"S/Q/R/P - (S)Vynechat/(Q)UkonŸit/(R)estartovat/(P)ýest vka" }
+
+{ M_TOTAL        "Celkem" }
+{ M_TRANSFERRED  "Pýeneseno" }
+{ M_SKIPPED      "Vynech no" }
+{ M_LEFT         "Zbìv " }
+{ M_INACT        "sekund(y) od posledn¡ho paketu" }
+
+{ M_NO_FIREWALLING
+"¦ dnì firewall/proxy nebyl konfigurov n v souboru nftp.ini" }
+
+{ M_HLP_PASSWORDS
+"Zkratkov‚ kl vesy v oknØ hesel"
+""
+"Insert - zalo§it nov‚ heslo"
+"Delete - odstranit heslo"
+"Ctrl-E - zmØnit heslo"
+"Ctrl-P - uk zat/skrìt hesla"
+""
+"Enter  - pýihl sit se k serveru"
+"" }
+
+{ M_DEL_UNMATCHED
+"   Maz n¡ nepotýebnìch soubor…...   " }
+
+{ M_ENTER_LISTNAME
+"Zadej jm‚no souboru do seznamu:" }
+
+{ M_SYNC1
+"Synchronizovat lok ln¡ strom se vzd lenìm serverem?"
+""
+"vzd lenì %s ->"
+"lok ln¡  %s"
+""
+"NFTP bude stahovat soubory" }
+
+{ M_SYNC2
+"Synchronize vzd lenì server s lok ln¡m stromem?"
+""
+"lok ln¡  %s ->"
+"vzd lenì %s"
+""
+"NFTP bude pýen çet soubory" }
+
+{ M_SYNC3
+"Adres ýe vypadaj¡ stejnØ" }
+
+{ M_PASS_UNSUPPORTED
+"Verze souboru hesel (%d) nen¡ podporov na" }
+
+{ M_PASS_ENTER_KEYPHRASE1
+"Zadej kl¡Ÿ k odk¢dov n¡ souboru hesel" }
+
+{ M_PASS_INVALID
+"%s"
+"Soubor hesel m  chybnì obsah" }
+
+{ M_PASS_ENTER_KEYPHRASE2
+"Zadej kl¡Ÿ k zak¢dov n¡ souboru hesel" }
+
+{ M_PASSWORDS
+"Hesla" }
+
+{ M_PASS_SAVE
+"Ulo§it zmØny do souboru hesel?" }
+
+{ M_PASS_DELETE
+"%s @ %s"
+"Smazat tento z znam?" }
+
+{ M_DISK_FULL
+"%s"
+"Chyba pýi z pisu do souboru (plnì disk?)" }
+
+{ M_REGISTERED
+"Zaregistrov no pro %s" }
+
+{ M_UNREGISTERED2
+"Nezaregistrov no (%d dn¡ od prvn¡ho spuçtØn¡)" }
+
+{ M_FTPS_RECEIVING2
+"   Pýij¡m m data z %s...   "
+"   Celkem nalezeno: %s   "
+"   Nalezeno na tomto serveru: %s"
+"   Hled n¡ zruç¡ç kl vesou ESC   " }
+
+{ M_FTPS_NO_HITS2
+"Nebylo nic nalezeno" }
+
+{ M_FTPS_NORES
+"¦ dn‚ hled n¡ dosud neprobØhlo" }
+
+{ M_ENABLE_PASSWORDS
+"Pros¡m povol keçov n¡ hesel v souboru nftp.ini" }
+
+{ M_NEEDBF
+"Toto je pou§it  metoda(y) %s (viz nftp.ini)" }
+
+{ M_PASS_INCORRECT
+"Nespr vn‚ heslo"}
+
+{ M_BYTESSEC "byt…/sec" }
+
+{ M_DOWNLOAD "stahov n¡" }
+
+{ M_UPLOAD "pýenos" }
+
+{ M_COMMUNICATING
+"Komunikuji se serverem..." }
+
+# will look like: " 23% hotovo (stahov n¡, bin rnØ)"
+{ M_PERCENTAGE1 "%9u%% hotovo (%s, %s)" }
+
+# will look like: " 23% hotovo (stahov n¡, bin rnØ) (3 of 15 files)"
+{ M_PERCENTAGE2 "%9u%% hotovo (%s, %s) (%d of %d files)" }
+
+# ------------------------------------------------- new since 1.61
+
+{ M_TR_OVERWRITE  "Pýepsat" }
+{ M_TR_RESUME     "PokraŸovat" }
+{ M_TR_SKIP       "Vynechat" }
+{ M_TR_CANCEL     "Zruçit" }
+
+{ M_TR_QUESTION
+"C¡lovì soubor u§ existuje!"
+"DoporuŸen  akce: %s"
+""
+"Vzd lenì: %s v %s"
+"Lok ln¡:  %s v %s"
+""
+"P…vodn¡ soubor: %s byt…, %2d %s %4d  %02d:%02d:%02d"
+"C¡lovì soubor : %s byt…, %2d %s %4d  %02d:%02d:%02d" }
+
+# ------------------------------------------------- new since 1.62
+
+{ M_DELETE_FILES
+"Oznaèil jsi %d soubor(ù)."
+"     Chce¹ je opravdu smazat?" }
+
+{ M_NOT_EMPTY
+"Adresáø `%s' není prázdný!"
+"Odstranit celou adresáøovou strukturu?" }
+
+{ M_ALL "All" }
+
+{ M_DELETING
+"  Ma¾u %s...  " }
+
+{ M_NO_CHMOD
+"Tento FTP server nepodporuje pøíkaz SITE CHMOD" }
+
+{ M_ACCESSRIGHTS1
+"Pøístupová práva pro %d soubor(y/ù)" }
+
+{ M_ACCESSRIGHTS2
+"Pøístupová práva pro %s" }
+
+{ M_WRONG_RIGHTS
+"Chybné zadání:  [%s]"
+"Správný formát: [rwxrwxrwx]" }

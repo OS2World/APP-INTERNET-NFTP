@@ -1,0 +1,157 @@
+#
+# see syntax explanations in english.mnu if interested
+#
+
+main
+{
+    {SUBMENU, "&V„rdar",     Sites}
+    {SUBMENU, "&Filer",     Files}
+    {SUBMENU, "V&isa",      View}
+    {SUBMENU, "™v&erf”ring",  Transfer}
+    {SUBMENU, "In&st„llningar",        Options}
+    {SUBMENU, "&Hj„lp",     Help}
+}
+
+Sites
+{
+    {ACTION, "&Bokm„rken...",            10}  login from bookmarks
+    {ACTION, "&Historia...",              17}  history
+    {ACTION, "&Spara bokm„rke...",        35}  save host/dir as bookmark
+    {SUBMENU, "&FTP Search", FTPSearch} -- perhaps leave as-is FTP Search trademark?
+    {SUBMENU, "L”senord", Passwords}
+    {SEP}
+    {ACTION, "™ppna &URL...",             18}  open URL
+    {ACTION, "&Logga in...",              11}  login
+    {ACTION, "L&ogga av...",               13}  log off
+    {ACTION, "Kontrollera f”rbindelse",        22}  send NOOP
+    {ACTION, "S&kicka kommando...",         24}  quote command
+    {SEP}
+    {ACTION, "Suspend (Unix only)",    112}  suspend
+#   {ACTION, "Crash",                     9}  crash and burn
+    {ACTION, "E&xit...",                 14}  exit NFTP
+}
+
+Passwords
+{
+    {ACTION, "&Redigera l”senord...",   28} edit passwords
+    {ACTION, "Žndra &nyckel...", 29} change keyphrase for password encryption
+}
+
+Files
+{
+    {ACTION, "&Skapa katalog...",                53}  create directory
+    {ACTION, "&Byt namn...",                        54}  rename file/directory
+    {ACTION, "R&adera...",                        52}  delete file/dir
+    {ACTION, "Žndra †&tkomstr„ttigheter",             79}  change access rights
+    {SEP}
+#   {ACTION, "G† &in i katalog",                  71}  change into dir under cursor
+    {ACTION, "B&yt katalog...",              74}  input dir and change to it
+    {ACTION, "Byta till r&otkatalog",         72}  change to root dir
+    {ACTION, "&L„s in katalog igen",                70}  re-read directory
+    {ACTION, "Spara &fillisting...",                  45}  save directory listing
+    {ACTION, "Byt lokal &enhet...",            75}  change local drive
+    {ACTION, "Ber„kna &katalogstorlek",            57}  traverse directory and compute its size
+}
+
+View
+{
+    {ACTION, "Žndra k&atalogvisning",             32}  switch between raw/parsed modes
+    {ACTION, "Kontrollera &f”rbindelse",                30}  switch between CC and dir
+    {ACTION, "&Byt mellan v„rd/lokal enhet",               31}  switch between local/remote
+    {SWITCH, "&Delad sk„rm",                      37}  make screen look like NC
+    {SWITCH, "Visa fildatum/&tid",            38}  show/hide file timestamps in panels
+    {SWITCH, "Mini&status",                       39}  show/hide mini-status field
+    {SEP}
+    {ACTION, "&Visa fil",                         50}  view w/int viewer
+    {ACTION, "Visa &m/ext program",                51}  view w/ext viewer
+    {ACTION, "&H„mta filbeskrivningar",              76}  load 00index.txt file
+    {SUBMENU, "So&rtering",   Sort}
+    {SEP}
+    {ACTION, "&Uppdatera sk„rm",                    36}  repaint screen
+}
+
+Sort
+{
+    {ACTION, "&Namn",        60}  sort by name
+    {ACTION, "&Filtyp",   61}  sort by extension
+    {ACTION, "&Storlek",        63}  sort by size
+    {ACTION, "&Tid",        62}  sort by date
+    {ACTION, "&Osorterat",            64}  make unsorted
+    {ACTION, "O&mv„nd ordningsf”ljd",  65}  reverse sort order
+}
+
+Transfer
+{
+    {ACTION, "&Copy...",                   77}  copy between remote/local
+#   {ACTION, "&H„mta fil...",               40}  download
+#   {ACTION, "H„mta alla &filer...",    42}  d/l from all dirs
+    {ACTION, "H„mta med &namn...",       44}  d/l by name
+    {ACTION, "H„mta med &WGET...",     46}  launch wget to retrieve files
+#   {ACTION, "&L„mna fil...",                 41}  upload
+#   {ACTION, "L„mna &alla filer...",      43}  u/l from all dirs
+    {SEP}
+    {SUBMENU, "&V„lj", Select}
+    {SUBMENU, "&Spegla", Mirror}
+    {SWITCH, "&Bin„rt",         21}  switch ASCII/BINARY
+    {ACTION, "Visa status",                 15}  get current status
+#   {SWITCH, "Begr„nsa hastighet",           98}  limit throughput
+    {SEP}
+    {ACTION, "Hoppa ”ver fil",                  47}  skip file during transfer
+    {ACTION, "Avbryt ”verf”ring",              48}  stop transfer
+    {ACTION, "Starta om ”verf”ring",           49}  abort and restart transfer
+    {SWITCH, "G”r pause i ”verf”ring",             58}  pause transfer
+}
+
+Select
+{
+    {ACTION, "&Markera/avmarkera fil",           82}  select file under cursor
+    {ACTION, "Markera med f&ilter...",         83}  select by mask
+    {ACTION, "Avmar&kera med filter...",       84}  deselect by mask
+    {ACTION, "Ma&rkera alla",                80}  select all files
+    {ACTION, "A&vmarkera alla",              81}  deselect all files
+    {ACTION, "Avmark&era i alla kataloger",      87}  deselect all files
+    {ACTION, "Inver&tera markeringar",     85}  invert selection
+    {ACTION, "Exportera lista av markerade...",   19}  export list of marked files
+    {ACTION, "Review list of marked...",   12}  review list of marked files/dirs
+}
+
+Mirror
+{
+    {ACTION, "&H„mtning...",               66} synchronize local with remote (download)
+    {ACTION, "&L„mning...",                 67} synchronize remote with local (upload)
+    {SWITCH, "Radera omatchade filer",        68} switch: delete/keep unmatched files
+    {SWITCH, "Inkludera &underkataloger",       69} switch: synchronize subdirs?
+}
+
+Help
+{
+    {ACTION, "&Hj„lp",             1}  Help
+    {ACTION, "&Generell hj„lp",        2}  general help
+    {ACTION, "&Kort hj„lp",     3}  short help
+    {ACTION, "&Anv„nda menyer",      7}  using menus
+    {SEP}
+    {ACTION, "Uppdatera NFTP",       90}  connect to NFTP site
+    {ACTION, "&Om NFTP...",    6}  displays time of build
+}
+
+FTPSearch
+{
+    {ACTION, "&S”k med FTPSearch...", 120} find with FTPSearch
+    {ACTION, "S&enaste s”kningen...", 122}, display results of last search
+    {ACTION, "&V„rdar...", 121} define FTPSearch servers
+}
+
+Options
+{
+    {SWITCH, "Anv„nd &proxy",    25}  enable/disable proxy
+    {SWITCH, "&Anv„nd flaggor",               23}  use/disable NLST with flags
+    {SWITCH, "&Visa beskrivningar",               34}  show/hide descriptions
+    {SWITCH, "Passive mode",      26} switch passive mode on/off
+    {SWITCH, "Analysera symboliska l„nkar",  27}  switch symlink resolving on/off
+    {SEP}
+    {ACTION, "Ž&ndra inst„llningar",           16}  invoke editor on nftp.ini
+# I suggest next line should be left in English :-}
+    {ACTION, "&Language",        91}  select language
+    {ACTION, "&Typsnitt...", 93} select font for NFTP window
+    {ACTION, "Registreringskod...",   92}  enter registration information
+}

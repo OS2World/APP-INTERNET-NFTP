@@ -1,0 +1,10 @@
+ARCHIVER = tar
+ARCHIVER_FLAGS = cf
+LIBTERMCAP = /usr/lib/libtermcap.a
+COMPRESSOR = gzip -9
+
+TARGETS = nftp_unix_term nftp_unix_x11
+
+strip: force
+	strip $(TARGETS)
+

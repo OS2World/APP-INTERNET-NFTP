@@ -1,0 +1,475 @@
+; bookmark format is
+; ftp.sai.msu.su:21/pub/os2 : login/password/flags : description
+;
+; edit this file with care; following rules apply:
+; - spaces around colons ARE important;
+; - pathnames must be absolute, i.e. start with '/';
+; - omit 'port' if you want to;
+; - substitute '*' for anonymous 'login' and 'password':
+;   crydee.sai.msu.su:/pub/comp/os/os2 : */*/flags : SAI OS/2 archive
+;
+;
+[Personal logins]
+sarth.sai.msu.ru: : asv// : sarth
+zeus.sai.msu.su:~ : asv// : zeus
+neptun.sai.msu.su:~ : asv// : neptun
+helios.tuc.noao.edu:/usr/users/sayukov : sayukov// : helios
+crydee.sai.msu.ru:~ : asv// : My login on crydee
+localhost: : asv// : sethanon
+a: : asv// : 
+aedde.pair.com: : ayukov// : aedde
+a:/ : superpuper/duper// : superpuper
+
+[Folder1]
+crydee:/xxxx : asv//r : 4 aaaaaaa
+crydee: : *// : 1
+crydee: : *// : 2
+crydee: : *// : 3
+crydee: : *// : 5
+crydee: : *// : 6
+crydee: : *// : 7
+crydee: : *// : 9
+crydee: : *// : 11
+crydee: : *// : 12
+crydee: : *// : 13
+crydee: : *// : 14
+crydee: : *// : 15
+crydee: : *// : 16
+crydee: : *// : 17
+crydee: : *// : 18
+crydee: : *// : 19
+crydee: : *// : 20
+crydee: : *// : last
+aa: : *// : 
+aa: : *// : 
+aa: : *// : 
+a: : *// : 
+aaaaaa: : *// : 
+aaaaaaa: : *// : 
+aaaaaaa: : *// : 
+aaaaaa: : *// : 
+aaaaaaaa: : *// : 
+crydee: : *// : 1
+crydee: : *// : 2
+crydee: : *// : 3
+crydee: : *// : 4 aaaaaaa
+crydee: : *// : 5
+crydee: : *// : 6
+crydee: : *// : 7
+crydee: : *// : 8
+crydee: : *// : 9
+crydee: : *// : 10
+crydee: : *// : 11
+crydee: : *// : 12
+crydee: : *// : 13
+crydee: : *// : 14
+crydee: : *// : 15
+crydee: : *// : 16
+crydee: : *// : 17
+crydee: : *// : 18
+crydee: : *// : 19
+crydee: : *// : 20
+crydee: : *// : last
+aa: : *// : 
+aa: : *// : 
+aa: : *// : 
+a: : *// : 
+aaaaaa: : *// : 
+aaaaaaa: : *// : 
+aaaaaaa: : *// : 
+aaaaaa: : *// : 
+aaaaaaaa: : *// : 
+crydee: : *// : 1
+crydee: : *// : 2
+crydee: : *// : 3
+crydee: : *// : 4 aaaaaaa
+crydee: : *// : 5
+crydee: : *// : 6
+crydee: : *// : 7
+crydee: : *// : 8
+crydee: : *// : 9
+crydee: : *// : 10
+crydee: : *// : 11
+crydee: : *// : 12
+crydee: : *// : 13
+crydee: : *// : 14
+crydee: : *// : 15
+crydee: : *// : 16
+crydee: : *// : 17
+crydee: : *// : 18
+crydee: : *// : 19
+crydee: : *// : 20
+crydee: : *// : last
+aa: : *// : 
+aa: : *// : 
+aa: : *// : 
+a: : *// : 
+aaaaaa: : *// : 
+aaaaaaa: : *// : 
+aaaaaaa: : *// : 
+aaaaaa: : *// : 
+aaaaaaaa: : *// : 
+crydee: : *// : 1
+crydee: : *// : 2
+crydee: : *// : 3
+crydee: : *// : 4 aaaaaaa
+crydee: : *// : 5
+crydee: : *// : 6
+crydee: : *// : 7
+crydee: : *// : 8
+crydee: : *// : 9
+crydee: : *// : 10
+crydee: : *// : 11
+crydee: : *// : 12
+crydee: : *// : 13
+crydee: : *// : 14
+crydee: : *// : 15
+crydee: : *// : 16
+crydee: : *// : 17
+crydee: : *// : 18
+crydee: : *// : 19
+crydee: : *// : 20
+crydee: : *// : last
+aa: : *// : 
+aa: : *// : 
+aa: : *// : 
+a: : *// : 
+aaaaaa: : *// : 
+aaaaaaa: : *// : 
+aaaaaaa: : *// : 
+aaaaaa: : *// : 
+aaaaaaaa: : *// : 
+crydee: : *// : 1
+crydee: : *// : 2
+crydee: : *// : 3
+crydee: : *// : 4 aaaaaaa
+crydee: : *// : 5
+crydee: : *// : 6
+crydee: : *// : 7
+crydee: : *// : 8
+crydee: : *// : 9
+crydee: : *// : 10
+crydee: : *// : 11
+crydee: : *// : 12
+crydee: : *// : 13
+crydee: : *// : 14
+crydee: : *// : 15
+crydee: : *// : 16
+crydee: : *// : 17
+crydee: : *// : 18
+crydee: : *// : 19
+crydee: : *// : 20
+crydee: : *// : last
+aa: : *// : 
+aa: : *// : 
+aa: : *// : 
+a: : *// : 
+aaaaaa: : *// : 
+aaaaaaa: : *// : 
+aaaaaaa: : *// : 
+aaaaaa: : *// : 
+aaaaaaaa: : *// : 
+crydee: : *// : 1
+crydee: : *// : 2
+crydee: : *// : 3
+crydee: : *// : 4 aaaaaaa
+crydee: : *// : 5
+crydee: : *// : 6
+crydee: : *// : 7
+crydee: : *// : 8
+crydee: : *// : 9
+crydee: : *// : 10
+crydee: : *// : 11
+crydee: : *// : 12
+crydee: : *// : 13
+crydee: : *// : 14
+crydee: : *// : 15
+crydee: : *// : 16
+crydee: : *// : 17
+crydee: : *// : 18
+crydee: : *// : 19
+crydee: : *// : 20
+crydee: : *// : last
+aa: : *// : 
+aa: : *// : 
+aa: : *// : 
+a: : *// : 
+aaaaaa: : *// : 
+aaaaaaa: : *// : 
+aaaaaaa: : *// : 
+aaaaaa: : *// : 
+aaaaaaaa: : *// : 
+crydee: : *// : 1
+crydee: : *// : 2
+crydee: : *// : 3
+crydee: : *// : 4 aaaaaaa
+crydee: : *// : 5
+crydee: : *// : 6
+crydee: : *// : 7
+crydee: : *// : 8
+crydee: : *// : 9
+crydee: : *// : 10
+crydee: : *// : 11
+crydee: : *// : 12
+crydee: : *// : 13
+crydee: : *// : 14
+crydee: : *// : 15
+crydee: : *// : 16
+crydee: : *// : 17
+crydee: : *// : 18
+crydee: : *// : 19
+crydee: : *// : 20
+crydee: : *// : last
+aa: : *// : 
+aa: : *// : 
+aa: : *// : 
+a: : *// : 
+aaaaaa: : *// : 
+aaaaaaa: : *// : 
+aaaaaaa: : *// : 
+aaaaaa: : *// : 
+aaaaaaaa: : *// : 
+crydee: : *// : 1
+crydee: : *// : 2
+crydee: : *// : 3
+crydee: : *// : 4 aaaaaaa
+crydee: : *// : 5
+crydee: : *// : 6
+crydee: : *// : 7
+xxxx:xxxx : xxxx// : xxxx
+crydee: : *// : 8
+crydee: : *// : 9
+crydee: : *// : 10
+crydee: : *// : 11
+crydee: : *// : 12
+crydee: : *// : 13
+crydee: : *// : 14
+crydee: : *// : 15
+crydee: : *// : 16
+crydee: : *// : 17
+crydee: : *// : 18
+crydee: : *// : 19
+crydee: : *// : 20
+crydee: : *// : last
+aa: : *// : 
+aa: : *// : 
+aa: : *// : 
+a: : *// : 
+aaaaaa: : *// : 
+aaaaaaa: : *// : 
+aaaaaaa: : *// : 
+aaaaaa: : *// : 
+aaaaaaaa: : *// : 
+crydee: : *// : 1
+crydee: : *// : 2
+crydee: : *// : 3
+crydee: : *// : 4 aaaaaaa
+crydee: : *// : 5
+crydee: : *// : 6
+crydee: : *// : 7
+crydee: : *// : 8
+crydee: : *// : 9
+crydee: : *// : 10
+crydee: : *// : 11
+crydee: : *// : 12
+crydee: : *// : 13
+crydee: : *// : 14
+crydee: : *// : 15
+crydee: : *// : 16
+crydee: : *// : 17
+crydee: : *// : 18
+crydee: : *// : 19
+crydee: : *// : 20
+aa: : *// : 
+aa: : *// : 
+aa: : *// : 
+a: : *// : 
+aaaaaa: : *// : 
+aaaaaaa: : *// : 
+aaaaaaa: : *// : 
+aaaaaa: : *// : 
+
+[Huge archives]
+ftp-os2.cdrom.com:/pub : *// : Walnut Creek CDROM archive
+ftp.leo.org:/pub/comp/os : *// : LEO software archive
+ftp.chg.ru:/pub : *// : Huge archive in Chernogolovka
+ftp.sai.msu.su:/pub : *// : SAI archive
+
+[OS/2-related sites]
+hobbes.nmsu.edu:/pub/incoming : *// : Hobbes: the biggest place for OS/2 material on the Internet
+service.boulder.ibm.com:/ps/products : *//p : IBM: primary ftp server for OS/2-related files
+service2.boulder.ibm.com:/software/plugins : *// : IBM: alphaWorks
+service.boulder.ibm.com:/software/java/fixes/os2 : *// : IBM: Java for OS/2
+ncc.hursley.ibm.com:/pub/java/fixes/os2 : *// : IBM: Java
+testcase.boulder.ibm.com:/ps/fromibm : *// : IBM: Testcase
+ftp.tts.magadan.su:/pub/OS2 : *// : TN home
+ftp.is-bremen.de:/pub/gfd/app/mmpm : *// : OS/2 Multimedia
+cancun.cso.niu.edu:D:/data/public : *// : Cancun (unofficial OS/2 files)
+borneo.gmd.de:/pub/misc/XFree86OS2 : *// : XFree86/OS2 home
+ftp.dadaware.com:/dadaware : *// : Embellish
+ghost.rssi.ru:/OS2/OK : *//r : OK software
+azub.agionet.com:/sys3/ftp/os2 : *// : Azub
+
+[Unix software]
+prep.ai.mit.edu:/pub/gnu : *// : GNU software
+sunsite.unc.edu:/pub/Linux/ALPHA/wine/development : *// : Wine home
+c-press.udm.ru:/pub/unix/Arvid : *// : Arvid for Unix
+ftp.yggdrasil.com:/pub/dist/web/arena : *// : Arena home
+cmpc1.phys.soton.ac.uk:/pub : *// : GNUplot
+ftp.uu.net:/vendor/sun/solaris/x86/2.5.1 : *// : Solaris patches
+ftp.cs.wisc.edu:/ghost/rjl : *// : GhostView/GhostScript
+ftp.rsinc.com:/pub/idl/unix/linux : *// : IDL
+ftp.cs.helsinki.fi:/pub/Software/Linux/Kernel : *// : Linus' site
+ftp.nstu.ru:/pub/vendors/Sun/x86 : *// : Solaris patches
+labrea.stanford.edu:/pub : *// : dvips home
+ftp.ras.ru:/pub/Linux/RedHat : *// : RedHat at RAS
+ftp.lesstif.org:/pub/hungry/lesstif : *// : Lesstif
+ftp.redhat.com:/pub/redhat : *// : RedHat
+
+[Windows software]
+ftp.uni-bielefeld.de:/pub/systems/msdos/misc : *// : RSX NT home
+ftp.microsoft.com:/bussys/winnt/winnt-public/fixes/usa/nt40 : *// : NT fixes (Microsoft)
+ftp.uni-mainz.de:/pub/pc/mirrors/coast/nt/servpack : *// : NT service packs
+
+[Hardware manufacturers]
+ftp.matrox.com:/pub/mga/millennm : *// : Matrox primary site
+ftp.mathematik.uni-marburg.de:/pub/mirror/matrox/mga/millennm : *// : Matrox mirror
+ftp.mathematik.uni-marburg.de:/pub/mirror/asus : *// : ASUS mirror site
+ftp.compex.com.sg:/pub/support/ethernet/fl32-pci : *// : Compex
+ftp.lexmark.com:/pub/driver/laser_windows : *// : Lexmark drivers
+ftp.microtek.com:/microtek/pcfiles : *// : Microtek
+ftp.adobe.com:/pub/adobe : *// : Adobe
+
+[Astronomy]
+cdsarc.u-strasbg.fr:/catx/VI/80 : *// : OP opacities
+dplasma.llnl.gov:/pub/opacity95 : *// : OPAL'95
+eku.sns.ias.edu:/jnb/Neutrino/Export/Models : *// : Bahcall's models
+ftp.ngdc.noaa.gov:/STP/SOLAR_DATA/SUNSPOT_NUMBERS : *// : Sunspot numbers
+helios.tuc.noao.edu:/pub/gong : *// : GONG server (anonymous)
+
+[Games]
+ftp.inf.tu-dresden.de:/.4.1/vol4/ms-dos/games/patches : *// : Dresden patch & upgrade archive
+ftp.stomped.com:/pub/quake : *// : Quake at Stomped
+ftp.cdrom.com:/pub/quake : *// : Quake at CDROM.COM
+ftp.cdrom.com:/pub/doom2/levels : *// : DOOM ][ at cdrom.com
+ftp.rriai.org.ru:/pub/bridge : *// : Å‡®§¶
+
+[Pirates and hackers]
+permcnti.ac.ru:/MOBILE : *// : Mobile can be found there
+sky.chph.ras.ru:/ : *// : Sky
+ftp.pabl.ru:/ : *// : PABL
+ftp.cc.usart.ru:/ : *// : US ART
+ftp.kosnet.ru:/os2/wps : *// : KosNet
+ftp.marvelm.ru:/ : FileEcho// : Fileechos at Marvel
+ftp.marvelm.ru:/common.mp3 : FileEcho// : Common MP3 at Marvel
+
+[Test]
+crydee.sai.msu.su:/pub/comp/os/os2/hobbes/os2/info/newsltr/edm : *// : EDM/2 on crydee
+crydee.sai.msu.su:/pub/comp/os/os2/hobbes/os2/info/newsltr : *// : Another place
+crydee:/pub/comp/os/os2/hobbes : *// : Test
+service.boulder.ibm.com:/ps/products/os2/fixes/v4warp/english-us/xr_m005 : *// : Fixpak 5
+ftp.radio-msu.net:/pub/SimTel/msdos/astrnomy : *// : SimTel
+www.os2.at-taiwan.com:/ : *// : IBM Taiwan
+crydee.sai.msu.su:~ : asv// : asv @ crydee
+zebra.asta.fh-weingarten.de:f:/pub/incoming : *// : zebra
+
+[Folder2]
+
+[Folder3]
+
+[Folder4]
+
+[Folder5]
+
+[Folder6]
+
+[Folder7]
+
+[Folder8]
+
+[Folder9]
+llll: : *// : 
+
+[Folder10]
+
+[Folder11]
+
+[Folder12]
+
+[Folder2]
+
+[Folder3]
+
+[Folder4]
+
+[Folder5]
+
+[Folder6]
+
+[Folder7]
+
+[Folder8]
+
+[Folder9]
+
+[Folder10]
+aaaa: : *// : 
+
+[Folder11]
+
+[Folder12]
+
+[Folder2]
+
+[Folder3]
+
+[Folder4]
+
+[Folder5]
+
+[Folder6]
+
+[Folder7]
+
+[Folder8]
+
+[Folder9]
+
+[Folder10]
+
+[Folder11]
+
+[Folder12]
+
+[Folder2]
+
+[Folder3]
+
+[Folder4]
+
+[Folder5]
+
+[Folder6]
+
+[Folder7]
+
+[Folder8]
+
+[Folder9]
+
+[Folder10]
+
+[Folder11]
+
+[Folder12]
+lnfm1: : anonymous// : lnfm1
+
+[Folder2]
+
+[Folder3]
+
+[Folder4]
+
+[Folder5]
+
+[Folder7]

@@ -1,0 +1,56 @@
+AC_INIT([libmanycode],[1.0.0],[asv@ayukov.com])
+AC_CONFIG_AUX_DIR(scripts)
+
+AC_CONFIG_MACRO_DIR([m4])
+AM_INIT_AUTOMAKE([foreign])
+AM_MAINTAINER_MODE
+
+AC_CANONICAL_HOST
+CFLAGS="$CFLAGS -Wall -ansi"
+case $host_os in
+  linux*)
+        system=linux
+  ;;
+  freebsd*)
+        system=freebsd
+        CPPFLAGS="$CPPFLAGS -I/usr/local/include"
+        LDFLAGS="$LDFLAGS -L/usr/local/lib"
+  ;;
+  *)
+  ;;
+esac
+AM_CONDITIONAL(LINUX, test "x$system" = "xlinux")
+AM_CONDITIONAL(FREEBSD, test "x$system" = "xfreebsd")
+
+AC_PROG_CC
+AC_PROG_CPP
+AC_PROG_INSTALL
+AC_PROG_LIBTOOL
+
+AC_CONFIG_HEADER(src/config.h)
+
+AC_ARG_ENABLE(debug,
+  AS_HELP_STRING(--enable-debug,compile with debug info (default=no)),
+  [export USE_DEBUG=yes CFLAGS="$CFLAGS -g"],
+  [export USE_DEBUG=no CFLAGS="$CFLAGS -O2"]
+)
+AM_CONDITIONAL(USE_DEBUG, test "x$USE_DEBUG" = "xyes")
+
+AC_ARG_ENABLE(dmalloc,
+  AS_HELP_STRING(--enable-dmalloc,compile and link with dmalloc (default=no)),
+  [export USE_DMALLOC=yes CFLAGS="$CFLAGS -DDMALLOC" LIBS="$LIBS -ldmalloc"],
+  [export USE_DMALLOC=no]
+)
+AM_CONDITIONAL(USE_DMALLOC, test "x$USE_DMALLOC" = "xyes")
+
+AC_ARG_ENABLE(profile,
+  AS_HELP_STRING(--enable-profile,compile with profiling info (default=no)),
+  [ profile=yes CFLAGS="$CFLAGS -pg" LDFLAGS="$LDFLAGS -pg" ],
+  [ profile=no ],
+)
+AM_CONDITIONAL(USE_PROFILE, test "x$profile" = "xyes")
+
+AC_SYS_LARGEFILE
+
+AC_CONFIG_FILES([Makefile src/Makefile tests/Makefile])
+AC_OUTPUT

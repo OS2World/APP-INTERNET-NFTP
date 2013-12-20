@@ -1,0 +1,1558 @@
+#
+#     Language-specific file for NFTP 1.30+
+#
+#     Japanese
+
+{ M_JAN "Jan" }
+{ M_FEB "Feb" }
+{ M_MAR "Mar" }
+{ M_APR "Apr" }
+{ M_MAY "May" }
+{ M_JUN "Jun" }
+{ M_JUL "Jul" }
+{ M_AUG "Aug" }
+{ M_SEP "Sep" }
+{ M_OCT "Oct" }
+{ M_NOV "Nov" }
+{ M_DEC "Dec" }
+
+{ M_HBAR              "=" } { M_VBAR              " " }
+{ M_CROSS             "=" }
+{ M_FILL1             "･" } { M_FILL2             "ｱ" }
+{ M_FILL3             "ｲ" } { M_FILL4             "*" }
+{ M_LU                " " } { M_RU                " " }
+{ M_LD                " " } { M_RD                " " }
+{ M_LT                " " } { M_RT                " " }
+{ M_UT                " " } { M_DT                " " }
+{ M_PLACEHOLDER       "･" } { M_MARKSIGN          "*" }
+
+#  --------------- Help Screens ---------------------------------------
+
+{ M_HLP_MAIN
+""
+" NFTP                    Copyright (C) Sergey Ayukov 1994-1998"
+""
+" 日本語への翻訳  清水 和佳 <kshimz@dd.iij4u.or.jp>."
+" Please read HTML documentation; it's more complete."
+""
+" 全般的な キーボードコマンド"
+""
+" Shift-H  - この表示。 ヘルプはハイパーテキストではありません。"
+" F1       - 画面に応じたヘルプを表示する。"
+" F10      - ホストからログオフして、NFTP を終了する。"
+" Ctrl-K   - ホストからログオフする。"
+" Ctrl-B   - ブックマークを使用して、リモートホストへログインする。"
+" F2       - 接続履歴を表示し、履歴画面からログインする "
+" Ctrl-L   - 新しいホストへ、anonymous でログインする。"
+" Ctrl-N   - 新しいホストへ、ログイン名／パスワードでログインする。"
+" Ctrl-W   - バージョン情報を表示する。"
+" Ctrl-T   - ASCII/BINARY モードを変更する。"
+" Ctrl-J   - 画面再描画 (リモートホストの読み込みはしない)。"
+" Shift-I  - 選択されたファイルとディレクトリの数を確認する。"
+" Shift-A  - NO OPERATION コマンドを送信する (接続状態の確認)。"
+" Shift-F  - フラグ付き NLST コマンドの使用有無 (初期値はon)を変更する。"
+"            NLST -ILA を受け付けないサーバがあるので、ディレクトリの"
+"            表示が変な場合に試してください。あまりおすすめしません。"
+""
+" これらのコマンドは、おおむねどの画面でも有効です。また、画面によっては"
+" 他のキーコンビネーションも使えます。F1キーを押して、その画面のヘルプを"
+" 参照するように心がけてください。"
+"" }
+
+{ M_HLP_LINEIN
+""
+" 入力項目を編集しているときに使用できるキー :"
+""
+" Esc/Enter               - 取り消し／確認"
+" Left, Right, Home, End  - カーソル移動"
+" Tab, Shift-Tab          - 次／前の項目へ移動"
+" Del, Backspace          - 文字の削除"
+" Shift-Ins               - クリップボードからの貼り付け"
+" Ctrl-Ins                - クリップボードへのコピー"
+""
+" 項目が表示された直後に Del を押すと、内容は消去されます ;"
+" パスワードはマスク表示されます。"
+"" }
+
+{ M_HLP_CC
+""
+" 制御コネクションウィンドウで使用できる キーボードコマンド :"
+""
+" arrow keys  - スクロール"
+" Esc         - ヒストリーの最後へ移動 (End と同じ)"
+" Space       - ディレクトリ表示へ切り替え"
+" Shift-Q     - サーバへコマンドを送信 (quote)"
+" Shift-C     - 任意のディレクトリへ移動"
+""
+" サーバの応答はグレー、送信されたコマンドは緑のハイライト、NFTP 自身"
+" のガイダンスは明るい赤で表示されます。この組み合わせは初期値であり、"
+" 'nftp.ini'を修正することで変更できます。"
+""
+" NFTP は、制御コネクション（サーバとのネゴシエーション）のヒストリーを"
+" 保持しています。つねにサーバとのネゴシエーションを監視したいならば、"
+" 'auto-switch-to-control' パラメーターの値を 1 にしてください。"
+" 興味があったら試してみるといいでしょう。"
+"" }
+
+{ M_HLP_DIR_RAW
+""
+" リモートホストのディレクトリです。ログインしていなければ、黒い画面が"
+" 表示されます。リモートホストへのログインは、概要説明 (Shift-H) を"
+" 参照してください。"
+""
+" F3         - 高速な内部ビューワーでカーソル下のファイルを表示"
+" Shift-V    - 外部ビューワーでカーソル下のファイルを表示"
+""
+" F5         - カーソル下または選択されたファイルをダウンロード"
+" Ctrl-D     - 全てのディレクトリの選択されたファイルをダウンロード"
+" Shift-G    - 名前を指定してダウンロード (ディレクトリがアクセスで"
+"              きない場合など)"
+" Shift-R    - ファイルまたはディレクトリ名の変更"
+" F7         - ディレクトリを作成（パーミッションが必要）"
+" F8         - カーソル下のファイルまたはディレクトリを削除"
+" Ctrl-R     - ディレクトリの再読み込み (ファイルリストの最新表示)"
+" Shift-O    - カーソル下のファイルの説明を取得"
+""
+" Ctrl-A     - カレントディレクトリの全ファイルを選択"
+" Ctrl-X     - カレントディレクトリの全ファイルの選択を解除"
+" Insert     - カーソル下のファイルを選択／選択解除"
+" Plus/Minus - フィルタでファイルを選択／選択解除　例 '*.zip'"
+" *          - 選択状態を反転"
+" Ctrl-Y     - 全てのディレクトリの選択を解除"
+""
+" arrow keys - カーソル移動 (Ctrl-Left/Ctrl-Right で"
+"              横方向へスクロール)"
+" \          - ルートディレクトリへ移動"
+" [          - 親ディレクトリへ移動 ('cd ..')"
+" ]          - カーソル下のディレクトリへ移動"
+" Enter      - ------ ' ------"
+" Shift-C    - 任意のディレクトリへ移動"
+""
+" Shift-N    - 名前でソート, ディレクトリを優先"
+" Shift-X    - 拡張子でソート, ディレクトリを優先"
+" Shift-T    - タイムスタンプでソート, ディレクトリを優先"
+" Shift-S    - ファイルサイズでソート, ディレクトリを優先"
+" Shift-Y    - ソートの取り消し　本来の状態で表示"
+" Shift-E    - 現在の表示の逆順で表示"
+""
+" F4         - 現在の位置をブックマークへ登録"
+" Tab        - ローカルディレクトリの表示"
+" Ctrl-O     - ファイルの説明がある場合、表示する/しないを切替"
+""
+" ファイル名をキーボードから入力すると、検索して表示します。"
+""
+" 概要説明 (Shift-H) には、上記にないキーコンビネーションも説明されて"
+" います。"
+" ディレクトリを選択することもできます。（この場合、ディレクトリ内の全"
+" ファイルが選択されます。）選択状態は、ディレクトリを移動しても保持さ"
+" れます。"
+"" }
+
+{ M_HLP_VIEWER
+""
+" 内部ビューワーで使用できる キーボードコマンド : "
+""
+" arrow keys      - スクロール (水平方向のスクロールもできます)"
+" Shift-< Shift-> - 10 バイトづつ水平方向へスクロール"
+" Esc             - ビューワーの終了"
+" Ctrl-F          - 文字列を検索"
+" Ctrl-G          - 次を検索"
+" Ctrl-W          - ファイルへ保存"
+""
+" 内部ビューワーはファイルをメモリー内に取り込むので、大きなファイルを"
+" 表示させないでください。"
+"" }
+
+{ M_HLP_LOCAL_PARSED
+""
+" ローカルディスクのディレクトリです。"
+""
+" F3         - 高速な内部ビューワーでカーソル下のファイルを表示"
+" Shift-V    - 外部ビューワーでカーソル下のファイルを表示"
+""
+" F6         - カーソル下または選択されたファイルをアップロード"
+" Shift-R    - ファイルまたはディレクトリ名の変更"
+" F7         - ディレクトリを作成"
+" F8         - カーソル下のファイルまたはディレクトリを削除"
+" Ctrl-R     - ディレクトリの再読み込み (ファイルリストの最新表示)"
+""
+" Ctrl-A     - カレントディレクトリの全ファイルを選択"
+" Ctrl-X     - カレントディレクトリの全ファイルの選択を解除"
+" Insert     - カーソル下のファイルを選択／選択解除"
+" Plus/Minus - フィルタでファイルを選択／選択解除　例 '*.zip'"
+" *          - 選択状態を反転"
+""
+" arrow keys - カーソル移動"
+" \          - ルートディレクトリへ移動"
+" [          - 親ディレクトリへ移動 ('cd ..')"
+" ]          - カーソル下のディレクトリへ移動"
+" Enter      - ------ ' ------"
+" Shift-C    - 任意のディレクトリへ移動"
+" Shift-Z    - ドライブを変更"
+""
+" Shift-N    - 名前でソート, ディレクトリを優先"
+" Shift-X    - 拡張子でソート, ディレクトリを優先"
+" Shift-T    - タイムスタンプでソート, ディレクトリを優先"
+" Shift-S    - ファイルサイズでソート, ディレクトリを優先"
+" Shift-Y    - ソートの取り消し　本来の状態で表示"
+" Shift-E    - 現在の表示の逆順で表示"
+""
+" Space      - 制御コネクションの表示"
+" Tab        - リモートディレクトリの表示"
+""
+" ファイル名をキーボードから入力すると、検索して表示します。"
+""
+" 概要説明 (Shift-H) には、上記にないキーコンビネーションも説明されて"
+" います。"
+" ディレクトリを選択することはできません。ディレクトリを移動すると、ロ"
+" ーカルファイルに対する選択状態は無効になります。"
+"" }
+
+{ M_HLP_SHORT
+" NFTP キーボードのショートカット              [F1 - more info]"
+"                                      [Shift-H - general help]"
+" ログイン/ログアウト"
+""
+" Ctrl-B - ブックマークを表示      Ctrl-L - anonymous で接続"
+" F4     - ブックマークへ保存      Ctrl-N - ログイン名とパスワードで接続"
+" F10    - ログオフして終了        F2     - 接続履歴"
+""
+" 表示画面"
+""
+" Tab     - ローカル/リモート切替    Space  - ディレクトリ/制御切替"
+" Shift-Z - ローカルドライブ変更     Shift-C- ディレクトリのパスを入力"
+" Shift-N/X/T/S - 表示順の指定 (名前, 拡張子, 時間, サイズ)"
+" 文字・数字キー - その文字・数字で名前が始まるファイルの検索"
+""
+" 転送"
+""
+" F5     - ファイルのダウンロード    F6     - ファイルのアップロード"
+" F3     - テキストファイルの表示    Ctrl-D - 一括ダウンロード"
+" Ins    - ファイルの選択/選択解除   Ctrl-A - 全ファイルの選択"
+"" }
+
+{ M_HLP_BOOKMARK1
+""
+" ブックマーク フォルダ "
+""
+" 各フォルダには複数のブックマークを格納できます。Enter キーまたは → "
+" キーでフォルダーへ入り、Esc キーまたは ← キーでフォルダを抜けます。"
+" 矢印キーだけでブックマーク全体を操作することができます。"
+""
+" 新しいフォルダを作るには Ins キー、フォルダを削除するには Del キー、"
+" フォルダ名を変更するには Ctrl-E を押します。"
+""
+" この表示は、新しいブックマークを作成するときにも紹介されます。フォル"
+" ダを選ぶか、Ins キーを押して新しいフォルダを作成してください。"
+" パスワードの記入されたブックマーク (匿名サイト以外) を保存する際、パ"
+" スワードは記録されないので、注意が必要です。エディタ等を使ってパスワ"
+" ードをブックマークファイルへ記録することは可能です。しかし、それがセ"
+" キュリティホールであることを、意識しておく必要があります。 (あなたの"
+" コンピューターにアクセスする人に、パスワードが見えてしまいます。)"
+""
+" ブックマークリストを変更した場合、このウィンドウを抜ける時に修正点が"
+" 記録 (または放棄) されます。修正後の状態を保存するか、修正を放棄する"
+" か、尋ねられます。複数の NFTP を起動している状態で、同時にブックマー"
+" クを変更しないでください。"
+"" }
+
+{ M_HLP_BOOKMARK2
+""
+" フォルダ内のブックマーク"
+""
+" サイトを選んで Enter キーを押します (サイトへログインする)。Esc また"
+" は ← キーでフォルダを抜けます。矢印キーだけでブックマーク全体を操作"
+" することができます。"
+""
+" Del キーでブックマークが削除されます。ブックマークの表示順は簡単に変"
+" 更できます。: Ctrl-↑ で上へ、Ctrl-↓ で下へ、Ctrl-← で別のフォルダ"
+" へ移動させます。Ctrl-E でブックマークのタイトルを編集します。"
+""
+" ブックマークリストを変更した場合、このウィンドウを抜ける時に修正点が"
+" 記録 (または放棄) されます。修正後の状態を保存するか、修正を放棄する"
+" か、尋ねられます。複数の NFTP を起動している状態で、同時にブックマー"
+" クを変更しないでください。"
+"" }
+
+{ M_HLP_UNDEFINED
+""
+" There is no help in this language for that screen "
+"" }
+
+{ M_BOOKMARK_FORMAT
+"; ブックマークの記法は、以下の通りです。"
+"; ftp.sai.msu.su:21/pub/os2 : login/password/flags : 説明"
+";"
+"; 編集は慎重に行ってください。; 次の規則が適用されます。:"
+"; - コロン (:) の前後の空白は必須です。;"
+"; - パス名は絶対パスです。ルート ('/') から始めてください。;"
+"; - ポート番号は、省略できます。;"
+"; - 匿名サイトでは、'login' は '*' を指定し 'password' は省略します。:"
+";   crydee.sai.msu.su:/pub/comp/os/os2 : *//flags : SAI OS/2 archive"
+";   "
+";" }
+
+#  Bookmarks ----------------------------------------------------------
+
+{ M_CANTOPENBOOKMARKS1
+"ブックマークファイル [%s] に追加できません" }
+
+{ M_CANTOPENBOOKMARKS2
+"ブックマークファイル [%s] を読み込めません" }
+
+{ M_CANTOPENBOOKMARKS3
+"ブックマークファイル [%s] へ上書きできません" }
+
+{ M_NO_BOOKMARKS
+"  ブックマークファイルが存在しません  " }
+
+{ M_EMPTY_BOOKMARKSLIST
+"  ブックマークファイルが空です  " }
+
+{ M_DELETE_BOOKMARK
+"  ブックマークファイルを削除します  "
+"  %s ?  " }
+
+{ M_INSERT_BOOKMARK1
+" ログイン名 (anonymous ならば省略可) : " }
+
+{ M_INSERT_BOOKMARK2
+" ftp サーバの名前 または IP アドレス : " }
+
+{ M_INSERT_BOOKMARK3
+" ディレクトリ : " }
+
+{ M_CURRENT_BOOKMARKS
+" 現在のブックマーク " }
+
+{ M_BOOKMARKS_CHANGED
+"  ブックマークの設定が変更されています。 "
+"  変更後のブックマークを保存しますか ?   " }
+
+#  Prompts ------------------------------------------------------------
+
+{ M_USETAB
+" 項目間の移動は Tab/Shift-Tab  " }
+
+{ M_CHOOSEDRIVE
+"ドライブ選択" }
+
+{ M_SELECT_DIRECTORY
+" 接続時のディレクトリ ( これでよければ ENTER ) : " }
+
+{ M_ENTER_VERBATIM_COMMAND
+" リモートホストへ送信するコマンド : " }
+
+{ M_MKDIR_ENTER_NAME
+" 作成するディレクトリ名 : " }
+
+{ M_ENTER_FIREWALL_USERID
+" ファイアウォールのログイン名 : " }
+
+{ M_ENTER_FIREWALL_PASSWORD
+" ファイアウォールのパスワード : " }
+
+{ M_ENTER_USERID
+" ログイン名 : " }
+
+{ M_ENTER_PASSWORD
+" パスワード : " }
+
+{ M_ENTER_HOSTNAME
+" ログインするホスト名[[:ポート番号]パス] : " }
+
+{ M_ENTER_DIRECTORY
+" 移動するリモートホストのディレクトリ : " }
+
+{ M_ENTER_SELECT_FILTER
+" フィルタ : " }
+
+{ M_RENAME_LOCAL_FILE
+" ローカルファイル名の変更 : " }
+
+#  Pseudo-responses ------------------------------------------------------
+
+{ M_RESP_CANNOT_RESOLVE
+"'%s' が解決できません" }
+
+{ M_RESP_LOOKING_UP
+"'%s' を探しています" }
+
+{ M_RESP_TRYING_IP
+"'%s' が解決できません, IP アドレスを指定して下さい" }
+
+{ M_RESP_FOUND
+"'%s' が見つかりました" }
+
+{ M_RESP_NO_SOCKET
+"ソケットを生成できません。終了します" }
+
+{ M_RESP_FAILED_TO_CONNECT
+"%u 番のポートへ接続できません" }
+
+{ M_RESP_CONNECTED
+"%u 番のポートへ接続しました" }
+
+{ M_RESP_CLOSING
+"セッションを終了しました" }
+
+{ M_RESP_LOGIN
+"'%s@%s' でログインに成功しました" }
+
+{ M_RESP_TRANSFER_DONE
+"転送終了 ; 平均速度は %u bytes/sec" }
+
+{ M_RESP_INIT_DONE
+"init() 終了......" }
+
+{ M_RESP_RETRYING
+"%d 秒間お待ちください... ESC で中止・他のキーで再試行" }
+
+{ M_RESP_RETRY_ABORTED
+"中断しました" }
+
+{ M_RESP_REGET_ISNT_SUPPORTED
+"Reget が実装されていません ; ファイル全体を最初から転送します。" }
+
+{ M_RESP_TRANSFER_CANCELLED
+"転送が中断されました (%s)" }
+
+{ M_RESP_TRANSFER_ERROR
+"転送中にエラーが発生しました '%s'" }
+
+#  Questions -------------------------------------------------------------
+
+{ M_TOO_BIG_FOR_INTVIEWER
+" ファイル '%s' は大きすぎます -- %s bytes. "
+" それでも内部ビューワーを使用しますか？ " }
+
+{ M_REALLY_OVERWRITE
+" **** 上 書 き ****"
+""
+" ファイル '%s' はローカルに存在します。"
+" リモートファイルと同じサイズです。 "
+" (ローカル : %d bytes, リモート : %d bytes) "
+" 上書きしてもよろしいですか？ " }
+
+{ M_OVERWRITE_RENAME_CANCEL
+" ファイル '%s' はローカルに存在します。"
+" リモートファイルと同じサイズです。 "
+" (ローカル : %d bytes, リモート : %d bytes) "
+" Esc - 転送を取りやめます " }
+
+{ M_OVERWRITE_RENAME_CANCEL2
+" ファイル '%s' はローカルに存在します。"
+" リモートファイルより大きいサイズです。 "
+" (ローカル : %d bytes, リモート : %d bytes) "
+" Esc - 転送を取りやめます " }
+
+{ M_OVERWRITE_RENAME_CANCEL3
+" 上 書 き " " ローカルファイル名を変更 " }
+
+{ M_REALLY_REGET
+" **** 再 取 得 ****"
+""
+" ファイル '%s' はローカルに存在します。"
+" リモートファイルより小さいサイズです。 "
+" (ローカル : %d bytes, リモート : %d bytes) " }
+
+{ M_REGET_RENAME_CANCEL
+" ファイル '%s' はローカルに存在します。"
+" リモートファイルより小さいサイズです。 "
+" (ローカル : %d bytes, リモート : %d bytes) "
+" 中断された転送を続けるなら ' 継 続 ' を選択 "
+" Esc - 転送を取りやめ " }
+
+{ M_REGET_RENAME_CANCEL2
+" 継 続 "
+" 上 書 き "
+" ローカルファイル名を変更 " }
+
+{ M_REALLY_TRANSFER_FROM
+" リモートホストから転送しますか？ " }
+
+{ M_REALLY_TRANSFER_TO
+" リモートホストへ転送しますか？ " }
+
+{ M_REALLY_DELETE
+"   削除しますか？   " }
+
+{ M_REALLY_SAVE_BOOKMARK
+" ブックマークとして                    "
+"  %s %s : %s  "
+" を保存しますか？ " }
+
+{ M_REALLY_EXIT
+"     NFTP を終了しますか？     " }
+
+{ M_REALLY_LOGOFF
+"  %s からログオフしますか？  " }
+
+
+#  -----------------------------------------------------------------------
+#
+#  Miscellaneous text strings --------------------------------------------
+
+{ M_WELCOME
+" NFTP%s では Shift-H  で概要説明が表示されます。 " }
+
+{ M_DISCONNECTING
+"   %s との接続を終了します  " }
+
+{ M_EOF_MARK
+""
+" =========== ファイルの終わり =========== " }
+
+{ M_WRONG_REGCODE
+" nftp.ini へ不正な登録コードが入力されています。 "
+" お名前と登録コードを確認してください。終了しますか？ " }
+
+{ M_RUNNING_UNREGISTERED
+"         この NFTP は登録されていません。"
+""
+"   %dKB を越えるファイルの転送はできません。 "
+""
+"   NFTP の登録に関する文書をお読みください。"
+""
+"   このメッセージは、nftp.ini の 'registration' セクション"
+"   にある 'message' の値を 0 にすれば表示されません。      " }
+
+{ M_CCLINES
+" 制御コネクション : %u 行 " }
+
+{ M_BINARY
+"BINARY" }
+
+{ M_ASCII
+"ASCII " }
+
+{ M_TRANSFER_COMPLETED
+"転送完了 ; なにかキーを押してください " }
+
+{ M_HELP_ESC_TO_EXIT
+"[ ヘルプ - Esc で終了 ]" }
+
+{ M_STATUS
+" 計 %u ファイル %s Bytes   [%3s]  選択済  %u ファイル %s Bytes" }
+
+{ M_STATUS_BIN
+"BIN" }
+
+{ M_STATUS_ASC
+"ASC" }
+
+#  Fatal errors --------------------------------------------------------
+
+{ M_UNKNOWN_OS
+" このサーバの OS には対応していません : "
+"    '%s',"
+" ログアウトします ... " }
+
+{ M_UNREGISTERED_TRANSFER
+" 未登録の NFTP では、%dKB を越える "
+"   ファイルの転送はできません。 " }
+
+{ M_INI_BUILD_FAILED
+"nftp.ini. の読み込み／変換に失敗しました。"
+"以前のバージョンの NFTP.EXE と NFTP-OPT.EXE へのパスを確認してください " }
+
+{ M_EMAIL_NOT_SET
+""
+"NFTP を起動する前に、nftp.ini をカスタマイズしてください。 "
+"少なくとも、メールアドレスだけは設定してください。"
+"" }
+
+{ M_CONNECTION_LOST
+" 接続が損なわれました " }
+
+{ M_NO_PASV_NOFIREWALLING
+" この FTP サーバは PASV コマンドをサポートしていないので、 "
+" ファイアウォールを越えて接続できません。 " }
+
+{ M_NO_PASV
+" この FTP サーバは PASV コマンドをサポートしていません。 "
+" 'use-PASV-mode' パラメータ値を 0 にしてください。" }
+
+{ M_CANT_CREATE_SEM
+" 致命的エラー : セマフォを生成できません " }
+
+{ M_INI_UNREADABLE
+"" "nftp.ini が見つかりません ; 終了します。" }
+
+#  Transient messages --------------------------------------------------
+
+{ M_SENDING_VERBATIM_COMMAND
+"   リモートホストへコマンドを送信しています ... " }
+
+{ M_PARSING_LISTING
+"   のディレクトリ・リストを解析しています ... " }
+
+{ M_MKDIR_CREATING
+"   リモートホストにディレクトリを作成しています ... " }
+
+{ M_GOING_ROOT
+"   リモートホストのルートディレクトリへ移動しています ... " }
+
+{ M_GOING_UP
+"   リモートホストの親ディレクトリへ移動しています ... " }
+
+{ M_CHANGING_DIR
+"   リモートホストのディレクトリを変更しています ... " }
+
+{ M_SENDING_NOOP
+"   NO OPERATION コマンドを送信しています ... " }
+
+{ M_QUERYING_DIR
+"   カレントディレクトリを問い合わせています ... " }
+
+{ M_RETRIEVING_FILELIST
+"   ディレクトリ・リストを取得しています ... " }
+
+#  nftp-opt  defines -------------------------------------------------
+
+{ M_FATAL_LOADING_NFTP_INI
+""
+"nftp.ini の読み込みに失敗しました ; 終了します" }
+
+{ M_WRONG_KEYNAME
+" キー名が違います : [%s]"
+"" }
+
+{ M_KEYDEF_ERRORS
+"%d エラーがキー定義を生成中に発見されました。"
+"何かキーを押してください ..." }
+
+{ M_KEYNAMES_WELCOME
+"Esc で終了します。その他のキーは名前を参照します。"
+"何事も起こらなかった場合、そのキーコンビネーションは、"
+"1) 設定されていない。;"
+"2) オペレーティング・システムで予約されている。."
+""
+"Code :         :"
+"" }
+
+{ M_NO_TEXT
+" There's no text for this message. "
+" It is probably not translated to this language or "
+" forgotten by author of NFTP. " }
+
+{ M_CANT_DELETE
+" 削除できません '%s' " }
+
+{ M_ENTER_LOCAL_DIRECTORY
+" ローカルドライブ／ディレクトリの移動 : " }
+
+{ M_REALLY_TRANSFER_FROM_ALLDIRS
+" %d ファイルが %d ディレクトリから選択されました "
+" 全部で %s bytes あります。処理を続けますか？ " }
+
+{ M_BYTES_RECEIVED
+"     %7d bytes 受信済み "
+"             ESC で停止します   " }
+
+{ M_BYTES_REMAIN
+"     %7d bytes 受信済み "
+"     %7d bytes 受信待ち "
+"             ESC で停止します   " }
+
+{ M_YES
+" はい  " }
+
+{ M_NO
+" いいえ" }
+
+{ M_OK
+"  ＯＫ  " }
+
+{ M_ENTER_SEARCHSTRING
+" 検索する文字列 : " }
+
+{ M_ENTER_FILENAME_SAVE
+" 保存するファイル名 : " }
+
+{ M_CANNOT_OPEN
+" ファイルを開けません %s " }
+
+{ M_FILE_SAVED
+"" "    ファイルを保存しました    " }
+
+{ M_LISTING_HEADER
+"Server    : %s" "Directory : %s" }
+
+{ M_LISTING_FOOTER
+"計 " "%d ファイル %s bytes " }
+
+{ M_LISTING_SAVED
+"  リストを保存しました   " }
+
+{ M_ENTER_RETRIEVE_AS
+" 復元先ファイル : " }
+
+{ M_ENTER_LISTING_FILENAME
+" リストを保存するファイル名 : " }
+
+{ M_ENTER_NEWNAME
+" 新ファイル名 : " }
+
+{ M_ENTER_UPLOAD_AS
+" アップロードファイル : " }
+
+{ M_RENAME_FAILED
+" 変更できません '%s' to '%s' " }
+
+{ M_QUICK_SEARCH
+" クィックサーチ : %s " }
+
+{ M_CANT_ACCESS_DRIVE
+" ドライブにアクセスできません %c: " }
+
+{ M_DIRECTORY_DOESNT_EXIST
+" ディレクトリが存在しません '%s'  " }
+
+{ M_BAD_BOOKMARK_ENTRY
+" ブックマークのエントリ "
+" %s "
+" は間違っているので無視します。 " }
+
+{ M_DEFAULT_BMK_FOLDER
+" General sites (初期状態で作成済)" }
+
+{ M_ENTER_DESC
+" 説明を入力してください。 : " }
+
+{ M_FOLDER_TITLE
+" フォルダ : %s " }
+
+{ M_DELETE_BOOKMARK1
+"        ブックマークを削除しますか ?        " }
+
+{ M_NAME_FOLDER
+" 新フォルダ名 " }
+
+{ M_DELETE_NONEMPTY_FOLDER
+" フォルダは空ではありませんが、削除しますか ? "
+" '%s' " }
+
+{ M_ENTER_FOLDER_TITLE
+" フォルダのタイトル : " }
+
+{ M_SELECT_FOLDER
+" ブックマークを置くフォルダを選択してください " }
+
+{ M_FILE_TO_DOWNLOAD
+" ダウンロードするファイル : " }
+
+{ M_CANT_CREATE_DIRECTORY
+"ディレクトリを作成できません '%s'" }
+
+{ M_REREAD_REMOTE_DIR
+" リモートディレクトリを再度読み込みますか ? " }
+
+{ M_LOGOFF_MARKED
+"  %d ファイルを %d ディレクトリから選択しています。"
+" 全部で %s bytes あります。 "
+" このままログオフしてもいいですか ? " }
+
+{ M_CANT_LOGIN
+"  %s へログインできません。" }
+
+{ M_FILE_NOT_FOUND
+" ファイル '%s' はサーバに存在しません。" }
+
+{ M_TRANSFER_FAILED
+"  '%s' の転送が失敗しました。 " }
+
+{ M_PROXY_ISNT_SPECIFIED
+"  NFTP.INI にフィアウォールホストが指定されていません。  " }
+
+{ M_NOT_CONNECTED
+"接続していません。" }
+
+{ M_INCORRECT_FIREWALL
+" ファイアウォールのタイプ指定が間違っています。 : %d " }
+
+{ M_UNKNOWN_SERVER_OS
+" 警告 : ftp サーバの OS がわかりません : "
+" '%s'; "
+" NFTP はファイルリストを表示できないかもしれません。 " }
+
+{ M_CONNECTING
+"%s へ接続しています..." }
+
+{ M_CANNOT_RENAME
+" ファイル名を変更できません。 '%s' → '%s' " }
+
+{ M_DOWNLOADING
+"%s - ダウンロードしています..." }
+
+{ M_CANT_OPEN_FOR_WRITING
+" ファイル '%s' を開けません。(出力) " }
+
+{ M_CHANGING_DIRECTORY
+"   ディレクトリを変更しています :   "
+"   '%s'   " }
+
+{ M_CANT_OPEN_FOR_READING
+" ファイル '%s' を開けません。(入力) " }
+
+{ M_CANT_WRITE_LOGFILE
+" 警告 : ログファイルへ書き出せません '%s' " }
+
+{ M_CANT_GUESS_CURDIR
+" リモートのカレントディレクトリが特定できません。 " }
+
+{ M_CANT_READ_FILE
+" ファイル '%s' を読み込めません。" }
+
+{ M_UPLOADING
+"%s - アップロードしています..." }
+
+{ M_ALREADY_BOOKMARKED
+" サイト '%s' は既にブックマークに登録されています。 "
+" (ディレクトリは '%s'). 登録しますか？ " }
+
+{ M_EDIT1
+"ホスト名[:ポート]ディレクトリ" }
+
+{ M_EDIT2
+"ログイン名/パスワード/フラグ" }
+
+{ M_EDIT3
+"サイトの説明" }
+
+{ M_CONNECTION_OK
+"       接続されました        " }
+
+{ M_MARKED_STATISTICS
+"   合計 %d ファイル（ %d ディレクトリから）; %s バイト   " }
+
+#  ---------------------------------------------------------- new in 1.10
+
+{ M_STARTING_TRANSFER
+"   転送を始めました...   " }
+
+{ M_KEEP_TREE_INTACT
+"  %d ファイルを %d ディレクトリから選択しています。"
+" 全部で %d bytes あります。 "
+""
+" 転送時にディレクトリ構造を保持しますか？ " }
+
+{ M_KEEP_TREE2
+" サブディレクトリを保持します。 "
+"    ファイルをまとめています。    " }
+
+{ M_OVERWRITE_RENAME_CANCEL4
+" 上 書 き "
+" ローカルファイル名を変更 "
+" スキップ " }
+
+{ M_REGET_RENAME_CANCEL5
+" 継 続 "
+" 上 書 き "
+" ローカルファイル名を変更 "
+" スキップ " }
+
+{ M_RESP_BIND_FAILED
+"ネットワークエラー (bind() が失敗しました)" }
+
+{ M_RESP_LISTEN_FAILED
+"ネットワークエラー (listen() が失敗しました)" }
+
+{ M_RESP_GETSOCKNAME_FAILED
+"ネットワークエラー (getsockname() が失敗しました)" }
+
+{ M_RESP_CANNOT_CONNECT
+"転送データに接続できません" }
+
+{ M_RESP_CONNECTION_NOT_ESTABLISHED
+"サーバとのコネクションが確立していません。" }
+
+{ M_RESP_TRANSFER_SKIPPED
+"スキップしました `%s'" }
+
+{ M_WALK_TREE
+" '%s' 以下の全ディレクトリ構造を参照しますか？ " }
+
+{ M_NO_MARKED_FILES
+" サブディレクトリには選択されたファイルはありません。 " }
+
+{ M_HAVENT_BEEN_CONNECTED
+"もう接続されていません。" }
+
+{ M_DIRECTORY_LISTING
+"ディレクトリ リスト" }
+
+{ M_LARGE_INDEX_FILE
+"  注意 : ファイル '%s' は %s バイトの説明文を持っています。  "
+"  ダウンロードしますか？  " }
+
+{ M_LOAD_DESCRIPTIONS
+" '%s' から説明文を取得しますか？ " }
+
+{ M_CANT_USE_DIR_AS_INDEX_FILE
+" ディレクトリ '%s' から説明を取得できません。 "
+" 通常のファイルにカーソルを移動してください。 " }
+
+{ M_RESP_CONNECTING
+"%s へ接続しています..." }
+
+{ M_DOWNLOADING1
+"%s - %lu%% を %.2f KB/s でダウンロードしています。" }
+
+{ M_UPLOADING1
+"%s - %lu%% を %.2f KB/s でアップロードしています。" }
+
+{ M_DESC_DOWNLOAD_OPTIONS
+"  はい  "
+"  いいえ   "
+"  不要  " }
+
+# ----------------------------------------- new in 1.21 -------------
+
+{ M_RESP_CANT_OPEN
+"ファイルをオープンできません。 %s" }
+
+{ M_NO_EMAIL_ADDRESS
+""
+"警告: e-mail アドレスが設定されていません。 %s "
+"" }
+
+{ M_GUESSED_EMAIL
+"%s が匿名ログインのためのパスワードとして使われています。"
+"ENTER キーを押してください..."
+"" }
+
+{ M_CANT_GUESS_EMAIL
+"ホスト、またはログイン名が見あたりません。 ;"
+"%s を修正して正しい e-mail アドレスを設定してください。"
+"これは匿名ログインの際に使われます。"
+"" }
+
+{ M_INI_CONFIG_VERSION
+""
+"現在の設定ファイル、 %s  は バージョン %s 用です。."
+"NFTP の実行形式ファイルのバージョンは %s です。"
+"" }
+
+{ M_INI_CANT_FIND_NFTP_I
+"`%s' にも `%s' にも、"
+"nftp.ini を更新する nftp.i がありません！"
+"" }
+
+{ M_INI_UPDATE
+"ファイル `%s' を"
+"ファイル `%s' から"
+"更新します。実行しますか？ [Ynq]" }
+
+{ M_INI_UPDATING
+""
+"%s を %s から更新中..."
+"" }
+
+{ M_INI_CANT_OPEN_READ
+"%s が入力モードで開けません。"
+"" }
+
+{ M_INI_CANT_OPEN_WRITE
+"%s が出力モードで開けません。"
+"" }
+
+{ M_INI_WRONG_ENTRY
+"エラー -- セクション外エントリ :"
+"%s" }
+
+{ M_INI_CANT_RENAME
+"`%s' を `%s' へリネームできません。"
+"" }
+
+{ M_INI_BACKUP
+""
+"%s のバックアップバージョンを"
+"%s としてセーブしました。"
+"" }
+
+{ M_INI_UPDATING_ENTRY
+"更新中: %s"
+"" }
+
+{ M_INI_FINISHED
+""
+"更新終了 ; ENTER キーを押してください..." }
+
+# ----------------------------------------- new in 1.22 -------------
+
+{ M_RESP_CANT_CREATE_DIRECTORY
+"ディレクトリを作成できません。 '%s'" }
+
+{ M_INFORMATION1
+"合計 %d ファイル %d ディレクトリ ; %s バイト"
+""
+" 現在のファイルの URL : "
+" %s "}
+
+{ M_INFORMATION2
+"合計 %d ファイル %d ディレクトリ ; %s バイト"
+""
+" 現在の URL をクリップポードに複写しますか？ "
+" %s "}
+
+{ M_HLP_HISTORY
+""
+" 接続したサイトとディレクトリの履歴"
+""
+" 直近に接続した場所が、リストの最初に出ます。履歴は、DNS のキャッシュ"
+"  (ここに解決済みの IP アドレスが格納される）と同様の動作をします。"
+" ログイン名の脇の＊は、パスワードがファイルに記録されていることを意味"
+" 味します。匿名ftpサイトの場合、ログイン名は表示されません。"
+" ログイン名の後ろはフラグです。 (フラグについては FAQ を参照）"
+""
+" 履歴機能の動作は、nftp.iniファイルの記述に依存します。履歴に記録する"
+" するサイト数・各サイトのディレクトリ数の上限を設定できます。無関係、"
+" あるいは重複したレコードは、履歴を表示する際に廃棄されます。"
+" NFTPはサイトのパスワードも記憶します（暗号化して保存されるが、決して"
+" 安全ではない）。 デフォルトでは、 ログイン、ダウンロード、ログオフを"
+" 記録します。接続した全ディレクトリを履歴に記録させることもできます。"
+""
+" 操作はブックマーク・ウィンドウと同じです。 Enterキーでサーバの選択や"
+" 記憶された場所に再接続 ; Escキーで表示の終了やディレクトリリストから"
+" 抜ける ; →/← キーで Enter/Esc を代用できます。"
+" Del キーで、ディレクトリやサイト全体を履歴ファイルから削除します。"
+"" }
+
+{ M_PROCESSING_HISTORY1
+" 履歴の処理中 ; stage %u..." }
+
+{ M_PROCESSING_HISTORY2
+" 履歴の処理中 ; stage %u:  %u エントリ 終了" }
+
+{ M_READING_HISTORY_FILE
+" 履歴ファイル読込中 ;  %u 行 終了" }
+
+{ M_WRITING_HISTORY_FILE
+" 履歴ファイル書込中 ;  %u 行 終了" }
+
+{ M_ERROR_READING_HISTORY
+" 履歴ファイル読込エラー %s " }
+
+{ M_EMPTY_HISTORY
+" 履歴ファイル %s が空です。 " }
+
+{ M_SAVE_HISTORY
+" 変更された履歴ファイルを保存しますか？ " }
+
+{ M_HIST_HEADER1
+" 履歴 : 合計 %u サイト, %u エントリ " }
+
+{ M_HIST_HEADER2
+" 履歴: %s, %u ディレクトリ " }
+
+{ M_HIST_DELETE_DIR
+" %s:%s "
+" ディレクトリ エントリを削除しますか？ " }
+
+{ M_HIST_DELETE_SITE
+" %s "
+" %u ディレクトリを含むサイトを削除しますか？ " }
+
+# ------------------------------------------------------ new/updated in 1.23
+
+{ M_HLP_USING_MENU
+"  "
+" メニュー"
+""
+" メニューにより、NFTPを簡単かつ階層的に使うことができます。"
+" F9 / Ctrl-F キーでメニューを表示します (nftp.ini で変更できます) 。"
+" 矢印キーでメニューを操作します。Escキーで上位のメニューに戻ります。"
+" メニューをホットキーで操作するなら、nftp.ini の `menu-open-submenu'"
+" の値を -1 にします ; これは F9 キーで上位メニューだけを表示します。"
+" この値を 1,2,3... とすれば、デフォルトのサブメニューが変わります。"
+" "
+" メニューのレイアウトは自由に変更できます。nls サブディレクトリ内の "
+" `japanese.mnu' を編集してください。説明はファイル内にあります。"
+"" }
+
+{ M_RESP_F9_FOR_MENU
+"メニューは F9 または Ctrl-F" }
+
+{ M_BOOKMARK_NICKNAME
+" ニックネーム '%s' "
+" は、ブックマークファイルにありません " }
+
+{ M_SELECT_BOOKMARK
+" ブックマーク 選択 " }
+
+{ M_HISTORY_NICKNAME
+" ニックネーム '%s' "
+" は履歴ファイルにありません " }
+
+{ M_SELECT_HISTORY
+" 履歴 選択 " }
+
+{ M_USAGE0
+"オプション パラメータ : "}
+
+{ M_USAGE1
+" URL へ接続 " }
+
+{ M_USAGE2
+"ダウンロード (G,g) またはアップロード (P,p) するファイル-URL" }
+
+{ M_USAGE3
+"process transfers programmed in cmdfile.txt" }
+
+{ M_USAGE4
+"ブックマーク(b) または 履歴(h) から `word' を探しています " }
+
+{ M_USAGE5
+"URL は以下の書式に従うこと "
+"[ftp://][username[:password]@]hostname[:port]directory/file,"
+"e.g. ftp://asv:password@crydee.sai.msu.ru:21/home/asv/file.txt"
+"or   crydee.sai.msu.su/pub/comp/software/asv/nftp/nftp-LATEST-os2.zip" }
+
+
+# ----------------------------------------------------------------- new in 1.40
+
+{ M_SITE_EDIT1
+"ホスト名" }
+
+{ M_SITE_EDIT2
+"ログイン名 (ユーザ名)" }
+
+{ M_SITE_EDIT3
+"パスワード" }
+
+{ M_SITE_EDIT4
+"ポート" }
+
+{ M_SITE_EDIT5
+"ディレクトリ" }
+
+{ M_SITE_EDIT6
+"フラグ (FAQ 参照)" }
+
+{ M_PASSWORDED_WGET
+" 匿名サイトではないサイトから、WGET でダウンロードしようとしています。"
+" セキュリティ上の理由から、デフォルトではこの動作はできません。"
+" nftp.ini を修正すれば、可能になります。" }
+
+{ M_WGET_DOWNLOAD_ONE
+" ファイル %s を外部プログラムでダウンロードしますか? " }
+
+{ M_WGET_DOWNLOAD_MANY
+" %d 個のファイルを %d ディレクトリから外部プログラムで取得します。"
+" 合計 %s バイトになりますが、ダウンロードしますか? " }
+
+{ M_CONFIRM_COMMAND
+" 実行される外部コマンド : " }
+
+{ M_USETAB2
+" Tab/Shift-Tab または ↑/↓ を使って項目間を移動してください。" }
+
+# ------------------------------------------------- new since 1.50
+
+{ M_CANCEL
+" 中断 " }
+
+{ M_FTPS_RECEIVING
+"  %s: 受信中です...   "
+"  強制終了するには ESCキーを押してください  "
+"  %s 件見つかりました (合計) " }
+
+{ M_FTPS_NO_HITS
+"  見つかりませんでした `%s'...   " }
+
+{ M_FTPS_SERVERS
+" FTP 検索のサーバー " }
+
+{ M_FTPS_ADD_SERVER
+" 追加する FTP 検索のサーバーを入力してください " }
+
+{ M_FTPS_DELETE
+" `%s' を削除しますか ?" }
+
+{ M_QUERYING
+" %s を検索中です..." }
+
+{ M_FTPS_SENDING_REQUEST
+" %s へ要求を送信しています...   " }
+
+{ M_FTPS_SEARCHRES
+" 検索結果 (%u ヒット) " }
+
+{ M_DIR_SIGN
+"<DIR>" }
+
+{ M_LINK_SIGN
+"<LNK>" }
+
+{ M_SEARCH_FORWARD
+" 次を検索 " }
+
+{ M_SEARCH_BACKWARDS
+" 前を検索 " }
+
+{ M_CANT_FIND
+"  `%s' 見つかりません  " }
+
+{ M_SELECT_LANGUAGE
+" 利用する言語を選択してください " }
+
+{ M_REGISTRATION_NAME
+"登録名" }
+
+{ M_REGISTRATION_CODE
+"登録コード" }
+
+{ M_THANKS
+" NFTP を登録していただきありがとうございます " }
+
+{ M_FTPS_NEED_ARGS
+" 以下のうち一つを指定する必要があります "
+" '完全一致', '部分一致', 'ワイルドカード' または '正規表現' " }
+
+{ M_FTPS_SEARCH1
+"完全一致 検索" }
+
+{ M_FTPS_SEARCH2
+"部分一致 検索" }
+
+{ M_FTPS_SEARCH3
+"ワイルドカード 検索" }
+
+{ M_FTPS_SEARCH4
+"正規表現 検索" }
+
+{ M_FTPS_SEARCH5
+"大文字/小文字を区別しますか?" }
+
+{ M_FTPS_SEARCH6
+"ファイル/ディレクトリの除外" }
+
+{ M_FTPS_SEARCH7
+"ドメインの限定" }
+
+{ M_FTPS_SEARCH8
+"除外するドメイン" }
+
+{ M_FTPS_SEARCH9
+" Slackware/RedHat/FreeBSD/etc を表示しない。" }
+
+{ M_FTPS_SEARCH10
+"最大ヒット数" }
+
+{ M_HLP_SITE_EDIT
+"FTPサイトのパラメータ"
+""
+"匿名ftpサイトでは、'name' と 'password' は空らんのままにします。ディレ"
+"クトリを指定しなければ、FTP サーバが選択します。匿名ログインならルート"
+"ディレクトリ、プライベートログインならホームディレクトリになります。"
+"サーバの説明は備考的なもので、ブックマークファイルに保存されます。"
+""
+"利用可能なフラグ:"
+"p - パッシブモードで接続します。遅くて問題のありそうなリンクで役立つかも"
+"    しれません。"
+"r - 無期限にリトライします。ログイン時にエラーがあった場合、NFTP はエラー"
+"    コードや、匿名サイトかどうかに関係なくリトライします。"
+"f - フィアウォールの内側。nftp.ini でファイアウォールサポートの設定がされ"
+"    ていても、このサイトへは直接アクセスします。"
+}
+
+{ M_HLP_FTPSEARCH
+"FTP 検索のインターフェース"
+""
+"'完全一致 検索' は、指定されたファイルやディレクトリだけを捜索します。"
+" 例：nftp141o.zip"
+""
+"'部分一致 検索' は、指定された文字列を含むファイルやディレクトリを捜索"
+"します。 例：nftp14"
+""
+"'ワイルドカード 検索' では、 '*' と '?' を、コマンドラインでの使用法と"
+"同じ目的で使用できます。（* は複数の文字にマッチし、? は単一文字にマッ"
+"チします。） 例：nftp*.zip  または  nftp1??o.zip"
+""
+"'正規表現 検索' は最もパワフルですが、少しばかりの学習も必要です。"
+" 例：nftp1\.[4-9][0-9]o\.zip は、1.40 以降の 1.xx バージョンのすべての"
+"OS/2 用の NFTP を捜索します。正規表現に関する説明は、GNU rx ライブラリ"
+"を含めて、いろんなところにあります。"
+""
+"'大文字/小文字を区別' は、'部分一致 検索' にのみ有効です。"
+""
+"その他の検索基準も適用可能です。：検索対象からディレクトリを除外、検索"
+"対象を特定のドメインに限定、検索対象から特定のドメインを除外、予期せぬ"
+"多数のヒットをもたらすフリー UNIX のディストリビューションの除外。"
+"複数の検索対象を指定するには、スペースで区切る必要があります。"
+""
+"'最大ヒット数' に大きな数を設定することは、望ましくありません。"
+"(5000 もヒットしたら、もう訳に立ちません。不要なものを除外しましょう。)"
+"通常、メインの FTP 検索サーバだけを捜索するのが有意義です。"
+"ftpsearch.ntnu.no は世界の 90% 以上をインデックス化しています。その他の"
+"サーバはほとんど、地理的に狭い範囲に限定されたものを提供します。"
+"" }
+
+{ M_FTPS_DOWNLOAD
+" %s を"
+" %s から  "
+" ダウンロードしますか? " }
+
+{ M_HIST_CONT_SEARCH
+" %s が見つかりません。別のサイトを検索しますか?  " }
+
+{ M_TOO_LARGE
+"%s/%s: 未登録版では大きすぎます。" }
+
+{ M_DISCONNECT
+" サーバ %s との接続を切断しますか?  " }
+
+{ M_UPLOAD_EDITED
+" 更新されたファイルをサーバに送り返しますか?  " }
+
+{ M_FONT_DESC
+"幅 %3d, 高さ %3d (%s)" }
+
+{ M_UNSUPPORTED
+"  実装されていない機能です %s  " }
+
+{ M_SELECT_FONT
+" フォント選択 " }
+
+{ M_HLP_FTPSEARCH2
+"結果ウィンドウで使用できるキー"
+""
+"Ctrl-P      パスの表示/非表示を切替"
+"Ctrl-T      最終更新時刻の表示/非表示を切替"
+"Ctrl-F      次を検索"
+"Ctrl-H      前を検索"
+"Shift-D/F5  ファイルのダウンロード"
+""
+"Shift-H     サーバ名の順に表示"
+"Shift-N     ファイル名の順に表示 (既定値)"
+"Shift-S     ファイルサイズの順に表示"
+"Shift-T     日付/時刻の順に表示"
+"" }
+
+{ M_STALLED
+"ストールしました" }
+
+
+# ------------------------------------------------- new since 1.51
+
+{ M_WAIT
+""
+""
+"  %d 秒間お待ちください... " }
+
+{ M_UNREGISTERED
+" これは未登録バージョンです。 "
+""
+" この表示を消去するためには、NFTP のライセンスを購入しましょう。 "
+" $%d の価格で、今後のバージョンアップと、サポートされるすべての "
+" OS での利用権を保証します。以下に、更にに詳しい情報があります。 "
+" http://www.ayukov.com/nftp/buy.html %s" }
+
+{ M_PRESS_ENTER
+" 続きがあります。ENTER キーを押してください。 " }
+
+{ M_HTTP_PROXY
+"  HTTP proxy 経由の接続はサポートされていません。 " }
+
+{ M_ENUMERATING_FONTS
+" フォントのエミュレーション中 ... " }
+
+# ------------------------------------------------- new since 1.60
+
+{ M_SCRIPT_BADCOMMAND
+"無効なコマンド: %s" }
+
+{ M_SCRIPT_BADARGS
+"このコマンドは %d 個の引数が必要です ( %d 個指定されました)" }
+
+{ M_SCRIPT_ERROR
+"エラー; スクリプトは実行されませんでした" }
+
+{ M_SCRIPT_CANT_OPEN
+"スクリプトファイル `%s' を開くことができません" }
+
+{ M_SCRIPT_RUNNING
+"スクリプト: %s %s" }
+
+{ M_SCRIPT_INVALID_VAR
+"不正な値です: %s" }
+
+{ M_SCRIPT_CANT_OPEN_LOG
+"ログファイル `%s' を開くことができません" }
+
+{ M_RESP_CONNECTING2
+"%s へ接続しています: Esc キーで中断、Space キーで再試行..." }
+
+{ M_RESP_ACCEPTING
+"ポート %d で接続を待っています: Esc キーで中断、Space キーで再試行..."}
+
+{ M_RESP_ACCEPTED
+"%s から接続されました" }
+
+{ M_PAUSED
+"一時休止; P を押すと再開します" }
+
+{ M_SQRP
+"S/Q/R/P - スキップ/終了/やり直し/一時休止" }
+
+{ M_TOTAL        "合計" }
+{ M_TRANSFERRED  "転送済" }
+{ M_SKIPPED      "スキップ" }
+{ M_LEFT         "残り" }
+{ M_INACT        "最終パケット受信後の経過秒数" }
+
+{ M_NO_FIREWALLING
+"nftp.ini でファイアウォール/プロキシが設定されていません" }
+
+{ M_HLP_PASSWORDS
+"パスワードウィンドウのキーボードコマンド"
+""
+"Insert - 新規パスワードレコードの作成"
+"Delete - パスワードレコードの削除"
+"Ctrl-E - パスワードレコードの編集"
+"Ctrl-P - パスワード表示/非表示の切替"
+""
+"Enter  - サイトへログインする"
+"" }
+
+{ M_DEL_UNMATCHED
+"   一致しないファイルを削除しています...   " }
+
+{ M_ENTER_LISTNAME
+"リストを出力するファイルの名前を入力してください:" }
+
+{ M_SYNC1
+"ローカル側のディレクトリ構造を、リモート側に同期させますか ?"
+""
+"リモート   %s ->"
+"ローカル   %s"
+"" 
+"NFTP はファイルをダウンロードします" }
+
+{ M_SYNC2
+"リモート側のディレクトリ構造を、ローカル側に同期させますか ?"
+""
+"ローカル   %s ->"
+"リモート   %s"
+""
+"NFTP はファイルをアップロードします" }
+
+{ M_SYNC3
+"ディレクトリ構造は一致しているようです" }
+
+{ M_PASS_UNSUPPORTED
+"パスワードファイルのバージョン (%d) はサポートされていません" }
+
+{ M_PASS_ENTER_KEYPHRASE1
+"パスワードファイルを復号します。パスフレーズを入力してください" }
+
+{ M_PASS_INVALID
+"%s"
+"パスワードファイルに不正な記述があります" }
+
+{ M_PASS_ENTER_KEYPHRASE2
+"パスワードファイルを暗号化するために使うパスフレーズを入力してください" }
+
+{ M_PASSWORDS
+"パスワード" }
+
+{ M_PASS_SAVE
+"パスワードファイルへの修正を保存しますか ?" }
+
+{ M_PASS_DELETE
+"%s @ %s"
+"パスワード エントリを削除しますか ?" }
+
+{ M_DISK_FULL
+" %s "
+" ファイル書き出し中にエラーが発生しました (ディスクがいっぱい ?) " }
+
+{ M_REGISTERED
+"登録ユーザー名 %s" }
+
+{ M_UNREGISTERED2
+"未登録 (初回起動から %d 日経過)" }
+
+{ M_FTPS_RECEIVING2
+"%s からデータを受信しています...   "
+"合計件数:             %s"
+"このサーバにある件数: %s"
+"ESC キーを押すと検索を中断します" }
+
+{ M_FTPS_NO_HITS2
+"見つかりませんでした" }
+
+{ M_FTPS_NORES
+"検索は実行されませんでした" }
+
+{ M_ENABLE_PASSWORDS
+"nftp.ini でパスワードのキャッシングを有効にしてください" }
+
+{ M_NEEDBF
+"これは次のメソッドでのみ有効です %s (nftp.ini を参照)" }
+
+{ M_PASS_INCORRECT
+"パスフレーズが間違っています"}
+
+{ M_BYTESSEC "bytes/sec" }
+
+{ M_DOWNLOAD "ダウンロード" }
+
+{ M_UPLOAD "アップロード" }
+
+{ M_COMMUNICATING
+"サーバに接続しています..." }
+
+# will look like: " 23% done (download, binary)"
+{ M_PERCENTAGE1 "%9u%% 終了 (%s, %s)" }
+
+# will look like: " 23% done (download, binary) (3 of 15 files)"
+{ M_PERCENTAGE2 "%9u%% 終了 (%s, %s) (%d / %d ファイル)" }
+
+
+# ------------------------------------------------- new since 1.61
+
+{ M_TR_OVERWRITE  "上書き" }
+{ M_TR_RESUME     "リジューム" }
+{ M_TR_SKIP       "スキップ" }
+{ M_TR_CANCEL     "キャンセル" }
+
+{ M_TR_QUESTION
+"ファイルはすでに存在しています！"
+"どうしますか？ : %s"
+""
+"リモート : %s in %s"
+"ローカル : %s in %s"
+""
+"送信側 : %s bytes, %2d %s %4d  %02d:%02d:%02d"
+"宛先側 : %s bytes, %2d %s %4d  %02d:%02d:%02d" }
+
+# ------------------------------------------------- new since 1.62
+
+{ M_DELETE_FILES
+"You have selected %d file(s)."
+"     Really delete them?" }
+
+{ M_NOT_EMPTY
+"Directory `%s' is not empty."
+"Delete entire tree?" }
+
+{ M_ALL "All" }
+
+{ M_DELETING
+"  Deleting %s...  " }
+
+{ M_NO_CHMOD
+"This FTP server does not support SITE CHMOD command" }
+
+{ M_ACCESSRIGHTS1
+"Access rights for %d files" }
+
+{ M_ACCESSRIGHTS2
+"Access rights for %s" }
+
+{ M_WRONG_RIGHTS
+"Invalid input:  [%s]"
+"Correct format: [rwxrwxrwx]" }
+

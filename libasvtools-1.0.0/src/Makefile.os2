@@ -1,0 +1,72 @@
+PROJECT = asvtools
+CFLAGS1 = -I.
+
+OBJ = base64.o config.o domains.o file_ops.o misc.o fsort.o \
+ inf.o datetime.o url.o patterns.o str_base.o tcpip.o pidfile.o http.o \
+ str_find_desc.o str_shorten.o xfunc.o xlf.o stack.o \
+ mimetype.o filters.o fnmatch.o intcache.o \
+ regcomp.o regerror.o regexec.o regfree.o deflex.o
+
+CLEANFILES = random.* asvtools.h config.h *.lo
+
+#-------------------------------------------------------------------
+
+ifdef windir
+LIBS2 = -lregex
+LIBRARY = lib$(PROJECT).a
+PLATFORM = win32
+endif
+
+ifdef RUNWORKPLACE
+LIBS2 = -lbsd -lsocket -lregex -lsocket
+LIBRARY = $(PROJECT).a
+PLATFORM = os2
+endif
+
+INSTALL = install-$(PLATFORM)
+CONFIG_H = config.h.$(PLATFORM)
+#---------------------------------------------------------------------------
+
+CC = gcc
+CFLAGS = -Wall -O -g $(CFLAGS1) -DHAVE_CONFIG_H
+HEADER = $(PROJECT).h
+
+all: asvtools.h config.h $(LIBRARY)
+
+asvtools.h: asvtools.h.$(PLATFORM)
+	cp asvtools.h.$(PLATFORM) asvtools.h
+
+config.h: $(CONFIG_H)
+	cp $(CONFIG_H) config.h
+
+$(LIBRARY): $(OBJ)
+	rm -f $@
+	ar rcs $@ $(OBJ)
+
+install-win32:
+	-mkdir ..\..\lib
+	cp libasvtools.a ../../lib
+	-mkdir ..\..\include
+	cp asvtools.h ../../include
+
+install-os2:
+	-mkdir ..\..\lib
+	cp asvtools.a ../../lib/asvtools.a
+	-mkdir ..\..\include
+	cp asvtools.h ../../include/
+
+install: $(INSTALL)
+
+os2dll: $(OBJ)
+	$(CC) -o $(PROJECT).dll -Zdll -Zcrtdll $(OBJ) $(LIBS1) $(PROJECT).def
+	emxbind -qs $(PROJECT).dll
+	emximp -o $(LIBRARY) $(PROJECT).def
+	emxomf -s -l -q $(LIBRARY)
+
+clean:
+	rm -f *.o *.a *.lib *.dll *.so* core *.core *.exe *.lo *.la
+	rm -f $(PROJECT)_wrap.c $(PROJECT).pm
+	rm -f $(CLEANFILES)
+	rm -rf .deps .libs
+
+*.o: *.h Makefile.os2

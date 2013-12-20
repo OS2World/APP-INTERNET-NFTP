@@ -1,0 +1,229 @@
+<html><head>
+<title>NFTP : New File Transfer Protocol Client Version 1.71</title>
+</head>
+<body background="pic/lt_gray_004.jpg">
+
+<h2>NFTP : New File Transfer Protocol Client<br>
+Copyright (C) 1994-1998 Sergey Ayukov</h2>
+
+<a HREF="nftp-man.html">NFTP manual (main part)</a>
+<p>
+
+<a name="keys"><h3>KEYBOARD COMMANDS SUMMARY</h3></a>
+
+Here is the list of keystrokes
+("hot keys"); it's divided into several sections each pertaining to specific mode of
+operation or action classification.
+
+<p>
+Old obsolete keys which still work are in <i>italics</i>.
+
+<center>
+
+<p>
+<table border cellpadding=7 width=100% align=center>
+
+<tr><th colspan=2> <a name="keysgeneral">GETTING HELP</a>
+<tr><td> Shift-K<br>
+    <td> concise keyboard reference
+<tr><td> Shift-H<br> <i>Shift-F1</i>
+    <td> program information and general keyboard commands
+<tr><td> F1<br> Shift-?<br> <i>Ctrl-F1</i>
+    <td> context sensitive help
+<tr><td> F9<br>Ctrl-F
+    <td> open menu (in non-GUI versions)
+
+<tr><th colspan=2> LOG IN/LOG OUT
+<tr><td> Ctrl-L
+    <td> login into new site
+<tr><td> Ctrl-B
+    <td> open bookmark list
+<tr><td> Shift-L
+    <td> Open URL
+<tr><td> F2<br>Ctrl-E
+    <td> open history window
+<tr><td> Ctrl-K
+    <td> logoff from site
+<tr><td> F10
+    <td> exit NFTP
+<tr><td> Shift-A
+    <td> send NO OPERATION command (verify connection aliveness)
+<tr><td> Shift-F
+    <td> FTP Search
+<tr><td> Shift-P
+    <td> Recall last search results
+
+<tr><td colspan=2>
+
+<tr><th colspan=2> <a name="keyscontrolconn">CONTROL CONNECTION WINDOW</a>
+<tr><td> arrow keys
+    <td> scroll window contents
+<tr><td> Esc
+    <td> go to the end of history (same as End) 
+<tr><td> Space
+    <td> switch to directory view 
+<tr><td> Shift-Q<br>
+    <td> send any command to server verbatim ("quote")
+
+<tr><td colspan=2>
+
+<tr><th colspan=2> <a name="keyslisting">FILE LISTING VIEW (REMOTE OR LOCAL)</a>
+
+<tr><td colspan=2 align=center> <i>Navigating</i> 
+<tr><td> Space
+    <td> switch to control connection 
+<tr><td> Tab
+    <td> switch between remote/local files
+<tr><td> Ctrl-P
+    <td> switch remote directory view between raw/parsed views
+<tr><td> Ctrl-T
+     <td> Display/hide timestamps of files
+<tr><td> Ctrl-W
+    <td> split screen view to two parts (remote and local)
+<tr><td> arrow keys
+    <td> move cursor. Horizontal scrolling is also possible 
+<tr><td> Shift-&lt;, Shift-&gt;<br> <i>Ctrl-Left, Ctrl-Right</i>
+    <td> horizontal scrolling by 10 symbols 
+<tr><td> \<br> <i>Ctrl-\</i>
+    <td> change to root directory 
+<tr><td> [<br> <i>Ctrl-PgUp</i>
+    <td> goto the directory level higher ("cd ..") 
+<tr><td> Enter<br> ]<br> <i>Ctrl-PgDn</i>
+    <td> go to the directory under cursor 
+<tr><td> Shift-C<br>
+    <td> change to arbitrary directory 
+<tr><td> Shift-Z<br>
+    <td> select drive letter -- <i>local view only</i>
+<tr><td> Ctrl-R
+    <td> re-read directory (refresh file list) 
+<tr><td> Shift-O<br>
+    <td> use file under cursor as 00index file containing descriptions 
+<tr><td> Ctrl-O
+    <td> enable/disable automatic descriptions loading (<i>remote files only</i>)
+
+<tr><td colspan=2 align=center> <i>Sorting file listing</i> 
+<tr><td> Shift-N<br> <i>Ctrl-F3</i>
+    <td> sort directory by name, dirs first 
+<tr><td> Shift-X<br> <i>Ctrl-F4</i>
+    <td> sort directory by extension, dirs first 
+<tr><td> Shift-T<br> <i>Ctrl-F5</i>
+    <td> sort directory by time, then name, dirs first 
+<tr><td> Shift-S<br> <i>Ctrl-F6</i>
+    <td> sort directory by size, then name, dirs first 
+<tr><td> Shift-Y<br> <i>Ctrl-F7</i>
+    <td> remove sorting, return to original state 
+<tr><td> Shift-E<br> <i>Ctrl-F8</i>
+    <td> reverse current sort order 
+
+<tr><td colspan=2 align=center> <i>Marking/unmarking</i> 
+<tr><td> Ctrl-A<br> <i>Ctrl-Num+</i>
+    <td> mark all files in the current directory
+<tr><td> Ctrl-X<br> <i>Ctrl-Num-</i>
+    <td> unmark all files in the current directory
+<tr><td> Ctrl-Y<br> <i>Alt-Num-</i>
+    <td> unmark all files in all directories
+<tr><td> Insert<br> Shift-M
+    <td> mark/unmark file/directory under cursor
+<tr><td> +
+    <td> mark files by wildcard mask
+<tr><td> -
+    <td> unmark files by wildcard mask
+<tr><td> *
+    <td> invert selection 
+<tr><td> Shift-I<br>
+    <td> show information about marked files in the subdirectories
+
+<tr><td colspan=2 align=center> <i>Transferring files</i> 
+<tr><td> F5<br> Shift-D
+    <td> download file under cursor or marked files (if any) -- <i>remote view only</i>
+<tr><td> F6<br> Shift-U<br> <i>Shift-F5</i>
+    <td> upload file under cursor or marked files (if any) -- <i>local view only</i>
+<tr><td> Ctrl-D<br> <i>Alt-F5</i>
+    <td> download all marked files from all subdirectories -- <i>remote view only</i>
+<tr><td> Shift-W
+    <td> Launch WGET for downloading -- <i>remote view only</i>
+<tr><td> Ctrl-U
+    <td> upload all marked files from all subdirectories -- <i>local view only</i> (not implemented yet)
+<tr><td> Shift-G<br>
+    <td> download file by name (e.g. when directory is unreadable -- <i>remote view only</i>
+
+<tr><td colspan=2 align=center> <i>Viewing files</i> 
+<tr><td> F3<br> Ctrl-V
+    <td> view file under cursor, use fast internal viewer 
+<tr><td> Shift-V<br> <i>Alt-F3</i>
+    <td> view file under cursor, use external viewer 
+
+<tr><td colspan=2 align=center> <i>Creating/deleting/renaming files/directories</i>
+<tr><td> Shift-R<br>
+    <td> rename file/directory 
+<tr><td> F7<br>Ctrl-G
+    <td> make directory (you have to have permissions on remote) 
+<tr><td> F8<br>Del
+    <td> delete file or directory under cursor 
+
+<tr><td colspan=2 align=center> <i>Miscellaneous</i> 
+<tr><td> F4<br> Shift-B
+    <td> save current site/directory as a bookmark
+<tr><td> a-z, 0-9, ".", "-", "_"
+    <td> quick search for files starting with these symbols. Use lowercase letters only; search is not case sensitive
+
+<tr><td colspan=2>
+
+<tr><th colspan=2> <a name="keysentryfields">ENTRY FIELDS </a>
+<tr><td> Esc/Enter
+    <td> abandon/confirm 
+<tr><td> Left, Right, Home, End
+    <td> move cursor around 
+<tr><td> Tab, Shift-Tab
+    <td> move to next/previous field (if any). Note: Shift-Tab does not work under Unix
+<tr><td> Del, Backspace
+    <td> delete characters
+
+<tr><td colspan=2> Pressing any keys different from Left, Right, Home, End will clear the initial string
+
+<tr><td colspan=2>
+
+<tr><th colspan=2> <a name="keysbookmark">BOOKMARK LIST</a>
+<tr><td> Ctrl-B
+    <td> open bookmark list
+<tr><td> arrow keys
+    <td> move cursor 
+<tr><td> Enter
+    <td> select bookmark or folder 
+<tr><td> Esc
+    <td> leave bookmark list or folder  
+<tr><td> Insert
+    <td> create bookmark or foler
+<tr><td> Del
+    <td> delete bookmark or folder 
+<tr><td> Ctrl-E
+    <td> edit bookmark/folder title 
+<tr><td> right/left
+    <td> enter/leave folder 
+<tr><td> Shift-D, Shift-U<br> <i>Ctrl-Up, Ctrl-Down</i>
+    <td> move bookmark entry 
+<tr><td> Shift-&lt;<br> <i>Ctrl-Left</i>
+    <td> move bookmark entry into another folder
+
+<tr><td colspan=2>
+
+<tr><th colspan=2> <a name="keysviewer">BUILT-IN FILE VIEWER</a>
+<tr><td> arrow keys
+    <td> scroll (note that you can scroll horizontally also) 
+<tr><td> Shift-&lt;, Shift-&gt;<br> <i>Ctrl-Left, Ctrl-Right</i>
+    <td> scroll by 10 symbols horizontally 
+<tr><td> Ctrl-F<br> F7
+    <td> search for text string 
+<tr><td> Ctrl-G<br> Shift-F7
+    <td> repeat search for text string 
+<tr><td> F2<br> Ctrl-W
+    <td> save contents to file 
+<tr><td> Esc
+    <td> exit viewer
+   
+</table>
+
+</center>
+
+</body></html>
+

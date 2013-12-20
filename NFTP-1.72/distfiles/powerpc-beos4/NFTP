@@ -1,0 +1,3 @@
+#!/bin/sh
+
+Terminal -t "NFTP" /bin/sh -c /bin/nftp

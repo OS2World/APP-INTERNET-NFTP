@@ -1,0 +1,1583 @@
+#
+#   Language-specific file for NFTP 1.10+
+#
+#   Polish
+#
+#   (18 XI 1998)
+#
+
+# ------------------------------------- Months --------------------------
+
+{ M_JAN "Sty" }  { M_FEB "Lut" }  { M_MAR "Mar" }  { M_APR "Kwi" }
+{ M_MAY "Maj" }  { M_JUN "Cze" }  { M_JUL "Lip" }  { M_AUG "Sie" }
+{ M_SEP "Wrz" }  { M_OCT "Pa¼" }  { M_NOV "Lis" }  { M_DEC "Gru" }
+
+{ M_HBAR              "Ä" } { M_VBAR              "³" }
+{ M_CROSS             "Å" }
+{ M_FILL1             "°" } { M_FILL2             "±" }
+{ M_FILL3             "²" } { M_FILL4             "Û" }
+{ M_LU                "Ú" } { M_RU                "¿" }
+{ M_LD                "À" } { M_RD                "Ù" }
+{ M_LT                "Ã" } { M_RT                "´" }
+{ M_UT                "Â" } { M_DT                "Á" }
+{ M_PLACEHOLDER       "ú" } { M_MARKSIGN          "*" }
+
+#  --------------------- Help screens --------------------------------------
+
+{ M_HLP_MAIN
+""
+" NFTP                                  Copyright (C) Sergey Ayukov 1998"
+""
+" T³umaczenie na jêzyk polski: Piotr Klaban <makler@man.torun.pl>"
+" Proszê przeczytaæ bardziej kompletn±, ni¿ ta krótka pomoc, dokumentacjê HTML."
+""
+" G£ÓWNE SKRÓTY KLAWISZOWE"
+""
+" Shift-H  - informacja, któr± widzisz. Zauwa¿, ¿e ta pomoc"
+"            nie jest hipertekstowa"
+" F1       - wy¶wietla pomoc zale¿n± od kontekstu"
+" F10      - wylogowanie z serwera i zamkniêcie programu NFTP"
+" Ctrl-K   - wylogowanie z serwera"
+" Ctrl-B   - otwórz listê zak³adek i zaloguj siê do wybranego miejsca"
+" F2       - otwórz historiê po³±czeñ i zaloguj siê do wybranego miejsca"
+" Ctrl-L   - zaloguj siê anonimowo do nowego serwera"
+" Ctrl-N   - zaloguj siê u¿ywaj±c u¿ytkownika i has³a"
+" Ctrl-W   - wersja programu NFTP"
+" Ctrl-T   - prze³±czaj tryb ASCII/BINARNY (tekstowy/binarny)"
+" Ctrl-J   - od¶wie¿ ekran (nie czytaj na nowo zdalnego katalogu)"
+" Shift-I  - sprawd¼ ile plików w ilu katalogach jest zaznaczonych"
+" Shift-A  - sprawd¼ czy po³±czenie jest jeszcze nawi±zane"
+" Shift-F  - Listuj katalog komend± NLST z/bez prze³±czników (domy¶lnie s±"
+"            one ustawione na -lLa). Niektóre serwery nie znaj± komendy"
+"            NLST -lLa. Spróbuj tego, je¶li zobaczysz dziwne komunikaty"
+"            od serwera podczas sci±gania zawarto¶ci katalogu. Jednak"
+"            ta opcja NIE JEST rekomendowana."
+""
+" Zauwa¿, ¿e te komendy s± prawie zawsze dostêpne. Jednak zwykle"
+" s± aktywne tak¿e inne klawisze (w zale¿no¶ci od etapu w jakim"
+" znajduje sie program), wiêc nie zapomnij wcisn±æ F1/?, aby je zobaczyæ."
+"" }
+
+{ M_HLP_LINEIN
+""
+" Klawisze dostêpne podczas wpisywania w pole edycyjne :"
+""
+" Esc/Enter               - zrezygnuj/zatwierd¼"
+" Left, Right, Home, End  - przesuwaj± kursor"
+" Tab, Shift-Tab          - uaktywnij nastêpne/poprzednie pole (je¶li istnieje)"
+" Del, Backspace          - kasuj± znaki"
+" Shift-Ins               - wpisz z systemowego schowka"
+" Ctrl-Ins                - zapisz do systemowego schowka"
+""
+" Wci¶nij Del tu¿ po pojawieniu siê pola edycyjnego, aby je wyczy¶ciæ;"
+" Podczas wpisywania has³a, wpisywane znaki s± niewidoczne."
+"" }
+
+{ M_HLP_CC
+""
+" Dostêpne klawisze w oknie Kontroli Po³±czenia :"
+""
+" strza³ki    - przesuwaj± zawarto¶æ okna"
+" Esc         - przenoszenie na koniec historii (tak samo End)"
+" Space       - prze³±cza na okno katalogu"
+" Shift-Q     - przesy³a podane wyrazy do serwera (komend± QUOTE)"
+" Shift-C     - zmiana na podany katalog"
+""
+" Odpowiedzi serwera s± szare, posy³ane komendy s± pod¶wietlone na zielono"
+" a informacje od programu nftp s± jasnoczerwone. Podane kolory"
+" mog± byæ zmienione w pliku `nftp.ini'."
+""
+" NFTP ma wbudowan± kontrolê przebiegu po³±czenia. Je¶li chcesz przez "
+" ca³y czas widzieæ przesy³ane komunikaty pomiêdzy serwerem i klientem, "
+" ustaw parametr `auto-switch-to-control' na 1. Spróbuj tego. "
+" Mo¿e Ci siê to spodoba."
+"" }
+
+{ M_HLP_DIR_RAW
+""
+" To jest katalog serwera ftp. Je¶li nie jeste¶ po³±czony, to mo¿esz zobaczyæ"
+" jedynie pusty czarny ekran. Przeczytaj ,,Ogóln± Pomoc'' (Shift-H),"
+" aby siê dowiedzieæ jak siê po³±czyæ z serwerem ftp."
+""
+" F3         - przegl±daj plik zaznaczony kursorem (szybki podgl±d)"
+" Shift-V    - przegl±daj plik zaznaczony kursorem (u¿yj zewn. przegl±darki)"
+""
+" F5         - ¶ci±gaj zaznaczone pliki lub tylko ten pod kursorem"
+" Ctrl-D     - ¶ci±gaj zaznaczone pliki ze wszystkich katalogów"
+" Shift-G    - ¶ci±gaj plik o nazwie ... (np. gdy katalog nie jest do odczytu)"
+" Shift-R    - zmieñ nazwê pliku/katalogu"
+" F7         - utwórz katalog (trzeba mieæ odpowiednie prawa dostêpu)"
+" F8         - skasuj plik (lub zaznaczone pliki) zaznaczony kursorem."
+"              Mo¿na kasowaæ tak¿e katalogi."
+" Ctrl-R     - od¶wie¿ listê plików w katalogu"
+" Shift-O    - za³aduj opisy plików z pliku zaznaczonego belk± kursora"
+""
+" Ctrl-A     - zaznacz wszystkie pliki w bie¿±cym katalogu"
+" Ctrl-X     - skasuj zaznaczenie dla wszystkich plików w bie¿±cym katalogu"
+" Insert     - prze³±cz zaznaczenie pliku pod kursorem."
+"              Mo¿na zaznaczyæ ca³y katalog z podkatalogami."
+" Plus/Minus - zaznacz lub skasuj zaznaczenie wg filtru, np. `*.zip'"
+" *          - zaznacz nie wybrane i skasuj zaznaczenie wybranych plików"
+" Ctrl-Y     - skasuj zaznaczenie plików we wszystkich katalogach"
+""
+" strza³ki   - przesuwaj± kursor po ekranie (u¿yj Ctrl-Left/Ctrl-Right"
+"              do przesuwania ekranu w poziomie)"
+" \          - przejd¼ do g³ównego katalogu"
+" [          - przejd¼ do katalogu o stopieñ wy¿ej ('cd ..')"
+" ]          - przejd¼ do katalogu zaznaczonego belk± kursora"
+" Enter      - ------ ' ------"
+" Shift-C    - przejd¼ do podanego katalogu"
+""
+" Shift-N    - sortuj katalog wg nazwy, katalogi pierwsze"
+" Shift-X    - sortuj katalog wg rozszerzenia, katalogi pierwsze"
+" Shift-T    - sortuj katalog wg daty, potem nazwy, katalogi pierwsze"
+" Shift-S    - sortuj katalog wg rozmiaru, potem nazwy, katalogi pierwsze"
+" Shift-Y    - poka¿ nieposortowany katalog"
+" Shift-E    - odwróæ porz±dek sortowania"
+""
+" F4         - zachowaj to miejsce jako zak³adkê"
+" Space      - przejd¼ do trybu kontroli po³±czenia"
+" Tab        - prze³±cz na wy¶wietlanie katalogu lokalnego"
+" Ctrl-O     - ukryj/poka¿ opisy plików (je¶li s± dostêpne)"
+""
+" Je¶li zacznie siê po prostu pisaæ nazwê jakiego¶ pliku"
+" ma³ymi literami alfabetu, NFTP spróbuje go znale¼æ."
+""
+" Inne dostêpne komendy s± opisane w ,,Pomocy Ogólnej'' (Shift-H)."
+" Zauwa¿, ¿e mo¿na zaznaczyæ katalog (wszystkie podkatalogi wtedy tak¿e"
+" bêd± zaznaczone). Znaczniki te nie znikaj±, gdy zmienia siê bie¿±cy"
+" katalog."
+"" }
+
+{ M_HLP_VIEWER
+""
+" Klawisze dostêpne we wbudowanej przegl±darce tekstowej: "
+""
+" strza³ki        - przesuwaj± ekran (tak¿e horyzontalnie)"
+" Ctrl-Left/Right - przesuwa o 10 znaków w poziomie"
+" Esc             - wyj¶cie z przegl±darki"
+" Ctrl-F          - szukaj tekstu"
+" Ctrl-G          - powtórz szukanie"
+" Ctrl-W          - zachowaj zawarto¶æ do pliku"
+""
+" Zauwa¿, ¿e podczas przegl±dania plik jest ³adowany do pamiêci"
+" operacyjnej. Trzeba wiêc uwa¿aæ z bardzo du¿ymi plikami."
+"" }
+
+{ M_HLP_LOCAL_PARSED
+""
+" To jest katalog lokalny."
+""
+" F3         - przegl±daj plik zaznaczony kursorem (szybki podgl±d)"
+" Shift-V    - przegl±daj plik zaznaczony kursorem (u¿yj zewn. przegl±darki)"
+""
+" F6         - po¶lij plik zaznaczony kursorem (lub zaznaczone pliki)"
+" Shift-R    - zmieñ nazwê pliku lub katalogu"
+" F7         - utwórz katalog"
+" F8         - skasuj plik (lub zaznaczone pliki) zaznaczony kursorem"
+" Ctrl-R     - od¶wie¿ listê plików w katalogu"
+""
+" Ctrl-A     - zaznacz wszystkie pliki w bie¿±cym katalogu"
+" Ctrl-X     - skasuj zaznaczenie dla wszystkich plików w bie¿±cym katalogu"
+" Insert     - prze³±cz zaznaczenie pliku pod kursorem."
+"              Nie mo¿na zaznaczyæ katalogu."
+" Plus/Minus - zaznacz lub skasuj zaznaczenie wg filtru, np. `*.zip'"
+" *          - zaznacz nie wybrane i skasuj zaznaczenie wybranych plików"
+""
+" strza³ki   - przesuwaj± kursor po ekranie"
+" \          - przejd¼ do g³ównego katalogu"
+" [          - przejd¼ do katalogu o stopieñ wy¿ej ('cd ..')"
+" ]          - przejd¼ do katalogu zaznaczonego belk± kursora"
+" Enter      - ------ ' ------"
+" Shift-C    - przejd¼ do podanego katalogu"
+" Shift-Z    - wybierz napêd (stacja dysków, dysk itp.)"
+""
+" Shift-N    - sortuj katalog wg nazwy, katalogi pierwsze"
+" Shift-X    - sortuj katalog wg rozszerzenia, katalogi pierwsze"
+" Shift-T    - sortuj katalog wg daty, potem nazwy, katalogi pierwsze"
+" Shift-S    - sortuj katalog wg rozmiaru, potem nazwy, katalogi pierwsze"
+" Shift-Y    - poka¿ nieposortowany katalog"
+" Shift-E    - odwróæ porz±dek sortowania"
+""
+" Space      - przejd¼ do trybu kontroli po³±czenia"
+" Tab        - prze³±cz siê na katalog serwera"
+""
+" Je¶li zacznie siê po prostu pisaæ nazwê jakiego¶ pliku"
+" ma³ymi literami alfabetu, NFTP spróbuje go znale¼æ."
+""
+" Inne dostêpne komendy s± opisane w ,,Pomocy Ogólnej'' (Shift-H)."
+" Zauwa¿, ¿e nie mo¿na zaznaczyæ katalogu. Zaznaczenie plików lokalnych"
+" znika, gdy zmienia siê bie¿±cy katalog."
+"" }
+
+{ M_HLP_SHORT
+" NFTP klawisze szybkiego reagowania   [F1 - wiêcej informacji]"
+"                                      [Shift-H - ogólna pomoc]"
+" Logowanie/wylogowanie"
+""
+" Ctrl-B - lista zak³adek            Ctrl-L - po³±cz siê anonimowo"
+" F4     - zachowaj zak³adkê         Ctrl-N - po³±cz siê jako u¿ytkownik/has³o"
+" F10    - wyloguj siê i zakoñcz     F2     - historia po³±czeñ"
+""
+" Przegl±danie"
+""
+" Tab     - lokalny/zdalny katalog   Space  - katalog/po³±czenie"
+" Shift-Z - zmieñ napêd lokalny      Shift-C- podaj dok³adn± ¶cie¿kê dostêpu"
+" Shift-N/X/T/S - sortuj wg nazwy/rozszerzenia/daty/rozmiaru"
+" ma³e litery alfabetu - szukaj pliku od nich siê zaczynaj±cego"
+""
+" Transfery"
+""
+" F5     - ¶ci±gaj plik              F6      - po¶lij plik"
+" F3     - przegl±daj plik tekstowy  Ctrl-D  - ¶ci±gnij wszystkie zazn. pliki"
+" Ins    - zaznacz/skasuj zazn. pliku/kat. Ctrl-A  - zaznacz wszystkie pliki"
+"" }
+
+{ M_HLP_BOOKMARK1
+""
+" Foldery Zak³adek "
+""
+" Ka¿dy folder mo¿e zawieraæ wiele zak³adek. Aby przej¶æ do folderu"
+" nale¿y wcisn±æ Enter lub klawisz strza³ki w prawo. Strza³ka"
+" w lewo lub klawisz Escape przenosi nas spowrotem. Mo¿na poruszaæ siê"
+" po systemie zak³adek u¿ywaj±c tylk strza³ek."
+""
+" Aby utworzyæ nowy folder nale¿y wcisn±æ klawisz Ins. Klawisz Del"
+" kasuje folder, a Ctrl-E zmienia jego nazwê."
+""
+" Okno folderów zak³adek tak¿e pojawia siê, gdy chcemy utworzyæ"
+" now± zak³adkê. Wtedy nale¿y wybraæ docelowy folder, lub u¿yæ"
+" Ins, aby utworzyæ nowy. Zauwa¿, ¿e has³a nie s± zapisywane,"
+" chyba ¿e po³±czenie jest anonimowe (np. na konto anonymous)."
+" Mo¿na je wpisaæ rêcznie do pliku *.bmk, ale jest to niebezpieczne"
+" (ka¿dy kto ma dostêp do komputera mo¿e to has³o wtedy ukra¶æ)."
+""
+" Wszystkie zmiany w folderach zak³adek bêd± zachowane (lub nie),"
+" gdy opu¶ci siê to okno. Trzeba wtedy odpowiedzieæ na pytanie"
+" czy zachowaæ zmiany. Nie nale¿y modyfikowaæ listy folderów"
+" z kilku sesji NFTP jednocze¶nie."
+"" }
+
+{ M_HLP_BOOKMARK2
+""
+" Lista zak³adek w folderze "
+""
+" Wci¶nij Enter, aby wybraæ serwer ftp i zalogowaæ siê do niego."
+" Wybierz klawisz Esc lub strza³kê w lewo, aby opu¶ciæ folder."
+" Mo¿na poruszaæ siê po systemie zak³adek u¿ywaj±c jedynie strza³ek."
+""
+" Wci¶nij Del, aby skasowaæ zak³adkê. Mo¿na ³atwo zmieniæ ustawienie"
+" zak³adek: u¿yj Shift-U, aby przesun±æ zak³adkê wy¿ej, Shift-D,"
+" aby j± przesun±æ w dó³, Shift-< przenosi j± do innego folderu."
+" Ctrl-E zmienia tre¶æ zak³adki."
+""
+" Wszystkie zmiany w folderach zak³adek bêd± zachowane (lub nie),"
+" gdy opu¶ci siê to okno. Trzeba wtedy odpowiedzieæ na pytanie"
+" czy zachowaæ zmiany. Nie nale¿y modyfikowaæ listy zak³adek"
+" z kilku sesji NFTP jednocze¶nie."
+"" }
+
+{ M_HLP_UNDEFINED
+""
+" Nie ma pomocy dla tego ekranu w jêzyku polskim. "
+"" }
+
+{ M_BOOKMARK_FORMAT
+"; format zak³adki jest nastêpuj±cy"
+"; ftp.sai.msu.su:21/pub/os2 : u¿ytkownik/has³o/prze³±czniki : opis"
+";"
+"; zmieniaj ten plik ostro¿nie; przestrzegaj regu³:"
+"; - odstêpy wokó³ dwukropków S¡ wa¿ne;"
+"; - ¶cie¿ki dostêpu musz± byæ absolutne, tzn. zaczynaæ siê od `/';"
+"; - mo¿na pomin±æ `port';"
+"; - u¿yj `*' jako u¿ytkownika i has³o dla po³±czeñ anonimowych:"
+";   crydee.sai.msu.su:/pub/comp/os/os2 : */*/prze³±czniki : SAI OS/2 archiwum"
+";"
+";" }
+
+#  Bookmarks ----------------------------------------------------------
+
+{ M_CANTOPENBOOKMARKS1
+"Nie mogê nic dodaæ do pliku zak³adek [%s]" }
+
+{ M_CANTOPENBOOKMARKS2
+"Nie mogê otworzyæ pliku zak³adek [%s] do odczytu" }
+
+{ M_CANTOPENBOOKMARKS3
+"Nie mogê otworzyæ pliku zak³adek [%s] do zapisu" }
+
+{ M_NO_BOOKMARKS
+"  Nie znaleziono zak³adek " }
+
+{ M_EMPTY_BOOKMARKSLIST
+"  Lista zak³adek jest pusta " }
+
+{ M_DELETE_BOOKMARK
+"  Skasowaæ zak³adkê  "
+"  %s ?  " }
+
+{ M_INSERT_BOOKMARK1
+" Wpisz identyfikator (wci¶nij ENTER je¶li to anonymous): " }
+
+{ M_INSERT_BOOKMARK2
+" Wpisz adres serwera ftp lub adres IP: " }
+
+{ M_INSERT_BOOKMARK3
+" Wpisz katalog: " }
+
+{ M_CURRENT_BOOKMARKS
+" Bie¿±ce zak³adki " }
+
+{ M_BOOKMARKS_CHANGED
+"  Lista zak³adek siê zmieni³a.  "
+"  Zachowaæ now± listê zak³adek?  " }
+
+#  Prompts ------------------------------------------------------------
+
+{ M_USETAB
+" U¿yj Tab/Shift-Tab do zmiany aktywnego pola " }
+
+{ M_CHOOSEDRIVE
+"Wybierz napêd" }
+
+{ M_SELECT_DIRECTORY
+" Wybierz katalog startowy (wci¶nij ENTER ¿eby zaakceptowaæ) : " }
+
+{ M_ENTER_VERBATIM_COMMAND
+" Wpisz dos³own± komendê do przes³ania : " }
+
+{ M_MKDIR_ENTER_NAME
+" Wpisz nazwê tworzonego katalogu : " }
+
+{ M_ENTER_FIREWALL_USERID
+" Wpisz identyfikator u¿ytkownika dla FIREWALL'a: " }
+
+{ M_ENTER_FIREWALL_PASSWORD
+" Wpisz has³o dla FIREWALL'a: " }
+
+{ M_ENTER_USERID
+" Wpisz identyfikator u¿ytkownika : " }
+
+{ M_ENTER_PASSWORD
+" Wpisz swoje has³o : " }
+
+{ M_ENTER_HOSTNAME
+" Wpisz serwer[[:port]¶cie¿ka] aby siê zalogowaæ : " }
+
+{ M_ENTER_DIRECTORY
+" Zmieñ zdalny katalog : " }
+
+{ M_ENTER_SELECT_FILTER
+" Wpisz filtr : " }
+
+{ M_RENAME_LOCAL_FILE
+" Zmieñ nazwê pliku lokalnego : " }
+
+#  Pseudo-responses ---------------------------------------------------
+
+{ M_RESP_CANNOT_RESOLVE
+"Nie mogê znale¼æ `%s'" }
+
+{ M_RESP_LOOKING_UP
+"Szukam `%s'" }
+
+{ M_RESP_TRYING_IP
+"Nie mogê znale¼æ `%s', spróbujê adres IP" }
+
+{ M_RESP_FOUND
+"Znalaz³em `%s'" }
+
+{ M_RESP_NO_SOCKET
+"Nie mogê dostaæ siê do lokalnego gniazda po³±czeñ. Rezygnujê" }
+
+{ M_RESP_FAILED_TO_CONNECT
+"Nie mogê siê po³±czyæ na port %u" }
+
+{ M_RESP_CONNECTED
+"Nawi±zano po³±czenie na port %u" }
+
+{ M_RESP_CLOSING
+"Zamykam po³±czenie" }
+
+{ M_RESP_LOGIN
+"Po³±czono siê jako `%s@%s'" }
+
+{ M_RESP_TRANSFER_DONE
+"Transfer zakoñczony; ¶rednia prêdko¶æ %u bajtów/sek" }
+
+{ M_RESP_INIT_DONE
+"inicjacja zakoñczona......" }
+
+{ M_RESP_RETRYING
+"Czekam %d sekund... ESC aby przerwaæ, inny klawisz ponawia po³±czenie" }
+
+{ M_RESP_RETRY_ABORTED
+"Przerwano." }
+
+{ M_RESP_REGET_ISNT_SUPPORTED
+"Komenda REGET nie jest dostêpna; ¶ci±gam ca³y plik" }
+
+{ M_RESP_TRANSFER_CANCELLED
+"Transfer przerwany (%s)" }
+
+{ M_RESP_TRANSFER_ERROR
+"B³±d podczas przesy³ania `%s'" }
+
+#  Questions ----------------------------------------------------------
+
+{ M_TOO_BIG_FOR_INTVIEWER
+" Plik `%s' jest du¿y -- %ld bajtów. "
+" Nadal chcesz go przejrzeæ u¿ywaj±c wbudowanej przegl±darki? " }
+
+{ M_REALLY_OVERWRITE
+" **** OVERWRITE ****"
+""
+" Plik `%s' ju¿ istnieje!"
+" Ma taki sam rozmiar jak plik na serwerze. "
+" (Plik lokalny: %d bajtów, zdalny plik: %d bajtów) "
+" Nadal chcesz ¶ci±gaæ i utraciæ lokalny plik?" }
+
+{ M_OVERWRITE_RENAME_CANCEL
+""
+" Plik `%s' ju¿ istnieje!"
+" Ma taki sam rozmiar jak plik na serwerze. "
+" (Plik lokalny: %d bajtów, zdalny plik: %d bajtów) "
+" Esc - przerwij transfer " }
+
+{ M_OVERWRITE_RENAME_CANCEL2
+""
+" Plik `%s' ju¿ istnieje!"
+" Jest wiêkszy ni¿ plik na serwerze. "
+" (Plik lokalny: %d bajtów, zdalny plik: %d bajtów) "
+" Esc - przerwij transfer " }
+
+{ M_OVERWRITE_RENAME_CANCEL3
+" Nadpisz na pliku lokalnym (czyli go skasuj) "
+" Zmieñ nazwê pliku lokalnego " }
+
+{ M_REALLY_REGET
+" **** REGET ****"
+""
+" Plik `%s' ju¿ istnieje."
+" Jest mniejszy ni¿ plik na serwerze. "
+" (Plik lokalny: %d bajtów, zdalny plik: %d bajtów) " }
+
+{ M_REGET_RENAME_CANCEL
+""
+" Plik `%s' ju¿ istnieje!"
+" Jest mniejszy ni¿ plik na serwerze. "
+" (Plik lokalny: %d bajtów, zdalny plik: %d bajtów) "
+" Wybierz `Kontunuuj' aby kontynuowaæ przerwane ¶ci±ganie "
+" Esc - zrezygnuj z transferu " }
+
+{ M_REGET_RENAME_CANCEL2
+" Kontynuuj "
+" Nadpisz plik lokalny "
+" Zmieñ nazwê pliku lokalnego " }
+
+{ M_REALLY_TRANSFER_FROM
+"    ¦ci±gn±æ plik(i) z serwera ?    " }
+
+{ M_REALLY_TRANSFER_TO
+"    Pos³aæ plik(i) na serwer ?      " }
+
+{ M_REALLY_DELETE
+"    Skasowaæ plik(i) ?    " }
+
+{ M_REALLY_SAVE_BOOKMARK
+"  Zachowaæ katalog                       "
+"  %s %s : %s  "
+"  jako zak³adkê?  " }
+
+{ M_REALLY_EXIT
+"       Zakoñczyæ NFTP ?      " }
+
+{ M_REALLY_LOGOFF
+"  Wylogowaæ siê z %s ?  " }
+
+#  Miscellaneous text strings -----------------------------------------
+
+{ M_WELCOME
+" NFTP%s Wci¶nij Shift-H aby zobaczyæ ,,Pomoc Ogóln±''" }
+
+{ M_DISCONNECTING
+"  Przerywam po³±czenie z %s   " }
+
+{ M_EOF_MARK
+""
+" =========== END OF FILE =========== " }
+
+{ M_WRONG_REGCODE
+" Niew³a¶ciwy kod rejestracyjny wpisany w nftp.ini. "
+" Proszê jeszcze raz sprawdziæ swoje dane i kod. Zakoñczyæ program?" }
+
+{ M_RUNNING_UNREGISTERED
+"            Ta kopia NFTP nie jest zarejetrowana "
+""
+"   Nie bêdziesz móg³ przesy³aæ plików wiêkszych ni¿ %dKB. "
+""
+" Przeczytaj dokumentacjê, aby dowiedzieæ siê jak siê zarejestrowaæ."
+""
+"    Ustaw parametr `message' na 0 w sekcji `registration'"
+"    pliku nftp.ini je¶li nie cchesz wiêcej widzieæ tego"
+"                  komunikatu" }
+
+{ M_CCLINES
+" Przebieg Po³±czenia : %u linii" }
+
+{ M_BINARY
+"BINARNY" }
+
+{ M_ASCII
+"ASCII " }
+
+{ M_TRANSFER_COMPLETED
+"Transfer zakoñczony; wci¶nij dowolny klawisz " }
+
+{ M_HELP_ESC_TO_EXIT
+"  Pomoc - Esc aby wyj¶æ  " }
+
+{ M_STATUS
+" W sumie: %u plik(i/ów), %s Bajtów   [%3s]   Zaznaczono %u plik(i/ów), %s Bajtów" }
+
+{ M_STATUS_BIN
+"BIN" }
+
+{ M_STATUS_ASC
+"ASC" }
+
+#  --------------------------------------------------------------------
+#  Fatal errors -------------------------------------------------------
+
+{ M_UNKNOWN_OS
+""
+" Nieznany system operacyjny na serwerze: "
+" `%s',"
+" wylogowujê siê... " }
+
+{ M_UNREGISTERED_TRANSFER
+" Nie mo¿esz przesy³aæ plików wiêkszych ni¿ %dKB "
+"      z niezarejetrowan± wersj± programu. " }
+
+{ M_INI_BUILD_FAILED
+"Próba odczytania/konwersji pliku nftp.ini siê nie powiod³a."
+"sprawd¼ ¶cie¿kê szybkiego dostêpu PATH, czy nie ma tam"
+"starszej wersji NFTP.EXE lub NFTP-OPT.EXE"}
+
+{ M_EMAIL_NOT_SET
+"Mo¿esz potrzebowaæ zmieniæ nftp.ini zanim zaczniesz"
+"u¿ywaæ NFTP. Powinno siê wpisaæ co najmniej adres e-mail." }
+
+{ M_CONNECTION_LOST
+"     Po³±czenie utracone     " }
+
+{ M_NO_PASV_NOFIREWALLING
+" Serwer FTP nie zna komendy PASV, a przez to"
+" nie mo¿na siê do niego po³±czyæ poprzez firewall " }
+
+{ M_NO_PASV
+" Serwer FTP nie zna komendy PASV."
+" Nale¿y zmieniæ parametr `use-PASV-mode' na 0 " }
+
+{ M_CANT_CREATE_SEM
+" B³±d fatalny: nie mogê tworzyæ semaforów " }
+
+{ M_INI_UNREADABLE
+""
+"Nie mogê znale¼æ nftp.ini; przerywam dzia³anie" }
+
+#  Transient messages -------------------------------------------------
+
+{ M_SENDING_VERBATIM_COMMAND
+"   Wysy³am komendê do serwera...   " }
+
+{ M_PARSING_LISTING
+"   Analizujê zawarto¶æ katalogu... " }
+
+{ M_MKDIR_CREATING
+"   Tworzê katalog na serwerze...   " }
+
+{ M_GOING_ROOT
+"   Przechodzê do katalogu g³ównego na serwerze...   " }
+
+{ M_GOING_UP
+"   Przechodzê o katalog wy¿ej na serwerze...   " }
+
+{ M_CHANGING_DIR
+"   Zmieniam katalog na serwerze...   " }
+
+{ M_SENDING_NOOP
+"   Wysy³am komendê NO OPERATION...   " }
+
+{ M_QUERYING_DIR
+"   Zapytujê siê o bie¿±cy katalog na serwerze...   " }
+
+{ M_RETRIEVING_FILELIST
+"   ¦ci±gam listê plików w katalogu..." }
+
+#  nftp-opt  defines -------------------------------------------------
+
+{ M_FATAL_LOADING_NFTP_INI
+""
+"fatalny b³±d przy ³adowaniu pliku nftp.ini; przerywam dzia³anie" }
+
+{ M_WRONG_KEYNAME
+"z³a nazwa klawisza: [%s]"
+"" }
+
+{ M_KEYDEF_ERRORS
+"zarejestrowano %d b³±d/b³êdy(ów) podczas analizy definicji klawiszy."
+"Wci¶nij dowolny klawisz..." }
+
+{ M_KEYNAMES_WELCOME
+"Wci¶nij Esc aby wyj¶æ, lub inny klawisz aby zobaczyæ jego nazwê."
+"Je¶li nic siê nie pojawia, ta kombinacja klawiszy jest albo"
+"w ogóle nie wygenerowana albo zmieniona przez system operacyjny"
+""
+"Kod :         :" 
+"" }
+
+{ M_NO_TEXT
+" Nie ma tekstu dla tego komunikatu. "
+" Prawdopodobnie nie jest on przet³umaczony albo "
+" zapomnia³ o nim autor programu NFTP. " }
+
+{ M_CANT_DELETE
+" Nie mogê skasowaæ `%s' " }
+
+{ M_ENTER_LOCAL_DIRECTORY
+" Zmieñ lokalny napêd/katalog na : " }
+
+{ M_REALLY_TRANSFER_FROM_ALLDIRS
+" %d plik(i/ów) w %d katalogu(ach) jest zaznaczonych do ¶ci±gniêcia. "
+" %s bajty(ów) w sumie. Kontynuowaæ? " }
+
+{ M_BYTES_RECEIVED
+"     %7d bajtów ¶ci±gniêto"
+"             wci¶nij ESC aby zatrzymaæ" }
+
+{ M_BYTES_REMAIN
+""
+"     %7d bajtów ¶ci±gniêto"
+"     %7d bajtów pozosta³o"
+"             wci¶nij ESC aby zatrzymaæ" }
+
+{ M_YES
+"  Tak  " }
+
+{ M_NO
+"  Nie  " }
+
+{ M_OK
+"   OK   " }
+
+{ M_ENTER_SEARCHSTRING
+" Wpisz napis, którego szukasz: " }
+
+{ M_ENTER_FILENAME_SAVE
+" Wpisz nazwê pliku do zapisania: " }
+
+{ M_CANNOT_OPEN
+" Nie mogê otworzyæ pliku %s " }
+
+{ M_FILE_SAVED
+"        Plik zosta³ zachowany        " }
+
+{ M_LISTING_HEADER
+"Serwer    : %s"
+"Katalog   : %s"
+"" }
+
+{ M_LISTING_FOOTER
+""
+"w sumie %d plików, %s bajtów" }
+
+{ M_LISTING_SAVED
+" Lista plików zosta³a zapisana " }
+
+{ M_ENTER_RETRIEVE_AS
+" ¦ci±gnij plik jako: " }
+
+{ M_ENTER_LISTING_FILENAME
+" Wpisz nazwê pliku do wylistowania: " }
+
+{ M_ENTER_NEWNAME
+" Zmieñ nazwê pliku: " }
+
+{ M_ENTER_UPLOAD_AS
+" Po¶lij plik jako: " }
+
+{ M_RENAME_FAILED
+" Nie mogê zmieniæ nazwy z `%s' na `%s' " }
+
+{ M_QUICK_SEARCH
+" szybkie szukanie: %s " }
+
+{ M_CANT_ACCESS_DRIVE
+" Napêd %c nie jest dostêpny: " }
+
+{ M_DIRECTORY_DOESNT_EXIST
+" Katalog `%s' nie istnieje " }
+
+{ M_BAD_BOOKMARK_ENTRY
+" Zak³adka o tre¶ci "
+" %s "
+" ma z³y format i bêdzie zignorowana " }
+
+{ M_DEFAULT_BMK_FOLDER
+"Adresy ogólne (utworzone domy¶lnie)" }
+
+{ M_ENTER_DESC
+" Podaj opis : " }
+
+{ M_FOLDER_TITLE
+" Folder : %s " }
+
+{ M_DELETE_BOOKMARK1
+"        Skasowaæ zak³adkê ?        " }
+
+{ M_NAME_FOLDER
+" Podaj nazwê dla nowego folderu " }
+
+{ M_DELETE_NONEMPTY_FOLDER
+" `%s' "
+" Folder nie jest pusty. Skasowaæ go? " }
+
+{ M_ENTER_FOLDER_TITLE
+" Podaj tytu³ dla folderu : " }
+
+{ M_SELECT_FOLDER
+" Wybierz folder, do którego zachowaæ zak³adkê " }
+
+{ M_FILE_TO_DOWNLOAD
+" Plik do ¶ci±gniêcia : " }
+
+{ M_CANT_CREATE_DIRECTORY
+"Nie mogê utworzyæ katalogu `%s'" }
+
+{ M_REREAD_REMOTE_DIR
+" Odczytaæ na nowo zawarto¶æ katalogu na serwerze? " }
+
+{ M_LOGOFF_MARKED
+" Zaznaczy³e¶ %d plik(i/ów) w %d katalogu(ach) "
+" Ca³kowity ich rozmiar wynosi %s bajtów. "
+" Nadal jeste¶ pewny, ¿e chcesz siê wylogowaæ? " }
+
+{ M_CANT_LOGIN
+" Nie mogê siê zalogowaæ do %s " }
+
+{ M_FILE_NOT_FOUND
+" Plik `%s' nie zosta³ znaleziony na serwerze " }
+
+{ M_TRANSFER_FAILED
+" Transfer `%s' siê nie powiód³ " }
+
+{ M_PROXY_ISNT_SPECIFIED
+" Serwer proxy firewall nie jest wpisany w NFTP.INI " }
+
+{ M_NOT_CONNECTED
+"Nie po³±czony" }
+
+{ M_INCORRECT_FIREWALL
+" Wpisano niew³a¶ciwy typ firewall'a: %d " }
+
+{ M_UNKNOWN_SERVER_OS
+" Ostrze¿enie: nieznany system operacyjny na serwerze ftp: "
+" `%s'; "
+" Lista plików mo¿e byæ nie do odczytania dla NFTP " }
+
+{ M_CONNECTING
+"£±czê siê do %s... " }
+
+{ M_CANNOT_RENAME
+" Nie mogê zmieniæ nazwy pliku z `%s' na `%s' " }
+
+{ M_DOWNLOADING
+"%s - ¶ci±gam..." }
+
+{ M_CANT_OPEN_FOR_WRITING
+" Nie mogê otworzyæ pliku `%s' do zapisu " }
+
+{ M_CHANGING_DIRECTORY
+"   Zmieniam katalog na :   "
+"   `%s'   " }
+
+{ M_CANT_OPEN_FOR_READING
+" Nie mogê otworzyæ pliku `%s' do odczytu " }
+
+{ M_CANT_WRITE_LOGFILE
+" Ostrze¿enie: nie mogê pisaæ do logu `%s' " }
+
+{ M_CANT_GUESS_CURDIR
+" Nie mogê okre¶liæ bie¿±cego katalogu na serwerze ftp " }
+
+{ M_CANT_READ_FILE
+" Nie mogê odczytaæ pliku `%s' " }
+
+{ M_UPLOADING
+"%s - posy³am..." }
+
+{ M_ALREADY_BOOKMARKED
+" Adres `%s' jest ju¿ zapisany jako zak³adka "
+" (katalog `%s'). Dodaæ go mimo wszystko? " }
+
+{ M_EDIT1
+"Serwer[:port]katalog" }
+
+{ M_EDIT2
+"U¿ytkownik/has³o/prze³±czniki" }
+
+{ M_EDIT3
+"Opis adresu" }
+
+{ M_CONNECTION_OK
+"       Po³±czenie jest prawid³owe        " }
+
+{ M_MARKED_STATISTICS
+"    %d plik(i/ów) w %d katalogu(ach); %s bajtów w sumie    " }
+
+#  ---------------------------------------------------------- new in 1.10
+
+{ M_STARTING_TRANSFER
+"     Zaczynam transfer...     " }
+
+{ M_KEEP_TREE_INTACT
+" Zaznaczy³e¶ %d plik(i/ów) w %d podkatalogu(ach). "
+" Ca³kowity rozmiar wynosi %s bajtów. "
+""
+" Zachowaæ strukturê katalogów podczas przesy³ania plików? " }
+
+{ M_KEEP_TREE2
+"         Zachowaj podkatalogi        "
+" Zachowaj wszystko w jednym katalogu " }
+
+{ M_OVERWRITE_RENAME_CANCEL4
+" Nadpisz plik lokalny "
+" Zmieñ nazwê pliku lokalnego "
+" Pomiñ ten plik " }
+
+{ M_REGET_RENAME_CANCEL5
+" Kontynuuj "
+" Nadpisz plik lokalny "
+" Zmieñ nazwê pliku lokalnego "
+" Pomiñ ten plik " }
+
+{ M_RESP_BIND_FAILED
+"B³±d sieci (komenda bind() siê nie powiod³a)" }
+
+{ M_RESP_LISTEN_FAILED
+"B³±d sieci (komenda listen() siê nie powiod³a)" }
+
+{ M_RESP_GETSOCKNAME_FAILED
+"B³±d sieci (komenda getsockname() siê nie powiod³a)" }
+
+{ M_RESP_CANNOT_CONNECT
+"Nie mogê siê po³±czyæ, aby przesy³aæ dane" }
+
+{ M_RESP_CONNECTION_NOT_ESTABLISHED
+"Serwer nie nawi±za³ po³±czenia" }
+
+{ M_RESP_TRANSFER_SKIPPED
+"Pominiêto plik `%s'" }
+
+{ M_WALK_TREE
+" Przetworzyæ ca³e drzewo katalogów zaczynaj±c od "
+" `%s' ? " }
+
+{ M_NO_MARKED_FILES
+" Nie ma ¿adnych zaznaczonych plików w podkatalogach " }
+
+{ M_HAVENT_BEEN_CONNECTED
+"jeszcze siê nie po³±czono" }
+
+{ M_DIRECTORY_LISTING
+"Lista plików w katalogu" }
+
+{ M_LARGE_INDEX_FILE
+"  Uwaga: plik `%s' zawieraj±cy opisy plików  "
+"  ma %s bajtów. Nadal chcesz go ¶ci±gn±æ?  " }
+
+{ M_LOAD_DESCRIPTIONS
+" Za³adowaæ opisy z `%s' ? " }
+
+{ M_CANT_USE_DIR_AS_INDEX_FILE
+" Nie mogê za³adowaæ opisów z katalogu `%s'. "
+" Ustaw kursor na zwyk³ym pliku. " }
+
+{ M_RESP_CONNECTING
+"£±czê siê do %s..." }
+
+{ M_DOWNLOADING1
+"%s - DL %lu%% z %.2f KB/s" }
+
+{ M_UPLOADING1
+"%s - UL %lu%% z %.2f KB/s" }
+
+{ M_DESC_DOWNLOAD_OPTIONS
+"  Tak  "
+"  Nie  "
+" Nigdy " }
+
+# ----------------------------------------- new in 1.21 -------------
+
+{ M_RESP_CANT_OPEN
+"Nie mogê otworzyæ pliku %s" }
+
+{ M_NO_EMAIL_ADDRESS
+""
+"Ostrze¿enie: adres e-mail nie zosta³ znaleziony w pliku %s."
+"" }
+
+{ M_GUESSED_EMAIL
+"U¿ywam %s jako has³o dla po³±czeñ anonimowych."
+"Wci¶nij ENTER aby kontynuowaæ..."
+"" }
+
+{ M_CANT_GUESS_EMAIL
+"Nie mogê znale¼æ nazwy lokalnego serwera"
+"lub identyfikatora u¿ytkownika; proszê wpisaæ"
+"w³a¶ciwy adres e-mail do %s. Bêdzie on wykorzystywany"
+"do po³±czeñ anonimowych."
+"" }
+
+{ M_INI_CONFIG_VERSION
+""
+"Twoj obecny plik konfiguracyjny %s, ma wersjê %s."
+"Wersja programu NFTP to %s."
+"" }
+
+{ M_INI_CANT_FIND_NFTP_I
+"Nie mogê znale¼æ nftp.i aby uaktualniæ nftp.ini"
+"ani w `%s' ani w `%s' !"
+"" }
+
+{ M_INI_UPDATE
+"Zamierzan uaktualniæ `%s'"
+"na podst.            `%s'"
+"Kontunuowaæ? [Ynq]" }
+
+{ M_INI_UPDATING
+""
+"Uaktualniam %s z %s..."
+"" }
+
+{ M_INI_CANT_OPEN_READ
+"Nie mogê otworzyæ %s do odczytu"
+"" }
+
+{ M_INI_CANT_OPEN_WRITE
+"Nie mogê otworzyæ %s do zapisu"
+"" }
+
+{ M_INI_WRONG_ENTRY
+"B³±d -- pozycja poza sekcj±:"
+"%s" }
+
+{ M_INI_CANT_RENAME
+"Nie mogê zmieniæ nazwy `%s' na `%s'"
+"" }
+
+{ M_INI_BACKUP
+""
+"Kopia zapasowa         %s"
+"zosta³a zachowana jako %s"
+"" }
+
+{ M_INI_UPDATING_ENTRY
+"uaktualniam: %s"
+"" }
+
+{ M_INI_FINISHED
+""
+"Aktualizacja zakoñczona; wci¶nij ENTER aby kontynuowaæ..." }
+
+# ----------------------------------------- new in 1.22 -------------
+
+{ M_RESP_CANT_CREATE_DIRECTORY
+"Nie mogê utworzyæ katalogu `%s'" }
+
+{ M_INFORMATION1
+" %d plik(i/ów) w %d katalogu(ach); %s bajtów w sumie "
+""
+" Adres URL dla bie¿±cego pliku: "
+" %s "}
+
+{ M_INFORMATION2
+" %d plik(i/ów) w %d katalogu(ach); %s bajtów w sumie "
+""
+" Zachowaæ bie¿±cy adres URL do schowka? "
+" %s "}
+
+{ M_HLP_HISTORY
+""
+" Historia po³±czeñ: adresy i katalogi"
+""
+" Ostatnio odwiedzane adresy s± ustawione na pierwszym miejscu."
+" Plik historii s³u¿y tak¿e jako bufor nazw DNS (s± tu zapisane"
+" adresy numeryczne IP). Gwiazdka przy nazwie u¿ytkownika wskazuje"
+" na to, ¿e ta pozycja ma zapisane has³o w pliku. Nazwa u¿ytkownika"
+" nie jest widoczna dla po³±czeñ anonimowych. Prze³±czniki mog±"
+" znajdowaæ siê bezpo¶rednio po identyfikatorze u¿ytkownika"
+" (wiêcej o prze³±cznikach mo¿na przeczytaæ w FAQ)."
+""
+" Dzia³anie systemu historii po³±czeñ mo¿e byæ zmienione za pomoc±"
+" parametrów w pliku nftp.ini. Mo¿na tam ustawiæ ograniczenie"
+" na ilo¶æ zapamiêtanych adresów serwerów i liczbê katalogów."
+" Nadmiarowe pozycje jak równie¿ i duplikaty s± kasowane"
+" podczas otwierania okna z histori± po³±czeñ. NFTP mo¿e tak¿e"
+" zapamiêtaæ has³o (jest ono zapamiêtane w formie zaszyfrowanej"
+" lecz nie trudnej do z³amania). Domy¶lnie zapisywane s± tranfery"
+" logowania i wylogowania. NFTP mo¿e zapisywaæ, je¶li mu siê"
+" wska¿e, tak¿e wszystkie przegl±dane katalogi."
+
+""
+" Poruszanie siê jest podobne do okna zak³adek. Wci¶niêcie klawisza"
+" Enter powoduje wybranie serwera lub aktywowanie pozycji. Escape"
+" zamyka okno lub opuszcza wy¶wietlanie zawarto¶ci katalogu."
+" Strza³ki w prawo/lewo mog± byæ u¿ywane zamiast Enter/Esc."
+" Klawiszem Del mo¿na skasowaæ katalog lub adres serwera"
+" (i wszystkie jego katalogi) pod¶wietlony belk± kursora."
+"" }
+
+{ M_PROCESSING_HISTORY1
+" Analizujê historiê po³±czeñ; etap %u..." }
+
+{ M_PROCESSING_HISTORY2
+" Analizujê historiê po³±czeñ; etap %u: %u wpisów zanalizowano" }
+
+{ M_READING_HISTORY_FILE
+" Czytam plik historii;  %u linii odczytano" }
+
+{ M_WRITING_HISTORY_FILE
+" Zapisujê plik historii; %u linii zapisano" }
+
+{ M_ERROR_READING_HISTORY
+" B³±d w odczycie pliku historii %s " }
+
+{ M_EMPTY_HISTORY
+" Plik historii %s jest pusty " }
+
+{ M_SAVE_HISTORY
+" Zachowaæ zmiany w pliku historii? " }
+
+{ M_HIST_HEADER1
+" Historia: %u serwerów, %u pozycji w sumie " }
+
+{ M_HIST_HEADER2
+" Historia: %s, %u katalogów " }
+
+{ M_HIST_DELETE_DIR
+" %s:%s "
+" Skasowaæ pozycjê z katalogiem? " }
+
+{ M_HIST_DELETE_SITE
+" %s "
+" Skasowaæ adres zawieraj±cy %u pozycji katalogów? " }
+
+# ------------------------------------------------------ new/updated in 1.23
+
+{ M_HLP_USING_MENU
+"  "
+" Menu"
+""
+" Menu ma s³u¿yæ jako szybkie doj¶cie do podzielonych na grupy funkcje NFTP."
+" Aby przej¶æ do menu nale¿y wcisn±æ F9 lub Ctrl-F (mo¿na to przedefiniowaæ"
+" w pliku nftp.ini). U¿yj strza³ek aby poruszaæ siê po menu. Klawisz Esc"
+" powoduje przej¶cie do menu wy¿szego poziomu. Je¶li chcesz tylko u¿ywaæ"
+" klaiwszy szybkiego reagowania dostêpnych z menu, to aby nie rozwijaæ menu"
+" po jego wywo³aniu klawiszem F9, nale¿y ustawiæ parametr `Menu-open-submenu'"
+" w pliku nftp.ini na -1. Za pomoc± tego parametru mo¿na tak¿e ustawiæ"
+" rozwijanie innego menu ni¿ (domy¶lnie) `Po³±czenia'."
+
+"" }
+
+{ M_RESP_F9_FOR_MENU
+"Wci¶nij F9 lub Ctrl-F aby rozwin±æ menu" }
+
+{ M_BOOKMARK_NICKNAME
+" Nazwa `%s' "
+" nie zosta³a znaleziona w¶ród zak³adek " }
+
+{ M_SELECT_BOOKMARK
+" Wybierz zak³adkê " }
+
+{ M_HISTORY_NICKNAME
+" Nazwa `%s' "
+" nie zosta³a znaleziona w historii po³±czeñ " }
+
+{ M_SELECT_HISTORY
+" Wybierz pozycjê z historii po³±czeñ " }
+
+{ M_USAGE0
+"Parametry opcjonalne : "}
+
+{ M_USAGE1
+"po³±cz siê z adresem URL" }
+
+{ M_USAGE2
+"¶ci±gnij (G,g) lub po¶lij (P,p) plik-URL" }
+
+{ M_USAGE3
+"uruchom transfery zapisane w pliku cmdfile.txt" }
+
+{ M_USAGE4
+"szukaj s³owa `word' w zak³adkach(z) lub historii(h)" }
+
+{ M_USAGE5
+"Adres URL powinien mieæ postaæ "
+"[ftp://][u¿ytkownik[:has³o]@]serwer[:port]katalog/plik,"
+"np. ftp://asv:password@crydee.sai.msu.ru:21/home/asv/plik.txt"
+"lub   crydee.sai.msu.su/pub/comp/software/asv/nftp/nftp-LATEST-os2.zip" }
+
+# ----------------------------------------------------------------- new in 1.40
+
+{ M_SITE_EDIT1
+"Nazwa Serwera" }
+
+{ M_SITE_EDIT2
+"Identyfikator (Login)" } 
+
+{ M_SITE_EDIT3
+"Has³o" }
+
+{ M_SITE_EDIT4
+"Port" }
+
+{ M_SITE_EDIT5
+"Katalog" }
+
+{ M_SITE_EDIT6
+"Prze³±czniki (patrz FAQ)" }
+
+{ M_PASSWORDED_WGET
+" Próbujesz ¶ci±gn±æ pliki przez WGET z nieanonimowego adresu ftp. "
+" Domy¶lnie takie ¶ci±ganie jest niedostêpne z powodów bezpieczeñstwa; "
+" mo¿esz to odblokowaæ w pliku nftp.ini" }
+
+{ M_WGET_DOWNLOAD_ONE
+" ¦ci±gn±æ plik %s za pomoc± zewnêtrznego programu? " }
+
+{ M_WGET_DOWNLOAD_MANY
+" ¦ci±gn±æ %d plik(i/ów) w %d katalogu(ach); "
+" w sumie %s bajtów poprzez zewnêtrzny program? " }
+
+{ M_CONFIRM_COMMAND
+" Uruchom program/komendê: " }
+
+{ M_USETAB2
+" U¿yj Tab/Shift-Tab lub strza³ek w górê/dó³ aby zmieniæ aktywne pole "}
+
+# ------------------------------------------------- new since 1.50
+
+{ M_CANCEL
+" Zrezygnuj " }
+
+{ M_FTPS_RECEIVING
+"  %s: ¶ci±gam wynik...   "
+"  Wci¶nij ESC aby przerwaæ  "
+"  %s znalezionych rekordów (w sumie) " }
+
+{ M_FTPS_NO_HITS
+"  Nie znaleziono `%s'...   " }
+
+{ M_FTPS_SERVERS
+" Serwery FTP Search " }
+
+{ M_FTPS_ADD_SERVER
+" Jak± nazwê serwera FTP Search dodaæ " }
+
+{ M_FTPS_DELETE
+" Skasowaæ `%s' ? " }
+
+{ M_QUERYING
+"zapytujê %s..." }
+
+{ M_FTPS_SENDING_REQUEST
+"  Posy³am zapytanie do %s...   " }
+
+{ M_FTPS_SEARCHRES
+" Rezultat szukania (%u trafieñ) " }
+
+{ M_DIR_SIGN
+"<KAT>" }
+
+{ M_LINK_SIGN
+"<LNK>" }
+
+{ M_SEARCH_FORWARD
+" Szukaj nastêpne " }
+
+{ M_SEARCH_BACKWARDS
+" Szukaj poprzednie " }
+
+{ M_CANT_FIND
+" Nie mogê znale¼æ '%s' " }
+
+{ M_SELECT_LANGUAGE
+" Wybierz jêzyk " }
+
+{ M_REGISTRATION_NAME
+"Nazwa rejestrowanego" }
+
+{ M_REGISTRATION_CODE
+"Kod rejestracji" }
+
+{ M_THANKS
+" Dziêkujê za rejestracjê NFTP! " }
+
+{ M_FTPS_NEED_ARGS
+" Mo¿esz wybraæ tylko jeden sposób szukania  "
+" 'dok³adny', 'ci±g znaków', 'maska' lub 'wyra¿enie regularne' " }
+
+{ M_FTPS_SEARCH1
+"Dok³adne szukanie" }
+
+{ M_FTPS_SEARCH2
+"Szukanie wg ci±gu znaków (substring)" }
+
+{ M_FTPS_SEARCH3
+"Szukanie wg maski (wildcard)" }
+
+{ M_FTPS_SEARCH4
+"Szukanie wg wyra¿enia regularnego" }
+
+{ M_FTPS_SEARCH5
+"Rozró¿niaæ ma³e/wielkie litery?" }
+
+{ M_FTPS_SEARCH6
+"Wykluczyæ pliki/katalogi" }
+
+{ M_FTPS_SEARCH7
+"Ograniczenie do domen" }
+
+{ M_FTPS_SEARCH8
+"Wykluczyæ domeny" }
+
+{ M_FTPS_SEARCH9
+"Ukryj Slackware/RedHat/FreeBSD/itd." }
+
+{ M_FTPS_SEARCH10
+"Maks. liczba trafieñ" }
+
+{ M_HLP_SITE_EDIT
+"Parametry Serwera"
+""
+"Dla anonimowych serwerów pozostaw puste pola 'u¿ytkownik' i 'has³o'."
+"Je¶li nie wpiszesz katalogu, serwer FTP wybierze go za Ciebie."
+"Zwykle, dla anonimowych po³±czeñ, jest to katalog g³ówny, a dla"
+"innych katalog domowy u¿ytkownika. Opis serwera jest tylko"
+"dla celów informacyjnych; opis jest wpisywany do pliku zak³adek."
+""
+"Dostêpne prze³±czniki:"
+"p - u¿ywaj trybu pasywnego po³±czenia do tego serwera. To czasem pomaga:"
+"    przy wolnych i stwarzaj±cych problemy ³±czach."
+"r - próbuj sie ³±czyæ do skutku nieskoñczon± ilo¶æ razy. W razie"
+"    b³êdu przy logowaniu, NFTP bêdzie próbowaæ ³±czyæ siê, niezale¿nie"
+"    od rodzaju b³êdu i niezale¿nie od tego czy serwer ma anonimowe FTP."
+"f - za firewall'em. Je¶li w nftp.ini jest zaznaczone, ¿e jeste¶my"
+"    za firewall'em, po³±czenia do tego serwera bêd± nadal bezpo¶rednie."
+}
+
+{ M_HLP_FTPSEARCH
+"System FTP Search"
+""
+"'Dok³adne szukanie' szuka dok³adnej nazwy pliku lub katalogu;"
+"przyk³ad: nftp141o.zip"
+""                                                                     
+"'Ci±g znaków' przeszukuje nazwy plików i katalogów, zwracaj±c te,"
+"w których znajd± podany ci±g znaków;"
+"przyk³ad: nftp14"
+""
+"'Maska' (wildcard) u¿ywa gwiazdki '*' i pytajnika '?' w sposób w jaki"
+"s± one zwykle traktowane w linii komend pow³oki Unix'a (tj. * oznacza"
+"dowoln± liczbê znaków, tak¿e zero; ? oznacza dok³adnie jeden znak);"
+"przyk³ady: nftp*.zip albo nftp1??o.zip"
+""                                                                     
+"'Wyra¿enie regularne' najbardziej pomocne, ale wymagaj±ce nieco"
+"æwiczeñ; na przyk³ad: nftp1\.[4-9][0-9]o\.zip znajdzie wszystkie"
+"wersje 1.xx NFTP dla OS/2, zaczynaj±c od wersji 1.40. Wiêcej informacji"
+"o wyra¿eniach regulanych mo¿na znale¼æ np. w bibliotece GNU rx."
+""
+"'Rozpoznawanie ma³ych/wielkich liter' dzia³a tylko w trybie 'ci±g znaków'"
+""
+"Mo¿na tak¿e zastosowaæ dodatkowe kryteria: wykluczyæ z przeszukiwania"
+"katalogi, ograniczyæ szukanie do okre¶lonych domen i wykluczyæ"
+"przeszukiwanie bezp³atnych dystrybucji systemu Unix, które zawieraj±"
+"zwykle wiele trafieñ, których nie chcemy. Wielokrotne wpisy musz±"
+"byæ oddzielone odstêpami."
+""                                                                     
+"Nie zaleca siê wpisywaæ du¿ej liczby jako 'Maks. liczby trafieñ'"
+"(np. 5000 trafieñ jest bezu¿yteczne; spróbuj wykluczyæ co¶, czego"
+"nie potrzebujesz). Zwykle ma sens zapytywanie tylko g³ównego serwera"
+"przeszukiwawczego ftpsearch.ntnu.no, poniewa¿ ma on zindeksowane"
+"ponad 90% ¶wiatowych zasobów. Inne serwery g³ównie s³u¿± do szukania"
+"w¶ród geograficznie bli¿szych zasobów."
+"" }
+
+{ M_FTPS_DOWNLOAD
+"  ¦ci±gn±æ "
+"  %s  "
+"  z %s?  " }
+
+{ M_HIST_CONT_SEARCH
+"  Nie mogê znale¼æ na %s. Przeszukaæ inne serwery?  " }
+
+{ M_TOO_LARGE
+"%s/%s: za du¿y dla wersji niezarestrowanej" }
+
+{ M_DISCONNECT
+"  Zerwaæ po³±czenie z serwerem %s?  " }
+
+{ M_UPLOAD_EDITED
+"    Pos³aæ zmieniony plik na serwer?    " }
+
+{ M_FONT_DESC
+"szeroko¶æ %3d, wysoko¶æ %3d (%s)" }
+
+{ M_UNSUPPORTED
+"  Nieznana funkcja dla %s  " }
+
+{ M_SELECT_FONT
+" Wybierz czcionkê " }
+
+{ M_HLP_FTPSEARCH2
+"Skróty klawiszowe w oknie wyników"
+""
+"Ctrl-P      poka¿/ukryj ¶cie¿ki"
+"Ctrl-T      poka¿/ukryj czas ostatniej zmiany"
+"Ctrl-F      szukaj poprzedni"
+"Ctrl-H      szukaj nastêpny"
+"Shift-D/F5  ¶ci±gnij plik"
+""
+"Shift-H     sortuj wg nazw serwerów"
+"Shift-N     sortuj wg nazw plików (domy¶lnie)"
+"Shift-S     sortuj wg rozmiaru plików"
+"Shift-T     sortuj wg daty/czasu zmian plików"
+"" }
+
+{ M_STALLED
+"zawieszone" }
+
+# ------------------------------------------------- new since 1.51
+
+{ M_WAIT
+""
+""
+" Proszê czekaæ %d sekund... " }
+
+{ M_UNREGISTERED
+" Ta wersja nie jest zarejestrowana "
+""
+" Aby pozbyæ siê tego komunikatu nale¿y zakupiæ licencjê, "
+" która kosztuje %d USD i uprawnia do u¿ywania obecnej "
+" i wszystkich przysz³ych wersji NFTP dla wszystkich platform. "
+" Wiêcej informacji mo¿na znale¼Æ pod adresem "
+" http://www.ayukov.com/nftp/buy.html %s" }
+
+{ M_PRESS_ENTER
+" Wci¶nij ENTER aby kontynuowaæ " }
+
+{ M_HTTP_PROXY
+"  Nie dzia³a poprzez proxy HTTP " }
+
+{ M_ENUMERATING_FONTS
+" Zliczam czcionki...  " }
+
+# ------------------------------------------------- new since 1.60
+
+{ M_SCRIPT_BADCOMMAND
+"Nieznana komenda: %s" }
+
+{ M_SCRIPT_BADARGS
+"Ta komenda wymaga %d argument(ów) (znaleziono tylko %d)" }
+
+{ M_SCRIPT_ERROR
+"B³±d; wykonywanie skrytu zosta³o zatrzymane" }
+
+{ M_SCRIPT_CANT_OPEN
+"Nie mogê otworzyæ pliku ze skryptem `%s'" }
+
+{ M_SCRIPT_RUNNING
+"SKRYPT: %s %s" }
+
+{ M_SCRIPT_INVALID_VAR
+"Nieprawid³owa zmienna: %s" }
+
+{ M_SCRIPT_CANT_OPEN_LOG
+"Nie mogê otworzyæ logu `%s'" }
+
+{ M_RESP_CONNECTING2
+"£±czê siê do %s: Esc - przerwij, Spacja - wznów..." }
+
+{ M_RESP_ACCEPTING
+"Czekam na po³±czenie na porcie nr %d: Esc - przerwij, Spacja - wznów..."}
+
+{ M_RESP_ACCEPTED
+"Po³±czenie z %s zaakceptowane" }
+
+{ M_PAUSED
+"Wstrzymane; wci¶nij P aby kontynuowaæ" }
+
+{ M_SQRP
+"S/Q/R/P = S(opu¶æ)/Q(zakoñcz)/R(wznów)/P(wstrzymaj)" }
+
+{ M_TOTAL        "W sumie" }
+{ M_TRANSFERRED  "Przes³ane" }
+{ M_SKIPPED      "Opuszczone" }
+{ M_LEFT         "Pozosta³o" }
+{ M_INACT        "sekund od ostatniego pakietu" }
+
+{ M_NO_FIREWALLING
+"Ani firewall ani proxy nie zosta³y ustawione w nftp.ini" }
+
+{ M_HLP_PASSWORDS
+"Klawisze szybkiego reagowania dla okna z has³ami"
+""
+"Insert - utwórz nowy rekord z has³em"
+"Delete - skasuj rekord z has³em"
+"Ctrl-E - edytuj rekord"
+"Ctrl-P - poka¿/ukryj has³a"
+""
+"Enter  - zaloguj siê do serwera"
+"" }
+
+{ M_DEL_UNMATCHED
+"   Kasujê niepasuj±ce pliki...   " }
+
+{ M_ENTER_LISTNAME
+"Wpisz nazwê pliku do zapisania listy:" }
+
+{ M_SYNC1
+"Zsynchronizowaæ lokalny katalog ze zdalnym?"
+""
+"zdalny   %s ->"
+"lokalny  %s"
+"" 
+"NFTP ¶ci±gnie pliki" }
+
+{ M_SYNC2
+"Zsynchronizowaæ zdalny serwer z lokalnym katalogiem?"
+""
+"lokalny  %s ->"
+"zdalny   %s"
+""
+"NFTP po¶le pliki" }
+
+{ M_SYNC3
+"Katalogi wygl±daja na identyczne" }
+
+{ M_PASS_UNSUPPORTED
+"Wersja (%d) pliku z has³ami jest nieaktualna" }
+
+{ M_PASS_ENTER_KEYPHRASE1
+"Wprowad¼ has³o, aby odszyfrowaæ plik z has³ami" }
+
+{ M_PASS_INVALID
+"%s"
+"Plik z has³ami ma nieprawid³ow± zawarto¶æ" }
+
+{ M_PASS_ENTER_KEYPHRASE2
+"Wprowad¼ has³o, które bêdzie u¿ywane do szyfrowania pliku z has³ami" }
+
+{ M_PASSWORDS
+"Has³a" }
+
+{ M_PASS_SAVE
+"Zachowaæ zmiany w pliku z has³ami?" }
+
+{ M_PASS_DELETE
+"%s @ %s"
+"Skasowaæ ten login i has³o?" }
+
+{ M_DISK_FULL
+" %s "
+" B³±d zapisu do pliku (dysk przepe³niony?) " }
+
+{ M_REGISTERED
+"Zarejestrowano na %s" }
+
+{ M_UNREGISTERED2
+"Niezarejestrowano (%d dni od pierwszego uruchomienia)" }
+
+{ M_FTPS_RECEIVING2
+"¦ci±gam dane z %s...   "
+"Znaleziono w sumie:         %s"
+"Znaleziono na tym serwerze: %s"
+"Wci¶niej ESC aby przerwaæ szukanie" }
+
+{ M_FTPS_NO_HITS2
+"Nic nie zosta³o znalezione" }
+
+{ M_FTPS_NORES
+"Przeszukiwanie jeszcze nie rozpoczête" }
+
+{ M_ENABLE_PASSWORDS
+"Proszê w³±czyæ zapamiêtywanie hase³ w nftp.ini" }
+
+{ M_NEEDBF
+"To jest u¿ywane tylko z motod±(ami) %s (patrz nftp.ini)" }
+
+{ M_PASS_INCORRECT
+"Has³o jest nieprawid³owe"}
+
+{ M_BYTESSEC "bajtów/sek" }
+
+{ M_DOWNLOAD "¶ci±ganie" }
+
+{ M_UPLOAD "posy³anie" }
+
+{ M_COMMUNICATING
+"Kontaktujê siê z serwerem..." }
+
+# will look like: " 23% done (download, binary)"
+{ M_PERCENTAGE1 "%9u%% (%s, %s)" }
+
+# will look like: " 23% done (download, binary) (3 of 15 files)"
+{ M_PERCENTAGE2 "%9u%% (%s, %s) (%d z %d plików)" }
+
+
+# ------------------------------------------------- new since 1.61
+
+{ M_TR_OVERWRITE  "Nadpisz" }
+{ M_TR_RESUME     "Wznów" }
+{ M_TR_SKIP       "Pomiñ" }
+{ M_TR_CANCEL     "Anuluj" }
+
+{ M_TR_QUESTION
+"Plik docelowy ju¿ istnieje!"
+"Sugerowana akcja: %s"
+""
+"Zdalnie:   %s in %s"
+"Lokalnie:  %s in %s"
+""
+"Plik ¼ród³owy  : %s bajtów, %2d %s %4d  %02d:%02d:%02d"
+"Plik istniej±cy: %s bajtów, %2d %s %4d  %02d:%02d:%02d" }
+
+# ------------------------------------------------- new since 1.62
+
+{ M_DELETE_FILES
+"Zaznaczy³e¶ %d pliki(ów)."
+"     Na pewno je skasowaæ?" }
+
+{ M_NOT_EMPTY
+"Katalog `%s' nie jest pusty."
+"Skasowaæ go razem z zawarto¶ci±?" }
+
+{ M_ALL "Wszystko" }
+
+{ M_DELETING
+"  Kasujê %s...  " }
+
+{ M_NO_CHMOD
+"Serwer FTP nie rozpoznaje komendy SITE CHMOD" }
+
+{ M_ACCESSRIGHTS1
+"Prawa dostêpu dla %d plików" }
+
+{ M_ACCESSRIGHTS2
+"Prawa dostêpu dla %s" }
+
+{ M_WRONG_RIGHTS
+"Nieprawid³owe prawa dostêpu: [%s]"
+"W³a¶ciwy format:             [rwxrwxrwx]" }
+

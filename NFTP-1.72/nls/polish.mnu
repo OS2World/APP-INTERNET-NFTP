@@ -1,0 +1,157 @@
+#
+# see syntax explanations in english.mnu if interested
+#
+
+main
+{
+    {SUBMENU, "Po³±&czenia",   Sites}
+    {SUBMENU, "&Pliki",        Files}
+    {SUBMENU, "Po&dgl±d",       View}
+    {SUBMENU, "&Transfer",  Transfer}
+    {SUBMENU, "&Opcje",      Options}
+    {SUBMENU, "Po&moc",         Help}
+}
+
+Sites
+{
+    {ACTION, "&Zak³adki...",              10}  login from bookmarks
+    {ACTION, "&Historia...",              17}  history
+    {ACTION, "Zachow&aj zak³adkê...",     35}  save host/dir as bookmark
+    {SUBMENU, "&FTP Search", FTPSearch}
+    {SUBMENU, "Has³a", Passwords}
+    {SEP}
+    {ACTION, "&Otwórz adres URL...",        18}  open URL
+    {ACTION, "Za&loguj siê...",             11}  login
+    {ACTION, "Roz³±cz siê...",            13}  log off
+    {ACTION, "&Sprawd¼ po³±czenie",       22}  send NOOP
+    {ACTION, "Po¶lij &komendê...",        24}  quote command
+    {SEP}
+    {ACTION, "Zawie¶ (tylko Uni&x)",     112}  suspend
+#   {ACTION, "Spal",                       9}  crash and burn
+    {ACTION, "&Wyj¶cie...",               14}  exit NFTP
+}
+
+Passwords
+{
+    {ACTION, "&Zmiana hase³...",             28} edit passwords
+    {ACTION, "Zmieñ &has³o szyfrowania ...", 29} change keyphrase for password encryption
+}
+
+Files
+{
+    {ACTION, "&Utwórz katalog...",                53}  create directory
+    {ACTION, "&Zmieñ nazwê...",                   54}  rename file/directory
+    {ACTION, "&Skasuj...",                        52}  delete file/dir
+    {ACTION, "Zmieñ prawa &dostêpu",              79}  change access rights
+    {SEP}
+#   {ACTION, "&Wejd¼ do katalogu",                71}  change into dir under cursor
+    {ACTION, "Zmieñ na &katalog...",              74}  input dir and change to it
+    {ACTION, "Przejd¼ do &g³ównego katalogu",     72}  change to root dir
+    {ACTION, "&Od¶wie¿ katalog",                  70}  re-read directory
+    {ACTION, "Zacho&waj zawarto¶æ katalogu...",   45}  save directory listing
+    {ACTION, "Zmieñ lokalny &napêd...",           75}  change local drive
+    {ACTION, "&Przelicz rozmiar katalogu",         57}  traverse directory and compute its size
+}
+
+View
+{
+    {ACTION, "Prze³±cz &tryb katalogu",            32}  switch between raw/parsed modes
+    {ACTION, "Prze³±cz katalog/&kontrola po³.",    30}  switch between CC and dir
+    {ACTION, "Prze³±cz zdalny/&lokalny katalog",   31}  switch between local/remote
+    {SWITCH, "Podziel &ekran",                     37}  make screen look like NC
+    {SWITCH, "Poka¿/Ukryj czas i daty",            38}  show/hide file timestamps in panels
+    {SWITCH, "&Mini status",                       39}  show/hide mini-status field
+    {SEP}
+    {ACTION, "&Podgl±d pliku",                     50}  view w/int viewer
+    {ACTION, "Podgl±d z &zewn. programem",         51}  view w/ext viewer
+    {ACTION, "£a&duj obja¶nienia...",              76}  load 00index.txt file
+    {SUBMENU, "So&rtowanie",    Sort}
+    {SEP}
+    {ACTION, "&Od¶wie¿ ekran",                     36}  repaint screen
+}
+
+Sort
+{
+    {ACTION, "Sortuj wg &nazwy",            60}  sort by name
+    {ACTION, "Sortuj wg &rozszerzenia",     61}  sort by extension
+    {ACTION, "Sortuj wg ro&zmiaru",         63}  sort by size
+    {ACTION, "Sortuj wg &daty",             62}  sort by date
+    {ACTION, "N&ie posortowane",            64}  make unsorted
+    {ACTION, "&Odwróæ porz±dek sortowania", 65}  reverse sort order
+}
+
+Transfer
+{
+    {ACTION, "&Copy...",                   77}  copy between remote/local
+#   {ACTION, "¦&ci±gaj...",                40}  download
+#   {ACTION, "¦ci±ga&j wszystko...",       42}  d/l from all dirs
+    {ACTION, "¦ci±gaj wg &nazwy...",       44}  d/l by name
+    {ACTION, "¦ci±gaj przez &WGET...",     46}  launch wget to retrieve files
+#   {ACTION, "Wczy&taj...",                41}  upload
+#   {ACTION, "Wczyt&aj wszystko...",       43}  u/l from all dirs
+    {SEP}
+    {SUBMENU, "&Zaznaczanie", Select}
+    {SUBMENU, "&Synchronizuj (Mirror)", Mirror}
+    {SWITCH, "Prze³±cz tryb &Binarny",  21}  switch ASCII/BINARY
+    {ACTION, "&Poka¿ status",                 15}  get current status
+    {SEP}
+#   {SWITCH, "Organicz transfer",          98}  limit throughput
+    {ACTION, "Opu¶æ plik",                  47}  skip file during transfer
+    {ACTION, "Zatrzymaj transfer",              48}  stop transfer
+    {ACTION, "Wznów transfer",           49}  abort and restart transfer
+    {SWITCH, "Wstrzymaj transfer",             58}  pause transfer
+}
+
+Select
+{
+    {ACTION, "Prze³±cz &zaznaczenie",           82}  select file under cursor
+    {ACTION, "Wybierz wg &maski...",            83}  select by mask
+    {ACTION, "Skasuj zaznaczenie wg mas&ki...", 84}  deselect by mask
+    {ACTION, "Zaznacz wsz&ystko",               80}  select all files
+    {ACTION, "&Skasuj zaznaczenie wszystkiego", 81}  deselect all files
+    {ACTION, "Skas&uj zazn. we wszystkich kat.",87}  deselect all files
+    {ACTION, "&Odwróæ zaznaczenie",             85}  invert selection
+    {ACTION, "Zachowaj listê zaznaczonych...",  19}  export list of marked files
+    {ACTION, "Review list of marked...",   12}  review list of marked files/dirs
+}
+
+Mirror
+{
+    {ACTION, "¦ci±&ganie...",                 66} synchronize local with remote (download)
+    {ACTION, "&Posy³anie...",                 67} synchronize remote with local (upload)
+    {SWITCH, "Zatrzymaj/Skasuj niepasuj±ce pliki",        68} switch: delete/keep unmatched files
+    {SWITCH, "Tak¿e pod&katalogi",       69} switch: synchronize subdirs?
+}
+
+Help
+{
+    {ACTION, "&Pomoc",            1}  Help
+    {ACTION, "&G³ówna pomoc",     2}  general help
+    {ACTION, "&Krótka pomoc",     3}  short help
+    {ACTION, "&U¿ywanie menu",    7}  using menus
+    {SEP}
+    {ACTION, "Uaktualnij NFTP",  90}  connect to NFTP site
+    {ACTION, "&O NFTP...",        6}  displays time of build
+}
+
+FTPSearch
+{
+    {ACTION, "&Znajd¼ przez FTP Search...",    120} find with FTPSearch
+    {ACTION, "&Ostatni rezultat szukania...", 122}, display results of last search
+    {ACTION, "&Serwery...",                   121} define FTPSearch servers
+}
+
+Options
+{
+    {SWITCH, "W³±cz/wy³±cz &proxy",        25}  enable/disable proxy
+    {SWITCH, "&U¿yj prze³±cznika",   23}  use/disable NLST with flags
+    {SWITCH, "Poka¿/Ukryj &opisy",                 34}  show/hide descriptions
+    {SWITCH, "Tryb pasywny",      26} switch passive mode on/off
+    {SWITCH, "Pokaz/Ukryj ³±cza symb.",  27}  switch symlink resolving on/off
+    {SEP}
+    {ACTION, "Edytuj us&tawienia",   16}  invoke editor on nftp.ini
+# I suggest next line should be left in English :-}
+    {ACTION, "&Language",        91}  select language
+    {ACTION, "&Czcionka...",         93}  select font for NFTP window
+    {ACTION, "&Kod rejestracji...",   92}  enter registration information
+}

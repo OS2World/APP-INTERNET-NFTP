@@ -1,0 +1,155 @@
+#
+# see syntax explanations in english.mnu if interested
+#
+
+main
+{
+    {SUBMENU, "&s Сервер", Sites}
+    {SUBMENU, "&f Файл", Files}
+    {SUBMENU, "&v Вид", View}
+    {SUBMENU, "&t Передача", Transfer}
+    {SUBMENU, "&o Настройка",   Options}
+    {SUBMENU, "&h Справка", Help}
+}
+
+Sites
+{
+    {ACTION, "&b Закладки...",                   10}  login from bookmarks
+    {ACTION, "&h Журнал...",                     17}  history
+    {ACTION, "&s Положить закладку...",          35}  save host/dir as bookmark
+    {SUBMENU, "&f FTP Search поиск", FTPSearch}
+    {SUBMENU, "&p Пароли...", Passwords}
+    {SEP}
+    {ACTION, "&u Соединиться с URL...",             18}  open URL
+    {ACTION, "&l Соединиться...",                 11}  login
+    {ACTION, "&o Отсоединиться...",              13}  log off
+    {ACTION, "&c Проверить соединение",          22}  send NOOP
+    {ACTION, "&e Послать команду...",            24}  quote command
+    {SEP}
+    {ACTION, "  Приостановить (только Юникс)", 112}  suspend
+#   {ACTION, "  Взорваться и сгореть",            9}  crash and burn
+    {ACTION, "&x Выход...",                      14}  exit NFTP
+}
+
+Passwords
+{
+    {ACTION, "&e Редактировать пароли...",   28} edit passwords
+    {ACTION, "&k Изменить шифровочный пароль...", 29} change keyphrase for password encryption
+}
+
+Files
+{
+    {ACTION, "&m Создать каталог...",                53}  create directory
+    {ACTION, "&e Переименовать...",                  54}  rename file/directory
+    {ACTION, "&d Удалить...",                        52}  delete file/dir
+    {ACTION, "&a Изменить права доступа",             79}  change access rights
+    {SEP}
+    {ACTION, "&c Перейти в каталог...",              74}  input dir and change to it
+    {ACTION, "&o Перейти в корневой каталог",        72}  change to root dir
+    {ACTION, "&r Перечитать каталог",                70}  re-read directory
+    {ACTION, "&l Записать листинг каталога...",      45}  save directory listing
+    {ACTION, "&i Сменить локальный диск...",         75}  change local drive
+    {ACTION, "&s Подсчитать размер каталога",        57}  traverse directory and compute its size
+}
+
+View
+{
+    {ACTION, "&d Режим показа каталога",               32}  switch between raw/parsed modes
+    {ACTION, "&c Управляющее соединение",              30}  switch between CC and dir
+    {ACTION, "&r Удаленные/локальные файлы",           31}  switch between local/remote
+    {SWITCH, "&p Две панели",                          37}  make screen look like NC
+    {SWITCH, "&t Показывать даты файлов",              38}  show/hide file timestamps in panels
+    {SWITCH, "&m Мини-статус",                         39}  show/hide mini-status field
+    {SEP}
+    {ACTION, "&v Посмотреть содержимое файла",         50}  view w/int viewer
+    {ACTION, "&w Посмотреть файл внешней программой",  51}  view w/ext viewer
+    {ACTION, "&l Загрузить описания...",               76}  load 00index.txt file
+    {SUBMENU, "&s Сортировка", Sort}
+    {SEP}
+    {ACTION, "  Обновить экран",                      36}  repaint screen
+}
+
+Sort
+{
+    {ACTION, "&n По имени",          60}  sort by name
+    {ACTION, "&x По расширению",     61}  sort by extension
+    {ACTION, "&s По размеру",        63}  sort by size
+    {ACTION, "&t По времени",        62}  sort by date
+    {ACTION, "&u Без сортировки",    64}  make unsorted
+    {ACTION, "&r Обратить порядок",  65}  reverse sort order
+}
+
+Transfer
+{
+    {ACTION, "&Copy...",                   77}  copy between remote/local
+#   {ACTION, "&d Скачать...",                 40}  download
+#   {ACTION, "&e Скачать все...",             42}  d/l from all dirs
+    {ACTION, "&n Скачать по имени...",        44}  d/l by name
+    {ACTION, "&w Скачать с помощью WGET...",     46}  launch wget to retrieve files
+#   {ACTION, "&u Закачать...",                41}  upload
+#   {ACTION, "&v Закачать все...",            43}  u/l from all dirs
+    {SEP}
+    {SUBMENU, "&s Пометить", Select}
+    {SUBMENU, "&m Зеркалирование", Mirror}
+    {SWITCH, "&b Двоичный",         21}  switch ASCII/BINARY
+    {ACTION, "&o Информация",                 15}  get current status
+    {SEP}
+#    {SWITCH, "  Ограничить траффик",           98}  limit throughput
+    {ACTION, "  Пропустить файл",                  47}  skip file during transfer
+    {ACTION, "  Остановить передачу",              48}  stop transfer
+    {ACTION, "  Перезапустить передачу",           49}  abort and restart transfer
+    {SWITCH, "  Пауза",             58}  pause transfer
+}
+
+Select
+{
+    {ACTION, "&s Отметить",                   82}  select file under cursor
+    {ACTION, "&m Отметить по маске...",       83}  select by mask
+    {ACTION, "&k Снять отметку по маске...",  84}  deselect by mask
+    {ACTION, "&a Отметить все",               80}  select all files
+    {ACTION, "&l Снять все отметки",          81}  deselect all files
+    {ACTION, "&r Снять все отметки везде",    87}  deselect all files
+    {ACTION, "&i Обратить отметки",           85}  invert selection
+    {ACTION, "  Записать список отмеченных...",   19}  export list of marked files
+    {ACTION, "Review list of marked...",   12}  review list of marked files/dirs
+}
+
+Mirror
+{
+    {ACTION, "&d Через скачивание...",               66} synchronize local with remote (download)
+    {ACTION, "&u Через закачивание...",                 67} synchronize remote with local (upload)
+    {SWITCH, "  Удалять несовпадающие файлы",        68} switch: delete/keep unmatched files
+    {SWITCH, "  Обрабатывать подкаталоги",       69} switch: synchronize subdirs?
+}
+
+Help
+{
+    {ACTION, "&h Справка",             1}  Help
+    {ACTION, "&m Общая информация",        2}  general help
+    {ACTION, "&c Краткий курс",     3}  short help
+    {ACTION, "&u Использование меню",      7}  using menus
+    {SEP}
+    {ACTION, "  Новые версии NFTP",       90}  connect to NFTP site
+    {ACTION, "&a О программе...",    6}  displays time of build
+}
+
+FTPSearch
+{
+    {ACTION, "&f Искать файл...", 120} find with FTPSearch
+    {ACTION, "&r Результат предыдущего поиска...", 122}, display results of last search
+    {ACTION, "&s Поисковые серверы...", 121} define FTPSearch servers
+}
+
+Options
+{
+    {SWITCH, "&p Брандмауер/proxy", 25}  enable/disable proxy
+    {SWITCH, "  Использовать флажки",  23}  use/disable NLST with flags
+    {SWITCH, "  Показывать описания",  34}  show/hide descriptions
+    {SWITCH, "  Passive mode",      26} switch passive mode on/off
+    {SWITCH, "  Resolve symlinks",  27}  switch symlink resolving on/off
+    {SEP}
+    {ACTION, "&t Установки",                16}  invoke editor on nftp.ini
+    {ACTION, "  Язык (&language)...",                     91}  select language
+    {ACTION, "&f Шрифт...", 93} select font for NFTP window
+    {ACTION, "&r Регистрационный код...",   92}  enter registration information
+}

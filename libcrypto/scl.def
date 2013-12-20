@@ -1,0 +1,30 @@
+LIBRARY scl INITINSTANCE
+DESCRIPTION 'scl 1.0 (C) Sergey Ayukov'
+
+DATA MULTIPLE NONSHARED
+
+EXPORTS
+
+rsa_keypair     @100
+rsa_encode      @101
+rsa_decode      @102
+rsa_verify      @103
+rsa_sign        @104
+
+sha1            @200
+sha1x           @201
+
+bf_encrypt         @300
+bf_decrypt         @301
+bf_setkey          @302
+blowfish_setkey    @303
+blowfish_encrypt   @304
+blowfish_decrypt   @305
+
+rand_cleanup       @400
+rand_seed          @401
+rand_bytes         @402
+
+eg_keypair         @500
+eg_encode          @501
+eg_decode          @502

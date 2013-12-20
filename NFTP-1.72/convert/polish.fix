@@ -1,0 +1,37 @@
+From makler@man.torun.pl Sat Mar  4 14:04:15 2000
+Date: Thu, 24 Feb 2000 12:41:34 +0100
+From: Piotr Klaban <makler@man.torun.pl>
+To: Sergey Ayukov <asv@ayukov.com>
+Subject: Re: NFTP under Win32 - frame problem
+
+On Thu, Feb 24, 2000 at 02:06:41PM +0000, Sergey Ayukov wrote:
+> Possible solutions I can think of right now:
+> 
+> -- use different codepage for polish.nls source (e.g., 852) and
+> convert to ISO8859-2 when necessary;
+> 
+> -- change entire process of building/distributing translations and
+> separate graphical symbols from text strings. this is what I am
+> eventually planning to do, but this might take some (very long) time;
+> 
+> -- put a special workaround to fix Polish NLS files for
+> Windows/OS2. That would solve the problem right now until previous
+> solution will be available.
+> 
+> I don't know yet what route I will choose; if you have some thoughts
+> and comments about this issue, please let me know.
+
+I think the solution no. 2 would be the best. Other languages could also have
+some problems with graphical symbols, not necessarily under Win32.
+
+I have found that the M_FILL2 symbol is also changed during the ISO-8859-2 => Cp 852
+translation phase. Then I decide to write a simple perl script, that
+excludes lines with M_graphic symbols that begins with ^\s+{.
+I enclose this small perl file to this letter.
+
+Piotr Klaban
+
+
+    [ Part 2, Text/PLAIN  39 lines. ]
+    [ Unable to print this part. ]
+

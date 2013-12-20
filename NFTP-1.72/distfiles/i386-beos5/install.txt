@@ -1,0 +1,32 @@
+
+Installing NFTP for BeOS
+------------------------
+
+This version is for Release 5 Intel ONLY, it will not run on R3-4!
+Check NFTP homepage about versions for BeOS R3-4 Intel.
+
+1. After unpacking the distribution, run install.sh from Terminal
+(don't click on it in Tracker window). Press Enter when asked.
+
+2. Documentation is available in /boot/beos/documentation/nftp 
+and from the inside of the program (press F1, Shift-K, Shift-H).
+
+3. To run NFTP, open Terminal, type "nftp" and press Enter.
+
+Instructions for setting up Russian language:
+-- get the "Lucida Console" TrueType font (it is included into 
+   Windows NT 4 distribution, for example) and install it in BeOS;
+   note that there may be several version of this font floating
+   around, pick one with a size of 107,820 bytes;
+-- select "Lucida Console" font, "ISO Latin 5" character encoding
+   in the "Settings" menu of the Terminal.
+If you are interested in getting other translations to work, please
+contact myself (asv@ayukov.com).
+
+Uninstalling NFTP for BeOS
+--------------------------
+
+1. Run /boot/beos/etc/nftp/uninstall.sh
+
+2. If you want to clean absolutely everything, delete also directory
+/boot/beos/home/.nftp (it contains initialization files and logs)

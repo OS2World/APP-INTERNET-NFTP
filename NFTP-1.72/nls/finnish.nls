@@ -1,0 +1,1606 @@
+#
+#   Language-specific file for NFTP 1.10+
+#
+#   Finnish
+#
+
+# ------------------------------------- Months --------------------------
+
+{ M_JAN "Tam" }  { M_FEB "Hel" }  { M_MAR "Maa" }  { M_APR "Huh" }
+{ M_MAY "Tou" }  { M_JUN "Kes" }  { M_JUL "Hei" }  { M_AUG "Elo" }
+{ M_SEP "Syy" }  { M_OCT "Lok" }  { M_NOV "Mar" }  { M_DEC "Jou" }
+
+{ M_HBAR              "Ä" } { M_VBAR              "³" }
+{ M_CROSS             "Å" }
+{ M_FILL1             "°" } { M_FILL2             "±" }
+{ M_FILL3             "²" } { M_FILL4             "Û" }
+{ M_LU                "Ú" } { M_RU                "¿" }
+{ M_LD                "À" } { M_RD                "Ù" }
+{ M_LT                "Ã" } { M_RT                "´" }
+{ M_UT                "Â" } { M_DT                "Á" }
+{ M_PLACEHOLDER       "ú" } { M_MARKSIGN          "*" }
+
+#  --------------------- Help screens --------------------------------------
+
+{ M_HLP_MAIN
+""
+" NFTP                     Copyright (C) Sergey Ayukov 1994-1999"
+""
+" K„„nn”s suomenkielelle: Teemu Mannermaa <wicked@clinet.fi>"
+" Lue my”s HTML dokumentaatio; se on ajantasaisempi."
+""
+" YLEISET NŽPPŽINKOMENNOT"
+""
+" Shift-H  - t„m„ ohje. Huomaa ett„ ohjej„rjestelm„ ei tue hyperteksti„"
+" F1       - asiayhteyden mukainen ohje"
+" F10      - sulje yhteys et„j„rjestelm„„n ja lopeta NFTP"
+" Ctrl-K   - sulje yhteys et„j„rjestelm„„n"
+" Ctrl-B   - avaa ja valitse j„rjestelm„ kirjanmerkkilistasta"
+" F2       - avaa ja valitse j„rjestelm„ historia listasta"
+" Ctrl-L   - kirjaudu anonymous tunnuksella uuteen j„rjestelm„„n"
+" Ctrl-N   - kirjaudu tunnus/salasana yhdistelm„ll„ uuteen j„rjestelm„„n"
+" Ctrl-W   - n„yt„ ohjelman versio"
+" Ctrl-T   - vaihda ASCII/BINARY siirtotilan v„lill„"
+" Ctrl-J   - p„ivit„ ruutu („l„ lue et„j„rjestelm„n hakemistoa uudelleen)"
+" Shift-I  - tarkista kuinka monta tiedostoa kuinka monessa hakemistossa"
+"            on valittuna t„ll„ hetkell„"
+" Shift-A  - l„het„ NO OPERATION komento (tarkistaa yhteyden toiminnan)"
+" Shift-F  - k„yt„/„l„ k„yt„ NLST komennon yhteydess„ optioita (oletus on"
+"            ett„ k„ytet„„n). Jotkut palvelimet eiv„t tue 'NLST -lLa'"
+"            komentoa. Kokeile t„t„ asetusta, jos palvelin l„hett„„"
+"            omituisia virheviestej„ ohjelman hakiessa hakemistolistaa."
+"            EI SUOSITELLA KŽYTETTŽVŽKSI."
+""
+" Huomaa, ett„ n„m„ komennot ovat k„yt”ss„ melkein aina. Monissa"
+" n„yt”iss„ on my”s monta muuta komentoa tuettuna, joten „l„ unohda"
+" k„ytt„„ F1 n„pp„int„ n„hd„ksesi asiayhteyden mukaisen ohjeen."
+"" }
+
+{ M_HLP_LINEIN
+""
+" N„pp„inkomennot kenttien muuttamiseen: "
+""
+" ESC/Enter              - peruuta/hyv„ksy"
+" Left, Right, Home, End - siirr„ kohdistinta"
+" Tab, Shift-Tab         - siirry seuraavaan/edelliseen kentt„„n (jos on)"
+" Del, Backspace         - poista kirjaimia"
+" Shift-Ins              - tuo teksti k„ytt”j„rjestelm„n leikep”yd„lt„"
+" Ctrl-Ins               - vie teksti k„ytt”j„rjestelm„n leikep”yd„lle"
+""
+" Jos painat Del n„pp„int„ juuri, kun olet siirtynyt kentt„„n, kentt„"
+" tyhjenee. Salasana kentt„„n sy”tetyt merkit eiv„t n„y ruudulla."
+"" }
+
+{ M_HLP_CC
+""
+" N„pp„inkomennot FTP:n Ohjaus Yhteys ikkunassa: "
+""
+" nuoli n„pp. - vieritt„v„t ikkunaa"
+" ESC         - hypp„„ historian loppuu (sama kuin End)"
+" Space       - vaihtaa hakemistolistaus ikkunaan"
+" Shift-Q     - l„het„ mik„ tahansa merkkijono palvelimelle"
+"               sellaisenaan (quote)"
+" Shift-C     - vaihda hakemistoa"
+""
+" Palvelimen vastaukset ovat harmaalla; l„hetetyt komennot ovat kirkkaan"
+" vihre„ll„ ja NFTP:n tilasta kertovat viestit ovat kirkkaan punaisia."
+" Žskeiset v„rit pit„v„t paikkansa, vain jos et ole muuttanut niit„"
+" 'nftp.ini' tiedostossa."
+""
+" NFTP:ss„ on sis„„nrakennettu ohjausyhteyden historia. Jos haluat n„hd„"
+" asiakas-palvelin keskustelut jatkuvasti, aseta 'auto-switch-to-control'"
+" asetus arvoon 1. Kokeile - voit jopa pit„„ siit„ (tai olla pit„m„tt„)."
+"" }
+
+{ M_HLP_DIR_RAW
+""
+" T„m„ on et„j„rjestelm„n hakemisto. Jos yhteytt„ ei ole, n„et vain"
+" mustan ruudun. Lue yleisohjeesta (Shift-H) miten otat yhteyden"
+" et„j„rjestelm„„n."
+""
+" F3         - n„yt„ valittu tiedosto, k„yt„ nopeaa sis„ist„ ohjelmaa"
+" Shift-V    - n„yt„ valittu tiedosto, k„yt„ ulkoista ohjelmaa"
+""
+" F5         - hae valittu tiedosto tai merkityt tiedostot (jos on)"
+"              et„j„rjestelm„st„ paikalliseen hakemistoon"
+" Ctrl-D     - hae kaikki merkityt tiedostot kaikista hakemistoista"
+" Shift-G    - hae tiedosto nimen mukaan (esim silloin, kun hakemiston"
+"              on lukukelvoton jostain syyst„)"
+" Shift-R    - nime„ tiedosto/hakemisto uudelleen"
+" F7         - tee hakemisto (jos sinulla on tarpeelliset oikeudet)"
+" F8         - poista valittu tiedosto (tai merkityt tiedostot, jos on)."
+"              Voit my”s poistaa hakemistoja."
+" Ctrl-R     - hae hakemistolista uudelleen (p„ivit„ hakemiston sis„lt”)"
+" Shift-O    - lataa tiedoston kuvaukset valitusta tiedostosta"
+""
+" Ctrl-A     - merkitse kaikki tiedostot hakemistossa"
+" Ctrl-X     - poista merkinn„t kaikista tiedostoista hakemistossa"
+" Insert     - lis„„/poista merkint„ valitusta tiedostosta"
+" Plus/Minus - lis„„/poista merkint„ suotimella, esim '*.zip'"
+" *          - k„„nn„ merkinn„t ymp„ri, merkitsee merkitsem„tt”m„t ja"
+"              poistaa merkinn„t merkityist„"
+" Ctrl-Y     - poista kaikki merkinn„t kaikista hakemistoista"
+""
+" nuoli n„pp.- liikuta kohdistinta (k„yt„ Ctrl-Left/Ctrl-Right n„pp„imi„"
+"              vieritt„„ksesi ikkunaa vaakatasossa vasemmalle/oikealle)"
+" \          - siirry et„j„rjestelm„n juurihakemistoon"
+" [          - siirry hakemistotasossa yl”sp„in ('cd ..')"
+" ]          - siirry valittuun hakemistoon"
+" Enter      - ------ ' ------"
+" Shift-C    - siirry annettuun hakemistoon"
+""
+" Shift-N    - lajittelu tiedoston nimen mukaan, hakemistot ensin"
+" Shift-X    - lajittelu tiedoston pidenteen mukaan, hakemistot ensin"
+" Shift-T    - lajittelu tiedoston p„iv„yksen ja sitten nimen mukaan,"
+"              hakemistot ensin"
+" Shift-S    - lajittelu tiedoston koon ja sitten nimen mukaan,"
+"              hakemistot ensin"
+" Shift-Y    - poista lajittelu, palaa alkuper„iseen tilaan"
+" Shift-E    - nouseva/laskeva lajittelu, esim. joko suuremmasta"
+"              pienemp„„n tai pienem„st„ suurempaan tiedostoon"
+""
+" F4         - tallenna t„m„ hakemisto kirjanmerkiksi"
+" Space      - vaihda FTP Ohjaus Yhteys n„ytt””n"
+" Tab        - vaihda paikallisen hakemiston sis„ll”n n„ytt””n"
+" Ctrl-O     - n„yt„/piilota tiedoston kuvaukset (jos on)"
+""
+" Voit my”s kirjoittaa jonkin tiedoston ensimm„isi„ merkkej„ ja NFTP"
+" etsii sinulle vastaavan tiedoston hakemistosta. Esim jos kirjoitat 'o',"
+" niin NFTP valitsee automaattisesti ensimm„isen o-kirjaimella alkavan"
+" tiedoston."
+""
+" Muut n„pp„inkomennot on kerrottu yleisohjeessa (Shift-H)."
+" Huomaa ett„ voit merkit„ my”s hakemistoja (kaikki tiedostot"
+" alihakemistossa tulee merkityiksi). Merkinn„t s„ilyv„t vaikka"
+" vaihdat hakemistoa."
+"" }
+
+{ M_HLP_VIEWER
+""
+" N„pp„inkomennot sis„„nrakennetussa tekstitiedostojen n„ytt”ohjelmassa:"
+""
+" nuoli n„pp„imet - vieritt„v„t n„ytt”„ (huomaa, ett„ voit vieritt„„"
+"                   n„ytt”„ my”s vaakatasossa)"
+" Ctrl-Left/Right - vierit„ n„ytt”„ vaakatasossa kymmenen merkki„"
+"                   kerralla vasemmalle/oikealle"
+" ESC             - poistu n„ytt”ohjelmasta"
+" Ctrl-F          - etsi merkkijonoa"
+" Ctrl-G          - etsi seuraava merkkijono"
+" Ctrl-W          - tallenna sis„lt” paikalliseen tiedostoon"
+""
+" Huomaa, ett„ n„ytt”ohjelma lukee tiedoston kokonaisuudessaan muistiin;"
+" mieti kaksi kertaa ennenkuin yrit„t n„ytt„„ suuren tiedoston."
+"" }
+
+{ M_HLP_LOCAL_PARSED
+""
+" T„m„ on paikallisen hakemiston sis„lt”."
+""
+" F3         - n„yt„ valittu tiedosto, k„yt„ nopeaa sis„ist„ ohjelmaa"
+" Shift-V    - n„yt„ valittu tiedosto, k„yt„ ulkoista ohjelmaa"
+""
+" F6         - l„het„ valittu tiedosto tai merkityt tiedosto (jos on)"
+"              paikallisesta hakemistosta et„j„rjestelm„„n"
+" Shift-R    - nime„ tiedosto/hakemisto uudelleen"
+" F7         - luo hakemisto"
+" F8         - poista valittu tiedosto tai hakemisto"
+" Ctrl-R     - lue hakemiston sis„lt” uudelleen levylt„ (p„ivitys lista)"
+""
+" Ctrl-A     - merkitse kaikki tiedostot hakemistossa"
+" Ctrl-X     - poista merkinn„t kaikista tiedostoista hakemistossa"
+" Insert     - lis„„/poista merkint„ valitusta tiedostosta. Hakemistoa"
+"              ei voi merkit„"
+" Plus/Minus - lis„„/poista merkint„ suotimella, esim '*.zip'"
+" *          - k„„nn„ merkinn„t ymp„ri, merkitsee merkitsem„tt”m„t ja"
+"              poistaa merkinn„t merkityist„"
+""
+" nuoli n„pp.- liikuta kohdistinta (k„yt„ Ctrl-Left/Ctrl-Right n„pp„imi„"
+"              vieritt„„ksesi ikkunaa vaakatasossa vasemmalle/oikealle)"
+" \          - siirry aseman juurihakemistoon"
+" [          - siirry hakemistotasossa yl”sp„in ('cd ..')"
+" ]          - siirry valittuun hakemistoon"
+" Enter      - ------ ' ------"
+" Shift-C    - siirry annettuun hakemistoon"
+" Shift-Z    - valitse asematunnus"
+""
+" Shift-N    - lajittelu tiedoston nimen mukaan, hakemistot ensin"
+" Shift-X    - lajittelu tiedoston pidenteen mukaan, hakemistot ensin"
+" Shift-T    - lajittelu tiedoston p„iv„yksen ja sitten nimen mukaan,"
+"              hakemistot ensin"
+" Shift-S    - lajittelu tiedoston koon ja sitten nimen mukaan,"
+"              hakemistot ensin"
+" Shift-Y    - poista lajittelu, palaa alkuper„iseen tilaan"
+" Shift-E    - nouseva/laskeva lajittelu, esim. joko suuremmasta"
+"              pienemp„„n tai pienem„st„ suurempaan tiedostoon"
+""
+" Space      - vaihda FTP Ohjaus Yhteys n„ytt””n"
+" Tab        - vaihda et„j„rjestelm„n hakemiston sis„ll”n n„ytt””n"
+""
+" Voit my”s kirjoittaa jonkin tiedoston ensimm„isi„ merkkej„ ja NFTP"
+" etsii sinulle vastaavan tiedoston hakemistosta. Esim jos kirjoitat 'o',"
+" niin NFTP valitsee automaattisesti ensimm„isen o-kirjaimella alkavan"
+" tiedoston."
+""
+" Muut n„pp„inkomennot on kerrottu yleisohjeessa (Shift-H)."
+" Huomaa, ett„ et voi merkit” hakemistoja. Paikallisten tiedostojen"
+" merkinn„t eiv„t s„ily vaihdettaessa hakemistoa/asemaa."
+"" }
+
+{ M_HLP_SHORT
+" NFTP:n n„pp„inkomennot                        [F1 - lis„ohje]"
+"                                      [Shift-H - yleinen ohje]"
+" sis„„nkirjaus/yhteyden katkaisu"
+""
+" Ctrl-B - kirjanmerkit              Ctrl-L - anonymous sis„„nkirjaus"
+" F4     - tallenna kirjanmerkki     Ctrl-N - tunnus/salasana sis„„nkirj."
+" F10    - katkaise yhteys ja lopeta F2     - historia"
+""
+" Lista n„yt”t"
+""
+" Tab     - paik./et„ hakemisto     Space   - hakemisto/yhteys"
+" Shift-Z - vaihda asematunnus      Shift-C - kirjoita uusi hakemisto"
+" Shift-N/X/T/S - nimen/pidenteen/p„iv„yksen/koon mukainen lajittelu"
+" pienet alfanumeeriset n„pp„imet - etsi n„pp„imell„ alkava tiedosto"
+""
+" Siirrot"
+""
+" F5     - hae tiedosto              F6      - l„het„ tiedosto"
+" F3     - n„yt„ teksti tiedosto     Ctrl-D  - hae merkityt tiedostot"
+" Ins    - lis„„/poista merkint„     Ctrl-A  - merkitse kaikki tiedostot"
+"" }
+
+{ M_HLP_BOOKMARK1
+""
+" Kirjanmerkki kansiot "
+""
+" Jokainen kansio voi sis„lt„„ useita kirjanmerkkej„. ENTER tai"
+" oikea nuolin„pp„in valitsee kansion, ESC tai vasen nuolin„pp„in"
+" palaa takaisin kansiolistaan. Koko kirjanmerkki j„rjestelm„n"
+" l„pi selaaminen onnistuu nuolin„pp„imi„ k„ytt„en."
+""
+" INS luo uuden kansion, DEL poistaa kansion ja Ctrl-E nime„„ valitun"
+" kansion toiselle nimelle. Kansioiden j„rjestyksen muuttaminen onnistuu"
+" helposti: Shift-U siirt„„ kansiota yl”sp„in ja Shift-D alasp„in."
+""
+" Halutessasi luoda uuden kirjanmerkin, n„et ensimm„isen„ t„m„n"
+" n„yt”n. T„ss„ tapauksessa valitse haluttu kansio tai luo uusi"
+" INS n„pp„imell„. Huomaa, ett„ jos tallennat kirjanmerkin, jossa"
+" on salasana (eli muu kuin anonymous FTP palvelin) niin salasana"
+" ei tallennu. Voit lis„t„ sen k„sin .bmk tiedostoon mutta mieti"
+" tarkasti ennenkuin teet n„in. Selv„kielisen salasanan tallentaminen"
+" kirjanmerkkiin on turvallisuus riski (kuka tahansa, joka p„„see"
+" k„siksi tietokoneeseesi, saa selville salasanasi)."
+""
+" Kun muutat kirjanmerkkej„, muutokset tallennetaan (tai hyl„t„„n)"
+" vasta, kun poistut listasta. Sinulta kysyt„„n haluatko tallentaa"
+" tai hyl„t„ muutokset. Jos ajat samaan aikaan montaa kopiota NFTP"
+" ohjelmasta, „l„ muuta kirjanmerkki listaa kuin yhdest„ kopiosta"
+" kerrallaan."
+"" }
+
+{ M_HLP_BOOKMARK2
+""
+" Kirjanmerkki kansion sis„lt” "
+""
+" ENTER valitsee j„rjestelm„n, johon haluat sis„„nkirjautua. ESC tai"
+" vasen nuolin„pp„in poistuu kansiosta. Koko kirjanmerkki j„rjestelm„n"
+" l„pi selaaminen onnistuu nuolin„pp„imi„ k„ytt„en."
+""
+" DEL tuhoaa kirjanmerkin. Kirjanmerkkien j„rjestyksen muuttaminen"
+" onnistuu helposti: Shift-U siirt„„ kirjanmerkki„ yl”sp„in, Shift-D"
+" alasp„in ja < siirt„„ kirjanmerkin toiseen kansioon. Ctrl-E muuttaa"
+" valittua kirjanmerkki„."
+""
+" Kun muutat kirjanmerkkej„, muutokset tallennetaan (tai hyl„t„„n)"
+" vasta, kun poistut listasta. Sinulta kysyt„„n haluatko tallentaa"
+" tai hyl„t„ muutokset. Jos ajat samaan aikaan montaa kopiota NFTP"
+" ohjelmasta, „l„ muuta kirjanmerkki listaa kuin yhdest„ kopiosta"
+" kerrallaan."
+"" }
+
+{ M_HLP_UNDEFINED
+""
+" T„h„n n„ytt””n ei ole ohjetta t„ll„ kielell„ "
+"" }
+
+{ M_BOOKMARK_FORMAT
+"; kirjanmerkki tiedoston muoto on"
+"; ftp.sai.msu.su:21/pub/os2 : tunnus/salasana/optiot : kuvaus"
+";"
+"; voit muuttaa t„t„ tiedostoa mutta muista seuraavat s„„nn”t:"
+"; - v„lily”nnit kaksoipisteiden ymp„rill„ OVAT t„rke„t;"
+"; - polkujen pit„„ olla absoluuttisia eli alkavat aina '/' merkill„;"
+"; - voit ohittaa portin, jos haluat;"
+"; - k„yt„ '*' merkki„ tunnuksena/salasanana anonymous j„rjestelm„ss„:"
+";   crydee.sai.msu.su:/pub/comp/os/os2 : */*/optiot : SAI OS/2 arkisto"
+";"
+";" }
+
+#  Bookmarks ----------------------------------------------------------
+
+{ M_CANTOPENBOOKMARKS1
+"Kirjanmerkki tiedoston [%s] avaus lis„ys ep„onnistui" }
+
+{ M_CANTOPENBOOKMARKS2
+"Kirjanmerkki tiedoston [%s] avaus luettavaksi ep„onnistui" }
+
+{ M_CANTOPENBOOKMARKS3
+"Kirjanmerkki tiedoston [%s] avaus korvattavaksi ep„onnistui" }
+
+{ M_NO_BOOKMARKS
+"  Kirjanmerkkej„ ei ole  " }
+
+{ M_EMPTY_BOOKMARKSLIST
+"  Kirjanmerkki lista on tyhj„  " }
+
+{ M_DELETE_BOOKMARK
+"  Poista kirjanmerkki  "
+"  %s ?  " }
+
+{ M_INSERT_BOOKMARK1
+" K„ytt„j„tunnus (tyhj„=anonymous): " }
+
+{ M_INSERT_BOOKMARK2
+" FTP palvelimen nimi tai IP osoite: " }
+
+{ M_INSERT_BOOKMARK3
+" Hakemisto: " }
+
+{ M_CURRENT_BOOKMARKS
+" Kirjanmerkit " }
+
+{ M_BOOKMARKS_CHANGED
+"  Yht„ tai useampaa kirjanmerkki„ on muutettu.  "
+"  Tallenna uusi kirjanmerkki lista?  " }
+
+#  Prompts ------------------------------------------------------------
+
+{ M_USETAB
+" K„yt„ Tab/Shift-Tab n„pp„imi„ siirty„ksesi seuraavaan/edelliseen kent„„n " }
+
+{ M_CHOOSEDRIVE
+"Valitse asema:" }
+
+{ M_SELECT_DIRECTORY
+" Alku hakemisto (ENTER hyv„ksyy): " }
+
+{ M_ENTER_VERBATIM_COMMAND
+" Komento, joka l„het„„n sellaisenaan: " }
+
+{ M_MKDIR_ENTER_NAME
+" Hakemiston nimi, joka luodaan: " }
+
+{ M_ENTER_FIREWALL_USERID
+" PALOMUURIN k„ytt„j„tunnus: " }
+
+{ M_ENTER_FIREWALL_PASSWORD
+" PALOMUURIN salasana: " }
+
+{ M_ENTER_USERID
+" K„ytt„j„tunnus: " }
+
+{ M_ENTER_PASSWORD
+" Salasana: " }
+
+{ M_ENTER_HOSTNAME
+" palvelin[[:portti]hakemisto]: " }
+
+{ M_ENTER_DIRECTORY
+" Hakemisto, johon et„j„rjestelm„ss„ siirryt„„n: " }
+
+{ M_ENTER_SELECT_FILTER
+" Peite: " }
+
+{ M_RENAME_LOCAL_FILE
+" Vaihda paikallistiedoston nime„: " }
+
+#  Pseudo-responses ---------------------------------------------------
+
+{ M_RESP_CANNOT_RESOLVE
+"Palvelinta '%s' ei l”ytynyt" }
+
+{ M_RESP_LOOKING_UP
+"Palvelinta '%s' etsit„„n" }
+
+{ M_RESP_TRYING_IP
+"Palvelinta '%s' ei l”ytynyt, kokeillaan IP numeroa" }
+
+{ M_RESP_FOUND
+"Palvelin '%s' l”ytyi" }
+
+{ M_RESP_NO_SOCKET
+"Socket:n varaaminen ei onnistu" }
+
+{ M_RESP_FAILED_TO_CONNECT
+"Yhteydenmuodostus porttiin %u ep„onnistui" }
+
+{ M_RESP_CONNECTED
+"Yhteys muodostettu portiin %u" }
+
+{ M_RESP_CLOSING
+"Ohjausyhteys suljetaan" }
+
+{ M_RESP_LOGIN
+"Onnistunut sis„„nkirjaus tunnuksella '%s@%s'" }
+
+{ M_RESP_TRANSFER_DONE
+"Siirto valmis; keskim„„r„inen siirtonopeus oli %u tavua/sekunnissa" }
+
+{ M_RESP_INIT_DONE
+"init() valmis......" }
+
+{ M_RESP_RETRYING
+"%d sekunnin tauko... ESC keskeytt„„, muut yritt„v„t heti uudelleen" }
+
+{ M_RESP_RETRY_ABORTED
+"Keskeytetty." }
+
+{ M_RESP_REGET_ISNT_SUPPORTED
+"Osittainen uudelleensiirto ei ole tuettu; siirret„„n koko tiedosto" }
+
+{ M_RESP_TRANSFER_CANCELLED
+"Siirto keskeytetty (%s)" }
+
+{ M_RESP_TRANSFER_ERROR
+"Virhe tapahtui '%s' siirrossa" }
+
+#  Questions ----------------------------------------------------------
+
+{ M_TOO_BIG_FOR_INTVIEWER
+" Tiedosto '%s' on suuri -- %s tavua. "
+" Haluatko varmasti n„ytt„„ sen sis„isesti? " }
+
+{ M_REALLY_OVERWRITE
+" ***** KORVAUS ***** "
+""
+" Tiedosto '%s' on jo olemassa. "
+" Se on saman kokoinen kuin et„j„rjestelm„ss„ oleva. "
+" (Paikallinen: %d tavua, et„j„rjestelm„: %d tavua) "
+" Haluatko korvata paikallisen tiedoston? " }
+
+{ M_OVERWRITE_RENAME_CANCEL
+""
+" Tiedosto '%s' on jo olemassa! "
+" Se on saman kokoinen kuin et„j„rjestelm„ss„ oleva. "
+" (Paikallinen: %d tavua, et„j„rjestelm„: %d tavua) "
+" ESC peruuttaa siirron " }
+
+{ M_OVERWRITE_RENAME_CANCEL2
+""
+" Tiedosto '%s' on jo olemassa! "
+" Se on SUUREMPI kuin et„j„rjestelm„ss„ oleva. "
+" (Paikallinen: %d tavua, et„j„rjestelm„: %d tavua) "
+" ESC peruuttaa siirron " }
+
+{ M_OVERWRITE_RENAME_CANCEL3
+" Paikallisen tiedoston korvaus "
+" Paikallisen tiedoston nime„minen uudelleen " }
+
+{ M_REALLY_REGET
+" **** OSITTAINEN UUDELLEEN SIIRTO ****"
+""
+" Tiedosto '%s' on jo olemassa. "
+" Se on PIENEMPI kuin et„j„rjestelm„ss„ oleva. "
+" (Paikallinen: %d tavua, et„j„rjestelm„: %d tavua) " }
+
+{ M_REGET_RENAME_CANCEL
+""
+" Tiedosto '%s' on jo olemassa! "
+" Se on PIENEMPI kuin et„j„rjestelm„ss„ oleva. "
+" (Paikallinen: %d tavua, et„j„rjestelm„: %d tavua) "
+" Valitse 'Jatka' jatkaaksesi keskeytynytt„ siirtoa "
+" ESC peruuttaa siirron " }
+
+{ M_REGET_RENAME_CANCEL2
+" Jatka "
+" Paikallisen tiedoston korvaus "
+" Paikallisen tiedoston nime„minen uudelleen " }
+
+{ M_REALLY_TRANSFER_FROM
+"    Siirr„ tiedostoja et„j„rjestelm„STŽ?    " }
+
+{ M_REALLY_TRANSFER_TO
+"    Siirr„ tiedostoja et„j„rjestelm„ŽN?    " }
+
+{ M_REALLY_DELETE
+"  Poista tiedosto/hakemisto?  " }
+
+{ M_REALLY_SAVE_BOOKMARK
+"  Tallenna hakemisto                   "
+"  %s %s: %s  "
+"  kirjanmerkkin„?  " }
+
+{ M_REALLY_EXIT
+"  Poistu NFTP:st„?  " }
+
+{ M_REALLY_LOGOFF
+"  Katkaise yhteys j„rjestelm„„n %s?  " }
+
+#  Miscellaneous text strings -----------------------------------------
+
+{ M_WELCOME
+" NFTP%s Shift-H n„ytt„„ yleisen ohjeen " }
+
+{ M_DISCONNECTING
+"   Yhteys palvelimeen %s suljetaan   " }
+
+{ M_EOF_MARK
+""
+" ========= TIEDOSTON LOPPU ========= " }
+
+{ M_WRONG_REGCODE
+" V„„r„ rekister”inti koodi nftp.ini tiedostossa. "
+" Varmista ett„ kirjoitit oikean nimen ja koodin. "
+" Poistu ohjelmasta? " }
+
+{ M_RUNNING_UNREGISTERED
+"                 T„m„ NFTP ei ole rekister”ity "
+""
+" Ilman rekister”inti„ et voi siirt„„ %d KB suurempia tiedostoja. "
+""
+" NFTP:n dokumenteista l”ytyy tietoa rekister”innist„. "
+""
+" Poistaaksesi t„m„n viestin, aseta nftp.ini tiedoston "
+" 'registration' osion asetus 'message' arvoon 0. " }
+
+{ M_CCLINES
+" FTP Ohjaus Yhteys: %u rivi„ " }
+
+{ M_BINARY
+"BINARY" }
+
+{ M_ASCII
+"ASCII " }
+
+{ M_TRANSFER_COMPLETED
+"  Siirto valmis; paina mit„ tahansa n„pp„int„ jatkaaksesi  " }
+
+{ M_HELP_ESC_TO_EXIT
+"  Ohje - ESC palaa takaisin  " }
+
+{ M_STATUS
+" Yhteens„ %u tiedosto(a), %s B [%3s] Valittu %u tiedosto(a), %s B " }
+
+{ M_STATUS_BIN
+"BIN" }
+
+{ M_STATUS_ASC
+"ASC" }
+
+#  --------------------------------------------------------------------
+#  Fatal errors -------------------------------------------------------
+
+{ M_UNKNOWN_OS
+""
+" Tuntematon palvelimen k„ytt”j„rjestelm„: "
+" '%s', "
+" yhteys katkaistaan... " }
+
+{ M_UNREGISTERED_TRANSFER
+" Et voi siirt„„ 1024 KB suurempia tiedostoja "
+"        rekister”im„tt”m„ll„ versiolla. " }
+
+{ M_INI_BUILD_FAILED
+"nftp.ini tiedoston luku/muutos ep„onnistui."
+"Tarkista ettei vanhaa NFTP.EXE ja NFTP-OPT.EXE versiota ole PATH:ssa" }
+
+{ M_EMAIL_NOT_SET
+"nftp.ini tiedostoa pit„„ muokata ennenkuin k„yt„t NFTP:t„."
+"V„hint„„n sinun pit„„ asettaa e-mail osoitteesi oikeaksi." }
+
+{ M_CONNECTION_LOST
+"     Yhteys katkesi      " }
+
+{ M_NO_PASV_NOFIREWALLING
+" T„m„ FTP palvelin ei tue PASV komentoa ja n„in ollen "
+" sit„ ei voi k„ytt„„ palomuurin takaa " }
+
+{ M_NO_PASV
+" T„m„ FTP palvelin ei tue PASV komentoa. "
+" Muuta 'use-PASV-mode' asetuksen arvoksi 0 " }
+
+{ M_CANT_CREATE_SEM
+" Vakava virhe: semaphoorien luonti ep„onnistui " }
+
+{ M_INI_UNREADABLE
+""
+"nftp.ini tiedosto ei l”ydy; ohjelman ajo keskeytet„„n" }
+
+#  Transient messages -------------------------------------------------
+
+{ M_SENDING_VERBATIM_COMMAND
+"   Komennon l„hetys et„j„rjestelm„„n...   " }
+
+{ M_PARSING_LISTING
+"   Hakemisto listan k„sittely...   " }
+
+{ M_MKDIR_CREATING
+"   Hakemisto luodaan et„j„rjestelm„„n...   " }
+
+{ M_GOING_ROOT
+"   Siirtyminen et„j„rjestelm„n juurihakemistoon...   " }
+
+{ M_GOING_UP
+"   Siirtyminen et„j„rjestelm„n yl„hakemistoon...   " }
+
+{ M_CHANGING_DIR
+"   Et„j„rjestelm„n oletushakemisto vaihdetaan...   " }
+
+{ M_SENDING_NOOP
+"   NO OPERATION komennon l„hetys...   " }
+
+{ M_QUERYING_DIR
+"   Et„j„rjestelm„n oletushakemiston haku...   " }
+
+{ M_RETRIEVING_FILELIST
+"   Hakemisto listan haku...   " }
+
+#  nftp-opt  defines -------------------------------------------------
+
+{ M_FATAL_LOADING_NFTP_INI
+""
+"vakava virhe nftp.ini tiedoston latauksessa; ohjelman ajo keskeytet„„n" }
+
+{ M_WRONG_KEYNAME
+"tuntematon avain: [%s]"
+"" }
+
+{ M_KEYDEF_ERRORS
+"%d virhe(tt„) havaittu avainten asetuksia k„sitelt„ess„."
+"Paina mit„ tahansa n„pp„int„..." }
+
+{ M_KEYNAMES_WELCOME 
+"ESC poistuu, mik„ tahansa muu n„pp„in n„ytt„„ sen nimen." 
+"Jos mit„„n ei tapahdu, n„pp„inyhdistelm„ ei joko toimi tai" 
+"k„ytt”j„rjestelm„ ei p„„st„ sit„ l„pi sovellusohjelmalle." 
+""
+"Koodi:         :"
+"" }
+
+{ M_NO_TEXT
+" T„lle viestille ei l”ydy teksti„. "
+" Joko viesti„ ei ole k„„nnetty t„lle kielelle tai "
+" NFTP:n tekij„ unohti lis„t„ sen. " }
+
+{ M_CANT_DELETE
+" Poisto ep„onnistui: '%s' " }
+
+{ M_ENTER_LOCAL_DIRECTORY
+" Uusi paikallinen asema/hakemisto: " }
+
+{ M_REALLY_TRANSFER_FROM_ALLDIRS
+" %d tiedosto(a) %d hakemistosta valittu siirrett„v„ksi. "
+" Yhteens„ %s tavu(a). Jatketaanko? " }
+
+{ M_BYTES_RECEIVED
+"     %7d tavua haettu"
+"             ESC keskeytt„„       " }
+
+{ M_BYTES_REMAIN
+""
+"     %7d tavua haettu"
+"     %7d tavua j„ljell„"
+"             ESC keskeytt„„       " }
+
+{ M_YES
+" Kyll„ " }
+
+{ M_NO
+" Ei    " }
+
+{ M_OK
+"   OK  " }
+
+{ M_ENTER_SEARCHSTRING
+" Merkkijono, jota haetaan: " }
+
+{ M_ENTER_FILENAME_SAVE
+" Tiedosto, johon tallennetaan: " }
+
+{ M_CANNOT_OPEN
+" Tiedoston %s avaus ep„onnistui " }
+
+{ M_FILE_SAVED
+"        Tiedosto on tallennettu        " }
+
+{ M_LISTING_HEADER
+"Palvelin : %s"
+"Hakemisto: %s"
+"" }
+
+{ M_LISTING_FOOTER
+""
+"%d tiedosto(a), %s tavu(a)" }
+
+{ M_LISTING_SAVED
+"    Listaus on tallennettu    " }
+
+{ M_ENTER_RETRIEVE_AS
+" Tiedoston haku: " }
+
+{ M_ENTER_LISTING_FILENAME
+" Lista tiedoston nimi: " }
+
+{ M_ENTER_NEWNAME
+" Uusi nimi: " }
+
+{ M_ENTER_UPLOAD_AS
+" L„hetett„v„ tiedosto: " }
+
+{ M_RENAME_FAILED
+" Nimen '%s' vaihtaminen nimeksi '%s' ep„onnistui " }
+
+{ M_QUICK_SEARCH
+" nopea haku: %s " }
+
+{ M_CANT_ACCESS_DRIVE
+" Aseman %c k„ytt” ep„onnistui: " }
+
+{ M_DIRECTORY_DOESNT_EXIST
+" Hakemistoa '%s' ei ole olemassa " }
+
+{ M_BAD_BOOKMARK_ENTRY
+" Kirjanmerkki "
+" %s "
+" on kelvoton, ohitetaan " }
+
+{ M_DEFAULT_BMK_FOLDER
+"Oletuskansio" }
+
+{ M_ENTER_DESC
+" Kuvaus: " }
+
+{ M_FOLDER_TITLE
+" Kirjanmerkki kansio: %s " }
+
+{ M_DELETE_BOOKMARK1
+"        Tuhoa kirjanmerkki?        " }
+
+{ M_NAME_FOLDER
+" Uuden kirjanmerkki mapin nimi: " }
+
+{ M_DELETE_NONEMPTY_FOLDER
+" Tuhoa kansio '%s'? "
+" Varoitus: kansio sis„lt„„ kirjanmerkkej„! " }
+
+{ M_ENTER_FOLDER_TITLE
+" Mapin otsikko: " }
+
+{ M_SELECT_FOLDER
+" Valitse kansio kirjanmerkille " }
+
+{ M_FILE_TO_DOWNLOAD
+" Tiedosto, joka haetaan: " }
+
+{ M_CANT_CREATE_DIRECTORY
+"Hakemiston '%s' luonti ep„onnistui" }
+
+{ M_REREAD_REMOTE_DIR
+" Lue hakemiston sis„lt” uudelleen? " }
+
+{ M_LOGOFF_MARKED
+" Olet valinnut %d tiedosto(a) %d hakemistosta. "
+" Yhteens„ %s tavu(a). "
+" Oletko varma, ett„ haluat katkaista yhteyden? " }
+
+{ M_CANT_LOGIN
+" Sis„„nkirjaus ep„onnistui: %s " }
+
+{ M_FILE_NOT_FOUND
+" Tiedostoa '%s' ei l”ydy t„st„ palvelimesta " }
+
+{ M_TRANSFER_FAILED
+" Tiedoston '%s' siirto ep„onnistui " }
+
+{ M_PROXY_ISNT_SPECIFIED
+"  Palomuurin v„limuistipalvelin ei ole m„„ritelty NFTP.INI:ss„  " }
+
+{ M_NOT_CONNECTED
+"Ei yhteytt„" }
+
+{ M_INCORRECT_FIREWALL
+" Tuntematon palomuuri tyyppi %d " }
+
+{ M_UNKNOWN_SERVER_OS
+" Varoitus: tuntematon FTP palvelimen k„ytt”j„rjestelm„: "
+" '%s'; "
+" NFTP ei v„ltt„m„tt„ osaa k„sitell„ listaa oikein " }
+
+{ M_CONNECTING
+"Yhteyden muodostus palvelimeen '%s'... " }
+
+{ M_CANNOT_RENAME
+" Tiedoston '%s' nime„minen '%s' ei onnistu " }
+
+{ M_DOWNLOADING
+"%s - haetaan..." }
+
+{ M_CANT_OPEN_FOR_WRITING
+" Tiedosto '%s' ei aukea kirjoitusta varten " }
+
+{ M_CHANGING_DIRECTORY
+"   Siirryt„„n hakemistoon: "
+"   '%s'   " }
+
+{ M_CANT_OPEN_FOR_READING
+" Tiedosto '%s' ei aukea lukua varten " }
+
+{ M_CANT_WRITE_LOGFILE
+" Varoitus: kirjoitus lokitiedostoon '%s' ep„onnistui " }
+
+{ M_CANT_GUESS_CURDIR
+" Et„j„rjestelm„n oletushakemiston haku ei onnistunut " }
+
+{ M_CANT_READ_FILE
+" Luku tiedostosta '%s' ep„onnistui " }
+
+{ M_UPLOADING
+"%s - l„hetet„„n..." }
+
+{ M_ALREADY_BOOKMARKED
+" J„rjestelm„lle '%s' on jo kirjanmerkki "
+" hakemistoon '%s'. Lis„t„„nk” kuitenkin? " }
+
+{ M_EDIT1
+"Palvelin[:portti]hakemisto" }
+
+{ M_EDIT2
+"K„ytt„j„tunnus/salasana/optiot" }
+
+{ M_EDIT3
+"J„rjestelm„n kuvaus" }
+
+{ M_CONNECTION_OK
+"       Yhteys on kunnossa      " }
+
+{ M_MARKED_STATISTICS
+"  %d tiedosto(a) %d hakemistosta; %s tavu(a)  " }
+
+#  ---------------------------------------------------------- new in 1.10
+
+{ M_STARTING_TRANSFER
+"   Aloitetaan siirto...   " }
+
+{ M_KEEP_TREE_INTACT
+" Olet valinnut %d tiedostoa %d alihakemistosta. "
+" Yhteens„ %s tavua. "
+""
+" S„ilyt„ hakemisto rakenne siirrett„ess„? " }
+
+{ M_KEEP_TREE2
+" S„ilyt„ alihakemistot "
+"      Žl„ s„ilyt„      " }
+
+{ M_OVERWRITE_RENAME_CANCEL4
+" Korvaa paikallinen tiedosto "
+" Nime„ uudelleen "
+" Ohita tiedosto  " }
+
+{ M_REGET_RENAME_CANCEL5
+" Jatka "
+" Korvaa paikallinen tiedosto "
+" Nime„ uudelleen "
+" Ohita tiedosto  " }
+
+{ M_RESP_BIND_FAILED
+"Verkkovirhe (bind() ep„onnistui)" }
+
+{ M_RESP_LISTEN_FAILED
+"Verkkovirhe (listen() ep„onnistui)" }
+
+{ M_RESP_GETSOCKNAME_FAILED
+"Verkkovirhe (getsockname() ep„onnistui)" }
+
+{ M_RESP_CANNOT_CONNECT
+"Yhteyden muodostus tiedonsiirtoa varten ep„onnistui" }
+
+{ M_RESP_CONNECTION_NOT_ESTABLISHED
+"Palvelin ei muodostanut tiedonsiirto yhteytt„" }
+
+{ M_RESP_TRANSFER_SKIPPED
+"Tiedosto `%s' ohitettu" }
+
+{ M_WALK_TREE
+" K„y hakemiston '%s' "
+" jokaisessa alihakemistossa? " }
+
+{ M_NO_MARKED_FILES
+" Alihakemistoissa ei ole valittuja tiedostoja " }
+
+{ M_HAVENT_BEEN_CONNECTED
+" yhteytt„ ei ole viel„ muodostettu" }
+
+{ M_DIRECTORY_LISTING
+"Hakemistolista" }
+
+{ M_LARGE_INDEX_FILE
+"  Huomautus: tiedosto '%s', joka sis„lt„„ tiedostojen kuvaukset "
+"  on %s tavun kokoinen. Haluatko kuitenkin hakea sen? " }
+
+{ M_LOAD_DESCRIPTIONS
+" Lue kuvaukset tiedostosta '%s'? " }
+
+{ M_CANT_USE_DIR_AS_INDEX_FILE
+" Kuvauksien lukeminen hakemistosta '%s' ei onnistu. "
+" Siirr„ kohdistin normaalin tiedoston p„„lle. " }
+
+{ M_RESP_CONNECTING
+"Otetaan yhteys palvelimeen %s..." }
+
+{ M_DOWNLOADING1
+"%s - haettu %lu%% nopeudella %.2f KB/s" }
+
+{ M_UPLOADING1
+"%s - l„hetetty %lu%% nopeudella %.2f KB/s" }
+
+{ M_DESC_DOWNLOAD_OPTIONS
+" Kyll„    "
+" Ei       "
+" Ei ikin„ " }
+
+# ----------------------------------------- new in 1.21 -------------
+
+{ M_RESP_CANT_OPEN
+"Tiedoston %s avaus ep„onnistui" }
+
+{ M_NO_EMAIL_ADDRESS
+""
+"Varoitus: e-mail osoitetta ei ole asetettu tiedostossa %s."
+"" }
+
+{ M_GUESSED_EMAIL
+"Salasanaa %s k„ytet„„n anonymous sis„„nkirjoituksiin."
+"Paina ENTER jatkaaksesi..."
+"" }
+
+{ M_CANT_GUESS_EMAIL
+"Koneesi nime„ tai k„ytt„j„tunnustasi ei l”ydy;"
+"lis„„ %s tiedostoon oikea e-mail osoite."
+"Osoitetta tullaan k„ytt„m„„n anonymous sis„„nkirjauksiin."
+"" }
+
+{ M_INI_CONFIG_VERSION
+""
+"Asetustiedostosi %s, on versioon %s."
+"NFTP ohjelman versio on %s."
+"" }
+
+{ M_INI_CANT_FIND_NFTP_I
+"nftp.i tiedostoa ei l”ydy hakemistosta `%s' eik„ "
+"`%s'. Tiedosto tarvitaan nftp.ini tiedoston p„ivitykseen"
+"" }
+
+{ M_INI_UPDATE
+"P„ivitet„„n `%s'"
+"tiedostosta `%s'."
+"Jatketaanko? [Ynq]" }
+
+{ M_INI_UPDATING
+""
+"P„ivitys k„ynniss„: %s -> %s..."
+"" }
+
+{ M_INI_CANT_OPEN_READ
+"Tiedoston %s avaus lukua varten ep„onnistui"
+"" }
+
+{ M_INI_CANT_OPEN_WRITE
+"Tiedoston %s avaus kirjoitusta varten ep„onnistui"
+"" }
+
+{ M_INI_WRONG_ENTRY
+"Virhe -- merkint„ osion ulkopuolella:"
+"%s" }
+
+{ M_INI_CANT_RENAME
+"Tiedoston `%s' nime„minen nimelle `%s' ep„onnistui"
+"" }
+
+{ M_INI_BACKUP
+""
+"Varmistus tiedostosta %s"
+"talletettiin nimelle  %s"
+"" }
+
+{ M_INI_UPDATING_ENTRY
+"p„ivitet„„n: %s"
+"" }
+
+{ M_INI_FINISHED
+""
+"P„ivitys valmis; paina ENTER jatkaaksesi..." }
+
+# ----------------------------------------- new in 1.22 -------------
+
+{ M_RESP_CANT_CREATE_DIRECTORY
+"Hakemiston '%s' luonti ep„onnistui" }
+
+{ M_INFORMATION1
+" %d tiedostoa %d. hakemistossa; yhteens„ %s tavua "
+""
+" Tiedoston URL: "
+" %s "}
+
+{ M_INFORMATION2
+" %d tiedostoa %d. hakemistossa; yhteens„ %s tavua "
+""
+" Kopioi URL leikep”yd„lle? "
+" %s "}
+
+{ M_HLP_HISTORY
+""
+" J„rjestelmien ja hakemistojen historia"
+""
+" Historia lista on lajiteltu k„yntip„iv„n mukaan, viimeisin ensin."
+" Lista toimii my”s DNS v„limuistina, koska j„rjestelm„n nime„"
+" vastaava IP numero on talennettu historiaan. T„hti k„ytt„tunnuksen"
+" l„hell„ tarkoittaa j„rjestelm„„n, johon salasana on m„„ritetty."
+" Sis„„nkirjaus tunnusta ei n„ytet„ anonymous tunnusta k„ytt„ville"
+" j„rjestelmille. Tunnuksen j„lkeen voi olla optiota (katso FAQ)."
+""
+" Historia alij„rjestelm„n toimintaa ohjataa nftp.ini tiedoston"
+" asetuksilla. Voit asettaa rajoituksia talletetuille j„rjestelmien"
+" ja hakemistojen (j„rjestelm„ kohtainen) m„„r„lle historiassa."
+" Ylim„„r„iset tai samat tietueet poistetaan, kun avaat historia"
+" n„yt”n. NFTP muistaa my”s j„rjestelm„kohtaisen salasanan (ne"
+" talletetaan sotkettuna mutta ei turvallisessa muodossa). Oletuksena"
+" sis„„nkirjaukset, haut ja yhteyden sulkemiset merkit„„n historiaan."
+" NFTP voidaan k„ske„ tallettamaan jokainen hakemistoja, jossa"
+" k„yd„„n, historia tiedostoon."
+""
+" Listan navigointi tapahtuu melkein samoin kuin kirjanmerkki n„yt”ss„."
+" ENTER valitsee palvelimen tai aktivoi tietueen; ESC sulkee n„yt”n"
+" tai poistuu hakemisto listasta; oikeaa/vasenta nuolin„pp„int„ voi"
+" k„ytt„„ ENTER/ESC n„pp„inten asemesta navigointiin. Voit poistaa"
+" hakemistoja ja kokonaisia j„rjestelmi„ historia tiedoista DEL:ll„."
+"" }
+
+{ M_PROCESSING_HISTORY1
+" Historiaa k„sitell„„n; vaihe %u... " }
+
+{ M_PROCESSING_HISTORY2
+" Historiaa k„sitell„„n; vaihe %u: %u merkint„„ k„sitelty " }
+
+{ M_READING_HISTORY_FILE
+" Historia tiedoston luku; %u rivi„ luettu " }
+
+{ M_WRITING_HISTORY_FILE
+" Historia tiedoston kirjoitus; %u rivi„ kirjoitettu " }
+
+{ M_ERROR_READING_HISTORY
+" Virhe luettaessa historia tiedostoa %s " }
+
+{ M_EMPTY_HISTORY
+" Historia tiedosto %s on tyhj„ " }
+
+{ M_SAVE_HISTORY
+" Tallenna muutokset historiaan pysyv„sti? " }
+
+{ M_HIST_HEADER1
+" Historia: %u j„rjestelm„„, yhteens„ %u merkint„„ " }
+
+{ M_HIST_HEADER2
+" Historia: %s, %u hakemistoa " }
+
+{ M_HIST_DELETE_DIR
+" Poistetaanko hakemisto merkint„ "
+" '%s:%s'?" }
+
+{ M_HIST_DELETE_SITE
+" Poistetaanko j„rjestelm„ '%s' "
+" ja sen %u hakemisto merkint„(„)? " }
+
+# ------------------------------------------------------ new/updated in 1.23
+
+{ M_HLP_USING_MENU
+"  "
+" Valikko"
+""
+" Valikko n„ytt„„ NFTP:n toiminnot hierarkisena karttana."
+" Aktivoidaksesi valikon, paina F9 tai Ctrl-F (n„m„ voidaan m„„ritell„"
+" uudelleen nftp.ini:ss„). K„yt„ nuolin„pp„imi„ valikossa liikkumiseen;"
+" ESC poistuu valikoista. Jos haluat k„ytt„„ pikan„pp„imi„ valikossa"
+" liikkumiseen, kannattaa `menu-open-submenu' asetus nftp.ini"
+" tiedostossa asettaa arvoon -1. F9 ei t„ss„ tapauksessa avaa"
+" alavalikoita. Asetuksella voit my”s m„„ritt„„ jonkin muun kuin"
+" 'Palvelin' alavalikon avautumaan automaattisesti."
+""
+" Voit muuttaa valikon ulkon„”n mieleiseksesi. Muokkaa vain tiedostoa"
+" `finnish.mnu' tai mit„ kielt„ nyt k„yt„tk„„n. Ohjeet l”ytyv„t tiedoston"
+" sis„lt„."
+"" }
+
+{ M_RESP_F9_FOR_MENU
+"F9 tai Ctrl-F avaa valikon" }
+
+{ M_BOOKMARK_NICKNAME
+" Aliasta '%s' "
+" ei l”ydy kirjanmerkeist„ " }
+
+{ M_SELECT_BOOKMARK
+" Valitse kirjanmerkki " }
+
+{ M_HISTORY_NICKNAME
+" Aliakselle '%s' "
+" ei ole historia tietoja " }
+
+{ M_SELECT_HISTORY
+" Valitse historia merkint„ " }
+
+{ M_USAGE0
+"Valinnaiset parametrit: " }
+
+{ M_USAGE1
+"URL, johon otetaan yhteys" }
+
+{ M_USAGE2
+"hae (G,g) tai l„het„ (P,p) tiedosto URL" }
+
+{ M_USAGE3
+"k„sittele siirrot cmdfile.txt tiedostossa" }
+
+{ M_USAGE4
+"etsi sana `word' kirjanmerkeist„(b) tai historiasta(h)" }
+
+{ M_USAGE5
+"URL pit„„ olla muodossa "
+"[ftp://][k„ytt„j„tunnus[:salasana]@]palvelin[:portti]hakemisto/tiedosto,"
+"esim ftp://asv:password@crydee.sai.msu.ru:21/home/asv/file.txt"
+"tai  crydee.sai.msu.su/pub/comp/software/asv/nftp/nftp-LATEST-os2.zip" }
+
+# ----------------------------------------------------------------- new in 1.40
+
+{ M_SITE_EDIT1
+"Palvelin" }
+
+{ M_SITE_EDIT2
+"K„ytt„j„tunnus" }
+
+{ M_SITE_EDIT3
+"Salasana" }
+
+{ M_SITE_EDIT4
+"Portti" }
+
+{ M_SITE_EDIT5
+"Hakemisto" }
+
+{ M_SITE_EDIT6
+"Optiot (katso FAQ)" }
+
+{ M_PASSWORDED_WGET
+" Yrit„t hakea tiedostoa WGET:ll„ ei-anonymous j„rjestelm„st„. "
+" Oletuksena, t„ll„iset haut on estetty turvallisuus syist„; "
+" voit sallia haun nftp.ini tiedossa. " }
+
+{ M_WGET_DOWNLOAD_ONE
+" Hae tiedosto %s ulkoisella ohjelmalla? " }
+
+{ M_WGET_DOWNLOAD_MANY
+" Hae %d tiedostoa %d hakemistosta; "
+" yhteens„ %s tavua ulkoisella ohjelmalla? " }
+
+{ M_CONFIRM_COMMAND
+" Ulkoinen komento: " }
+
+{ M_USETAB2
+" K„yt„ Tab/Shift-Tab tai nuoli n„pp„imi„ kentiss„ liikkumiseen " }
+
+# ------------------------------------------------- new since 1.50
+
+{ M_CANCEL
+" Peruuta " }
+
+{ M_FTPS_RECEIVING
+"  %s: vastaanotto k„ynniss„... "
+"  ESC keskeytt„„ "
+"  yhteens„ %s tietuetta l”ytynyt " }
+
+{ M_FTPS_NO_HITS
+"  Ei yht„„n osumaa hakusanalla `%s'  " }
+
+{ M_FTPS_SERVERS
+" FTPSearch palvelimet " }
+
+{ M_FTPS_ADD_SERVER
+" Lis„tt„v„n FTPSearch palvelimen nimi " }
+
+{ M_FTPS_DELETE
+" Poista `%s'? " }
+
+{ M_QUERYING
+"Kysyt„„n %s..." }
+
+{ M_FTPS_SENDING_REQUEST
+"  Kyselyn l„hetys palvelimelle %s...  " }
+
+{ M_FTPS_SEARCHRES
+" Haun tulokset (%u osumaa) " }
+
+{ M_DIR_SIGN
+"<HAK>" }
+
+{ M_LINK_SIGN
+"<LNK>" }
+
+{ M_SEARCH_FORWARD
+" Etsi eteenp„in " }
+
+{ M_SEARCH_BACKWARDS
+" Etsi taaksep„in " }
+
+{ M_CANT_FIND
+"  Ei l”ydy: `%s' " }
+
+{ M_SELECT_LANGUAGE
+" Valitse k„ytt”liittym„n kieli " }
+
+{ M_REGISTRATION_NAME
+"Rekister”inti nimi " }
+
+{ M_REGISTRATION_CODE
+"Rekister”inti koodi" }
+
+{ M_THANKS
+" Kiitoksia NFTP:n rekister”innist„! " }
+
+{ M_FTPS_NEED_ARGS
+" M„„rittele ainakin yksi ja vain yksi 'tarkka', 'merkkijono', "
+" 'jokerimerkki' tai 'regexp' hakutekij„. " }
+
+{ M_FTPS_SEARCH1
+"Tarkka haku" }
+
+{ M_FTPS_SEARCH2
+"Merkkijono haku" }
+
+{ M_FTPS_SEARCH3
+"Jokerimerkki haku" }
+
+{ M_FTPS_SEARCH4
+"S„„nn”llinen ilmaus haku" }
+
+{ M_FTPS_SEARCH5
+"Erottele isot/pienet kirjaimet" }
+
+{ M_FTPS_SEARCH6
+"Ei tiedostoja/hakemistoja:" }
+
+{ M_FTPS_SEARCH7
+"Vain toimialueista:" }
+
+{ M_FTPS_SEARCH8
+"Ei toimialueista:" }
+
+{ M_FTPS_SEARCH9
+"Piilota ilmaiset UNIX paketit" }
+
+{ M_FTPS_SEARCH10
+"Osumien maksimim„„r„" }
+
+{ M_HLP_SITE_EDIT
+"J„rjestelm„n asetukset"
+""
+"J„t„ 'k„ytt„j„tunnus' ja 'salasana' kent„t tyhjiksi, jos sis„„nkirjaus"
+"j„rjestelm„„n tapahtuu anonymous tunnuksella. Jos j„t„t hakemiston"
+"m„„rittelem„tt„ niin ensimm„inen hakemisto sis„„nkirjauksen j„lkeen"
+"riippuu FTP palvelimesta. Yleens„ palvelimet k„ytt„v„t juurihakemistoa"
+"anonymous tunnuksille ja tunnus/salasana sis„„nkirjauksessa tunnukselle"
+"m„„ritetty„ kotihakemistoa. J„rjestelm„n kuvaus on vain dokumentaatiota"
+"varten; se talletaan kirjanmerkki tiedostoon."
+""
+"Optiot:"
+""
+"p - k„yt„ passiivista tilaa j„rjestelm„lle. Auttaa joskus, jos yhteys"
+"    on hidas tai muuten ongelmallinen."
+"r - yritt„„ sis„„nkirjausta uudelleen loputtomasti. Sis„„nkirjauksen"
+"    ep„onnistuessa NFTP yritt„„ sis„„nkirjausta uudelleen v„litt„m„tt„"
+"    virhe koodista tai siit„ onko kyseess„ anonymous sis„„nkirjaus."
+"f - j„rjestelm„ on palomuurin sis„puolella. Vaikka palomuuri tuki on"
+"    m„„ritetty nftp.ini tiedostossa, t„h„n j„rjestelm„„n otetaan"
+"    yhteys aina suoraan (ei siis palomuurin kautta)."
+}
+
+{ M_HLP_FTPSEARCH
+"FTPSearch k„ytt”liittym„"
+""
+"'Tarkka haku' etsii vain tarkkaa tiedoston tai hakemiston nime„;"
+"esimerkiksi: nftp141o.zip"
+""
+"'Merkkijono haku' etsii tiedoston tai hakemiston nimess„ olevaa"
+"merkkijonoa; esimerkiksi: nftp14"
+""
+"'Jokerimerkki haku' k„ytt„„ '*' ja '?' merkkej„ samaan tapaan kuin niit„"
+"k„ytet„„m komentorivill„ (eli * tarkoittaa mit„ tahansa m„„r„„ merkkej„,"
+"? tarkoittaa tasan yht„ merkki„); esim: nftp*.zip tai nftp1??o.zip"
+""
+"'S„„nn”llinen ilmaus haku' on tehokkain mutta vaatii jonkinverran"
+"opiskelua; esimerkiksi nftp1\.[4-9][0-9]o\.zip l”yt„„ kaikki 1.xx"
+"versiot NFTP:n OS/2 versiosta, alkaen versiosta 1.40. Tarkan kuvauksen"
+"s„„nn”llisist„ ilmauksista l”yd„t monesta paikkaa, esimerkiksi GNU rx"
+"paketista."
+""
+"Isojen ja pienten kirjainten erottelu koskee ainoastaan"
+"'Merkkijono haku' vaihtoehtoa."
+""
+"Hakutyypin lis„ksi voit my”s rajoittaa hakua lis„ehdoin. Voit rajoittaa"
+"tietyt hakemistot tai domain-osoitteet haun ulkopuolelle sek„ hakea"
+"vain tietyist„ domaineista. My”s erilaiset ilmaiset tai ilmaisluonteiset"
+"Unix jakelut (esim Slackware/RedHat/FreeBSD/jne) voidaan rajata hausta."
+"N„m„ saattavat antaa suuren m„„r„n turhia osumia. Jos annat enemm„n kuin"
+"yhden arvon kent„„n, arvot on erotettava v„lily”nnill„."
+""
+"'Osumien maksimim„„r„' arvoa ei kannata asentaa kovin suureksi. 5000:n"
+"osumien n„keminen on t„ysin turhaa; kokeile rajoittaa haku koskemaan"
+"vain tarpeellisia osumia. Yleens„ kannattaa k„ytt„„ vain FTPSearch:n"
+"keskuspalvelinta, ftpsearch.ntnu.no, koska se kartoitaa yli 90%"
+"maailmasta. Muut palvelimet auttavat vain rajaamaan etsinn„n"
+"alueellisesti l„hemm„ksi."
+"" }
+
+{ M_FTPS_DOWNLOAD
+"  Hae "
+"  %s  "
+"  palvelimelta %s? " }
+
+{ M_HIST_CONT_SEARCH
+"  J„rjestelm„st„ %s ei l”ytynyt merkint”j„ hakutekij„ll„. "
+"  Etsit„„nk” muista j„rjestelmist„? " }
+
+{ M_TOO_LARGE
+"%s/%s: liian suuri rekister”im„tt”m„lle versiolle" }
+
+{ M_DISCONNECT
+"  Katkaise yhteys palvelimeen %s?  " }
+
+{ M_UPLOAD_EDITED
+"  L„het„ muokattu tiedosto takaisin palvelimelle?  " }
+
+{ M_FONT_DESC
+"pituus %3d, korkeus %3d (%s)" }
+
+{ M_UNSUPPORTED
+"  Toiminto ei ole tuettu j„rjestelm„ss„ %s  " }
+
+{ M_SELECT_FONT
+" Valitse kirjasin " }
+
+{ M_HLP_FTPSEARCH2
+""
+"N„pp„inkomennot haun tulokset ikkunassa"
+""
+"Ctrl-P     - n„yt„/piilota polut"
+"Ctrl-T     - n„yt„/piilota viimeiset muutosp„iv„t"
+"Ctrl-F     - etsi eteenp„in"
+"Ctrl-H     - etsi taaksep„in"
+"Shift-D/F5 - hae tiedosto"
+""
+"Shift-H    - lajittelu palvelimen nimen mukaan"
+"Shift-N    - lajittelu tiedoston nimen mukaan (oletus)"
+"Shift-S    - lajittelu tiedoston koon mukaan"
+"Shift-T    - lajittelu tiedoston p„iv„yksen mukaan"
+"" }
+
+{ M_STALLED
+"viivytetty" }
+
+# ------------------------------------------------- new since 1.51
+
+{ M_WAIT
+""
+""
+" Odota %d sekuntia... " }
+
+{ M_UNREGISTERED
+" T„m„ versio on rekister”im„t”n "
+""
+" P„„st„ksesi eroon t„ss„ viestiss„, sinun tulee ostaa NFTP:n lisenssi. "
+" Lisenssi maksaa %d $ ja oikeuttaa sinut k„ytt„m„„n kaikkia tulevia "
+" NFTP versioita kaikilla tuetuilla k„ytt”j„rjestelmill„. Lis„tietoja "
+" l”yd„t web sivulta http://www.ayukov.com/nftp/buy.html %s" }
+
+{ M_PRESS_ENTER
+" Paina ENTER jatkaaksesi " }
+
+{ M_HTTP_PROXY
+"  Toiminto ei ole tuettu HTTP v„limuistipalvelimen kanssa  " }
+
+{ M_ENUMERATING_FONTS
+" Lasketaan kirjasimien m„„r„„... " }
+
+# ------------------------------------------------- new since 1.60
+
+{ M_SCRIPT_BADCOMMAND
+"Tuntematon komento: %s" }
+
+{ M_SCRIPT_BADARGS
+"T„m„ komento tarvitsee %d parametria (vain %d l”ytyi)" }
+
+{ M_SCRIPT_ERROR
+"Virhe; skriptin suoritus on keskeytynyt" }
+
+{ M_SCRIPT_CANT_OPEN
+"Skripti tiedoston `%s' avaus ep„onnistui" }
+
+{ M_SCRIPT_RUNNING
+"SKRIPTI: %s %s" }
+
+{ M_SCRIPT_INVALID_VAR
+"Virheellinen muuttuja: %s" }
+
+{ M_SCRIPT_CANT_OPEN_LOG
+"Lokitiedoston `%s' avaus ep„onnistui" }
+
+{ M_RESP_CONNECTING2
+"Yhteyden muodostus (%s): Esc - keskeyt„, Space - yrit„ uudelleen..." }
+
+{ M_RESP_ACCEPTING
+"Yhteytt„ porttiin %d odotetaan: Esc - keskeyt„, Space - yrit„ uudelleen..."}
+
+{ M_RESP_ACCEPTED
+"Yhteys hyv„ksytty osoitteesta %s" }
+
+{ M_PAUSED
+"Keskeytetty; paina P jatkaaksesi" }
+
+{ M_SQRP
+"S - Ohita, Q - Lopeta, R - Aloita uudelleen, P - Keskeyt„" }
+
+{ M_TOTAL        "Yhteens„" }
+{ M_TRANSFERRED  "Siirretty" }
+{ M_SKIPPED      "Ohitettu" }
+{ M_LEFT         "J„ljell„" }
+{ M_INACT        "sekuntia viimeisest„ paketista" }
+
+{ M_NO_FIREWALLING
+"Palomuuria/v„limuistipalvelinta ei ole asetettu nftp.ini:ss„" }
+
+{ M_HLP_PASSWORDS
+"N„pp„inkomennot salasana ikkunassa"
+""
+"Insert - luo uusi salasana tietue"
+"Delete - poista salasana tietue"
+"Ctrl-E - muuta tietuetta"
+"Ctrl-P - n„yt„/piilota salasanat"
+""
+"Enter  - ota yhteys j„rjestelm„„n"
+"" }
+
+{ M_DEL_UNMATCHED
+"   Poistetaan poistetut tiedostot...   " }
+
+{ M_ENTER_LISTNAME
+"Tiedostonimi, johon lista kirjoitetaan:" }
+
+{ M_SYNC1
+"Synkronoi paikallinen hakemisto et„j„rjestelm„n kanssa?"
+""
+"et„j„rjestelm„  %s ->"
+"paikallinen     %s"
+""
+"NFTP hakee tiedostoja" }
+
+{ M_SYNC2
+"Synkronoi et„j„rjestelm„ paikallisen hakemiston kanssa?"
+""
+"paikallinen    %s ->"
+"et„j„rjestelm„ %s"
+""
+"NFTP l„hett„„ hakemistoja" }
+
+{ M_SYNC3
+"Hakemistot n„ytt„v„t olevan identtisi„" }
+
+{ M_PASS_UNSUPPORTED
+"Salasana tiedoston versio (%d) ei ole tuettu" }
+
+{ M_PASS_ENTER_KEYPHRASE1
+"Kirjoita avainlause, jolla puretaan salasana tiedoston suojaus" }
+
+{ M_PASS_INVALID
+"%s"
+"Salasana tiedoston sis„lt” on virheellinen" }
+
+{ M_PASS_ENTER_KEYPHRASE2
+"Kirjoita avainlause, jolla salasana tiedosto suojataan" }
+
+{ M_PASSWORDS
+"Salasanat" }
+
+{ M_PASS_SAVE
+"Tallenna muutokset salasana tiedostoon?" }
+
+{ M_PASS_DELETE
+"%s @ %s"
+"Poista salasana tietue?" }
+
+{ M_DISK_FULL
+" %s "
+" Virhe tiedoston kirjoituksessa (levy t„ynn„?) " }
+
+{ M_REGISTERED
+"Rekister”ity nimelle %s" }
+
+{ M_UNREGISTERED2
+"Rekister”im„t”n (%d p„iv„„ ensimm„isest„ ajokerrasta)" }
+
+{ M_FTPS_RECEIVING2
+"Vastaanotetaan tietoa palvelimesta %s...   "
+"Osumia yhteens„:           %s"
+"Osumia t„ss„ palvelimessa: %s"
+"Paina ESC keskeytt„„ksei haun" }
+
+{ M_FTPS_NO_HITS2
+"Haku ei l”yt„nyt yht„„n osumaa" }
+
+{ M_FTPS_NORES
+"Yht„„n hakua ei ole viel„ suoritettu" }
+
+{ M_ENABLE_PASSWORDS
+"Kytke salasanojen talletus p„„lle nftp.ini:ss„" }
+
+{ M_NEEDBF
+"T„t„ k„ytet„„n vain metod(e)issa %s (katso nftp.ini)" }
+
+{ M_PASS_INCORRECT
+"Avainlause on v„„r„"}
+
+{ M_BYTESSEC "tavua/sek" }
+
+{ M_DOWNLOAD "haku" }
+
+{ M_UPLOAD   "l„hetys" }
+
+{ M_COMMUNICATING
+"Kommunikoidaan palvelimen kanssa..." }
+
+# will look like: " 23% done (download, binary)"
+{ M_PERCENTAGE1 "%9u%% valmis (%s, %s)" }
+
+# will look like: " 23% done (download, binary) (3 of 15 files)"
+{ M_PERCENTAGE2 "%9u%% valmis (%s, %s) (%d/%d tiedostosta)" }
+
+# ------------------------------------------------- new since 1.61
+
+{ M_TR_OVERWRITE  "Korvaa" }
+{ M_TR_RESUME     "Jatka" }
+{ M_TR_SKIP       "Ohita" }
+{ M_TR_CANCEL     "Peruuta" }
+
+{ M_TR_QUESTION
+"Kohde tiedosto on jo olemassa!"
+"Suositeltava toimenpide: %s"
+""
+"Etäjärjestelmä: %s hakemistossa %s"
+"Paikallinen: %s hakemistossa %s"
+""
+"Lähde: %s tavua, %2d %s %4d  %02d:%02d:%02d"
+"Kohde: %s tavua, %2d %s %4d  %02d:%02d:%02d" }
+
+# ------------------------------------------------- new since 1.62
+
+{ M_DELETE_FILES 
+"%d tiedosto(a) on valittu."
+"  Haluatko varmasti poistaa ne?" }
+ 
+{ M_NOT_EMPTY
+"Hakemisto `%s' ei ole tyhj„."
+"Tyhjenn„ hakemisto?" }
+
+{ M_ALL "Kaikki" }
+
+{ M_DELETING
+"  Poistetaan %s...  " }
+
+{ M_NO_CHMOD
+"T„m„ FTP palvelin ei tue SITE CHMOD komentoa" }
+
+{ M_ACCESSRIGHTS1
+"%d tiedoston k„ytt”oikeudet" }
+
+{ M_ACCESSRIGHTS2
+"Tiedoston %s k„ytt”oikeudet" }
+
+{ M_WRONG_RIGHTS
+"Virheellinen parametri: [%s]"
+"Parametrin oikea muoto: [rwxrwxrwx]"}

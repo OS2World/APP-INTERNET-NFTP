@@ -1,0 +1,336 @@
+<html>
+<head>
+<title>NFTP Frequently Asked Questions</title>
+</head>
+<body background="pic/lt_gray_004.jpg">
+
+<h1>NFTP Frequently Asked Questions</h1>
+
+<hr>
+<a HREF="nftp-man.html">NFTP manual (main part)</a>
+<hr>
+
+<p>
+<h2>Contents</h2>
+<ol>
+<li> <a href="#failures">NFTP does not work! (or does not work as advertised)</a>
+  <ul>
+  <li> NFTP says "emx not found" (OS/2)
+  <li> I have TCP/IP 4.1 and NFTP doesn't work (OS/2)
+  <li> I use SOCKS and NFTP doesn't work (OS/2)
+  <li> Supplied translation to my language is UGLY
+  <li> NFTP has crashed and my terminal acts strangely (Unix)
+  <li> How do I report bug, missing feature or inconsistency in user interface?
+  <li> My keyboard is always in Russian/Ukrainian/etc. mode (Win95)
+  </ul>
+<li> <a href="#howto">How do I?</a>
+  <ul>
+  <li> How do I download entire directory tree?
+  <li> How do I upload entire directory tree?
+  <li> How AutoReconnect feature works?
+  <li> Can I do something with symbolic links on ftp server?
+  <li> How do I do transfer in the background? (Unix)
+  <li> What are the "flags" in the bookmark entries?
+  <li> How do I start file transfer from the command line?
+  </ul>
+<li> <a href="#compatibility">Compatibity issues</a>
+  <ul>
+  <li> Telnet emulators known to work with NFTP
+  <li> What are the differences between NFTP on OS/2, Windows, Unix, BeOS?
+  </ul>
+</ol>
+
+<hr>
+<h2><a name="failures">NFTP does not</a> work! (or does not work as advertised)</h2>
+<dl>
+
+<dt><b>NFTP says "emx not found" (OS/2)</b>
+<dd>You don't have emx runtime package installed. Read 
+    <a href="nftp-man.html#installation">INSTALLATION</a> section again.
+<p>    
+    
+<dt><b>I have TCP/IP 4.1 and NFTP doesn't work (OS/2)</b>
+<dd>Update your emx runtime to 0.9d or later.
+Download it from
+<a href="ftp://hobbes.nmsu.edu/pub/os2/dev/emx/v0.9d/emxrt.zip">Hobbes</a> //
+<a href="ftp://ftp.leo.org/pub/comp/os/os2/leo/gnu/emx+gcc/emxrt.zip">LEO</a> //
+<a href="ftp://crydee.sai.msu.ru/pub/comp/os/os2/leo/gnu/emx+gcc/emxrt.zip">SAI OS/2 archive</a>.
+<p>    
+
+<dt><b>I use SOCKS and NFTP doesn't work (OS/2)</b>
+<dd>Update your emx runtime to 0.9d or later.
+Download it from
+<a href="ftp://hobbes.nmsu.edu/pub/os2/dev/emx/v0.9d/emxrt.zip">Hobbes</a> //
+<a href="ftp://ftp.leo.org/pub/comp/os/os2/leo/gnu/emx+gcc/emxrt.zip">LEO</a> //
+<a href="ftp://crydee.sai.msu.ru/pub/comp/os/os2/leo/gnu/emx+gcc/emxrt.zip">SAI OS/2 archive</a>.
+<p>    
+
+<dt><b>Supplied translation to my language is UGLY</b>
+<dd>Make your own one (and send to me if you like, and I'll package it
+with new version of NFTP).
+<p>    
+
+<dt><b>How do I report bug, missing feature or inconsistency in user interface?</b>
+<dd><a href="mailto:asv@ayukov.com">Send a message</a> to the author,
+Sergey Ayukov. Priority is given to registered customers.
+<p>    
+
+<dt><b>My keyboard is always in Russian/Ukrainian/etc. mode! (Win95)</b>
+<dd>I can't do anything about it. IMHO, this is Windows 95 defect -- you
+can't switch keyboard layout in Win32 console application. The only solution
+is to set English layout as <i>default</i> one (Control Panel/Keyboard) and
+reboot (yes, you do have to reboot). NT does not have this problem.
+<p>
+
+</dl>
+<h2><a name="howto">How</a> do I?</h2>
+<dl>
+
+<dt><b>How do I download entire directory tree?</b>
+<dd>For clarity, I will use the following example: download all DOOM ][
+add-on levels from ftp.cdrom.com (the directory is /pub/doom2/levels/doom2).
+<p>1) Login into ftp.cdrom.com and change to /pub/doom2/levels. Note that
+now you see the "doom2" directory on the screen.
+<p>2) Place the cursor over "doom2" directory and press Ins. NFTP will
+ask whether you really want to walk the subtree /pub/doom2/levels/doom2
+(this question will not be asked if you're already been in all subdirs
+of /pub/doom2/levels/doom2). Answer Yes (remember that walking e.g.
+"/pub" on ftp.cdrom.com could take hours or even days if your connection
+is slow). NFTP will then automatically change into all subdirectories
+of /pub/doom2/levels/doom2, caching them in the memory. You can interrupt
+the process with Esc. When finished, the directory under cursor (doom2)
+will be highlighted.
+<p>3) Now if you like, you can change into the subdirectories of
+/pub/doom2/levels/doom2 manually and remove marks from unwanted parts
+of the subtree, e.g. /pub/doom2/levels/doom2/deathmatch. Remember
+to return back to /pub/doom2/levels/doom2 when you have finished.
+Use Shift-I to verify how many files/bytes you have marked.
+<p>4) Start download with Ctrl-D. NFTP will ask whether you want to keep
+original directory structure intact. In general, you should respond Yes;
+the danger of piling up files is that some of them might have the same
+name. You can stop transfer with Q, skip files with S. With massive transfers
+(when transferring more than one file), NFTP enters SmartAppend mode:
+no questions about reget/rename/overwrite will be asked, the decision is based
+on sizes and time stamps of local and remote files. When transfer completes,
+you'll have the mirror of the remote subtree on the local disk (symbolic
+links are ignored).
+<p>    
+
+<dt><b>How do I upload entire directory tree?</b>
+<dd>Currently, it is not possible. Wait for next version(s).
+<p>    
+
+<dt><b>How AutoReconnect feature works?</b>
+<dd>In general, you should not worry about connection at all anymore.
+E.g., when you going out of home, you just hang up and don't switch machine
+off. When you come back, you dial your provider again and then start working
+with NFTP which is still running. Of course, connection is long dead, but
+when you start transfer or change into directory which was not visited
+yet, NFTP will automatically log in back and do what was requested.
+Similarly, when connection dies during transfer, current file gets skipped,
+NFTP reconnects and proceeds to next file. The main advantage is that
+information you gathered by travelling through remote directories isn't
+lost when connection is dropped.
+<p>    
+
+<dt><b>Can I do something with symbolic links on ftp server?</b>
+<dd>You can try to change to directory they represent. Links pointing
+at files are useless for you. This is assuming you have disabled
+symlink resolving ('dereference-links' in nftp.ini), otherwise you just
+won't see them. This option is used only on Unix ftp servers or
+servers which say they're Unix.
+<p>
+
+<dt><b>NFTP has crashed and my terminal acts strangely (Unix)</b>
+<dd>Type "reset" and press Enter. You might not see letters "reset" on
+the screen but it might do the trick.
+<p>
+
+<dt><b>How do I do transfer in the background? (Unix)</b>
+<dd>First, connect to server, mark files and start transfer as usual.
+Then hit Ctrl-Z. Your shell will say "Stopped nftp". Type "bg" and press
+Enter. NFTP will continue to run in the background. You may now logout or,
+if you stay connected, bring NFTP to foreground with "fg".
+When transfer is completed, NFTP will exit. You can watch transfer
+progress by typing "ps x" ("ps wx" under Solaris).
+<p>
+
+<dt><b>What are the "flags" in the bookmark entries?</b>
+<dd>The following flags can be set in the bookmark entries. They
+are also preserved in the history records.<br>
+<b>p</b> -- use passive mode. PASV mode will be used for that site (except
+standard IBM TCP/IP servers which do not work well in passive mode).<br>
+<b>r</b> -- retry indefinitely. On login error, NFTP will retry regardless of
+error code or whether it is anonymous site or not.<br>
+<b>f</b> -- inside firewall. When firewall support is specified, this
+site will still be accessed directly.
+<p>
+
+<dt><b>How do I make file transfer from the command line?</b>
+<dd>To <i>download</i> single file, use
+
+<p><tt>nftp -G URL</tt>
+
+<p>NFTP will disconnect and exit after transfer. If you want to stay
+connected, use -g instead of -G. To <i>upload</i> single file, use
+
+<p><tt>nftp -P URL</tt>
+
+<p>NFTP will disconnect and exit after transfer. If you want to stay
+connected, use -p instead of -P. 
+
+<p>To transfer a batch of files (possibly
+from different sites), see <a href="scripting.html">NFTP scripting guide</a>.
+
+</dl>
+
+<p>
+<hr>
+<h2><a name="compatibility">Compatibility</a> issues</h2>
+<dl>
+
+<p>
+<hr>
+<dt><b>Telnet emulators known to work with NFTP</b>
+<dd>To run NFTP under Unix remotely (say, on your ISP machine) you need some
+kind of terminal emulator (usually called "telnet"). Unfortunately, not
+all telnet clients are created equal, and some of them cannot be used to
+run NFTP. Here's a list of known telnet programs which work (or don't)
+with NFTP. If you know about some other program which does work for you
+(or does not), please <a href="mailto:asv@ayukov.com">let me know</a>.
+
+<h3>OS/2</h3>
+Find telnet emulators:
+in <a href="http://crydee.sai.msu.ru/archive/bin/autoindex.cgi?opt3=1&opt4=1&opt6=1&path=%2Fpub%2Fcomp%2Fos%2Fos2%2Fsai%2Fapps%2Finternet%2Ftelnet">my collection</a>
+<dl>
+
+   <dt><a href="http://www.corbina.net/~maloff/tn/">TN by Dima Maloff</a>
+   <dd>Somewhat slow, but this one is my favourite now for many useful features
+   (multiple consoles, mouse copy/paste, history, codepage translation).
+   It is free.
+   
+   <dt>Text-mode telnet included with OS/2; TelnetPM included with OS/2
+   <dd>Works in VT220 mode (default). Not quite fast, but very usable.
+   ANSI and VT100 modes do not work (VT100 is black-and-white,
+   ANSI generates some weird key sequences for Home/End/etc.)
+   
+   <dt><a href="http://crydee.sai.msu.ru/archive/bin/autoindex.cgi?opt3=1&opt4=1&opt6=1&path=%2Fpub%2Fcomp%2Fos%2Fos2%2Fsai%2Fapps%2Finternet%2Ftelnet">ssh telnet emulator</a>
+   <dd>Works fine (in VT100 mode), but Ctrl-Z does not work. Use
+   <pre>
+   set TERM=vt100
+   ssh -l username -c idea hostname
+   </pre>
+   (requires sshd on target machine). NFTP version 1.22+ has a workaround
+   for Ctrl-Z problem.
+   
+   <dt><a href="http://www.emtec.com/">ZOC by EmTec</a>
+   <dd>Seems to work in VT220 mode. Has lots of emulation options.
+
+   <dt>term2 from <a href="http://www.aditom.se/~ridax/">OS2You</a>
+   <dd>reported to work fine
+
+</dl> <!-- OS/2 -->
+
+<h3>Windows 95/98/NT</h3>
+Find telnet emulators:
+on <a href="http://www.winfiles.com/apps/98/terminals.html">WinFiles.COM</a>,
+in <a href="http://crydee.sai.msu.ru/archive/bin/autoindex.cgi?opt3=1&opt4=1&opt6=1&path=%2Fpub%2Fcomp%2Fos%2Fwin32%2Ftelnet">my collection</a>.
+<dl>
+
+   <dt>Standard telnet client included with Windows
+   <dd>Works in monochrome mode (use "-m" NFTP option).
+   
+   <dt><a href="http://www.corbina.net/~maloff/tn/">TN by Dima Maloff</a>
+   <dd>Somewhat slow, but this one is my favourite now for many useful features
+   (multiple consoles, mouse copy/paste, history, codepage translation). 
+   It is free.
+   
+   <dt><a href="http://www.musc.edu/~brannanp/telnet/">Console Telnet 2.0</a>
+   <dd>Seems to work flawlessly. This is a text mode application, and
+   it is completely free and even comes with sources.
+   
+   <dt>CRT 2.2 by Vandyke Technologies
+   <dd>Some keys aren't recognized. Probably can be configured to work after
+   some tweaking.
+   
+   <dt>CommNet Version 2.5, CommNet 32 1.0
+   <dd>Seems to work in ANSI mode.
+   
+   <dt>Console Telnet 0.27
+   <dd>Works erratically, some keys aren't recognized.
+   
+   <dt>EasyTerm 3.4
+   <dd>Works, but some keys aren't recognized.
+   
+   <dt>HyperTerminal Private Edition 3.0
+   <dd>Works erratically, some keys aren't recognized.
+   
+   <dt>KevTerm 1.6
+   <dd>Monochrome mode only
+   
+   <dt>Mocha telnet emulator
+   <dd>Has problems with colours
+   
+   <dt>PowerTerm
+   <dd>Should work
+   
+   <dt>Telstar 1.2.4
+   <dd>Does not work
+   
+   <dt>Eric's Telnet 98
+   <dd>Does not work
+   
+   <dt>TeraTerm 2.2
+   <dd>ANSI emulation is a bit buggy, but basically works.
+   Needs keyboard reconfiguration (?). This is free software.
+   
+   <dt>WinTel32
+   <dd>Seems to work
+   
+   <dt>YAWTelnet (Yet Another Winsock Telnet)
+   <dd>No colour support.
+
+   <dt>winterm from <a href="http://www.aditom.se/~ridax/">OS2You</a>
+   <dd>reported to work fine
+
+</dl> <!-- Windows -->
+
+<p>
+<hr>
+<dt><b>What are the differences between NFTP on OS/2, Windows, Unix, BeOS?</b>
+<dd>
+Despite the fact that NFTP is advertised to be the same on all platforms,
+the imperfections of this world do not allow 100% portability.
+<ul>
+    <li> Clipboard is not supported under Unix console and BeOS.
+    
+    <li> DBCS translations do not work under Unix
+    except Korean which was created under Unix
+    
+    <li> Job control is not supported under OS/2, Windows and BeOS
+    
+    <li> Unix terminals and terminal emulators typically have quite
+    limited set of keys. I have to tried to be generic as far as possible
+    but it is still possible that some functions will only be unreachable via
+    menu on some terminals
+    
+    <li> When working at Solaris console, you would probably use
+    "-m" option when starting NFTP to run in monochrome mode, or install
+    rxvt to have colour
+    
+    <li> Pseudographics characters aren't shown in Unix versions and replaced
+    by primitive ASCII equivalents
+    
+    <li> Lower right symbol of the screen is always blank in Unix console versions
+    (there are terminals which do scrolling when something is printed there!)
+    
+    <li>Under Windows 95, numeric coprocessor is required. Therefore 386
+    without 387 and 486sx without 487sx will not work (symptom: NFTP crashes
+    at some point). OS/2, Linux, FreeBSD and probably Windows NT have FPU
+    emulators built into OS.
+</ul>
+
+</dl> <!-- Compatibility -->
+
+</body>
+</html>

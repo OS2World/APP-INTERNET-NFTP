@@ -1,0 +1,1613 @@
+#
+#     Language-specific file for NFTP 1.10+
+#
+#     Spanish
+
+{ M_JAN "Ene" }
+{ M_FEB "Feb" }
+{ M_MAR "Mar" }
+{ M_APR "Abr" }
+{ M_MAY "May" }
+{ M_JUN "Jun" }
+{ M_JUL "Jul" }
+{ M_AUG "Ago" }
+{ M_SEP "Sep" }
+{ M_OCT "Oct" }
+{ M_NOV "Nov" }
+{ M_DEC "Dic" }
+
+{ M_HBAR              "Ä" } { M_VBAR              "³" }
+{ M_CROSS             "Å" }
+{ M_FILL1             "°" } { M_FILL2             "±" }
+{ M_FILL3             "²" } { M_FILL4             "Û" }
+{ M_LU                "Ú" } { M_RU                "¿" }
+{ M_LD                "À" } { M_RD                "Ù" }
+{ M_LT                "Ã" } { M_RT                "´" }
+{ M_UT                "Â" } { M_DT                "Á" }
+{ M_PLACEHOLDER       "ú" } { M_MARKSIGN          "*" }
+
+#  Bookmarks ----------------------------------------------------------
+
+{ M_CANTOPENBOOKMARKS1
+"no puedo abrir el fichero de marcadores [%s] para a¤adir" }
+
+{ M_CANTOPENBOOKMARKS2
+"no puedo abrir el fichero de marcadores [%s] para leer" }
+
+{ M_CANTOPENBOOKMARKS3
+"no puedo abrir el fichero de marcadores [%s] para sobreescribir" }
+
+{ M_NO_BOOKMARKS
+"  No se encontraron los marcadores " }
+
+{ M_EMPTY_BOOKMARKSLIST
+"  La lista de marcadores est  vac¡a  " }
+
+{ M_DELETE_BOOKMARK
+"  ¨Borro la direcci¢n de los marcadores  "
+"  %s ? " }
+
+{ M_INSERT_BOOKMARK1
+" Nombre de usuario (vac¡o para 'anonymous'): " }
+
+{ M_INSERT_BOOKMARK2
+" Nombre del servidor FTP o direcci¢n IP: " }
+
+{ M_INSERT_BOOKMARK3
+" Teclea directorio: " }
+
+{ M_CURRENT_BOOKMARKS
+" Marcadores actuales " }
+
+{ M_BOOKMARKS_CHANGED
+" Los marcadores han cambiado. "
+"  ¨Grabo la nueva lista?  " }
+
+#  Prompts ------------------------------------------------------------
+
+{ M_USETAB
+" Usa Tab/Shift-Tab para seleccionar campo " }
+
+{ M_CHOOSEDRIVE
+"Selecciona unidad" }
+
+{ M_SELECT_DIRECTORY
+" Selecciona directorio de inicio (ENTER aceptar) : " }
+
+{ M_ENTER_VERBATIM_COMMAND
+" Teclea el comando para enviar literal : " }
+
+{ M_MKDIR_ENTER_NAME
+" Teclea el nombre del directorio a crear : " }
+
+{ M_ENTER_FIREWALL_USERID
+" Usuario para FIREWALL: " }
+
+{ M_ENTER_FIREWALL_PASSWORD
+" Teclea la clave para FIREWALL: " }
+
+{ M_ENTER_USERID
+" Teclea usuario : " }
+
+{ M_ENTER_PASSWORD
+" Clave de acceso : " }
+
+{ M_ENTER_HOSTNAME
+" Teclea servidor[[:puerto]directorio] a conectar : " }
+
+{ M_ENTER_DIRECTORY
+" Cambiar directorio en sistema remoto a : " }
+
+{ M_ENTER_SELECT_FILTER
+" Teclea filtro : " }
+
+{ M_RENAME_LOCAL_FILE
+" Por favor, renombra el fichero local : " }
+
+#  Pseudo-responses ------------------------------------------------------
+
+{ M_RESP_CANNOT_RESOLVE
+"No puedo resolver '%s'" }
+
+{ M_RESP_LOOKING_UP
+"Buscando '%s'" }
+
+{ M_RESP_TRYING_IP
+"No puedo resolver '%s', intentando por direcci¢n IP" }
+
+{ M_RESP_FOUND
+"Encontrado '%s'" }
+
+{ M_RESP_NO_SOCKET
+"No puedo obtener socket, me rindo..." }
+
+{ M_RESP_FAILED_TO_CONNECT
+"Fallo al conectar al puerto %u" }
+
+{ M_RESP_CONNECTED
+"Conectado al puerto %u" }
+
+{ M_RESP_CLOSING
+"Cerrando conexi¢n de control" }
+
+{ M_RESP_LOGIN
+"Conectado al sistema como '%s@%s'" }
+
+{ M_RESP_TRANSFER_DONE
+"Transferencia completa; velocidad media %u bytes/seg." }
+
+{ M_RESP_INIT_DONE
+"init() hecho..." }
+
+#  Questions -------------------------------------------------------------
+
+{ M_TOO_BIG_FOR_INTVIEWER
+" El fichero '%s' es muy grande -- %ld bytes. "
+" ¨Aun as¡ quieres verlo con el lector interno?" }
+
+{ M_REALLY_OVERWRITE
+" **** SOBREESCRIBIR ****"
+""
+" El fichero '%s' ya existe."
+" Tiene el mismo tama¤o que el fichero remoto. "
+" (Fic. local: %d bytes, fic. remoto: %d bytes) "
+" ¨Quieres sobreescribir el fichero local?" }
+
+{ M_OVERWRITE_RENAME_CANCEL
+" ­El fichero '%s' ya existe!"
+" Tiene el mismo tama¤o que el fichero remoto. "
+" (Fic. local: %d bytes, fic. remoto: %d bytes) "
+" Esc - Cancelar transferencia " }
+
+{ M_OVERWRITE_RENAME_CANCEL2
+" ­El fichero '%s' ya existe!"
+" Es m s GRANDE que el fichero remoto. "
+" (Fic. local: %d bytes, fic. remoto: %d bytes) "
+" Esc - Cancelar trasferencia " }
+
+{ M_OVERWRITE_RENAME_CANCEL3
+" Sobreescribir fichero local "
+" Renombrar fichero local " }
+
+{ M_REALLY_REGET
+" **** REINICIAR ****"
+""
+" El fichero '%s' ya existe. "
+" Es m s PEQUE¥O que el fichero remoto. "
+" (Fic. local: %d bytes, fic. remoto: %d bytes) " }
+
+{ M_REGET_RENAME_CANCEL
+" ­El fichero '%s' ya existe! "
+" Es m s PEQUE¥O que el fichero remoto. "
+" (Fic. local: %d bytes, fic. remoto: %d bytes) "
+" Selecciona 'Continuar' para continuar una recepci¢n abortada "
+" Esc - Cancelar transferencia " }
+
+{ M_REGET_RENAME_CANCEL2
+" Continuar "
+" Sobreescribir fichero local "
+" Renombrar fichero local " }
+
+{ M_REALLY_TRANSFER_FROM
+"         ¨Recibir fichero(s)?         " }
+
+{ M_REALLY_TRANSFER_TO
+"         ¨Enviar fichero(s)?          " }
+
+{ M_REALLY_DELETE
+"   ¨Borrar fichero(s)?   " }
+
+{ M_REALLY_SAVE_BOOKMARK
+"  ¨Grabar directorio                   "
+"  %s %s : %s  "
+"  en marcadores?  " }
+
+{ M_REALLY_EXIT
+"     ¨Salir de NFTP?    " }
+
+{ M_REALLY_LOGOFF
+"  ¨Desconectar de %s?   " }
+
+#  Miscellaneous text strings --------------------------------------------
+
+{ M_WELCOME
+" NFTP%s Pulsa Shift-H para informaci¢n general" }
+
+{ M_DISCONNECTING
+"   Desconectando de %s   " }
+
+{ M_EOF_MARK
+""
+" ========= FIN DE FICHERO ========== " }
+
+{ M_WRONG_REGCODE
+" C¢digo de registro inv lido en nftp.ini. "
+" Por favor, comprueba el nombre y c¢digo. ¨Salir ahora?" }
+
+{ M_RUNNING_UNREGISTERED
+"         Esta copia de NFTP no est  registrada "
+""
+"    No podr s trasferir ficheros mayores de %dKB. "
+""
+"      Lee la documentaci¢n para registrar NFTP."
+""
+"    Para desactivar este mensaje, pon 'message' a 0"
+"    en la secci¢n 'registration' de nftp.ini" }
+
+{ M_CCLINES
+" Control de conexi¢n : %u linea(s)" }
+
+{ M_BINARY
+"BINARIO" }
+
+{ M_ASCII
+"ASCII  " }
+
+{ M_TRANSFER_COMPLETED
+"Transferencia completa; pulsa una tecla para continuar " }
+
+{ M_HELP_ESC_TO_EXIT
+"  Ayuda - Esc para salir  " }
+
+{ M_STATUS
+" Total %u fic(s), %s Bytes  [%3s]  Marcados %u fic(s), %s Bytes  " }
+
+{ M_STATUS_BIN
+"BIN" }
+
+{ M_STATUS_ASC
+"ASC" }
+
+#  Fatal errors --------------------------------------------------------
+
+{ M_UNKNOWN_OS
+" Sistema operativo desconocido en el servidor: "
+"    '%s',"
+" desconectando... " }
+
+{ M_UNREGISTERED_TRANSFER
+" No puedes trasferir ficheros mayores de %dKB "
+"        con el programa sin registrar. " }
+
+{ M_INI_BUILD_FAILED
+"Error al leer/convertir nftp.ini."
+"Comprueba en el PATH versiones antiguas de NFTP.EXE o NFTP-OPT.EXE" }
+
+{ M_EMAIL_NOT_SET
+""
+"Tienes que configurar nftp.ini antes de ejecutar NFTP. "
+"Como m¡nimo, tienes que poner tu direcci¢n de correo (e-mail)."
+"" }
+
+{ M_CONNECTION_LOST
+" Conexi¢n perdida. " }
+
+{ M_NO_PASV_NOFIREWALLING
+" Este servidor de FTP no soporta el comando PASV y "
+" por tanto no se puede acceder desde detr s de un firewall " }
+
+{ M_NO_PASV
+" Este servidor de FTP no soporta el comando PASV. "
+" Por favor, cambia el par metro de 'use-PASV-mode' a 0 " }
+
+{ M_CANT_CREATE_SEM
+" Error fatal : no puedo crear sem foros " }
+
+{ M_INI_UNREADABLE
+""
+"No puedo encontrar nftp.ini; terminando el programa" }
+
+#  Transient messages --------------------------------------------------
+
+{ M_SENDING_VERBATIM_COMMAND
+"   Enviando commando al sistema remoto...   " }
+
+{ M_PARSING_LISTING
+"   Convirtiendo listado de directorio...   " }
+
+{ M_MKDIR_CREATING
+"   Creando directorio en el sistema remoto...   " }
+
+{ M_GOING_ROOT
+"   Cambiando al directorio raiz en el sistema remoto...   " }
+
+{ M_GOING_UP
+"   Cambiando al directorio superior en el sistema remoto...   " }
+
+{ M_CHANGING_DIR
+"   Cambiando directorio en el sistema remoto...   " }
+
+{ M_SENDING_NOOP
+"   Enviando comando nulo de no operaci¢n (NOOP)...   " }
+
+{ M_QUERYING_DIR
+"   Mirando directorio actual en el sistema remoto...   " }
+
+{ M_RETRIEVING_FILELIST
+"   Recibiendo lista de ficheros...   " }
+
+#  nftp-opt  defines -------------------------------------------------
+
+{ M_FATAL_LOADING_NFTP_INI
+""
+"error fatal cargando nftp.ini; terminando" }
+
+{ M_WRONG_KEYNAME
+"nombre de tecla erroneo: [%s]"
+"" }
+
+{ M_KEYDEF_ERRORS
+"%d error(es) detectados procesando definiciones de teclas."
+"Pulsa una tecla..." }
+
+#  keynames defines ----------------------------------------------------
+
+{ M_KEYNAMES_WELCOME
+"Pulsa Esc para salir, u otras teclas para ver su nombre."
+"Si no aparece nada, esa combinaci¢n de teclas es porque:"
+"1) no se genera;"
+"2) es interceptada por el sistema operativo."
+""
+"Codig:         :"
+"" }
+
+{ M_HLP_MAIN
+""
+" NFTP"
+""
+" Traducido al Espa¤ol por Jose Ruiz (jruiz@ctv.es)."
+" Por favor, lee la documentaci¢n HTML, es m s completa."
+""
+" TECLAS GENERALES"
+""
+" Shift-H  - Esta informaci¢n. (El sistema de ayuda no es hipertexto)"
+" F1       - Ayuda sensible al contexto."
+" F10      - Desconectar del remoto y salir de NFTP."
+" Ctrl-K   - Desconectar del remoto."
+" Ctrl-B   - Abre los marcadores para conectar desde all¡."
+" F2       - Abre la pantalla del historial para conectar desde all¡."
+" Ctrl-L   - Conexi¢n an¢nima a otro sistema."
+" Ctrl-N   - Conexi¢n con usuario/clave a otro sistema."
+" Ctrl-W   - Informaci¢n de la versi¢n de NFTP."
+" Ctrl-T   - Cambia modo de trasferencia ASCII/BINARIO."
+" Ctrl-J   - Repinta la pantalla (no vuelve a leer el directorio remoto)"
+" Shift-I  - Comprueba el n£mero de ficheros marcados en los directorios."
+" Shift-A  - Env¡a comando de NO OPERACION. (verifica la conexi¢n)"
+" Shift-F  - Usar/No-usar el comando NLST con par metros (por defecto se"
+"            usa). Algunos servidores no aceptan NLST -lLa. Desactivalo"
+"            si recibes errores del servidor al recibir la lista de"
+"            ficheros. [NO RECOMENDADO]."
+""
+" Observa que estos comandos est n disponibles casi siempre. Sin embargo"
+" en varias pantallas del programa act£an otras teclas, por eso no "
+" olvides pulsar F1 para obtener ayuda sensible al contexto. "
+"" }
+
+#  ------------------------------------------------------------------------
+
+{ M_HLP_LINEIN
+""
+" Teclas disponibles editando texto en campos : "
+""
+" Esc/Enter               - Cancelar/Confirmar."
+" <--, -->, Inicio, Fin   - Mover el cursor."
+" Tab, Shift-Tab          - Mover al campo siguiente/anterior."
+" Supr, Borrar            - Borrar caracteres."
+" Shift-Ins               - Inserta texto del portapapeles del sistema."
+" Ctrl-Ins                - Inserta texro al portapapeles del sistema."
+""
+" Pulsa Supr inmediatamente despu‚s de aparecer el texto para "
+" borrarlo por completo. Si est s introduciendo una clave, no "
+" se ver  en pantalla."
+"" }
+
+#  ------------------------------------------------------------------------
+
+{ M_HLP_CC
+""
+" Teclas disponibles en el hist¢rico de Control de Conexi¢n : "
+""
+" Cursores    - Mueve la ventana."
+" Esc         - Te lleva al final del hist¢rico. (Igual que Fin)"
+" Espacio     - Cambia a la ventana de directorios."
+" Shift-Q     - Env¡a una cadena literal al servidor. (quote)"
+" Shift-C     - Cambia a un directorio cualquiera."
+""
+" Las respuestas del servidor aparecen en gris; los comandos enviados"
+" aparecen en verde brillante y los mensajes de informaci¢n de NFTP"
+" en rojo brillante. Por supuesto, estos colores son v lidos solo si"
+" no los has cambiado en la configuraci¢n 'nftp.ini'."
+""
+" NFTP es problablemente el £nico cliente FTP con hist¢rico de control"
+" de conexi¢n incluido. Si quieres ver las negociaciones entre cliente"
+" y servidor permanentemente, pon 'auto-switch-to-control' a 1 en la"
+" configuraci¢n. Pru‚balo, puede que te guste (o no)."
+"" }
+
+#  ------------------------------------------------------------------------
+
+{ M_HLP_DIR_RAW
+""
+" Este es el directorio remoto. Si no est s conectado, simplemente ver s"
+" una ventana en blanco. Lee la ayuda general (Shift-H) para informaci¢n"
+" sobre como conectar a un servidor."
+""
+" F3         - Ver el fichero se¤alado, usando un lector interno."
+" Shift-V    - Ver el fichero se¤alado, usando un lector externo."
+""
+" F5         - Recibir el/los ficheros seleccionados."
+" Ctrl-D     - Recibir el/los ficheros seleccionados en todos los"
+"              directorios."
+" Shift-G    - Recibir un fichero por su nombre (p.ej: cuando el "
+"              nombre est  escondido o es ilegible)."
+" F7         - Crear directorio. (requiere permisos en el remoto)"
+" F8         - Borrar el fichero o directorio se¤alado."
+" Ctrl-R     - Releer directorio. (refresca la lista de ficheros)"
+" Shift-O    - Cargar descripciones de ficheros del fichero se¤alado."
+""
+" Ctrl-A     - Selecciona todos los ficheros en el dir. actual."
+" Ctrl-X     - Deseleccionar todos los ficheros en el dir. actual."
+" Insert     - Selecc/deselecc fichero se¤alado."
+"              (Los directorios no pueden seleccionarse)"
+" +/-        - Selecc/deselecc ficheros mediante filtro, ej: '*.zip'"
+" *          - Invierte la selecci¢n."
+" Ctrl-Y     - Deselecciona todos los ficheros marcados."
+""
+" Cursores   - Mueve la barra de selecci¢n."
+" \          - Cambiar al directorio raiz."
+" Ctrl-ReP g - Cambiar al directorio anterior. ('cd ..')"
+" Ctrl-AvP g - Cambiar al directorio se¤alado. ('cd <dir>')"
+" Enter      -    '           '         ' "
+" Shift-C    - Cambiar a un directorio cualquiera."
+""
+" Shift-N    - Ordenar ficheros por nombre (directorios primero)."
+" Shift-X    - Ordenar ficheros por extensi¢n (directorios primero)."
+" Shift-T    - Ordenar por fecha/hora, despu‚s por nombre."
+"              (directorios primero)."
+" Shift-S    - Ordenar por tama¤o, despu‚s por nombre."
+"              (directorios primero)."
+" Shift-Y    - No ordenar, mostrar directorio 'tal cual'."
+" Shift-E    - Invierte el sentido de la ordenaci¢n."
+""
+" F4         - Graba este servidor/directorio en los marcadores."
+" Espacio    - Cambia al hist¢rico de control de conexi¢n."
+" Tab        - Cambia a la pantalla del directorio local."
+" Ctrl-O     - Muestra o esconde las descripciones de ficheros."
+""
+" Otras teclas disponibles est n descritas en la ayuda General del"
+" programa (Shift-H). F¡jate que puedes seleccionar directorios (todos"
+" los ficheros en los subdirectorios se seleccionar n). La selecci¢n"
+" de ficheros se mantiene incluso si cambias de directorio."
+"" }
+
+#  ------------------------------------------------------------------------
+
+{ M_HLP_VIEWER
+""
+" Teclas disponibles en el lector interno : "
+""
+" Cursores        - Desplazar el texto (Observa que tambi‚n puedes"
+"                   desplazarte horizontalmente)."
+" Shift-< Shift-> - Desplazar 10 columnas horizontalmente."
+" Esc             - Salir del lector."
+" Ctrl-F          - Buscar texto."
+" Ctrl-G          - Repetir b£squeda."
+" Ctrl-W          - Grabar el contenido en un fichero."
+""
+" Observa que el lector guarda el fichero en memoria, por eso no "
+" intentes leer ficheros demasiado grandes."
+"" }
+
+
+#  ------------------------------------------------------------------------
+
+{ M_HLP_LOCAL_PARSED
+""
+" Este es el directorio local."
+""
+" F3         - Ver el fichero se¤alado, usando un lector interno."
+" Shift-V    - Ver el fichero se¤alado, usando un lector externo."
+""
+" F6         - Enviar el/los ficheros seleccionados."
+" F7         - Crear directorio."
+" F8         - Borrar fichero o directorio se¤alado."
+" Ctrl-R     - Releer directorio. (refresca la lista de ficheros)"
+""
+" Ctrl-A     - Selecciona todos los ficheros en el dir. actual."
+" Ctrl-X     - Deseleccionar todos los ficheros en el dir. actual."
+" Insert     - Selecc/deselecc fichero se¤alado."
+"              (Los directorios no pueden seleccionarse)"
+" +/-        - Selecc/deselecc ficheros mediante filtro, ej: '*.zip'"
+" *          - Invierte la selecci¢n."
+""
+" Cursores   - Mueve la barra de selecci¢n."
+" \          - Cambiar al directorio raiz."
+" Ctrl-ReP g - Cambiar al directorio anterior. ('cd ..')"
+" Ctrl-AvP g - Cambiar al directorio se¤alado. ('cd <dir>')"
+" Enter      -    '           '         ' "
+" Shift-C    - Cambiar a un directorio cualquiera."
+" Shift-Z    - Seleccionar unidad de disco."
+""
+" Shift-N    - Ordenar ficheros por nombre (directorios primero)."
+" Shift-X    - Ordenar ficheros por extensi¢n (directorios primero)."
+" Shift-T    - Ordenar por fecha/hora, despu‚s por nombre."
+"              (directorios primero)."
+" Shift-S    - Ordenar por tama¤o, despu‚s por nombre."
+"              (directorios primero)."
+" Shift-Y    - No ordenar, mostrar directorio 'tal cual'."
+" Shift-E    - Invierte el sentido de la ordenaci¢n."
+""
+" Espacio    - Cambia al hist¢rico de control de conexi¢n."
+" Tab        - Cambia a la pantalla del directorio local."
+""
+" Otras teclas disponibles est n descritas en la ayuda General del"
+" programa (Shift-H). Observa que no puedes seleccionar directorios."
+" Las selecciones de ficheros NO se mantienen si cambias de"
+" directorio."
+"" }
+
+#  ------------------------------------------------------------------------
+
+{ M_HLP_UNDEFINED
+""
+" No hay ayuda en este lenguaje para esta pantalla. "
+"" }
+
+{ M_NO_TEXT
+" No hay texto para este mensaje. "
+" Posiblemente no est‚ traducido a este lenguaje o "
+" se le ha olvidado al autor de NFTP. " }
+
+{ M_CANT_DELETE
+" No puedo borrar '%s' " }
+
+{ M_ENTER_LOCAL_DIRECTORY
+" Cambiar unidad/directorio local a : " }
+
+{ M_REALLY_TRANSFER_FROM_ALLDIRS
+" %d ficheros en %d directorios marcados para recibir. "
+" %s bytes es el tama¤o total. ¨Continuar? " }
+
+{ M_BYTES_RECEIVED
+"     %7d bytes recibidos     "
+"             Pulsa ESC para parar " }
+
+{ M_BYTES_REMAIN
+"      %7d bytes recibidos"
+"      %7d bytes pendientes"
+"             Pulsa ESC para parar " }
+
+{ M_YES
+"  Si   " }
+
+{ M_NO
+"  No   " }
+
+{ M_OK
+"   OK   " }
+
+{ M_ENTER_SEARCHSTRING
+" Cadena a buscar: " }
+
+{ M_ENTER_FILENAME_SAVE
+" Nombre de fichero a grabar: " }
+
+{ M_CANNOT_OPEN
+" No puedo abrir el fichero %s " }
+
+{ M_FILE_SAVED
+"        Fichero grabado       " }
+
+{ M_LISTING_HEADER
+"Servidor  : %s"
+"Directorio: %s" }
+
+{ M_LISTING_FOOTER
+""
+"%d ficheros, %s bytes en total" }
+
+{ M_LISTING_SAVED
+"     Listado grabado     " }
+
+{ M_ENTER_RETRIEVE_AS
+" Recibir fichero como: " }
+
+{ M_ENTER_LISTING_FILENAME
+" Nombre de fichero para listado: " }
+
+{ M_ENTER_NEWNAME
+" Renombrar fichero: " }
+
+{ M_ENTER_UPLOAD_AS
+" Enviar fichero como: " }
+
+{ M_RENAME_FAILED
+" No puedo renombrar '%s' a '%s' " }
+
+{ M_QUICK_SEARCH
+" B£squeda r pida: %s " }
+
+{ M_RESP_RETRYING
+"Pausa de %d segundos... ESC para parar, cualquier tecla reintenta." }
+
+{ M_RESP_RETRY_ABORTED
+"Abortado." }
+
+#  new since 0.90
+
+{ M_CANT_ACCESS_DRIVE
+" No puedo acceder al disco %c: " }
+
+{ M_DIRECTORY_DOESNT_EXIST
+" El directorio '%s' no existe. " }
+
+{ M_BAD_BOOKMARK_ENTRY
+" La entrada en los marcadores "
+" %s "
+" es incorrecta y se ignorar . " }
+
+{ M_DEFAULT_BMK_FOLDER
+"Servidores generales (creado por defecto)" }
+
+{ M_BOOKMARK_FORMAT
+"; El formato de los marcadores es:"
+"; ftp.sai.msu.su:21/pub/os2 : login/password/parametros : descripci¢n"
+";"
+"; Edita este fichero con cuidado, siguiendo estas reglas:"
+"; - Los espacios entre los dos puntos (:) SON importantes."
+"; - Los directorios deben ser absolutos, tienen que empezar con '/'."
+"; - Puedes omitir el puerto."
+"; - Sustituye '*' en 'login' para entrada an¢nima y quita 'password':"
+";   crydee.sai.msu.su:/pub/comp/os/os2 : *//parametros : Archivo OS/2 del SAI"
+";   "
+";" }
+
+{ M_ENTER_DESC
+" Teclea descripci¢n: " }
+
+{ M_FOLDER_TITLE
+" Carpeta: %s " }
+
+{ M_DELETE_BOOKMARK1
+"       ¨ Borrar entrada ?       " }
+
+{ M_NAME_FOLDER
+" Teclea nombre para la nueva carpeta " }
+
+{ M_DELETE_NONEMPTY_FOLDER
+" ¨ Borrar la carpeta con su contenido "
+" '%s' ? " }
+
+{ M_ENTER_FOLDER_TITLE
+" Teclea titulo de carpeta: " }
+
+{ M_SELECT_FOLDER
+" Selecciona la carpeta para dejar la entrada " }
+
+{ M_FILE_TO_DOWNLOAD
+" Fichero a recibir: " }
+
+{ M_CANT_CREATE_DIRECTORY
+"No puedo crear directorio '%s'" }
+
+{ M_REREAD_REMOTE_DIR
+" ¨Releer el contenido del directorio remoto? " }
+
+{ M_LOGOFF_MARKED
+" Has marcado %d fichero(s) en %d directorio(s). "
+" El tama¤o total es de %s bytes. "
+" ¨De verdad quieres desconectar? " }
+
+{ M_CANT_LOGIN
+" No puedo conectar con %s " }
+
+{ M_FILE_NOT_FOUND
+" El fichero '%s' no se encuentra en el servidor. " }
+
+{ M_TRANSFER_FAILED
+" La transferencia de '%s' ha fallado " }
+
+{ M_PROXY_ISNT_SPECIFIED
+"  Servidor proxy para Firewall no est  especificado en NFTP.INI " }
+
+{ M_NOT_CONNECTED
+"No conectado" }
+
+{ M_INCORRECT_FIREWALL
+" Tipo incorrecto de firewall specificado: %d " }
+
+{ M_UNKNOWN_SERVER_OS
+" Aviso: Sistema Operativo desconocido en el servidor: "
+" '%s'; "
+" NFTP podr¡a fallar al convertir el listado de ficheros " }
+
+{ M_CONNECTING
+"Conectando con %s..." }
+
+{ M_CANNOT_RENAME
+" No puedo renombrar '%s' a '%s' " }
+
+{ M_RESP_REGET_ISNT_SUPPORTED
+"Reget no soportado; transfiriendo todo el fichero" }
+
+{ M_DOWNLOADING
+"%s - recibiendo..." }
+
+{ M_CANT_OPEN_FOR_WRITING
+" No puedo abrir '%s' para escritura " }
+
+{ M_CHANGING_DIRECTORY
+"   Cambiando directorio a:   "
+"   '%s'   " }
+
+{ M_RESP_TRANSFER_CANCELLED
+"Transferencia abortada (%s)" }
+
+{ M_RESP_TRANSFER_ERROR
+"Error transfiriendo '%s'" }
+
+{ M_CANT_OPEN_FOR_READING
+" No puedo abrir '%s' para lectura " }
+
+{ M_CANT_WRITE_LOGFILE
+" Aviso: No puedo escribir al fichero '%s' " }
+
+{ M_CANT_GUESS_CURDIR
+" No puedo determinar el directorio actual en el remoto " }
+
+{ M_CANT_READ_FILE
+" No puedo leer el fichero '%s' " }
+
+{ M_UPLOADING
+"%s - enviando..." }
+
+{ M_HLP_SHORT
+" NFTP Atajos de teclado                 [F1 - M s informaci¢n]"
+"                                     [Shift-H - Ayuda general]"
+" Conexi¢n/Desconexi¢n"
+""
+" Ctrl-B - Marcadores (favoritos)    Ctrl-L - Conectar como anonimo"
+" F4     - Grabar marcadores.        Ctrl-N - Conectar con login/password"
+" F10    - Desconectar y salir.      F2     - Historial"
+""
+" Ver"
+""
+" Tab     - Dir. local/remoto.     Espacio - Directorio/Conexi¢n. "
+" Shift-Z - Cambia unidad local.   Shift-C - Teclear directorio."
+" Shift-N/X/T/S   - Ordenar por varios criterios: "
+"                   Nombre, Extensi¢n, Fecha, Tama¤o."
+" Cualquier tecla - Busca fichero que empiece por esa tecla."
+""
+" Transferencias"
+""
+" F5  - Recibir fichero.             F6     - Enviar fichero."
+" F3  - Ver fichero de texto.        Ctrl-D - Recibir ficheros selecc."
+" Ins - Selecc/Deselecc. fichero     Ctrl-A - Seleccionar todos."
+"" }
+
+{ M_HLP_BOOKMARK1
+""
+" Carpetas de Marcadores "
+""
+" Cada carpeta puede contener varias entradas de Marcadores. Pulsa Enter"
+" o cursor derecha para entrar en una carpeta, ESC o la tecla de cursor"
+" izquierda para salir. Usando s¢lamente las teclas  del  cursor puedes"
+" navegar por todos los marcadores."
+""
+" Para crear una nueva carpeta, pulsa INS. Para borrar una pulsa DEL."
+" Para cambiar el nombre de una carpeta pulsa Ctrl-E."
+""
+" Esta pantalla aparece tambi‚n cuando creas una entrada en marcadores."
+" Simplemente selecciona la carpeta de destino o crea una nueva pulsado"
+" INS. Nota que cuando se graba una entrada en marcadores que tiene una"
+" clave (es decir, no es an¢nima), la clave no se graba en el disco."
+" Puedes insertarla manualmente en el fichero .BMK de marcadores, pero"
+" no se recomienda, porque esto es un agujero de seguridad (las claves"
+" no est n encriptadas y cualquiera que tenga acceso a tu ordenador"
+" puede verlas)."
+""
+" Cuando est s modificando la lista, los cambios se grabar n al salir"
+" de esta ventana. Se te preguntar  si quieres grabar los cambios o no."
+" Si est s ejecutando varias copias de NFTP simultaneamente, no"
+" modifiques los marcadores al mismo tiempo."
+"" }
+
+{ M_HLP_BOOKMARK2
+""
+" Marcador dentro de una carpeta "
+""
+" Pulsa Enter para conectar a un servidor. Esc o la tecla de cursor"
+" izquierda para salir de la carpeta. Usando s¢lo las teclas del cursor"
+" puedes navegar por todos los marcadores."
+""
+" Pulsa Del para borrar una entrada en marcadores. Puedes cambiar el"
+" orden de las entradas f cilmente: Usa Shift-U para mover la"
+" entrada hacia arriba, Shift-D para moverla hacia abajo. Pulsando"
+" Shift-< la puedes cambiar de carpeta. Para cambiar el nombre"
+" de una entrada de marcadores pulsa Ctrl-E."
+""
+" Cuando est s modificando la lista, los cambios se grabar n al salir"
+" de esta ventana. Se te preguntar  si quieres grabar los cambios o no."
+" Si est s ejecutando varias copias de NFTP simultaneamente, no"
+" modifiques los marcadores al mismo tiempo."
+"" }
+
+#  ---------------------------------------------------------- new in 1.02
+
+{ M_ALREADY_BOOKMARKED
+" El servidor '%s' ya est  enlos marcadores. "
+" (Directorio '%s'). ¨Quieres a¤adirlo? " }
+
+{ M_EDIT1
+"servidor[:puerto]directorio" }
+
+{ M_EDIT2
+"Login/password/opciones" }
+
+{ M_EDIT3
+"Descripci¢n del servidor" }
+
+{ M_CONNECTION_OK
+"    La conexi¢n es correcta    " }
+
+{ M_MARKED_STATISTICS
+"    %d ficheros en %d directorios. %s bytes       " }
+
+#  ---------------------------------------------------------- new in 1.10
+
+{ M_STARTING_TRANSFER
+" Comenzando transferencia." }
+
+{ M_KEEP_TREE_INTACT
+" Has marcado %d ficheros en %d subdirectorios. "
+" Tama¤o total: %s bytes. "
+""
+" ¨Mantener la estructura de directorios al transferir? " }
+
+{ M_KEEP_TREE2
+" Mantener estructura "
+"  Solo los ficheros  " }
+
+{ M_OVERWRITE_RENAME_CANCEL4
+" Sobreescribir fic. local "
+" Renombrar fic. local "
+" Saltar este fichero " }
+
+{ M_REGET_RENAME_CANCEL5
+" Continuar "
+" Sobreescribir fic. local "
+" Renombrar fic. local "
+" Saltar este fichero " }
+
+{ M_RESP_BIND_FAILED
+"Error de red (fallo en bind())" }
+
+{ M_RESP_LISTEN_FAILED
+"Error de red (fallo en listen())" }
+
+{ M_RESP_GETSOCKNAME_FAILED
+"Error de red (fallo en getsockname())" }
+
+{ M_RESP_CANNOT_CONNECT
+"No puedo conectar para transferir datos" }
+
+{ M_RESP_CONNECTION_NOT_ESTABLISHED
+"El servidor no estableci¢ una conexi¢n de datos" }
+
+{ M_RESP_TRANSFER_SKIPPED
+"Fichero `%s' saltado" }
+
+{ M_WALK_TREE
+" ¨ Recorrer todo el  rbol empezando en "
+" '%s' ? " }
+
+{ M_NO_MARKED_FILES
+" No hay ficheros seleccionados en los subdirectorios " }
+
+{ M_HAVENT_BEEN_CONNECTED
+"aun no estoy conectado" }
+
+{ M_DIRECTORY_LISTING
+"Listado de directorio" }
+
+{ M_LARGE_INDEX_FILE
+"  Atenci¢n: El fichero '%s' que contiene las descripciones "
+"  ocupa %s bytes. ¨Quieres recibirlo de todas formas?  " }
+
+{ M_LOAD_DESCRIPTIONS
+" Cargando descripciones desde '%s' ? " }
+
+{ M_CANT_USE_DIR_AS_INDEX_FILE
+" No puedo cargar descripciones del directorio '%s'. "
+" Situa el cursor sobre un fichero normal. " }
+
+{ M_RESP_CONNECTING
+"Conectando a %s..." }
+
+{ M_DOWNLOADING1
+"%s - Rec. %lu%% a %.2f KB/s" }
+
+{ M_UPLOADING1
+"%s - Env. %lu%% a %.2f KB/s" }
+
+{ M_DESC_DOWNLOAD_OPTIONS
+"  Si   "
+"  No   "
+" Nunca " }
+
+# ----------------------------------------- new in 1.21 -------------
+
+{ M_RESP_CANT_OPEN
+"No puedo abrir el fichero %s" }
+
+{ M_NO_EMAIL_ADDRESS
+""
+"Atenci¢n: La direcci¢n de correo no est  en el fichero %s."
+"" }
+
+{ M_GUESSED_EMAIL
+"Usando %s como clave para conexiones an¢nimas."
+"Pulsa ENTER para continuar..."
+"" }
+
+{ M_CANT_GUESS_EMAIL
+"No puedo encontrar tu nombre de m quina,"
+"por favor, edita %s y escribe tu direcci¢n de correo."
+"Se usar  para las conexiones FTP an¢nimas."
+"" }
+
+{ M_INI_CONFIG_VERSION
+""
+"Tu fichero de configuraci¢n, %s, tiene versi¢n %s."
+"El ejecutable de NFTP tiene versi¢n %s."
+"" }
+
+{ M_INI_CANT_FIND_NFTP_I
+"No puedo encontrar NFTP.I para actualizar NFTP.INI"
+"ni en `%s' ni en `%s' !"
+"" }
+
+{ M_INI_UPDATE
+"Voy a actualizar  `%s'"
+"desde             `%s'."
+"¨Continuar? [Ynq]" }
+
+{ M_INI_UPDATING
+""
+"Actualizando %s desde %s..."
+"" }
+
+{ M_INI_CANT_OPEN_READ
+"No puedo abrir %s en lectura"
+"" }
+
+{ M_INI_CANT_OPEN_WRITE
+"No puedo abrir %s en escritura"
+"" }
+
+{ M_INI_WRONG_ENTRY
+"Error -- Entrada fuera de la secci¢n:"
+"%s" }
+
+{ M_INI_CANT_RENAME
+"No puedo renombrar `%s' a `%s'"
+"" }
+
+{ M_INI_BACKUP
+""
+"Una copia de seguridad de %s"
+"se ha guardado como       %s"
+"" }
+
+{ M_INI_UPDATING_ENTRY
+"Actualizando: %s"
+"" }
+
+{ M_INI_FINISHED
+""
+"Ternim‚ de actualizar. Pulsa ENTER para continuar..." }
+
+
+# ----------------------------------------- new in 1.22 -------------
+
+{ M_RESP_CANT_CREATE_DIRECTORY
+"No puedo crear el directorio `%s'" }
+
+{ M_INFORMATION1
+" %d ficheros en %d directorios. %s bytes en total. "
+""
+" La URL del fichero actual es: "
+" %s "}
+
+{ M_INFORMATION2
+" %d ficheros en %d directorios. %s bytes en total. "
+""
+" ¨Copiar la URL actual al portapapeles? "
+" %s "}
+
+{ M_HLP_HISTORY
+""
+" Historial de servidores y directorios visitados"
+""
+" El sitio m s visitado se situa en primer lugar. El fichero de"
+" historial actua como un cach‚ DNS (Las direcciones IP se graban"
+" ah¡). El asterisco junto al login indica que esa entrada tiene un"
+" password grabado en el fichero. El nombre de usuario para entradas"
+" an¢nimas no se muestra. Pueden haber opciones detr s del nombre de"
+" usuario (ver las FAQ sobre las opciones)."
+""
+" El comportamiento del sistema de historial se controla mediante"
+" opciones en el fichero NFTP.INI. Puedes poner l¡mites en el n£mero"
+" de servidores y en el n£mero de directorios por servidor que se"
+" pueden guardar. Los registros erroneos o duplicados se descartan"
+" cuando abres la ventana de historial. NFTP puede recordar tambi‚n"
+" las claves de los servidores (se guardan de forma encriptada pero"
+" no segura). Por defecto, se graban las entradas, salidas y env¡os"
+" de ficheros. Se puede forzar tambi‚n a que NFTP guarde todos los"
+" directorios visitados en el fichero de historial."
+""
+" La navegaci¢n por el historial es similar a la de la ventana de"
+" marcadores. ENTER selecciona un servidor o activa un registro."
+" ESC cierra la ventana o sale del listado de directorios. Se pueden"
+" usar los cursores izquierda/derecha en lugar de ENTER/ESC. Puedes"
+" borrar directorios o servidores enteros del historial pulsando DEL."
+"" }
+
+{ M_PROCESSING_HISTORY1
+" Procesando historial. Paso %u..." }
+
+{ M_PROCESSING_HISTORY2
+" Procesando historial. Paso %u:  %u registros." }
+
+{ M_READING_HISTORY_FILE
+" Leyendo fichero historial.  %u lineas." }
+
+{ M_WRITING_HISTORY_FILE
+" Escribiendo fichero historial.  %u lineas." }
+
+{ M_ERROR_READING_HISTORY
+" Error leyendo fichero historial %s " }
+
+{ M_EMPTY_HISTORY
+" Fichero historial %s vac¡o. " }
+
+{ M_SAVE_HISTORY
+" ¨Grabar cambios en el fichero historial? " }
+
+{ M_HIST_HEADER1
+" Historial: %u servidores, %u entradas en total " }
+
+{ M_HIST_HEADER2
+" Historial: %s, %u directorios " }
+
+{ M_HIST_DELETE_DIR
+" %s:%s "
+" ¨Borrar entrada de directorio? " }
+
+{ M_HIST_DELETE_SITE
+" %s "
+" ¨Borrar servidor conteniendo %u entradas de directorio? " }
+
+# ------------------------------------------------------ new/updated in 1.23
+
+{ M_HLP_USING_MENU
+"  "
+" Men£"
+""
+" El men£ funciona como un mapa estructurado de las funciones de NFTP."
+" Para abrir el men£, pulsa F9 o Ctrl-F (Puedes redefinirlo en NFTP.INI)."
+" Usa las flechas del cursor para navegar por el men£; ESC te llevar  a un "
+" nivel superior del men£. Si prefieres acceder a las funciones del men£"
+" con atajos de teclado, tendr s que poner el par metro 'menu-open-submenu' "
+" en NFTP.INI a -1; de esta forma, F9 abrir  solamente el men£ de primer"
+" nivel. Con este par metro tambi‚n puedes hacer que se abra por defecto"
+" otro men£ que no sea 'Ficheros'."
+" "
+" Puedes cambiar la disposici¢n del men£. S¢lo tienes que editar el "
+" fichero 'SPANISH.MNU' (O el fichero del lenguaje que quieras usar)."
+" Las instrucciones de c¢mo cambiarlo est n en el propio fichero."
+"" }
+
+{ M_RESP_F9_FOR_MENU
+"Pulsa F9 o Ctrl-F para abrir el men£." }
+
+{ M_BOOKMARK_NICKNAME
+" El alias '%s' "
+" no se encontr¢ en los marcadores " }
+
+{ M_SELECT_BOOKMARK
+" Seleccionar marcador " }
+
+{ M_HISTORY_NICKNAME
+" El alias '%s' "
+" no se encontr¢ en el historial " }
+
+{ M_SELECT_HISTORY
+" Seleccionar historial " }
+
+#{ M_NFTP_USAGE
+#""
+#"Sintaxis: nftp"
+#"             Para seleccionar servidores de los marcadores."
+#"   ¢    : nftp servidor[[:puerto]directorio] [usuario]"
+#"             Para conectar directamente"
+#"   ¢    : nftp -{F|f} servidor[:puerto]fichero]"
+#"             Para recibir s¢lo un fichero."
+#"             Usa 'F' para desconectar despu‚s"
+#"             y   'f' si quieres seguir conectado. Ejemplo:"
+#"             nftp -F crydee.sai.msu.su:/ls-lR.gz"
+#"" }
+
+{ M_USAGE0
+"Par metros opcionales : "}
+
+{ M_USAGE1
+"Conectar mediante URL" }
+
+{ M_USAGE2
+"Recibir (G,g) o enviar (P,p} 'file-URL'" }
+
+{ M_USAGE3
+"Procesar las transferencias programadas en 'cmdfile.txt'" }
+
+{ M_USAGE4
+"Busca 'word' en los marcadores (b) o en el historial (h)" }
+
+{ M_USAGE5
+"* URL debe tener la forma:"
+"  [ftp://][usuario[:password]@]servidor[:puerto]directorio/fichero,"
+"  p.eg. ftp://asv:password@crydee.sai.msu.ru:21/home/asv/file.txt"
+"  o     crydee.sai.msu.su/pub/comp/software/asv/nftp/nftp-LATEST-os2.zip" }
+
+
+# ----------------------------------------------------------------- new in 1.40
+
+{ M_SITE_EDIT1
+"Nombre de servidor" }
+
+{ M_SITE_EDIT2
+"Login (nombre usuario)" }
+
+{ M_SITE_EDIT3
+"Password" }
+
+{ M_SITE_EDIT4
+"Puerto" }
+
+{ M_SITE_EDIT5
+"Directorio" }
+
+{ M_SITE_EDIT6
+"Opciones (ver FAQ)" }
+
+{ M_PASSWORDED_WGET
+" Est s intentando recibir un fichero mediante WGET de un "
+" servidor no-an¢nimo. Por defecto, estas transferencias est n "
+" desabilitadas por razones de seguridad. Puedes activarlas en "
+" NFTP.INI." }
+
+{ M_WGET_DOWNLOAD_ONE
+" ¨Recibir fichero %s con un programa externo? " }
+
+{ M_WGET_DOWNLOAD_MANY
+" ¨Recibir %d ficheros en %d directorios "
+" (%s bytes en total) con un programa externo? " }
+
+{ M_CONFIRM_COMMAND
+" Comando externo a ejecutar: " }
+
+{ M_USETAB2
+" Usa Tab/May-Tab o Arriba/Abajo para mover entre campos " }
+
+# ------------------------------------------------- new since 1.50
+
+{ M_CANCEL
+" Cancelar " }
+
+{ M_FTPS_RECEIVING
+"  %s: recibiendo datos...   "
+"  Pulsa ESC para abortar "
+"  %s registros encontrados (total) " }
+
+{ M_FTPS_NO_HITS
+"  No hay resultados para `%s'...   " }
+
+{ M_FTPS_SERVERS
+" Servidores FTP Search " }
+
+{ M_FTPS_ADD_SERVER
+" Nombre del servidor FTP Search a a¤adir " }
+
+{ M_FTPS_DELETE
+" ¨ Borrar `%s' ? " }
+
+{ M_QUERYING
+"buscando %s..." }
+
+{ M_FTPS_SENDING_REQUEST
+"  Enviando petici¢n a %s...   " }
+
+{ M_FTPS_SEARCHRES
+" Resultados de la b£squeda (%u coincidencias) " }
+
+{ M_DIR_SIGN
+"<DIR>" }
+
+{ M_LINK_SIGN
+"<LNK>" }
+
+{ M_SEARCH_FORWARD
+" Buscar adelante " }
+
+{ M_SEARCH_BACKWARDS
+" Buscar atr s " }
+
+{ M_CANT_FIND
+"  No encuentro `%s'   " }
+
+{ M_SELECT_LANGUAGE
+" Selecciona el idioma " }
+
+{ M_REGISTRATION_NAME
+"Nombre de registro" }
+
+{ M_REGISTRATION_CODE
+"C¢digo de registro" }
+
+{ M_THANKS
+" ­Gracias por registrar NFTP! " }
+
+{ M_FTPS_NEED_ARGS
+" Necesitas especificar una (y solo una) de las opciones "
+" 'exacta', 'subcadena', 'comod¡n' o 'exp. reg.' " }
+
+{ M_FTPS_SEARCH1
+"B£squeda exacta" }
+
+{ M_FTPS_SEARCH2
+"Busqueda subcadena" }
+
+{ M_FTPS_SEARCH3
+"B£squeda comod¡n" }
+
+{ M_FTPS_SEARCH4
+"B£squeda expresi¢n regular" }
+
+{ M_FTPS_SEARCH5
+"¨May£s./Min£s.?" }
+
+{ M_FTPS_SEARCH6
+"Excluir ficheros/directorios" }
+
+{ M_FTPS_SEARCH7
+"Limitar dominios" }
+
+{ M_FTPS_SEARCH8
+"Excluir dominios" }
+
+{ M_FTPS_SEARCH9
+"Ocultar Slackware/RedHat/FreeBSD/etc." }
+
+{ M_FTPS_SEARCH10
+"M ximas concidencias" }
+
+{ M_HLP_SITE_EDIT
+"Par metros servidor"
+""
+"Para servidores an¢nimos, deja los campos 'nombre' y 'Password' en"
+"blanco. Si no especificas directorio, te encontrar s el directorio"
+"por defecto del servidor, usualmente en el directorio raiz para"
+"conexiones an¢nimas. Las descripciones del servidor son s¢lo para"
+"comentarios, s¢lo se guardan en el fichero de marcadores."
+""
+"Opciones disponibles:"
+"p - Usar el modo pasivo para este servidor. A veces ayuda con enlaces"
+"    lentos o con problemas."
+"r - Reintentar indefinidamente. En caso de error de conexi¢n, NFTP"
+"    reintentar  a pesar del c¢digo de error o sin importar si es"
+"    una conexi¢n an¢nima o no."
+"f - Cortafuegos (Firewall). Cuando el soporte de cortafuegos est‚"
+"    activo en NFTP.INI, el servidor se acceder  directamente."
+}
+
+{ M_HLP_FTPSEARCH
+"Interface de b£squeda FTP"
+""
+"'B£squeda exacta' buscar  nombres de fichero enteros:"
+" Ejemplo: nftp141o.zip"
+""
+"'B£squeda subcadena' buscar  subcadenas en el nombre del fichero:"
+" Ejemplo: nftp14"
+""
+"'B£squeda comodin' usa los car cteres '*' y '?' de la misma forma en"
+"que se usan en la l¡nea de comandos:"
+" Ejemplos: nftp*.zip  nftp1??o.zip"
+""
+"'B£squeda expresi¢n regular' es la m s potente, pero necesita algo de"
+"aprendizaje. Ejemplo: nftp1\.[4-9][0-9]o\.zip encontrar  todas las"
+"versiones 1.xx de NFTP para OS/2, empezando desde 1.40. Puedes encontrar"
+"explicaciones sobre expresiones regulares en muchos sitios, incluyendo"
+"la librer¡a GNU rx."
+""
+"'May£s./Min£s.' solo se aplica a 'B£squeda subcadena'."
+""
+"Tambi‚n puedes aplicar criterios de b£squeda adicionales: excluir"
+"directorios, limitar la b£squeda a/o excluir determinados dominios,"
+"y excluir distribuciones Unix freeware que tienden a dar demasiadas"
+"coincidencias indeseadas. Las entradas m£ltiples tienen que ir"
+"separadas por espacios."
+""
+"No se recomienda ajustar 'M ximas coincidencias' a n£meros altos"
+"(5000 coincidencias son simplemente in£tiles; intenta excluir algo"
+"que no necesites). Normalmente s¢lo buscar s a trav‚s del servidor"
+"FTP Search principal, ftpsearch.ntnu.no, ya que este servidor"
+"cubre el 90% del mundo. Los dem s principalmente ofrecen un m‚todo"
+"de limitar los resultados por zonas geogr ficas."
+"" }
+
+{ M_FTPS_DOWNLOAD
+"  ¨Recibir  "
+"  %s  "
+"  de %s?  " }
+
+{ M_HIST_CONT_SEARCH
+"  No encontrado en %s. ¨Buscar por otros servidores?  " }
+
+{ M_TOO_LARGE
+"%s/%s: demasiado grande para la versi¢n registrada" }
+
+{ M_DISCONNECT
+"  Severe connection with server %s?  " }
+
+{ M_UPLOAD_EDITED
+"  ¨Enviar el fichero modificado al servidor?  " }
+
+{ M_FONT_DESC
+"ancho %3d, alto %3d (%s)" }
+
+{ M_UNSUPPORTED
+"  Funci¢n no soportada en %s  " }
+
+{ M_SELECT_FONT
+" Selecciona tipo de letra " }
+
+{ M_HLP_FTPSEARCH2
+"Teclas de la ventana de resultados"
+""
+"Ctrl-P      mostrar/ocultar path"
+"Ctrl-T      mostrar/ocultar fecha de £ltima actualizaci¢n"
+"Ctrl-F      b£squeda adelante"
+"Ctrl-H      b£squeda atr s"
+"Shift-D/F5  recibir fichero"
+""
+"Shift-H     ordenar por nombre de servidor"
+"Shift-N     ordenar por nombre de fichero (por defecto)"
+"Shift-S     ordenar por tama¤o de fichero"
+"Shift-T     ordenar por fecha/hora"
+"" }
+
+{ M_STALLED
+"parado" }
+
+
+# ------------------------------------------------- new since 1.51
+
+{ M_WAIT
+""
+""
+" Por favor, espera %d segundos... " }
+
+{ M_UNREGISTERED
+" Esta versi¢n no est  registrada "
+""
+" Para evitar este mensaje tienes que compar una licencia de  "
+" NFTP. Cuesta $%d y te permite recibir todas las versiones "
+" para todas los sistemas operativos soportados. Para ver m s "
+" informaci¢n consulta http://www.ayukov.com/nftp/buy.html %s" }
+
+{ M_PRESS_ENTER
+" Pulsa ENTER para continuar " }
+
+{ M_HTTP_PROXY
+"  No soportado mediante proxy HTTP  " }
+
+{ M_ENUMERATING_FONTS
+" Enumerando fuentes... " }
+
+# ------------------------------------------------- new since 1.60
+
+{ M_SCRIPT_BADCOMMAND
+"Comando no reconocido: %s" }
+
+{ M_SCRIPT_BADARGS
+"Este comando requiere %d argumentos (encontrados %d)" }
+
+{ M_SCRIPT_ERROR
+"Error; la ejecuci¢n de los scripts ha sido detenida" }
+
+{ M_SCRIPT_CANT_OPEN
+"No puedo abrir el fichero de scripts '%s'" }
+
+{ M_SCRIPT_RUNNING
+"SCRIPT: %s %s" }
+
+{ M_SCRIPT_INVALID_VAR
+"Variable incorrecta: %s" }
+
+{ M_SCRIPT_CANT_OPEN_LOG
+"No puedo abrir el fichero '%s'" }
+
+{ M_RESP_CONNECTING2
+"Conectando a %s: Esc - abortar, Espacio - reintentar..." }
+
+{ M_RESP_ACCEPTING
+"Esperando conexi¢n en puerto %d: Esc - abortar, Espacio - reintentar..."}
+
+{ M_RESP_ACCEPTED
+"Conexi¢n aceptada de %s" }
+
+{ M_PAUSED
+"Pausa; pulsa P para continuar" }
+
+{ M_SQRP
+"S/Q/R/P - Saltar/Quitar/Reiniciar/Pausa" }
+
+{ M_TOTAL        "Total" }
+{ M_TRANSFERRED  "Transferido" }
+{ M_SKIPPED      "Saltado" }
+{ M_LEFT         "Restante" }
+{ M_INACT        "segundos desde £ltimo paquete" }
+
+{ M_NO_FIREWALLING
+"No se ha configurado ning£n proxy/firewall en nftp.ini" }
+
+{ M_HLP_PASSWORDS
+"Teclas en ventana de passwords"
+""
+"Insert - Crea un nuevo password"
+"Supr.  - Borra un password"
+"Ctrl-E - Editar un password"
+"Ctrl-P - Mostrar/ocultar passwords"
+""
+"Enter  - Conectar con servidor"
+"" }
+
+{ M_DEL_UNMATCHED
+"   Borrando ficheros desaparecidos...   " }
+
+{ M_ENTER_LISTNAME
+"Teclea el nombre del fichero para escribir la lista:" }
+
+{ M_SYNC1
+"Synchronize local tree with remote site?"
+""
+"remote   %s ->"
+"local    %s"
+"" 
+"NFTP will download files" }
+
+{ M_SYNC2
+"¨Sincronizar contenido remoto con el arbol de directorios local?"
+""
+"local    %s ->"
+"remoto   %s"
+""
+"NFTP enviar  los ficheros" }
+
+{ M_SYNC3
+"Los directorios parecen id‚nticos" }
+
+{ M_PASS_UNSUPPORTED
+"La versi¢n del fichero de passwords (%d) no est  soportada" }
+
+{ M_PASS_ENTER_KEYPHRASE1
+"Teclea la frase clave para desencriptar el fichero de passwords" }
+
+{ M_PASS_INVALID
+"%s"
+"El fichero de passwords tiene un contenido inv lido" }
+
+{ M_PASS_ENTER_KEYPHRASE2
+"Teclea la frase clave a usar para encriptar el fichero de passwords" }
+
+{ M_PASSWORDS
+"Passwords" }
+
+{ M_PASS_SAVE
+"¨Grabar cambios en el fichero de passwords?" }
+
+{ M_PASS_DELETE
+"%s @ %s"
+"¨Borrar entrada?" }
+
+{ M_DISK_FULL
+" %s "
+" Error al escribir a fichero (¨Disco lleno?) " }
+
+{ M_REGISTERED
+"Registrado a %s" }
+
+{ M_UNREGISTERED2
+"Sin registrar (%d d¡as desde el primer arranque)" }
+
+{ M_FTPS_RECEIVING2
+"Recibiendo datos de %s...   "
+"Encontrado total:            %s"
+"Encontrado en este servidor: %s"
+"Pulsa ESC para parar la b£squeda" }
+
+{ M_FTPS_NO_HITS2
+"La busqueda no encontr¢ nada" }
+
+{ M_FTPS_NORES
+"No se ha realizado ninguna b£squeda" }
+
+{ M_ENABLE_PASSWORDS
+"Por favor, habilita el cach‚ de passwords en nftp.ini" }
+
+{ M_NEEDBF
+"Esto s¢lo se usa con el/los metodo(s) %s (ver nftp.ini)" }
+
+{ M_PASS_INCORRECT
+"La frase clave es incorrecta" }
+
+{ M_BYTESSEC "bytes/sec" }
+
+{ M_DOWNLOAD "recibiendo" }
+
+{ M_UPLOAD "enviando" }
+
+{ M_COMMUNICATING
+"Comunicando con el servidor..." }
+
+# will look like: " 23% done (download, binary)"
+{ M_PERCENTAGE1 "%9u%% hecho (%s, %s)" }
+
+# will look like: " 23% done (download, binary) (3 of 15 files)"
+{ M_PERCENTAGE2 "%9u%% hecho (%s, %s) (%d de %d ficheros)" }
+
+# ------------------------------------------------- new since 1.61
+
+{ M_TR_OVERWRITE  "Overwrite" }
+{ M_TR_RESUME     "Resume" }
+{ M_TR_SKIP       "Skip" }
+{ M_TR_CANCEL     "Cancel" }
+
+{ M_TR_QUESTION
+"Target file already exists!"
+"Suggested action: %s"
+""
+"Remote: %s in %s"
+"Local:  %s in %s"
+""
+"Source: %s bytes, %2d %s %4d  %02d:%02d:%02d"
+"Target: %s bytes, %2d %s %4d  %02d:%02d:%02d" }
+
+# ------------------------------------------------- new since 1.62
+
+{ M_DELETE_FILES
+"You have selected %d file(s)."
+"     Really delete them?" }
+
+{ M_NOT_EMPTY
+"Directory `%s' is not empty."
+"Delete entire tree?" }
+
+{ M_ALL "All" }
+
+{ M_DELETING
+"  Deleting %s...  " }
+
+{ M_NO_CHMOD
+"This FTP server does not support SITE CHMOD command" }
+
+{ M_ACCESSRIGHTS1
+"Access rights for %d files" }
+
+{ M_ACCESSRIGHTS2
+"Access rights for %s" }
+
+{ M_WRONG_RIGHTS
+"Invalid input:  [%s]"
+"Correct format: [rwxrwxrwx]" }
+

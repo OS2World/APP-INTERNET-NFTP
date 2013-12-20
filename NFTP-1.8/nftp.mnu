@@ -1,0 +1,193 @@
+#
+# see syntax explanations in english.mnu if interested
+#
+
+main
+{
+    {SUBMENU, "&Sites",     Sites}
+    {SUBMENU, "&Files",     Files}
+    {SUBMENU, "&View",      View}
+    {SUBMENU, "&Transfer",  Transfer}
+    {SUBMENU, "&Options",   Options}
+    {SUBMENU, "&Help",      Help}
+}
+
+Sites
+{
+    {ACTION, "&Bookmarks...",            10}  login from bookmarks
+    {ACTION, "&History...",              17}  history
+    {ACTION, "&Save bookmark...",        35}  save host/dir as bookmark
+    {SUBMENU, "&FTP Search", FTPSearch}
+    {SUBMENU, "&Passwords", Passwords}
+    {SEP}
+    {ACTION, "Open &URL...",             18}  open URL
+    {ACTION, "&Login...",                11}  login
+    {ACTION, "Logoff...",               13}  log off
+    {ACTION, "&Check connection",        22}  send NOOP
+    {ACTION, "S&end command...",         24}  quote command
+    {SEP}
+    {ACTION, "Suspend (Unix only)",     112}  suspend
+#   {ACTION, "Crash",                     9}  crash and burn
+    {ACTION, "E&xit...",                 14}  exit NFTP
+}
+
+Passwords
+{
+    {ACTION, "&Edit passwords...",   28} edit passwords
+    {ACTION, "Change &keyphrase...", 29} change keyphrase for password encryption
+}
+
+Files
+{
+    {ACTION, "&Make directory...",                53}  create directory
+    {ACTION, "R&ename...",                        54}  rename file/directory
+    {ACTION, "&Delete...",                        52}  delete file/dir
+    {ACTION, "Change &access rights",             79}  change access rights
+    {SEP}
+#   {ACTION, "E&nter directory",                  71}  change into dir under cursor
+    {ACTION, "&Change directory...",              74}  input dir and change to it
+    {ACTION, "Change to r&oot directory",         72}  change to root dir
+    {ACTION, "&Re-read directory",                70}  re-read directory
+    {ACTION, "Save &listing...",                  45}  save directory listing
+    {ACTION, "Change local dr&ive...",            75}  change local drive
+    {ACTION, "Compute directory &size",           57}  traverse directory and compute its size
+}
+
+View
+{
+    {ACTION, "Switch &directory mode",             32}  switch between raw/parsed modes
+    {ACTION, "&Control connection",                30}  switch between CC and dir
+    {ACTION, "Switch &remote/local",               31}  switch between local/remote
+    {SWITCH, "S&plit screen",                      37}  make screen look like NC
+    {SWITCH, "Display file &time",                 38}  show/hide file timestamps in panels
+    {SWITCH, "&Mini status",                       39}  show/hide mini-status field
+    {SEP}
+    {ACTION, "&View file",                         50}  view w/int viewer
+    {ACTION, "View &w/ext program",                51}  view w/ext viewer
+    {ACTION, "&Load descriptions...",              76}  load 00index.txt file
+    {SUBMENU, "&Sort",      Sort}
+    {SEP}
+    {ACTION, "Repaint screen",                    36}  repaint screen
+}
+
+Sort
+{
+    {ACTION, "Sort by &name",        60}  sort by name
+    {ACTION, "Sort by e&xtension",   61}  sort by extension
+    {ACTION, "Sort by &size",        63}  sort by size
+    {ACTION, "Sort by &time",        62}  sort by date
+    {ACTION, "&Unsorted",            64}  make unsorted
+    {ACTION, "&Reverse sort order",  65}  reverse sort order
+}
+
+Transfer
+{
+    {ACTION, "&Copy...",                   77}  copy between remote/local
+#   {ACTION, "&Download...",               40}  download
+#   {ACTION, "Download &everything...",    42}  d/l from all dirs
+    {ACTION, "Download by &name...",       44}  d/l by name
+    {ACTION, "Download with &WGET...",     46}  launch wget to retrieve files
+#   {ACTION, "&Upload...",                 41}  upload
+#   {ACTION, "Upload e&verything...",      43}  u/l from all dirs
+    {SEP}
+    {SUBMENU, "&Select", Select}
+    {SUBMENU, "&Mirror", Mirror}
+    {SWITCH,  "&Binary",                   21}  switch ASCII/BINARY
+    {ACTION,  "Show inf&o...",             15}  get current status
+    {SEP}
+#   {SWITCH, "Limit throughput",           98}  limit throughput
+    {ACTION, "Skip file",                  47}  skip file during transfer
+    {ACTION, "Stop transfer",              48}  stop transfer
+    {ACTION, "Restart transfer",           49}  abort and restart transfer
+    {SWITCH, "Pause transfer",             58}  pause transfer
+}
+
+Select
+{
+    {ACTION, "&Select/deselect",           82}  select file under cursor
+    {ACTION, "Select by &mask...",         83}  select by mask
+    {ACTION, "Deselect by mas&k...",       84}  deselect by mask
+    {ACTION, "Select &all",                80}  select all files
+    {ACTION, "Deselect a&ll",              81}  deselect all files
+    {ACTION, "Deselect in all di&rs",      87}  deselect all files
+    {ACTION, "&Invert selection",          85}  invert selection
+    {ACTION, "Export list of marked...",   19}  export list of marked files
+    {ACTION, "Re&view list of marked...",   12}  review list of marked files/dirs
+}
+
+Mirror
+{
+    {ACTION, "&Downloading...",               66} synchronize local with remote (download)
+    {ACTION, "&Uploading...",                 67} synchronize remote with local (upload)
+    {ACTION, "&Options...",                   59} set mirroring options
+#    {SWITCH, "Delete unmatched files",        68} switch: delete/keep unmatched files
+#    {SWITCH, "Include &subdirectories",       69} switch: synchronize subdirs?
+}
+
+Help
+{
+    {ACTION, "&Help",             1}  Help
+    {ACTION, "&Main help",        2}  general help
+    {ACTION, "&Concise help",     3}  short help
+    {ACTION, "&Using menus",      7}  using menus
+    {SEP}
+    {ACTION, "Update NFTP",       90}  connect to NFTP site
+    {ACTION, "&About NFTP...",    6}  displays time of build
+}
+
+FTPSearch
+{
+    {ACTION, "&Find with FTPSearch...", 120} find with FTPSearch
+    {ACTION, "&Last search results...", 122}, display results of last search
+    {ACTION, "&Servers...", 121} define FTPSearch servers
+}
+
+Options
+{
+    {SWITCH, "Use proxy",         25}  enable/disable proxy
+    {SWITCH, "Use flags",         23}  use/disable NLST with flags
+    {SWITCH, "Show descriptions", 34}  show/hide descriptions
+    {SWITCH, "Passive mode",      26} switch passive mode on/off
+    {SWITCH, "Resolve symlinks",  27}  switch symlink resolving on/off
+    {SEP}
+    {ACTION, "Edit se&ttings",   16}  invoke editor on nftp.ini
+# I suggest next line should be left in English :-}
+    {ACTION, "&Language",        91}  select language
+    {ACTION, "&Font...", 93} select font for NFTP window
+    {ACTION, "Registration code...",   92}  enter registration information
+}
+
+# SYNTAX:                        (NB: there is no need to translate it)
+# ---------------------------------------------------------------------
+#
+# - empty lines and lines starting with # are ignored. The line length
+#   is limited to 256 symbols;
+#
+# - this file contains "menu groups" which are actually collections of
+#   menu items, i.e. vertical or horizontal menus/submenus. Each menu
+#   group starts with group name on a separate line, then "{" on a
+#   separate line, then items (one on its own line), then "}". Delimiting
+#   "{" and "}" must be the only symbols (not counting white space)
+#   on the line. The order of groups is arbitrary, the order of items
+#   inside group does matter;
+#
+# - menu group named "main" is a main menu; it is not necessary the first
+#   group in the file;
+#
+# - menu item looks like:
+#
+#      { type , item-text , value } comment
+#
+#   1) "type" can be "ACTION" (real menu item calling some program function),
+#   "SEP" -- menu separator (item-text and value are ignored for separator
+#   and can be omitted), "SWITCH" which is like ACTION but can have checkmark
+#   near it or "SUBMENU";
+#   2) "item-text" is the text appearing on the screen, in the double quotes.
+#   Double quotes are not allowed in the item-text. Hotkey is marked by
+#   ampersand before the letter and is not case sensitive;
+#   3) "value" is a number of associated program function for type=ACTION
+#   or menu group name for type=SUBMENU.
+#
+#   Everything after closing "}" is ignored. Arbitrary amount of white space
+#   can be used to improve readability.
+#

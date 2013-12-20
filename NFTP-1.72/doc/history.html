@@ -1,0 +1,650 @@
+<html><head>
+<title>NFTP : New File Transfer Protocol Client</title>
+</head>
+<body background="pic/lt_gray_004.jpg">
+
+<h2>
+NFTP : New File Transfer Protocol Client<br>
+Copyright (C) 1994-2002 Sergey Ayukov
+</h2>
+
+<HR>
+<a HREF="nftp-man.html">NFTP manual (main part)</a>
+
+<p>
+Starting from version 1.20,
+<a href="http://www.ayukov.com/nftp/development.html">detailed
+information</a> about development progress is also available.
+
+<HR><h3>VERSION HISTORY</a></h3>
+
+<dl>
+
+<dt><b>Version 0.1 (preview) 02 Feb 1995</b>
+<dd>
+First usable version. Used FTPAPI calls. Very slow; control connection messages
+cannot be seen. Wasn't exposed to public, although available.
+<p>
+
+<dt><b>Version 0.2 (preview) 19 Apr 1995</b>
+<dd>
+Got rid of FTPAPI. Full-scale socket programming of ftp control connection and
+data transfers. Introduced bookmarks.
+<p>
+
+<dt><b>Version 0.3 (preview)</b>
+<dd>
+Never showed to public. The last version compiled with IBM CSet++. See 0.4.
+<p>
+
+<dt><b>Version 0.4 (preview) 25 May 1995</b>
+<dd>
+Nearly the same as 0.3, but compiled with emx 0.9a + gcc 2.6.3.
+A handful of new features:
+ <ul>
+ <li> logging in and out without restarting entire program;
+ <li> passworded entries in bookmark file;
+ <li> quick directory change: if you know where to go, you won't need to traverse
+   all intermediate dirs;
+ <li> various bug fixes.
+ </ul>
+<p>
+
+<dt><b>Version 0.5 (preview; close the beta stage) 16 Jul 1995</b>
+<dd>
+Bugfixes plus
+ <ul>
+ <li> ability to work in any 80xXX mode (25 &lt;= XX)
+ <li> online context sensitive help (press F1, Shift+F1)
+ <li> code reorganization
+ <li> some errors are handled (mostly login errors)
+ <li> directory sorting by name, size, date/time
+ <li> create directory on the remote, remove file(s) on the remote
+ <li> preserving date/time of files downloaded
+ <li> fast built-in file viewer
+ <li> ability to invoke any ftp server command
+ <li> better socket selecting scheme
+  </ul>
+
+ Will not work after 31 Dec 1995
+<p>
+
+<dt><b>Version 0.51 (preview; close the beta stage) 19 Jul 1995</b>
+<dd>
+I am sorry for releasing 0.5 so full of bugs... There was a lot of...
+ <ul>
+ <li> fixed couple of awful bugs (memory corruption) resulting in core dumps etc;
+ <li> got rid of malloc (goodbye, flat memory space! welcome, 32-bit segments and
+   memory protection!)
+ <li> you can set nonstandard port in nftp.ini
+ </ul>
+<p>
+
+<dt><b>Version 0.52</b>
+<dd>
+Same as 0.51 but without 31 Dec limitation. Only to be distributed by
+<i>SAMS Publishing</i>.
+<p>
+
+<dt><b>Version 0.53 (beta) 21 Dec 1995</b>
+<dd>
+Nearly the same as 0.52 but limited to 30 March 1996. 
+<p>
+
+<dt><b>Version 0.60 (beta) 31 Mar 1996</b>
+<dd>
+I am a bit short on time; 0.53 expires today, so some new features weren't tested much.
+Bugfixes and small improvements plus:
+ <ul>
+ <li> reget (restarting transfers)
+ <li> uploading
+ <li> IP numbers can be used instead of host names
+ <li> "Q" and "S" work! you can skip files during transfer or stop download/upload
+ <li> more intelligent networking (fixes some problems with dynamic IP)
+ <li> changing local directory, viewing list of local files etc.
+ <li> ability to specify arbitrary port (not in bookmarks though)
+ <li> new bookmarks can be created with Insert key
+ <li> installation program
+ <li> documentation
+ </ul>
+<p>
+
+<dt><b>Version 0.70 (beta) 30 Apr 1996</b>
+<dd>
+Few bugfixes (including failing to recognize "hostname/directory" format
+when specified in the command line) plus
+ <ul>
+ <li> fixed <i>nasty</i> bug causing nftp to crash when viewing some
+      files with internal viewer -- thanks to Jose Ruiz who pointed
+      out to such file
+ <li> sort by extension
+ <li> much more error recovery; there should be no more situations when
+      nftp exits silently;
+ <li> improved sound signals; includes beep after successful login
+      (configurable)
+ <li> tables in this manual look much nicer now :-)
+ <li> firewalling support -- <i>does not work yet</i>
+ <li> remappable keys
+ <li> ability to specify download directory in NFTP.INI. NFTP will
+      change into that directory after start
+ <li> IBM TCP/IP ftpd for OS/2 is supported
+ <li> Windows NT ftpd is supported
+ <li> Windows 3.x WFTPD by Texas Imperial Software is supported
+ <li> Progress indicator in "view remote file" and during receiving of
+      directory listing
+ <li> You can now try to "chdir" to symbolic link
+ <li> "Parsed" directory view -- hit Ctrl-P and see
+ <li> <b>National language support</b> -- check out 
+      <a href="http://www.ayukov.com/nftp/nls.html">NFTP home page</a>
+ <li> Average transfer speed is now recorded in the history (.fls file)
+ <li> Russian version
+ <li> Chinese BIG-5 version
+ <li> Spanish version
+ </ul>
+<p>
+ 
+<dt><b>Version 0.71 (beta) 2 Jun 1996</b>
+<dd>
+Several bugfixes plus
+ <ul>
+ <li> '*' inverts selection
+ <li> f8 deletes local directories
+ <li> Neologic FTPD is supported
+ <li> moving language-dependent strings into separate DLLs (thus greatly 
+ reducing size of the package)
+ <li> (un)marking files by template (eg, '*.txt')
+ <li> Hungarian version
+ <li> German version
+ <li> Danish version
+ <li> Japanese version
+ <li> <b>caching of viewed remote files</b>
+ <li> downloading all marked files from all directories (alt-f5)
+ </ul>
+<p> 
+
+<dt><b>Version 0.72 (beta) 6 Jun 1996</b>
+<dd>
+No new functionality. Fixed small mistakes in national language
+translations. Added Norwegian version. Added missing ASCII and
+Postscript manuals.
+<p>
+
+<dt><b>Version 0.80 (beta) 12 Jul 1996</b>
+<dd>
+<ul>
+  <li> Support for Neologic FTPD in UNIX emulating mode
+  <li> Support for PowerWeb FTPD
+  <li> Support for old (with DOS-like output) Windows NT ftp server
+  <li> <kbd>F6</kbd> renames files/directories (on remote too)
+  <li> <kbd>Alt-S</kbd> saves listing of current directory into file
+  <li> left/right/ctrl-left/ctrl-right scroll remote/local directory listing
+  <li> symbols select files starting with these symbols
+  <li> complete firewalling support (a-la WS_FTP)
+       <i>(wasn't completely tested)</i>
+  <li> built-in fileviewer now has ability to save file and search for text
+  <li> retrieving directories/viewing files is now interruptable (with ESC)
+  <li> when anonymous login is denied, NFTP will retry after specified
+  amount of time
+  <li> Italian version
+  <li> Brazilian Portuguese version
+</ul>
+<p>
+
+<dt><b>Version 0.81 (beta) 9 Aug 1996</b>
+<dd>
+Mostly bugfixes. Also
+<ul>
+  <li>Dutch version
+</ul>
+<p>
+
+<dt><b>Version 0.82 (beta) 15 Aug 1996</b>
+<dd>
+Fixed bug causing zerodivide when transferring small (&lt;1000 bytes)
+files and total size of batch transfer is larger than 1MB. 
+<ul>
+  <li>NFTP now assumes that server has Unix-like LIST output when server OS
+      was not recognized.
+  <li>French version (provided as separate DLL).
+</ul>      
+<p>
+
+<dt><b>Version 0.83 (beta) 27 Sep 1996</b>
+<dd>
+I am very sorry -- releasing 0.82 with 1 Oct limit was a very stupid
+idea because right now I am in process of completing my PhD. I hope
+to return to work on NFTP in middle October or early November. There
+are no differences between 0.82 and 0.83 except expiration date.
+French version is now integrated into the package.
+
+<p>
+This version will live until 1 Feb 1997 (apparently I don't want to
+disappoint you just when you're celebrating New Year ;-) I hope to
+produce release (1.0) meantime.
+<p>
+
+<dt><b>Version 0.90 (release) 30 Jan 1997</b>
+<dd>
+This version is essentially the same as 1.0; it will expire 1 Mar 1997
+so you can use it while registering version NFTP (&lt;smile&gt;).
+Many small bugfixes and much more improved error checking plus
+<ul>
+    <li> PM Clipboard support (shift-insert/ctrl-insert)
+    <li> Cursor is positioned correctly after deleting/creating/sorting/etc
+    <li> spacebar/tab switches are more consistent now
+    <li> PWD is no longer necessary
+    <li> history in the command prompts (somewhat poorly done; use up/down)
+    <li> Ctrl-Z is no longer transferred in ASCII mode
+    <li> completely redesigned bookmarks
+    <li> some kind of batch mode; see command-line arguments
+    <li> directories are now removed with RMD
+    <li> fixed problem with template marking (*.h* -> foo.h)
+    <li> view turns transfer mode back when completed
+    <li> case insensitivity in file searches
+    <li> fixed problems with NT servers
+    <li> you can get file from unreadable directory (alt-d)
+    <li> improved handling of numeric IP addresses
+    <li> fixed junk appearing in input fields sometimes
+    <li> folder for NFTP. Editing .bmk and .ini
+    <li> tab expanding in viewer
+    <li> password is no longer visible in some firewall configurations
+    <li> long strings in prompts
+    <li> ask to re-read remote directory after changes done to it
+    <li> ability to reverse initial sort order in NFTP.INI
+    <li> esc no longer causes problems during transfer if hit several times
+    <li> Bulgarian version
+</ul>
+<p>
+
+<dt><b>Version 1.00 (release) 30 Jan 1997</b>
+<dd>
+Same as version 0.90 but requires registering to transfer files larger
+than 500KB.<br>
+26 Feb 1997 was a black day in NFTP history. My hard drive (Quantum BigFoot
+2.5GB) has died (only 3/4 sectors are readable). Latest NFTP sources
+were lost; I was thrown to pre-1.00 level. After long and painful attempts
+to read what is readable, much of the source code was restored, but I am
+still not sure that every feature/bugfix of 1.00 has been recovered. The
+result is version 1.02.
+<p>
+
+<dt><b>Version 1.01</b>
+<dd>SOCKS-capable version (was in limited distribution). Only binaries
+survived the hard drive accident by pure chance.
+<p>
+
+<dt><b>Version 1.02 (release) 16 Apr 1997</b>
+<dd>Close to 1.01. Comparing to 1.00, it fixes great deal of small bugs
+and adds ability to insert/edit bookmarks from inside NFTP (Insert/Ctrl-E).
+<p>
+
+<dt><b>Version 1.03 (release) 18 Apr 1997</b>
+<dd>The bug (probably in IBM VisualAge C++ compiler) prevented 1.02 from
+working under Warp 3. This version is compiled with emx/gcc as usual.
+Also fixed:
+<ul>
+  <li> now works through firewalls again (1.02 was broken because it always
+       tried passive mode)
+  <li> warning beep is issued when wrong values are entered while 
+       editing/adding bookmark.
+</ul>
+<p>
+
+<dt><b>Version 1.10 (beta) 21 Dec 1997</b>
+<dd> Quite significant rewrite. The program is no longer multithreaded
+which has greatly reduced complexity and eliminated number of obscure bugs.
+The source code is highly portable now; OS-dependent part is only several
+kilobytes. This would allow myself to port NFTP to other OSes if I will
+want it. So far only Win32 port is planned but no work has been done yet.
+National language support system is almost completely new; it now relies
+on text files with message strings instead of DLLs. This allows to check
+translations/layout/syntax very quickly and is also much more portable than
+DLLs. 
+<p>
+Among the new features are:
+<ul>
+    <li> Marking entire directory trees is possible. When starting transfer,
+    you are given a choice to put all files into one directory or reproduce
+    directory structure of the server. Use Alt-F5, as usual. Note: only
+    files in the subdirectories of current one will be transferred.
+    Mark directories with Insert.
+    <i>Download only</i>.
+    <li> NFTP is much more responsive now to transfer interruption commands.
+    <li> NFTP no longer issues useless CWD commands when changing to the
+    directory that was already cached.
+    <li> <i>AutoReconnect</i> -- NFTP will login automatically if connection has
+    been broken. You no longer have to worry about timeouts etc. Or you can
+    disconnect and leave NFTP idle, and when needed, NFTP will log in back
+    and do all requested things. May be I am not clear here...
+    <li> <i>SmartAppend</i> -- in batch mode (when transferring multiple
+    files) decision on whether to append/overwrite/skip is made based
+    on file date/time/size;
+    <li> autodownloading file descriptions (00index.txt etc.) and showing them
+    (a-la CuteFTP);
+    <li> during transfer, you no longer can look at control connection history
+    (was: Space key). Tell me if you really need this feature.
+</ul>
+<p>
+
+<dt><b>Version 1.11 (release) 10 Jan 1998</b>
+<dd> This release fixes numerous bugs found in 1.10. <br>
+Behaviour of 'auto-fetch-descriptions' has been changed a little; 
+automatic/manual loading is now switched with Ctrl-O. 
+'auto-fetch-descriptions=no' means that NFTP starts in "manual" mode. 
+Use Ctrl-O to switch it to automatic mode.
+<p>
+
+<dt><b>Version 1.20 (release) 25 Feb 1998</b>
+<dd> Minor bugfixes and interface improvements since 1.11.
+<ul>
+    <li> Win32 and Linux versions (beta quality)
+    <li> New keyboard defaults (old ones still work except several
+    keys listed in <a href="nftp-keys.html">Keyboard Reference</a>)
+    <li> F9 invokes editor on nftp.ini from inside NFTP and then
+    reloads nftp.ini
+    <li> Several new
+    <a href="http://www.ayukov.com/nftp/index.html">Web pages</a>, including
+    <a href="http://www.ayukov.com/nftp/development.html">development
+    progress</a> and <a href="http://www.ayukov.com/nftp/plans.html">plans</a>
+    <li> Unisys A Series mainframe ftp server support
+    <li> NFTP should run OK at every window size, including large ones
+    (at least 70 columns and 15 rows are recommended)
+</ul>
+<p>
+
+<dt><b>Version 1.21 (release) 5 April 1998</b>
+<dd> Bugfixes since 1.20, plus FreeBSD and SPARC Solaris ports and
+automatic nftp.ini update when upgrading to next version.
+<p>
+
+<dt><b>Version 1.22 (release) 22 May 1998</b>
+<dd>Bugfixes since 1.21, plus
+<ul>
+    <li> history feature (invoked by F2/Ctrl-E)
+    <li> new, unified scheme for screen output completely
+         eliminating snow effects in OS/2 and Windows versions
+    <li> job control has been significantly improved (Unix excluding FreeBSD)
+    <li> <a href="mailing_lists.html">two mailing lists</a> for announcements
+         and discussions
+    <li> enhanced installation script (Unix)
+    <li> working flags in bookmarks and history: "p" -- always use passive
+         mode for that site; "r" -- retry indefinitely; "f" -- inside firewall
+    <li> new option "start-prompt" in the nftp.ini: 1 -- to open anonymous
+         login prompt, 2 -- to open bookmark window, 3 -- to open history,
+         4 -- to open private login prompt
+    <li> Ukrainian translation
+</ul>
+
+<dt><b>Version 1.30 (release) 20 August 1998</b>
+<dd>Minor tweaks and bugfixes, plus
+<ul>
+    <li> customizable CUA-like menu system (use F9 or Ctrl-F to invoke)
+    <li> private logins/transfers are possible from the command line
+         (use <tt>ftp://userid:password@site.domain.net/directory</tt> format)
+    <li> upload (<tt>-p URL</tt>) and batch transfers (<tt>-@ cmdfile</tt>)
+         are now possible from the command line
+    <li> nicknames for quick search in the bookmarks or history from the
+         command line (<tt>-b nick</tt> or <tt>-h nick</tt>)
+    <li> choice of several pseudographics replacements under Unix
+    <li> job control (Ctrl-Z, bg, fg) now works under FreeBSD
+    <li> size transfer limit in unregistered version is now 1MB
+    <li> option (-m) to force monochrome mode (Unix)
+    <li> static binaries are no longer provided for Unixes
+    <li> easy-to-use installer for Windows version
+    <li> experimental port to BeOS (Intel R3)
+</ul>
+<p>
+
+<dt><b>Version 1.40 (release) 23 October 1998</b>
+<dd>Minor bugfixes plus
+<ul>
+    <li> new homepage: www.ayukov.com (http://ayukov.com also works);
+    <li> <b>IMPORTANT: this version no longer supports plain passwords in
+         bookmark file; use bookmark editor to add passwords and don't
+         forget to enable bookmarked passwords in nftp.ini. Old plain
+         passwords will be *deleted* from bookmark file on first save!</b>
+    <li> NFTP should now correctly restart transfers when nothing is
+         received during timeout specified in nftp.ini (default is 3 min);
+    <li> Window with NFTP can now be resized (Unix xterm, BeOS Terminal);
+    <li> NFTP now reads termcap for key definitions (improves compatibility
+         with some OSes and terminal emulators) (Unix, BeOS);
+    <li> new login procedure (all parameters are composed on one screen)
+         which is also used for bookmark editing;
+         old procedure is now under item "Open URL" in the "Sites" submenu;
+    <li> option to download selected files with external program
+         (defaults to GNU wget);
+    <li> AS/400 ftp server support;
+    <li> preliminary support for three kinds on VMS ftp servers
+         (MultiNet, MadGoat, UCX);
+    <li> option to record descriptions of downloaded files;
+    <li> option to use right/left arrows to enter/leave directory;
+    <li> upload and function keys now work in the BeOS version;
+    <li> full clipboard support under OS/2 in all prompts;
+    <li> version which runs under xterm in XFree86/OS2 (see nftp140ox.zip);
+</ul>
+<p>
+
+<dt><b>Version 1.41 (release) 18 November 1998</b>
+<dd>Bugfixes since 1.40; there are no new features. Possible security
+vulnerability has been fixed.
+<p>
+
+<dt><b>Version 1.50 (release) 6 February 1999</b>
+<dd>Several major additions:
+<ul>
+     <li> Direct FTP Search interface allows to find and download files quickly;
+          includes advanced filtering capabilities, can sort results by host,
+          domain, size, name, date/time.
+     <li> Mouse support (not quite complete yet); works in OS/2 VIO, PM, Windows 95/98/NT,
+          Unix xterm/rxvt/etc. Can be switched off.
+     <li> Experimental (read: alpha-quality) OS/2 NFTP/PM version.
+</ul>
+plus a lot of less important enhancements and bugfixes:
+<ul>
+     <li> language is no longer controlled by NFTP_LANG variable; it is set from the
+          inside of NFTP and is kept in the configuration file (nftp.cfg);
+          language setting is now per-platform basis (so you can have Japanese in OS/2 VIO
+          version, Korean in XFree86/OS2 xterm and English in NFTP/PM with one installation);
+     <li> editing files on the server (non-anonymous only); use "External viewer" menu
+          option;
+     <li> changed screen layout and provided options in nftp.ini for tweaking it: enabling/disabling
+          menu, upper and lower status lines;
+     <li> you can now interrupt communications with server with Esc (NFTP will ask whether
+          you really want to break connection); useful for slow sites;
+     <li> subtree sizes are shown when available for remote directories; menu option
+          to calculate subtree size;
+     <li> progress indicator reports stalls (no data received during extended period
+          of time) and time since last network activity is shown;
+     <li> you can hit 'R' during transfer to initiate abort/reconnect/reget sequence;
+     <li> NFTP is able to save/restore window size and position on some platforms
+          (OS/2 VIO and PM);
+     <li> NFTP VIO window can be resized on-the-fly with Alt-Left/Right/Up/Down;
+     <li> NFTP/Windows will wait for external program to finish (e.g., when editing
+          nftp.ini file);
+     <li> window title has been reorganized, so under Windows taskbar shows transfer
+          percentage (it was cut off in previous format);
+     <li> search in the history window (Ctrl-F: forward, Ctrl-G: next, Ctrl-H: backwards);
+     <li> Windows version now uses different compiler, Mingw32 egcs port
+          (http://agnes.dida.physik.uni-essen.de/~janjaap/mingw32/);
+     <li> PORT mode now works under BeOS;
+     <li> registration info is now entered via "Options/Registration code" menu entry
+          instead of editing nftp.ini;
+     <li> Alt-keys work on Linux console (useful for menu);
+     <li> some menu reorganization;
+     <li> optimizations for Unix screen output routines and option to specify 'slow link';
+          in that mode, NFTP will skip some not very useful screen output;
+     <li> clipserv.exe is no longer needed under OS/2;
+     <li> Solaris Intel port (actually appeared in 1.41);
+     <li> Digital Unix 4.0 (DEC Alpha) port (actually appeared in 1.41);
+     <li> Korean translation (actually appeared in 1.41);
+     <li> Finnish translation
+</ul>
+
+<dt><b>Version 1.51 (release) 4 April 1999</b>
+<dd>Usual string of bugfixes plus
+<ul>
+     <li> support for Squid (HTTP) proxies; patching Squid is recommended
+          (but not necessary) to get more precise file sizes
+     <li> turning on/off firewalls/proxies on-the-fly
+     <li> X11 versions for Unixes and OS/2
+     <li> command-line switch "-l language" to select language
+     <li> timestamps are displayed in the control connection (can be
+          switched off)
+</ul>
+
+<p>
+<dt><b>Version 1.52 (release) 10 April 1999</b>
+<dd>Several bugfixes since 1.51. Most important one:
+version 1.51 would not delete its temporary files.
+
+<p>
+<dt><b>Version 1.53 (release) 12 April 1999</b>
+<dd>Fixed awful bug (was present since 1.51) when on some
+sites NFTP would not parse listing correctly. Updated
+Hungarian translation.
+
+<p>
+<dt><b>Version 1.60 (release) 22 October 1999</b>
+<dd>Most important fixes:
+<ul>
+<li> upload was broken on slow links;
+<li> FTP Search could crash when retrieving results from server;
+<li> CPU load in X11 versions is much smaller;
+<li> OS/2 VIO version now can run without PM;
+<li> Win32 console version was consuming 100% of CPU time when idle;
+<li> data connection timeout was not always detected
+</ul>
+New features and improvements:
+<ul>
+<li> two-panel screen layout, like in Norton Commander (activated by Ctrl-W);
+<li> new way of handling passwords (see
+<a href="http://www.ayukov.com/nftp/password-caching.html">http://www.ayukov.com/nftp/password-caching.html</a>
+for details);
+<li> mirroring, in both directions (currently ignores symbolic links);
+<li> restarting uploads;
+<li> connect operations are interruptable (not on Windows);
+<li> revamped transfer progress indicator;
+<li> preserving timestamps and permissions when downloading/uploading;
+<li> support for Netscape SuiteSpot proxy;
+<li> uploading via HTTP proxies;
+<li> authentication on HTTP proxies;
+<li> option to pause transfer;
+<li> new scripting interface (see
+<a href="http://www.ayukov.com/nftp/scripting.html">http://www.ayukov.com/nftp/scripting.html</a>
+for details);
+<li> FTP Search results are now persistent across sessions (they are
+stored in the file);
+<li> updated set of icons for OS/2 version;
+<li> versions for SPARC Linux and RS/6000 AIX 4.x (actually appeared in 1.53)
+</ul>
+
+<p>
+<dt><b>Version 1.61 (release) 12 January 2000</b>
+<dd>Most important fixes since 1.60:
+<ul>
+<li> HTTP proxy support was completely broken in 1.60;
+<li> date/time display was seriously broken in 1.60;
+<li> would no longer crash if TEMP/TMP points to invalid directory;
+<li> would no longer crash when editing passwords;
+<li> option "lowercase names on download" is now off by default;
+<li> win32 version would no longer crash on files dated 01-01-70;
+<li> mirroring works better;
+<li> when transferring single file, will ask for overwrite/resume/skip.
+</ul>
+New features:
+<ul>
+<li> scripting enhancements (mget/mput, mirroring);
+<li> NFTP remembers current local directory when default download path
+     isn't set in nftp.ini;
+<li> support for FEAT/MLST (experimental; not enabled by default), 
+     VM servers, Netware servers;
+<li> PKFA secure authentication (experimental; see
+     <a href="http://www.ayukov.com/essays/pkfa.html">http://www.ayukov.com/essays/pkfa.html</a>).
+</ul>
+
+<p>
+<dt><b>Version 1.62 (release) 21 May 2000</b>
+<dd>Most important fixes since 1.61:
+<ul>
+<li> pathnames are now handled better with HTTP proxies (".." were 
+  not discarded where they should)
+<li> passwords were displayed when working with private logins via HTTP proxies
+<li> selection bar positioning on directory change
+<li> FTP Search support has been largely rewritten
+<li> user names with slash are allowed in the bookmarks
+<li> numeric IP addresses are accepted as proxy names
+<li> date/time-related fixes (thanks to Tom Fotherby!)
+<li> loading history has been greatly sped up
+</ul>
+
+New features:
+<ul>
+<li> BeOS attribute transfer
+<li> OS/390 server support (not yet finished)
+<li> deleting local nonempty directories
+<li> changing file permissions on remote (Files|Change access rights)
+<li> recognizes Windows 2000 FTP server
+<li> two new script variables controlling mirroring behaviour
+<li> OS/2 VIO version has icon now
+<li> option to disable directory re-read confirmation
+<li> option to disable logoff confirmation
+<li> new installer for Windows version
+<li> FTP Search now accepts usernames and passwords: mp3.lycos.com works now
+<li> Apache proxy support
+<li> Czech translation
+</ul>
+
+<p>
+<dt><b>Version 1.63 (release) 7 September 2001</b>
+<dd>New since 1.62:
+<ul>
+<li> sizes over 2GB are now displayed correctly
+<li> nonblocking connect works under Windows
+<li> option to disable backups when overwriting downloads
+<li> Slovak translation
+</ul>
+Fixes:
+<ul>
+<li> when current local directory is deleted NFTP would no longer
+crash (Unix)
+<li> sometimes mirroring was deleting files it just downloaded
+<li> FTP search no longer crashes under Unix
+</ul>
+
+<p>
+<dt><b>Version 1.70 (release) 30 June 2002</b>
+<dd>New since 1.63:
+<ul>
+<li> support for new licensing scheme;
+<li> support for Microsoft ISA 2000 proxy;
+<li> F8 presents menu to change encoding in the viewer;
+</ul>
+Fixes:
+<ul>
+<li> under some circumstances transfer rate was limited;
+<li> mirroring by download works more reliably;
+<li> Chinese translation is now up-to-date;
+<li> Italian and Swedish NLS files were corrupted;
+<li> improved implementation for wildcard matching routines;
+</ul>
+
+<p>
+<dt><b>Version 1.71 (release) 20 October 2002</b>
+<dd>New since 1.70:
+<ul>
+<li> if transfer script fails nonzero error code is returned by NFTP
+</ul>
+Fixes:
+<ul>
+<li> fixed date/time processing algorithms;
+<li> NFTP now recognizes Xitami Windows FTP server;
+</ul>
+
+</dl>
+
+<HR>
+<i><a HREF="http://www.ayukov.com/">Sergey Ayukov</a>
+(<a HREF="mailto:asv@ayukov.com">asv@ayukov.com</a>)
+</i>
+
+</body></html>

@@ -1,0 +1,75 @@
+#
+# Main target
+#
+all: exe
+
+include Makefiles/$(PLATFORM)
+
+#
+# Few common things
+#
+
+CC = gcc
+LIBS = -lscl -lmanycode -lasvtools $(INTL_LIBS) $(LIBS1)
+CFLAGS = -Wall -O -g -I../libraries/include -I/usr/local/include
+LDFLAGS = -L../libraries/lib -L/usr/local/lib -L/usr/X11R6/lib
+
+#
+# Dependencies
+#
+nftp_objs = nftp.o bookmark.o auxprogs.o net.o parsers.o help.o \
+   transfer.o do_key.o init.o display.o getoptns.o history.o \
+   scripting.o tcpip.o passwords.o mirror.o befs.o \
+
+nftp_os2.exe: $(nftp_objs) main.o
+	$(CC) $(LDFLAGS) -Zcrtdll -o $@ $^ -lfly_os2vio $(LIBS)
+	icons.os2\addicon.cmd icons.os2\nftp.ico nftp_os2.exe
+        
+nftp_pm.exe: $(nftp_objs) main.o nftppm.def nftppm.res
+	$(CC) $(LDFLAGS) -Zcrtdll -o $@ $^ -lfly_os2pm $(LIBS)
+	icons.os2\addicon.cmd icons.os2\nftppm.ico nftp_pm.exe
+
+nftp_x.exe: $(nftp_objs) main.o
+	$(CC) $(LDFLAGS) -Zcrtdll -o $@ $^ -lfly_os2x $(LIBS) $(LIBTERMCAP)
+
+nftp_x11.exe: $(nftp_objs) main.o
+	$(CC) $(LDFLAGS) -Zcrtdll -o $@ $^ -lfly_os2x11 $(LIBS) -lX11 
+
+nftp_unix_term: $(nftp_objs) main.o
+	$(CC) $(LDFLAGS) -o $@ $^ $(LIBS1) -lfly_unix_term $(LIBS) $(LIBTERMCAP)
+
+nftp_unix_term-static: $(nftp_objs) main.o
+	-$(CC) $(LDFLAGS) -static -s -o $@ $^ $(LIBS1) -lfly_unix_term $(LIBS) $(LIBTERMCAP)
+
+nftp_unix_x11: $(nftp_objs) main.o
+	$(CC) $(LDFLAGS) -o $@ $^ $(LIBS1) -lfly_unix_x11 $(LIBS) -lX11
+
+nftp_unix_x11-static: $(nftp_objs) main.o
+	-$(CC) $(LDFLAGS) -static -o $@ $^ $(LIBS1) -lfly_unix_x11 $(LIBS) -lX11
+
+nftp_win32cons.exe: $(nftp_objs) getopt.o main.o nftpwc.o
+	$(CC) $(LDFLAGS) -g -o $@ $^ -lfly_win32cons $(LIBS) -lwsock32 -luser32
+
+nftp_win32gui.exe: $(nftp_objs) getopt.o winmain.o nftpwg.o
+	$(CC) $(LDFLAGS) -g -o $@ $^ -lfly_win32gui $(LIBS) -luser32 -lgdi32 -lwsock32 -mwindows
+
+nftp_beos_term: $(nftp_objs) main.o
+	$(CC) $(LDFLAGS) -g -o $@ $^ -lfly_beos_term $(LIBS) $(LIBTERMCAP)
+	
+#
+# Pseudo-targets
+#
+exe: $(TARGETS)
+
+force:
+
+clean:
+	rm -f *.exe *.o *.a *.res nftp.srch debug/* core
+	rm -f $(TARGETS)
+	rm -rf nftp-$(VERSION)
+	rm -f convert/*.o convert/cnv.exe convert/cnv
+
+statics: nftp_unix_term-static nftp_unix_x11-static
+	-strip nftp_unix_term-static
+	-strip nftp_unix_x11-static
+

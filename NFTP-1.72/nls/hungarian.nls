@@ -1,0 +1,1593 @@
+#
+#   Language-specific file for NFTP 1.10+
+#
+#   English
+#
+#   About file format:
+#   ------------------
+#
+#   1) Lines starting with # are comments. There's no way to imbed comment
+#      into the line in the middle. Empty lines are ignored.
+#   2) Format of the string defition is:
+#        { string-name string-value1 [string-value2 ...] }
+#      Space between string-name and first string-value is important.
+#      String-values must be enclosed into double quotes (").
+#   3) Special characters inside string-value:
+#      - single quote, {, }, \ -- put as is, no special formatting is needed;
+#      - double quote -- currently, you cannot use it inside string-value;
+#   4) When several string-values are specified, resulting screen output
+#      will look as if separate string-values are placed on separate lines.
+#
+#   You can run "nftp -test" to check your translation for formatting
+#   errors; with this option, nftp just loads everything and exits.
+#
+
+# ------------------------------------- Months --------------------------
+
+{ M_JAN " Jan" }  { M_FEB " Feb" }  { M_MAR "M rc" }  { M_APR " µpr" }
+{ M_MAY " M j" }  { M_JUN " J£n" }  { M_JUL " J£l" }  { M_AUG " Aug" }
+{ M_SEP "Szep" }  { M_OCT " Okt" }  { M_NOV " Nov" }  { M_DEC " Dec" }
+
+{ M_HBAR              "Ä" } { M_VBAR              "³" }
+{ M_CROSS             "Å" }
+{ M_FILL1             "°" } { M_FILL2             "±" }
+{ M_FILL3             "²" } { M_FILL4             "Û" }
+{ M_LU                "Ú" } { M_RU                "¿" }
+{ M_LD                "À" } { M_RD                "Ù" }
+{ M_LT                "Ã" } { M_RT                "´" }
+{ M_UT                "Â" } { M_DT                "Á" }
+{ M_PLACEHOLDER       "ú" } { M_MARKSIGN          "*" }
+
+#  --------------------- Help screens --------------------------------------
+
+{ M_HLP_MAIN
+""
+" NFTP                   Szerz‹i jog (C) Sergey Ayukov 1994-1998"
+""
+" Magyarra ford¡totta: T¢th Ferenc (etus@alarmix.net) TeamOS/2 tag."
+" A HTML dokument ci¢ j¢val r‚szletesebb le¡r st tartalmaz."
+""
+" µLTALµNOS BILLENTYëZET PARANCSOK"
+""
+" Shift-H  - ez az inform ci¢. A seg¡ts‚grendszer nem hypertext."
+" F1       - sz”vegk”rnyezet ‚rz‚keny seg¡ts‚g el‹hozatala"
+" F10      - kijelentkez‚s a kiszolg l¢r¢l ‚s kil‚p‚s az NFTP-b‹l"
+" Ctrl-K   - kijelentkez‚s a kiszolg l¢r¢l"
+" Ctrl-B   - k”nyvjelz‹ megnyit sa ‚s bejelentkez‚s egy ott l‚v‹ helyre"
+" F2       - t”rt‚neti ablak megnyit sa, bejelentkez‚s egy ottani helyre"
+" Ctrl-L   - anonymous bejelentkez‚s m sik helyre"
+" Ctrl-N   - bejelentkez‚s £j helyre felhaszn l¢i azonos¡t¢val/jelsz¢val"
+" Ctrl-W   - verzi¢ inform ci¢ megjelen¡t‚se"
+" Ctrl-T   - ASCII/BINµRIS m¢d k”z”tti v lt s"
+" Ctrl-J   - k‚perny‹ £jrarajzol sa (de nem £jraolvas sa)"
+" Shift-I  - megsz molja, mennyi f jl h ny alk”nyvt rban van kijel”lve"
+" Shift-A  - NO OPERATION kld‚se (kapcsolat megl‚t‚nek ellen‹rz‚s‚hez)"
+" Shift-F  - NLST kapcsol¢kkal val¢ haszn lat nak enged‚lyez‚se/tilt sa"
+"            (alapb¢l enged‚lyezett). Egyes kiszolg l¢k nem szeretik az"
+"            NLST -lLa parancsot. Pr¢b lja ki, hogy l t-e furcsa zenete-"
+"            ket a kiszolg l¢r¢l k”nyvt rlista t”lt‚sekor! NEM AJµNLOTT. "
+""
+" Ezek a parancsok szinte mindig el‚rhet‹k. Azonban kl”nb”z‹ m¢dokban"
+" m s billentyûkombin ci¢k is ‚lhetnek, ¡gy ne feledkezzen meg arr¢l, hogy"
+" az F1 billentyûvel hozhatja el‹ a helyzet‚rz‚keny seg¡ts‚get! "
+"" }
+
+{ M_HLP_LINEIN
+""
+" Beviteli mez‹ szerkeszt‚sekor el‚rhet‹ billentyûk :"
+""
+" Esc/Enter            - elvet‚s/meger‹s¡t‚s"
+" Bal, Jobb, Home, End - kurzor mozgat sa"
+" Tab, Shift-Tab       - kurzor k”vetkez‹/el‹z‹ mez‹re mozgat sa (ha van)"
+" Del, Backspace       - karakterek t”rl‚se"
+" Shift-Ins            - beilleszt‚s a rendszer v g¢lapj r¢l"
+" Ctrl-Ins             - m sol s a rendszer v g¢lapj ra"
+""
+" Beviteli mez‹ megjelen¡t‚se ut n a Del megnyom s val t”r”lheti azt. Ha"
+" jelsz¢t ad meg, ahelyett csillag karakterek jelennek meg. "
+"" }
+
+{ M_HLP_CC
+""
+" A Kapcsolatvez‚rl‚s ablakban el‚rhet‹ billentyûk :"
+""
+" ny¡lbillentyûk  - ablak g”rget‚se"
+" Esc             - t”rt‚net v‚g‚re l‚p‚s (ugyanaz, mint az End)"
+" Sz¢k”z          - alk”nyvt rn‚zetre v lt s"
+" Shift-Q         - karakterl nc kld‚se a kiszolg l¢nak (id‚zet)"
+" Shift-C         - tetsz‹leges alk”nyvt rra v lt s"
+""
+" A kiszolg l¢ v laszai szrk‚n l tszanak, a kiadott parancsok z”lddel"
+" vannak kiemelve, az NFTP zenetei pedig piros sz¡nnel l tszanak."
+" Term‚szetesen csak akkor, ha nem m¢dos¡totta azokat az 'NFTP.INI' f jlban. "
+""
+" NFTP be‚p¡tett kapcsolatvez‚rl‚si t”rt‚nettel rendelkezik. Ha  lland¢an"
+" l tni szeretn‚ az gyf‚l/kiszolg l¢ p rbesz‚det, akkor  ll¡tsa az "
+" 'auto-switch-to-control' param‚ter ‚rt‚k‚t 1-re! Pr¢b lja ki, lehet,"
+" hogy megkedveli! "
+"" }
+
+{ M_HLP_DIR_RAW
+""
+" Ez a t voli g‚p alk”nyvt ra. Ha m‚g nem csatlakozott, akkor csak fekete"
+" h tteret l t. Az  ltal nos seg¡ts‚g (Shift-H) tartalmaz t j‚koztat st a"
+" kiszolg l¢khoz t”rt‚n‹ kapcsol¢d sr¢l. "
+""
+" F3             - kurzor alatti f jl megtekint‚se a gyors bels‹ n‚z‹vel"
+" Shift-V        - kurzor alatti f jl megtekint‚se kls‹ n‚z‹vel"
+""
+" F5             - kurzor alatti f jl, illetve kijel”lt f jlok let”lt‚se"
+" Ctrl-D         - az ”sszes alk”nyvt rban minden kijel”lt f jl let”lt‚se"
+" Shift-G        - f jl let”lt‚se n‚v alapj n (pl. ha az alk. olvashatatlan) "
+" Shift-R        - f jl/alk”nyvt r  tnevez‚se"
+" F7             - alk”nyvt r l‚trehoz sa (ehhez megfelel‹ jogosults ggal"
+"                  kell rendelkeznie)"
+" F8             - a kurzor alatti f jl (vagy ha van, akkor a kijel”lt"
+"                  f jlok t”rl‚se. Alk”nyvt rakat is t”r”lhet. "
+" Ctrl-R         - alk”nyvt r £jraolvas sa (f jllista friss¡t‚se)"
+" Shift-O        - f jlok le¡r s nak bet”lt‚se a kurzor alatti f jlb¢l"
+""
+" Ctrl-A         - aktu lis alk”nyvt rban l‚v‹ ”sszes f jl kijel”l‚se"
+" Ctrl-X         - aktu lis alk”nyvt rban l‚v‹ ”sszes f jl kijel”l‚s‚nek"
+"                  megszntet‚se"
+" Insert         - kurzor alatti f jl kijel”l‚se/kijel”l‚s‚nek megsznte-"
+"                  t‚se. "
+" Plusz/M¡nusz   - f jlok kijel”l‚se/kijel”l‚s‚nek megszntet‚se szûr‹vel."
+"                  P‚ld ul: '*.zip'"
+" *              - kijel”l‚s megford¡t sa"
+" Ctrl-Y         - minden alk”nyvt rban ”sszes f jlja kijel”l‚s‚nek"
+"                  megszntet‚se"
+""
+" ny¡lbillentyûk - kurzor mozgat sa (a Ctrl-bal/Ctrl-jobb gombokkal"
+"                  g”rgethet v¡zszintesen)"
+" \              - f‹k”nyvt rra v lt s"
+" [              - egy alk”nyvt rral feljebb l‚p‚s ('cd ..')"
+" ]              - kurzor alatti alk”nyvt rba l‚p‚s"
+" Enter          - ------ ' ------"
+" Shift-C        - tetsz‹leges alk”nyvt rra v lt s"
+""
+" Shift-N        - nevek szerinti rendez‚s, alk”nyvt rak el”l"
+" Shift-X        - kiterjeszt‚s szerinti rendez‚s, alk”nyvt rak el”l"
+" Shift-T        - id‹, majd n‚v szerinti rendez‚s, alk”nyvt rak el”l"
+" Shift-S        - m‚ret, majd n‚v szerinti rendez‚s, alk”nyvt rak el”l"
+" Shift-Y        - rendez‚s megszntet‚se, visszat‚r‚s az eredeti sorrendhez"
+" Shift-E        - aktu lis rendez‚si sorrend megford¡t sa"
+""
+" F4             - az aktu lis helynek k”nyvjelz‹k‚nt t”rt‚n‹ felv‚tele"
+" Sz¢k”z         -  tkapcsol s kapcsolatvez‚rl‚sre"
+" Tab            - helyi alk”nyvt rn‚zetre v lt s"
+" Ctrl-O         - f jlle¡r sok elrejt‚se/megjelen¡t‚se (ha vannak)"
+""
+" Ha elkezd egy f jlnevet beg‚pelni, az NFTP megpr¢b lja megkeresni azt. "
+""
+" A t”bbi billentyû le¡r sa az µltal nos seg¡ts‚gben (Shift-H) tal lhat¢."
+" Alk”nyvt rakat is kijel”lhet (ekkor az alk”nyvt rakban lev‹ ”sszes f jl"
+" kijel”l‹dik). A kijel”l‚sek alk”nyvt rak v lt sa ut n is megmaradnak. "
+"" }
+
+{ M_HLP_VIEWER
+""
+" A be‚p¡tett n‚z‹ben el‚rhet‹ billentyûk : "
+""
+" ny¡lbillentyûk  - g”rget‚s (v¡zszintesen is g”rgethet)"
+" Ctrl-bal/jobb   - g”rget‚s t¡z karakterrel v¡zszintesen"
+" Esc             - kil‚p‚s a n‚z‹b‹l"
+" Ctrl-F          - sz”veg keres‚se"
+" Ctrl-G          - ism‚telt keres‚s"
+" Ctrl-W          - tartalom f jlba ment‚se"
+""
+" Ne felejtse el, hogy a megjelen¡t‹ a f jlt a mem¢ri ba olvassa, ez‚rt"
+" legyen ¢vatos a nagyon nagy f jlok megjelen¡t‚s‚vel! "
+"" }
+
+{ M_HLP_LOCAL_PARSED
+""
+" Ez helyi alk”nyvt r."
+""
+" F3             - kurzor alatti f jl megtekint‚se a gyors bels‹ n‚z‹vel"
+" Shift-V        - kurzor alatti f jl megtekint‚se kls‹ n‚z‹vel"
+""
+" F6             - kurzor alatti f jl, illetve kijel”lt f jlok let”lt‚se"
+" Shift-R        - f jl/alk”nyvt r  tnevez‚se"
+" F7             - alk”nyvt r l‚trehoz sa"
+" F8             - kurzor alatti f jl vagy alk”nyvt r t”rl‚se"
+" Ctrl-R         - alk”nyvt r £jraolvas sa (f jllista friss¡t‚se)"
+""
+" Ctrl-A         - aktu lis alk”nyvt rban l‚v‹ ”sszes f jl kijel”l‚se"
+" Ctrl-X         - aktu lis alk”nyvt rban l‚v‹ ”sszes f jl kijel”l‚s‚nek"
+"                  megszntet‚se"
+" Insert         - kurzor alatti f jl kijel”l‚se/kijel”l‚s‚nek megsznte-"
+"                  t‚se. Alk”nyvt rakat nem jel”lheti ki. "
+" Plusz/M¡nusz   - f jlok kijel”l‚se/kijel”l‚s‚nek megszntet‚se szûr‹vel."
+"                  P‚ld ul: '*.zip'"
+" *              - kijel”l‚s megford¡t sa"
+""
+" ny¡lbillentyûk - kurzor mozgat sa"
+" \              - f‹k”nyvt rra v lt s"
+" [              - egy alk”nyvt rral feljebb l‚p‚s ('cd ..')"
+" ]              - kurzor alatti alk”nyvt rba l‚p‚s"
+" Enter          - ------ ' ------"
+" Shift-C        - tetsz‹leges alk”nyvt rra v lt s"
+" Shift-Z        - meghajt¢ v laszt sa"
+""
+" Shift-N        - nevek szerinti rendez‚s, alk”nyvt rak el”l"
+" Shift-X        - kiterjeszt‚s szerinti rendez‚s, alk”nyvt rak el”l"
+" Shift-T        - id‹, majd n‚v szerinti rendez‚s, alk”nyvt rak el”l"
+" Shift-S        - m‚ret, majd n‚v szerinti rendez‚s, alk”nyvt rak el”l"
+" Shift-Y        - rendez‚s megszntet‚se, visszat‚r‚s az eredeti sorrendhez"
+" Shift-E        - aktu lis rendez‚si sorrend megford¡t sa"
+""
+" Sz¢k”z         -  tkapcsol s kapcsolatvez‚rl‚sre"
+" Tab            - helyi alk”nyvt rn‚zetre v lt s"
+""
+" Ha elkezd egy f jlnevet beg‚pelni, az NFTP megpr¢b lja megkeresni azt. "
+""
+" A t”bbi billentyû le¡r sa az µltal nos seg¡ts‚gben (Shift-H) tal lhat¢."
+" Nem jel”lhet ki alk”nyvt rakat, azonban a kijel”l‚sek megmaradnak"
+" alk”nyvt rak v lt sa k”zben is. "
+"" }
+
+{ M_HLP_SHORT
+" NFTP gyorsbillentyûk                             [F1 - b‹vebb info]"
+"                                      [Shift-H -  ltal nos seg¡ts‚g]"
+" Be-/kijelentkez‚s"
+""
+" Ctrl-B - k”nyvjelz‹lista           Ctrl-L - kapcsol¢d s anonymousk‚nt"
+" F4     - k”nyvjelz‹ ment‚se        Ctrl-N - bejelentkez‚se jelsz¢val"
+" F10    - kijelentkez‚s ‚s kil‚p‚s  F2 - t”rt‚net"
+""
+" N‚zet"
+""
+" Tab     - helyi/t voli alk”nyvt rak  Sz¢k”z  - alk”nyvt r/kapcsolat"
+" Shift-Z - helyi meghajt¢ v lt sa     Shift-C - £tvonal megad sa"
+" Shift-N/X/T/S - rendez‚s n‚v/kiterjeszt‚s/id‹/m‚ret alapj n"
+" kisbetûs alfanumerikus billentyûk - azzal kezd‹d‹ f jlok keres‚se"
+""
+" µtvitel"
+""
+" F5 - f jl let”lt‚se            F6 - f jl felt”lt‚se"
+" F3 - sz”vegf jl megtekint‚se   Ctrl-D - minden kijel”lt f jl let”lt‚se"
+" Ins - f jl/alk”nyvt r kijel”l‚se/kijel”l‚s megszntet‚se"
+" Ctrl-A+ - minden f jl kijel”l‚se"
+"" }
+
+{ M_HLP_BOOKMARK1
+""
+" K”nyvjelz‹ gyûjt‹k "
+""
+" Minden egyes gyûjt‹ben t”bb k”nyvjelz‹ is lehet. Az Enter vagy a jobbra"
+" ny¡l megnyom s val l‚phet be, az Esc ‚s a balra ny¡l megnyom s val l‚p-"
+" het ki a gyûjt‹kb‹l. A ny¡lbillentyûk seg¡ts‚g‚vel ¡gy az eg‚sz k”nyv-"
+" jelz‹rendszeren v‚gigmehet. "
+""
+" éj gyûjt‹ l‚trehoz s hoz nyomja meg az Ins-t, t”rl‚shez a Del-t. A"
+" Ctrl-E megnyom s val pedig  tnevezheti a gyûjt‹ket. "
+""
+" Akkor is e n‚zetbe kerl, amikor £j k”nyvjelz‹t akar l‚trehozni. Ekkor"
+" v lassza a k¡v nt gyûjt‹t vagy nyomja meg az Ins billentyût £j l‚treho-"
+" z s hoz! Ha jelszavas k”nyvjelz‹t fog menteni (azaz nem anonymous ftp"
+" kiszolg l¢t), akkor a jelszava nem ment‹dik. Ezt k‚zzel kell be¡rnia a"
+" .bmk f jlba. Azonban ne feledje, hogy ez biztons gi lyuk, mivel b rki,"
+" aki hozz f‚rhet a g‚p‚hez megn‚zheti a jelszav t! "
+""
+" A lista m¢dos¡t sakor a v ltoztat sok ment‚sre kerlnek (vagy elvesznek"
+" az ablakb¢l t”rt‚n‹ kil‚p‚s ut n, att¢l fgg‹en, hogyan v laszol a"
+" program k‚rd‚s‚re, miszerint a v ltoztat sokat mentse-e vagy sem. Ha"
+" egyszerre t”bb p‚ld nyt futtat az NFTP-b‹l, akkor ne m¢dos¡tsa a k”nyv-"
+" jelz‹list t egyid‹ben! "
+"" }
+
+{ M_HLP_BOOKMARK2
+""
+" Gyûjt‹kben lev‹ k”nyvjelz‹k "
+""
+" Az Enterrel v laszthat ki g‚pet (azaz bejelentkezhet), az Esc vagy bal-"
+" ra ny¡l megnyom s val l‚phet ki a gyûjt‹kb‹l. A ny¡lbillentyûk seg¡ts‚-"
+" g‚vel ¡gy az eg‚sz k”nyvjelz‹rendszeren v‚gigmehet. "
+""
+" A Del gombbal t”r”lhet k”nyvjelz‹t. De egyszerûen  t is rendezheti a"
+" k”nyvjelz‹ket: a Shift-U billentyûkkel fel, a Shift-D-vel le, a"
+" Shift-< billentyûkkel pedig m sik gyûjt‹be mozgathatja. A Ctrl-E-vel"
+" m¢dos¡thatja a k”nyvjelz‹ket. "
+""
+" A lista m¢dos¡t sakor a v ltoztat sok ment‚sre kerlnek (vagy elvesznek"
+" az ablakb¢l t”rt‚n‹ kil‚p‚s ut n, att¢l fgg‹en, hogyan v laszol a"
+" program k‚rd‚s‚re, miszerint a v ltoztat sokat mentse-e vagy sem. Ha"
+" egyszerre t”bb p‚ld nyt futtat az NFTP-b‹l, akkor ne m¢dos¡tsa a k”nyv-"
+" jelz‹list t egyid‹ben! "
+"" }
+
+{ M_HLP_UNDEFINED
+""
+" Ilyen nyelven nem tal lhat¢ seg¡ts‚g ehhez az oldalhoz. "
+"" }
+
+{ M_BOOKMARK_FORMAT
+"; a k”nyvjelz‹ form tuma a k”vetkez‹ :"
+"; ftp.sai.msu.su:21/pub/os2 : bejelentkez‹_n‚v/jelsz¢/kapcsol¢k : le¡r s"
+";"
+"; k”rltekint‚ssel m¢dos¡tsa a f jlt; a k”vetkez‹ szab lyok ‚rv‚nyesek:"
+"; - a kett‹spontok k”rli sz¢k”z”k FONTOSAK;"
+"; - az el‚r‚si utaknak abszol£tnak kell lennik, azaz '/'-lel kell"
+";   kezd‹dnik;"
+"; - a 'port'-ot elhagyhatja, ha akarja;"
+"; - '*' karaktert ¡rjon anonymous eset‚n a 'bejelentkez‹_n‚v' ‚s"
+";   'jelsz¢' mez‹kbe:"
+";   xenia.sote.hu:/pub/os2/munich : */*/kapcsol¢k : LEO tkr”z‚s"
+";"
+";" }
+
+#  Bookmarks ----------------------------------------------------------
+
+{ M_CANTOPENBOOKMARKS1
+"A(z) [%s] k”nyvjelz‹f jl nem nyithat¢ meg hozz fûz‚sre" }
+
+{ M_CANTOPENBOOKMARKS2
+"A(z) [%s] k”nyvjelz‹f jl nem nyithat¢ meg olvas sra" }
+
+{ M_CANTOPENBOOKMARKS3
+"A(z) [%s] k”nyvjelz‹f jl nem nyithat¢ meg fell¡r sra" }
+
+{ M_NO_BOOKMARKS
+"  Nem tal lhat¢ k”nyvjelz‹ " }
+
+{ M_EMPTY_BOOKMARKSLIST
+"  A k”nyvjelz‹lista res " }
+
+{ M_DELETE_BOOKMARK
+"  T”rli a(z) %s  "
+"  k”nyvjelz‹t ?  " }
+
+{ M_INSERT_BOOKMARK1
+" Adja meg a bejelentkez‚si nev‚t (hagyja resen anonymoushoz): " }
+
+{ M_INSERT_BOOKMARK2
+" Adja meg az ftp kiszolg l¢ nev‚t vagy IP c¡m‚t: " }
+
+{ M_INSERT_BOOKMARK3
+" Adjon meg alk”nyvt rat: " }
+
+{ M_CURRENT_BOOKMARKS
+" Jelenlegi k”nyvjelz‹k " }
+
+{ M_BOOKMARKS_CHANGED
+"  A k”nyvjelz‹adatok megv ltoztak.  "
+"  Menti az £j k”nyvjelz‹-list t?  " }
+
+#  Prompts ------------------------------------------------------------
+
+{ M_USETAB
+" A Tab/Shift-Tab seg¡ts‚g‚vel mozoghat a mez‹k k”z”tt " }
+
+{ M_CHOOSEDRIVE
+"V lasszon meghajt¢t" }
+
+{ M_SELECT_DIRECTORY
+" V lasszon indul¢ alk”nyvt rat (vagy nyomjon Entert az elfogad shoz) : " }
+
+{ M_ENTER_VERBATIM_COMMAND
+" Adja meg pontosan a kldend‹ parancsot : " }
+
+{ M_MKDIR_ENTER_NAME
+" Adja meg a l‚trehozand¢ alk”nyvt r nev‚t : " }
+
+{ M_ENTER_FIREWALL_USERID
+" Adja meg a TëZFAL felhaszn l¢i azonos¡t¢j t: " }
+
+{ M_ENTER_FIREWALL_PASSWORD
+" Adja meg a TëZFAL jelszav t: " }
+
+{ M_ENTER_USERID
+" Adja meg a felhaszn l¢i azonos¡t¢j t : " }
+
+{ M_ENTER_PASSWORD
+" Adja meg a jelszav t : " }
+
+{ M_ENTER_HOSTNAME
+" Adja meg azt a helyet[[:port]£tvonal], ahova be akar jelentkezni : " }
+
+{ M_ENTER_DIRECTORY
+" Alk”nyvt r v lt sa a t voli g‚pen : " }
+
+{ M_ENTER_SELECT_FILTER
+" Adjon meg szûr‹t : " }
+
+{ M_RENAME_LOCAL_FILE
+" Nevezze  t a helyi f jlt : " }
+
+#  Pseudo-responses ---------------------------------------------------
+
+{ M_RESP_CANNOT_RESOLVE
+"'%s' nem tal lhat¢" }
+
+{ M_RESP_LOOKING_UP
+"'%s' keres‚se" }
+
+{ M_RESP_TRYING_IP
+"'%s' nem tal lhat¢, IP c¡m alapj n t”rt‚n‹ pr¢b lkoz s" }
+
+{ M_RESP_FOUND
+"'%s' megtal lva" }
+
+{ M_RESP_NO_SOCKET
+"Nem ‚rhet‹ el a socket, pr¢b lkoz s feladva" }
+
+{ M_RESP_FAILED_TO_CONNECT
+"Nem sikerlt csatlakozni a(z) %u porthoz" }
+
+{ M_RESP_CONNECTED
+"Csatlakoz s a(z) %u porthoz" }
+
+{ M_RESP_CLOSING
+"Kapcsolatvez‚rl‚s bez r sa" }
+
+{ M_RESP_LOGIN
+"Sikeres bejelentkez‚s '%s@%s' n‚ven" }
+
+{ M_RESP_TRANSFER_DONE
+"µtvitel k‚sz;  tlagos sebess‚g %u b jt/mp" }
+
+{ M_RESP_INIT_DONE
+"init() k‚sz......" }
+
+{ M_RESP_RETRYING
+"V rakoz s %d m sodpercig... ESC: megszak¡t s, m s billentyû: £jrapr¢b l s" }
+
+{ M_RESP_RETRY_ABORTED
+"Megszak¡tva." }
+
+{ M_RESP_REGET_ISNT_SUPPORTED
+"Reget nem t mogatott; eg‚sz f jl  tvitele" }
+
+{ M_RESP_TRANSFER_CANCELLED
+"µtvitel abbahagyva (%s)" }
+
+{ M_RESP_TRANSFER_ERROR
+"Hiba '%s'  tvitele k”zben " }
+
+#  Questions ----------------------------------------------------------
+
+{ M_TOO_BIG_FOR_INTVIEWER
+" A(z) '%s' f jl el‚g nagy -- %s b jt. "
+" Tov bbra is a bels‹ n‚z‹vel akarja megtekinteni? " }
+
+{ M_REALLY_OVERWRITE
+" **** FELšLÖRµS ****"
+""
+" A(z) '%s' f jl m r l‚tezik."
+" Ugyanolyan hossz£, mint a t voli f jl. "
+" (Helyi f jl: %d b jt, t voli f jl: %d b jt) "
+" Fell akarja ¡rni a helyi f jlt?" }
+
+{ M_OVERWRITE_RENAME_CANCEL
+""
+" A(z) '%s' f jl m r l‚tezik!"
+" Ugyanolyan hossz£, mint a t voli f jl. "
+" (Helyi f jl: %d b jt, t voli f jl: %d b jt) "
+" Esc -  tvitel megszak¡t sa " }
+
+{ M_OVERWRITE_RENAME_CANCEL2
+""
+" A(z) '%s' f jl m r l‚tezik!"
+" HOSSZABB, mint a t voli f jl. "
+" (Helyi f jl: %d b jt, t voli f jl: %d b jt) "
+" Esc -  tvitel megszak¡t sa " }
+
+{ M_OVERWRITE_RENAME_CANCEL3
+" Helyi f jl fell¡r sa "
+" Helyi f jl  tnevez‚se " }
+
+{ M_REALLY_REGET
+" **** LET™LTS FOLYTATµSA ****"
+""
+" A(z) '%s' f jl m r l‚tezik. "
+" R™VIDEBB, mint a t voli f jl. "
+" (Helyi f jl: %d b jt, t voli f jl: %d b jt) " }
+
+{ M_REGET_RENAME_CANCEL
+""
+" A(z) '%s' f jl m r l‚tezik! "
+" R™VIDEBB, mint a t voli f jl. "
+" (Helyi f jl: %d b jt, t voli f jl: %d b jt) "
+" A 'Tov bb' v laszt s val folytathatja a megszak¡tott let”lt‚st "
+" Esc -  tvitel megszak¡t sa " }
+
+{ M_REGET_RENAME_CANCEL2
+" Tov bb "
+" Helyi f jl fell¡r sa "
+" Helyi f jl  tnevez‚se " }
+
+{ M_REALLY_TRANSFER_FROM
+"    T”ltsem  t a f jl(oka)t a t voli g‚pRŠL ?    " }
+
+{ M_REALLY_TRANSFER_TO
+"    T”ltsem  t a f jl(oka)t a t voli g‚pRE ?    " }
+
+{ M_REALLY_DELETE
+"    T”r”ljem a f jl(oka)t ?    " }
+
+{ M_REALLY_SAVE_BOOKMARK
+"  Mentsem a(z)                       "
+"  %s %s : %s  "
+"  alk”nyvt rat k”nyvjelz‹k‚nt?  " }
+
+{ M_REALLY_EXIT
+"       Kil‚p az NFTP-b‹l ?      " }
+
+{ M_REALLY_LOGOFF
+"  Kijelentkezik a(z) %s helyr‹l ?  " }
+
+#  Miscellaneous text strings -----------------------------------------
+
+{ M_WELCOME
+" NFTP%s A Shift-H billentyûkkel ‚rheti el az  ltal nos t j‚koztat st" }
+
+{ M_DISCONNECTING
+"   Kapcsolat bont sa a(z) %s g‚ppel   " }
+
+{ M_EOF_MARK
+""
+" ============ FµJL VGE ============ " }
+
+{ M_WRONG_REGCODE
+" Hib s regisztr ci¢s k¢dot adott meg az NFTP.INI f jlban. "
+" K‚rem, ellen‹rizze a nevet ‚s k¢dot m‚g egyszer! Kil‚p?" }
+
+{ M_RUNNING_UNREGISTERED
+"          Az NFTP ezen p‚ld nya nem regisztr lt "
+""
+" Nem tud majd %dKB-n l hosszabb f jlokat  tvinni. "
+""
+"    Olvassa el a dokument ci¢t az NFTP regisztr ci¢j r¢l!"
+""
+"    Ennek az zenetnek a kikapcsol s hoz  ll¡tsa a NFTP.INI f jl"
+"    'registration' r‚sz‚ben lev‹ 'message' ‚rt‚k‚t 0-ra! " }
+
+{ M_CCLINES
+" Kapcsolatvez‚rl‚s : %u sor" }
+
+{ M_BINARY
+"BINµRIS" }
+
+{ M_ASCII
+"ASCII  " }
+
+{ M_TRANSFER_COMPLETED
+"µtvitel k‚sz, a folytat shoz ss”n le egy billentyût! " }
+
+{ M_HELP_ESC_TO_EXIT
+"  Seg¡ts‚g - Esc a kil‚p‚shez  " }
+
+{ M_STATUS
+" ™sszesen %u f jl, %s B jt    [%3s]    Kijel”lve %u f jl, %s B jt" }
+
+{ M_STATUS_BIN
+"BIN" }
+
+{ M_STATUS_ASC
+"ASC" }
+
+#  --------------------------------------------------------------------
+#  Fatal errors -------------------------------------------------------
+
+{ M_UNKNOWN_OS
+""
+" Ismeretlen oper ci¢s rendszer a(z)"
+" '%s',"
+" kiszolg l¢n. Kijelentkez‚s... " }
+
+{ M_UNREGISTERED_TRANSFER
+" Nem vihet  t %dKB-n l hosszabb f jlokat a "
+" nem regisztr lt verzi¢val! " }
+
+{ M_INI_BUILD_FAILED
+"Nem lehet az NFTP.INI f jlt olvasni/ talak¡tani. "
+"Ellen‹rizze, hogy a PATH-ban esetleg megtal lhat¢-e az NFTP.EXE ‚s"
+"NFTP-OPT.EXE r‚gi verzi¢ja! " }
+
+{ M_EMAIL_NOT_SET
+"Konfigur lnia kell az NFTP.INI f jlt az NFTP futtat sa el‹tt! "
+"Legal bb az e-mail c¡m‚t adja meg! " }
+
+{ M_CONNECTION_LOST
+"     Az ”sszek”ttet‚s megszakadt " }
+
+{ M_NO_PASV_NOFIREWALLING
+" Ez az FTP kiszolg l¢ nem t mogatja a PASV parancsot ‚s "
+" ez‚rt nem ‚rhet‹ el tûzfal m”gl " }
+
+{ M_NO_PASV
+" Ez az FTP kiszolg l¢ nem t mogatja a PASV parancsot. "
+" µll¡tsa a 'use-PASV-mode' param‚tert 0-ra! " }
+
+{ M_CANT_CREATE_SEM
+" V‚gzetes hiba : nem lehet szemaforokat l‚trehozni " }
+
+{ M_INI_UNREADABLE
+""
+"Nem tal lhat¢ az NFTP.INI f jl. Kil‚p‚s. " }
+
+#  Transient messages -------------------------------------------------
+
+{ M_SENDING_VERBATIM_COMMAND
+"   Parancs kld‚se a t voli g‚pnek... " }
+
+{ M_PARSING_LISTING
+"   Alk”nyvt rlista elemz‚se...   " }
+
+{ M_MKDIR_CREATING
+"   Alk”nyvt r l‚trehoz sa a t voli g‚pen...   " }
+
+{ M_GOING_ROOT
+"   F‹k”nyvt rba v lt s a t voli g‚pen...   " }
+
+{ M_GOING_UP
+"   Fels‹bb alk”nyvt rba v lt s a t voli g‚pen...    " }
+
+{ M_CHANGING_DIR
+"   Alk”nyvt r v lt sa a t voli g‚pen...   " }
+
+{ M_SENDING_NOOP
+"   NO OPERATION parancs kld‚se...   " }
+
+{ M_QUERYING_DIR
+"   T voli g‚p aktu lis alk”nyvt r nak lek‚rdez‚se... " }
+
+{ M_RETRIEVING_FILELIST
+"   Alk”nyvt rlista lek‚r‚se...   " }
+
+#  nftp-opt  defines -------------------------------------------------
+
+{ M_FATAL_LOADING_NFTP_INI
+""
+"v‚gzetes hiba az NFTP.INI f jl bet”lt‚sekor; program befejez‚se" }
+
+{ M_WRONG_KEYNAME
+"hib s billentyûn‚v: [%s]"
+"" }
+
+{ M_KEYDEF_ERRORS
+"%d hiba t”rt‚nt a billentyûdefin¡ci¢k feldolgoz sa k”zben."
+"Nyomjon meg egy billentyût!" }
+
+{ M_KEYNAMES_WELCOME
+"Esc billentyûvel l‚phet ki, m s billentyûvel a nevket jelen¡theti meg."
+"Ha semmi sem t”rt‚nik, akkor a billentyûkombin ci¢ nem j”tt l‚tre,"
+"illetve azt az oper ci¢s rendszer lekezelte. "
+""
+"K¢d :          :" 
+"" }
+
+{ M_NO_TEXT
+" Nincs sz”veg ehhez az zenethez. "
+" Val¢sz¡nûleg nincs leford¡tva erre a nyelvre vagy "
+" az NFTP szerz‹je felejtette el. " }
+
+{ M_CANT_DELETE
+" '%s' nem t”r”lhet‹ " }
+
+{ M_ENTER_LOCAL_DIRECTORY
+" Helyi meghajt¢/alk”nyvt r v lt sa : " }
+
+{ M_REALLY_TRANSFER_FROM_ALLDIRS
+" %d f jlt jel”lt ki let”lt‚sre %d alk”nyvt rban. "
+" A teljes m‚ret: %s b jt. Folytatja? " }
+
+{ M_BYTES_RECEIVED
+"     %7d  tvitt b jt"
+"             Esc-el  ll¡thatja meg " }
+
+{ M_BYTES_REMAIN
+""
+"     %7d  tvitt b jt"
+"     %7d h tral‚v‹ b jt"
+"             Esc-el  ll¡thatja meg    " }
+
+{ M_YES
+"  Igen  " }
+
+{ M_NO
+"  Nem   " }
+
+{ M_OK
+"   OK   " }
+
+{ M_ENTER_SEARCHSTRING
+" Adja meg a keresend‹ karakterl ncot: " }
+
+{ M_ENTER_FILENAME_SAVE
+" Adja meg a f jlnevet, amilyen n‚ven menteni akarja: " }
+
+{ M_CANNOT_OPEN
+" Nem nyithat¢ meg a(z) %s f jl " }
+
+{ M_FILE_SAVED
+"        F jl ment‚sre kerlt        " }
+
+{ M_LISTING_HEADER
+"Kiszolg l¢ : %s"
+"Alk”nyvt r : %s"
+"" }
+
+{ M_LISTING_FOOTER
+""
+"%d f jl, ”sszesen %s b jt" }
+
+{ M_LISTING_SAVED
+"    Lista ment‚sre kerlt    " }
+
+{ M_ENTER_RETRIEVE_AS
+" F jl let”lt‚se m s n‚ven: " }
+
+{ M_ENTER_LISTING_FILENAME
+" Adjon meg f jlnevet egy list nak: " }
+
+{ M_ENTER_NEWNAME
+" F jl  tnevez‚se: " }
+
+{ M_ENTER_UPLOAD_AS
+" F jl felt”lt‚se m s n‚ven: " }
+
+{ M_RENAME_FAILED
+" '%s' nem nevezhet‹  t '%s' n‚vre " }
+
+{ M_QUICK_SEARCH
+" gyors keres‚s: %s " }
+
+{ M_CANT_ACCESS_DRIVE
+" A(z) %c: meghajt¢hoz nem lehet hozz f‚rni " }
+
+{ M_DIRECTORY_DOESNT_EXIST
+" A(z) '%s' alk”nyvt r nem l‚tezik " }
+
+{ M_BAD_BOOKMARK_ENTRY
+"  A(z) %s "
+"  k”nyvjelz‹ s‚rlt, ¡gy figyelmen k¡vl marad " }
+
+{ M_DEFAULT_BMK_FOLDER
+"µltal nos helyek (alap‚rtelmez‚sk‚nt l‚trehozva)" }
+
+{ M_ENTER_DESC
+" Adja meg a le¡r s t : " }
+
+{ M_FOLDER_TITLE
+" Gyûjt‹ : %s " }
+
+{ M_DELETE_BOOKMARK1
+"        T”rli a k”nyvjelz‹t ?        " }
+
+{ M_NAME_FOLDER
+" Adjon meg nevet az £j gyûjt‹nek " }
+
+{ M_DELETE_NONEMPTY_FOLDER
+"    '%s' "
+"  Nem res gyûjt‹ t”rl‚se? " }
+
+{ M_ENTER_FOLDER_TITLE
+" Adja meg a gyûjt‹ c¡m‚t : " }
+
+{ M_SELECT_FOLDER
+" V lassza ki azt a gyûjt‹t, amelyikbe a k”nyvjelz‹ kerlj”n " }
+
+{ M_FILE_TO_DOWNLOAD
+" Let”ltend‹ f jl : " }
+
+{ M_CANT_CREATE_DIRECTORY
+"Nem lehet a(z) '%s' alk”nyvt rat l‚trehozni" }
+
+{ M_REREAD_REMOTE_DIR
+" T voli alk”nyvt r tartalm nak £jraolvas sa? " }
+
+{ M_LOGOFF_MARKED
+" %d f jlt jel”lt ki %d alk”nyvt rban. "
+" Teljes m‚ret: %s b jt. "
+" Biztos, hogy ki akar jelentkezni? " }
+
+{ M_CANT_LOGIN
+" Nem lehet %s g‚pre bejelentkezni " }
+
+{ M_FILE_NOT_FOUND
+" A(z) '%s' f jlt nem tal lhat¢ a kiszolg l¢n " }
+
+{ M_TRANSFER_FAILED
+" A(z) '%s' f jl  tvitele meghi£sult " }
+
+{ M_PROXY_ISNT_SPECIFIED
+"  Nincs megadva tûzfal proxy g‚p az NFTP.INI f jlban  " }
+
+{ M_NOT_CONNECTED
+"Nincs ”sszek”ttet‚s" }
+
+{ M_INCORRECT_FIREWALL
+" Helytelen tûzfalt¡pust adott meg : %d " }
+
+{ M_UNKNOWN_SERVER_OS
+" Figyelem: ismeretlen oper ci¢s rendszer a(z): "
+" '%s' ftp kiszolg l¢n. "
+" Az NFTP-nek esetleg nem sikerlhet a list t elemeznie " }
+
+{ M_CONNECTING
+"Kapcsol¢d s a(z) %s g‚phez... " }
+
+{ M_CANNOT_RENAME
+" Nem lehet a(z) '%s' f jt '%s' n‚vre  tnevezni " }
+
+{ M_DOWNLOADING
+"%s - let”lt‚s..." }
+
+{ M_CANT_OPEN_FOR_WRITING
+" Nem lehet a(z) '%s' f jlt ¡r sra megnyitni " }
+
+{ M_CHANGING_DIRECTORY
+"   Alk”nyvt r v lt sa :   "
+"   '%s'   " }
+
+{ M_CANT_OPEN_FOR_READING
+" Nem lehet a(z) '%s' f jlt olvas sra megnyitni " }
+
+{ M_CANT_WRITE_LOGFILE
+" Figyelem: nem lehet a(z) '%s' napl¢f jlba ¡rni " }
+
+{ M_CANT_GUESS_CURDIR
+" Nem lehet az aktu lis alk”nyvt rat meghat rozni a t voli g‚pen " }
+
+{ M_CANT_READ_FILE
+" Nem lehet a(z) '%s' f jlt olvasni " }
+
+{ M_UPLOADING
+"%s - felt”lt‚s..." }
+
+{ M_ALREADY_BOOKMARKED
+" A(z) '%s' hely m r szerepel a k”nyvjelz‹ben "
+" ('%s' k”nyvt rban). M‚gis felveszi? " }
+
+{ M_EDIT1
+"Gazdan‚v[:port]alk”nyvt r" }
+
+{ M_EDIT2
+"Bejelentkez‹_n‚v/jelsz¢/kapcsol¢k" }
+
+{ M_EDIT3
+"Hely le¡r sa" }
+
+{ M_CONNECTION_OK
+"       Kapcsolat rendben        " }
+
+{ M_MARKED_STATISTICS
+"    %d f jl %d alk”nyvt rban; ”sszesen %s b jt    " }
+
+#  ---------------------------------------------------------- new in 1.10
+
+{ M_STARTING_TRANSFER
+"   µtvitel ind¡t sa...   " }
+
+{ M_KEEP_TREE_INTACT
+" %d f jlt jel”lt ki %d alk”nyvt rban. "
+" Teljes m‚ret: %s b jt. "
+""
+" Alk”nyvt rszerkezet megtart sa  tvitelkor? " }
+
+{ M_KEEP_TREE2
+" Alk”nyvt rak megtart sa "
+"    F jlok felhalmoz sa    " }
+
+{ M_OVERWRITE_RENAME_CANCEL4
+" Helyi f jl fell¡r sa "
+" Helyi f jl  tnevez‚se "
+" F jl kihagy sa " }
+
+{ M_REGET_RENAME_CANCEL5
+" Tov bb "
+" Helyi f jl fell¡r sa "
+" Helyi f jl  tnevez‚se "
+" F jl kihagy sa " }
+
+{ M_RESP_BIND_FAILED
+"H l¢zati hiba (bind() sikertelen)" }
+
+{ M_RESP_LISTEN_FAILED
+"H l¢zati hiba (listen() sikertelen)" }
+
+{ M_RESP_GETSOCKNAME_FAILED
+"H l¢zati hiba (getsockname() sikertelen)" }
+
+{ M_RESP_CANNOT_CONNECT
+"Nem lehet kapcsolatot l‚trehozni adatok  tvitel‚hez " }
+
+{ M_RESP_CONNECTION_NOT_ESTABLISHED
+"A kiszolg l¢ nem l‚tes¡tett adatkapcsolatot" }
+
+{ M_RESP_TRANSFER_SKIPPED
+"`%s' f jl kihagyva" }
+
+{ M_WALK_TREE
+" Teljes fa v‚gigj r sa "
+" '%s' helyr‹l indulva? " }
+
+{ M_NO_MARKED_FILES
+" Nincsenek kijel”lt f jlok az alk”nyvt rakban " }
+
+{ M_HAVENT_BEEN_CONNECTED
+"m‚g nem csatlakozott" }
+
+{ M_DIRECTORY_LISTING
+"Alk”nyvt rlista" }
+
+{ M_LARGE_INDEX_FILE
+"  Figyelem: A(z) '%s' f jlle¡r sokat tartalmaz¢ f jl  "
+"  %s b jt hossz£. Biztos le akarja t”lteni?  " }
+
+{ M_LOAD_DESCRIPTIONS
+" Le¡r sok bet”lt‚se '%s' f jlb¢l? " }
+
+{ M_CANT_USE_DIR_AS_INDEX_FILE
+" Nem lehet le¡r sokat let”ltenie '%s' alk”nyvt rb¢l. "
+" Vigye a kurzort egy tetsz‹leges f jlra. " }
+
+{ M_RESP_CONNECTING
+"Kapcsol¢d s a(z) %s g‚phez..." }
+
+{ M_DOWNLOADING1
+"%s - DL %lu%% - %.2f KB/s" }
+
+{ M_UPLOADING1
+"%s - UL %lu%% - %.2f KB/s" }
+
+{ M_DESC_DOWNLOAD_OPTIONS
+"  Igen  "
+"  Nem   "
+" Soha " }
+
+# ----------------------------------------- new in 1.21 -------------
+
+{ M_RESP_CANT_OPEN
+"%s f jl nem nyithat¢ meg" }
+
+{ M_NO_EMAIL_ADDRESS
+""
+"Figyelem: Az e-mail c¡m nincs megadva a(z) %s f jlban."
+"" }
+
+{ M_GUESSED_EMAIL
+"%s lesz a jelsz¢ anonymous bejelentkez‚sekkor."
+"Folytat shoz nyomja meg az Entert..."
+"" }
+
+{ M_CANT_GUESS_EMAIL
+"Nem tal lhat¢ a gazdag‚p-, illetve a bejelentkez‚si neve. "
+"K‚rem, m¢dos¡tsa %s-t ‚s adja meg az e-mail c¡m‚t! "
+"Az NFTP ezt fogja haszn lni anonymous FTP bejelentkez‚sekhez."
+"" }
+
+{ M_INI_CONFIG_VERSION
+""
+"A jelenlegi konfigur ci¢s f jlj nak (%s) %s a verzi¢ja."
+"Az NFTP program verzi¢ja pedig %s." 
+"" }
+
+{ M_INI_CANT_FIND_NFTP_I
+"Nem tal lhat¢ az NFTP.I az NFTP.INI friss¡t‚s‚hez"
+"sem `%s', sem pedig `%s' helyen!"
+"" }
+
+{ M_INI_UPDATE
+"`%s' friss¡t‚se"
+"`%s' alapj n. "
+"Folytatja? [Ynq]" }
+
+{ M_INI_UPDATING
+""
+"%s friss¡t‚se %s-sel..."
+"" }
+
+{ M_INI_CANT_OPEN_READ
+"%s nem nyithat¢ meg olvas sra"
+"" }
+
+{ M_INI_CANT_OPEN_WRITE
+"%s nem nyithat¢ meg ¡r sra"
+"" }
+
+{ M_INI_WRONG_ENTRY
+"Hiba -- bejegyz‚s szakaszon k¡vl:"
+"%s" }
+
+{ M_INI_CANT_RENAME
+"`%s' nem nevezhet‹  t `%s' n‚vre"
+"" }
+
+{ M_INI_BACKUP
+""
+"%s biztons gi ment‚se"
+"%s n‚ven kerlt ment‚sre"
+"" }
+
+{ M_INI_UPDATING_ENTRY
+"friss¡t‚s: %s"
+"" }
+
+{ M_INI_FINISHED
+""
+"Friss¡t‚s v‚ge; folytat shoz nyomjon Entert..." }
+
+# ----------------------------------------- new in 1.22 -------------
+
+{ M_RESP_CANT_CREATE_DIRECTORY
+"Nem lehet a(z) '%s' alk”nyvt rt l‚trehozni" }
+
+{ M_INFORMATION1
+" %d f jl %d alk”nyvt rban; ”sszesen %s b jt "
+""
+" Az aktu lis f jl URL-je: "
+" %s "}
+
+{ M_INFORMATION2
+" %d f jl %d alk”nyvt rban; ”sszesen %s b jt "
+""
+" Jelenlegi URL v g¢lapra m sol sa? "
+" %s "}
+
+{ M_HLP_HISTORY
+""
+" L togatott g‚pek ‚s alk”nyvt raik t”rt‚nete"
+""
+" A legut¢bb l togatott hely tal lhat¢ el‹sz”r. A t”rt‚neti f jl DNS"
+" gyors¡t¢t rk‚nt is szolg l (a kikeresett IP c¡meket is t rolja). A"
+" bejelentkez‚si n‚v k”zel‚ben lev‹ csillag azt jelzi, hogy ehhez a"
+" bejegyz‚shez jelsz¢ tal lhat¢ a f jlban. A bejelentjez‚sin‚v nem"
+" jelenik meg anonymous bejelentkez‚sek eset‚n. Kapcsol¢k is szerepel-"
+" hetnek a bejelentkez‚si n‚v ut n (r‚szletesen l sd a FAQ-ban). "
+""
+" A t”rt‚neti alrendszer mûk”d‚s‚t az nftp.ini f jl be ll¡t sai szab -"
+" lyozz k. Korl tozhatja a f jlban t rolt helyek sz m t, illetve a g‚-"
+" penk‚nti alk”nyvt rak sz m t. Az ism‚tl‹d‹ rekordok nem szerepelnek a"
+" t”rt‚neti ablakban. Az NFTP t rolja az egyes g‚pekhez tartoz¢ jelsza-"
+" vakat (titkos¡tott, de nem biztons gos form ban). Alap‚rtelmez‚sk‚nt"
+" a bejelentkez‚sek, let”lt‚sek ‚s kijelentkez‚sek kerlnek napl¢z sra,"
+" de megadhatj¢, hogy az NFTP napl¢zzon minden l togatott alk”nyvt rt. "
+""
+" A navig l s hasonl¢ a k”nyvjelz‹ ablakhoz. Az Enterrel lehet kiszolg -"
+" l¢t v lasztani, illetve a rekordot aktiviz lni; az Esc z rja be az ab-"
+" lakot, illetve l‚p ki az alk”nyvt r-list b¢l; a bal/jobb ny¡lbillentyû-"
+" ket is haszn lhatja az Enter/Esc helyett navig l shoz. A Del gombbal"
+" t”r”lhet alk”nyvt rakat ‚s teljes helyeket a t”rt‚neti f jlb¢l. "
+"" }
+
+{ M_PROCESSING_HISTORY1
+" T”rt‚net feldolgoz sa; szint %u..." }
+
+{ M_PROCESSING_HISTORY2
+" T”rt‚net feldolgoz sa; szint %u:  %u bejegyz‚s k‚sz" }
+
+{ M_READING_HISTORY_FILE
+" T”rt‚netf jl olvas sa;  %u sor k‚sz" }
+
+{ M_WRITING_HISTORY_FILE
+" T”rt‚netf jl ¡r sa;  %u sor k‚sz" }
+
+{ M_ERROR_READING_HISTORY
+" Hiba a(z) %s t”rt‚netf jl olvas sakor " }
+
+{ M_EMPTY_HISTORY
+" A(z) %s t”rt‚netf jl res " }
+
+{ M_SAVE_HISTORY
+" Menti a v ltoztat sokat a t”rt‚netf jlba? " }
+
+{ M_HIST_HEADER1
+" T”rt‚net: %u g‚p, ”sszesen %u bejegyz‚s " }
+
+{ M_HIST_HEADER2
+" T”rt‚net: %s, %u alk”nyvt r " }
+
+{ M_HIST_DELETE_DIR
+" %s:%s "
+" T”rli az alk”nyvt r-bejegyz‚st? " }
+
+{ M_HIST_DELETE_SITE
+" %s "
+" T”rli a(z) %u alk”nyvt r-bejegyz‚st tartalmaz¢ helyet? " }
+
+# ------------------------------------------------------ new/updated in 1.23
+
+{ M_HLP_USING_MENU
+"  "
+" Men"
+""
+" A men az NFTP funkci¢it tartalamzza szervezett form ban. A men el‚r‚-"
+" s‚hez nyomjon F9-t vagy Ctrl-F billentyûket (ez m¢dos¡that¢ az NFTP.INI"
+" f jlban). A ny¡lbillentyûkkel navig lhat a menkben, az Esc egy szinttel"
+" feljebb lev‹ menbe viszi. Ha gyorsbillentyûkkel szeretn‚ ink bb el‚rni"
+" a funcki¢kat, ‚rdemes lehet az NFTP.INI f jl `menu-open-submenu' param‚-"
+" ter‚t -1 ‚rt‚kre  ll¡tani. Ekkor az F9 csak a legfels‹ szintû ment"
+" nyitja meg. Ezzel a param‚terrel a 'Helyek' ment‹l kl”nb”z‹ ment is"
+" megnyithat alap‚rtelmez‚sk‚nt. "
+" "
+" Testreszabhatja a men szerkezet‚t. Ehhez a `hungarian.mnu' (a haszn lt"
+" nyelvt‹l fgg‹) f jlt kell m¢dos¡tania. A f jlban tal lhat¢ le¡r s. "
+"" }
+
+{ M_RESP_F9_FOR_MENU
+"Az F9 vagy Ctrl-F billentyûkkel ‚rheti el a ment" }
+
+{ M_BOOKMARK_NICKNAME
+" '%s' becen‚v "
+" nem tal lhat¢ a k”nyvjelz‹k k”z”tt " }
+
+{ M_SELECT_BOOKMARK
+" V lasszon k”nyvjelz‹t " }
+
+{ M_HISTORY_NICKNAME
+" '%s' becen‚v "
+" nem tal lhat¢ a t”rt‚netben " }
+
+{ M_SELECT_HISTORY
+" V lasszon t”rt‚neti bejegyz‚st " }
+
+{ M_USAGE0
+"Opcion lis param‚terek : "}
+
+{ M_USAGE1
+"kapcsol¢d s az URL-hez" }
+
+{ M_USAGE2
+"a f jl-URL let”lt‚se (G,g) vagy felt”lt‚se (P,p) " }
+
+{ M_USAGE3
+"a cmdfile.txt f jlban lev‹  tviteleket hajtja v‚gre" }
+
+{ M_USAGE4
+"`word' keres‚se a k”nyvjelz‹kben(b) vagy t”rt‚netben(h)" }
+
+{ M_USAGE5
+"az URL-k form tuma az al bbi kell, hogy legyen "
+" [ftp://][felhn‚v[:jelsz¢]@]gazdan‚v[:port]alk”nyvt r/f jl,"
+"pl.: ftp://n‚v:jelsz¢@crydee.sai.msu.ru:21/home/asv/file.txt"
+"vagy crydee.sai.msu.su/pub/comp/software/asv/nftp/nftp-LATEST-os2.zip" }
+
+# ----------------------------------------------------------------- new in 1.40
+
+{ M_SITE_EDIT1
+"Gazdan‚v" }
+
+{ M_SITE_EDIT2
+"Bejelentkez‹ n‚v" }
+
+{ M_SITE_EDIT3
+"Jelsz¢" }
+
+{ M_SITE_EDIT4
+"Port" }
+
+{ M_SITE_EDIT5
+"Alk”nyvt r" }
+
+{ M_SITE_EDIT6
+"Kapcsol¢k (l sd FAQ)" }
+
+{ M_PASSWORDED_WGET
+" WGET-tel nem anonymous helyr‹l akar let”lteni. Alap‚rtelmez‚sk‚nt "
+" az ilyen let”lt‚sek biztons gi okokb¢l tiltottak. Az NFTP.INI "
+" f jlban kell ezt enged‚lyeznie." }
+
+{ M_WGET_DOWNLOAD_ONE
+" %s f jl let”lt‚se kls‹ programmal? " }
+
+{ M_WGET_DOWNLOAD_MANY
+" %d f jl let”lt‚se %d alk”nyvt rban; "
+" ”sszesen %s b jt; kls‹ programmal? " }
+
+{ M_CONFIRM_COMMAND
+" V‚grehajtand¢ kls‹ parancs: " }
+
+{ M_USETAB2
+" A Tab/Shift-Tab, illetve Fel/Le nyilakkal mozoghat a mez‹k k”z”tt " }
+
+# ------------------------------------------------- new since 1.50
+
+{ M_CANCEL
+" M‚gsem " }
+
+{ M_FTPS_RECEIVING
+"  %s: adatok v‚tele...   "
+"  Esc -  tvitel megszak¡t sa"
+"  %s tal lat (”sszesen) " }
+
+{ M_FTPS_NO_HITS
+"  Nem tal lhat¢ `%s'...  " }
+
+{ M_FTPS_SERVERS
+" FTP keres‹ kiszolg l¢k " }
+
+{ M_FTPS_ADD_SERVER
+" Adja meg a felveend‹ FTP keres‹ kiszolg l¢t " }
+
+{ M_FTPS_DELETE
+" T”rli `%s'-t ? " }
+
+{ M_QUERYING
+"%s lek‚rdez‚se..." }
+
+{ M_FTPS_SENDING_REQUEST
+"  K‚r‚s kld‚se %s sz m ra...   " }
+
+{ M_FTPS_SEARCHRES
+" Keres‚s eredm‚nye (%u tal lat) " }
+
+{ M_DIR_SIGN
+"<DIR>" }
+
+{ M_LINK_SIGN
+"<LNK>" }
+
+{ M_SEARCH_FORWARD
+" Keres‚s el‹re " }
+
+{ M_SEARCH_BACKWARDS
+" Keres‚s visszafel‚ " }
+
+{ M_CANT_FIND
+"  `%s' nem tal lhat¢.  " }
+
+{ M_SELECT_LANGUAGE
+" V lassza ki a kezel‹fellet nyelv‚t " }
+
+{ M_REGISTRATION_NAME
+"Regisztr ci¢s n‚v" }
+
+{ M_REGISTRATION_CODE
+"Regisztr ci¢s k¢d" }
+
+{ M_THANKS
+" K”sz”n”m, hogy regisztr lta az NFTP-t! " }
+
+{ M_FTPS_NEED_ARGS
+" Az al bbiak k”zl csakis egyet kell megadnia: "
+" 'pontos', 'karakterl nc', 'joker' vagy 'regul ris' " }
+
+{ M_FTPS_SEARCH1
+"Pontos keres‚s" }
+
+{ M_FTPS_SEARCH2
+"Karaklerl nc keres‚se" }
+
+{ M_FTPS_SEARCH3
+"Keres‚s joker karakterrel" }
+
+{ M_FTPS_SEARCH4
+"Keres‚s regul ris kifejez‚ssel" }
+
+{ M_FTPS_SEARCH5
+"Kis/nagybetû kl”nb”z‹?" }
+
+{ M_FTPS_SEARCH6
+"F jl/alk kihagy sa" }
+
+{ M_FTPS_SEARCH7
+"Csak ezekre a tartom nyokra" }
+
+{ M_FTPS_SEARCH8
+"Ezen tartom nyok kihagy sa" }
+
+{ M_FTPS_SEARCH9
+"Slackware/RedHat/FreeBSD/stb elrejt‚se" }
+
+{ M_FTPS_SEARCH10
+"Tal latok max. sz ma" }
+
+{ M_HLP_SITE_EDIT
+"Hely param‚terek"
+""
+"Anonymous helyen eset‚n a 'n‚v' ‚s 'jelsz¢' mez‹ket hagyja resen! Ha"
+"nem ad meg alk”nyvt rat, akkor az FTP kiszolg l¢  ltal megadott alk”nyv-"
+"t rba ( ltal ban a f‹k”nyvt r anonymous, illetve a saj t alk”nyvt r"
+"egyedi bejelentkez‚s eset‚n) kerl. A kiszolg l¢ le¡r sa csak inform ci-"
+"¢s jellegû, a k”nyvjelz‹be kerl. "
+""
+"El‚rhet‹ kapcsol¢k:"
+"p - passz¡v m¢d haszn lata enn‚l a helyn‚l. N‚ha seg¡t a lass£ ‚s"
+"    probl‚m s helyek eset‚n. "
+"r - £jrapr¢b lkoz s v‚gtelen sokszpor. Bejelentkez‚si hib kko az NFTP £jra"
+"    megpr¢b lja a bejelentkez‚st fggetlenl a hib t¢l, illetve att¢l,"
+"    hogy anonymous-e a hely vagy sem. "
+"f - tûzfalon bell. Ha tûzfal t mogat st adott meg az NFTP.INI f jlban,"
+"    akkor ezt a helyet k”zvetlenl ‚ri el az NFTP. "
+}
+
+{ M_HLP_FTPSEARCH
+"FTP keres‚s kezel‹fellet "
+""
+"A 'Pontos keres‚s' csak a megadott f jlt, illetve alk”nyvt rt keresi;"
+"p‚lda: nftp151o.zip"
+""                                                                     
+"'Karakterl nc keres‚se' karakterl ncokat keres f jl ‚s alk”nyvt r nevek-"
+"ben. P‚lda: nftp15"
+""
+"'Keres‚s joker karakterrel' a '*' ‚s '?' karaktereket haszn lja £gy,"
+"mint a parancssor (azaz * b rmely karakterl ncnak, a ? pedig egy"
+"tetsz‹leges karakternek felel meg); p‚lda: nftp*.zip vagy nftp1??o.zip"
+""                                                                     
+"A 'Keres‚s regul ris kifejez‚ssel' a leghat‚konyabb, de egy kis tanul st"
+"ig‚nyel. P‚ld ul: nftp1\.[4-9][0-9]o\.zip megtal lja az ”sszes OS/2-es"
+"NFTP 1.xx v ltozatot az 1.40-t‹l kezd‹d‹en. A regul ris kifejez‚sek ma-"
+"gyar zat t sz mos helyen, ¡gy a GNU rx k”nyvt rban is megtal lhatja. "
+""
+"'Kis/nagybetû kl”nb”z‹' csak a 'Karakterl nc keres‚se'-re vonatkozik."
+""
+"Tov bbi felt‚teleket is megadhat: alk”nyvt rakat z rhat ki a keres‚sb‹l,"
+"a keres‚st adott tartom nyokra korl tozhatja, illetve kiz rhat adott"
+"tartom nyokat a keres‚sb‹l ‚s kiz rhatja az ingyenes Unix disztrib£ci¢-"
+"kat, amelyek sz mos nem v rt tal latot eredm‚nyeznek. Ha t”bb dolgot is"
+"megad, akkor azokat sz¢k”zzel v lassza el! "
+""                                                                     
+"Nem javasolt a 'Tal latok max. sz ma' ‚rt‚k‚t t£l nagyra  ll¡tani. (5000"
+"tal lat felesleges, ink bb pr¢b lja meg kiszûrni a szks‚gtelen dolgokat.)"
+"µltal ban el‚g csak a f‹ FTP keres‹ kiszolg l¢t (ftpsearch.ntnu.no) le-"
+"k‚rdezni, mivel ez a vil g 90%- t indexeli. A t”bbi kiszolg l¢val ink bb"
+"k”zelebbi helyekre korl tozhatja a keres‚st. "
+"" }
+
+{ M_FTPS_DOWNLOAD
+"  Let”lti %s-t "
+"  %s helyr‹l? " }
+
+{ M_HIST_CONT_SEARCH
+"  Nem tal lhat¢ %s helyen. Keres m shol is?  " }
+
+{ M_TOO_LARGE
+"%s/%s: t£l nagy a nem regisztr lt v ltozathoz" }
+
+{ M_DISCONNECT
+"  Kapcsolat megszak¡t sa a(z) %s kiszolg l¢val?  " }
+
+{ M_UPLOAD_EDITED
+"  Felt”lti a m¢dos¡tott f jlt a kiszolg l¢ra?  " }
+
+{ M_FONT_DESC
+"sz‚less‚g: %3d, magass g: %3d (%s)" }
+
+{ M_UNSUPPORTED
+"  A funkci¢ nem t mogatott %s platformon  " }
+
+{ M_SELECT_FONT
+" V lasszon betûk‚szletet " }
+
+{ M_HLP_FTPSEARCH2
+"Eredm‚nyek ablak billentyûi"
+""
+"Ctrl-P      £tvonal megjelen¡t‚se/elrejt‚se"
+"Ctrl-T      utols¢ m¢dos¡t s idej‚nek megjelen¡t‚se/elrejt‚se"
+"Ctrl-F      keres‚s el‹re"
+"Ctrl-H      keres‚s visszafel‚"
+"Shift-D/F5  f jl let”lt‚se"
+""
+"Shift-H     rendez‚s kiszolg l¢n‚v alapj n"
+"Shift-N     rendez‚s f jln‚v alapj n (alap‚rtelmez‚s)"
+"Shift-S     rendez‚s f jlm‚ret alapj n"
+"Shift-T     rendez‚s f jlok d tuma/id‹pontja alapj n"
+"" }
+
+{ M_STALLED
+"le llt" }
+
+# ------------------------------------------------- new since 1.51
+
+{ M_WAIT
+""
+""
+" K‚rem, v rjon %d m sodpercet... " }
+
+{ M_UNREGISTERED
+" Ez a verzi¢ nem regisztr lt "
+""
+" Ha meg akar szabadulni ett‹l az zenett‹l, akkor egy NFTP licenszet"
+" kell vennie. Ez %d USD-be kerl ‚s a program minden v ltozat ra"
+" ‚rv‚nyes az ”sszes t mogatott platformon. Tov bbi t j‚koztat s:"
+" http://www.ayukov.com/nftp/buy.html %s" }
+
+{ M_PRESS_ENTER
+" Folytat shoz nyomja meg az Entert " }
+
+{ M_HTTP_PROXY
+"  Nem t mogatott HTTP proxy-n keresztl  " }
+
+{ M_ENUMERATING_FONTS
+" Betûk‚szletek sz mba v‚tele... " }
+
+# ------------------------------------------------- new since 1.60
+
+{ M_SCRIPT_BADCOMMAND
+"Ismeretlen parancs: %s" }
+
+{ M_SCRIPT_BADARGS
+"Ehhez a parancshoz %d param‚ter szks‚ges (ehelyett %d-t adtak meg)" }
+
+{ M_SCRIPT_ERROR
+"Hiba. A parancsf jl v‚grehajt sa meg llt" }
+
+{ M_SCRIPT_CANT_OPEN
+"Nem nyithat¢ meg a(z) `%s' parancsf jl" }
+
+{ M_SCRIPT_RUNNING
+"PARANCSFµJL: %s %s" }
+
+{ M_SCRIPT_INVALID_VAR
+"rv‚nytelen v ltoz¢: %s" }
+
+{ M_SCRIPT_CANT_OPEN_LOG
+"Nem nyithat¢ meg a(z) `%s' napl¢f jl" }
+
+{ M_RESP_CONNECTING2
+"Kapcsol¢d s: %s: Esc - megszak¡t s, Space - £jra..." }
+
+{ M_RESP_ACCEPTING
+"V rakoz s kapcsolatra a %d porton: Esc - megszak¡t s, Space - £jra..."}
+
+{ M_RESP_ACCEPTED
+"Kapcsolat fogad sa %s fel‹l" }
+
+{ M_PAUSED
+"V rakoz s; a P gombbal folytathatja" }
+
+{ M_SQRP
+"S/Q/R/P - Kihagy s/Kil‚p‚s/éjrakezd‚s/V rakoz s" }
+
+{ M_TOTAL        "™sszes" }
+{ M_TRANSFERRED  "µtvitt" }
+{ M_SKIPPED      "Kihagyott" }
+{ M_LEFT         "H tra" }
+{ M_INACT        "m sodperc az utols¢ csomag ¢ta" }
+
+{ M_NO_FIREWALLING
+"Nem  ll¡tott be tûzfal/proxy-t az nftp.ini f jlban" }
+
+{ M_HLP_PASSWORDS
+"Gombok a jelsz¢ ablakban"
+""
+"Insert - £j jelsz¢ bejegyz‚s"
+"Delete - jelsz¢ t”rl‚se"
+"Ctrl-E - rekord m¢dos¡t sa"
+"Ctrl-P - jelszavak megjelen¡t‚se/elrejt‚se"
+""
+"Enter  - bejelentkez‚s a g‚pre"
+"" }
+
+{ M_DEL_UNMATCHED
+"   Nem egyez‹ f jlok t”rl‚se...   " }
+
+{ M_ENTER_LISTNAME
+"Adjon meg egy f jlnevet, amelybe a f jlista kerlj”n:" }
+
+{ M_SYNC1
+"Helyi fa szinkroniz l sa a t voli g‚ppel?"
+""
+"t voli   %s ->"
+"helyi    %s"
+"" 
+"NFTP let”lti a f jlokat" }
+
+{ M_SYNC2
+"Helyi fa szinkroniz l sa a helyi g‚ppel?"
+""
+"helyi    %s ->"
+"t voli   %s"
+""
+"NFTP felt”lti a f jlokat" }
+
+{ M_SYNC3
+"Az alk”nyvt rak egyez‹nek tûnnek" }
+
+{ M_PASS_UNSUPPORTED
+"A jelsz¢ f jl verzi¢ja (%d) nem t mogatott" }
+
+{ M_PASS_ENTER_KEYPHRASE1
+"Adja meg a jelsz¢ f jl kicsomagol s hoz a kulcssz¢t" }
+
+{ M_PASS_INVALID
+"%s"
+"jelsz¢ f jl tartalma ‚rv‚nytelen" }
+
+{ M_PASS_ENTER_KEYPHRASE2
+"Adja meg a jelsz¢ f jl becsomagol s hoz haszn land¢ kulcssz¢t" }
+
+{ M_PASSWORDS
+"Jelszavak" }
+
+{ M_PASS_SAVE
+"Jelszavak ment‚se a jelsz¢ f jlba?" }
+
+{ M_PASS_DELETE
+"%s @ %s"
+"Jelsz¢ bejegyz‚s t”rl‚se?" }
+
+{ M_DISK_FULL
+" %s "
+" Hiba a f jl ¡r sakor (tele van a lemez?) " }
+
+{ M_REGISTERED
+"Regisztr lva %s sz m ra" }
+
+{ M_UNREGISTERED2
+"Nem regisztr lt (%d nap telt el az els‹ fut s ¢ta)" }
+
+{ M_FTPS_RECEIVING2
+"Adatok fogad sa %s fel‹l...   "
+"™sszesen:                %s"
+"A kiszolg l¢n tal lhat¢: %s"
+"ESC-kel szak¡thatja meg a keres‚st" }
+
+{ M_FTPS_NO_HITS2
+"A keres‚s nem tal lt semmit" }
+
+{ M_FTPS_NORES
+"Eddig m‚g nem keresett" }
+
+{ M_ENABLE_PASSWORDS
+"K‚rem, enged‚lyezze a jelsz¢ gyors¡t st az nftp.ini f jlban!" }
+
+{ M_NEEDBF
+"Ezt csak a(z) %s m¢dszerrel haszn lj k (l sd az nftp.ini f jlt)" }
+
+{ M_PASS_INCORRECT
+"A kulcssz¢ nem megfelel‹"}
+
+{ M_BYTESSEC "b jt/sec" }
+
+{ M_DOWNLOAD "let”lt‚s" }
+
+{ M_UPLOAD "felt”lt‚s" }
+
+{ M_COMMUNICATING
+"Kommunik ci¢ a kiszolg l¢val..." }
+
+# will look like: " 23% done (download, binary)"
+{ M_PERCENTAGE1 "%9u%% k‚sz (%s, %s)" }
+
+# will look like: " 23% done (download, binary) (3 of 15 files)"
+{ M_PERCENTAGE2 "%9u%% k‚sz (%s, %s) (%d/%d f jl)" }
+
+# ------------------------------------------------- new since 1.61
+
+{ M_TR_OVERWRITE  "Fell¡r s" }
+{ M_TR_RESUME     "Folytat s" }
+{ M_TR_SKIP       "Kihagy s" }
+{ M_TR_CANCEL     "M‚gsem" }
+
+{ M_TR_QUESTION
+"A c‚lf jl m r l‚tezik!"
+"Javasolt teend‹: %s"
+""
+"T voli: %s (%s alatt)"
+"Helyi:  %s (%s alatt)"
+""
+"Forr s: %s b jt, %2d %s %4d  %02d:%02d:%02d"
+"C‚l:    %s b jt, %2d %s %4d  %02d:%02d:%02d" }
+
+# ------------------------------------------------- new since 1.62
+
+{ M_DELETE_FILES
+"™sszesen %d f jlt v lasztott ki."
+"     Biztos t”rli mindet?" }
+
+{ M_NOT_EMPTY
+"A(z) `%s' alk”nyvt r nem res."
+"T”rli a teljes f t?" }
+
+{ M_ALL "Minden" }
+
+{ M_DELETING
+"  %s t”rl‚se...  " }
+
+{ M_NO_CHMOD
+"Ez az FTP kiszolg l¢ nem t mogatja a SITE CHMOD parancsot" }
+
+{ M_ACCESSRIGHTS1
+"%d f jlok hozz f‚r‚si jogai" }
+
+{ M_ACCESSRIGHTS2
+"%s hozz f‚r‚si jogai" }
+
+{ M_WRONG_RIGHTS
+"Hib s bevitel:  [%s]"
+"A helyes form tum: [rwxrwxrwx]" }
+

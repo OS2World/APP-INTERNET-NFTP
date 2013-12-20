@@ -1,0 +1,28 @@
+
+Installing NFTP for Unix
+
+1. You can install NFTP either system-wide (i.e. in /usr/local/bin,
+/usr/local/lib) or privately (in your home directory). In both cases
+you can use provided installation tool, install.sh. NFTP can also run
+from /usr (i.e. use /usr/lib/nftp instead of /usr/local/lib/nftp), but
+this is intended for system integrators and there's no automatic way to
+install it there.
+
+Therefore, start install.sh, examine offered configuration and press
+ENTER. When you're root, NFTP will be installed into /usr/local/bin,
+/usr/local/lib/nftp, /usr/man, /usr/doc. When you are ordinary user,
+NFTP files will be installed into ~/.nftp except NFTP binaries which 
+will go into ~/bin. Note that docs won't be installed in this case.
+
+2. Read manpage and start NFTP (name of console executable is nftp, 
+X11 version is called xnftp). When started for the first time, it will 
+create your personal files in ~/.nftp. Edit ~/.nftp/nftp.ini to set your 
+preferences.
+
+Note that icon file nftp.xpm (64x64) is installed together with other
+NFTP-related files, i.e. in /usr/local/lib/nftp for system-wide installation
+or ~/.nftp for private installation.
+
+Send your comments to author, Sergey Ayukov <asv@ayukov.com>
+
+30 October 1999

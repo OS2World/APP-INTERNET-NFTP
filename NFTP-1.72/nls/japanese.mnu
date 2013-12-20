@@ -1,0 +1,158 @@
+#
+# see syntax explanations in english.mnu if interested
+#
+
+main
+{
+    {SUBMENU, "&S サイト",     Sites}
+    {SUBMENU, "&F ファイル",     Files}
+    {SUBMENU, "&V 表示",      View}
+    {SUBMENU, "&T 転送",  Transfer}
+    {SUBMENU, "&O オプション",        Options}
+    {SUBMENU, "&H ヘルプ",      Help}
+}
+
+Sites
+{
+    {ACTION, "&B ブックマーク",                10}  login from bookmarks
+    {ACTION, "&H 履歴...",                     17}  history
+    {ACTION, "&S ブックマーク保存...",         35}  save host/dir as bookmark
+    {SUBMENU, "&F FTP 検索", FTPSearch} -- perhaps leave as-is FTP Search trademark?
+    {SUBMENU, "パスワード", Passwords}
+    {SEP}
+    {ACTION, "&U URL指定でログイン...",        18}  open URL
+    {ACTION, "&L 匿名ログイン...",             11}  login
+    {ACTION, "&O ログオフ...",                 13}  log off
+    {ACTION, "&C 接続確認",                    22}  send NOOP
+    {ACTION, "&E コマンド送信...",             24}  quote command
+    {SEP}
+    {ACTION, "  サスペンド (Unixのみ)",      112}  suspend
+#   {ACTION, "クラッシュ",                      9}  crash and burn
+    {ACTION, "&X 終了...",                     14}  exit NFTP
+}
+
+Passwords
+{
+    {ACTION, "&E パスワード編集...",   28} edit passwords
+    {ACTION, "&K パスフレーズ...", 29} change keyphrase for password encryption
+}
+
+Files
+{
+    {ACTION, "&M ディレクトリ作成...",         53}  create directory
+    {ACTION, "&E 名前変更...",                 54}  rename file/directory
+    {ACTION, "&D 削除...",                     52}  delete file/dir
+    {ACTION, "&A Change access rights",             79}  change access rights
+    {SEP}
+#   {ACTION, "&N ディレクトリ移動",            71}  change into dir under cursor
+    {ACTION, "&C ディレクトリ変更...",         74}  input dir and change to it
+    {ACTION, "&O ルートへ移動",                72}  change to root dir
+    {ACTION, "&R ディレクトリ再読込",          70}  re-read directory
+    {ACTION, "&L ディレクトリ一覧の保存...",   45}  save directory listing
+    {ACTION, "&I ローカルドライブ変更...",     75}  change local drive
+    {ACTION, "&S ディレクトリサイズの計算",            57}  traverse directory and compute its size
+}
+
+View
+{
+    {ACTION, "&D ディレクトリモード変更",      32}  switch between raw/parsed modes
+    {ACTION, "&C 制御コネクション",            30}  switch between CC and dir
+    {ACTION, "&R リモート/ローカル切替",       31}  switch between local/remote
+    {SWITCH, "&P 画面分割",                      37}  make screen look like NC
+    {SWITCH, "タイムスタンプ表示",            38}  show/hide file timestamps in panels
+    {SWITCH, "&Mini status",                       39}  show/hide mini-status field
+    {SEP}
+    {ACTION, "&V 内部ビューワで見る",          50}  view w/int viewer
+    {ACTION, "&W 外部ビューワで見る",          51}  view w/ext viewer
+    {ACTION, "&L インデックスを読込む...",     76}  load 00index.txt file
+    {SUBMENU, "&S ソート",      Sort}
+    {SEP}
+    {ACTION, "  画面の再描画",                36}  repaint screen
+}
+
+Sort
+{
+    {ACTION, "&N 名前順",                      60}  sort by name
+    {ACTION, "&X 拡張子順",                    61}  sort by extension
+    {ACTION, "&S サイズ順",                    63}  sort by size
+    {ACTION, "&T タイムスタンプ順",            62}  sort by date
+    {ACTION, "&U ソート解除",                  64}  make unsorted
+    {ACTION, "&R ソート順を逆転",              65}  reverse sort order
+}
+
+Transfer
+{
+    {ACTION, "&Copy...",                   77}  copy between remote/local
+#   {ACTION, "&D ダウンロード...",             40}  download
+#   {ACTION, "&E すべてダウンロード...",       42}  d/l from all dirs
+    {ACTION, "&N 名前でダウンロード...",       44}  d/l by name
+    {ACTION, "&W WGET でダウンロード...",      46}  launch wget to retrieve files
+#   {ACTION, "&U アップロード...",             41}  upload
+#   {ACTION, "&V すべてアップロード...",       43}  u/l from all dirs
+    {SEP}
+    {SUBMENU, "&S 選択", Select}
+    {SUBMENU, "&M ミラー", Mirror}
+    {SWITCH, "&B 転送モード切替 (BIN)",    21}  switch ASCII/BINARY
+    {ACTION, "&O 選択状況を確認",              15}  get current status
+    {SEP}
+#   {SWITCH, "Limit throughput",           98}  limit throughput
+    {ACTION, "ファイルをスキップ",                  47}  skip file during transfer
+    {ACTION, "中止",              48}  stop transfer
+    {ACTION, "最初からやり直し",           49}  abort and restart transfer
+    {SWITCH, "転送を休止/再開",             58}  pause transfer
+}
+
+Select
+{
+    {ACTION, "&S 選択/選択解除",               82}  select file under cursor
+    {ACTION, "&M マスク指定で選択...",         83}  select by mask
+    {ACTION, "&K マスク指定で選択解除...",     84}  deselect by mask
+    {ACTION, "&A 全ファイルを選択",            80}  select all files
+    {ACTION, "&L 全ファイルを選択解除",        81}  deselect all files
+    {ACTION, "&R 全ディレクトリで選択解除",    87}  deselect all files
+    {ACTION, "&I 選択状態を反転",              85}  invert selection
+    {ACTION, "マーク済ファイルの一覧を出力...",   19}  export list of marked files
+    {ACTION, "Review list of marked...",   12}  review list of marked files/dirs
+}
+
+Mirror
+{
+    {ACTION, "&D ダウンロード...",               66} synchronize local with remote (download)
+    {ACTION, "&U アップロード...",                 67} synchronize remote with local (upload)
+    {SWITCH, "一致しないファイルを削除/保持",        68} switch: delete/keep unmatched files
+    {SWITCH, "&S サブディレクトリを含む/除外",       69} switch: synchronize subdirs?
+}
+
+Help
+{
+    {ACTION, "&H ヘルプ",                       1}  Help
+    {ACTION, "&M 全般的なコマンド",             2}  general help
+    {ACTION, "&C ショートカットキー (抜粋)",    3}  short help
+    {ACTION, "&U メニューの使い方",             7}  using menus
+    {SEP}
+    {ACTION, "NFTP の更新",                     90}  connect to NFTP site
+    {ACTION, "&A NFTP について...",             6}  displays time of build
+}
+
+FTPSearch
+{
+    {ACTION, "&F FTP 検索で捜索...", 120} find with FTPSearch
+    {ACTION, "&L 最新の検索結果...", 122}, display results of last search
+    {ACTION, "&S サーバ設定...", 121} define FTPSearch servers
+}
+
+Options
+{
+    {SWITCH, "  プロキシの利用",        25}  enable/disable proxy
+    {SWITCH, "  フラグ",                      23}  use/disable NLST with flags
+    {SWITCH, "  説明文の表示",                 34}  show/hide descriptions
+    {SWITCH, "パッシブモードのオン/オフ",      26} switch passive mode on/off
+    {SWITCH, "シンボリックリンクの有効/無効",  27}  switch symlink resolving on/off
+    {SEP}
+    {ACTION, "&T 設定変更",                    16}  invoke editor on nftp.ini
+# I suggest next line should be left in English :-}
+    {ACTION, "&L Language",        91}  select language
+    {ACTION, "&F フォント...", 93} select font for NFTP window
+    {ACTION, "  レジストコードの入力...",   92}  enter registration information
+}
+

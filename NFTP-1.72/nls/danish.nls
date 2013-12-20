@@ -1,0 +1,1578 @@
+#
+#     Language-specific file for NFTP 1.10+
+#
+#     Danish
+
+{ M_JAN "Jan" }
+{ M_FEB "Feb" }
+{ M_MAR "Mar" }
+{ M_APR "Apr" }
+{ M_MAY "Maj" }
+{ M_JUN "Jun" }
+{ M_JUL "Jul" }
+{ M_AUG "Aug" }
+{ M_SEP "Sep" }
+{ M_OCT "Okt" }
+{ M_NOV "Nov" }
+{ M_DEC "Dec" }
+
+{ M_HBAR              "‰" } { M_VBAR              "®" }
+{ M_CROSS             "≈" }
+{ M_FILL1             "∞" } { M_FILL2             "±" }
+{ M_FILL3             "≤" } { M_FILL4             "¯" }
+{ M_LU                "Á" } { M_RU                "©" }
+{ M_LD                "˛" } { M_RD                "˚" }
+{ M_LT                "ˆ" } { M_RT                "¥" }
+{ M_UT                "¬" } { M_DT                "¡" }
+{ M_PLACEHOLDER       "«" } { M_MARKSIGN          "*" }
+
+#  Bookmarks ----------------------------------------------------------
+{ M_CANTOPENBOOKMARKS1
+"kan ikke tilfõje bogmërke til [%s]" }
+
+{ M_CANTOPENBOOKMARKS2
+"kan ikke indlëse bogmërker fra [%s]" }
+
+{ M_CANTOPENBOOKMARKS3
+"kan ikke overskrive bogmërker i [%s]" }
+
+{ M_NO_BOOKMARKS
+"  Ingen bogmërker fundet " }
+
+{ M_EMPTY_BOOKMARKSLIST
+"  Listen over bogmërker er tom " }
+
+{ M_DELETE_BOOKMARK
+"  Slet bogmërke(r) " "  %s ?  " }
+
+{ M_INSERT_BOOKMARK1
+" Indtast dit brugernavn (blank sëtter anonymous): " }
+
+{ M_INSERT_BOOKMARK2
+" Indtast ftp hostnavn eller IP addresse: " }
+
+{ M_INSERT_BOOKMARK3
+" Indtast katalog: " }
+
+{ M_CURRENT_BOOKMARKS
+" Nuvërende bogmërker " }
+
+{ M_BOOKMARKS_CHANGED
+"  Bogmërkerne er blevet ëndret.  "
+"  Gem ny bogmërkeliste?  " }
+
+#  Prompts ------------------------------------------------------------
+{ M_USETAB
+" Brug Tab/Shift-Tab til at skifte felter " }
+
+{ M_CHOOSEDRIVE
+"Vëlg drev" }
+
+{ M_SELECT_DIRECTORY
+" Vëlg start katalog (tryk ENTER for at acceptere) : " }
+
+{ M_ENTER_VERBATIM_COMMAND
+" Indtast kommando der skal sendes ordret : " }
+
+{ M_MKDIR_ENTER_NAME
+" Indtast navn pÜ det nye katalog : " }
+
+{ M_ENTER_FIREWALL_USERID
+" Indtast dit FIREWALL brugernavn: " }
+
+{ M_ENTER_FIREWALL_PASSWORD
+" Instast dit FIREWALL kodeord: " }
+
+{ M_ENTER_USERID
+" Indtast brugernavn : " }
+
+{ M_ENTER_PASSWORD
+" Indtast kodeord : " }
+
+{ M_ENTER_HOSTNAME
+" Indtast hostnavn[[:port]sti] du vil logge pÜ : " }
+
+{ M_ENTER_DIRECTORY
+" Skift katalog pÜ host til : " }
+
+{ M_ENTER_SELECT_FILTER
+" Indtast filter : " }
+
+{ M_RENAME_LOCAL_FILE
+" Angiv nyt navn til lokal fil : " }
+
+#  Pseudo-responses ------------------------------------------------------
+{ M_RESP_CANNOT_RESOLVE
+"Kan ikke finde '%s'" }
+
+{ M_RESP_LOOKING_UP
+"Leder efter '%s'" }
+
+{ M_RESP_TRYING_IP
+"Kan ikke finde '%s', prõver IP addresse" }
+
+{ M_RESP_FOUND
+"'%s' fundet" }
+
+{ M_RESP_NO_SOCKET
+"Kan ikke fÜ en netvërksport, opgiver" }
+
+{ M_RESP_FAILED_TO_CONNECT
+"Forbindelse til port %u mislykkedes" }
+
+{ M_RESP_CONNECTED
+"forbindelse til port %u opnÜet" }
+
+{ M_RESP_CLOSING
+"Lukker kontrolforbindelse" }
+
+{ M_RESP_LOGIN
+"Login som '%s@%s' succesfuld" }
+
+{ M_RESP_TRANSFER_DONE
+"Overfõrsel sket; gennemsnitshastighed var %u bytes/sek" }
+
+{ M_RESP_INIT_DONE
+"init() fërdig......" }
+
+#  Questions -------------------------------------------------------------
+
+{ M_TOO_BIG_FOR_INTVIEWER
+" Filen '%s' er stor -- %ld bytes. "
+" Vil du stadig se den med den interne fremviser? " }
+
+{ M_REALLY_OVERWRITE
+" **** OVERSKRIV ****"
+""
+" Filen '%s' eksisterer allerede."
+" Den har samme stõrrelse som filen pÜ din host. "
+" (Lokal fil: %d bytes, fil pÜ host: %d bytes) "
+" Vil du overskrive den lokale fil?" }
+
+{ M_OVERWRITE_RENAME_CANCEL
+""
+" Filen '%s' eksisterer allerede!"
+" Den har samme stõrrelse som filen pÜ din host. "
+" (Lokal fil: %d bytes, fil pÜ host: %d bytes) "
+" Esc - stop overfõrsel " }
+
+{ M_OVERWRITE_RENAME_CANCEL2
+""
+" Filen '%s' eksisterer allerede!"
+" Den er STùRRE end filen pÜ din host. "
+" (Lokal fil: %d bytes, fil pÜ host: %d bytes) "
+" Esc - stop overfõrsel " }
+
+{ M_OVERWRITE_RENAME_CANCEL3
+" Overskriv lokal fil " " Omdõb lokal fil " }
+
+{ M_REALLY_REGET
+" **** HENT IGEN ****"
+""
+" Filen '%s' eksisterer allerede!"
+" Den er MINDRE end filen pÜ din host. "
+" (Lokal fil: %d bytes, fil pÜ host: %d bytes) " }
+
+{ M_REGET_RENAME_CANCEL
+""
+" Filen '%s' eksisterer allerede!"
+" Den er MINDRE end filen pÜ din host. "
+" (Lokal fil: %d bytes, fil pÜ host: %d bytes) "
+" Vëlg 'Fortsët' for at genoptage stoppet overfõrsel "
+" Esc - stop overfõrsel " }
+
+{ M_REGET_RENAME_CANCEL2
+" Fortsët "
+" Overskriv lokal fil "
+" Omdõb lokal fil " }
+
+{ M_REALLY_TRANSFER_FROM
+"    Overfõr fil(er) FRA din host ?    " }
+
+{ M_REALLY_TRANSFER_TO
+"    Overfõr fil(er) TIL din host ?    " }
+
+{ M_REALLY_DELETE
+"    Slet fil(er) ?    " }
+
+{ M_REALLY_SAVE_BOOKMARK
+"  Gem katalog                       "
+"  %s %s : %s  "
+"  som bogmërke?  " }
+
+{ M_REALLY_EXIT
+"       Afslut NFTP ?      " }
+
+{ M_REALLY_LOGOFF
+"  Log af fra %s ?  " }
+
+#  Miscellaneous text strings --------------------------------------------
+#
+
+{ M_WELCOME
+" NFTP%s Tast Shift-H  for generel information" }
+
+{ M_DISCONNECTING
+"   Afslutter forbindelse til %s   " }
+
+{ M_EOF_MARK
+" =========== SLUT Pè FIL =========== " }
+
+{ M_WRONG_REGCODE
+" Forkert registreringskode angivet i nftp.ini. "
+" Tjek venligst dit navn og kode igen. Afslut nu?" }
+
+{ M_RUNNING_UNREGISTERED
+"          Denne kopi af NFTP er ikke registreret "
+""
+" Du vil ikke vëre i stand til at overfõre filer stõrre end %dKB. "
+""
+"    Lës dokumentationen for oplysninger om registering af NFTP."
+""
+"    Denne besked kan slukkes ved at sëtte vërdien af 'message' til 0"
+"    i 'registration' afsnittet i nftp.ini" }
+
+{ M_CCLINES
+" Kontrol af forbindelse : %u linier" }
+
+{ M_BINARY
+"BINíR" }
+
+{ M_ASCII
+"ASCII" }
+
+{ M_TRANSFER_COMPLETED
+"Overfõrsel komplet; tryk pÜ en tast for at fortsëtte " }
+
+{ M_HELP_ESC_TO_EXIT
+"  Hjëlp - Esc afslutter  " }
+
+{ M_STATUS
+" Totalt %u fil(er), %s Bytes   [%3s]   Markeret %u fil(er), %s Bytes" }
+
+{ M_STATUS_BIN
+"BIN" }
+
+{ M_STATUS_ASC
+"ASC" }
+
+#  Fatal errors --------------------------------------------------------
+
+{ M_UNKNOWN_OS
+" Ukendt operativsystem pÜ host : "
+"    '%s',"
+" logger ud... " }
+
+{ M_UNREGISTERED_TRANSFER
+" Du kan ikke overfõre filer stõrre end %dKB "
+"        med den uregistrerede version. " }
+
+{ M_INI_BUILD_FAILED
+"Kunne ikke lëse/konvertere nftp.ini."
+"tjek din PATH for gamle versioner af NFTP.EXE og NFTP-OPT.EXE" }
+
+{ M_EMAIL_NOT_SET
+""
+"Du skal tilpasse nftp.ini fõr start af NFTP. "
+"som et minimum, skal din e-mail addresse angives."
+"" }
+
+{ M_CONNECTION_LOST
+" Forbindelsen tabt. " }
+
+{ M_NO_PASV_NOFIREWALLING
+" Denne FTP server understõtter ikke PASV kommandoen, og "
+" kan derfor ikke benyttes bag en firewall " }
+
+{ M_NO_PASV
+" Denne FTP server understõtter ikke PASV kommandoen. "
+" Ret venligst 'use-PASV-mode' parameteren til 0 " }
+
+{ M_CANT_CREATE_SEM
+" Fatal fejl : kan ikke oprette semaforer " }
+
+{ M_INI_UNREADABLE
+""
+"Kan ikke finde nftp.ini; afslutter" }
+
+#  Transient messages --------------------------------------------------
+
+{ M_SENDING_VERBATIM_COMMAND
+"   Sender kommando til din host...   " }
+
+{ M_PARSING_LISTING
+"   Parser katalogliste...   " }
+
+{ M_MKDIR_CREATING
+"   Opretter katalog hos host...   " }
+
+{ M_GOING_ROOT
+"   Skifter til roden hos host...   " }
+
+{ M_GOING_UP
+"   Skifter til niveauet ovenfor hos host...   " }
+
+{ M_CHANGING_DIR
+"   Skifter katalog hos host...   " }
+
+{ M_SENDING_NOOP
+"   Sender NO OPERATION kommando...   " }
+
+{ M_QUERYING_DIR
+"   Forespõrger pÜ nuvërende katalog hos host...   " }
+
+{ M_RETRIEVING_FILELIST
+"   Henter katalogliste...   " }
+
+#  nftp-opt  defines -------------------------------------------------
+
+{ M_FATAL_LOADING_NFTP_INI
+""
+"fatal fejl ved indlësning af nftp.ini; afslutter" }
+
+{ M_WRONG_KEYNAME
+"forkert nõgleord : [%s]"
+"" }
+
+{ M_KEYDEF_ERRORS
+"%d fejl fundet under indlësning af nõgleord."
+"Tryk en tast..." }
+
+#  keynames defines ----------------------------------------------------
+
+{ M_KEYNAMES_WELCOME
+"Tryk Esc for at afslutte, andre taster for at se deres navne."
+"Hvis ingenting sker, er tastekombinationen enten"
+"1) slet ikke genereret;"
+"2) opfanget af operativsystemet."
+""
+"Kode :         :"
+"" }
+
+{ M_HLP_MAIN
+""
+" NFTP"
+" Oversëttelse til Dansk af Kim Poulsen (kpo@daimi.aau.dk)."
+""
+" Lës venligst HTML dokmentationen, den er mere komplet."
+""
+" GENERELLE TASTATURKOMMANDOER"
+""
+" Shift-H  - denne information. Bemërk at hjëlpesystemet ikke er hypertext"
+" F1       - giver kontekst sensitiv hjëlp"
+" F10      - log af host og afslut NFTP"
+" Ctrl-K   - log af host"
+" Ctrl-B   - Übner bogmërkelisten og logger pÜ en host fra den"
+" F2       - Üben historievindue og log pÜ vërt fra den"
+" Ctrl-L   - login som anonymous pÜ ny host"
+" Ctrl-N   - login med brugernavn/kodeord pÜ ny host"
+" Ctrl-W   - vis information om denne version"
+" Ctrl-T   - skift ASCII/BINíR tilstand"
+" Ctrl-J   - opfrisk skërm (genindlëser ikke hosts katalog)"
+" Shift-I  - fÜ oplysning og antallet af markerede filer og kataloger"
+" Shift-A  - send NO OPERATION kommando (verificÇr fonbindelsens tilstand)"
+" Shift-F  - brug/modvirk NLST med flag (standard er brug). Nogle servere"
+"            kan ikke lide NLST -lLa. Prõv hvis du ser sëre beskeder fra"
+"            serveren nÜr kataloglisten hentes. ANBEFALES IKKE."
+""
+" Bemërk at disse kommandoer nësten altid er tilgëngelige. Imidlertid er"
+" der ogsÜ mange andre tastekombinationer i spil i andre sammenhëngege,"
+" sÜ glem ikke at trykke F1 for at fÜ den kontekst sensitive hjëlp."
+"" }
+
+#  ------------------------------------------------------------------------
+
+{ M_HLP_LINEIN
+""
+" Tilgëngelige taster ved editering af indtastningsfelt :"
+""
+" Esc/Enter                  - forlad/accepter"
+" Venstre, Hõjre, Home, End  - flyt cursoren rundt"
+" Tab, Shift-Tab             - flyt til nëste/forrige felt (hvis det eksisterer)"
+" Del, Backspace             - slet karakterer"
+" Shift-Ins                  - indsët fra system clipboard"
+" Ctrl-Ins                   - indsët i system clipboard"
+""
+" Tryk Del lige efter et indtastningsfelt for at slette indholdet;"
+" Hvis du indtaser er kodeord, vil det blive maskeret."
+"" }
+
+#  ------------------------------------------------------------------------
+{ M_HLP_CC
+""
+" Tilgëngelige keyboard kommandoer i Kontroller Forbindelse vindue :"
+""
+" piletaster  - flyt sted"
+" Esc         - gÜ til slutning af kommandohistorie (samme som End)"
+" Space       - skift til katalog vindue"
+" Shift-Q     - send en streng til server som den stÜr (citat)"
+" Shift-C     - skift til et hvilket som helst katalog"
+""
+" Serverens respons er i grÜ; sendte kommandoer er i lysegrõn"
+" og informationsbeskeder fra nftp er lys rõd. Farverne er selvfõlgelig"
+" kun rigtige hvis du ikke har ëndret dem i 'nftp.ini'."
+""
+" Nftp er mÜske den eneste ftp klient med indbygget historie til"
+" forbindelsekontrollen. Hvis du gerne vil se klient-server udvekslinger hele"
+" tiden, sÜ sët 'auto-switch-to-control' parameteren til 1. Prõv det, du"
+" vil mÜske (eller mÜske ikke) kunne lide det."
+"" }
+
+#  ------------------------------------------------------------------------
+{ M_HLP_DIR_RAW
+""
+" Dette er hostens katalog. Hvis du ikke har forbindelse, er vinduet sort"
+" Lës Generel hjëlp (Shift-H) for information om hvordan du fÜr forbindelse"
+" til en host."
+""
+" F3         - se fil under markõr, brug hurtige interne fremviser"
+" Shift-V    - se fil under markër, brug ekstern fremviser"
+""
+" F5         - hent filen under markõr eller markerede filer (hvis nogle)"
+" Ctrl-D     - hent alle markerede filer i alle kataloger"
+" Shift-G    - hent fil efter navn (f.eks. nÜr kataloget er ulëseligt)"
+" F7         - opret katalog (du skal have rettigheder hos hosten)"
+" F8         - slet filen eller kataloget under markõren"
+" Ctrl-R     - genindlës katalog (genopfrisk fillisten)"
+" Shift-O    - indlës filbeskrivelser fra filen under markõren"
+""
+" Ctrl-A     - marker alle filer i nuvërende katalog"
+" Ctrl-X     - fjern markering fra alle filer i nuvërende katalog"
+" Insert     - marker/fjern markering af filen under markõren. Kataloger"
+"              kan ikke markeres"
+" Plus/Minus - marker/fjern markering filer efter et filter, f.eks. '*.zip'"
+" *          - invertÇr valg"
+" Ctrl-Y     - fjern markering af alle filer i alle kataloger"
+""
+" piletaster - flyt markõren rundt"
+" \          - skift til õverste katalog (rod)"
+" [          - gÜ til kataloget et niveau hõjere oppe ('cd ..')"
+" ]          - skift til kataloget under markõren"
+" Enter      - ------ ' ------"
+" Shift-C    - skift til hvilket som helst katalog"
+""
+" Shift-N    - sorter katalog efter navn, kataloger fõrst"
+" Shift-X    - sorter katalog efter endelse, kataloger fõrst"
+" Shift-T    - sorter katalog efter tid, sÜ navn, kataloger fõrst"
+" Shift-S    - sorter katalog efter stõrrelse, then navn, kataloger fõrst"
+" Shift-Y    - fjern sortering, retur til originale tilstand"
+" Shift-E    - inverter nuvërende sorteringsorden"
+""
+" F4         - gem dette sted som bogmërke"
+" Space      - skift til Kontroller Forbindelse"
+" Tab        - skift til visning af lokale katalog"
+" Ctrl-O     - skjul/vis filbeskrivelser (hvis der er nogen)"
+""
+" Andre tilgëngelige taster er beskrevet i Generel hjëlp (Shift-F1)."
+" Bemërk at du ikke kan markere kataloger.  Markeringer er bevaret over"
+" katalogskift."
+"" }
+
+#  ------------------------------------------------------------------------
+{ M_HLP_VIEWER
+""
+" Tilgëngelige taster i den indbyggede tekstfremviser : "
+""
+" piletaster      - scroll (bemërk at du ogsÜ kan scrolle vandret)"
+" Shift-< Shift-> - scroll 10 symboler i vandret retning"
+" Esc             - afslut fremviser"
+" Ctrl-F          - sõg efter tekst"
+" Ctrl-G          - gentag sõgning"
+" Ctrl-W          - gem indhold i fil"
+""
+" Bemërk venligst, at fremviseren indlëser filen til hukommelsen, "
+" lad mao. vëre med at prõve pÜ at fremvise meget store filer."
+"" }
+
+#  ------------------------------------------------------------------------
+
+{ M_HLP_LOCAL_PARSED
+""
+" Dette er det lokale katalog."
+""
+" F3         - se fil under markõr, brug hurtige interne fremviser"
+" Shift-V    - se fil under markõr, brug ekstern fremviser"
+""
+" F5         - hent filen under markõr eller markerede filer (hvis nogle)"
+" F7         - opret katalog"
+" F8         - slet filen eller kataloget under markõren"
+" Ctrl-R     - genindlës katalog (genopfrisk fillisten)"
+""
+" Ctrl-A     - marker alle filer i nuvërende katalog"
+" Ctrl-X     - fjern markering fra alle filer i nuvërende katalog"
+" Insert     - marker/fjern markering af filen under cursoren. Kataloger"
+"              kan ikke markeres"
+" Plus/Minus - marker/fjern markering filer efter et filter, f.eks. '*.zip'"
+" *          - invertÇr valg"
+""
+" piletaster - flyt markõren rundt"
+" \          - skift til õverste katalog (rod)"
+" [          - gÜ til kataloget et niveau hõjere oppe ('cd ..')"
+" ]          - skift til kataloget under markõren"
+" Enter      - ------ ' ------"
+" Shift-C    - skift til hvilket som helst katalog"
+" Shift-Z    - vëlg drevbogstav"
+""
+" Shift-N    - sorter katalog efter navn, kataloger fõrst"
+" Shift-X    - sorter katalog efter endelse, kataloger fõrst"
+" Shift-T    - sorter katalog efter tid, sÜ navn, kataloger fõrst"
+" Shift-S    - sorter katalog efter stõrrelse, then navn, kataloger fõrst"
+" Shift-Y    - fjern sortering, retur til originale tilstand"
+" Shift-E    - inverter nuvërende sorteringsorden"
+""
+" Space      - skift til forbindelseskontrol"
+" Tab        - skift til visning af hosts katalog"
+""
+" Andre tilgëngelige taster er beskrevet i Generel hjëlp (Shift-F1)."
+" Bemërk at du ikke kan markere kataloger.  Markeringer er bevaret over"
+" katalogskift."
+"" }
+
+#  ------------------------------------------------------------------------
+
+{ M_HLP_UNDEFINED
+""
+" Der er ingen hjëlp i dette sprog til dette skërmbillede "
+"" }
+
+#  new in 0.71
+
+{ M_NO_TEXT
+" Der er ingen tekst til denne besked. "
+" Den er sikkert ikke oversat til dette sprog, eller "
+" er blevet glemt af NFTP programmõr. " }
+
+{ M_CANT_DELETE
+" Kan ikke slette '%s' " }
+
+{ M_ENTER_LOCAL_DIRECTORY
+" Skift lokalt drev/katalog til : " }
+
+{ M_REALLY_TRANSFER_FROM_ALLDIRS
+" %d filer i %d kataloger er markeret til download. "
+" %s bytes er den totale stõrrelse. Fortsët? " }
+
+#  new in 0.80
+{ M_BYTES_RECEIVED
+"     %7d bytes modtaget"
+"             tryk ESC for at afbryde  " }
+
+{ M_BYTES_REMAIN
+"     %7d bytes modtaget      "
+"     %7d bytes resterer      "
+"             tryk ESC for at afbryde  " }
+
+{ M_YES
+"  Ja   " }
+
+{ M_NO
+"  Nej  " }
+
+{ M_OK
+"   OK   " }
+
+{ M_ENTER_SEARCHSTRING
+" Indtast sõgestreng: " }
+
+{ M_ENTER_FILENAME_SAVE
+" Indtast filnavn der skal gemmes til: " }
+
+{ M_CANNOT_OPEN
+" Kan ikke Übne filen %s " }
+
+{ M_FILE_SAVED
+"        Filen blev gemt        " }
+
+{ M_LISTING_HEADER
+"Host      : %s"
+"Katalog   : %s" }
+
+{ M_LISTING_FOOTER
+""
+"%d filer, %s bytes total" }
+
+{ M_LISTING_SAVED
+"   Listningen blev gemt   " }
+
+{ M_ENTER_RETRIEVE_AS
+" Hent fil som: " }
+
+# ************ What does this one mean ?? [Kim] ***************
+
+{ M_ENTER_LISTING_FILENAME
+" Indtast filnavn til listning: " }
+
+{ M_ENTER_NEWNAME
+" Omdõb fil: " }
+
+{ M_ENTER_UPLOAD_AS
+" Upload fil som: " }
+
+{ M_RENAME_FAILED
+" Kan ikke omdõbe '%s' til '%s' " }
+
+{ M_QUICK_SEARCH
+" hurtig sõgning: %s " }
+
+{ M_RESP_RETRYING
+"Venter i %d sekunder... ESC for at afbryde, anden tast for at forsõge igen nu" }
+
+{ M_RESP_RETRY_ABORTED
+"Afbrudt." }
+
+#  new since 0.90
+
+{ M_CANT_ACCESS_DRIVE
+" Kan ikke fÜ adgang til drev %c: " }
+
+{ M_DIRECTORY_DOESNT_EXIST
+" Kataloget '%s' eksisterer ikke " }
+
+{ M_BAD_BOOKMARK_ENTRY
+" Bogmërket " " %s " " er õdelagt og ignoreres " }
+
+{ M_DEFAULT_BMK_FOLDER
+"Generelle steder (oprettet som standard)" }
+
+{ M_BOOKMARK_FORMAT
+"; bogmërkeformatet er"
+"; ftp.sai.msu.su:21/pub/os2 : login/kodeord/flag : beskrivelse"
+";"
+"; ret i denne fil med forsigtighed. Fõlgende regler gëlder:"
+"; - mellemrum omkring kolon'er ER vigtige;"
+"; - sti-navne skal vëre absolutte, dvs. start med '/';"
+"; - udelad 'port' hvis du vil;"
+"; - brug '*' for anonymous 'login' og udelad 'kodeord':"
+";   crydee.sai.msu.su:/pub/comp/os/os2 : *//flags : SAI OS/2 arkivet"
+";"
+";" }
+
+{ M_ENTER_DESC
+" Indtast beskrivelse : " }
+
+{ M_FOLDER_TITLE
+" Folder : %s " }
+
+{ M_DELETE_BOOKMARK1
+"        Slet bogmërke ?          " }
+
+{ M_NAME_FOLDER
+" Indtast navn til ny folder " }
+
+{ M_DELETE_NONEMPTY_FOLDER
+" Slet ikke-tom folder           "
+" '%s' ? " }
+
+{ M_ENTER_FOLDER_TITLE
+" Indtast titel til folder : " }
+
+{ M_SELECT_FOLDER
+" Vëlg en folder til bogmërket " }
+
+{ M_FILE_TO_DOWNLOAD
+" Fil til download : " }
+
+{ M_CANT_CREATE_DIRECTORY
+"Kan ikke oprette kataloget '%s'" }
+
+{ M_REREAD_REMOTE_DIR
+" Genindlës hosts katalogindhold ? " }
+
+{ M_LOGOFF_MARKED
+" Du har markeret %d fil(er) i %d kataloger. "
+" Total stõrrelse er %s bytes. "
+" Er du stadig sikker pÜ at du vil afbryde forbindelsen ? " }
+
+{ M_CANT_LOGIN
+" Kan ikke logge ind pÜ %s " }
+
+{ M_FILE_NOT_FOUND
+" Filen '%s' kan ikke findes pÜ serveren " }
+
+{ M_TRANSFER_FAILED
+" ùverfõrsel af '%s' mislykkedes " }
+
+{ M_PROXY_ISNT_SPECIFIED
+"  Firewall proxy host er ikke specificeret i NFTP.INI  " }
+
+{ M_NOT_CONNECTED
+"Ikke koblet op" }
+
+{ M_INCORRECT_FIREWALL
+" Fejlagtig firewall type specificeret : %d " }
+
+{ M_UNKNOWN_SERVER_OS
+" Advarsel: ukendt operativ system pÜ ftp server: "
+" '%s'; "
+" NFTP kan mÜske ikke fortolke listning " }
+
+{ M_CONNECTING
+"Optager forbindelse til %s..." }
+
+{ M_CANNOT_RENAME
+" Kan ikke omdõbe filen '%s' til '%s' " }
+
+{ M_RESP_REGET_ISNT_SUPPORTED
+"Reget understõttes ikke; overfõrer hele filen" }
+
+{ M_DOWNLOADING
+"%s - henter..." }
+
+{ M_CANT_OPEN_FOR_WRITING
+" Kan ikke Übne filen '%s' til skrivning " }
+
+{ M_CHANGING_DIRECTORY
+"   Skifter katalog til :   "
+"   '%s'   " }
+
+{ M_RESP_TRANSFER_CANCELLED
+"Overfõrsel afbrudt (%s)" }
+
+{ M_RESP_TRANSFER_ERROR
+"Fejl under overfõrsel '%s'" }
+
+{ M_CANT_OPEN_FOR_READING
+" Kan ikke Übne filen '%s' til lësning " }
+
+{ M_CANT_WRITE_LOGFILE
+" Advarsel: kan ikke skrive til logfilen '%s' " }
+
+{ M_CANT_GUESS_CURDIR
+" Kan ikke bestemme nuvërende katalog hos host " }
+
+{ M_CANT_READ_FILE
+" Kan ikke lëse filen '%s' " }
+
+{ M_UPLOADING
+"%s - uploader..." }
+
+{ M_HLP_SHORT
+" NFTP tastatur genveje                        [F1 - mere info]"
+"                                      [Shift-H - generel hjëlp]"
+" Login/logout"
+""
+" Ctrl-B - bogmërkeliste             Ctrl-L - connect as anonymous"
+" F4     - gem bogmërke              Ctrl-N - connect with login/password"
+" F10    - log af og afslut          F2     - historie"
+""
+" Skërm"
+""
+" Tab     - lokale/fjerne kataloger  Space  - katalog/forbindelse "
+" Shift-Z - skift lokalt drev        Shift-C- skriv sti direkte"
+" Shift-N/X/T/S - sorter efter forskellige kriterier (navn/end/tid/stõr)"
+" alfanumeriske taster - sõg fil startende med dem"
+""
+" Overfõrsler"
+""
+" F5     - hent fil                  F6 - upload fil"
+" F3     - se tekstfil               Ctrl-D  - download alle markede filer"
+" Ins    - marker/afmarker fil       Ctrl-A - marker alle filer"
+"" }
+
+
+{ M_HLP_BOOKMARK1
+""
+" Bookmërke foldere "
+""
+" Hver folder kan indeholde adskillige bookmërker. Tryk Enter eller hõjre"
+" piletast for at Übne folderen, Esc eller venstre piletast for at forlade"
+" den. Ved kun at bruge piletaster, kan du navigere hele bogmërkesystemet."
+""
+" Tryk Ins for at oprette en ny folder. Tryk Del for at slette folderen."
+" Omdõb folderen ved at trykke Ctrl-E."
+""
+" Du bliver ogsÜ prësenteret for denne skërm also nÜr du vil oprette et nyt"
+" bogmërke. Nu kan du bare vëlge den õnskede folder, eller trykke Ins for"
+" at oprette en ny. Bemërk, at hvis du genner et bogmërke med kodeord"
+" (dvs. ikke pÜ anonym ftp-server), vil dit kodeord ikke blive registreret."
+" Du kan insëtte det manuelt i .bmk filen, men vër sikker pÜ at du ved"
+" hvad du gõr, fordi det er et sikkerhedshul (alle som har adgang til"
+" din computer kan se dit kodeord.)"
+""
+" NÜr du ëndrer i listen, bliver ëndringer fõrst gemt (eller glemt)"
+" nÜr vinduet lukkes. Du vil blive sputgt om du vil gemme den"
+" ëndrede version eller glemme ëndringerne. Hvis du kõrer flere"
+" kopier af NFTP pÜ samme tid, sÜ lad vëre med at bruge bogmërkelisten"
+" pÜ samme tid."
+"" }
+
+
+{ M_HLP_BOOKMARK2
+""
+" Bookmërker i en folder "
+""
+" Tryk Enter for at vëlge et sted (dvs. logge pÜ), Esc eller venstre"
+" piletast for at forlade folderen. ved kun at bruge piletaster, kan"
+" du navigere rundt i hele bogmërkesystemet."
+""
+" Tryk Del for at slette et bogmërke. Du kan ëndre rëkkefõlgen af"
+" bogmërkerne ret simpelt :"
+"  Brug Shift-U for at flytte et bogmërke op, Shift-D for at flytte det"
+" ned, Shift-< for at flytte det til en anden folder. Tryk Ctrl-E"
+" for at ëndre titlen til bogmërket."
+""
+" NÜr du ëndrer i listen, bliver ëndringer fõrst gemt (eller glemt)"
+" nÜr vinduet lukkes. Du vil blive sputgt om du vil gemme den"
+" ëndrede version eller glemme ëndringerne. Hvis du kõrer flere"
+" kopier af NFTP pÜ samme tid, sÜ lad vëre med at bruge bogmërkelisten"
+" pÜ samme tid."
+"" }
+
+#  ---------------------------------------------------------- new in 1.02
+
+{ M_ALREADY_BOOKMARKED
+" Stedet '%s' har allerede et bogmërke "
+" (katalog '%s'). Opret alligevel ? " }
+
+{ M_EDIT1
+"Hostnavn[:port]katalog" }
+
+{ M_EDIT2
+"Login/kodeord/flag" }
+
+{ M_EDIT3
+"Beskrivelse" }
+
+{ M_CONNECTION_OK
+"       Forbindelsen er ok        " }
+
+{ M_MARKED_STATISTICS
+"    %d filer i %d kataloger; %s byte totalt    " }
+
+#  ---------------------------------------------------------- new in 1.10
+
+{ M_STARTING_TRANSFER
+"   Begynder overfõrsel...   " }
+
+{ M_KEEP_TREE_INTACT
+" Du har markeret %d filer i %d kataloder. "
+" Total stõrrelse er %s bytes. "
+""
+" Behold katalogstruktur under overfõrsel? " }
+
+{ M_KEEP_TREE2
+" Behold underkataloger "
+"    Pile up files    " }
+
+{ M_OVERWRITE_RENAME_CANCEL4
+" Overskriv lokal fil "
+" Omdõb lokal fil "
+" Overspring denne fil " }
+
+{ M_REGET_RENAME_CANCEL5
+" Fortsët "
+" Overskriv lokal fil "
+" Omdõb lokal fil "
+" Overspring denne fil " }
+
+{ M_RESP_BIND_FAILED
+"Netvërk fejl (bind() fejlede)" }
+
+{ M_RESP_LISTEN_FAILED
+"Netvërk fejl (listen() fejlede)" }
+
+{ M_RESP_GETSOCKNAME_FAILED
+"Netvërk fejl (getsockname() fejlede)" }
+
+{ M_RESP_CANNOT_CONNECT
+"Kan ikke fÜ forbinfdelse til dataoverfõrelse" }
+
+{ M_RESP_CONNECTION_NOT_ESTABLISHED
+"Serveren kunne ikke etablere dataforbindelse" }
+
+{ M_RESP_TRANSFER_SKIPPED
+"Oversprang filen `%s'" }
+
+{ M_WALK_TREE
+" GennemgÜ hele trëet begyndende fra "
+" '%s' ? " }
+
+{ M_NO_MARKED_FILES
+" Der er ingen markerede filer i underkatalogerne " }
+
+{ M_HAVENT_BEEN_CONNECTED
+"har ikke haft forbindelse endnu" }
+
+{ M_DIRECTORY_LISTING
+"Katalogliste" }
+
+{ M_LARGE_INDEX_FILE
+"  Advarsel: filen '%s', der indeholder filbeskriveler  "
+"  er %s bytes stor. Vil du stadig hente den?  " }
+
+{ M_LOAD_DESCRIPTIONS
+" Hent beskrivelser fra '%s' ? " }
+
+{ M_CANT_USE_DIR_AS_INDEX_FILE
+" Kan ikke hente beskrivelser fra kataloget '%s'. "
+" Placer cursoren pÜ den almindelige fil. " }
+
+{ M_RESP_CONNECTING
+"Optager forbindelse til %s..." }
+
+{ M_DOWNLOADING1
+"%s - DL %lu%% at %.2f KB/s" }
+
+{ M_UPLOADING1
+"%s - UL %lu%% ved %.2f KB/s" }
+
+{ M_DESC_DOWNLOAD_OPTIONS
+"  Ja  "
+"  Nej   "
+" Aldrig " }
+
+# ----------------------------------------- new in 1.21 -------------
+
+{ M_RESP_CANT_OPEN
+"Filen %s kan ikke Übnes" }
+
+{ M_NO_EMAIL_ADDRESS
+""
+"Advarsel: e-post adresse er ikke angivet i filen %s."
+"" }
+
+{ M_GUESSED_EMAIL
+"Bruger %s som kodeord til anonyme logins."
+"Tryk ENTER for at fortsëtte..."
+"" }
+
+{ M_CANT_GUESS_EMAIL
+"Kunne ikke finde din vërt eller loginnavn;"
+"ret venligst %s og angiv en korrekte-post adresse"
+"der.  Den vil blive brugt til anonyme FTP logins."
+"" }
+
+{ M_INI_CONFIG_VERSION
+""
+"Din nuvërende konfigurationsfil, %s, har version %s."
+"NFTP programversion er %s." 
+"" }
+
+{ M_INI_CANT_FIND_NFTP_I
+"Kan ikke finde nftp.i til updatering af nftp.ini"
+"hverken i `%s' eller i `%s' !"
+"" }
+
+{ M_INI_UPDATE
+"Klar til at opdatere `%s'"
+"fra                  `%s'."
+"Fortsët? [Ynq]" }
+
+{ M_INI_UPDATING
+""
+"Opdaterer %s med %s..."
+"" }
+
+{ M_INI_CANT_OPEN_READ
+"Kan ikke Übne %s til lësning"
+"" }
+
+{ M_INI_CANT_OPEN_WRITE
+"Kan ikke Übne  %s til skrivning"
+"" }
+
+{ M_INI_WRONG_ENTRY
+"Fejl -- indgang udenfor afsnit:"
+"%s" }
+
+{ M_INI_CANT_RENAME
+"Kan ikke omdõbe `%s' til `%s'"
+"" }
+
+{ M_INI_BACKUP
+""
+"Sikkerhedskopi af din %s"
+"blev gemt som         %s"
+"" }
+
+{ M_INI_UPDATING_ENTRY
+"opdaterer: %s"
+"" }
+
+{ M_INI_FINISHED
+""
+"Fërdig med opdatering; tryk ENTER  for at fortsëtte..." }
+
+# ----------------------------------------- new in 1.22 -------------
+
+{ M_RESP_CANT_CREATE_DIRECTORY
+"Kan ikke oprette kataloget '%s'" }
+
+{ M_INFORMATION1
+" %d filer i %d kataloger; %s bytes i alt "
+""
+" URL for nuvërende fil: "
+" %s "}
+
+{ M_INFORMATION2
+" %d filer i %d kataloger; %s bytes i alt "
+""
+" Kopier nuvërende URL til clipboard? "
+" %s "}
+
+{ M_HLP_HISTORY
+""
+" Historie over besõgte vërter og kataloger"
+""
+" De meste besõgte steder stÜr fõrst i listen. Historiefilen benyttes"
+" ogsÜ til DNS opslag (allerede opslÜede IP-adresser gemmes her)."
+" Stjernen ved loginnavnet indikerer at indgangen har et kodeord gemt"
+" filen.  Loginnavn vises ikke for anonyme vërter.  Efter loginnavnet"
+" kan der fõlge nogle flag, se FAQ for forklaring pÜ disse."
+""
+" Opfõrslen af historiesystemet kontrolleres af indstillinger"
+" i NFTP.INI filen. Du kan sëtte grënser pÜ antallet af vërter"
+" og antallet af kataloger per vërt, der opbevares i filen."
+" Overflõdige indgange fjernes nÜr historievinduet Übnes."
+" NFTP kan ogsÜ huske kodeord til vërter (de gemmes krypteret,"
+" men ikke i sikker form). Som standard medtages logins, hentning"
+" af filer og logoff. NFTP kan sëttes til at optage alle besõgte"
+" kataloger i historiefilen."
+""
+" Navigation er i stil med bogmërkevinduet. Enter vëlger vërt eller"
+" aktiverer en indgang; Esc lukker vinduet eller forlader katalog-"
+" listen; hõjre/venstre piletaster kan benyttes i stedet for Enter/Esc"
+" til navigation.  Du kan slette kataloger og hele vërter fra"
+" historiefilen med Del."
+"" }
+
+{ M_PROCESSING_HISTORY1
+" Behandler historie; niveau %u..." }
+
+{ M_PROCESSING_HISTORY2
+" Behandler historie; niveau %u:  %u indgange behandlet" }
+
+{ M_READING_HISTORY_FILE
+" Lëser historiefilen;  %u linier lëst" }
+
+{ M_WRITING_HISTORY_FILE
+" Skriver historiefil;  %u linier skrevet" }
+
+{ M_ERROR_READING_HISTORY
+" Fejl under lësning af historiefilen %s " }
+
+{ M_EMPTY_HISTORY
+" Historiefilen %s er tom " }
+
+{ M_SAVE_HISTORY
+" Gem ëndringer i historiefiler? " }
+
+{ M_HIST_HEADER1
+" Historie: %u vërter, %u indgange i alt " }
+
+{ M_HIST_HEADER2
+" Historie: %s, %u kataloger " }
+
+{ M_HIST_DELETE_DIR
+" %s:%s "
+" Slet katalog? " }
+
+{ M_HIST_DELETE_SITE
+" %s "
+" Slet vërt indeholdende %u kataloger? " }
+
+# ------------------------------------------------------ new/updated in 1.23
+
+{ M_HLP_USING_MENU
+"  "
+" Menu"
+""
+" Menuen giver et hurtigt struktureret kort over NFTPs funktioner. "
+" For at benytte menuen, tryk F9 eller CTRL-F (dette kan omdefineres i "
+" nftp.ini).  Benyt piletasterne til navigation af menustrukturen; Esc "
+" skifter til menu-niveauet over det nuvërende. Hvis du fortrëkker at "
+" have adgang til menupunkter hurtigt via genvejstaster, kan nõgleordet "
+" `menu-open-submenu' i nftp.ini sëttes til -1; sÜ vil F9 kun Übne "
+" top-menuen. Med denne parameter kan du ogsÜ sëtte at der skal Übnes en "
+" anden menu end 'Filer' som standart. "
+" "
+" du kan indstille menulayoutet som õnsket.  Ret blot i 'danish.mnu'. "
+" Instruktioner findes i filen."
+"" }
+
+{ M_RESP_F9_FOR_MENU
+"Tast F9 eller Ctrl-F for menu" }
+
+{ M_BOOKMARK_NICKNAME
+" Këlenavnet '%s' "
+" blev ikke fundet blandt bogmërkerne " }
+
+{ M_SELECT_BOOKMARK
+" Vëlg bogmërke " }
+
+{ M_HISTORY_NICKNAME
+" Këlenavnet '%s' "
+" blev ikke fundet i historien " }
+
+{ M_SELECT_HISTORY
+" Vëlg historieindgang " }
+
+{ M_USAGE0
+"Valgfrie parametre : "}
+
+{ M_USAGE1
+"forbind til URL" }
+
+{ M_USAGE2
+"hent (G,g) eller anbring (P,p} fil-URL" }
+
+{ M_USAGE3
+"behandl overfõrsler programmeret i cmdfile.txt" }
+
+{ M_USAGE4
+"led efter `ord' i bogmërker(b) eller historie(h)" }
+
+{ M_USAGE5
+"URL skal vëre pÜ formen "
+"[ftp://][brugernavn[:kodeord]@]hostnavn[:port]katalog/fil,"
+"e.g. ftp://asv:kodeord@crydee.sai.msu.ru:21/home/asv/file.txt"
+"or   crydee.sai.msu.su/pub/comp/software/asv/nftp/nftp-LATEST-os2.zip" }
+
+
+# ----------------------------------------------------------------- new in 1.40
+
+{ M_SITE_EDIT1
+"Vërtsnavn" }
+
+{ M_SITE_EDIT2
+"Login (brugernavn)" }
+
+{ M_SITE_EDIT3
+"Kodeord" }
+
+{ M_SITE_EDIT4
+"Port" }
+
+{ M_SITE_EDIT5
+"Katalog" }
+
+{ M_SITE_EDIT6
+"Flag (se FAQ)" }
+
+{ M_PASSWORDED_WGET
+" Du prõver at hente med WGET fra et ikke-anonymt sted. "
+" Som standard er sÜdanne downloads ikke tilladte af sikkerhedshensyn. "
+" Du kan tillade dette i nftp.ini. " }
+
+{ M_WGET_DOWNLOAD_ONE
+" Hent filen %s med eksternt program? " }
+
+{ M_WGET_DOWNLOAD_MANY
+" Hent %d filer i %d kataloger; "
+" %s bytes totalt med eksternt program? " }
+
+{ M_CONFIRM_COMMAND
+" Ekstern kommando der skal udfõres: " }
+
+{ M_USETAB2
+" Brug tab/shift-tab eller op/ned pile for at flytte mellem felter " }
+
+# ------------------------------------------------- new since 1.50
+
+{ M_CANCEL
+" Fortryd " }
+
+{ M_FTPS_RECEIVING
+"  %s: modtager data...   "
+"  Tryk ESC for at afbryde  "
+"  %s indgange fundet (total) " }
+
+{ M_FTPS_NO_HITS
+"  Ingen trëffere for `%s'...   " }
+
+{ M_FTPS_SERVERS
+" FTP Search servere " }
+
+{ M_FTPS_ADD_SERVER
+" Indtast navn pÜ FTP Search server, der skal tilfõjes " }
+
+{ M_FTPS_DELETE
+" Slet `%s' ? " }
+
+{ M_QUERYING
+"forespõrger %s..." }
+
+{ M_FTPS_SENDING_REQUEST
+"  Sender forespõrgelse til %s...   " }
+
+{ M_FTPS_SEARCHRES
+" Sõgeresultater (%u trëffere) " }
+
+{ M_DIR_SIGN
+"<DIR>" }
+
+{ M_LINK_SIGN
+"<LNK>" }
+
+{ M_SEARCH_FORWARD
+" Sõg frem " }
+
+{ M_SEARCH_BACKWARDS
+" Sõg tilbage " }
+
+{ M_CANT_FIND
+"  Kan ikke finde `%s'   " }
+
+{ M_SELECT_LANGUAGE
+" Vëlg brugerflade sprog " }
+
+{ M_REGISTRATION_NAME
+"Registreringsnavn" }
+
+{ M_REGISTRATION_CODE
+"Registreringskode" }
+
+{ M_THANKS
+" Tak for at du har registreret NFTP! " }
+
+{ M_FTPS_NEED_ARGS
+" Du skal angive prëcis en af "
+" 'eksakt', 'delstreng', 'joker' or 'regudtryk' " }
+
+{ M_FTPS_SEARCH1
+"Eksakt sõgning" }
+
+{ M_FTPS_SEARCH2
+"Sõgning via delstreng" }
+
+{ M_FTPS_SEARCH3
+"Sõgning via joker" }
+
+{ M_FTPS_SEARCH4
+"Sõgning via regulërt udtryk" }
+
+{ M_FTPS_SEARCH5
+"Store/smÜ bogstaver?" }
+
+{ M_FTPS_SEARCH6
+"Uden filer/kataloger" }
+
+{ M_FTPS_SEARCH7
+"Begrëns til domëner" }
+
+{ M_FTPS_SEARCH8
+"Uden domëner" }
+
+{ M_FTPS_SEARCH9
+"Skjul Slackware/RedHat/FreeBSD/etc." }
+
+{ M_FTPS_SEARCH10
+"Max. antal trëffere" }
+
+{ M_HLP_SITE_EDIT
+"Sted-parametre"
+""
+"Ved anonyme steder, skal 'navn' og 'kodeord' vëre tomme. Hvis du "
+"ikke angiver et katalog, bliver du anbragt der hvor FTP serveren"
+"vëlger at anbringe dig. Dette er som regel i roden af katalogstrukturen"
+"beregnet til anonyme brugere, og hjemmekataloget ved private logins."
+"Server-beskrivelsen er kun til egen information, den gemmes i"
+"bogmërke-filen."
+""
+"Tilgëngelige flag:"
+"p - brug passiv tilstand ved dette sted. Hjëlper nogen gange med"
+"    langsomme og problematiske opkoblinger."
+"r - forsõg uendeligt. Ved login-fejl vil NFTP forsõge igen uanset"
+"    fejlkoden og uanset om det er anonymt login eller ej."
+"f - bag firewall. NÜr firewall understõttelse er specificeret i nftp.ini,"
+"    vil dette sted stadig blive brugt direkte."
+}
+
+{ M_HLP_FTPSEARCH
+"FTP Search brugerflade"
+""
+"'Prëcis sõgning' vil kun sõge efter det angivne filnavn eller katalognavn;"
+"eksempel: nftp141o.zip"
+""                                                                     
+"'Delstreng sõgning' vil sõge efter den delstreng i fil- eller katalognavne;"
+"eksempel: nftp14"
+""
+"'Joker sõgning' benytter '*' og '?' karaktererne pÜ samme mÜde som de"
+"benyttes pÜ kommandolinien (dvs. * passer pÜ 0 eller flere karakterer,"
+"? passer pÜ prëcis en karakter); eksempler: nftp*.zip eller nftp1??o.zip"
+""                                                                     
+"'Regulërt udtryk sõgning' er den mest avancerede type, men krëver lidt"
+"trëning; eksempelvis vil nftp1\.[4-9][0-9]o\.zip finde alle version 1.xx af"
+"NFTP til OS/2, startende fra 1.40. Du kan finde en forklaring af regulëre"
+"udtryk en del steder, inkluive GNU rx biblioteket."
+""
+"'Store/smÜ bogstaver' har kun mening ved 'Delstreng sõgning'."
+""
+"Du kan ogsÜ tillëgge flere kriterier: ekskluder kataloger fra sõgning,"
+"begrëns sõgning til bestemte domëner eller ekskludere bestemte domëner"
+"og ekskludere freeware Unix-distributioner, der ellers har en tendens til"
+"at give et stort antal uõnskede resultater.  Flere kriterier adskilles med"
+"mellemrum."
+""                                                                     
+"Det anbefales ikke at sëtte 'Maks. antal resultater' til hõje vërdier"
+"(5000 resultater er ubrugeligt - prõv at ekskludere noget du ikke behõver.)"
+"Som regel giver det god mening kun at forespõrge hos hoved FTP Search"
+"serveren ftpsearch.ntnu.no, ider den indekserer over 90% af Verden.  Andre"
+"tilbyder mest en metode til at begrënse en sõgning til geografisk tëttere"
+"steder."
+"" }
+
+{ M_FTPS_DOWNLOAD
+"  Hent "
+"  %s  "
+"  fra %s?  " }
+
+{ M_HIST_CONT_SEARCH
+"  Kan ikke finde hos %s. Sõg andre steder?  " }
+
+{ M_TOO_LARGE
+"%s/%s: for stor til uregistreret version" }
+
+{ M_DISCONNECT
+"  Afbryd forbindelse til vërt %s?  " }
+
+{ M_UPLOAD_EDITED
+"  Anbring ëndret fil pÜ vërt?  " }
+
+{ M_FONT_DESC
+"bredde %3d, hõjde %3d (%s)" }
+
+{ M_UNSUPPORTED
+"  Funktionen er ikke understõttet pÜ %s  " }
+
+{ M_SELECT_FONT
+" Vëlg skrifttype " }
+
+{ M_HLP_FTPSEARCH2
+"Taster i resultatvindue"
+""
+"Ctrl-P      skjul/vis stier"
+"Ctrl-T      skjul/vis sidste ëndringstider"
+"Ctrl-F      sõg fremad"
+"Ctrl-H      sõg tilbage"
+"Shift-D/F5  hent fil"
+""
+"Shift-H     sorter efter server navn"
+"Shift-N     sorter efter filnavn (standard)"
+"Shift-S     sorter efter filstõrrelse"
+"Shift-T     sorter efter fildato/tid"
+"" }
+
+{ M_STALLED
+"gÜet i stÜ" }
+# ------------------------------------------------- new since 1.51
+ 
+ { M_WAIT
+ ""
+ ""
+ " Vent venligst %d sekunder... " }
+ 
+ { M_UNREGISTERED
+ " Denne version er uregistreret "
+ ""
+ " For at slippe for denne besked, skal du kõbe en NFTP licens. "
+ " Den koster $%d og giver licens til alle fremtidige versioner "
+ " af NFTP til alle understõttede operativsystemer.  Mere "
+ " information fÜs fra http://www.ayukov.com/nftp/buy.html %s" }
+ 
+ { M_PRESS_ENTER
+ " Tast ENTER for at forts‘tte " }
+ 
+ { M_HTTP_PROXY
+ "  Ikke understõttet via HTTP proxy  " }
+ 
+ { M_ENUMERATING_FONTS
+ " Nummererer fonte... " }
+
+# ------------------------------------------------- new since 1.60
+
+{ M_SCRIPT_BADCOMMAND
+"Unrecognized command: %s" }
+
+{ M_SCRIPT_BADARGS
+"This command requires %d arguments (found %d instead)" }
+
+{ M_SCRIPT_ERROR
+"Error; script execution has been stopped" }
+
+{ M_SCRIPT_CANT_OPEN
+"Cannot open script file `%s'" }
+
+{ M_SCRIPT_RUNNING
+"SCRIPT: %s %s" }
+
+{ M_SCRIPT_INVALID_VAR
+"Invalid variable: %s" }
+
+{ M_SCRIPT_CANT_OPEN_LOG
+"Cannot open logfile `%s'" }
+
+{ M_RESP_CONNECTING2
+"Connecting to %s: Esc - abort, Space - retry..." }
+
+{ M_RESP_ACCEPTING
+"Waiting for connection on port %d: Esc - abort, Space - retry..."}
+
+{ M_RESP_ACCEPTED
+"Accepted connection from %s" }
+
+{ M_PAUSED
+"Paused; press P to continue" }
+
+{ M_SQRP
+"S/Q/R/P - Skip/Quit/Restart/Pause" }
+
+{ M_TOTAL        "Total" }
+{ M_TRANSFERRED  "Transferred" }
+{ M_SKIPPED      "Skipped" }
+{ M_LEFT         "Left" }
+{ M_INACT        "seconds since last packet" }
+
+{ M_NO_FIREWALLING
+"No firewall/proxy has been configured in nftp.ini" }
+
+{ M_HLP_PASSWORDS
+"Keys in password window"
+""
+"Insert - create new password record"
+"Delete - delete password record"
+"Ctrl-E - edit record"
+"Ctrl-P - show/hide passwords"
+""
+"Enter  - login into site"
+"" }
+
+{ M_DEL_UNMATCHED
+"   Deleting unmatched files...   " }
+
+{ M_ENTER_LISTNAME
+"Enter filename to write the list to:" }
+
+{ M_SYNC1
+"Synchronize local tree with remote site?"
+""
+"remote   %s ->"
+"local    %s"
+"" 
+"NFTP will download files" }
+
+{ M_SYNC2
+"Synchronize remote site with local tree?"
+""
+"local    %s ->"
+"remote   %s"
+""
+"NFTP will upload files" }
+
+{ M_SYNC3
+"Directories seem to be identical" }
+
+{ M_PASS_UNSUPPORTED
+"Version of the password file (%d) is not supported" }
+
+{ M_PASS_ENTER_KEYPHRASE1
+"Enter keyphrase to decrypt your password file" }
+
+{ M_PASS_INVALID
+"%s"
+"Password file has invalid contents" }
+
+{ M_PASS_ENTER_KEYPHRASE2
+"Enter keyphrase which will be used to encrypt your password file" }
+
+{ M_PASSWORDS
+"Passwords" }
+
+{ M_PASS_SAVE
+"Save changes to password file?" }
+
+{ M_PASS_DELETE
+"%s @ %s"
+"Delete password entry?" }
+
+{ M_DISK_FULL
+" %s "
+" Error writing to file (disk full?) " }
+
+{ M_REGISTERED
+"Registered for %s" }
+
+{ M_UNREGISTERED2
+"Unregistered (%d days since first run)" }
+
+{ M_FTPS_RECEIVING2
+"Receiving data from %s...   "
+"Found total:          %s"
+"Found on this server: %s"
+"Press ESC to interrupt the search" }
+
+{ M_FTPS_NO_HITS2
+"Search did not find anything" }
+
+{ M_FTPS_NORES
+"No search has been performed yet" }
+
+{ M_ENABLE_PASSWORDS
+"Please enable password caching in nftp.ini" }
+
+{ M_NEEDBF
+"This is only used with method(s) %s (see nftp.ini)" }
+
+{ M_PASS_INCORRECT
+"Keyphrase is incorrect"}
+
+{ M_BYTESSEC "bytes/sec" }
+
+{ M_DOWNLOAD "download" }
+
+{ M_UPLOAD "upload" }
+
+{ M_COMMUNICATING
+"Communicating with server..." }
+
+# will look like: " 23% done (download, binary)"
+{ M_PERCENTAGE1 "%9u%% done (%s, %s)" }
+
+# will look like: " 23% done (download, binary) (3 of 15 files)"
+{ M_PERCENTAGE2 "%9u%% done (%s, %s) (%d of %d files)" }
+
+# ------------------------------------------------- new since 1.61
+
+{ M_TR_OVERWRITE  "Overskriv" }
+{ M_TR_RESUME     "Genoptag" }
+{ M_TR_SKIP       "Skip" }
+{ M_TR_CANCEL     "Afbryd" }
+ 
+{ M_TR_QUESTION
+"MÂlfilen eksisterer allerede!"
+"ForeslÂet handling: %s"
+""
+"Fjern: %s i %s"
+"Lokal:  %s i %s"
+""
+"Kilde: %s Bytes, %2d %s %4d  %02d:%02d:%02d"
+"MÂl  : %s Bytes, %2d %s %4d  %02d:%02d:%02d" }
+
+# ------------------------------------------------- new since 1.62
+
+{ M_DELETE_FILES
+"You have selected %d file(s)."
+"     Really delete them?" }
+
+{ M_NOT_EMPTY
+"Directory `%s' is not empty."
+"Delete entire tree?" }
+
+{ M_ALL "All" }
+
+{ M_DELETING
+"  Deleting %s...  " }
+
+{ M_NO_CHMOD
+"This FTP server does not support SITE CHMOD command" }
+
+{ M_ACCESSRIGHTS1
+"Access rights for %d files" }
+
+{ M_ACCESSRIGHTS2
+"Access rights for %s" }
+
+{ M_WRONG_RIGHTS
+"Invalid input:  [%s]"
+"Correct format: [rwxrwxrwx]" }
+

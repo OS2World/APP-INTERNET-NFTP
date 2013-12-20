@@ -1,0 +1,191 @@
+#
+# Voir la syntaxe en fin de fichier.
+#
+
+main
+{
+    {SUBMENU, "&Sites",        Sites}
+    {SUBMENU, "&Fichiers",     Fichiers}
+    {SUBMENU, "&Vue",          Vue}
+    {SUBMENU, "&Transfert",    Transfert}
+    {SUBMENU, "&Options",        Options}
+    {SUBMENU, "&Aide",         Aide}
+}
+
+Sites
+{
+    {ACTION, "S&ignets...",              10}  Signets
+    {ACTION, "&Historique...",           17}  Historique
+    {ACTION, "&Sauver signet...",        35}  Sauver dans un signet
+    {SUBMENU, "&Recherche FTP", FTPSearch} -- perhaps leave as-is FTP Search trademark?
+    {SUBMENU, "Lots de passe", Passwords}
+    {SEP}
+    {ACTION, "Ouvrir &URL...",             18}  Ouvrir URL
+    {ACTION, "&Login...",                11}  Connexion
+    {ACTION, "L&ogoff...",               13}  D‚connexion
+    {ACTION, "&Test connexion",          22}  Envoi NOOP
+    {ACTION, "Envoi &commande...",       24}  Commande
+    {SEP}
+    {ACTION, "Suspendre (Unix only)",  112}  Suspend
+#   {ACTION, "Crash",                     9}  crash and burn
+    {ACTION, "&Quitter...",              14}  Quitter NFTP
+}
+
+Passwords
+{
+    {ACTION, "&Editer mots de passe...",   28} edit passwords
+    {ACTION, "Changer &phrase cl‚", 29} change keyphrase for password encryption
+}
+
+Fichiers
+{
+    {ACTION, "&Cr‚er r‚pertoire...",              53}  Cr‚er un r‚pertoire
+    {ACTION, "Re&nommer...",                      54}  Renommer un fichier/r‚pertoire
+    {ACTION, "&Effacer...",                       52}  Effacer un fichier/r‚pertoire
+    {ACTION, "Change access rights",             79}  change access rights
+    {SEP}
+#   {ACTION, "E&ntrer r‚pertoire",                71}  Se placer dans le r‚pertoire sous le curseur
+    {ACTION, "C&hanger de r‚pertoire...",         74}  Changer de r‚pertoire
+    {ACTION, "Retour … la r&acine",               72}  Se placer … la racine
+    {ACTION, "&Relire r‚pertoire",                70}  Relire le r‚pertoire
+    {ACTION, "Sauver &liste...",                  45}  Sauver la liste des fichiers
+    {ACTION, "Changer de &disque...",             75}  Changer de disque
+    {ACTION, "Calcule &taille r‚pertoire",            57}  parcours le r‚pertoire et calcule sa taille
+}
+
+Vue
+{
+    {ACTION, "&Basculer le mode r‚pertoire",       32}  Bascule mode 
+    {ACTION, "&Controle de connexion",             30}  Controle de connexion et retour
+    {ACTION, "Basculer &distant/local",            31}  Bascule entre distant et local
+    {SWITCH, "Scinder ‚cran",                      37}  make screen look like NC
+    {SWITCH, "Afficher date/heure",            38}  show/hide file timestamps in panels
+    {SWITCH, "&Mini status",                       39}  show/hide mini-status field
+    {SEP}
+    {ACTION, "&Voir le fichier",                   50}  Voir fichier
+    {ACTION, "Voir avec prog &ext.",               51}  Voir fichier avec programme externe
+    {ACTION, "C&harger descriptions...",           76}  Charger fichier 00index.txt
+    {SUBMENU, "&Tri",          Tri}
+    {SEP}
+    {ACTION, "&Rafraichir ‚cran",                  36}  Rafraichir l'‚cran
+}
+
+Tri
+{
+    {ACTION, "Tri par &nom",           60}  Tri par nom
+    {ACTION, "Tri par e&xtension",     61}  Tri par extension
+    {ACTION, "Tri par &taille",        63}  Tri par taille
+    {ACTION, "Tri par &date",          62}  Tri par date
+    {ACTION, "N&on tri‚",              64}  Non tri‚
+    {ACTION, "&Inverse ordre de tri",  65}  Inverse ordre de tri
+}
+
+Transfert
+{
+    {ACTION, "&Copy...",                   77}  copy between remote/local
+#   {ACTION, "&T‚l‚cherger...",            40}  T‚l‚charger
+#   {ACTION, "T‚l‚char&ger tout...",       42}  T‚l‚charger tous r‚pertoires
+    {ACTION, "T‚l‚charger par &nom...",    44}  T‚l‚charger par nom
+    {ACTION, "T‚l‚charger avec &WGET...",  46}  D‚marrer wget pour charger les fichiers
+#   {ACTION, "&Envoyer...",                41}  Envoyer
+#   {ACTION, "Envoyer t&out...",           43}  Envoi de tous les r‚pertoires
+    {SEP}
+    {SUBMENU, "&S‚lection", Select}
+    {SUBMENU, "&Mirroir", Mirror}
+    {SWITCH, "&Binaire",             21}  Basculer ASCII/Binaire
+    {ACTION, "&Voir informations",         15}  Voir status
+    {SEP}
+#   {SWITCH, "Limit throughput",           98}  limit throughput
+    {ACTION, "Sauter fichier",                  47}  skip file during transfer
+    {ACTION, "Stopper transfert",              48}  stop transfer
+    {ACTION, "Red‚marrer transfert",           49}  abort and restart transfer
+    {SWITCH, "Pauser transfert",             58}  pause transfer
+}
+
+Select
+{
+    {ACTION, "&S‚lection",                 82}  S‚lectionner fichier
+    {ACTION, "S‚lection &masque...",       83}  S‚lectionner masque
+    {ACTION, "D‚s‚lection m&asque...",     84}  D‚s‚lection masque
+    {ACTION, "Se&lectionner tout",         80}  select all files
+    {ACTION, "D‚s‚le&ctionner tout",       81}  D‚s‚lectionner tous fichiers
+    {ACTION, "D‚s‚lectionner tous &r‚p.",  87}  D‚s‚lectionner tous fichiers
+    {ACTION, "&Inverser s‚lection",        85}  Inverser s‚lection
+    {ACTION, "Exporter liste marqu‚s...",   19}  export list of marked files
+    {ACTION, "Review list of marked...",   12}  review list of marked files/dirs
+}
+
+Mirror
+{
+    {ACTION, "&Chargement...",               66} synchronize local with remote (download)
+    {ACTION, "&Envoi...",                 67} synchronize remote with local (upload)
+    {SWITCH, "Effacer fichiers ne correspondant pas",        68} switch: delete/keep unmatched files
+    {SWITCH, "Inclure &sous r‚pertoires",       69} switch: synchronize subdirs?
+}
+
+Aide
+{
+    {ACTION, "&Aide",                1}  Aide
+    {ACTION, "Aide &g‚n‚rale",       2}  Aide g‚n‚rale
+    {ACTION, "Aide &concise",        3}  Aide courte
+    {ACTION, "&Utiliser les menus",  7}  Utiliser les menus
+    {SEP}
+    {ACTION, "Mise … jour NFTP",           90}  Connexion au site NFTP
+    {ACTION, "A &propos de NFTP...", 6}  Affiche la date de compilation
+}
+
+FTPSearch
+{
+    {ACTION, "&Recherche FTP...", 120} Recherche FTP
+    {ACTION, "&Derniers r‚sultats...", 122}, Affiche les r‚sultats de la derniŠre recherche
+    {ACTION, "&Serveurs...", 121} Definir les serveurs de recherche
+}
+
+Options
+{
+    {SWITCH, "Utiliser proxy",        25}  active/desactive proxy
+    {SWITCH, "Utiliser flags",          23}  Utiliser ou non NLST avec flags
+    {SWITCH, "Voir descriptions",                 34}  voir/cacher descriptions
+    {SWITCH, "Mode Passif",      26} switch passive mode on/off
+    {SWITCH, "Resoudre liens symboliques",  27}  switch symlink resolving on/off
+    {SEP}
+# I suggest next line should be left in English :-}
+    {ACTION, "P&aramŠtres",              16}  Invoque l'‚diteur de nftp.ini
+    {ACTION, "&Language",        91}  select language
+    {ACTION, "&Police...", 93} S‚lection de la police
+    {ACTION, "Enregistrement...",   92}  Entrer les informations d'enregistrement
+}
+
+# SYNTAXE:
+# ---------------------------------------------------------------------
+#
+# - Les lignes vides ou commencant par # sont ignor‚es. La longueur
+#   de ligne est limit‚e … 256 caractŠres;
+#
+# - Ce fichier contient des groupes de menus.
+#   Chaque groupe de menu commence par son nom, seul sur une ligne.
+#   Ensuite une "{" sur une autre ligne, puis les ‚l‚ments (un par ligne).
+#   Enfin une "}". Les d‚limiteurs "{" et "}" doivent ˆtre les seuls
+#   symboles sur la ligne (sans compter l'espace).
+#   L'ordre des groupes est arbitraire, l'ordre des ‚l‚ments dans le
+#   groupe compte.
+#
+# - Le menu "main" est le menu principal; il n'est pas n‚cessaire qu'il
+#   soit le premier groupe du fichier;
+#
+# - Les ‚l‚ments des menus doivent ˆtre sous la forme :
+#
+#      { type , texte , valeur } commentaire
+#
+#   1) "type" peut etre "ACTION" (menu appellant une fonction du programme),
+#   "SEP" (s‚parateur, "texte" et "valeur" sont ignor‚s et peuvent ˆtre
+#   omises) ou "SUBMENU";
+#   2) "texte" est le texte apparaissant … l'‚cran, entre guillemets.
+#   Les guillemets ne sont pas autoris‚s dans le texte. Le raccourci clavier
+#   est symbolis‚ par le "&" devant la lettre et n'est pas sensible … la casse;
+#   3) "valeur" est le chiffre de la fonction associ‚e pour le type ACTION ou
+#   le nom du groupe de menus pour le type SUBMENU.
+#
+#   Tout ce qui suit un "}" de fermeture est ignor‚. On peut ajouter des
+#   espaces pour am‚liorer la lisibilit‚.
+    

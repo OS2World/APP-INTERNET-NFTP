@@ -1,0 +1,192 @@
+#
+# see syntax explanations in english.mnu if interested
+#
+
+main
+{
+    {SUBMENU, "站台(&S)",     Sites}
+    {SUBMENU, "檔案(&F)",     Files}
+    {SUBMENU, "檢視(&V)",      View}
+    {SUBMENU, "傳輸(&T)",  Transfer}
+    {SUBMENU, "選項(&O)",   Options}
+    {SUBMENU, "說明(&H)",      Help}
+}
+
+Sites
+{
+    {ACTION, "書籤(&B)...",            10}  login from bookmarks
+    {ACTION, "紀錄(&H)...",            17}  history
+    {ACTION, "加入書籤(&S)...",        35}  save host/dir as bookmark
+    {SUBMENU, "站台搜尋(&F)",   FTPSearch}
+    {SUBMENU, "密碼(&P)",       Passwords}
+    {SEP}
+    {ACTION, "開啟網址(&U)...",        18}  open URL
+    {ACTION, "登入(&L)...",            11}  login
+    {ACTION, "登出...",                13}  log off
+    {ACTION, "檢查連線(&C)",           22}  send NOOP
+    {ACTION, "送出命令(&E)...",        24}  quote command
+    {SEP}
+    {ACTION, "暫停 (Unix 專用)",      112}  suspend
+#   {ACTION, "Crash",                   9}  crash and burn
+    {ACTION, "結束(&X)...",            14}  exit NFTP
+}
+
+Passwords
+{
+    {ACTION, "修改密碼(&E)...",     28} edit passwords
+    {ACTION, "修改關鍵片語(&K)...", 29} change keyphrase for password encryption
+}
+
+Files
+{
+    {ACTION, "建立目錄(&M)...",                53}  create directory
+    {ACTION, "更改名稱(&E)...",                54}  rename file/directory
+    {ACTION, "刪除(&D)...",                    52}  delete file/dir
+    {ACTION, "修改存取權限(&A)",               79}  change access rights
+    {SEP}
+#   {ACTION, "E&nter directory",               71}  change into dir under cursor
+    {ACTION, "改變目錄(&C)...",                74}  input dir and change to it
+    {ACTION, "跳到根目錄(&O)",                 72}  change to root dir
+    {ACTION, "重讀目錄(&R)",                   70}  re-read directory
+    {ACTION, "儲存目錄列表(&L)...",            45}  save directory listing
+    {ACTION, "改變近端磁碟機(&I)...",          75}  change local drive
+    {ACTION, "計算目錄大小(&S)",               57}  traverse directory and compute its size
+}
+
+View
+{
+    {ACTION, "切換目錄模式(&D)",             32}  switch between raw/parsed modes
+    {ACTION, "控制連線畫面(&C)",             30}  switch between CC and dir
+    {ACTION, "切換遠端/近端(&R)",            31}  switch between local/remote
+    {SWITCH, "分割畫面(&P)",                 37}  make screen look like NC
+    {SWITCH, "顯示檔案時間(&T)",             38}  show/hide file timestamps in panels
+    {SWITCH, "小型狀態(&M)",                 39}  show/hide mini-status field
+    {SEP}
+    {ACTION, "檢視檔案(&V)",                 50}  view w/int viewer
+    {ACTION, "用外部程式檢視檔案(&W)",       51}  view w/ext viewer
+    {ACTION, "載入描述檔(&L)...",            76}  load 00index.txt file
+    {SUBMENU, "排序(&S)",                  Sort}
+    {SEP}
+    {ACTION, "重畫畫面",                     36}  repaint screen
+}
+
+Sort
+{
+    {ACTION, "依檔名排序(&N)",        60}  sort by name
+    {ACTION, "依副檔名排序(&X)",      61}  sort by extension
+    {ACTION, "依大小排序(&S)",        63}  sort by size
+    {ACTION, "依時間排序(&T)",        62}  sort by date
+    {ACTION, "不排序(&U)",            64}  make unsorted
+    {ACTION, "反向排序(&R)",          65}  reverse sort order
+}
+
+Transfer
+{
+    {ACTION, "&Copy...",                   77}  copy between remote/local
+#   {ACTION, "下載(&D)...",                40}  download
+#   {ACTION, "全部下載(&E)...",            42}  d/l from all dirs
+    {ACTION, "輸入檔名下載(&N)...",        44}  d/l by name
+    {ACTION, "使用 &WGET 下載...",           46}  launch wget to retrieve files
+#   {ACTION, "上傳(&U)...",                41}  upload
+#   {ACTION, "Upload e&verything...",      43}  u/l from all dirs
+    {SEP}
+    {SUBMENU, "選擇(&S)",              Select}
+    {SUBMENU, "鏡射(&M)",              Mirror}
+    {SWITCH,  "二進制(&B)",                21}  switch ASCII/BINARY
+    {ACTION,  "顯示資訊(&O)...",           15}  get current status
+    {SEP}
+#   {SWITCH, "Limit throughput",           98}  limit throughput
+    {ACTION, "跳過此檔",                   47}  skip file during transfer
+    {ACTION, "停止傳輸",                   48}  stop transfer
+    {ACTION, "重新傳輸",                   49}  abort and restart transfer
+    {SWITCH, "暫停傳輸",                   58}  pause transfer
+}
+
+Select
+{
+    {ACTION, "選擇/取消選擇(&S)",           82}  select file under cursor
+    {ACTION, "使用遮罩選擇(&M)...",         83}  select by mask
+    {ACTION, "使用遮罩取消選擇(&K)...",     84}  deselect by mask
+    {ACTION, "全部選擇(&A)",                80}  select all files
+    {ACTION, "全部取消選擇(&L)",            81}  deselect all files
+    {ACTION, "取消選擇所有的目錄(&R)",      87}  deselect all files
+    {ACTION, "反向選擇(&I)",                85}  invert selection
+    {ACTION, "輸出已標記的清單...",         19}  export list of marked files
+    {ACTION, "Review list of marked...",   12}  review list of marked files/dirs
+}
+
+Mirror
+{
+    {ACTION, "下載(&D)...",               66} synchronize local with remote (download)
+    {ACTION, "上傳(&U)...",               67} synchronize remote with local (upload)
+    {SWITCH, "刪除不相配的檔案",          68} switch: delete/keep unmatched files
+    {SWITCH, "包含子目錄(&S)",            69} switch: synchronize subdirs?
+}
+
+Help
+{
+    {ACTION, "說明(&H)",             1}  Help
+    {ACTION, "主要說明(&M)",         2}  general help
+    {ACTION, "簡要說明(&C)",         3}  short help
+    {ACTION, "使用選單(&U)",         7}  using menus
+    {SEP}
+    {ACTION, "更新 NFTP",           90}  connect to NFTP site
+    {ACTION, "關於(&A) NFTP...",     6}  displays time of build
+}
+
+FTPSearch
+{
+    {ACTION, "用 FTPSearch 尋找(&F)...", 120} find with FTPSearch
+    {ACTION, "最後搜尋結果(&L)...",    122} display results of last search
+    {ACTION, "伺服器(&S)...",          121} define FTPSearch servers
+}
+
+Options
+{
+    {SWITCH, "使用代理主機",         25}  enable/disable proxy
+    {SWITCH, "使用旗標",           23}  use/disable NLST with flags
+    {SWITCH, "顯示描述",           34}  show/hide descriptions
+    {SWITCH, "被動模式",           26} switch passive mode on/off
+    {SWITCH, "分析符號連結",       27}  switch symlink resolving on/off
+    {SEP}
+    {ACTION, "修改設定(&T)",       16}  invoke editor on nftp.ini
+# I suggest next line should be left in English :-}
+    {ACTION, "&Language",        91}  select language
+    {ACTION, "字形(&F)...", 93} select font for NFTP window
+    {ACTION, "註冊碼...",   92}  enter registration information
+}
+
+# SYNTAX:                        (NB: there is no need to translate it)
+# ---------------------------------------------------------------------
+#
+# - empty lines and lines starting with # are ignored. The line length
+#   is limited to 256 symbols;
+#
+# - this file contains "menu groups" which are actually collections of
+#   menu items, i.e. vertical or horizontal menus/submenus. Each menu
+#   group starts with group name on a separate line, then "{" on a
+#   separate line, then items (one on its own line), then "}". Delimiting
+#   "{" and "}" must be the only symbols (not counting white space)
+#   on the line. The order of groups is arbitrary, the order of items
+#   inside group does matter;
+#
+# - menu group named "main" is a main menu; it is not necessary the first
+#   group in the file;
+#
+# - menu item looks like:
+#
+#      { type , item-text , value } comment
+#
+#   1) "type" can be "ACTION" (real menu item calling some program function),
+#   "SEP" -- menu separator (item-text and value are ignored for separator
+#   and can be omitted), "SWITCH" which is like ACTION but can have checkmark
+#   near it or "SUBMENU";
+#   2) "item-text" is the text appearing on the screen, in the double quotes.
+#   Double quotes are not allowed in the item-text. Hotkey is marked by
+#   ampersand before the letter and is not case sensitive;
+#   3) "value" is a number of associated program function for type=ACTION
+#   or menu group name for type=SUBMENU.
+#
+#   Everything after closing "}" is ignored. Arbitrary amount of white space
+#   can be used to improve readability.
+#

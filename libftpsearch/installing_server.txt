@@ -1,0 +1,138 @@
+
+Installing FTPSearch server software
+------------------------------------
+
+Note: the machine must have official DNS name!
+
+1. Install:
+ - bind
+ - netpbm
+ - gnuplot
+
+2. Get ftp://ftpsearch.rambler.ru/~asv/software/ftpsearch-1.0p9.tar.gz, unpack into the
+'build directory' and build it. Do not delete build directory:
+  FTPSEARCHROOT=/usr/local/ftpsearch ./configure
+  make
+  make install
+(set FTPSEARCHROOT to directory where software will be installed; this directory
+is separate from build directory)
+
+3. Build modified version of gzip
+  - download gzip-1.2.4.tar.gz, and unpack it.
+  - apply the diff in collect/diffs/gzip.diff and compile.
+  - place the resulting binaries gzip and gunzip in the same
+    bin directory as checkenv.pl resides in ($FTPSEARCHROOT/bin).
+
+4. Run 'make setup' in build directory. Sometimes it fails with mysterious
+error 'gethostname does not return fully qualified hostname'. In this case
+create $FTPSEARCHROOT/hostname and write there full hostname of the machine,
+after that rerun 'make setup'. 'Make setup' will also fail on 'genit.pl' if
+local domain lacks machine 'ftp'. Simply proceed to next step.
+
+5. Edit $FTPSEARCHROOT/etc/sites and write there sites to index,
+one site per line.
+
+6. Run $FTPSEARCHROOT/bin/genit.pl and watch messages and
+$FTPSEARCHROOT/etc/log/{gendataset.*|log.*} If something does
+not work correctly, tell me. (This would be long procedure since
+it will fetch listings from sites).
+
+7. Create and edit 'update.sh' in $FTPSEARCHROOT/bin,
+
+-------------
+#!/bin/sh
+
+ftpsearchroot=/ftpsearch     !!!!! MODIFY THIS IF NEEDED
+datasets=$ftpsearchroot/datasets
+
+$ftpsearchroot/bin/genit.pl
+test -f $datasets/data.new/DONE && $ftpsearchroot/bin/change_datasets
+pid=`ps xww | awk '$5 == "search" { print $1 }'`
+if test -n "$pid"
+then
+  kill $pid
+  (date; echo killed search: $pid )>>$ftpsearchroot/logs/restart.log
+  echo killed search: $pid
+else
+  echo search not running
+fi
+---------
+
+'change_datasets.sh' in $FTPSEARCHROOT/bin:
+
+---------
+#!/bin/sh
+
+ftpsearch=/ftpsearch
+mv $ftpsearch/datasets/data $ftpsearch/datasets/data.old
+mv $ftpsearch/datasets/data.new $ftpsearch/datasets/data
+---------
+
+8. Add crontab entry to run update.sh when appropriate
+
+9. Create and edit /usr/local/etc/rc.d/ftpsearch_server.sh:
+
+--------
+#!/bin/sh
+
+FTPSEARCH_HOME=/ftpsearch    !!!! MODIFY IF NEEDED
+FTPSEARCH_USER=asv           !!!! MODIFY IF NEEDED
+
+( su $FTPSEARCH_USER -c $FTPSEARCH_HOME/bin/search_wrap ) &
+#( su $FTPSEARCH_USER -c $FTPSEARCH_HOME/bin/gateway_wrap ) &
+---------
+
+Note that we don't need gateway_wrap since we will be
+running our own WWW clients.
+
+10. Again watch logfiles in $FTPSEARCHROOT/etc/log
+
+***********************************************************************************
+
+Building and installing perl interface DLL for FTPSearch
+--------------------------------------------------------
+
+1. Install SWIG on your machine (perhaps from precompiled FreeBSD
+packages).
+
+2. Set the following variables in your ~/.profile:
+   export C_INCLUDE_PATH=$HOME/include
+   LIBRARY_PATH=$HOME/lib
+They will be used for building the software in user mode, without
+root privileges.
+
+3. Download (or obtain from author) ftpsearch interface package and
+manycode interface package. The contents should look like:
+ftpsearch.zip
+  asvtools/
+  crypto/
+  ftpsearch/
+  manycode/
+  Makefile.inc
+
+4. Build the packages using GNU make ('gmake' on FreeBSD):
+  cd asvtools/src; gmake all install; cd ../..
+  cd crypto; gmake all install; cd ..
+  cd manycode; gmake all install perl5ext; cd ..
+  cd ftpsearch; gmake all install perl5ext; cd ..
+
+5. Set up configuration file /usr/local/apache/lib/perl/FtpSearch/Setup.pm
+or similar. Take it from ftpsearch.rambler.ru and adapt.
+
+5. You have now manycode/{manycode.so, manycode.pm} and
+ftpsearch/{fsearch.so, fsearch.pm} which you will have to
+place into Apache DLL directories, typically:
+   /usr/local/apache/lib/perl/fsearch.so
+   /usr/local/apache/lib/perl/manycode.so
+   /usr/local/apache/lib/perl/FtpSearch/fsearch.pm
+and insert loading statements into
+/usr/local/apache/lib/perl/startup.standalone.pl:
+   use FtpSearch::Setup;  
+   use FtpSearch::fsearch;
+   use ManyCode::manycode;  
+
+***********************************************************************************
+
+Sergey Ayukov <asv@ayukov.com>
+15 Dec 2000
+

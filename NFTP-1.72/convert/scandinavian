@@ -1,0 +1,28 @@
+From wicked@clinet.fi Thu Feb 18 20:29:57 1999
+Date: Wed, 17 Feb 1999 21:28:29 +0200
+From: Teemu Mannermaa <wicked@clinet.fi>
+To: Sergey Ayukov <asv@sai.msu.su>
+Subject: NFTP Finnish language
+
+    [ The following text is in the "iso-8859-1" character set. ]
+    [ Your display is set for the "koi8-r" character set.  ]
+    [ Some characters may be displayed incorrectly. ]
+
+Here are the changes needed for OS/2 NLS/MNU conversion to Linux
+NLS/MNU:
+
+1) Small o with dots: 0x94 hex (148 dec) to 0xF6 hex (246 dec)
+2) Small a with dots: 0x84 hex (132 dec) to 0xE4 hex (228 dec)
+3) Small a with ring: 0x86 hex (134 dec) to 0xE5 hex (229 dec)
+4) Capital O with dots: 0x99 hex (153 dec) to 0xD6 hex (214 dec)
+5) Capital A with dots: 0x8E hex (142 dec) to 0xC4 hex (196 dec)
+6) Capital A with ring: 0x8F hex (143 dec) to 0xC5 hex (197 dec)
+
+These are the three common scandinavian letters in use here in Finland.
+3 and 6 are quite rare nowadays and I don't think they aren't even used
+in NLS/MNU right now. I suspect these conversions are needed for
+Swedish, Norwegian and Danish too but they might also need some extra
+conversion for their local characters (especially Norwegian has some
+strange characters).
+-------
+Wicked Jack, wicked@clinet.fi, http://www.clinet.fi/%7ewicked/

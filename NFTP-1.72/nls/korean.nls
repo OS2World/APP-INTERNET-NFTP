@@ -1,0 +1,1552 @@
+#
+#   Language-specific file for NFTP 1.10+
+#   
+#   Korean
+
+# ------------------------------------- Months --------------------------
+
+{ M_JAN "Jan" } { M_FEB "Feb" } { M_MAR "Mar" } { M_APR "Apr" }
+{ M_MAY "May" } { M_JUN "Jun" } { M_JUL "Jul" } { M_AUG "Aug" }
+{ M_SEP "Sep" } { M_OCT "Oct" } { M_NOV "Nov" } { M_DEC "Dec" }
+
+{ M_HBAR              "Ä" } { M_VBAR              "³" }
+{ M_CROSS             "Å" }
+{ M_FILL1             "°" } { M_FILL2             "±" }
+{ M_FILL3             "²" } { M_FILL4             "Û" }
+{ M_LU                "Ú" } { M_RU                "¿" }
+{ M_LD                "À" } { M_RD                "Ù" }
+{ M_LT                "Ã" } { M_RT                "´" }
+{ M_UT                "Â" } { M_DT                "Á" }
+{ M_PLACEHOLDER       "ú" } { M_MARKSIGN          "*" }
+
+#  --------------------- Help screens --------------------------------------
+
+{ M_HLP_MAIN
+""
+" NFTP                     Copyright (C) Sergey Ayukov 1994-1998"
+""
+" ÇÑ±Û ¹ø¿ª: ÀÌ ÁØÇÏ (smileguy@jayu.sarang.net)."
+" HTML¹®¼­¸¦ º¸½Ã¸é ´õ ¸¹Àº ³»¿ëÀ» º¼ ¼ö ÀÖ½À´Ï´Ù."
+""
+" ±âº»ÀûÀÎ Å°ÀÔ·Â ¸í·É"
+""
+" Shift-H  - Áö±Ý º¸´Â È­¸é. µµ¿ò¸»Àº ÇÏÀÌÆÛÅØ½ºÆ®°¡ ¾Æ´Õ´Ï´Ù."
+" F1       - »óÈ²¿¡ µû¸¥ µµ¿ò¸»"
+" F10      - Á¢¼ÓÀ» Á¾·áÇÏ°í NFTP¸¦ ³¡³¿"
+" Ctrl-K   - Á¢¼ÓÀ» Á¾·áÇÔ"
+" Ctrl-B   - ºÏ¸¶Å© ¸ñ·Ï¿¡¼­ »çÀÌÆ®¿¡ Á¢¼ÓÇÔ"
+" F2       - ¹æ¹®¸ñ·Ï¿¡¼­ »çÀÌÆ®¿¡ Á¢¼ÓÇÔ"
+" Ctrl-L   - »õ·Î¿î »çÀÌÆ®¿¡ ¹«¸í¾¾·Î Á¢¼ÓÇÔ"
+" Ctrl-N   - »õ·Î¿î »çÀÌÆ®¿¡ »ç¿ëÀÚÀÌ¸§/ÆÐ½º¿öµå¸¦ ÀÔ·ÂÇÏ°í Á¢¼ÓÇÔ"
+" Ctrl-W   - ¹öÀü Á¤º¸¸¦ º¸¿©ÁÜ"
+" Ctrl-T   - ASCII/BINARY ¸ðµåÀüÈ¯"
+" Ctrl-J   - È­¸é ´Ù½Ã ±×¸² (Á¢¼Ó ¼­¹öÀÇ µð·ºÅä¸®´Â ´Ù½Ã ÀÐÁö ¾ÊÀ½)"
+" Shift-I  - ¼±ÅÃµÈ ÆÄÀÏ°ú µð·ºÅä¸® °¹¼ö¿Í ¾ç È®ÀÎ"
+" Shift-A  - NO OPERATION ¸í·É º¸³¿ (Á¢¼ÓÀÌ À¯ÁöµÇ¾î ÀÖ´ÂÁö È®ÀÎ)"
+" Shift-F  - NLST¸¦ ÇÃ·¢°ú °°ÀÌ »ç¿ë/»ç¿ë±ÝÁö (±âº»¼³Á¤Àº ÄÑÁü). ¸î¸î"
+"            ¼­¹ö´Â NLST -lLa °°ÀÌ ¾²Áö ¾Ê½À´Ï´Ù. µð·ºÅä¸® ¸ñ·ÏÀ» ±¸ÇÒ"
+"            ¶§ Á¢¼ÓÇÑ ¼­¹ö¿¡¼­ ³¸¼± ¸Þ½ÃÁö¸¦ º¸³»¸é »ç¿ëÇÏ½Ê½Ã¿ä."
+"            ±ÇÇÏÁö´Â ¾Ê½À´Ï´Ù."
+""
+" ÀÌ ¸í·ÉµéÀº °ÅÀÇ ¸ðµç °÷¿¡¼­ »ç¿ë°¡´ÉÇÕ´Ï´Ù. ±×·¸Áö¸¸, ´ëºÎºÐÀÇ"
+" ¸ðµå´Â ´Ù¸¥ Å°¸í·ÉÀ» »ç¿ëÇÏ¹Ç·Î, F1Å°¸¦ ´­·¯ »óÈ²¿¡ ¹Î°¨ÇÑ µµ¿ò¸»À»"
+" º¸´Â °ÍÀ» ÀØÁö ¸¿½Ã´Ù."
+"" }
+
+{ M_HLP_LINEIN
+""
+" ÀÔ·ÂÇÊµå ¼öÁ¤Áß »ç¿ë°¡´ÉÇÑ Å°ÀÔ·Â:"
+""
+" Enter/Esc               - ÀÔ·ÂÈ®ÀÎ/Ãë¼Ò"
+" Left, Right, Home, End  - Ä¿¼­ ÀÌµ¿"
+" Tab, Shift-Tab          - ´ÙÀ½/ÀÌÀü ÇÊµå·Î ÀÌµ¿ (°¡´ÉÇÏ´Ù¸é)"
+" Del, Backspace          - ¹®ÀÚ Áö¿ò"
+" Shift-Ins               - ½Ã½ºÅÛ Å¬¸³º¸µå¿¡¼­ °¡Á®¿È"
+" Ctrl-Ins                - ½Ã½ºÅÛ Å¬¸³º¸µå·Î º¸³¿"
+""
+" ÀÔ·ÂÇÊµå¿¡¼­ ¾Æ¹«·± ÀÔ·ÂÀÌ ¾ø¾úÀ» ¶§ DelÅ°¸¦ ´©¸£¸é ´Ù Áö¿öÁü;"
+" ÆÐ½º¿öµå´Â '*' ¹®ÀÚ·Î Ç¥½ÃµÊ."
+"" }
+
+{ M_HLP_CC
+""
+" Á¢¼Ó °ü¸®Ã¢¿¡¼­ »ç¿ë°¡´ÉÇÑ Å°ÀÔ·Â:"
+""
+" È­»ìÇ¥Å°    - Ã¢ ½ºÅ©·Ñ"
+" Esc         - Á¢¼Ó±â·ÏÀÇ ¸Ç ³¡À¸·Î °¨"
+" Space       - µð·ºÅä¸® º¸±â·Î ¹Ù²Þ"
+" Shift-Q     - ÀÔ·ÂÇÑ ¸í·É ¼­¹ö·Î Á÷Á¢ Àü¼Û"
+" Shift-C     - º¯°æ µð·ºÅä¸® Á÷Á¢ ÁöÁ¤"
+""
+" ¼­¹öÀÇ ÀÀ´äÀº È¸»öÀÔ´Ï´Ù; ³»·ÁÁø ¸í·ÉÀº ¹àÀº ³ì»öÀÌ¸ç"
+" nftpÀÇ Á¤º¸ ¸Þ½ÃÁö´Â ¹àÀº »¡°£»öÀÔ´Ï´Ù."
+" ¹°·Ð ÀÌ »öµéÀº 'nftp.ini'ÆÄÀÏ¿¡¼­ ¼öÁ¤ÇÒ ¼ö ÀÖ½À´Ï´Ù."
+""
+" NFTP´Â Á¢¼Ó °ü¸® ±â·ÏÀ» ³»ÀåÇÏ°í ÀÖ½À´Ï´Ù. Å¬¶óÀÌ¾ðÆ®¿Í"
+" ¼­¹ö°£ÀÇ ¸ðµç Åë½Å ³»¿ëÀ» º¸°í ½ÍÀ¸¸é"
+" 'auto-switch-to-control'ÀÇ °ªÀ» 1·Î ¼³Á¤ÇÏ¸é µË´Ï´Ù."
+" ´ç½ÅÀº ÀÌ°ÍÀ» ÁÁ¾ÆÇÒ ¼öµµ ±×·¸Áö ¾ÊÀ» ¼öµµ ÀÖ½À´Ï´Ù."
+"" }
+
+{ M_HLP_DIR_RAW
+""
+" Á¢¼ÓÇÑ °÷ÀÇ µð·ºÅä¸®ÀÔ´Ï´Ù. Á¢¼ÓÇØ ÀÖÁö ¾ÊÀ¸¸é °ËÀº È­¸é¹Û¿¡"
+" º¼ ¼ö ¾ø½À´Ï´Ù. Á¢¼ÓÇÏ´Â ¹æ¹ýÀº ÀÏ¹ÝÀûÀÎ µµ¿ò¸» (Shift-H) À» º¸½Ã±â"
+" ¹Ù¶ø´Ï´Ù."
+""
+" F3         - Ä¿¼­°¡ À§Ä¡ÇÑ ÆÄÀÏ º¸±â, ³»ÀåµÈ º¸±â±â´É »ç¿ë"
+" Shift-V    - Ä¿¼­°¡ À§Ä¡ÇÑ ÆÄÀÏ º¸±â, ¿ÜºÎ º¸±âÇÁ·Î±×·¥ »ç¿ë"
+""
+" F5         - Ä¿¼­°¡ À§Ä¡ÇÏ°Å³ª ¼±ÅÃµÈ ÆÄÀÏ ¹Þ±â"
+" Ctrl-D     - ¸ðµç µð·ºÅä¸®¿¡ ÀÖ´Â ¼±ÅÃµÈ ¸ðµç ÆÄÀÏ ¹Þ±â"
+" Shift-G    - ÀÌ¸§À» ÁöÁ¤ÇØ¼­ ¹Þ±â (¿¹. µð·ºÅä¸®°¡ ÀÐ±â ºÒ°¡´ÉÇÒ ¶§)"
+" Shift-R    - ÆÄÀÏ/µð·ºÅä¸® ÀÌ¸§¹Ù²Ù±â"
+" F7         - µð·ºÅä¸® ¸¸µé±â (Á¢¼ÓÇÑ °÷¿¡ ±ÇÇÑÀÌ ÀÖÀ» ¶§)"
+" F8         - Ä¿¼­°¡ À§Ä¡ÇÏ°Å³ª ¼±ÅÃµÈ ÆÄÀÏ/µð·ºÅä¸® Áö¿ì±â"
+""
+" Ctrl-R     - µð·ºÅä¸® ´Ù½Ã ÀÐ±â (ÆÄÀÏ ¸ñ·Ï °»½Å)"
+" Shift-O    - Ä¿¼­°¡ À§Ä¡ÇÑ ÆÄÀÏÀÇ ¼³¸í º¸±â"
+""
+" Ctrl-A     - ÇöÀç µð·ºÅä¸®ÀÇ ¸ðµç ÆÄÀÏ ¼±ÅÃÇÏ±â"
+" Ctrl-X     - ÇöÀç µð·ºÅä¸®ÀÇ ¸ðµç ÆÄÀÏ ¼±ÅÃ Ãë¼ÒÇÏ±â"
+" Insert     - Ä¿¼­°¡ À§Ä¡ÇÑ ÆÄÀÏ ¼±ÅÃ/¼±ÅÃÃë¼Ò"
+" +/-        - ÇÊÅÍ·Î ÆÄÀÏ ¼±ÅÃ/¼±ÅÃÃë¼Ò, ¿¹. '*.zip'"
+" *          - ¼±ÅÃ ¹ÝÀü"
+" Ctrl-Y     - ¸ðµç µð·ºÅä¸®ÀÇ ÆÄÀÏ ¼±ÅÃ Ãë¼Ò"
+""
+" È­»ìÇ¥Å°   - Ä¿¼­ ÀÌµ¿ ( ¼öÆò¸»¸²Àº Ctrl-¿ÞÂÊÈ­»ìÇ¥/Ctrl-¿À¸¥ÂÊÈ­»ìÇ¥"
+" \          - ·çÆ® µð·ºÅä¸®·Î ÀÌµ¿"
+" [          - »óÀ§ µð·ºÅä¸®·Î ÀÌµ¿ ('cd ..')"
+" ]          - Ä¿¼­°¡ À§Ä¡ÇØ ÀÖ´Â µð·ºÅä¸®·Î ÀÌµ¿"
+" Enter      - ------ ' ------"
+" Shift-C    - µð·ºÅä¸®¸¦ ÁöÁ¤ÇØ¼­ ÀÌµ¿"
+""
+" Shift-N    - ÀÌ¸§¼øÀ¸·Î µð·ºÅä¸® Á¤·Ä, µð·ºÅä¸®°¡ ¿ì¼±"
+" Shift-X    - È®ÀåÀÚ¼øÀ¸·Î µð·ºÅä¸® Á¤·Ä, µð·ºÅä¸®°¡ ¿ì¼±"
+" Shift-T    - ½Ã°£¼øÀ¸·Î µð·ºÅä¸® Á¤·Ä, µð·ºÅä¸®°¡ ¿ì¼±"
+" Shift-S    - Å©±â¼øÀ¸·Î µð·ºÅä¸® Á¤·Ä, µð·ºÅä¸®°¡ ¿ì¼±"
+" Shift-Y    - Á¤·ÄÇÏÁö ¾ÊÀ½, ±âº»»óÅÂ·Î µ¹¾Æ°¨"
+" Shift-E    - ¿ª¼øÀ¸·Î Á¤·Ä"
+""
+" F4         - Áö±Ý Á¢¼ÓÇÑ °÷À» ºÏ¸¶Å©¿¡ ÀúÀå"
+" Space      - Á¢¼Ó °ü¸®Ã¢À¸·Î ÀüÈ¯"
+" Tab        - ·ÎÄÃ µð·ºÅä¸® º¸±âÃ¢À¸·Î ÀüÈ¯"
+" Ctrl-O     - ÆÄÀÏ ¼³¸í ¼û±â±â/º¸±â ÀüÈ¯ (°¡´ÉÇÏ´Ù¸é)"
+""
+" ÆÄÀÏÀÌ¸§ÀÇ ÀÏºÎ¸¸ ÀÔ·ÂÇÏ¸é NFTP´Â ±×°ÍÀ» Ã£½À´Ï´Ù."
+""
+" ´Ù¸¥ »ç¿ë°¡´ÉÇÑ Å° ¸í·ÉÀº ÀÏ¹ÝÀûÀÎ µµ¿ò¸»¿¡ ÀÖ½À´Ï´Ù. (Shift-H)."
+" µð·ºÅä¸®µµ ¼±ÅÃÇÒ ¼ö ÀÖ½À´Ï´Ù. (ÇÏÀ§µð·ºÅä¸®¿¡ ÀÖ´Â ¸ðµç ÆÄÀÏµµ"
+" ¼±ÅÃµË´Ï´Ù.) µð·ºÅä¸®¸¦ ¹Ù²ãµµ ¼±ÅÃÀº ±×´ë·Î À¯ÁöµË´Ï´Ù. "
+"" }
+
+{ M_HLP_VIEWER
+""
+" ³»ÀåµÈ ¹®¼­ º¸±â±â´É¿¡¼­ »ç¿ë°¡´ÉÇÑ Å°ÀÔ·Â : "
+""
+" È­»ìÇ¥ Å°       - È­¸éÀÌµ¿ (¼öÆòÀÌµ¿µµ °¡´ÉÇÏ´Ù´Â °ÍÀ» ¾Ë¾ÆµÎ¼¼¿ä.)"
+" Ctrl-Left/Right - 10°³ÀÇ ½Éº¼¸¶´Ù ¼öÆòÀ¸·Î ½ºÅ©·ÑµÊ"
+" Esc             - º¸±â±â´É ³¡³¿"
+" Ctrl-F          - ¹®¼­¿¡¼­ Ã£±â"
+" Ctrl-G          - °è¼Ó Ã£±â"
+" Ctrl-W          - ÆÄÀÏ ³»¿ë ÀúÀå"
+""
+" º¸±â±â´ÉÀº ÆÄÀÏÀ» ¸Þ¸ð¸®·Î °¡Á®¿É´Ï´Ù."
+" ¸Å¿ì Å« ÆÄÀÏÀ» º¼ ¶§´Â Á¶½ÉÇÏ½Ã±â ¹Ù¶ø´Ï´Ù."
+"" }
+
+{ M_HLP_LOCAL_PARSED
+""
+" ·ÎÄÃ µð·ºÅä¸®ÀÔ´Ï´Ù."
+""
+" F3         - Ä¿¼­°¡ À§Ä¡ÇÑ ÆÄÀÏ º¸±â, ³»ÀåµÈ º¸±â±â´É »ç¿ë"
+" Shift-V    - Ä¿¼­°¡ À§Ä¡ÇÑ ÆÄÀÏ º¸±â, ¿ÜºÎ º¸±âÇÁ·Î±×·¥ »ç¿ë"
+""
+" F6         - Ä¿¼­°¡ À§Ä¡ÇÏ°Å³ª ¼±ÅÃµÈ ÆÄÀÏ º¸³»±â (°¡´ÉÇÏ´Ù¸é)"
+" Shift-R    - ÆÄÀÏ/µð·ºÅä¸® ÀÌ¸§¹Ù²Ù±â"
+" F7         - µð·ºÅä¸® ¸¸µé±â"
+" F8         - Ä¿¼­°¡ À§Ä¡ÇÑ ÆÄÀÏ/µð·ºÅä¸® Áö¿ì±â"
+" Ctrl-R     - µð·ºÅä¸® ´Ù½Ã ÀÐ±â (ÆÄÀÏ ¸ñ·Ï °»½Å)"
+""
+" Ctrl-A     - ÇöÀç µð·ºÅä¸®ÀÇ ¸ðµç ÆÄÀÏ ¼±ÅÃÇÏ±â"
+" Ctrl-X     - ÇöÀç µð·ºÅä¸®ÀÇ ¸ðµç ÆÄÀÏ ¼±ÅÃ Ãë¼ÒÇÏ±â"
+" Insert     - Ä¿¼­°¡ À§Ä¡ÇÑ ÆÄÀÏ ¼±ÅÃ/¼±ÅÃÃë¼Ò. µð·ºÅä¸®´Â ¼±ÅÃÇÒ ¼ö ¾øÀ½."
+" +/-        - ÇÊÅÍ·Î ÆÄÀÏ ¼±ÅÃ/¼±ÅÃÃë¼Ò, ¿¹. '*.zip'"
+" *          - ¼±ÅÃ ¹ÝÀü"
+""
+" È­»ìÇ¥Å°   - Ä¿¼­ ÀÌµ¿"
+" \          - ·çÆ® µð·ºÅä¸®·Î ÀÌµ¿"
+" [          - »óÀ§ µð·ºÅä¸®·Î ÀÌµ¿ ('cd ..')"
+" ]          - Ä¿¼­°¡ À§Ä¡ÇØ ÀÖ´Â µð·ºÅä¸®·Î ÀÌµ¿"
+" Enter      - ------ ' ------"
+" Shift-C    - µð·ºÅä¸®¸¦ ÁöÁ¤ÇØ¼­ ÀÌµ¿"
+" Shift-Z    - µå¶óÀÌºê ¼±ÅÃ"
+""
+" Shift-N    - ÀÌ¸§¼øÀ¸·Î µð·ºÅä¸® Á¤·Ä, µð·ºÅä¸®°¡ ¿ì¼±"
+" Shift-X    - È®ÀåÀÚ¼øÀ¸·Î µð·ºÅä¸® Á¤·Ä, µð·ºÅä¸®°¡ ¿ì¼±"
+" Shift-T    - ½Ã°£¼øÀ¸·Î µð·ºÅä¸® Á¤·Ä, µð·ºÅä¸®°¡ ¿ì¼±"
+" Shift-S    - Å©±â¼øÀ¸·Î µð·ºÅä¸® Á¤·Ä, µð·ºÅä¸®°¡ ¿ì¼±"
+" Shift-Y    - Á¤·ÄÇÏÁö ¾ÊÀ½, ±âº»»óÅÂ·Î µ¹¾Æ°¨"
+ "Shift-E    - ¿ª¼øÀ¸·Î Á¤·Ä"
+""
+" Space      - Á¢¼Ó °ü¸®Ã¢À¸·Î ÀüÈ¯"
+" Tab        - Á¢¼Ó¼­¹ö µð·ºÅä¸® º¸±âÃ¢À¸·Î ÀüÈ¯"
+""
+" ÆÄÀÏÀÌ¸§ÀÇ ÀÏºÎ¸¸ ÀÔ·ÂÇÏ¸é NFTP´Â ±×°ÍÀ» Ã£½À´Ï´Ù."
+""
+" ´Ù¸¥ »ç¿ë°¡´ÉÇÑ Å° ¸í·ÉÀº ÀÏ¹ÝÀûÀÎ µµ¿ò¸»¿¡ ÀÖ½À´Ï´Ù. (Shift-H)."
+" µð·ºÅä¸®´Â ¼±ÅÃÇÒ ¼ö ¾ø½À´Ï´Ù. µð·ºÅä¸®¸¦ ¹Ù²Ù¸é ¼±ÅÃÀº À¯ÁöµÇÁö ¾Ê½À´Ï´Ù. "
+"" }
+
+{ M_HLP_SHORT
+" NFTP Å°ÀÔ·Â ¸í·É                             [F1 - ´õ ¸¹Àº Á¤º¸]"
+"                                      [Shift-H - ÀÏ¹ÝÀûÀÎ µµ¿ò¸»]"
+" Á¢¼Ó / Á¢¼Ó²÷À½"
+""
+" Ctrl-B - ºÏ¸¶Å© ¸ñ·Ï               Ctrl-L - ¹«¸í¾¾·Î ¿¬°á"
+" F4     - ºÏ¸¶Å© ÀúÀå               Ctrl-N - »ç¿ëÀÚÀÌ¸§/ÆÐ½º¿öµå·Î ¿¬°á"
+" F10    - Á¢¼Ó ²÷°í ³ª°¨            F2     - ¹æ¹®¸ñ·Ï"
+""
+" º¸±â"
+""
+" Tab     - ·ÎÄÃ/Á¢¼Ó¼­¹ö µð·ºÅä¸®   Space  - µð·ºÅä¸®/Á¢¼Ó»óÅÂ"
+" Shift-Z - ·ÎÄÃ µå¶óÀÌºê º¯°æ       Shift-C- ÆÐ½º Á÷Á¢ÀÔ·Â"
+" Shift-N/X/T/S - ÀÌ¸§/È®ÀåÀÚ/½Ã°£/Å©±â ¼øÀ¸·Î Á¤·Ä"
+" ¼Ò¹®ÀÚ¿Í ¼ýÀÚÅ° - ÀÔ·ÂÇÑ ¹®ÀÚ·Î ½ÃÀÛÇÏ´Â ÆÄÀÏ Ã£±â"
+""
+" Àü¼Û"
+""
+" F5     - ÆÄÀÏ ¹Þ±â                 F6      - ÆÄÀÏ º¸³»±â"
+" F3     - ¹®¼­ÆÄÀÏ º¸±â             Ctrl-D  - ¼±ÅÃµÈ ¸ðµçÆÄÀÏ ¹Þ±â"
+" Ins    - ÆÄÀÏ/µð·ºÅä¸® ¼±ÅÃ/Ãë¼Ò   Ctrl-A  - ¸ðµç ÆÄÀÏ ¼±ÅÃ"
+"" }
+
+{ M_HLP_BOOKMARK1
+""
+" ºÏ¸¶Å© Æú´õ"
+""
+" °¢ Æú´õ´Â ¿©·¯°³ÀÇ ºÏ¸¶Å©¸¦ Æ÷ÇÔÇÒ ¼ö ÀÖ½À´Ï´Ù. ¿£ÅÍ³ª ¿À¸¥ÂÊ È­»ìÇ¥Å°·Î"
+" Æú´õ¿¡ µé¾î°¥ ¼ö ÀÖ°í, Esc³ª ¿ÞÂÊ È­»ìÇ¥Å°·Î ³ª¿Ã ¼ö ÀÖ½À´Ï´Ù."
+" È­»ìÇ¥ Å°¸¸À¸·Î ºÏ¸¶Å© ÀüÃ¼¸¦ °Ë»öÇÒ ¼ö ÀÖ½À´Ï´Ù."
+""
+" Ins    : »õ Æú´õ ¸¸µê"
+" Del    : Æú´õ Áö¿ò"
+" Ctrl-E : Æú´õ ÀÌ¸§ ¹Ù²Þ"
+""
+" »õ ºÏ¸¶Å©¸¦ ¸¸µå´Â µ¿¾È¿¡µµ ºÏ¸¶Å© Æú´õ´Â º¸ÀÔ´Ï´Ù. ¿©±â¼­´Â ¿øÇÏ´Â"
+" Æú´õ¸¦ ¼±ÅÃÇÏ°Å³ª InsÅ°·Î »õ·Î¿î °ÍÀ» ¸¸µå´Â °ÍÀ» ÇÒ ¼ö ÀÖ½À´Ï´Ù."
+" ºñ¹Ð¹øÈ£°¡ µé¾î°£ ºÏ¸¶Å© (Áï, ¹«¸í¾¾ ftpÁ¢¼ÓÀÌ ¾Æ´Ñ°æ¿ì)¸¦ ÀúÀåÇÏ´õ¶óµµ"
+" ºñ¹Ð¹øÈ£´Â ÀúÀåµÇÁö ¾Ê½À´Ï´Ù. Á÷Á¢ .bmkÆÄÀÏ¿¡ ºñ¹Ð¹øÈ£¸¦ ³ÖÀ» ¼ö"
+" ÀÖÁö¸¸, ±×°ÍÀÌ º¸¾È»óÀÇ ÇêÁ¡À¸·Î ³²´Â´Ù´Â °ÍÀ» ¾Ë¾Æ¾ß ÇÕ´Ï´Ù. (´©±¸"
+" ¶óµµ ´ç½ÅÀÇ ÄÄÇ»ÅÍ¿¡ Á¢¼ÓÇØ¼­ ºñ¹Ð¹øÈ£¸¦ º¼ ¼ö ÀÖ±â ¶§¹®ÀÔ´Ï´Ù.)"
+""
+" ¸ñ·ÏÀ» º¯°æÇÏ°í ³ª¼­ ÇöÀç Ã¢À» ¹þ¾î³ª¸é, º¯°æµÈ °ÍÀº ÀúÀåµÇ°Å³ª"
+" ¹«½ÃµÇ¾î¾ß ÇÕ´Ï´Ù. ÀúÀåÇÒ °ÍÀÎÁö ¹«½ÃÇÒ °ÍÀÎÁö ¹°¾îº¼ °ÍÀÔ´Ï´Ù."
+" ¸¸¾à NFTP¸¦ µ¿½Ã¿¡ ¿©·¯°³¸¦ ½ÇÇà½ÃÅ² »óÅÂ¶ó¸é ºÏ¸¶Å©ÀÇ ¼öÁ¤Àº"
+" µ¿½Ã¿¡ ÀÏ¾î³ªÁö ¾Ê½À´Ï´Ù."
+"" }
+
+{ M_HLP_BOOKMARK2
+""
+" ºÏ¸¶Å© Æú´õ¾ÈÀÇ ¸ñ·Ï "
+""
+" ¿£ÅÍ¸¦ ´©¸£¸é »çÀÌÆ®°¡ ¼±ÅÃµË´Ï´Ù.(¸»ÇÏÀÚ¸é, Á¢¼ÓÇÑ´Ù´Â °ÍÀÔ´Ï´Ù.)"
+" Esc ³ª ¿ÞÂÊ È­»ìÇ¥Å°´Â Æú´õ¸¦ ¹þ¾î³ª´Â °ÍÀÔ´Ï´Ù. È­»ìÇ¥¸¸À¸·Îµµ"
+" ºÏ¸¶Å©¸¦ °Ë»öÇÒ ¼ö ÀÖ½À´Ï´Ù."
+""
+" Del Å°´Â ºÏ¸¶Å©¸¦ Áö¿ó´Ï´Ù."
+""
+" ºÏ¸¶Å©¸¦ ½±°Ô º¯°æ½ÃÅ³ ¼ö ÀÖ½À´Ï´Ù:"
+" Shift-U : ºÏ¸¶Å©¸¦ À§·Î ¿Ã¸³´Ï´Ù."
+" Shift-D : ºÏ¸¶Å©¸¦ ¾Æ·¡·Î ³»¸³´Ï´Ù."
+" Shift-< : ºÏ¸¶Å©¸¦ ´Ù¸¥ Æú´õ·Î º¸³À´Ï´Ù."
+" Ctrl-E  : ºÏ¸¶Å©¸¦ ¼öÁ¤ÇÕ´Ï´Ù."
+""
+" ¸ñ·ÏÀ» º¯°æÇÏ°í ³ª¼­ ÇöÀç Ã¢À» ¹þ¾î³ª¸é, º¯°æµÈ °ÍÀº ÀúÀåµÇ°Å³ª"
+" ¹«½ÃµÇ¾î¾ß ÇÕ´Ï´Ù. ÀúÀåÇÒ °ÍÀÎÁö ¹«½ÃÇÒ °ÍÀÎÁö ¹°¾îº¼ °ÍÀÔ´Ï´Ù."
+" ¸¸¾à NFTP¸¦ µ¿½Ã¿¡ ¿©·¯°³¸¦ ½ÇÇà½ÃÅ² »óÅÂ¶ó¸é ºÏ¸¶Å©ÀÇ ¼öÁ¤Àº"
+" µ¿½Ã¿¡ ÀÏ¾î³ªÁö ¾Ê½À´Ï´Ù."
+"" }
+
+{ M_HLP_UNDEFINED
+""
+" ÇöÀç È­¸é¿¡ ´ëÇÑ ÇÑ±¹¾î µµ¿ò¸» ¾øÀ½ "
+"" }
+
+{ M_BOOKMARK_FORMAT
+"; ºÏ¸¶Å© Çü½ÄÀº"
+"; ftp.sai.msu.su:21/pub/os2 : »ç¿ëÀÚÀÌ¸§/ÆÐ½º¿öµå/ÇÃ·¢ : ¼³¸í"
+";"
+"; ÀÌ ÆÄÀÏÀº ¾Æ·¡ ±ÔÄ¢À» µû¶ó Á¶½É½º·´°Ô ¼öÁ¤ÇØ¾ß ÇÕ´Ï´Ù:"
+"; - ÄÝ·Ð ¾ç¿·ÀÇ °ø¹éÀº ¸Å¿ì Áß¿äÇÕ´Ï´Ù.;"
+"; - °æ·Î´Â Àý´ë°æ·Î¿©¾ß ÇÕ´Ï´Ù. Áï, '/'·Î ½ÃÀÛÇØ¾ß ÇÕ´Ï´Ù;"
+"; - ¿øÇÑ´Ù¸é 'Æ÷Æ®'´Â »ý·«ÇØµµ µË´Ï´Ù;"
+"; - ¹«¸í¾¾ Á¢¼Ó½Ã '»ç¿ëÀÚÀÌ¸§'¿Í 'ÆÐ½º¿öµå'´Â '*'·Î ´ëÃ¼ÇÒ ¼ö ÀÖ½À´Ï´Ù:"
+";   crydee.sai.msu.su:/pub/comp/os/os2 : */*/flags : SAI OS/2 archive"
+";"
+";" }
+
+#  Bookmarks ----------------------------------------------------------
+
+{ M_CANTOPENBOOKMARKS1
+"Ãß°¡¸¦ À§ÇØ ºÏ¸¶Å© ÆÄÀÏ [%s]¸¦ ¿­ ¼ö ¾ø½À´Ï´Ù." }
+
+{ M_CANTOPENBOOKMARKS2
+"ÀÐ¾îµéÀÌ±â À§ÇØ ºÏ¸¶Å© ÆÄÀÏ [%s]¸¦ ¿­ ¼ö ¾ø½À´Ï´Ù." }
+
+{ M_CANTOPENBOOKMARKS3
+"µ¤¾î ¾²±âÀ§ÇØ ºÏ¸¶Å© ÆÄÀÏ [%s]¸¦ ¿­ ¼ö ¾ø½À´Ï´Ù." }
+
+{ M_NO_BOOKMARKS
+"  ºÏ¸¶Å©¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù. " }
+
+{ M_EMPTY_BOOKMARKSLIST
+"  ºÏ¸¶Å© ¸ñ·ÏÀÌ ºñ¾î ÀÖ½À´Ï´Ù. " }
+
+{ M_DELETE_BOOKMARK
+"  ºÏ¸¶Å© Áö¿ò  "
+"  %s ?  " }
+
+{ M_INSERT_BOOKMARK1
+" »ç¿ëÀÚÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä (¹«¸í¾¾ Á¢¼Ó½Ã´Â ºóÄ­À¸·Î): " }
+
+{ M_INSERT_BOOKMARK2
+" ftp¼­¹ö ÀÌ¸§ÀÌ³ª IP ÁÖ¼Ò¸¦ ÀÔ·ÂÇÏ¼¼¿ä: " }
+
+{ M_INSERT_BOOKMARK3
+" µð·ºÅä¸®¸¦ ÀÔ·ÂÇÏ¼¼¿ä: " }
+
+{ M_CURRENT_BOOKMARKS
+" ºÏ¸¶Å© Æú´õ " }
+
+{ M_BOOKMARKS_CHANGED
+"  ºÏ¸¶Å© Á¤º¸°¡ ¹Ù²î¾ú½À´Ï´Ù.  "
+"  »õ ºÏ¸¶Å© ¸ñ·ÏÀ» ÀúÀåÇÏ½Ã°Ú½À´Ï±î?  " }
+
+#  Prompts ------------------------------------------------------------
+
+{ M_USETAB
+" Tab/Shift-TabÀ¸·Î ÇÊµåµéÀ» ÀÌµ¿ÇÒ ¼ö ÀÖ½À´Ï´Ù. " }
+
+{ M_CHOOSEDRIVE
+"µå¶óÀÌºê ¼±ÅÃ" }
+
+{ M_SELECT_DIRECTORY
+" ½ÃÀÛ µð·ºÅä¸® ¼±ÅÃ (¿£ÅÍÅ°¸¦ ´©¸£¸é ¼±ÅÃ) : " }
+
+{ M_ENTER_VERBATIM_COMMAND
+" Á÷Á¢ Àü¼ÛÇÒ ¸í·ÉÀ» ÀÔ·ÂÇÏ¼¼¿ä. : " }
+
+{ M_MKDIR_ENTER_NAME
+" ¸¸µé·Á°í ÇÏ´Â µð·ºÅä¸® ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä. : " }
+
+{ M_ENTER_FIREWALL_USERID
+" ÆÄÀÌ¾î¿ù »ç¿ëÀÚÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä: " }
+
+{ M_ENTER_FIREWALL_PASSWORD
+" ÆÄÀÌ¾î¿ù ÆÐ½º¿öµå¸¦ ÀÔ·ÂÇÏ¼¼¿ä: " }
+
+{ M_ENTER_USERID
+" »ç¿ëÀÚÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä : " }
+
+{ M_ENTER_PASSWORD
+" ÆÐ½º¿öµå¸¦ ÀÔ·ÂÇÏ¼¼¿ä : " }
+
+{ M_ENTER_HOSTNAME
+" ·Î±×ÀÎ ÇÏ·Á´Â °÷ÀÇ È£½ºÆ®ÀÌ¸§[[:Æ÷Æ®]ÆÐ¾²] ¸¦ ÀÔ·ÂÇÏ¼¼¿ä. : " }
+
+{ M_ENTER_DIRECTORY
+" Á¢¼ÓÇÑ ¼­¹öÀÇ ¹Ù²Ü µð·ºÅä¸® ÀÌ¸§ : " }
+
+{ M_ENTER_SELECT_FILTER
+" ÇÊÅÍ¸¦ ÀÔ·ÂÇÏ¼¼¿ä. : " }
+
+{ M_RENAME_LOCAL_FILE
+" ·ÎÄÃ ÆÄÀÏÀÇ ÀÌ¸§À» ¹Ù²ãÁÖ¼¼¿ä. : " }
+
+#  Pseudo-responses ---------------------------------------------------
+
+{ M_RESP_CANNOT_RESOLVE
+"'%s'¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù." }
+
+{ M_RESP_LOOKING_UP
+"'%s' Ã£´Â Áß" }
+
+{ M_RESP_TRYING_IP
+"'%s'¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù. IP ¹øÈ£·Î ´Ù½Ã ½ÃµµÇØ ÁÖ½Ã±â ¹Ù¶ø´Ï´Ù." }
+
+{ M_RESP_FOUND
+"'%s'¸¦ Ã£¾Ò½À´Ï´Ù." }
+
+{ M_RESP_NO_SOCKET
+"¼ÒÄÏÀ» ¾òÁö ¸øÇØ¼­ Æ÷±âÇÕ´Ï´Ù." }
+
+{ M_RESP_FAILED_TO_CONNECT
+"%u¹ø Æ÷Æ® Á¢¼Ó ½ÇÆÐ" }
+
+{ M_RESP_CONNECTED
+"%u¹ø Æ÷Æ®¿¡ Á¢¼ÓÇß½À´Ï´Ù." }
+
+{ M_RESP_CLOSING
+"Á¢¼Ó °ü¸® ´ÝÀ½" }
+
+{ M_RESP_LOGIN
+"'%s@%s'·Î Á¢¼Ó¿¡ ¼º°øÇß½À´Ï´Ù." }
+
+{ M_RESP_TRANSFER_DONE
+"Àü¼Û ¿Ï·á; Æò±Õ¼Óµµ´Â %u bytes/ÃÊ ÀÔ´Ï´Ù." }
+
+{ M_RESP_INIT_DONE
+"init() ¿Ï·á......" }
+
+{ M_RESP_RETRYING
+"%dÃÊµ¿¾È ±â´Ù¸²... Áß´ÜÇÏ·Á¸é ESC¸¦ Àç½ÃµµÇÏ·Á¸é ¾Æ¹«Å°³ª ´©¸£¼¼¿ä" }
+
+{ M_RESP_RETRY_ABORTED
+"Áß´ÜµÊ." }
+
+{ M_RESP_REGET_ISNT_SUPPORTED
+"ÀÌ¾î ¹Þ±â´Â Áö¿øµÇÁö ¾Ê½À´Ï´Ù; ÆÄÀÏ ¸ðµÎ ¹Þ´Â Áß" }
+
+{ M_RESP_TRANSFER_CANCELLED
+"Àü¼Û Ãë¼ÒµÊ (%s)" }
+
+{ M_RESP_TRANSFER_ERROR
+"Àü¼ÛÁß ¿¡·¯ '%s'" }
+
+#  Questions ----------------------------------------------------------
+
+{ M_TOO_BIG_FOR_INTVIEWER
+" '%s'ÆÄÀÏÀº ²Ï Å®´Ï´Ù. -- %s bytes. "
+" ±×·¡µµ ³»ÀåµÅ ÀÖ´Â º¸±â ±â´ÉÀ¸·Î º¸½Ã°Ú½À´Ï±î? " }
+
+{ M_REALLY_OVERWRITE
+" **** °ãÃÄ¾²±â ****"
+""
+" '%s'ÆÄÀÏÀÌ ÀÌ¹Ì Á¸ÀçÇÕ´Ï´Ù!"
+" Á¢¼ÓÇÑ ¼­¹ö¿¡ ÀÖ´Â °Í°ú Å©±â°¡ °°½À´Ï´Ù. "
+" (·ÎÄÃ ÆÄÀÏ: %d bytes, Á¢¼Ó¼­¹ö ÆÄÀÏ: %d bytes) "
+" ·ÎÄÃÆÄÀÏ¿¡ °ãÃÄ ¾µ±î¿ä?" }
+
+{ M_OVERWRITE_RENAME_CANCEL
+""
+" '%s'ÆÄÀÏÀÌ ÀÌ¹Ì Á¸ÀçÇÕ´Ï´Ù!"
+" Á¢¼ÓÇÑ ¼­¹ö¿¡ ÀÖ´Â °Í°ú Å©±â°¡ °°½À´Ï´Ù. "
+" (·ÎÄÃ ÆÄÀÏ: %d bytes, Á¢¼Ó¼­¹ö ÆÄÀÏ: %d bytes) "
+" Esc - Àü¼Û Ãë¼Ò" }
+
+{ M_OVERWRITE_RENAME_CANCEL2
+""
+" '%s'ÆÄÀÏÀÌ ÀÌ¹Ì Á¸ÀçÇÕ´Ï´Ù!"
+" Á¢¼ÓÇÑ ¼­¹ö¿¡ ÀÖ´Â °Íº¸´Ù Å®´Ï´Ù. "
+" (·ÎÄÃ ÆÄÀÏ: %d bytes, Á¢¼Ó¼­¹ö ÆÄÀÏ: %d bytes) "
+" Esc - Àü¼Û Ãë¼Ò " }
+
+{ M_OVERWRITE_RENAME_CANCEL3
+" ·ÎÄÃÆÄÀÏ¿¡ °ãÃÄ ¾²±â "
+" ·ÎÄÃÆÄÀÏ ÀÌ¸§ ¹Ù²Ù±â " }
+
+{ M_REALLY_REGET
+" **** ÀÌ¾î¹Þ±â ****"
+""
+" '%s'ÆÄÀÏÀÌ ÀÌ¹Ì Á¸ÀçÇÕ´Ï´Ù! "
+" Á¢¼ÓÇÑ ¼­¹ö¿¡ ÀÖ´Â °Íº¸´Ù ÀÛ½À´Ï´Ù. "
+" (·ÎÄÃ ÆÄÀÏ: %d bytes, Á¢¼Ó¼­¹ö ÆÄÀÏ: %d bytes) " }
+
+{ M_REGET_RENAME_CANCEL
+""
+" '%s'ÆÄÀÏÀÌ ÀÌ¹Ì Á¸ÀçÇÕ´Ï´Ù! "
+" Á¢¼ÓÇÑ ¼­¹ö¿¡ ÀÖ´Â °Íº¸´Ù ÀÛ½À´Ï´Ù. "
+" (·ÎÄÃ ÆÄÀÏ: %d bytes, Á¢¼Ó¼­¹ö ÆÄÀÏ: %d bytes) "
+" '°è¼Ó'À» ¼±ÅÃÇÏ¸é ÀÌ¾î¼­ ¹ÞÀ» ¼ö ÀÖ½À´Ï´Ù."
+" Esc - Àü¼Û Ãë¼Ò " }
+
+{ M_REGET_RENAME_CANCEL2
+" °è¼Ó "
+" ·ÎÄÃÆÄÀÏ¿¡ °ãÃÄ ¾²±â "
+" ·ÎÄÃÆÄÀÏ ÀÌ¸§ ¹Ù²Ù±â " }
+
+{ M_REALLY_TRANSFER_FROM
+"    Á¢¼ÓµÈ ¼­¹ö¿¡¼­ ÆÄÀÏÀ» Àü¼Û ¹ÞÀ¸½Ã°Ú½À´Ï±î?    " }
+
+{ M_REALLY_TRANSFER_TO
+"    Á¢¼ÓÇÑ ¼­¹ö·Î ÆÄÀÏÀ» Àü¼ÛÇÏ½Ã°Ú½À´Ï±î?    " }
+
+{ M_REALLY_DELETE
+"    ÆÄÀÏÀ» Áö¿ï±î¿ä?    " }
+
+{ M_REALLY_SAVE_BOOKMARK
+"  µð·ºÅä¸® ÀúÀå                       "
+"  %s %s : %s  "
+"  as a bookmark?  " }
+
+{ M_REALLY_EXIT
+"       NFTP¸¦ ³¡³»½Ã°Ú½À´Ï±î?      " }
+
+{ M_REALLY_LOGOFF
+"  %s ¼­¹öÁ¢¼ÓÀ» ²÷À»±î¿ä?  " }
+
+#  Miscellaneous text strings -----------------------------------------
+
+{ M_WELCOME
+" NFTP%s Shift-H¸¦ ´©¸£½Ã¸é µµ¿ò¸»À» º¼ ¼ö ÀÖ½À´Ï´Ù." }
+
+{ M_DISCONNECTING
+"   %s¿Í Á¢¼Ó ²÷¾îÁü   " }
+
+{ M_EOF_MARK
+""
+" =========== END OF FILE =========== " }
+
+{ M_WRONG_REGCODE
+" nftp.ini¿¡ ÀûÈù µî·ÏÄÚµå°¡ Àß¸øµÇ¾ú½À´Ï´Ù. "
+" ´ç½ÅÀÇ ÀÌ¸§°ú ÄÚµå¸¦ È®ÀÎÇÏ½Ê½Ã¿ä. Áö±Ý ³¡³»½Ã°Ú½À´Ï±î?" }
+
+{ M_RUNNING_UNREGISTERED
+"          Áö±Ý »ç¿ëÇÏ½Ã´Â NFTP´Â µî·ÏµÇÁö ¾Ê¾Ò½À´Ï´Ù. "
+""
+" %dKBytes º¸´Ù Å« ÆÄÀÏÀº Àü¼ÛÇÒ ¼ö ¾ø½À´Ï´Ù. "
+""
+"    NFTP µî·Ï¿¡ ´ëÇÑ ¹®¼­¸¦ º¸½Ã±â ¹Ù¶ø´Ï´Ù."
+""
+"    ÀÌ ¸Þ½ÃÁö¸¦ ¾Èº¸½Ã·Á¸é nftp.ini¿¡¼­ 'registration'¼½¼ÇÀÇ"
+"    'message'¸¦ 0À¸·Î ¼³Á¤ÇÏ½Ã¸é µË´Ï´Ù." }
+
+{ M_CCLINES
+" Á¢¼Ó °ü¸® : %u ÁÙ" }
+
+{ M_BINARY
+"BINARY" }
+
+{ M_ASCII
+"ASCII " }
+
+{ M_TRANSFER_COMPLETED
+"Àü¼ÛÀÌ ³¡³µ½À´Ï´Ù; ¾Æ¹«Å°³ª ´­·¯ÁÖ¼¼¿ä. " }
+
+{ M_HELP_ESC_TO_EXIT
+"  µµ¿ò¸» - µµ¿ò¸»À» ±×¸¸ º¸½Ã·Á¸é EscÅ°¸¦ ´©¸£¼¼¿ä.  " }
+
+{ M_STATUS
+" ÃÑ %5u ÆÄÀÏ, %s Bytes   [%3s]   ¼±ÅÃ %5u ÆÄÀÏ, %s Bytes" }
+
+{ M_STATUS_BIN
+"BIN" }
+
+{ M_STATUS_ASC
+"ASC" }
+
+#  --------------------------------------------------------------------
+#  Fatal errors -------------------------------------------------------
+
+{ M_UNKNOWN_OS
+""
+" Á¢¼ÓÇÑ ¼­¹öÀÇ ¿î¿µÃ¼Á¦¸¦ ¾Ë ¼ö ¾ø½À´Ï´Ù.: "
+" '%s',"
+" Á¢¼Ó Á¾·á... " }
+
+{ M_UNREGISTERED_TRANSFER
+" ¹Ìµî·Ï¹öÀü¿¡¼­´Â %dKBytes º¸´Ù Å« ÆÄÀÏÀº Àü¼ÛÇÒ ¼ö ¾ø½À´Ï´Ù. " }
+
+{ M_INI_BUILD_FAILED
+"nftp.iniÆÄÀÏÀ» ÀÐ°Å³ª º¯°æÇÒ ¼ö ¾ø½À´Ï´Ù."
+"ÀÌÀü ¹öÀüÀÇ NFTPD-OPT.EXE¿Í NFTP.EXEÀÇ °æ·Î¸¦ È®ÀÎÇØÁÖ½Ã±â ¹Ù¶ø´Ï´Ù." }
+
+{ M_EMAIL_NOT_SET
+"NFTP¸¦ ½ÇÇàÇÏ±â Àü¿¡ nftp.ini¸¦ ¼öÁ¤ÇØÁÖ½Ã±â ¹Ù¶ø´Ï´Ù. "
+"Àû¾îµµ ´ç½ÅÀÇ e-mail ÁÖ¼Ò´Â Àû¾îÁÖ¼Å¾ß ÇÕ´Ï´Ù." }
+
+{ M_CONNECTION_LOST
+"     Á¢¼Ó Á¾·á     " }
+
+{ M_NO_PASV_NOFIREWALLING
+" ÀÌ FTP¼­¹ö´Â PASV¸í·ÉÀ» Áö¿øÇÏÁö ¾Ê°í ÆÄÀÌ¾î¿ù µÚÂÊ¿¡¼­µµ Á¢±ÙÇÒ ¼ö ¾ø½À´Ï´Ù. " }
+
+{ M_NO_PASV
+" ÀÌ FTP¼­¹ö´Â PASV¸í·ÉÀ» Áö¿øÇÏÁö ¾Ê½À´Ï´Ù. "
+" 'use-PASV-mode'¸¦ 0À¸·Î ¼³Á¤ÇÏ½Ã±â ¹Ù¶ø´Ï´Ù. " }
+
+{ M_CANT_CREATE_SEM
+" Ä¡¸íÀûÀÎ ¿¡·¯: ¼¼¸¶Æ÷¾î¸¦ ¸¸µé ¼ö ¾ø½À´Ï´Ù. " }
+
+{ M_INI_UNREADABLE
+""
+"nftp.ini¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù; Áß´ÜµÊ" }
+
+#  Transient messages -------------------------------------------------
+
+{ M_SENDING_VERBATIM_COMMAND
+"   Á¢¼Ó ¼­¹ö¿¡ ¸í·ÉÀ» º¸³»´Â Áß...   " }
+
+{ M_PARSING_LISTING
+"   µð·ºÅä¸® ¸ñ·Ï ÆÄ½ÌÁß...   " }
+
+{ M_MKDIR_CREATING
+"   Á¢¼Ó ¼­¹ö¿¡ µð·ºÅä¸® ¸¸µê...   " }
+
+{ M_GOING_ROOT
+"   Á¢¼Ó ¼­¹öÀÇ ·çÆ® µð·ºÅä¸®·Î ÀÌµ¿...   " }
+
+{ M_GOING_UP
+"   Á¢¼Ó ¼­¹öÀÇ »óÀ§ µð·ºÅä¸®·Î ÀÌµ¿...   " }
+
+{ M_CHANGING_DIR
+"   Á¢¼Ó ¼­¹ö¿¡¼­ µð·ºÅä¸® ÀÌµ¿...   " }
+
+{ M_SENDING_NOOP
+"   NO OPERATION ¸í·É Àü¼ÛÁß...   " }
+
+{ M_QUERYING_DIR
+"   Á¢¼Ó ¼­¹ö¿¡ ÇöÀç µð·ºÅä¸® ¹°¾îº½...   " }
+
+{ M_RETRIEVING_FILELIST
+"   µð·ºÅä¸® ¸ñ·Ï °¡Á®¿È...   " }
+
+#  nftp-opt  defines -------------------------------------------------
+
+{ M_FATAL_LOADING_NFTP_INI
+""
+"nftp.ini ÆÄÀÏ ·ÎµùÁß Ä¡¸íÀûÀÎ ¿¡·¯; Áß´ÜµÊ" }
+
+{ M_WRONG_KEYNAME
+"Àß¸øµÈ Å° ÀÌ¸§: [%s]"
+"" }
+
+{ M_KEYDEF_ERRORS
+"Å° Á¤ÀÇ ÀÛ¾÷Áß %d°³ÀÇ ¿¡·¯ °ËÃâµÊ "
+"¾Æ¹« Å°³ª ´©¸£¼¼¿ä..." }
+
+{ M_KEYNAMES_WELCOME
+"Esc¸¦ ´©¸£¸é ³ª°¨, ´Ù¸¥ Å°´Â ÀÌ¸§À» º¼ ¼ö ÀÖ½À´Ï´Ù."
+"¾Æ¹« °Íµµ º¸ÀÌÁö ¾ÊÀ¸¸é Å° Á¶ÇÕÀº ¾Æ¹«°Íµµ »ý¼ºµÇÁö ¾Ê¾Ò°Å³ª"
+"¿î¿µÃ¼Á¦¿¡¼­ °¡·ÎÃ¤´Â °ÍÀÔ´Ï´Ù."
+""
+"ÄÚµå :         :" 
+"" }
+
+{ M_NO_TEXT
+" ÀÌ ¸Þ½ÃÁö¿¡´Â ¾Æ¹«·± ³»¿ëµµ ¾ø½À´Ï´Ù. "
+" ¾Æ¸¶µµ ÇÑ±¹¾î·Î º¯È¯µÇÁö ¾Ê¾Ò°Å³ª NFTP Á¦ÀÛÀÚ°¡ ÀØÀº ¸ð¾çÀÔ´Ï´Ù. " }
+
+{ M_CANT_DELETE
+" '%s'¸¦ Áö¿ï ¼ö ¾ø½À´Ï´Ù. " }
+
+{ M_ENTER_LOCAL_DIRECTORY
+" ·ÎÄÃ µå¶óÀÌºê/µð·ºÅä¸® º¯°æ : " }
+
+{ M_REALLY_TRANSFER_FROM_ALLDIRS
+" %d°³ÀÇ µð·ºÅä¸®¾È¿¡ %d°³ÀÇ ÆÄÀÏÀÌ ¹Þ±âÀ§ÇØ ¼±ÅÃµÇ¾î ÀÖ½À´Ï´Ù. "
+" ÀüÃ¼ Å©±â´Â %s bytesÀÔ´Ï´Ù. °è¼Ó ÇÏ½Ã°Ú½À´Ï±î? " }
+
+{ M_BYTES_RECEIVED
+"     %7d bytes ¹ÞÀ½"
+"             ¸ØÃß·Á¸é ESCÅ°¸¦ ´©¸£¼¼¿ä.    " }
+
+{ M_BYTES_REMAIN
+""
+"     %7d bytes ¹ÞÀ½"
+"     %7d bytes ³²À½"
+"             ¸ØÃß·Á¸é ESCÅ°¸¦ ´©¸£¼¼¿ä.    " }
+
+{ M_YES
+"  ¿¹  " }
+
+{ M_NO
+"  ¾Æ´Ï¿À   " }
+
+{ M_OK
+"   È®ÀÎ   " }
+
+{ M_ENTER_SEARCHSTRING
+" Ã£À¸·Á´Â ¹®ÀÚ¿­À» ÀÔ·ÂÇÏ¼¼¿ä: " }
+
+{ M_ENTER_FILENAME_SAVE
+" ÀúÀåÇÒ ÆÄÀÏÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä: " }
+
+{ M_CANNOT_OPEN
+" %sÆÄÀÏÀ» ¿­ ¼ö ¾ø½À´Ï´Ù. " }
+
+{ M_FILE_SAVED
+"        ÆÄÀÏ ÀúÀåµÊ        " }
+
+{ M_LISTING_HEADER
+"¼­¹ö      : %s"
+"µð·ºÅä¸®  : %s"
+"" }
+
+{ M_LISTING_FOOTER
+""
+"ÆÄÀÏ %d°³, ÃÑ %s bytes" }
+
+{ M_LISTING_SAVED
+"    ¸ñ·ÏÀÌ ÀúÀåµÇ¾ú½À´Ï´Ù.    " }
+
+{ M_ENTER_RETRIEVE_AS
+" Retrieve file as: " }
+
+{ M_ENTER_LISTING_FILENAME
+" ¸ñ·ÏÀ» ÀúÀåÇÒ ÆÄÀÏÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä. : " }
+
+{ M_ENTER_NEWNAME
+" ÆÄÀÏÀÌ¸§ ¹Ù²Ù±â: " }
+
+{ M_ENTER_UPLOAD_AS
+" ¾÷·ÎµåÇÒ ÆÄÀÏÀÌ¸§: " }
+
+{ M_RENAME_FAILED
+" '%s'¿¡¼­ '%s'·Î ÆÄÀÏÀÌ¸§À» ¹Ù²ÙÁö ¸øÇß½À´Ï´Ù. " }
+
+{ M_QUICK_SEARCH
+" ºü¸¥ Ã£±â: %s " }
+
+{ M_CANT_ACCESS_DRIVE
+" %c: µå¶óÀÌºê¿¡ Á¢±ÙÇÏÁö ¸øÇß½À´Ï´Ù. " }
+
+{ M_DIRECTORY_DOESNT_EXIST
+" '%s' µð·ºÅä¸®´Â Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù. " }
+
+{ M_BAD_BOOKMARK_ENTRY
+" ºÏ¸¶Å© ¸ñ·Ï "
+" %s "
+" ¿¡¼­ ¹ß»ýÇÑ ¿À·ù¸¦ ¹«½ÃÇÕ´Ï´Ù. " }
+
+{ M_DEFAULT_BMK_FOLDER
+"ÀÏ¹ÝÀûÀÎ »çÀÌÆ® (±âº»ÀûÀ¸·Î »ý¼ºµÊ)" }
+
+{ M_ENTER_DESC
+" ¼³¸íÀ» ÀÔ·ÂÇÏ¼¼¿ä. : " }
+
+{ M_FOLDER_TITLE
+" Æú´õ : %s " }
+
+{ M_DELETE_BOOKMARK1
+"        ºÏ¸¶Å©¸¦ Áö¿ì½Ã°Ú½À´Ï±î?        " }
+
+{ M_NAME_FOLDER
+" »õ·Î ¸¸µé Æú´õÀÇ ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä. " }
+
+{ M_DELETE_NONEMPTY_FOLDER
+" '%s' "
+" ºñ¾î ÀÖÁö ¾ÊÀº Æú´õ¸¦ Áö¿ì½Ã°Ú½À´Ï±î? " }
+
+{ M_ENTER_FOLDER_TITLE
+" Æú´õÀÇ Á¦¸ñÀ» ÀÔ·ÂÇÏ¼¼¿ä : " }
+
+{ M_SELECT_FOLDER
+" ºÏ¸¶Å©°¡ µé¾î°¥ Æú´õ¸¦ ¼±ÅÃÇÏ¼¼¿ä. " }
+
+{ M_FILE_TO_DOWNLOAD
+" ¹ÞÀ» ÆÄÀÏ : " }
+
+{ M_CANT_CREATE_DIRECTORY
+"'%s' µð·ºÅä¸®¸¦ ¸¸µé ¼ö ¾ø½À´Ï´Ù." }
+
+{ M_REREAD_REMOTE_DIR
+" Á¢¼ÓÇÑ ¼­¹öÀÇ µð·ºÅä¸® ³»¿ëÀ» ´Ù½Ã ÀÐ¾î¿À°Ú½À´Ï±î? " }
+
+{ M_LOGOFF_MARKED
+" µð·ºÅä¸® %d°³¿¡¼­ ÆÄÀÏ %d°³°¡ ¼±ÅÃµÇ¾î ÀÖ½À´Ï´Ù. "
+" ÀüÃ¼ Å©±â´Â %s bytesÀÔ´Ï´Ù. "
+" Á¤¸»·Î Á¢¼ÓÀ» ²÷À¸½Ã°Ú½À´Ï±î? " }
+
+{ M_CANT_LOGIN
+" %s¿¡ Á¢¼Ó ÇÒ ¼ö ¾ø½À´Ï´Ù. " }
+
+{ M_FILE_NOT_FOUND
+" '%s' ÆÄÀÏÀ» ¼­¹ö¿¡¼­ Ã£À» ¼ö ¾ø½À´Ï´Ù. " }
+
+{ M_TRANSFER_FAILED
+" '%s' Àü¼Û¿¡ ½ÇÆÐÇß½À´Ï´Ù. " }
+
+{ M_PROXY_ISNT_SPECIFIED
+"  ÆÄÀÌ¾î¿ù ÇÁ¶ô½Ã È£½ºÆ®°¡ NFTP.INI¿¡ ÁöÁ¤µÇ¾î ÀÖÁö ¾Ê½À´Ï´Ù.  " }
+
+{ M_NOT_CONNECTED
+"Á¢¼Ó ¾ÈµÊ" }
+
+{ M_INCORRECT_FIREWALL
+" Àß¸øµÈ ÆÄÀÌ¾î¿ù ÇüÅÂ ÁöÁ¤ : %d " }
+
+{ M_UNKNOWN_SERVER_OS
+" °æ°í: ftp ¼­¹öÀÇ ¿î¿µÃ¼Á¦ ¾Ë ¼ö ¾øÀ½: "
+" '%s'; "
+" NFTP´Â ¸ñ·Ï ÆÄ½Ì¿¡ ½ÇÆÄÇÒ Áöµµ ¸ð¸§. " }
+
+{ M_CONNECTING
+"%s¿¡ Á¢¼ÓÁß... " }
+
+{ M_CANNOT_RENAME
+" '%s'ÆÄÀÏÀ» '%s'·Î ÀÌ¸§À» ¹Ù²ÙÁö ¸øÇß½À´Ï´Ù. " }
+
+{ M_DOWNLOADING
+"%s - ÆÄÀÏ ¹Þ´Â Áß..." }
+
+{ M_CANT_OPEN_FOR_WRITING
+" '%s'ÆÄÀÏÀ» ¿­ ¼ö ¾ø½À´Ï´Ù. " }
+
+{ M_CHANGING_DIRECTORY
+"   µð·ºÅä¸® º¯°æ :   "
+"   '%s'   " }
+
+{ M_CANT_OPEN_FOR_READING
+" '%s'ÆÄÀÏÀ» ¿­ ¼ö ¾ø½À´Ï´Ù. " }
+
+{ M_CANT_WRITE_LOGFILE
+" °æ°í: ·Î±× ÆÄÀÏ '%s'¿¡ ¾µ ¼ö ¾ø½À´Ï´Ù. " }
+
+{ M_CANT_GUESS_CURDIR
+" Á¢¼ÓÇÑ ¼­¹öÀÇ ÇöÀç µð·ºÅä¸®¸¦ ¾Ë¾Æ³¾ ¼ö ¾ø½À´Ï´Ù. " }
+
+{ M_CANT_READ_FILE
+" '%s'ÆÄÀÏÀ» ÀÐÀ» ¼ö ¾ø½À´Ï´Ù. " }
+
+{ M_UPLOADING
+"%s - º¸³»´Â Áß..." }
+
+{ M_ALREADY_BOOKMARKED
+" '%s' »çÀÌÆ®´Â ÀÌ¹Ì ºÏ¸¶Å©¿¡ ÀúÀåµÅ ÀÖ½À´Ï´Ù. "
+" ('%s' µð·ºÅä¸®). ±×·¡µµ Ãß°¡ÇÏ½Ã°Ú½À´Ï±î? " }
+
+{ M_EDIT1
+"È£½ºÆ®ÀÌ¸§[:Æ÷Æ®]µð·ºÅä¸®" }
+
+{ M_EDIT2
+"»ç¿ëÀÚÀÌ¸§/ÆÐ½º¿öµå/ÇÃ·¢" }
+
+{ M_EDIT3
+"»çÀÌÆ® ¼³¸í" }
+
+{ M_CONNECTION_OK
+"       ¿¬°á µÇ¾î ÀÖÀ½        " }
+
+{ M_MARKED_STATISTICS
+"    %d°³ÀÇ µð·ºÅä¸®¿¡ %d°³ÀÇ ÆÄÀÏ; ÃÑ %s bytes    " }
+
+#  ---------------------------------------------------------- new in 1.10
+
+{ M_STARTING_TRANSFER
+"   Àü¼Û ½ÃÀÛ...   " }
+
+{ M_KEEP_TREE_INTACT
+" %d°³ÀÇ ÇÏÀ§ µð·ºÅä¸®¿¡ %d°³ÀÇ ÆÄÀÏÀÌ ¼±ÅÃµÇ¾î ÀÖ½À´Ï´Ù. "
+" ÀüÃ¼ Å©±â´Â %s bytesÀÔ´Ï´Ù. "
+""
+" Àü¼ÛÁß¿¡ µð·ºÅä¸® ±¸Á¶¸¦ À¯ÁöÇÏ°Ú½À´Ï±î? " }
+
+{ M_KEEP_TREE2
+" ÇÏÀ§µð·ºÅä¸® À¯Áö "
+"    ÆÄÀÏ ¸ðÀ¸±â    " }
+
+{ M_OVERWRITE_RENAME_CANCEL4
+" ·ÎÄÃÆÄÀÏ¿¡ °ãÃÄ¾²±â "
+" ·ÎÄÃÆÄÀÏ ÀÌ¸§ ¹Ù²Ù±â "
+" °Ç³Ê¶Ü " }
+
+{ M_REGET_RENAME_CANCEL5
+" °è¼Ó "
+" ·ÎÄÃÆÄÀÏ¿¡ °ãÃÄ¾²±â "
+" ·ÎÄÃÆÄÀÏ ÀÌ¸§ ¹Ù²Ù±â "
+" °Ç³Ê¶Ü " }
+
+{ M_RESP_BIND_FAILED
+"³×Æ®¿÷ ¿¡·¯ (bind() ¿À·ù)" }
+
+{ M_RESP_LISTEN_FAILED
+"³×Æ®¿÷ ¿¡·¯ (listen() ¿À·ù)" }
+
+{ M_RESP_GETSOCKNAME_FAILED
+"³×Æ®¿÷ ¿¡·¯ (getsockname() ¿À·ù)" }
+
+{ M_RESP_CANNOT_CONNECT
+"µ¥ÀÌÅ¸ Àü¼ÛÀ» ÇÏ±â À§ÇÑ Á¢¼ÓÀ» ÇÒ ¼ö ¾ø½À´Ï´Ù." }
+
+{ M_RESP_CONNECTION_NOT_ESTABLISHED
+"¼­¹ö¿Í ¿¬°áÀÌ ¾ÈÁ¤ÀûÀÌÁö ¸øÇÕ´Ï´Ù." }
+
+{ M_RESP_TRANSFER_SKIPPED
+"`%s' ÆÄÀÏ Ãë¼ÒµÊ" }
+
+{ M_WALK_TREE
+" '%s' "
+" µð·ºÅä¸®ºÎÅÍ ¸ðµÎ ¼±ÅÃÇÏ°Ú½À´Ï±î? " }
+
+{ M_NO_MARKED_FILES
+" ÇÏÀ§µð·ºÅä¸® ¾È¿¡ ¼±ÅÃµÈ ÆÄÀÏ ¾øÀ½. " }
+
+{ M_HAVENT_BEEN_CONNECTED
+"Á¢¼ÓÇÑ Àû ¾øÀ½" }
+
+{ M_DIRECTORY_LISTING
+"µð·ºÅä¸® ¸ñ·Ï" }
+
+{ M_LARGE_INDEX_FILE
+"  ÁÖÀÇ: '%s'ÆÄÀÏÀº %s bytes Å©±âÀÇ ¼³¸íÀ» °¡Áö°í ÀÖÀ½  "
+"  ±×·¡µµ ¹ÞÀ¸½Ã°Ú½À´Ï±î?  " }
+
+{ M_LOAD_DESCRIPTIONS
+" '%s'ÀÇ ¼³¸íÀ» ºÒ·¯¿Ã±î¿ä? " }
+
+{ M_CANT_USE_DIR_AS_INDEX_FILE
+" '%s' µð·ºÅä¸®¿¡¼­ ¼³¸íÀ» ºÒ·¯¿Ã ¼ö ¾ø½À´Ï´Ù. "
+" º¸Åë ÆÄÀÏ¿¡ Ä¿¼­¸¦ ¿Å°Ü ³õÀ¸½Ê½Ã¿ä. " }
+
+{ M_RESP_CONNECTING
+"%s¿¡ Á¢¼ÓÁß..." }
+
+{ M_DOWNLOADING1
+"%s - DL %lu%% at %.2f KB/s" }
+
+{ M_UPLOADING1
+"%s - UL %lu%% at %.2f KB/s" }
+
+{ M_DESC_DOWNLOAD_OPTIONS
+"  ¿¹  "
+"  ¾Æ´Ï¿À   "
+" Never " }
+
+# ----------------------------------------- new in 1.21 -------------
+
+{ M_RESP_CANT_OPEN
+"%s ÆÄÀÏÀ» ¿­ ¼ö ¾ø½À´Ï´Ù." }
+
+{ M_NO_EMAIL_ADDRESS
+""
+"°æ°í: e-mail ÁÖ¼Ò°¡ %s ÆÄÀÏ¿¡ ÁöÁ¤µÇÁö ¾Ê¾Ò½À´Ï´Ù."
+"" }
+
+{ M_GUESSED_EMAIL
+"%s¸¦ ¹«¸í¾¾ Á¢¼Ó½Ã¿¡ ÆÐ½º¿öµå·Î »ç¿ëÇÔ."
+"ENTER¸¦ ´©¸£¸é °è¼ÓµÊ..."
+"" }
+
+{ M_CANT_GUESS_EMAIL
+"È£½ºÆ®³ª »ç¿ëÀÚÀÌ¸§À» Ã£À» ¼ö ¾ø½À´Ï´Ù;"
+"%sÆÄÀÏ¿¡ ¿Ã¹Ù¸¥ e-mail ÁÖ¼Ò¸¦ ³Ö¾î ÁÖ½Ã±â ¹Ù¶ø´Ï´Ù."
+"¹«¸í¾¾ ftp·Î±×ÀÎ½Ã¿¡ »ç¿ëÇÒ °ÍÀÔ´Ï´Ù."
+"" }
+
+{ M_INI_CONFIG_VERSION
+""
+"´ç½ÅÀÇ ÇöÀç ¼³Á¤ÆÄÀÏÀº %sÀÌ°í ¹öÀüÀº %sÀÔ´Ï´Ù."
+"NFTP ½ÇÇàÆÄÀÏ ¹öÀüÀº %sÀÔ´Ï´Ù." 
+"" }
+
+{ M_INI_CANT_FIND_NFTP_I
+"nftp.iniÆÄÀÏÀ» ¾÷µ¥ÀÌÆ®ÇÏ±â À§ÇÑ nftp.iÆÄÀÏÀ»"
+"`%s' ¶Ç´Â `%s'¿¡¼­ Ã£À» ¼ö ¾ø½À´Ï´Ù!"
+"" }
+
+{ M_INI_UPDATE
+"Going to update   `%s'"
+"from              `%s'."
+"½ÃÀÛÇÒ±î¿ä? [Ynq]" }
+
+{ M_INI_UPDATING
+""
+"%s¸¦ %s·Î °»½Å..."
+"" }
+
+{ M_INI_CANT_OPEN_READ
+"%s¸¦ ¿­ ¼ö ¾ø½À´Ï´Ù."
+"" }
+
+{ M_INI_CANT_OPEN_WRITE
+"%s¸¦ ¿­ ¼ö ¾ø½À´Ï´Ù."
+"" }
+
+{ M_INI_WRONG_ENTRY
+"¿¡·¯ -- ³»¿ëÀÌ ¼½¼Ç ¹Û¿¡ ÀÖÀ½:"
+"%s" }
+
+{ M_INI_CANT_RENAME
+"`%s'¸¦ `%s'·Î ÀÌ¸§À» ¹Ù²Ü ¼ö ¾ø½À´Ï´Ù."
+"" }
+
+{ M_INI_BACKUP
+""
+"%sÀÇ ¹é¾÷Àº"
+"%s·Î ÀúÀåµÇ¾ú½À´Ï´Ù."
+"" }
+
+{ M_INI_UPDATING_ENTRY
+"°»½Å: %s"
+"" }
+
+{ M_INI_FINISHED
+""
+"°»½ÅÀÌ ¸ðµÎ ³¡³µ½À´Ï´Ù; ENTER¸¦ ´©¸£¼¼¿ä..." }
+
+# ----------------------------------------- new in 1.22 -------------
+
+{ M_RESP_CANT_CREATE_DIRECTORY
+"'%s' µð·ºÅä¸®¸¦ ¸¸µé ¼ö ¾ø½À´Ï´Ù." }
+
+{ M_INFORMATION1
+" µð·ºÅä¸® %d°³ ÆÄÀÏ %d°³; ÃÑ %s bytes "
+""
+" ÇöÀç URL: "
+" %s "}
+
+{ M_INFORMATION2
+" %d°³ÀÇ µð·ºÅä¸®¿¡ %d°³ÀÇ ÆÄÀÏ; ÀüÃ¼ Å©±â %s bytes "
+""
+" ÇöÀç URLÀ» Å¬¸³º¸µå¿¡ º¹»çÇÏ½Ã°Ú½À´Ï±î? "
+" %s "}
+
+{ M_HLP_HISTORY
+""
+" ¹æ¹®Çß´ø »çÀÌÆ®¿Í µð·ºÅä¸®ÀÇ ¹æ¹® ¸ñ·Ï"
+""
+" °¡Àå ÃÖ±Ù¿¡ ¹æ¹®Çß´ø °÷ÀÌ ¸ñ·ÏÀÇ Ã³À½ÀÔ´Ï´Ù. ¸ñ·Ï ÆÄÀÏÀº"
+" DNSÄ³½¬¸¦ Áö¿øÇÕ´Ï´Ù. (IP ÁÖ¼Òµµ °°ÀÌ ±â·ÏµË´Ï´Ù.)"
+" ¸ñ·ÏÆÄÀÏ¿¡¼­ »ç¿ëÀÚ ÀÌ¸§¿·¿¡ º°Ç¥(*)´Â ÆÐ½º¿öµå°¡ ÇÊ¿äÇÏ´Ù´Â °ÍÀÔ´Ï´Ù."
+" »ç¿ëÀÚ ÀÌ¸§ÀÌ ¾øÀ¸¸é ¹«¸í¾¾ Á¢¼Ó»çÀÌÆ®ÀÔ´Ï´Ù. ÇÃ·¢Àº »ç¿ëÀÚ ÀÌ¸§µÚ¿¡"
+" ¿Ã ¼ö ÀÖ½À´Ï´Ù. (ÇÃ·¢¿¡ ´ëÇØ¼­´Â FAQ¸¦ º¸¼¼¿ä.)"
+""
+" ¹æ¹®¸ñ·ÏÀÇ ÇÏÀ§½Ã½ºÅÛÀº nftp.iniÀÇ ¼³Á¤¿¡ µû¶ó ´Ù¸¨´Ï´Ù."
+" »çÀÌÆ®ÀÇ °¹¼ö¿Í »çÀÌÆ®¸¶´Ù º¸Á¸ÇÒ µð·ºÅä¸® °¹¼ö¸¦ ¼³Á¤ÇÒ ¼ö ÀÖ½À´Ï´Ù."
+" °ü°è¾ø°í Áßº¹µÈ ¸ñ·ÏÀº ¹æ¹®¸ñ·ÏÃ¢À» ¿­¶§ Á¦°ÅµË´Ï´Ù."
+" NFTP´Â »çÀÌÆ®ÀÇ ºñ¹Ð¹øÈ£µµ ÀúÀåÇÒ ¼ö ÀÖ½À´Ï´Ù. (¾ÏÈ£È­µÇÁö¸¸ º¸¾È¼ºÀÌ"
+" ¾ø´Â ÇüÅÂ·Î ÀúÀåµË´Ï´Ù.) NFTP´Â ¹æ¹®¸ñ·Ï ÆÄÀÏÀÇ ¹æ¹®Çß´ø µð·ºÅä¸®¸¦"
+" Áö¿ö¹ö¸± ¼öµµ ÀÖ½À´Ï´Ù."
+""
+" °Ë»öÀº ºÏ¸¶Å©Ã¢¿¡¼­¿Í ºñ½ÁÇÕ´Ï´Ù. ¼±ÅÃÇÑ ¼­¹ö¿¡ µé¾î°¡°Å³ª ¸ñ·ÏÀ» È°¼ºÈ­"
+" ½ÃÅµ´Ï´Ù; Esc Å°´Â ¹æ¹®¸ñ·ÏÃ¢À» ´Ý°Å³ª µð·ºÅä¸® ¸ñ·Ï¿¡¼­ ¹þ¾î³³´Ï´Ù;"
+" ¿ÞÂÊ/¿À¸¥ÂÊ È­»ìÇ¥´Â Enter/Esc Å°¸¦ ´ë½ÅÇÒ ¼ö ÀÖ½À´Ï´Ù."
+" DelÅ°·Î µð·ºÅä¸®¿Í ¸ñ·Ï ÆÄÀÏ¿¡ Æ÷ÇÔµÈ »çÀÌÆ®¸¦ »èÁ¦ÇÒ ¼ö ÀÖ½À´Ï´Ù."
+"" }
+
+{ M_PROCESSING_HISTORY1
+" ¹æ¹®¸ñ·Ï Ã³¸®; stage %u..." }
+
+{ M_PROCESSING_HISTORY2
+" ¹æ¹®¸ñ·Ï Ã³¸®; stage %u:  %u ¸ñ·Ï ¿Ï·á" }
+
+{ M_READING_HISTORY_FILE
+" ¹æ¹®¸ñ·Ï ÆÄÀÏ ÀÐ±â;  %uÁÙ ¿Ï·á" }
+
+{ M_WRITING_HISTORY_FILE
+" ¹æ¹®¸ñ·Ï ÆÄÀÏ ÀúÀå;  %uÁÙ ¿Ï·á" }
+
+{ M_ERROR_READING_HISTORY
+" ¹æ¹®¸ñ·Ï ÆÄÀÏ %s ÀÐ±â ¿¡·¯°¡ ¹ß»ýÇß½À´Ï´Ù. " }
+
+{ M_EMPTY_HISTORY
+" ¹æ¹®¸ñ·Ï ÆÄÀÏ %s´Â ºñ¾îÀÖ½À´Ï´Ù. " }
+
+{ M_SAVE_HISTORY
+" ¹æ¹®¸ñ·Ï ÆÄÀÏÀÇ º¯°æµÈ °ÍÀ» ÀúÀåÇÒ ±î¿ä? " }
+
+{ M_HIST_HEADER1
+" ¹æ¹®¸ñ·Ï: ÀüÃ¼ %u »çÀÌÆ®, %u ³»¿ë " }
+
+{ M_HIST_HEADER2
+" ¹æ¹®¸ñ·Ï: %s, %u µð·ºÅä¸® " }
+
+{ M_HIST_DELETE_DIR
+" %s:%s "
+" µð·ºÅä¸® ¸ñ·ÏÀ» Áö¿ï±î¿ä? " }
+
+{ M_HIST_DELETE_SITE
+" %s "
+" %u µð·ºÅä¸® ¸ñ·ÏÀ» °¡Áø ÀÌ »çÀÌÆ®¸¦ Áö¿ï±î¿ä? " }
+
+# ------------------------------------------------------ new/updated in 1.23
+
+{ M_HLP_USING_MENU
+"  "
+" ¸Þ´º"
+""
+" ¸Þ´º´Â NFTP ±â´ÉÀ» °£´ÜÇÑ ±¸Á¶·Î Á¦°øÇÕ´Ï´Ù."
+" F9 ³ª Ctrl-F ·Î ¸Þ´º¸¦ º¼ ¼ö ÀÖ½À´Ï´Ù. (nftp.ini¿¡¼­ ¼³Á¤ ÇÒ ¼ö ÀÖ½À´Ï"
+" ´Ù.) È­»ìÇ¥Å°·Î ¸Þ´º ±¸Á¶¸¦ µ¹¾Æ ´Ù´Ò ¼ö ÀÖÀ¸¸ç, EscÅ°·Î »óÀ§ ¸Þ´º·Î °¥"
+" ¼ö ÀÖ½À´Ï´Ù. nftp.ini¿¡¼­ `menu-open-submenu'¸¦ -1·Î ¼³Á¤ÇÏ¸é;"
+" ÇÖÅ°·Î ¸Þ´ºÀÇ ±â´ÉÀ» »¡¸® »ç¿ëÇÒ ¼ö ÀÖ°í, F9Å°·Î¸¸ »óÀ§ ¸Þ´º¸¦ ¿­ ¼ö"
+" ÀÖ½À´Ï´Ù. ÀÌ·¸°Ô ÇÏ¸é, '»çÀÌÆ®'ÀÇ ÇÏÀ§¸Þ´º°¡ ±âº»ÀûÀ¸·Î º¸ÀÌ°Ô ¼³Á¤ ÇÒ"
+" ¼ö ÀÖ½À´Ï´Ù."
+" "
+" `korean.mnu'¸¦ ¼öÁ¤ÇÏ¸é ¸Þ´ºÀÇ ¸ð¾çÀ» ¹Ù²Ü ¼ö ÀÖ½À´Ï´Ù."
+" ¼öÁ¤ÇÏ´Â ¹ýÀº ÆÄÀÏ¾È¿¡ ÀÖ½À´Ï´Ù."
+"" }
+
+{ M_RESP_F9_FOR_MENU
+"F9 ³ª Ctrl-F ¸¦ ´©¸£¸é ¸Þ´º°¡ ³ª¿É´Ï´Ù." }
+
+{ M_BOOKMARK_NICKNAME
+" ´Ð³×ÀÓ '%s' "
+" ¸¦ ºÏ¸¶Å©¿¡¼­ Ã£À» ¼ö ¾ø½À´Ï´Ù. " }
+
+{ M_SELECT_BOOKMARK
+" ºÏ¸¶Å©¿¡¼­ ¼±ÅÃ " }
+
+{ M_HISTORY_NICKNAME
+" ´Ð³×ÀÓ '%s' "
+" ¸¦ ¹æ¹®¸ñ·Ï¿¡¼­ Ã£À» ¼ö ¾ø½À´Ï´Ù. " }
+
+{ M_SELECT_HISTORY
+" ¹æ¹®¸ñ·Ï¿¡¼­ ¼±ÅÃ " }
+
+{ M_USAGE0
+"¿É¼Ç ¸Å°³º¯¼ö : "}
+
+{ M_USAGE1
+"Á¢¼ÓÇÒ URL" }
+
+{ M_USAGE2
+"¹Þ°Å³ª(G,g) ¿Ã¸±(P,p) ÆÄÀÏ-URL" }
+
+{ M_USAGE3
+"cmdfile.txt¿¡ ÀÛ¼ºµÈ ´ë·Î Àü¼ÛÇÁ·Î±×·¥ Ã³¸®" }
+
+{ M_USAGE4
+"ºÏ¸¶Å©(b)³ª ¹æ¹®¸ñ·Ï(h)¿¡¼­ 'word'¸¦ °Ë»ö" }
+
+{ M_USAGE5
+"URLÀº ¾Æ·¡¿Í °°Àº Çü½ÄÀ» °¡Á®¾ß ÇÑ´Ù "
+"[ftp://][»ç¿ëÀÚÀÌ¸§[:ÆÐ½º¿öµå]@]È£½ºÆ®ÀÌ¸§[:Æ÷Æ®]µð·ºÅä¸®/ÆÄÀÏ,"
+"¿¹. ftp://asv:password@crydee.sai.msu.su:21/home/asv/file.txt"
+"    ¶Ç´Â  crydee.sai.msu.su/pub/comp/software/asv/nftp/nftp-LATEST-os2.zip" }
+
+# ----------------------------------------------------------------- new in 1.40
+
+{ M_SITE_EDIT1
+"È£½ºÆ® ÀÌ¸§" }
+
+{ M_SITE_EDIT2
+"¾ÆÀÌµð" }
+
+{ M_SITE_EDIT3
+"ÆÐ½º¿öµå" }
+
+{ M_SITE_EDIT4
+"Æ÷Æ®" }
+
+{ M_SITE_EDIT5
+"µð·ºÅä¸®" }
+
+{ M_SITE_EDIT6
+"ÇÃ·¢ (FAQ¸¦ º¸¼¼¿ä)" }
+
+{ M_PASSWORDED_WGET
+" ´ç½ÅÀº WGETÀ¸·Î ¹«¸í¾¾°¡ ¾Æ´Ñ Á¢¼ÓÀ¸·Î ÆÄÀÏ ¹Þ±â¸¦ ½ÃµµÇÏ¿´½À´Ï´Ù. "
+" ±âº»ÀûÀ¸·Î ±×·± ÆÄÀÏ ¹Þ±â´Â º¸¾È»óÀÇ ¹®Á¦·Î ÇÒ ¼ö ¾ø½À´Ï´Ù; "
+" nftp.ini¿¡¼­ °¡´ÉÇÏ°Ô ÇÒ ¼ö ÀÖ½À´Ï´Ù." }
+
+{ M_WGET_DOWNLOAD_ONE
+" %s ÆÄÀÏÀ» ¿ÜºÎ ÇÁ·Î±×·¥À¸·Î ¹ÞÀ¸½Ã°Ú½À´Ï±î? " }
+
+{ M_WGET_DOWNLOAD_MANY
+" ¿ÜºÎÇÁ·Î±×·¥À¸·Î %d°³ÀÇ µð·ºÅä¸®¿¡ %d°³ÀÇ ÆÄÀÏ; "
+" ÀüÃ¼ Å©±â %s bytes¸¦ ¹ÞÀ¸½Ã°Ú½À´Ï±î? " }
+
+{ M_CONFIRM_COMMAND
+" ½ÇÇà½ÃÅ³ ¿ÜºÎ¸í·É: " }
+
+{ M_USETAB2
+" Tab/Shift-Tab ÀÌ³ª À§/¾Æ·¡ È­»ìÇ¥Å°·Î ÀÌµ¿ÇÒ ¼ö ÀÖ½À´Ï´Ù. " }
+
+# ------------------------------------------------- new since 1.50
+
+{ M_CANCEL
+" Ãë¼Ò " }
+
+{ M_FTPS_RECEIVING
+"  %s: µ¥ÀÌÅÍ Àü¼ÛÁß...   "
+"  ¸¶Ä¡·Á¸é ESC¸¦ ´©¸£¼¼¿ä  "
+"  (ÃÑ) %s ·¹ÄÚµå¸¦ Ã£¾Ò½À´Ï´Ù. " }
+
+{ M_FTPS_NO_HITS
+"  `%s'¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù....   " }
+
+{ M_FTPS_SERVERS
+" FTP °Ë»ö ¼­¹ö " }
+
+{ M_FTPS_ADD_SERVER
+" Ãß°¡ÇÒ FTP °Ë»ö ¼­¹öÀÇ ÀÌ¸§À» ÀÔ·ÂÇÏ½Ã¿À. " }
+
+{ M_FTPS_DELETE
+" `%s'À»(¸¦) Áö¿ì½Ã°Ú½À´Ï±î ? " }
+
+{ M_QUERYING
+" %s Äõ¸®¸¦ º¸³»´Â Áß..." }
+
+{ M_FTPS_SENDING_REQUEST
+"  %s·Î ÀÀ´ä º¸³»´Â Áß...   " }
+
+{ M_FTPS_SEARCHRES
+" °Ë»ö °á°ú (%u ÈýÆ®) " }
+
+{ M_DIR_SIGN
+"<DIR>" }
+
+{ M_LINK_SIGN
+"<LNK>" }
+
+{ M_SEARCH_FORWARD
+" ¾ÕÂÊÀ¸·Î °Ë»ö " }
+
+{ M_SEARCH_BACKWARDS
+" µÞÂÊÀ¸·Î °Ë»ö " }
+
+{ M_CANT_FIND
+"  `%s'¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù.   " }
+
+{ M_SELECT_LANGUAGE
+" »ç¿ëÇÒ ¾ð¾î¸¦ ¼±ÅÃÇÏ½Ê½Ã¿À. " }
+
+{ M_REGISTRATION_NAME
+"µî·ÏµÈ ÀÌ¸§" }
+
+{ M_REGISTRATION_CODE
+"µî·Ï ÄÚµå" }
+
+{ M_THANKS
+" NFTP¸¦ µî·ÏÇØ ÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù. " }
+
+{ M_FTPS_NEED_ARGS
+" 'Á¤È®ÇÑ°Ë»ö', 'Æ÷ÇÔµÈ ¹®ÀÚ¿­°Ë»ö', '¿ÍÀÏµåÄ«µå°Ë»ö' ¶Ç´Â 'Á¤±ÔÇ¥Çö½Ä°Ë»ö' "
+" Áß ÇÑ°¡Áö¸¦ ÁöÁ¤ÇØ¾ß ÇÕ´Ï´Ù." }
+
+{ M_FTPS_SEARCH1
+"Á¤È®ÇÑ °Ë»ö" }
+
+{ M_FTPS_SEARCH2
+"Æ÷ÇÔµÈ ¹®ÀÚ¿­ °Ë»ö" }
+
+{ M_FTPS_SEARCH3
+"¿ÍÀÏµåÄ«µå °Ë»ö" }
+
+{ M_FTPS_SEARCH4
+"Á¤±Ô½Ä Ç¥Çö °Ë»ö" }
+
+{ M_FTPS_SEARCH5
+"´ë¼Ò¹®ÀÚ °¡¸²" }
+
+{ M_FTPS_SEARCH6
+"ÆÄÀÏ/µð·ºÅä¸® Á¦¿Ü" }
+
+{ M_FTPS_SEARCH7
+"µµ¸ÞÀÎ Á¦ÇÑ" }
+
+{ M_FTPS_SEARCH8
+"µµ¸ÞÀÎ Á¦¿Ü" }
+
+{ M_FTPS_SEARCH9
+"Slackware/RedHat/FreeBSD/µî ¼û±è." }
+
+{ M_FTPS_SEARCH10
+"°Ë»ö°á°ú °¹¼ö ÃÖ´ëÄ¡." }
+
+{ M_HLP_SITE_EDIT
+"»çÀÌÆ® ¸Å°³º¯¼ö"
+""
+"¹«¸í¾¾ Á¢¼ÓÀ» ÇÒ °æ¿ì´Â 'ÀÌ¸§'°ú 'ºñ¹Ð¹øÈ£'¶õÀ» °ø¹éÀ¸·Î ÇÏ½Ê½Ã¿À. ¸¸¾à"
+"µð·ºÅä¸®¸¦ ÁöÁ¤ÇÏÁö ¾ÊÀ¸¸é, ¹«¸í¾¾ Á¢¼Ó½Ã¿¡´Â ·çÆ®µð·ºÅä¸®¸¦, °èÁ¤Á¢¼Ó½Ã¿¡´Â"
+"È¨µð·ºÅä¸®¸¦ º¸¿©ÁÙ °ÍÀÔ´Ï´Ù. ¼­¹ö ¼³¸íÀº ºÏ¸¶Å© ÆÄÀÏ¿¡ ÀúÀåµË´Ï´Ù."
+""
+"»ç¿ë°¡´ÉÇÑ ÇÃ·¢:"
+"p - Á¢¼ÓÇÑ »çÀÌÆ®¿¡¼­ ÆÐ½Ãºê ¸ðµå¸¦ »ç¿ëÇÕ´Ï´Ù. ÀÚÁÖ ´À¸®°Å³ª ÀÇ½É½º·¯¿î"
+"    ¸µÅ©µé¿¡¼­ µµ¿òÀ» ¹ÞÀ» ¼ö ÀÖ½À´Ï´Ù."
+"r - ÀÎÁõÀ» Àç½ÃµµÇÕ´Ï´Ù. ·Î±ä½Ã NFTP°¡ ¿¡·¯ÄÚµå¸¦ ¸¸³ª¸é Àç½Ãµµ¸¦ ÇÕ´Ï´Ù."
+"f - ÆÄÀÌ¾î¿ù ¾ÈÂÊÀÏ °æ¿ì. nftp.ini¿¡¼­ ÆÄÀÌ¾î¿ù Áö¿øÀ» ¼³Á¤ÇÏ¿´´Ù¸é, ÀÌ"
+"    »çÀÌÆ®¿¡ Á÷Á¢ Á¢¼ÓÀ» ÇÕ´Ï´Ù."
+}
+
+{ M_HLP_FTPSEARCH
+"FTP °Ë»ö ÀÎÅÍÆäÀÌ½º"
+""
+"'Á¤È®ÇÑ °Ë»ö'Àº ÁöÁ¤ÇÑ ÆÄÀÏÀÌ³ª µð·ºÅä¸® ÀÌ¸§¸¸À» Ã£½À´Ï´Ù.;"
+"¿¹: nftp141o.zip"
+""                                                                     
+"'Æ÷ÇÔµÈ ¹®ÀÚ¿­ °Ë»ö'Àº ÆÄÀÏÀÌ³ª µð·ºÅä¸® ÀÌ¸§¿¡ ÁöÁ¤ÇÑ ¹®ÀÚ¿­ÀÌ ÀÖ´Â °ÍÀ»"
+"Ã£½À´Ï´Ù.;"
+"¿¹: nftp14"
+""
+"'¿ÍÀÏµå Ä«µå °Ë»ö'Àº '*' °ú '?'¹®ÀÚ¸¦ »ç¿ëÇÏ´Â ¹æ¹ýÀÔ´Ï´Ù."
+"('*'Àº ¸ðµç ¹®ÀÚ¸¦ ¸»ÇÏ´Â °ÍÀÌ°í, '?'´Â ÇÑ¹®ÀÚ¸¦ ¸»ÇÏ´Â °ÍÀÔ´Ï´Ù.);"
+"¿¹: nftp*.zip ¶Ç´Â nftp1??o.zip"
+""                                                                     
+"'Á¤±ÔÇ¥Çö½Ä °Ë»ö'Àº Á¤±ÔÇ¥Çö½ÄÀ» ¾Ë¾Æ¾ß ÇÏÁö¸¸ ¸Å¿ì È¿°úÀûÀÎ ¹æ¹ýÀÔ´Ï´Ù.;"
+"¿¹: nftp1\.[4-9][0-9]o\.zip ´Â NFTPÀÇ OS/2¿ë 1.xx ¹öÀü¸ðµÎ¸¦ Ã£À¸¶ó´Â"
+"    °ÍÀÔ´Ï´Ù. GNU Á¤±ÔÇ¥Çö½ÄÀ» Æ÷ÇÔÇÑ ¸¹Àº °Íµé¿¡¼­ Á¤±ÔÇ¥Çö½Ä¿¡ ´ëÇÑ"
+"    Á¤º¸¸¦ ¾òÀ» ¼ö ÀÖ½À´Ï´Ù."
+""
+"'´ë¼Ò¹®ÀÚ °¡¸²'Àº 'Æ÷ÇÔµÈ ¹®ÀÚ¿­ °Ë»ö'½Ã¿¡¸¸ Àû¿ëµË´Ï´Ù."
+""
+"Ãß°¡·Î ´ÙÀ½°ú °°Àº °ÍÀ» Àû¿ë½ÃÅ³ ¼ö ÀÖ½À´Ï´Ù.:"
+"  Æ¯Á¤µð·ºÅä¸® Á¦¿Ü, Æ¯Á¤µµ¸ÞÀÎ¿¡¼­ °Ë»öÁ¦ÇÑÀÌ³ª Æ¯Á¤µµ¸ÞÀÎ Á¦¿Ü, ±×¸®°í"
+"  ¿øÇÏÁö ¾Ê°Ô ³Ê¹« ¸¹Àº °Ë»ö°á°ú¸¦ °¡Á®¿ÃÁö ¸ð¸¦ °ø°³ À¯´Ð½º ¹èÆ÷º»Á¦¿Ü."
+"  ¿©·¯°³ÀÇ ¸ñ·ÏÀ» ¿øÇÒ ¶§´Â °ø¹é(½ºÆäÀÌ½º)À¸·Î ±¸ºÐÇÏ¸é µË´Ï´Ù."
+""                                                                     
+"'°Ë»ö°á°ú °¹¼ö ÃÖ´ëÄ¡'¸¦ ³Ê¹« ³ô°Ô ÀâÀ» ÇÊ¿ä´Â ¾ø½À´Ï´Ù."
+"(5000°³´Â ¾µ¸ð°¡ ¾ø½À´Ï´Ù.; ¿øÇÏÁö ¾Ê´Â °ÍµéÀ» Á¦¿ÜÇÏ½Ã±â ¹Ù¶ø´Ï´Ù.)"
+"º¸Åë ÁÖ FTP °Ë»ö ¼­¹ö¿¡¸¸ ¿äÃ»À» ÇÕ´Ï´Ù. ÁÖ FTP °Ë»ö ¼­¹öÀÎ ftpsearch.ntnu.no"
+"¿¡´Â Àü¼¼°èÀÇ 90%ÀÌ»óÀÇ ¸ñ·ÏÀ» °¡Áö°í ÀÖ½À´Ï´Ù. ´Ù¸¥ °÷µéÀº Áö¿ªÀûÀ¸·Î °¡±î¿î"
+"°÷µé¿¡ ´ëÇÑ Á¦ÇÑÀûÀÎ °Ë»öÀ» Á¦°øÇÕ´Ï´Ù."
+"" }
+
+{ M_FTPS_DOWNLOAD
+"  ÆÄÀÏ ¹Þ±â "
+"  %s¿¡¼­ "
+"  %s ?  " }
+
+{ M_HIST_CONT_SEARCH
+"  %s¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù. ´Ù¸¥ »çÀÌÆ®¿¡¼­ °Ë»öÇÏ½Ã°Ú½À´Ï±î?  " }
+
+{ M_TOO_LARGE
+"%s/%s: ºñµî·ÏÆÇ¿¡¼­ ¾²±â¿¡´Â ³Ê¹« Å®´Ï´Ù." }
+
+{ M_DISCONNECT
+"  %s ¼­¹öÁ¢¼ÓÀ» ²÷À¸½Ã°Ú½À´Ï±î?  " }
+
+{ M_UPLOAD_EDITED
+"  ¼öÁ¤µÈ ÆÄÀÏÀ» ¼­¹ö¿¡ ¾÷·Îµå ÇÏ½Ã°Ú½À´Ï±î?  " }
+
+{ M_FONT_DESC
+"Æø %3d, ³ôÀÌ %3d (%s)" }
+
+{ M_UNSUPPORTED
+"  %s¿¡¼­´Â ÀÌ ±â´ÉÀ» Áö¿øÇÏÁö ¾Ê½À´Ï´Ù.  " }
+
+{ M_SELECT_FONT
+" ÆùÆ®¸¦ ¼±ÅÃÇÏ¼¼¿ä." }
+
+{ M_HLP_FTPSEARCH2
+"°á°úÃ¢¿¡¼­ Å° »ç¿ë¹ý"
+""
+"Ctrl-P      °æ·Î º¸ÀÌ±â/¼û±â±â"
+"Ctrl-T      ÃÖ±Ù °»½ÅÀÏ º¸ÀÌ±â/¼û±â±â"
+"Ctrl-F      ¾ÕÂÊÀ¸·Î °Ë»öÇÏ±â"
+"Ctrl-H      µÞÂÊÀ¸·Î °Ë»öÇÏ±â"
+"Shift-D/F5  ÆÄÀÏ ¹Þ±â"
+""
+"Shift-H     ¼­¹ö ÀÌ¸§¼øÀ¸·Î Á¤·Ä"
+"Shift-N     ÆÄÀÏ ÀÌ¸§¼øÀ¸·Î Á¤·Ä (±âº»)"
+"Shift-S     Å©±â¼øÀ¸·Î Á¤·Ä"
+"Shift-T     ³¯Â¥/½Ã°£¼øÀ¸·Î Á¤·Ä"
+"" }
+
+{ M_STALLED
+"¸ØÃã" }
+
+# ------------------------------------------------- new since 1.51
+
+{ M_WAIT
+""
+""
+" Please wait %d seconds... " }
+
+{ M_UNREGISTERED
+" This version is unregistered "
+""
+" To get rid of this message you have to buy NFTP license. "
+" It costs $%d and entitles you to all future versions "
+" for all supported operating systems. More information is "
+" available from http://www.ayukov.com/nftp/buy.html %s" }
+
+{ M_PRESS_ENTER
+" Press ENTER to continue " }
+
+{ M_HTTP_PROXY
+"  Not supported via HTTP proxy  " }
+
+{ M_ENUMERATING_FONTS
+" Enumerating fonts... " }
+
+# ------------------------------------------------- new since 1.60
+
+{ M_SCRIPT_BADCOMMAND
+"Unrecognized command: %s" }
+
+{ M_SCRIPT_BADARGS
+"This command requires %d arguments (found %d instead)" }
+
+{ M_SCRIPT_ERROR
+"Error; script execution has been stopped" }
+
+{ M_SCRIPT_CANT_OPEN
+"Cannot open script file `%s'" }
+
+{ M_SCRIPT_RUNNING
+"SCRIPT: %s %s" }
+
+{ M_SCRIPT_INVALID_VAR
+"Invalid variable: %s" }
+
+{ M_SCRIPT_CANT_OPEN_LOG
+"Cannot open logfile `%s'" }
+
+{ M_RESP_CONNECTING2
+"Connecting to %s: Esc - abort, Space - retry..." }
+
+{ M_RESP_ACCEPTING
+"Waiting for connection on port %d: Esc - abort, Space - retry..."}
+
+{ M_RESP_ACCEPTED
+"Accepted connection from %s" }
+
+{ M_PAUSED
+"Paused; press P to continue" }
+
+{ M_SQRP
+"S/Q/R/P - Skip/Quit/Restart/Pause" }
+
+{ M_TOTAL        "Total" }
+{ M_TRANSFERRED  "Transferred" }
+{ M_SKIPPED      "Skipped" }
+{ M_LEFT         "Left" }
+{ M_INACT        "seconds since last packet" }
+
+{ M_NO_FIREWALLING
+"No firewall/proxy has been configured in nftp.ini" }
+
+{ M_HLP_PASSWORDS
+"Keys in password window"
+""
+"Insert - create new password record"
+"Delete - delete password record"
+"Ctrl-E - edit record"
+"Ctrl-P - show/hide passwords"
+""
+"Enter  - login into site"
+"" }
+
+{ M_DEL_UNMATCHED
+"   Deleting unmatched files...   " }
+
+{ M_ENTER_LISTNAME
+"Enter filename to write the list to:" }
+
+{ M_SYNC1
+"Synchronize local tree with remote site?"
+""
+"remote   %s ->"
+"local    %s"
+"" 
+"NFTP will download files" }
+
+{ M_SYNC2
+"Synchronize remote site with local tree?"
+""
+"local    %s ->"
+"remote   %s"
+""
+"NFTP will upload files" }
+
+{ M_SYNC3
+"Directories seem to be identical" }
+
+{ M_PASS_UNSUPPORTED
+"Version of the password file (%d) is not supported" }
+
+{ M_PASS_ENTER_KEYPHRASE1
+"Enter keyphrase to decrypt your password file" }
+
+{ M_PASS_INVALID
+"%s"
+"Password file has invalid contents" }
+
+{ M_PASS_ENTER_KEYPHRASE2
+"Enter keyphrase which will be used to encrypt your password file" }
+
+{ M_PASSWORDS
+"Passwords" }
+
+{ M_PASS_SAVE
+"Save changes to password file?" }
+
+{ M_PASS_DELETE
+"%s @ %s"
+"Delete password entry?" }
+
+{ M_DISK_FULL
+" %s "
+" Error writing to file (disk full?) " }
+
+{ M_REGISTERED
+"Registered for %s" }
+
+{ M_UNREGISTERED2
+"Unregistered (%d days since first run)" }
+
+{ M_FTPS_RECEIVING2
+"Receiving data from %s...   "
+"Found total:          %s"
+"Found on this server: %s"
+"Press ESC to interrupt the search" }
+
+{ M_FTPS_NO_HITS2
+"Search did not find anything" }
+
+{ M_FTPS_NORES
+"No search has been performed yet" }
+
+{ M_ENABLE_PASSWORDS
+"Please enable password caching in nftp.ini" }
+
+{ M_NEEDBF
+"This is only used with method(s) %s (see nftp.ini)" }
+
+{ M_PASS_INCORRECT
+"Keyphrase is incorrect"}
+
+{ M_BYTESSEC "bytes/sec" }
+
+{ M_DOWNLOAD "download" }
+
+{ M_UPLOAD "upload" }
+
+{ M_COMMUNICATING
+"Communicating with server..." }
+
+# will look like: " 23% done (download, binary)"
+{ M_PERCENTAGE1 "%9u%% done (%s, %s)" }
+
+# will look like: " 23% done (download, binary) (3 of 15 files)"
+{ M_PERCENTAGE2 "%9u%% done (%s, %s) (%d of %d files)" }
+
+# ------------------------------------------------- new since 1.61
+
+{ M_TR_OVERWRITE  "Overwrite" }
+{ M_TR_RESUME     "Resume" }
+{ M_TR_SKIP       "Skip" }
+{ M_TR_CANCEL     "Cancel" }
+
+{ M_TR_QUESTION
+"Target file already exists!"
+"Suggested action: %s"
+""
+"Remote: %s in %s"
+"Local:  %s in %s"
+""
+"Source: %s bytes, %2d %s %4d  %02d:%02d:%02d"
+"Target: %s bytes, %2d %s %4d  %02d:%02d:%02d" }
+
+# ------------------------------------------------- new since 1.62
+
+{ M_DELETE_FILES
+"You have selected %d file(s)."
+"     Really delete them?" }
+
+{ M_NOT_EMPTY
+"Directory `%s' is not empty."
+"Delete entire tree?" }
+
+{ M_ALL "All" }
+
+{ M_DELETING
+"  Deleting %s...  " }
+
+{ M_NO_CHMOD
+"This FTP server does not support SITE CHMOD command" }
+
+{ M_ACCESSRIGHTS1
+"Access rights for %d files" }
+
+{ M_ACCESSRIGHTS2
+"Access rights for %s" }
+
+{ M_WRONG_RIGHTS
+"Invalid input:  [%s]"
+"Correct format: [rwxrwxrwx]" }
+

@@ -1,0 +1,84 @@
+; bookmark format is
+; ftp.sai.msu.su:21/pub/os2 : login/password/flags : description
+;
+; edit this file with care; following rules apply:
+; - spaces around colons ARE important;
+; - pathnames must be absolute, i.e. start with '/';
+; - omit 'port' if you want to;
+; - substitute '*' for anonymous 'login' and 'password':
+;   ftp.sai.msu.su:/pub/os2 : */*/flags : SAI OS/2 archive
+;   
+
+[Large archives]
+ftp.cdrom.com:/pub : */*/ : Walnut Creek CDROM archive
+ftp.leo.org:/pub : */*/ : LEO: Link Everything Online
+sunsite.doc.ic.ac.uk:/ : */*/ : SunSite Northern Europe
+
+[OS/2: official sites]
+ftp.software.ibm.com:/ps/products : */*/ : IBM primary ftp server
+ftp.software.ibm.com:/ps/products/os2/fixes/v4warp : */*/ : OS/2 Warp 4 FixPaks
+ftp.software.ibm.com:/ps/products/mpts/fixes : */*/ : MPTS fixes
+ftp.software.ibm.com:/ps/products/tcpip/rsu/stack : */*/ : TCP/IP fixes
+ftp.software.ibm.com:/ps/products/lan/fixes/ibm.peer : */*/ : Warp 4 Peer FixPak
+service.boulder.ibm.com:/software/java/fixes/os2 : */*/ : Java for OS/2
+ncc.hursley.ibm.com:/pub/java/fixes/os2 : */*/ : IBM Java (Hursley)
+service.boulder.ibm.com:/software/asd : */*/ : IBM Software choice
+testcase.boulder.ibm.com:/ps/fromibm : */*/ : IBM Testcase
+ftp.software.ibm.com:/ps/products/os2/os2ddpak : */*/ : OS/2 Device Driver Pack
+ftp.software.ibm.com:/ps/products/os2/drivers : */*/ : IBM Device driver reposity
+
+[OS/2]
+hobbes.nmsu.edu:/pub/os2 : */*/ : Hobbes NMSU archive
+ftp.cdrom.com:/pub/os2 : */*/ : Walnut Creek CDROM archive
+borneo.gmd.de:/pub/misc/XFree86OS2 : */*/ : XFree86/OS2 home
+crydee.sai.msu.su:/pub/comp/os/os2 : */*/ : SAI OS/2 archive
+ghost.rssi.ru:/e/goserv/gogo/public/OS2/OK : */*/ : OK software
+
+[Linux]
+sunsite.unc.edu:/pub/Linux : */*/ : Linux at Sunsite
+ftp.kernel.org:/pub/linux/kernel : */*/ : Linux kernel development
+tsx-11.mit.edu:/pub/linux : */*/ : TSX-11 MIT Linux site
+ftp.cs.helsinki.fi:/pub/Software/Linux/Kernel : */*/ : Linus' site
+ftp.suse.com:/pub/dosemu : */*/ : DOSEMU
+
+[DOS/Windows software]
+oak.oakland.edu:/pub : */*/ : The Oak software repository
+ftp.coast.net:/ : */*/ : SimTel archive
+wuarchive.wustl.edu:/ : */*/ : Washington University archive
+garbo.uwasa.fi:/pc : */*/ : DOS software
+winftp.cica.indiana.edu:/ : */*/ : CICA Windows archive
+ftp.winsite.com:/pub/pc/winnt : */*/ : Windows NT utils/drivers
+ftp.kiam1.rssi.ru:/pub/dsav : */*/ : Russian antiviruses: ADinf, DrWeb, Aidstest
+ftp.topaz.kiev.ua:/pub/vc : */*/ : Volkov Commander home
+
+[Hardware manufacturers]
+ftp.s3.com:/pub/bbs : */*/ : S3, Inc.
+ftp.matrox.com:/pub/mga : */*/ : Matrox Graphics
+ftp.adaptec.com:/pub/BBS : */*/ : Adaptec
+asustek.asus.com.tw:/pub/ASUS : */*/ : ASUSTeK
+ftp.compex.com.sg:/pub/support : */*/ : Compex
+ftp.lexmark.com:/pub/driver : */*/ : Lexmark
+ftp.atitech.ca:/pub : */*/ : ATI Technologies
+ftp.diamondmm.com:/pub : */*/ : Diamond Multimedia
+ftp.creaf.com:/pub : */*/ : Creative
+ftp.nine.com:/pub : */*/ : Number Nine
+
+[Games]
+ftp.ssionline.com:/pub/updates : */*/ : SSI game updates
+ftp.nvg.unit.no:/pub/sinclair/snaps/games : */*/ : ZX-Spectrum games
+x2ftp.oulu.fi:/pub/msdos/programming : */*/ : Games Programming Oulu
+
+[Hungarian sites]
+xenia.sote.hu:/pub/os2/munich : */*/ : OS/2 Leo mirror
+ftp.kfki.hu:/pub/linux : */*/ : General Linux site (sunsite, tsx-11 mirror, distributions, etc.)
+ftp.math.bme.hu:/pub/linux : */*/ : General Linux site (distributions, kernels, documentations, etc.)
+
+[Japanese sites]
+service.japan.ibm.co.jp:/pub/ps : */*/ : Official Site of IBM Japan (PSPJ)
+ftp.jaist.ac.jp:/pub/os/os2 : */*/ : GNU & UNIX like tools for OS/2
+ftp.semi.ee.es.osaka-u.ac.jp:/pub/os2 : */*/ : GNU & UNIX like tools for OS/2
+ftp.lab.kdd.co.jp:/lang/perl/CPAN : */*/ : CPAN Mirror
+ftp.iij.ad.jp:/pub : */*/ : A very large Internet related Archives
+ftp.tokyonet.ad.jp:/pub : */*/ : A very large Internet related Archives
+ftp.aist-nara.ac.jp:/pub/rfc : */*/ : RFC's & Internet Drafts 
+ring.asahi-net.or.jp:/pub : */*/ : Ring Server Project (Asahi-Net)

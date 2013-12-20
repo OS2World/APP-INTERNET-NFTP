@@ -1,0 +1,6 @@
+
+clean:
+	rm -f *.o *.a *.lib *.dll *.so* core *.core *.exe *.lo *.la
+	rm -rf .deps .libs
+	rm -f ruscode trigrams alphabet
+

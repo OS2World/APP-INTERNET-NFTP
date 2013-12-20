@@ -1,0 +1,8 @@
+;----------------------------------
+; NFTP.DEF module definition file
+;----------------------------------
+   
+NAME           NFTP WINDOWAPI
+
+DESCRIPTION    'NFTP/PM, Copyright (C) 1998,1999 Sergey Ayukov'
+

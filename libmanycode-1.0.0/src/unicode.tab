@@ -1,0 +1,136 @@
+conv_table cp437[] =
+#include "ic/ibm-437.ic"
+
+conv_table cp813[] =
+#include "ic/ibm-813.ic"
+
+conv_table cp850[] =
+#include "ic/ibm-850.ic"
+
+conv_table cp852[] =
+#include "ic/ibm-852.ic"
+
+conv_table cp855[] =
+#include "ic/ibm-855.ic"
+
+conv_table cp857[] =
+#include "ic/ibm-857.ic"
+
+conv_table cp860[] =
+#include "ic/ibm-860.ic"
+
+conv_table cp861[] =
+#include "ic/ibm-861.ic"
+
+conv_table cp862[] =
+#include "ic/ibm-862.ic"
+
+conv_table cp863[] =
+#include "ic/ibm-863.ic"
+
+conv_table cp864[] =
+#include "ic/ibm-864.ic"
+
+conv_table cp865[] =
+#include "ic/ibm-865.ic"
+
+conv_table cp866[] =
+#include "ic/ibm-866.ic"
+
+conv_table cp869[] =
+#include "ic/ibm-869.ic"
+
+conv_table cp878[] =
+#include "ic/ibm-878.ic"
+
+conv_table cp912[] =
+#include "ic/ibm-912.ic"
+
+conv_table cp913[] =
+#include "ic/ibm-913.ic"
+
+conv_table cp914[] =
+#include "ic/ibm-914.ic"
+
+conv_table cp915[] =
+#include "ic/ibm-915.ic"
+
+conv_table cp916[] =
+#include "ic/ibm-916.ic"
+
+conv_table cp920[] =
+#include "ic/ibm-920.ic"
+
+conv_table cp1250[] =
+#include "ic/ibm-1250.ic"
+
+conv_table cp1251[] =
+#include "ic/ibm-1251.ic"
+
+conv_table cp1252[] =
+#include "ic/ibm-1252.ic"
+
+conv_table cp1253[] =
+#include "ic/ibm-1253.ic"
+
+conv_table cp1254[] =
+#include "ic/ibm-1254.ic"
+
+conv_table cp1255[] =
+#include "ic/ibm-1255.ic"
+
+conv_table cp1256[] =
+#include "ic/ibm-1256.ic"
+
+conv_table cp1257[] =
+#include "ic/ibm-1257.ic"
+
+conv_table cp1275[] =
+#include "ic/ibm-1275.ic"
+
+conv_table cp1280[] =
+#include "ic/ibm-1280.ic"
+
+conv_table cp1282[] =
+#include "ic/ibm-1282.ic"
+
+conv_table cp1283[] =
+#include "ic/ibm-1283.ic"
+
+cp_table CVT0[] =
+{
+    {819, iso8859_1},
+    {437, cp437},
+    {813, cp813},
+    {850, cp850},
+    {852, cp852},
+    {855, cp855},
+    {857, cp857},
+    {860, cp860},
+    {861, cp861},
+    {862, cp862},
+    {863, cp863},
+    {864, cp864},
+    {865, cp865},
+    {866, cp866},
+    {869, cp869},
+    {878, cp878},
+    {912, cp912},
+    {913, cp913},
+    {914, cp914},
+    {915, cp915},
+    {916, cp916},
+    {920, cp920},
+    {1250, cp1250},
+    {1251, cp1251},
+    {1252, cp1252},
+    {1253, cp1253},
+    {1254, cp1254},
+    {1255, cp1255},
+    {1256, cp1256},
+    {1257, cp1257},
+    {1275, cp1275},
+    {1280, cp1280},
+    {1282, cp1282},
+    {1283, cp1283},
+};

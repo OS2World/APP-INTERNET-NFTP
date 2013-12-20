@@ -1,0 +1,192 @@
+#
+# see syntax explanations in english.mnu if interested
+#
+
+main
+{
+    {SUBMENU, "&Helyek",     Sites}
+    {SUBMENU, "&F†jlok",     Files}
+    {SUBMENU, "&NÇzet",      View}
+    {SUBMENU, "µ&tvitel",  Transfer}
+    {SUBMENU, "&Be†ll°t†sok",   Options}
+    {SUBMENU, "&Seg°tsÇg",      Help}
+}
+
+Sites
+{
+    {ACTION, "&Kînyvjelzãk...",            10}  login from bookmarks
+    {ACTION, "&TîrtÇnet...",              17}  history
+    {ACTION, "Kînyvjelzã &mentÇse...",        35}  save host/dir as bookmark
+    {SUBMENU, "&FTP keresÇs", FTPSearch}
+    {SUBMENU, "&Jelszavak", Passwords}
+    {SEP}
+    {ACTION, "&URL megnyit†sa...",             18}  open URL
+    {ACTION, "&BejelentkezÇs...",                11}  login
+    {ACTION, "KijelentkezÇs...",               13}  log off
+    {ACTION, "Kapcsolat e&llenãrzÇse",        22}  send NOOP
+    {ACTION, "Parancs kÅl&dÇse...",         24}  quote command
+    {SEP}
+    {ACTION, "FelfÅggesztÇs (csak Unix)",     112}  suspend
+#   {ACTION, "Crash",                     9}  crash and burn
+    {ACTION, "KilÇ&pÇs...",                 14}  exit NFTP
+}
+
+Passwords
+{
+    {ACTION, "&Jelszavak m¢dos°t†sa...",   28} edit passwords
+    {ACTION, "&Kulcssz¢ m¢dos°t†sa...", 29} change keyphrase for password encryption
+}
+
+Files
+{
+    {ACTION, "&Alkînyvt†r lÇtrehoz†sa...",                53}  create directory
+    {ACTION, "µtne&vezÇs...",                        54}  rename file/directory
+    {ACTION, "&TîrlÇs...",                        52}  delete file/dir
+    {ACTION, "&Hozz†fÇrÇsi jogok †ll°t†sa",             79}  change access rights
+    {SEP}
+#   {ACTION, "Alkînyvt†r&ba lÇpÇs",                  71}  change into dir under cursor
+    {ACTION, "Alkînyvt†r v†&lt†sa...",              74}  input dir and change to it
+    {ACTION, "&Fãkînyvt†rra v†lt†s",         72}  change to root dir
+    {ACTION, "Alkînyvt†r £j&raolvas†sa",                70}  re-read directory
+    {ACTION, "Lista &mentÇse...",                  45}  save directory listing
+    {ACTION, "Helyi megha&jt¢ v†lt†sa...",            75}  change local drive
+    {ACTION, "Alkînyvt†r mÇretÇnek s&z†mol†sa",           57}  traverse directory and compute its size
+}
+
+View
+{
+    {ACTION, "Alkînyvt†r-&m¢d v†lt†sa",             32}  switch between raw/parsed modes
+    {ACTION, "Kapcsolat&vezÇrlÇs",                30}  switch between CC and dir
+    {ACTION, "&T†voli/helyi kîzti v†lt†s",               31}  switch between local/remote
+    {SWITCH, "O&sztott kÇpernyã",                      37}  make screen look like NC
+    {SWITCH, "F†jl &d†tumok megjelen°tÇse",                 38}  show/hide file timestamps in panels
+    {SWITCH, "Mi&ni †llapot",                       39}  show/hide mini-status field
+    {SEP}
+    {ACTION, "&F†jl megjelen°tÇse",                         50}  view w/int viewer
+    {ACTION, "Megjelen°tÇs &kÅlsã programmal",                51}  view w/ext viewer
+    {ACTION, "&Le°r†sok betîltÇse...",              76}  load 00index.txt file
+    {SUBMENU, "&RendezÇs",      Sort}
+    {SEP}
+    {ACTION, "KÇpernyã £jrafestÇse",                    36}  repaint screen
+}
+
+Sort
+{
+    {ACTION, "RendezÇs &nÇv alapj†n",        60}  sort by name
+    {ACTION, "RendezÇs &kiterjesztÇs alapj†n",   61}  sort by extension
+    {ACTION, "RendezÇs &mÇret alapj†n",        63}  sort by size
+    {ACTION, "RendezÇs &idã alapj†n",        62}  sort by date
+    {ACTION, "&Rendezetlen",            64}  make unsorted
+    {ACTION, "&Ford°tott rendezÇsi sorrend",  65}  reverse sort order
+}
+
+Transfer
+{
+    {ACTION, "&Copy...",                   77}  copy between remote/local
+#   {ACTION, "&LetîltÇs...",               40}  download
+#   {ACTION, "Minden letîl&tÇse...",    42}  d/l from all dirs
+    {ACTION, "LetîltÇs nÇ&v alapj†n...",       44}  d/l by name
+    {ACTION, "LetîltÇs &WGET-tel...",     46}  launch wget to retrieve files
+#   {ACTION, "&FeltîltÇs...",                 41}  upload
+#   {ACTION, "Upload e&verything...",      43}  u/l from all dirs
+    {SEP}
+    {SUBMENU, "&Kiv†laszt†s", Select}
+    {SUBMENU, "TÅk&rîzÇs", Mirror}
+    {SWITCH,  "B&in†ris",              21}  switch ASCII/BINARY
+    {ACTION,  "Inf&o megjelen°tÇse...",              15}  get current status
+    {SEP}
+#   {SWITCH, "µtvitel korl†toz†sa",           98}  limit throughput
+    {ACTION, "F†jl †tlÇpÇse",                  47}  skip file during transfer
+    {ACTION, "µtvitel meg†ll°t†sa",              48}  stop transfer
+    {ACTION, "µtvitel £jraind°t†sa",           49}  abort and restart transfer
+    {SWITCH, "µtvitel szÅneteltetÇse",             58}  pause transfer
+}
+
+Select
+{
+    {ACTION, "&Kiv†lasztÇs/kiv†laszt†s tîrlÇse",           82}  select file under cursor
+    {ACTION, "Kiv†laszt†s &maszk alapj†n...",         83}  select by mask
+    {ACTION, "Kiv†laszt†s tîrlÇse maszk alapj†&n...",       84}  deselect by mask
+    {ACTION, "Min&den kiv†laszt†sa",                80}  select all files
+    {ACTION, "Kiv†laszt†sok tîrlÇ&se",              81}  deselect all files
+    {ACTION, "Kiv†laszt†sok tîrlÇse minden alkînyvt†r&ban",      87}  deselect all files
+    {ACTION, "Kiv†laszt†s megfo&rd°t†sa",          85}  invert selection
+    {ACTION, "Kijelîlt f†jlok list†j†nak kivitele...",   19}  export list of marked files
+    {ACTION, "Review list of marked...",   12}  review list of marked files/dirs
+}
+
+Mirror
+{
+    {ACTION, "&LetîltÇs...",               66} synchronize local with remote (download)
+    {ACTION, "&FeltîltÇs...",                 67} synchronize remote with local (upload)
+    {SWITCH, "Nem egyezã f†jlok tîrlÇse",        68} switch: delete/keep unmatched files
+    {SWITCH, "&Rekurz°v m˚kîdÇs",       69} switch: synchronize subdirs?
+}
+
+Help
+{
+    {ACTION, "&Seg°tsÇg",             1}  Help
+    {ACTION, "&Fã seg°tsÇg",        2}  general help
+    {ACTION, "&Rîvid seg°tsÇg",     3}  short help
+    {ACTION, "&MenÅk haszn†lata",      7}  using menus
+    {SEP}
+    {ACTION, "NFTP friss°tÇse",       90}  connect to NFTP site
+    {ACTION, "Az &NFTP-rãl...",    6}  displays time of build
+}
+
+FTPSearch
+{
+    {ACTION, "&FTP keresÇs...", 120} find with FTPSearch
+    {ACTION, "&Utols¢ keresÇsi eredmÇnyek...", 122}, display results of last search
+    {ACTION, "&Kiszolg†l¢k...", 121} define FTPSearch servers
+}
+
+Options
+{
+    {SWITCH, "Proxy haszn†lata",         25}  enable/disable proxy
+    {SWITCH, "Kapcsol¢k haszn†lata",         23}  use/disable NLST with flags
+    {SWITCH, "Le°r†sok megjelen°tÇse", 34}  show/hide descriptions
+    {SWITCH, "Passz°v m¢d",      26} switch passive mode on/off
+    {SWITCH, "Symlinkek felbont†sa",  27}  switch symlink resolving on/off
+    {SEP}
+    {ACTION, "Be†ll°t†sok &m¢dos°t†sa",   16}  invoke editor on nftp.ini
+# I suggest next line should be left in English :-}
+    {ACTION, "&Nyelv (language)",        91}  select language
+    {ACTION, "&Bet˚kÇszlet...", 93} select font for NFTP window
+    {ACTION, "Regisztr†ci¢s k¢d...",   92}  enter registration information
+}
+
+# SYNTAX:                        (NB: there is no need to translate it)
+# ---------------------------------------------------------------------
+#
+# - empty lines and lines starting with # are ignored. The line length
+#   is limited to 256 symbols;
+#
+# - this file contains "menu groups" which are actually collections of
+#   menu items, i.e. vertical or horizontal menus/submenus. Each menu
+#   group starts with group name on a separate line, then "{" on a
+#   separate line, then items (one on its own line), then "}". Delimiting
+#   "{" and "}" must be the only symbols (not counting white space)
+#   on the line. The order of groups is arbitrary, the order of items
+#   inside group does matter;
+#
+# - menu group named "main" is a main menu; it is not necessary the first
+#   group in the file;
+#
+# - menu item looks like:
+#
+#      { type , item-text , value } comment
+#
+#   1) "type" can be "ACTION" (real menu item calling some program function),
+#   "SEP" -- menu separator (item-text and value are ignored for separator
+#   and can be omitted), "SWITCH" which is like ACTION but can have checkmark
+#   near it or "SUBMENU";
+#   2) "item-text" is the text appearing on the screen, in the double quotes.
+#   Double quotes are not allowed in the item-text. Hotkey is marked by
+#   ampersand before the letter and is not case sensitive;
+#   3) "value" is a number of associated program function for type=ACTION
+#   or menu group name for type=SUBMENU.
+#
+#   Everything after closing "}" is ignored. Arbitrary amount of white space
+#   can be used to improve readability.
+#

@@ -1,0 +1,101 @@
+PROJECT = manycode
+OBJ = ruscode.o charsets.o ucs.o ucm_parse.o utf8.o ucs_tables.o koi8_ctype.o ru_tables.o
+LIBS1 = -L../../lib -lasvtools $(LIBS2)
+CFLAGS1 = -I../../include
+CLEANFILES = unicode.tab UTF-8-test.koi testlocale mktab
+
+ifdef RUNWORKPLACE
+EXE_PREFIX = 
+else
+EXE_PREFIX = 
+endif
+
+#include ../Makefile.inc
+#-------------------------------------------------------------------
+
+ifdef windir
+LIBRARY = lib$(PROJECT).a
+INSTALL = install-win32
+endif
+
+ifdef RUNWORKPLACE
+LIBS2 = -lbsd -lsocket -lsocket
+LIBRARY = $(PROJECT).a
+INSTALL = install-os2
+endif
+
+#---------------------------------------------------------------------------
+
+CC = gcc
+CFLAGS = -Wall -O -g $(CFLAGS1)
+HEADER = $(PROJECT).h
+
+all: $(LIBRARY)
+
+$(LIBRARY): $(OBJ)
+	rm -f $@
+	ar rcs $@ $(OBJ)
+
+install-os2:
+	-mkdir ..\..\lib
+	cp manycode.a ../../lib/
+	-mkdir ..\..\include
+	cp manycode.h ../../include/
+
+install-win32:
+	-mkdir ..\..\lib
+	cp libmanycode.a ../../lib/
+	-mkdir ..\..\include
+	cp manycode.h ../../include/
+
+install: $(INSTALL)
+
+os2dll: $(OBJ)
+	$(CC) -o $(PROJECT).dll -Zdll -Zcrtdll $(OBJ) $(LIBS1) $(PROJECT).def
+	emxbind -qs $(PROJECT).dll
+	emximp -o $(LIBRARY) $(PROJECT).def
+	emxomf -s -l -q $(LIBRARY)
+
+clean:
+	rm -f *.o *.a *.lib *.dll *.so* core *.core *.exe *.lo *.la
+	rm -f $(PROJECT)_wrap.c $(PROJECT).pm
+	rm -f $(CLEANFILES)
+	rm -rf .deps .libs
+
+tools: ucm2ic.exe recode.exe
+
+test: ruscode_test.exe koi8_test.exe recode.exe
+	recode.exe 0 878 <UTF-8-test.txt >UTF-8-test.koi
+
+%.exe: %.o $(OBJ)
+	$(CC) $(CFLAGS) -o $@ $^ $(LIBS1)
+
+CODEPAGES = 437 813 850 852 855 857 860 861 862 863 864 \
+ 865 866 869 878 912 913 914 915 916 920 1250 1251 1252 1253 1254 \
+ 1255 1256 1257 1275 1280 1282 1283
+
+ICFILES = $(foreach a, $(CODEPAGES), ic/ibm-$a.ic)
+
+%.ic:
+	$(EXE_PREFIX)ucm2ic.exe $*.ucm $@
+
+ucs_tables.o: ucs_tables.c unicode.tab
+
+unicode.tab: mktab.exe $(ICFILES) ucm2ic.exe
+	$(EXE_PREFIX)mktab.exe $(CODEPAGES) >unicode.tab
+
+mktab.exe: mktab.o
+	$(CC) $(CFLAGS) -o $@ $^
+
+ucm2ic.exe: ucm2ic.o ucm_parse.o
+	$(CC) $(CFLAGS) -o $@ $^ $(LIBS1)
+
+koi8_test.exe: koi8_test.o ruscode.o $(OBJ)
+	$(CC) $(CFLAGS) -o $@ $^ $(LIBS1)
+
+rename_koi8: rename_koi8.o
+	$(CC) $(CFLAGS) -o $@ $^ $(LIBS1) -lmanycode
+
+recode.exe: recode.o
+	$(CC) $(CFLAGS) -o $@ $^ $(LIBS1) -lmanycode -lasvtools
+        

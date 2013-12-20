@@ -1,0 +1,11 @@
+ARCHIVER = tar
+ARCHIVER_FLAGS = cf
+COMPRESSOR = gzip -9
+TARGETS = nftp_unix_term nftp_unix_x11
+
+strip: force
+	strip $(TARGETS)
+
+distcopy2: unixfiles
+
+nlsconv: nlsconv-unix

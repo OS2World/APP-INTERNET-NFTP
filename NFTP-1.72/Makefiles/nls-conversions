@@ -1,0 +1,107 @@
+
+DP = nftp-$(VERSION)
+
+#-------------------------------------------------------------------------------------------------------
+# Unix translations
+#
+nlsconv-unix: convert/cnv.exe
+
+	@mv $(DP)/hungarian.nls $(DP)/hungarian.nls-dos
+	@convert/cnv.exe convert/hungarian.dos-unix $(DP)/hungarian.nls-dos $(DP)/hungarian.nls
+	@mv $(DP)/hungarian.mnu $(DP)/hungarian.mnu-dos
+	@convert/cnv.exe convert/hungarian.dos-unix $(DP)/hungarian.mnu-dos $(DP)/hungarian.mnu
+
+	@mv $(DP)/russian.nls $(DP)/russian.nls-dos
+	@convert/cnv.exe convert/866to878 $(DP)/russian.nls-dos $(DP)/russian.nls
+	@mv $(DP)/russian.mnu $(DP)/russian.mnu-dos
+	@convert/cnv.exe convert/866to878 $(DP)/russian.mnu-dos $(DP)/russian.mnu
+        
+	@mv $(DP)/ukrainian.nls $(DP)/ukrainian.nls-dos
+	@convert/cnv.exe convert/ukrainian.dos-unix $(DP)/ukrainian.nls-dos $(DP)/ukrainian.nls
+	@mv $(DP)/ukrainian.mnu $(DP)/ukrainian.mnu-dos
+	@convert/cnv.exe convert/ukrainian.dos-unix $(DP)/ukrainian.mnu-dos $(DP)/ukrainian.mnu
+
+	@mv $(DP)/finnish.nls $(DP)/finnish.nls-dos
+	@convert/cnv.exe convert/finnish.dos-unix $(DP)/finnish.nls-dos $(DP)/finnish.nls
+	@mv $(DP)/finnish.mnu $(DP)/finnish.mnu-dos
+	@convert/cnv.exe convert/finnish.dos-unix $(DP)/finnish.mnu-dos $(DP)/finnish.mnu
+
+	@mv $(DP)/swedish.nls $(DP)/swedish.nls-dos
+	@convert/cnv.exe convert/swedish.dos-unix $(DP)/swedish.nls-dos $(DP)/swedish.nls
+	@mv $(DP)/swedish.mnu $(DP)/swedish.mnu-dos
+	@convert/cnv.exe convert/swedish.dos-unix $(DP)/swedish.mnu-dos $(DP)/swedish.mnu
+
+	@mv $(DP)/danish.nls $(DP)/danish.nls-dos
+	@convert/cnv.exe convert/danish.dos-unix $(DP)/danish.nls-dos $(DP)/danish.nls
+	@mv $(DP)/danish.mnu $(DP)/danish.mnu-dos
+	@convert/cnv.exe convert/danish.dos-unix $(DP)/danish.mnu-dos $(DP)/danish.mnu
+
+	@mv $(DP)/czech.nls $(DP)/czech.nls-dos
+	@convert/cnv.exe convert/852to912 $(DP)/czech.nls-dos $(DP)/czech.nls
+	@mv $(DP)/czech.mnu $(DP)/czech.mnu-dos
+	@convert/cnv.exe convert/852to912 $(DP)/czech.mnu-dos $(DP)/czech.mnu
+
+	@mv $(DP)/slovak.nls $(DP)/slovak.nls-852
+	@convert/cnv.exe convert/852-to-ISO8859-2 $(DP)/slovak.nls-852 $(DP)/slovak.nls
+	@mv $(DP)/slovak.mnu $(DP)/slovak.mnu-852
+	@convert/cnv.exe convert/852-to-ISO8859-2 $(DP)/slovak.mnu-852 $(DP)/slovak.mnu
+
+	@mv $(DP)/norwegian.nls $(DP)/norwegian.nls-dos
+	@convert/cnv.exe convert/norwegian.dos-unix $(DP)/norwegian.nls-dos $(DP)/norwegian.nls
+
+	@rm -f $(DP)/*.*-dos $(DP)/*.*-iso $(DP)/*.*-os2 $(DP)/*.*-852
+	@chmod -x $(DP)/*.nls $(DP)/*.mnu
+
+#-------------------------------------------------------------------------------------------------------
+# Windows translations
+#
+nlsconv-windows: convert/cnv.exe
+
+	@mv $(DP)/swedish.nls $(DP)/swedish.nls-dos
+	@convert/cnv.exe convert/swedish.dos-win $(DP)/swedish.nls-dos $(DP)/swedish.nls
+	@mv $(DP)/swedish.mnu $(DP)/swedish.mnu-dos
+	@convert/cnv.exe convert/swedish.dos-win $(DP)/swedish.mnu-dos $(DP)/swedish.mnu
+        
+	@mv $(DP)/bulgarian.nls $(DP)/bulgarian.nls-os2
+	@convert/cnv.exe convert/915toMIK $(DP)/bulgarian.nls-os2 $(DP)/bulgarian.nls
+	@mv $(DP)/bulgarian.mnu $(DP)/bulgarian.mnu-os2
+	@convert/cnv.exe convert/915toMIK $(DP)/bulgarian.mnu-os2 $(DP)/bulgarian.mnu
+
+	@mv $(DP)/ukrainian.nls $(DP)/ukrainian.nls-dos
+	@convert/cnv.exe convert/ukrainian.dos-win $(DP)/ukrainian.nls-dos $(DP)/ukrainian.nls
+	@mv $(DP)/ukrainian.mnu $(DP)/ukrainian.mnu-dos
+	@convert/cnv.exe convert/ukrainian.dos-win $(DP)/ukrainian.mnu-dos $(DP)/ukrainian.mnu
+
+	@mv $(DP)/polish.nls $(DP)/polish.nls-iso
+	@convert/cnv.exe convert/ISO8859-2to852 $(DP)/polish.nls-iso $(DP)/polish.nls
+	@mv $(DP)/polish.mnu $(DP)/polish.mnu-iso
+	@convert/cnv.exe convert/ISO8859-2to852 $(DP)/polish.mnu-iso $(DP)/polish.mnu
+
+	@rm -f $(DP)/*.*-dos $(DP)/*.*-iso $(DP)/*.*-os2
+
+#-------------------------------------------------------------------------------------------------------
+# BeOS translations
+#
+nlsconv-beos: convert/cnv.exe
+
+	@mv $(DP)/russian.nls $(DP)/russian.nls-dos
+	@convert/cnv.exe convert/866toISO8859-5 $(DP)/russian.nls-dos $(DP)/russian.nls
+	@mv $(DP)/russian.mnu $(DP)/russian.mnu-dos
+	@convert/cnv.exe convert/866toISO8859-5 $(DP)/russian.mnu-dos $(DP)/russian.mnu
+
+	@rm -f $(DP)/*.*-dos $(DP)/*.*-iso $(DP)/*.*-os2
+	@chmod -x $(DP)/*.nls $(DP)/*.mnu
+
+#-------------------------------------------------------------------------------------------------------
+# OS/2 translations
+#
+nlsconv-os2: convert/cnv.exe
+
+	mv $(DP)/polish.nls $(DP)/polish.nls-iso
+#	convert/cnv.exe convert/ISO8859-2to852 $(DP)/polish.nls-iso $(DP)/polish.nls-broken
+	convert/cnv.exe convert/ISO8859-2to852 $(DP)/polish.nls-iso $(DP)/polish.nls
+#	@perl5 convert/plconv.pl ISO LAT <$(DP)/polish.nls-broken >$(DP)/polish.nls
+	mv $(DP)/polish.mnu $(DP)/polish.mnu-iso
+	convert/cnv.exe convert/ISO8859-2to852 $(DP)/polish.mnu-iso $(DP)/polish.mnu
+
+	rm -f $(DP)/*.*-dos $(DP)/*.*-iso $(DP)/*.*-os2 $(DP)/polish.nls-broken

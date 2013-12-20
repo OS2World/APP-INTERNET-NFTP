@@ -1,0 +1,158 @@
+#
+# see syntax explanations in english.mnu if interested
+#
+
+main
+{
+    {SUBMENU, "&Odkazy",       Sites}
+    {SUBMENU, "&S£bory",      Files}
+    {SUBMENU, "&Zobrazenie",     View}
+    {SUBMENU, "&Prenos",    Transfer}
+    {SUBMENU, "&Nastavenie",  Options}
+    {SUBMENU, "Pomocn¡&k",      Help}
+}
+
+Sites
+{
+    {ACTION, "Vytiahni &z lo§ku(y)...",              10}  login from bookmarks
+    {ACTION, "&Hist¢ria...",             17}  history
+    {ACTION, "V&lo§ z lo§ku...",       35}  save host/dir as bookmark
+    {SUBMENU, "Odçtartuj &FTP h–adanie", FTPSearch}
+    {SUBMENU, "Zadaj H&esl ", Passwords}
+    {SEP}
+    {ACTION, "Otvor adresu &URL...",    18}  open URL
+    {ACTION, "&Prihl s sa...",         11}  login
+    {ACTION, "Odhl s sa...",           13}  log off
+    {ACTION, "K&ontroluj spojenia",        22}  send NOOP
+    {ACTION, "Po&çli pr¡kaz...",        24}  quote command
+    {SEP}
+    {ACTION, "Preruç (iba Unix)",   112}  suspend
+#   {ACTION, "Zatvor",                    9}  crash and burn
+    {ACTION, "UkonŸi pr& cu v NFTP ...",                14}  exit NFTP
+}
+
+Passwords
+{
+    {ACTION, "&Zmeå hesl ...",          28} edit passwords
+    {ACTION, "Zmeå &heslo çifrovania...", 29} change keyphrase for password encryption
+}
+
+Files
+{
+    {ACTION, "Vy&tvor adres r...",              53}  create directory
+    {ACTION, "&Premenuj...",                   54}  rename file/directory
+    {ACTION, "&Vyma§...",                       52}  delete file/dir
+    {ACTION, "Zmeå pr¡stupov‚ pr va",             79}  change access rights
+    {SEP}
+#   {ACTION, "Pre&jdi do adres ra",               71}  change into dir under cursor
+    {ACTION, "Zmeå na &adres r...",             74}  input dir and change to it
+    {ACTION, "Prejdi do &z kladn‚ho adres ra",    72}  change to root dir
+    {ACTION, "Ob&nov obsah",                    70}  re-read directory
+    {ACTION, "Ulo§ &obsah adres ra...",         45}  save directory listing
+    {ACTION, "Zmeå d&isk...",          75}  change local drive
+    {ACTION, "&SpoŸ¡taj  vn£tro adres ra",          57}  traverse directory and compute its size
+}
+
+View
+{
+    {ACTION, "Prepni &typ zobrazenia",             32}  switch between raw/parsed modes
+    {ACTION, "Zapni riadiacu &konzolu",                   30}  switch between CC and dir
+    {ACTION, "Prepni &vzdialenì/lok lny",          31}  switch between local/remote
+    {SWITCH, "Rozde– obrazovku ako v NC",               37}  make screen look like NC
+    {SWITCH, "Uk §/schovaj  &datum/Ÿas na paneli ",               38}  show/hide file timestamps in panels
+    {SWITCH, "Povo–/Zamietni &Mini status",                      39}  show/hide mini-status field
+    {SEP}
+    {ACTION, "&Zobraz obsah s£borov",           50}  view w/int viewer
+    {ACTION, "Zobraz w/ &ext. program",          51}  view w/ext viewer
+    {ACTION, "NaŸ¡taj popis (index)...",           76}  load 00index.txt file
+    {SUBMENU, "Zora&Ô",    Sort}
+    {SEP}
+    {ACTION, "O&bnov obrazovku",                36}  repaint screen
+}
+
+Sort
+{
+    {ACTION, "RoztrieÔ pod–a &n zvu",     60}  sort by name
+    {ACTION, "RoztrieÔ pod–a &pr¡pony",   61}  sort by extension
+    {ACTION, "RoztrieÔ pod–a &ve–kosti", 63}  sort by size
+    {ACTION, "RoztrieÔ pod–a &d ta/Ÿasu", 62}  sort by date
+    {ACTION, "NertrieÔ ",               64}  make unsorted
+    {ACTION, "&Obr œ triedenie",       65}  reverse sort order
+}
+
+Transfer
+{
+    {ACTION, "&Copy...",                   77}  copy between remote/local
+#   {ACTION, "&Sœahuj...",                  40}  download
+#   {ACTION, "Sœahuj &vçetky adres re...",  42}  d/l from all dirs
+    {ACTION, "Sœahuj pod–a &n zvu...",     44}  d/l by name
+    {ACTION, "Sœahuj cez &WGET...",       46}  launch wget to retrieve files
+#   {ACTION, "&Odoçli...",                   41}  upload
+#   {ACTION, "Odo&çli spolu s adres rmi..",     43}  u/l from all dirs
+    {SEP}
+    {SUBMENU, "O&znaŸ", Select}
+    {SUBMENU, "S&ynchronizuj", Mirror}
+    {ACTION,  "&Bin rne/ASCII",               21}  switch ASCII/BINARY
+    {ACTION,  "Uk § stav...",               15}  get current status
+    {SEP}
+#   {SWITCH, "Obmedz prenos",              98}  limit throughput
+    {ACTION, "PreskoŸ s£bor",           47}  skip file during transfer
+    {ACTION, "UkonŸi prenos",             48}  stop transfer
+    {ACTION, "Reçtartuj  prenos",        49}  abort and restart transfer
+    {SWITCH, "Zastav prenos",          58}  pause transfer
+}
+
+Select
+{
+    {ACTION, "&Vyber/zruç vybratie",              82}  select file under cursor
+    {ACTION, "Vyber pod–a &masky...",        83}  select by mask
+    {ACTION, "Zruç vybratie pod–a mas&ky...",      84}  deselect by mask
+    {ACTION, "Vyb&er vçetky s£bory",       80}  select all files
+    {ACTION, "Zruç vìber vçetkìch s£borov",    81}  deselect all files
+    {ACTION, "Zruç vìber vçetkìch adres rov",    87}  deselect all files
+    {ACTION, "&Obr œ oznaŸenie",             85}  invert selection
+    {ACTION, "Exportuj zoznam oznaŸenìch...", 19}  export list of marked files
+    {ACTION, "Review list of marked...",   12}  review list of marked files/dirs
+}
+
+Mirror
+{
+    {ACTION, "&›ahaj...",                 66} synchronize local with remote (download)
+    {ACTION, "&Preœahuj...",               67} synchronize remote with local (upload)
+    {SWITCH, "Vyma§ neexistuj£ce s£bory",   68} switch: delete/keep unmatched files
+    {SWITCH, "Synchronizuj &adres re",      69} switch: synchronize subdirs?
+}
+
+Help
+{
+    {ACTION, "Pou§i Pomocn&¡ka",         1}  Help
+    {ACTION, "Uk § o&bsah Pomocn¡ka",   2}  general help
+    {ACTION, "Pou§i &kr tkeho Pomocn¡ka",  3}  short help
+    {ACTION, "&Pop¡ç ponuky",       7}  using menus
+    {SEP}
+    {ACTION, "Automaticky sa spoj s NFTP sieœou", 90}  connect to NFTP site
+    {ACTION, "&O aplik cii NFTP...",        6}  displays time of build
+}
+
+FTPSearch
+{
+    {ACTION, "Vy&h–ad vaj cez FTPSearch...",    120} find with FTPSearch
+    {ACTION, "Uk § P&oslednì vìsledok preh–ad vania...", 122}, display results of last search
+    {ACTION, "&Preh–adavacie servery...",      121} define FTPSearch servers
+}
+
+Options
+{
+    {SWITCH, "Povo–/Zamietni proxy",       25}  enable/disable proxy
+    {SWITCH, "Pou§i/nepou§i atributy",    23}  use/disable NLST with flags
+    {SWITCH, "Povo–/Zamietni popis",       34}  show/hide descriptions
+    {SWITCH, "Pou§i Pasivnì m¢d",          26} switch passive mode on/off
+    {SWITCH, "Uka§ symbolick‚ odkazy",  27}  switch symlink resolving on/off
+    {SEP}
+    {ACTION, "Edituj pred&vo–by",    16}  invoke editor on nftp.ini
+# I suggest next line should be left in English :-}
+    {ACTION, "&Nastav jazyk/Language",            91}  select language
+    {ACTION, "Nastav &fonty..",             93} select font for NFTP window
+    {ACTION, "Zaregistruj sa!...",     92}  enter registration information
+}
+

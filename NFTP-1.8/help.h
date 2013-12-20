@@ -1,0 +1,22 @@
+
+#define M_HLP_MAIN               800
+#define M_HLP_LINEIN             801
+#define M_HLP_CC                 802
+//#define M_HLP_BMRK               803
+//#define M_HLP_TRANSF             804
+#define M_HLP_DIR_RAW            805
+//#define M_HLP_DIR_PARSED         806
+//#define M_HLP_DIR_DESC           807
+#define M_HLP_VIEWER             808
+#define M_HLP_LOCAL_PARSED       809
+#define M_HLP_SHORT              810
+#define M_HLP_BOOKMARK1          811
+#define M_HLP_BOOKMARK2          812
+#define M_HLP_UNDEFINED          813
+#define M_HLP_HISTORY            814
+//#define M_HLP_CHOOSEBOX          815
+#define M_HLP_USING_MENU         816
+#define M_HLP_SITE_EDIT          817
+#define M_HLP_FTPSEARCH          818
+#define M_HLP_FTPSEARCH2         819
+#define M_HLP_PASSWORDS          820

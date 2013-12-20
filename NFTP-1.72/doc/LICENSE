@@ -1,0 +1,55 @@
+LICENSING INFORMATION
+
+Unlike releases up to and including 1.50, unregistered version 
+is now fully functional, there are no limitations. However, 
+after 60 days of use it produces a reminder every time you 
+login to FTP site. The reminder stays on screen during 10 seconds.
+
+The Program (NFTP) is owned by Sergey Ayukov and is copyrighted and
+licensed, not sold. The term "Program" means the original program and
+all whole or partial copies of it.
+
+LICENSE FOR UNREGISTERED VERSION
+
+You may:
+
+ . use the Program for evaluation purposes
+ . distribute unaltered copies of the Program
+
+You may not:
+
+ . reverse assemble, reverse compile, or otherwise translate the Program
+ . sublicense, rent, or lease the Program
+
+LICENSE FOR REGISTERED VERSION
+
+You may:
+
+ . use the Program
+ . distribute unaltered copies of the Program
+
+You may not:
+
+ . reverse assemble, reverse compile, or otherwise translate the Program
+ . sublicense, rent, or lease the Program
+
+-------------------------------------------------------------------------
+
+The Program is provided `as is'. Any express or implied warranties,
+including, but not limited to, the implied warranties for
+merchantability and fitness to a particular purpose are disclaimed.
+Sergey Ayukov will not be liable for any lost profits, lost savings,
+incident, special, or indirect damages or other economic consequential
+damages, even if Sergey Ayukov has been advised of the possibility of
+such damages. Some jurisdictions do not allow the exclusion or
+limitation of incidental or consequential damages, so the above
+limitation or exclusion may not apply to you.
+
+-------------------------------------------------------------------------
+
+Redistribution: this software CAN be redistributed on any kind of media
+in archived or decompressed form provided that all files are included and
+none of them is modified. Magazine covermount CDs, CD software collections,
+archives of freeware/shareware programs etc. are all fine. The author's 
+permission is not required to redistribute NFTP.
+

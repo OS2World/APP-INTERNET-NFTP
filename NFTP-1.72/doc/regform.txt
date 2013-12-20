@@ -1,0 +1,48 @@
+
+    Registration form for NFTP Version 1.72 (C) Sergey Ayukov 1994-2003
+
+                   Complete and send to: nftp@ayukov.com
+
+-------------------------------------------------------------------------------
+            This form helps me to find out who and how uses NFTP.
+         The information you supply will be kept strictly confidential
+   and will not be exposed to anyone except in the form of overall statistics
+-------------------------------------------------------------------------------
+
+1. Your name and e-mail address:
+
+2. Your age (omit answer if you don't like this question):
+
+3. Country:
+
+4. What languages you are using in NFTP:
+
+5. What operating systems you are using to run NFTP?
+   List all which apply:
+
+6. To what other operating systems you would like NFTP to be ported:
+
+7. How long do you use NFTP?
+   A - just started, 
+   B - less than 6 months,
+   C - more than 6 months, 
+   D - since first version
+   type a letter: 
+
+8. How did you discovered NFTP?
+   A - anonymous ftp site, 
+   B - OS/2 "Must-Have", Windows95.com or other similar Web site, 
+   C - read in Usenet newsgroup,
+   D - other (please specify)
+   E - heard from a friend
+   type a letter: 
+
+9. Do you want GUI version of NFTP?
+   A - you don't want GUI version;
+   B - you want GUI layout but mostly keyboard interaction; 
+   C - you want real GUI version, not a hack mentioned in B
+   type a letter: 
+
+------------------------------------------------------------------------------
+
+Thank you for filling out this form! Send it to: nftp@ayukov.com
