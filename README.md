@@ -17,4 +17,4 @@ AUTHORS
 
 LINKS
 ===============
-* 
+* http://www.ayukov.com/nftp/source-release.html
